@@ -29,7 +29,6 @@ module.exports = function loader(source) {
     functions: {},
     variables: {},
     text,
-    frontmatter,
   };
 
   export async function getStaticProps(context) {
@@ -38,6 +37,7 @@ module.exports = function loader(source) {
         isMarkdoc: true,
         mdConfig,
         mdAst,
+        mdFrontmatter: frontmatter
       }
     }
   }

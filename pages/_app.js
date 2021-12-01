@@ -31,29 +31,50 @@ Object.values(registrations).forEach((registration) => {
   }
 });
 
+// Update Markdoc APIs
+function MarkdocShim({components = {}, ...config} = {}) {
+  return {
+    ...Markdoc,
+    process(ast) {
+      return Markdoc.process(ast, config);
+    },
+    expand(nodes) {
+      return Markdoc.expand(processed, config);
+    },
+    renderers: {
+      ...Markdoc.renderers,
+      react:
+        (React) =>
+        (content, variables = {}) =>
+          Markdoc.renderers.react(content, React)({components, variables}),
+    },
+  };
+}
+
 export default function MyApp(props) {
   const {Component, pageProps} = props;
-  const {isMarkdoc, mdConfig, mdAst: ast} = pageProps;
+  const {isMarkdoc, mdConfig, mdAst: ast, mdFrontmatter} = pageProps;
 
   if (isMarkdoc) {
-    const config = {
+    const markdoc = MarkdocShim({
       ...mdConfig,
       tags,
       nodes,
-    };
-    const mdast = Markdoc.fromJSON(JSON.stringify(ast));
+      components,
+    });
 
+    const render = markdoc.renderers.react(React);
+
+    const mdast = markdoc.fromJSON(JSON.stringify(ast));
     // Convert the AST into a rendered tree
-    const processed = Markdoc.process(mdast, config);
-    const content = Markdoc.expand(processed, config);
-
-    const render = Markdoc.renderers.react(content, React);
+    const processed = markdoc.process(mdast);
+    const content = Markdoc.expand(processed);
 
     const title = `Markdoc | ${
-      config.frontmatter?.title || 'A Markdown-based authoring system'
+      mdFrontmatter?.title || 'A Markdown-based authoring system'
     }`;
     const description =
-      config.frontmatter?.description || 'A Markdown-based authoring system';
+      mdFrontmatter?.description || 'A Markdown-based authoring system';
 
     return (
       <>
@@ -63,7 +84,7 @@ export default function MyApp(props) {
           <meta name="description" content={description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Component>{render({components})}</Component>
+        <Component>{render(content)}</Component>
       </>
     );
   }
