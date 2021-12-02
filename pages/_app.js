@@ -1,50 +1,60 @@
 import React from 'react';
 import Head from 'next/head';
-import Markdoc from '@stripe-internal/markdoc';
 
 import * as components from '../components';
+import * as registrations from '../components/tags';
 
 import '../styles/globals.css';
 
-// Update Markdoc APIs
-function MarkdocShim(config = {}) {
+// TODO move this into Markdoc itself
+function createMarkdocNodesAndTags(registrations) {
+  const tags = {};
+  const nodes = {};
+
+  Object.values(registrations).forEach((registration) => {
+    if (typeof registration.node === 'string') {
+      const {node, component, ...schema} = registration;
+      if (nodes[node]) {
+        throw new Error(`Node already declared: ${node}`);
+      }
+      nodes[node] = {
+        ...schema,
+        tag: component,
+      };
+    } else {
+      const {tag, component, ...schema} = registration;
+      if (tags[tag]) {
+        throw new Error(`Tag already declared: ${tag}`);
+      }
+      tags[tag] = {
+        ...schema,
+        tag: component,
+      };
+    }
+  });
+
   return {
-    ...Markdoc,
-    process(ast) {
-      return Markdoc.process(ast, config);
-    },
-    expand(nodes) {
-      return Markdoc.expand(nodes, config);
-    },
-    renderers: {
-      ...Markdoc.renderers,
-      react:
-        (React, {components = {}} = {}) =>
-        (content, variables = {}) =>
-          Markdoc.renderers.react(content, React)({components, variables}),
-    },
+    tags,
+    nodes,
   };
 }
 
 export default function MyApp(props) {
   const {Component, pageProps} = props;
-  const {isMarkdoc, mdConfig, mdAst: ast, mdFrontmatter} = pageProps;
+  const {isMarkdoc, frontmatter} = pageProps;
 
   if (isMarkdoc) {
-    const markdoc = MarkdocShim(mdConfig);
-
-    const render = markdoc.renderers.react(React, {components});
-
-    const mdast = markdoc.fromJSON(JSON.stringify(ast));
-    // Convert the AST into a rendered tree
-    const processed = markdoc.process(mdast);
-    const content = markdoc.expand(processed);
+    const config = {
+      ...createMarkdocNodesAndTags(registrations),
+      functions: {},
+      variables: {},
+    };
 
     const title = `Markdoc | ${
-      mdFrontmatter?.title || 'A Markdown-based authoring system'
+      frontmatter?.title || 'A Markdown-based authoring system'
     }`;
     const description =
-      mdFrontmatter?.description || 'A Markdown-based authoring system';
+      frontmatter?.description || 'A Markdown-based authoring system';
 
     return (
       <>
@@ -54,7 +64,7 @@ export default function MyApp(props) {
           <meta name="description" content={description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Component>{render(content)}</Component>
+        <Component components={components} variables={{}} config={config} />
       </>
     );
   }
