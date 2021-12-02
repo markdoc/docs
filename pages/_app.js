@@ -14,7 +14,7 @@ function MarkdocShim(config = {}) {
       return Markdoc.process(ast, config);
     },
     expand(nodes) {
-      return Markdoc.expand(processed, config);
+      return Markdoc.expand(nodes, config);
     },
     renderers: {
       ...Markdoc.renderers,
@@ -38,7 +38,7 @@ export default function MyApp(props) {
     const mdast = markdoc.fromJSON(JSON.stringify(ast));
     // Convert the AST into a rendered tree
     const processed = markdoc.process(mdast);
-    const content = Markdoc.expand(processed);
+    const content = markdoc.expand(processed);
 
     const title = `Markdoc | ${
       mdFrontmatter?.title || 'A Markdown-based authoring system'
