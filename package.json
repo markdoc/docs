@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@stripe-internal/markdoc": "^0.0.2",
+    "glob": "^7.2.0",
     "js-yaml": "^4.1.0",
     "next": "12.0.4",
     "react": "17.0.2",

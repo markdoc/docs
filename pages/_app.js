@@ -3,36 +3,11 @@ import Head from 'next/head';
 import Markdoc from '@stripe-internal/markdoc';
 
 import * as components from '../components';
-import * as registrations from '../components/tags';
 
 import '../styles/globals.css';
 
-const tags = {};
-const nodes = {};
-Object.values(registrations).forEach((registration) => {
-  if (typeof registration.node === 'string') {
-    const {node, component, ...schema} = registration;
-    if (nodes[node]) {
-      throw new Error(`Node already declared: ${node}`);
-    }
-    nodes[node] = {
-      ...schema,
-      tag: component,
-    };
-  } else {
-    const {tag, component, ...schema} = registration;
-    if (tags[tag]) {
-      throw new Error(`Tag already declared: ${tag}`);
-    }
-    tags[tag] = {
-      ...schema,
-      tag: component,
-    };
-  }
-});
-
 // Update Markdoc APIs
-function MarkdocShim({components = {}, ...config} = {}) {
+function MarkdocShim(config = {}) {
   return {
     ...Markdoc,
     process(ast) {
@@ -44,7 +19,7 @@ function MarkdocShim({components = {}, ...config} = {}) {
     renderers: {
       ...Markdoc.renderers,
       react:
-        (React) =>
+        (React, {components = {}} = {}) =>
         (content, variables = {}) =>
           Markdoc.renderers.react(content, React)({components, variables}),
     },
@@ -56,14 +31,9 @@ export default function MyApp(props) {
   const {isMarkdoc, mdConfig, mdAst: ast, mdFrontmatter} = pageProps;
 
   if (isMarkdoc) {
-    const markdoc = MarkdocShim({
-      ...mdConfig,
-      tags,
-      nodes,
-      components,
-    });
+    const markdoc = MarkdocShim(mdConfig);
 
-    const render = markdoc.renderers.react(React);
+    const render = markdoc.renderers.react(React, {components});
 
     const mdast = markdoc.fromJSON(JSON.stringify(ast));
     // Convert the AST into a rendered tree
