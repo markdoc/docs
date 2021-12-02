@@ -11,10 +11,6 @@ module.exports = function loader(source) {
   const tokens = tokenizer.tokenize(source);
   const mdAst = Markdoc.parse(tokens);
 
-  const frontmatter = mdAst.attributes.frontmatter
-    ? yaml.load(mdAst.attributes.frontmatter)
-    : {};
-
   const tags = {};
   const nodes = {};
   glob.sync('./**/*.markdoc.js').map((file) => {
@@ -42,32 +38,32 @@ module.exports = function loader(source) {
     });
   });
 
-  return `
-  const text = ${JSON.stringify(source)};
-  const mdAst = ${JSON.stringify(mdAst)};
-
   const mdConfig = {
-    tags: ${JSON.stringify(tags)},
-    nodes: ${JSON.stringify(nodes)},
+    tags,
+    nodes,
+    text: source,
     functions: {},
     variables: {},
-    text,
   };
 
-  const mdFrontmatter = ${JSON.stringify(frontmatter)};
+  const mdFrontmatter = mdAst.attributes.frontmatter
+    ? yaml.load(mdAst.attributes.frontmatter)
+    : {};
 
+  const props = {
+    isMarkdoc: true,
+    mdConfig,
+    mdAst,
+    mdFrontmatter,
+  };
+
+  return `
   export async function getStaticProps(context) {
     return {
-      props: {
-        isMarkdoc: true,
-        mdConfig,
-        mdAst,
-        mdFrontmatter,
-      }
+      props: ${JSON.stringify(props)}
     }
   }
 
-  // We inline variables here to support fast refresh
   export default function MarkdocContent(props) {
     return props.children;
   }`;
