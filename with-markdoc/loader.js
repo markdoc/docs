@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const Markdoc = require('@stripe-internal/markdoc');
+const yaml = require('js-yaml');
 
 const tokenizer = new Markdoc.Tokenizer({typographer: true});
 
@@ -8,7 +9,11 @@ const tokenizer = new Markdoc.Tokenizer({typographer: true});
 module.exports = function loader(source) {
   // Convert raw text to an AST
   const tokens = tokenizer.tokenize(source);
-  const mdast = Markdoc.parse(tokens);
+  const mdAst = Markdoc.parse(tokens);
+
+  const frontmatter = mdAst.attributes.frontmatter
+    ? yaml.load(mdAst.attributes.frontmatter)
+    : {};
 
   const tags = {};
   const nodes = {};
@@ -38,17 +43,9 @@ module.exports = function loader(source) {
   });
 
   return `
-  import React from 'react';
-  import Markdoc from '@stripe-internal/markdoc';
-  import yaml from 'js-yaml';
-  
-  const text = ${JSON.stringify(source)}
-  const mdAst = ${JSON.stringify(mdast)}
+  const text = ${JSON.stringify(source)};
+  const mdAst = ${JSON.stringify(mdAst)};
 
-  const frontmatter = mdAst.attributes.frontmatter
-    ? yaml.load(mdAst.attributes.frontmatter)
-    : {};
-  
   const mdConfig = {
     tags: ${JSON.stringify(tags)},
     nodes: ${JSON.stringify(nodes)},
@@ -57,13 +54,15 @@ module.exports = function loader(source) {
     text,
   };
 
+  const mdFrontmatter = ${JSON.stringify(frontmatter)};
+
   export async function getStaticProps(context) {
     return {
       props: {
         isMarkdoc: true,
         mdConfig,
         mdAst,
-        mdFrontmatter: frontmatter
+        mdFrontmatter,
       }
     }
   }
