@@ -12,7 +12,7 @@ module.exports = function loader(source) {
 
   const tags = {};
   const nodes = {};
-  glob.sync('./components/**/*.markdoc.js').map((file) => {
+  glob.sync('./**/*.markdoc.js').map((file) => {
     const registrations = require(path.resolve(file));
     Object.values(registrations).forEach((registration) => {
       if (typeof registration.node === 'string') {
