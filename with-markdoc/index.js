@@ -2,7 +2,7 @@ const path = require('path');
 
 // TODO finalize this default path
 const withMarkdoc =
-  ({pathToSchema = './schema', ...pluginOptions} = {}) =>
+  ({pathToSchema = './markdoc', ...pluginOptions} = {}) =>
   (nextConfig = {}) => {
     const extension = pluginOptions.extension || /\.md$/;
     return Object.assign({}, nextConfig, {
