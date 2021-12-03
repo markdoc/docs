@@ -1,7 +1,6 @@
 const withMarkdoc = require('./with-markdoc');
-const schema = require('./schema');
 
-module.exports = withMarkdoc({schema})({
+module.exports = withMarkdoc()({
   reactStrictMode: true,
   pageExtensions: ['js', 'md'],
 });

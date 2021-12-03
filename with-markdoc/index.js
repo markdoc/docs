@@ -1,5 +1,7 @@
+const path = require('path');
+// TODO finalize this default path
 const withMarkdoc =
-  (pluginOptions = {}) =>
+  ({pathToSchema = './schema', ...pluginOptions} = {}) =>
   (nextConfig = {}) => {
     const extension = pluginOptions.extension || /\.md$/;
     return Object.assign({}, nextConfig, {
@@ -13,7 +15,10 @@ const withMarkdoc =
             // options.defaultLoaders.babel,
             {
               loader: require.resolve('./loader'),
-              options: pluginOptions,
+              options: {
+                ...pluginOptions,
+                pathToSchema: path.resolve(options.dir, pathToSchema),
+              },
             },
           ],
         });

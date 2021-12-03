@@ -1,3 +1,1 @@
-module.exports = {
-  ...require('./Button.markdoc'),
-};
+export * from './Button.markdoc.js';

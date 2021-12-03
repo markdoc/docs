@@ -1,9 +1,17 @@
-const Markdoc = require('@stripe-internal/markdoc');
-const yaml = require('js-yaml');
+const path = require('path');
 
 // Returning a JSX object is what allows fast refresh to work
 module.exports = function loader(source) {
-  const {schema = {}, ...options} = this.getOptions() || {};
+  const {pathToSchema} = this.getOptions() || {};
+
+  const importPath = path.relative(this.context, pathToSchema);
+
+  return `
+  import React from 'react';
+  import Markdoc from '@stripe-internal/markdoc';
+  // TODO don't require this module
+  import yaml from 'js-yaml';
+  import * as schema from '${importPath}';
 
   // TODO move this into Markdoc itself
   const tags = {};
@@ -12,7 +20,7 @@ module.exports = function loader(source) {
     if (typeof registration.node === 'string') {
       const {node, component, ...schema} = registration;
       if (nodes[node]) {
-        throw new Error(`Node already declared: ${node}`);
+        throw new Error(\`Node already declared: \${node}\`);
       }
       nodes[node] = {
         ...schema,
@@ -21,7 +29,7 @@ module.exports = function loader(source) {
     } else {
       const {tag, component, ...schema} = registration;
       if (tags[tag]) {
-        throw new Error(`Tag already declared: ${tag}`);
+        throw new Error(\`Tag already declared: \${tag}\`);
       }
       tags[tag] = {
         ...schema,
@@ -33,33 +41,27 @@ module.exports = function loader(source) {
   const config = {
     functions: {},
     variables: {},
-    ...options,
     tags,
     nodes,
   };
 
-  const mdAst = Markdoc.parse(source);
-
-  // Convert the AST into a rendered tree
-  const processed = Markdoc.process(mdAst, config);
-  const content = Markdoc.expand(processed, config);
-
-  const frontmatter = mdAst.attributes.frontmatter
-    ? yaml.load(mdAst.attributes.frontmatter)
-    : {};
-
-  return `
-  import React from 'react';
-  import Markdoc from '@stripe-internal/markdoc';
-
   export async function getStaticProps(context) {
-    const content = ${JSON.stringify(content)};
+    const mdAst = Markdoc.parse(${JSON.stringify(source)});
+
+    // Convert the AST into a rendered tree
+    const processed = Markdoc.process(mdAst, config);
+    const content = Markdoc.expand(processed, config);
+
+    const frontmatter = mdAst.attributes.frontmatter
+      ? yaml.load(mdAst.attributes.frontmatter)
+      : {};
 
     return {
       props: {
         isMarkdoc: true,
-        content,
-        frontmatter: ${JSON.stringify(frontmatter)},
+        // Remove undefined — TODO handle this in Markdoc
+        content: JSON.parse(JSON.stringify(content)),
+        frontmatter,
       }
     }
   }
