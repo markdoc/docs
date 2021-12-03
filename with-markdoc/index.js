@@ -4,11 +4,10 @@ const path = require('path');
 const withMarkdoc =
   ({pathToSchema = './markdoc', ...pluginOptions} = {}) =>
   (nextConfig = {}) => {
-    const extension = pluginOptions.extension || /\.md$/;
     return Object.assign({}, nextConfig, {
       webpack(config, options) {
         config.module.rules.push({
-          test: extension,
+          test: pluginOptions.extension || /\.md$/,
           use: [
             // Adding the babel loader enables fast refresh
             // options.defaultLoaders.babel,
