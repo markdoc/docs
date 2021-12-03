@@ -13,41 +13,40 @@ module.exports = function loader(source) {
   import Markdoc from '@stripe-internal/markdoc';
   import * as schema from '${importPath}';
 
-  // TODO move this into Markdoc itself
-  const tags = {};
-  const nodes = {};
-  Object.values(schema).forEach((registration) => {
-    if (typeof registration.node === 'string') {
-      const {node, component, ...schema} = registration;
-      if (nodes[node]) {
-        throw new Error(\`Node already declared: \${node}\`);
-      }
-      nodes[node] = {
-        ...schema,
-        tag: component,
-      };
-    } else {
-      const {tag, component, ...schema} = registration;
-      if (tags[tag]) {
-        throw new Error(\`Tag already declared: \${tag}\`);
-      }
-      tags[tag] = {
-        ...schema,
-        tag: component,
-      };
-    }
-  });
-
-  const config = {
-    functions: {},
-    variables: {},
-    tags,
-    nodes,
-  };
-
   export async function ${dataFetchingFunction}(context) {
-    const mdAst = Markdoc.parse(${JSON.stringify(source)});
+    // TODO move this into Markdoc itself
+    const tags = {};
+    const nodes = {};
+    Object.values(schema).forEach((registration) => {
+      if (typeof registration.node === 'string') {
+        const {node, component, ...schema} = registration;
+        if (nodes[node]) {
+          throw new Error(\`Node already declared: \${node}\`);
+        }
+        nodes[node] = {
+          ...schema,
+          tag: component,
+        };
+      } else {
+        const {tag, component, ...schema} = registration;
+        if (tags[tag]) {
+          throw new Error(\`Tag already declared: \${tag}\`);
+        }
+        tags[tag] = {
+          ...schema,
+          tag: component,
+        };
+      }
+    });
 
+    const config = {
+      functions: {},
+      variables: {},
+      tags,
+      nodes,
+    };
+
+    const mdAst = Markdoc.parse(${JSON.stringify(source)});
     // Convert the AST into a rendered tree
     const processed = Markdoc.process(mdAst, config);
     const content = Markdoc.expand(processed, config);
