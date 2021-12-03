@@ -11,12 +11,80 @@ module.exports = function loader(source) {
   return `
   import React from 'react';
   import Markdoc from '@stripe-internal/markdoc';
+  import Image from 'next/image'
   import * as schema from '${importPath}';
 
   export async function ${dataFetchingFunction}(context) {
-    // TODO move this into Markdoc itself
-    const tags = {};
+    const tags = {
+      image: {
+        tag: 'Image',
+        description: 'Displays an image',
+        attributes: {
+          src: {
+            description: 'The path of the image to display',
+            type: String,
+            errorLevel: 'critical',
+            required: true,
+          },
+          alt: {
+            description: 'The alt text for the image',
+            type: String,
+            required: true,
+          },
+          width: {
+            type: Number,
+            description: 'The width of the image expressed as a percentage of the page. If not specified, defaults to 100% (unless a height is set)',
+            required: true,
+          },
+          height: {
+            type: String,
+            description: 'The height of the image expressed using any CSS-compatible units',
+            required: true,
+          },
+          layout: {
+            type: String,
+            matches: ['intrinsic', 'fixed', 'responsive', 'fill'],
+          },
+          srcSet: {
+            type: String,
+          },
+          sizes: {
+            type: String,
+          },
+          priority: {
+            type: Number,
+          },
+          quality: {
+            type: Number,
+          },
+          placeholder: {
+            type: String,
+            matches: ['blur', 'empty']
+          },
+          objectFit: {
+            type: String,
+          },
+          objectPosition: {
+            type: String,
+          },
+          loading: {
+            type: String,
+            matches: ['lazy', 'eager']
+          },
+          blurDataURL: {
+            type: String,
+          },
+          lazyBoundary: {
+            type: String,
+          },
+          unoptimized: {
+            type: Boolean,
+          },
+        }
+      }
+    };
     const nodes = {};
+    // TODO move this into Markdoc itself
     Object.values(schema).forEach((registration) => {
       if (typeof registration.node === 'string') {
         const {node, component, ...schema} = registration;
@@ -63,6 +131,12 @@ module.exports = function loader(source) {
 
   export default function MarkdocContent(props) {
     const render = Markdoc.renderers.react(props.content, React);
-    return render(props);
+    return render({
+      ...props,
+      components: {
+        Image,
+        ...props.components
+      }
+    });
   }`;
 };
