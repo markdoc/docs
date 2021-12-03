@@ -2,9 +2,11 @@ const path = require('path');
 
 // Returning a JSX object is what allows fast refresh to work
 module.exports = function loader(source) {
-  const {pathToSchema} = this.getOptions() || {};
+  const {pathToSchema, mode = 'static'} = this.getOptions() || {};
 
   const importPath = path.relative(this.context, pathToSchema);
+  const dataFetchingFunction =
+    mode === 'server' ? 'getServerSideProps' : 'getStaticProps';
 
   return `
   import React from 'react';
@@ -45,7 +47,7 @@ module.exports = function loader(source) {
     nodes,
   };
 
-  export async function getStaticProps(context) {
+  export async function ${dataFetchingFunction}(context) {
     const mdAst = Markdoc.parse(${JSON.stringify(source)});
 
     // Convert the AST into a rendered tree

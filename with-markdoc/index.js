@@ -1,4 +1,5 @@
 const path = require('path');
+
 // TODO finalize this default path
 const withMarkdoc =
   ({pathToSchema = './schema', ...pluginOptions} = {}) =>
