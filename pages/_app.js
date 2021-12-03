@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import yaml from 'js-yaml';
 
 import * as components from '../components';
 
@@ -9,12 +10,18 @@ export default function MyApp(props) {
   const {Component, pageProps} = props;
   const {isMarkdoc, content, frontmatter} = pageProps;
 
+  let description = 'A Markdown-based authoring system';
+  let title = `Markdoc | ${description}`;
   if (isMarkdoc) {
-    const title = `Markdoc | ${
-      frontmatter?.title || 'A Markdown-based authoring system'
-    }`;
-    const description =
-      frontmatter?.description || 'A Markdown-based authoring system';
+    if (frontmatter) {
+      const fm = yaml.load(frontmatter);
+      if (fm.title) {
+        title = `Markdoc | ${fm.title}`;
+      }
+      if (fm.description) {
+        description = fm.description;
+      }
+    }
 
     return (
       <>
@@ -32,12 +39,12 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <title>A Markdown-based authoring system</title>
-        <meta name="title" content="A Markdown-based authoring system" />
-        <meta name="description" content="A Markdown-based authoring system" />
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps}>{null}</Component>
+      <Component {...pageProps} />
     </>
   );
 }

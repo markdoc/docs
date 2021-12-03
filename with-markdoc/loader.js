@@ -11,8 +11,6 @@ module.exports = function loader(source) {
   return `
   import React from 'react';
   import Markdoc from '@stripe-internal/markdoc';
-  // TODO don't require this module
-  import yaml from 'js-yaml';
   import * as schema from '${importPath}';
 
   // TODO move this into Markdoc itself
@@ -54,16 +52,12 @@ module.exports = function loader(source) {
     const processed = Markdoc.process(mdAst, config);
     const content = Markdoc.expand(processed, config);
 
-    const frontmatter = mdAst.attributes.frontmatter
-      ? yaml.load(mdAst.attributes.frontmatter)
-      : {};
-
     return {
       props: {
         isMarkdoc: true,
         // Remove undefined — TODO handle this in Markdoc
         content: JSON.parse(JSON.stringify(content)),
-        frontmatter,
+        frontmatter: mdAst.attributes.frontmatter,
       }
     }
   }
