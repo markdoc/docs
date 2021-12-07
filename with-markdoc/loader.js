@@ -1,10 +1,14 @@
 const path = require('path');
 
+// TODO consider parsing the frontmatter as YAML for Markdoc version,
+// and using specific values for various configs (e.g. <head> values)
+
 // Returning a JSX object is what allows fast refresh to work
 module.exports = function loader(source) {
   const {pathToSchema, mode = 'static'} = this.getOptions() || {};
 
   const importPath = path.relative(this.context, pathToSchema);
+  // TODO consider making this an option per-page
   const dataFetchingFunction =
     mode === 'server' ? 'getServerSideProps' : 'getStaticProps';
 
