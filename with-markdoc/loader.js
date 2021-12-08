@@ -128,7 +128,7 @@ module.exports = function loader(source) {
         isMarkdoc: true,
         // Remove undefined — TODO handle this in Markdoc
         content: JSON.parse(JSON.stringify(content)),
-        frontmatter: mdAst.attributes.frontmatter,
+        frontmatter: mdAst.attributes.frontmatter || null,
       }
     }
   }
