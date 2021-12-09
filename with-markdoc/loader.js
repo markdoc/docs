@@ -8,16 +8,38 @@ module.exports = async function loader(source) {
   const {schemaPath, mode = 'static'} = this.getOptions() || {};
 
   const ast = Markdoc.parse(source);
-  const errors = Markdoc.validate(ast);
+
+  const errors = Markdoc.validate(ast)
+    .filter((e) => e.error.level === 'critical')
+    // TODO is this reason enough to create the schema at build time?
+    // tags are not yet registered, so ignore these errors
+    .filter((e) => e.error.id !== 'tag-undefined')
+    .flatMap((e) => {
+      const lines = source.split('\n');
+
+      const message = [e.error.message, ...lines.slice(...e.lines)];
+      console.log(e, e.error);
+
+      if (
+        e.error &&
+        e.error.location &&
+        e.error.location.start &&
+        e.error.location.start.offset
+      ) {
+        const prev = lines.slice(0, e.lines[0]).join('\n').length;
+        const diff = e.error.location.start.offset - prev;
+
+        const pointer = `${' '.repeat(diff)}^`;
+        message.push(pointer);
+      }
+
+      // add extra newline between errors
+      message.push('');
+      return message;
+    });
 
   if (errors.length) {
-    const error = new Error(
-      errors
-        .filter((e) => e.error.level === 'critical')
-        .map((e) => e.error.message)
-        .join('\n\n')
-    );
-    throw error;
+    throw new Error(errors.join('\n'));
   }
 
   const partials = {};
