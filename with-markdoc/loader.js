@@ -75,12 +75,12 @@ module.exports = async function loader(source) {
     const content = Markdoc.expand(processed, config);
 
     return {
-      props: {
+      // Remove undefined
+      props: JSON.parse(JSON.stringify({
         isMarkdoc: true,
-        // Remove undefined — TODO handle this in Markdoc
-        content: JSON.parse(JSON.stringify(content)),
-        frontmatter: ast.attributes.frontmatter || null,
-      }
+        content,
+        frontmatter: ast.attributes.frontmatter,
+      }))
     }
   }
 
