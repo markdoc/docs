@@ -2,7 +2,7 @@ const path = require('path');
 
 // TODO finalize this default path
 const withMarkdoc =
-  ({pathToSchema = './markdoc', ...pluginOptions} = {}) =>
+  ({schemaPath = './markdoc', ...pluginOptions} = {}) =>
   (nextConfig = {}) => {
     return Object.assign({}, nextConfig, {
       webpack(config, options) {
@@ -15,7 +15,7 @@ const withMarkdoc =
               loader: require.resolve('./loader'),
               options: {
                 ...pluginOptions,
-                pathToSchema: path.resolve(options.dir, pathToSchema),
+                schemaPath: path.resolve(options.dir, schemaPath),
               },
             },
           ],

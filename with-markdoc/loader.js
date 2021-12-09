@@ -5,7 +5,7 @@ const Markdoc = require('@stripe-internal/markdoc');
 
 // Returning a JSX object is what allows fast refresh to work
 module.exports = async function loader(source) {
-  const {pathToSchema, mode = 'static'} = this.getOptions() || {};
+  const {schemaPath, mode = 'static'} = this.getOptions() || {};
 
   const ast = Markdoc.parse(source);
   const errors = Markdoc.validate(ast);
@@ -41,7 +41,7 @@ module.exports = async function loader(source) {
     }
   }
 
-  const importPath = require.resolve(pathToSchema);
+  const importPath = require.resolve(schemaPath);
   const runtimePath = require.resolve('./runtime');
 
   // TODO consider making this an option per-page
