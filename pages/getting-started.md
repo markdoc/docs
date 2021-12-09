@@ -3,7 +3,7 @@ title: Getting started
 description: How to get started with Markdoc
 ---
 
-{% image src="/logo.png" width=50 height=31 alt="" /%}
+{% partial file="../partials/header.md" /%}
 
 To get started with Markdoc, first install the library with
 

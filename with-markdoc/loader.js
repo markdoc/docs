@@ -1,13 +1,37 @@
-const path = require('path');
+const Markdoc = require('@stripe-internal/markdoc');
 
 // TODO consider parsing the frontmatter as YAML for Markdoc version,
 // and using specific values for various configs (e.g. <head> values)
 
 // Returning a JSX object is what allows fast refresh to work
-module.exports = function loader(source) {
+module.exports = async function loader(source) {
   const {pathToSchema, mode = 'static'} = this.getOptions() || {};
 
-  const importPath = path.relative(this.context, pathToSchema);
+  const ast = Markdoc.parse(source);
+  const partials = {};
+  for (const node of ast.walk()) {
+    const file = node.attributes.file;
+    if (
+      node.type === 'tag:partial' &&
+      typeof file === 'string' &&
+      !partials[file]
+    ) {
+      partials[file] = await new Promise((res, rej) => {
+        this.resolve(this.context, file, (error, filepath) => {
+          if (error) {
+            rej(error);
+          } else {
+            // parsing is not done here because then we have to serialize and reload from JSON at runtime
+            res(this.fs.readFileSync(filepath, 'utf8'));
+          }
+        });
+      });
+    }
+  }
+
+  const importPath = require.resolve(pathToSchema);
+  const runtimePath = require.resolve('./runtime');
+
   // TODO consider making this an option per-page
   const dataFetchingFunction =
     mode === 'server' ? 'getServerSideProps' : 'getStaticProps';
@@ -15,112 +39,27 @@ module.exports = function loader(source) {
   return `
   import React from 'react';
   import Markdoc from '@stripe-internal/markdoc';
-  import Image from 'next/image'
+
+  import {transformSchema, transformComponents} from '${runtimePath}'
   import * as schema from '${importPath}';
 
+  const components = transformComponents(schema)
+
   export async function ${dataFetchingFunction}(context) {
-    const tags = {
-      image: {
-        tag: 'Image',
-        description: 'Displays an image',
-        attributes: {
-          src: {
-            description: 'The path of the image to display',
-            type: String,
-            errorLevel: 'critical',
-            required: true,
-          },
-          alt: {
-            description: 'The alt text for the image',
-            type: String,
-            required: true,
-          },
-          width: {
-            type: Number,
-            description: 'The width of the image expressed as a percentage of the page. If not specified, defaults to 100% (unless a height is set)',
-            required: true,
-          },
-          height: {
-            type: String,
-            description: 'The height of the image expressed using any CSS-compatible units',
-            required: true,
-          },
-          layout: {
-            type: String,
-            matches: ['intrinsic', 'fixed', 'responsive', 'fill'],
-          },
-          srcSet: {
-            type: String,
-          },
-          sizes: {
-            type: String,
-          },
-          priority: {
-            type: Number,
-          },
-          quality: {
-            type: Number,
-          },
-          placeholder: {
-            type: String,
-            matches: ['blur', 'empty']
-          },
-          objectFit: {
-            type: String,
-          },
-          objectPosition: {
-            type: String,
-          },
-          loading: {
-            type: String,
-            matches: ['lazy', 'eager']
-          },
-          blurDataURL: {
-            type: String,
-          },
-          lazyBoundary: {
-            type: String,
-          },
-          unoptimized: {
-            type: Boolean,
-          },
-        }
-      }
-    };
-    const nodes = {};
-    // TODO move this into Markdoc itself
-    Object.values(schema).forEach((registration) => {
-      if (typeof registration.node === 'string') {
-        const {node, component, ...schema} = registration;
-        if (nodes[node]) {
-          throw new Error(\`Node already declared: \${node}\`);
-        }
-        nodes[node] = {
-          ...schema,
-          tag: component,
-        };
-      } else {
-        const {tag, component, ...schema} = registration;
-        if (tags[tag]) {
-          throw new Error(\`Tag already declared: \${tag}\`);
-        }
-        tags[tag] = {
-          ...schema,
-          tag: component,
-        };
-      }
+    const ast = Markdoc.parse(${JSON.stringify(source)});
+    const partials = ${JSON.stringify(partials)}
+
+    Object.keys(partials).forEach((key) => {
+      partials[key] = Markdoc.parse(partials[key]);
     });
 
     const config = {
-      functions: {},
-      variables: {},
-      tags,
-      nodes,
-    };
+      ...transformSchema(schema),
+      partials,
+    }
 
-    const mdAst = Markdoc.parse(${JSON.stringify(source)});
     // Convert the AST into a rendered tree
-    const processed = Markdoc.process(mdAst, config);
+    const processed = Markdoc.process(ast, config);
     const content = Markdoc.expand(processed, config);
 
     return {
@@ -128,19 +67,19 @@ module.exports = function loader(source) {
         isMarkdoc: true,
         // Remove undefined — TODO handle this in Markdoc
         content: JSON.parse(JSON.stringify(content)),
-        frontmatter: mdAst.attributes.frontmatter || null,
+        frontmatter: ast.attributes.frontmatter || null,
       }
     }
   }
 
-  export default function MarkdocContent(props) {
+  export default function MarkdocComponent(props) {
     const render = Markdoc.renderers.react(props.content, React);
     return render({
       ...props,
       components: {
-        Image,
-        ...props.components
-      }
+        ...components,
+        ...props.components,
+      },
     });
   }`;
 };
