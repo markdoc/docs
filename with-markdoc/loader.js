@@ -8,6 +8,18 @@ module.exports = async function loader(source) {
   const {pathToSchema, mode = 'static'} = this.getOptions() || {};
 
   const ast = Markdoc.parse(source);
+  const errors = Markdoc.validate(ast);
+
+  if (errors.length) {
+    const error = new Error(
+      errors
+        .filter((e) => e.error.level === 'critical')
+        .map((e) => e.error.message)
+        .join('\n\n')
+    );
+    throw error;
+  }
+
   const partials = {};
   for (const node of ast.walk()) {
     const file = node.attributes.file;
