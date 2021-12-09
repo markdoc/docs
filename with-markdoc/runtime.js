@@ -94,9 +94,9 @@ export function transformSchema(schema) {
       if (tags[tag]) {
         throw new Error(`Tag already declared: ${tag}`);
       }
-      tags[tag] = {
-        ...schema,
+      tags[registration.tag || tag] = {
         tag,
+        ...schema,
       };
     }
   });
@@ -117,7 +117,7 @@ export function transformComponents(schema) {
 
   Object.entries(schema).forEach(([tag, registration]) => {
     if (typeof registration.node !== 'string' && registration.component) {
-      components[tag] = registration.component;
+      components[registration.tag || tag] = registration.component;
     }
   });
 
