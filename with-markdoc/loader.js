@@ -18,7 +18,6 @@ module.exports = async function loader(source) {
       const lines = source.split('\n');
 
       const message = [e.error.message, ...lines.slice(...e.lines)];
-      console.log(e, e.error);
 
       if (
         e.error &&
