@@ -84,7 +84,7 @@ export function transformSchema(schema) {
     const tag = registration.tag || autoTagName;
     const value = {
       ...schema,
-      tag: component.displayName || component.name,
+      tag: component ? component.displayName || component.name : undefined,
     };
     if (typeof node === 'string') {
       if (nodes[node]) {
