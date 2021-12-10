@@ -79,25 +79,23 @@ export function transformSchema(schema) {
   const tags = {};
   const nodes = {};
 
-  Object.entries(schema).forEach(([tag, registration]) => {
-    if (typeof registration.node === 'string') {
-      const {node, component, ...schema} = registration;
+  Object.entries(schema).forEach(([autoTagName, registration]) => {
+    const {node, component, ...schema} = registration;
+    const tag = registration.tag || autoTagName;
+    const value = {
+      ...schema,
+      tag: component.displayName || component.name,
+    };
+    if (typeof node === 'string') {
       if (nodes[node]) {
         throw new Error(`Node already declared: ${node}`);
       }
-      nodes[node] = {
-        ...schema,
-        tag: component,
-      };
+      nodes[node] = value;
     } else {
-      const {component, ...schema} = registration;
       if (tags[tag]) {
         throw new Error(`Tag already declared: ${tag}`);
       }
-      tags[registration.tag || tag] = {
-        tag,
-        ...schema,
-      };
+      tags[tag] = value;
     }
   });
 
@@ -115,9 +113,9 @@ export function transformSchema(schema) {
 export function transformComponents(schema) {
   const components = {};
 
-  Object.entries(schema).forEach(([tag, registration]) => {
-    if (typeof registration.node !== 'string' && registration.component) {
-      components[registration.tag || tag] = registration.component;
+  Object.values(schema).forEach(({node, component}) => {
+    if (typeof node !== 'string' && component) {
+      components[component.displayName || component.name] = component;
     }
   });
 
