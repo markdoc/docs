@@ -1,5 +1,4 @@
 const Markdoc = require('@stripe-internal/markdoc');
-const fs = require('fs');
 
 // TODO consider parsing the frontmatter as YAML for Markdoc version,
 // and using specific values for various configs (e.g. <head> values)
@@ -21,7 +20,7 @@ async function gatherPartials(ast) {
             rej(error);
           } else {
             // parsing is not done here because then we have to serialize and reload from JSON at runtime
-            res(fs.readFileSync(filepath, 'utf8'));
+            res(this.fs.readFileSync(filepath, 'utf8'));
           }
         });
       });
