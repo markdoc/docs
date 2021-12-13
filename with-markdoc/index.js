@@ -10,7 +10,7 @@ const withMarkdoc =
           test: pluginOptions.extension || /\.md$/,
           use: [
             // Adding the babel loader enables fast refresh
-            // options.defaultLoaders.babel,
+            options.defaultLoaders.babel,
             {
               loader: require.resolve('./loader'),
               options: {
