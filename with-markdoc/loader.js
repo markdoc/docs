@@ -101,13 +101,12 @@ module.exports = async function loader(source) {
 
   export async function ${dataFetchingFunction}(context) {
     const ast = Markdoc.parse(${JSON.stringify(source)});
-    const partials = ${JSON.stringify(partials)}
+    const partials = ${JSON.stringify(partials)};
+    const buildConfig = ${JSON.stringify(buildConfig)};
 
     Object.keys(partials).forEach((key) => {
       partials[key] = Markdoc.parse(partials[key]);
     });
-
-    const buildConfig = ${JSON.stringify(buildConfig)};
 
     const config = {
       ...buildConfig,
