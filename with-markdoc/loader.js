@@ -41,9 +41,14 @@ async function gatherPartials(ast) {
 
 // Returning a JSX object is what allows fast refresh to work
 module.exports = async function loader(source) {
-  const {schemaPath, mode = 'static'} = this.getOptions() || {};
+  const {
+    schemaPath,
+    mode = 'static',
+    config = () => {},
+  } = this.getOptions() || {};
 
   const ast = Markdoc.parse(source);
+  const buildConfig = await config(ast);
 
   const errors = Markdoc.validate(ast)
     .filter((e) => e.error.level === 'critical')
@@ -103,7 +108,10 @@ module.exports = async function loader(source) {
       partials[key] = Markdoc.parse(partials[key]);
     });
 
+    const buildConfig = ${JSON.stringify(buildConfig)};
+
     const config = {
+      ...buildConfig,
       ...transformSchema(schema),
       partials,
     }
