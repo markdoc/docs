@@ -3,7 +3,7 @@ title: Getting started
 description: How to get started with Markdoc
 ---
 
-{% partial file="../partials/header.md" /%}
+{% partial file="/partials/header.md" /%}
 
 To get started with Markdoc, first install the library with
 

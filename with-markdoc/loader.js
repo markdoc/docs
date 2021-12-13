@@ -1,7 +1,43 @@
 const Markdoc = require('@stripe-internal/markdoc');
+const fs = require('fs');
 
 // TODO consider parsing the frontmatter as YAML for Markdoc version,
 // and using specific values for various configs (e.g. <head> values)
+
+async function gatherPartials(ast) {
+  let partials = {};
+
+  for (const node of ast.walk()) {
+    const file = node.attributes.file;
+
+    if (
+      node.type === 'tag:partial' &&
+      typeof file === 'string' &&
+      !partials[file]
+    ) {
+      const content = await new Promise((res, rej) => {
+        this.resolve(this.context, file, (error, filepath) => {
+          if (error) {
+            rej(error);
+          } else {
+            // parsing is not done here because then we have to serialize and reload from JSON at runtime
+            res(fs.readFileSync(filepath, 'utf8'));
+          }
+        });
+      });
+
+      const ast = Markdoc.parse(content);
+
+      partials = {
+        ...partials,
+        [file]: content,
+        ...(await gatherPartials.call(this, ast)),
+      };
+    }
+  }
+
+  return partials;
+}
 
 // Returning a JSX object is what allows fast refresh to work
 module.exports = async function loader(source) {
@@ -41,26 +77,7 @@ module.exports = async function loader(source) {
     throw new Error(errors.join('\n'));
   }
 
-  const partials = {};
-  for (const node of ast.walk()) {
-    const file = node.attributes.file;
-    if (
-      node.type === 'tag:partial' &&
-      typeof file === 'string' &&
-      !partials[file]
-    ) {
-      partials[file] = await new Promise((res, rej) => {
-        this.resolve(this.context, file, (error, filepath) => {
-          if (error) {
-            rej(error);
-          } else {
-            // parsing is not done here because then we have to serialize and reload from JSON at runtime
-            res(this.fs.readFileSync(filepath, 'utf8'));
-          }
-        });
-      });
-    }
-  }
+  const partials = await gatherPartials.call(this, ast);
 
   const importPath = require.resolve(schemaPath);
   const runtimePath = require.resolve('./runtime');
