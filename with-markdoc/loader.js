@@ -1,8 +1,5 @@
 const Markdoc = require('@stripe-internal/markdoc');
 
-// TODO consider parsing the frontmatter as YAML for Markdoc version,
-// and using specific values for various configs (e.g. <head> values)
-
 async function gatherPartials(ast) {
   let partials = {};
 
@@ -93,6 +90,7 @@ module.exports = async function loader(source) {
   return `
   import React from 'react';
   import Markdoc from '@stripe-internal/markdoc';
+  import yaml from 'js-yaml';
 
   import {transformSchema, transformComponents} from '${runtimePath}'
   import * as schema from '${importPath}';
@@ -118,12 +116,14 @@ module.exports = async function loader(source) {
     const processed = Markdoc.process(ast, config);
     const content = Markdoc.expand(processed, config);
 
+    const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
+
     return {
       // Remove undefined
       props: JSON.parse(JSON.stringify({
         isMarkdoc: true,
         content,
-        frontmatter: ast.attributes.frontmatter,
+        frontmatter,
       }))
     }
   }

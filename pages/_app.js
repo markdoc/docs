@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import yaml from 'js-yaml';
 
 import '../styles/globals.css';
 
@@ -11,12 +10,11 @@ export default function MyApp(props) {
   let description = 'A Markdown-based authoring system';
   let title = `Markdoc | ${description}`;
   if (isMarkdoc && frontmatter) {
-    const fm = yaml.load(frontmatter);
-    if (fm.title) {
-      title = `Markdoc | ${fm.title}`;
+    if (frontmatter.title) {
+      title = `Markdoc | ${frontmatter.title}`;
     }
-    if (fm.description) {
-      description = fm.description;
+    if (frontmatter.description) {
+      description = frontmatter.description;
     }
   }
 
