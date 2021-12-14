@@ -48,7 +48,6 @@ module.exports = async function loader(source) {
 
   const errors = Markdoc.validate(ast)
     .filter((e) => e.error.level === 'critical')
-    // TODO is this reason enough to create the schema at build time?
     // tags are not yet registered, so ignore these errors
     .filter((e) => e.error.id !== 'tag-undefined')
     .flatMap((e) => {
