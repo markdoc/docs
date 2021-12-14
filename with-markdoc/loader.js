@@ -131,6 +131,7 @@ module.exports = async function loader(source) {
   }
 
   export default function MarkdocComponent(props) {
+    // TODO consider using next/router refresh
     ${this.hot ? parsingCode : ''}
     const render = Markdoc.renderers.react(${
       this.hot ? 'content' : 'props.content'

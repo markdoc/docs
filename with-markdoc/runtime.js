@@ -1,12 +1,7 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const defaultTags = {
-  head: {
-    tag: 'Head',
-    description: 'Component to add elements to the document <head>',
-  },
   image: {
     tag: 'Image',
     description: 'Displays an image',
@@ -126,7 +121,6 @@ const defaultTags = {
 };
 
 const defaultComponents = {
-  Head,
   Image,
   Link,
 };
