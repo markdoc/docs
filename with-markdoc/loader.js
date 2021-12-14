@@ -86,17 +86,7 @@ module.exports = async function loader(source) {
   const dataFetchingFunction =
     mode === 'server' ? 'getServerSideProps' : 'getStaticProps';
 
-  return `
-  import React from 'react';
-  import Markdoc from '@stripe-internal/markdoc';
-  import yaml from 'js-yaml';
-
-  import {transformSchema, transformComponents} from '${runtimePath}'
-  import * as schema from '${importPath}';
-
-  const components = transformComponents(schema)
-
-  export async function ${dataFetchingFunction}(context) {
+  const parsingCode = `
     const ast = Markdoc.parse(${JSON.stringify(source)});
     const partials = ${JSON.stringify(partials)};
     const buildConfig = ${JSON.stringify(buildConfig)};
@@ -114,7 +104,20 @@ module.exports = async function loader(source) {
     // Convert the AST into a rendered tree
     const processed = Markdoc.process(ast, config);
     const content = Markdoc.expand(processed, config);
+  `;
 
+  return `
+  import React from 'react';
+  import Markdoc from '@stripe-internal/markdoc';
+  import yaml from 'js-yaml';
+
+  import {transformSchema, transformComponents} from '${runtimePath}'
+  import * as schema from '${importPath}';
+
+  const components = transformComponents(schema)
+
+  export async function ${dataFetchingFunction}(context) {
+    ${parsingCode}
     const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
 
     return {
@@ -128,7 +131,11 @@ module.exports = async function loader(source) {
   }
 
   export default function MarkdocComponent(props) {
-    const render = Markdoc.renderers.react(props.content, React);
+    ${this.hot ? parsingCode : ''}
+    const render = Markdoc.renderers.react(${
+      this.hot ? 'content' : 'props.content'
+    }, React);
+
     return render({
       ...props,
       components: {
