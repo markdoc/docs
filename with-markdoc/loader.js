@@ -116,6 +116,9 @@ module.exports = async function loader(source) {
 
   const components = transformComponents(schema)
 
+  // TODO consider using next/router refresh
+  ${this.hot ? parsingCode : ''}
+
   export async function ${dataFetchingFunction}(context) {
     ${parsingCode}
     const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
@@ -131,8 +134,6 @@ module.exports = async function loader(source) {
   }
 
   export default function MarkdocComponent(props) {
-    // TODO consider using next/router refresh
-    ${this.hot ? parsingCode : ''}
     const render = Markdoc.renderers.react(${
       this.hot ? 'content' : 'props.content'
     }, React);
