@@ -6,7 +6,7 @@ const withMarkdoc =
     return Object.assign({}, nextConfig, {
       webpack(config, options) {
         config.module.rules.push({
-          test: pluginOptions.extension || /\.md$/,
+          test: pluginOptions.extension || /\.(md|mdoc)$/,
           use: [
             // Adding the babel loader enables fast refresh
             options.defaultLoaders.babel,
