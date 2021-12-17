@@ -130,11 +130,13 @@ export function transformSchema(schema) {
   const nodes = {};
 
   Object.entries(schema).forEach(([autoTagName, registration]) => {
-    const {node, component, ...schema} = registration;
+    const {node, component, Component, ...schema} = registration;
     const tag = registration.tag || autoTagName;
+    const componentName =
+      component || Component?.displayName || Component?.name;
     const value = {
       ...schema,
-      tag: component ? component.displayName || component.name : undefined,
+      tag: componentName,
     };
     if (typeof node === 'string') {
       if (nodes[node]) {
@@ -163,9 +165,11 @@ export function transformSchema(schema) {
 export function transformComponents(schema) {
   const components = {};
 
-  Object.values(schema).forEach(({node, component}) => {
-    if (typeof node !== 'string' && component) {
-      components[component.displayName || component.name] = component;
+  Object.values(schema).forEach(({node, component, Component}) => {
+    if (typeof node !== 'string' && Component) {
+      const componentName =
+        component || Component?.displayName || Component?.name;
+      components[componentName] = Component;
     }
   });
 
