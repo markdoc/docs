@@ -59,9 +59,14 @@ export default function Sandbox() {
     setK((k) => k + 1);
   }, []);
 
-  const ast = Markdoc.parse(code);
-  const processed = Markdoc.process(ast, {});
-  const content = Markdoc.expand(processed, {});
+  const ast = React.useMemo(() => {
+    return Markdoc.parse(code);
+  }, [code]);
+
+  const content = React.useMemo(() => {
+    const processed = Markdoc.process(ast, {});
+    return Markdoc.expand(processed, {});
+  }, [ast]);
 
   const onBeforeChange = React.useCallback(
     (editor, meta, code) => setCode(code),
