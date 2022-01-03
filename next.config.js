@@ -1,4 +1,4 @@
-const withMarkdoc = require('./with-markdoc');
+const withMarkdoc = require('@stripe-internal/next-markdoc');
 
 module.exports = withMarkdoc()({
   reactStrictMode: true,
