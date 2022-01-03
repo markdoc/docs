@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
+import 'codemirror/lib/codemirror.css';
 import '../styles/globals.css';
 
 export default function MyApp(props) {

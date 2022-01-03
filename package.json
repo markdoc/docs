@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@stripe-internal/markdoc": "^0.0.2",
+    "codemirror": "^5.64.0",
     "js-yaml": "^4.1.0",
     "next": "12.0.5",
     "react": "17.0.2",
+    "react-codemirror2": "^7.2.1",
     "react-dom": "17.0.2",
     "sharp": "^0.29.3"
   },
