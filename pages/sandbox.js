@@ -52,7 +52,7 @@ export default function Sandbox() {
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
