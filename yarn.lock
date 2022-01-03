@@ -119,10 +119,10 @@
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
-"@next/env@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/env/-/env-12.0.5-canary.16.tgz#a7054ec0a5f13ede49f63e431a2958f839f6281b"
-  integrity sha512-uSTvuXzpf3Q6AL9sKif3vZyg07pJi3+hg/nmj0mdExkpw9sJ95SIzxE+w7M5areW0bLptZPIZjJ1oeRjBPpfJw==
+"@next/env@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/env/-/env-12.0.4.tgz#effe19526fa51ab2da1a39e594b80a257b3fa1c5"
+  integrity sha512-QtZ6X5c6Zqa7oWs5csEmZ7xy+gLdtRKKg02SOT5l0Ziea4P5IU8mSOCyNC4fZmXewcRVjpbY+yGqAAP7hJUfOA==
 
 "@next/eslint-plugin-next@12.0.4":
   version "12.0.4"
@@ -131,15 +131,15 @@
   dependencies:
     glob "7.1.7"
 
-"@next/polyfill-module@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/polyfill-module/-/polyfill-module-12.0.5-canary.16.tgz#778afd1513eb4d18246c5befcc100c3ae27af7e1"
-  integrity sha512-jqGsseOvx1D2npKBIrhlMWw4g2bcGbxM1IUzQrjpLDXgggfem8Qgck1L24ygMmk7fiD6vne4obFCnqTBY4wi9w==
+"@next/polyfill-module@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/polyfill-module/-/polyfill-module-12.0.4.tgz#ef4f4fd6d773ad655db1859ca71127e0c358af50"
+  integrity sha512-mk9yCDNpfXINTJKFTZNgwYs7eqRFpc5D/49O/fKB59blihyKl1GY1sZ0l7a2bn5l1X/WuaZzcIfqnrwkneqeaQ==
 
-"@next/react-dev-overlay@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/react-dev-overlay/-/react-dev-overlay-12.0.5-canary.16.tgz#a2271ffc6076ef24499e76d536298f6f8ef05e42"
-  integrity sha512-tuP8KpoJwvpMf8t4Alio3m9j9prVKPsWKkxhdfzklhqXRN0Ud/r/mh42wrUsJAd/hhFWG6fn3LrVa1p1i0QrGQ==
+"@next/react-dev-overlay@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/react-dev-overlay/-/react-dev-overlay-12.0.4.tgz#c97113df84986233c62eed37382aab85a0ec006e"
+  integrity sha512-9O0lXyzv5goFSmDwq9Hp8JE+DcObvd+bTXvmGSSvYR91AlIoVlH8/PwATx8Rf5YEuqggn/XKR1hn2kBYcbcGnA==
   dependencies:
     "@babel/code-frame" "7.12.11"
     anser "1.4.9"
@@ -153,65 +153,65 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.1"
 
-"@next/react-refresh-utils@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/react-refresh-utils/-/react-refresh-utils-12.0.5-canary.16.tgz#7de02beca4b341e84cda62d87ff1d48b633a5243"
-  integrity sha512-B+Jz8ck8hKsVKk+K1hQkmoQraEDD1yge+A7RUhS8Sk0IxwpLpTx141fDV5WdFYjMFnmYNTwpaJG4fih7EvnmCA==
+"@next/react-refresh-utils@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/react-refresh-utils/-/react-refresh-utils-12.0.4.tgz#20d43626498c451f71bb0bb26c3f780ad90f5fd6"
+  integrity sha512-kNUDmpBaJ+8Lb8CtKNynRFF9oijCjUKKru6Ont+JKhti9//5dNFFIcuo607bJSH86un06OEK0TZUt5XWVlbkjw==
 
-"@next/swc-android-arm64@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-android-arm64/-/swc-android-arm64-12.0.5-canary.16.tgz#f9a7f7252f2f13aef042cca4ca141c74c06b7549"
-  integrity sha512-pYWIBj6MQoCMdkl4erOODGQ9wF74z68RX+WthjpnTGZ6E+WTOyiEYMWv/Ca/QwgPST+3/NUNFM1AXKu/qZtCBA==
+"@next/swc-android-arm64@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-android-arm64/-/swc-android-arm64-12.0.4.tgz#e3ad69d3aadbd1d3ff0768b4f02b66c3806aa6b2"
+  integrity sha512-6mXumia8ZPcy7bYu9kjItfWxrE6SFaJyqQDaFy9G9WrU9x3M1R1Yok8B2X1mboM8itD0tq+t3R/ebQEkkmevUw==
 
-"@next/swc-darwin-arm64@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.0.5-canary.16.tgz#1cff6426276c0516b542d06ddacf0760aa3ec89b"
-  integrity sha512-H1Agx51SXfOihNn4R3K9PcEddLavB8UnhSUHODRB2hvvtmjFPtOVj3UyxZUF+5HPKz4QDAzLw8CGSVLs1MA3Hg==
+"@next/swc-darwin-arm64@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.0.4.tgz#bc083ed3ad5e6971d2f374f38a7d8f3c46a6de0a"
+  integrity sha512-7WMen1qhF5JmjKD9S5IEgEoaPJOXyIZj/Nsqa8ZSWxdF5oogp3uYYbKb/rvMYoKzpIbjyoLH/OCM5lm5IFM4iw==
 
-"@next/swc-darwin-x64@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-darwin-x64/-/swc-darwin-x64-12.0.5-canary.16.tgz#245909bbc2f77be3f023c0cdb634b40f76585c39"
-  integrity sha512-+foxUr2G6BYOpIpJPEWthrZSiOwhN50otko4ELpgSiQiITjIp79fqHfkVSHp91jSEDASAipAAJvBXusA29gc1A==
+"@next/swc-darwin-x64@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-darwin-x64/-/swc-darwin-x64-12.0.4.tgz#84855d4c9fef3b3a094c0f2424ae2b7e6dc29caa"
+  integrity sha512-PVgefMWjxP6CU1HQs39+Bfpjcue6qErJfvJ/+n2zimjLzyeQAmD6LM9f1lDSttW2LjKjasoxR5qkRNLVlqzlaA==
 
-"@next/swc-linux-arm-gnueabihf@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm-gnueabihf/-/swc-linux-arm-gnueabihf-12.0.5-canary.16.tgz#ff45e29bc51f3e0dd70871ff39d5761ebb2c33de"
-  integrity sha512-FH2ocGvPgxO6yvJXB9s+TvfZQ5YHhsx3FtvfH8wTaxLTgATAUSRbJb8ORL2RFJ9OQ46fKtWMcly/jfsMeFLYEg==
+"@next/swc-linux-arm-gnueabihf@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm-gnueabihf/-/swc-linux-arm-gnueabihf-12.0.4.tgz#090156c4fc88d86ebc67df35e99daa97ddb232de"
+  integrity sha512-8xGQu3sJiIdriKiCux3jDJ9pwivELEg7z2zfW0CqmQMbKNB7qP9lc0pq6CxshtKyXRMczNWRMtQ3Cjwep+UvNg==
 
-"@next/swc-linux-arm64-gnu@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-12.0.5-canary.16.tgz#81a9502f3f63353ed916367a8adaad4c4ea23360"
-  integrity sha512-74lMAI/8G30B3I/I9TUc5buIl3+k6vflkJ2kKpE929ksw3BmsBMmF9hB5sFmlSvD6EsHDv3/RO8ScaA5l6DnjQ==
+"@next/swc-linux-arm64-gnu@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-12.0.4.tgz#3ddda6eb703eda411b117d1974f08e028bb987ed"
+  integrity sha512-HhEWcBkqGr3E7SYLtN9VnYUGamAWaLcXawHN33Em0WP7gzXrBqz0iIJNH7uEzHDS6980EqU/rrkLyhCHrYSZgQ==
 
-"@next/swc-linux-arm64-musl@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-12.0.5-canary.16.tgz#a7d1d5a7b59930449a1bc2d2e38a799311bd21de"
-  integrity sha512-E2el2MJ7mmObni62NnrpY73jvXwE9YG0Y0qr7XTHJVW2O7l6GxGKIsRxqvEJEPLcqjKxcT5iHX+tBlIdYnI6ug==
+"@next/swc-linux-arm64-musl@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-12.0.4.tgz#a17985b811166bb3598816009e5f025539827c21"
+  integrity sha512-oZyQ9wjtE7OX9RlnovP7izNx2AR/RzTuYWU4Ttim8ssABsipQSxSlfRaeb+Qi6jTc6k+lrPhjRfaZ+fGv/m2Ag==
 
-"@next/swc-linux-x64-gnu@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.0.5-canary.16.tgz#783e7b4f4ff8598442b0c6f78e58fe2d0dc7c76d"
-  integrity sha512-Th3Xpo8BGMiYhf+heD08SQ7Z83sr67xFSIujtSszRhompcyODdI16FFXuIjxh3k3mMD4j2WDPKPvmy6UsOKEdA==
+"@next/swc-linux-x64-gnu@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.0.4.tgz#46fa9f4a4d381d41c0fc75912810e72468b0fb49"
+  integrity sha512-aBuf78QzL93T59Lk9kEGfHcA+9SzYIH7dGon1nqVxtAd2iqicKYNVaVcb38VKeiIBXMSUHXTdu6Ee053ZCOmSw==
 
-"@next/swc-linux-x64-musl@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.0.5-canary.16.tgz#0835b2eaada58dab9c765dffdb957fc793f61a12"
-  integrity sha512-j6LuAscRdK0J3kyovyTWIhoaXW3QJ6bHgZM9KYczBqVT65Kws4J7MDtXjDNzhUfhqBO9BDJRPdYsrzI/QF9tWw==
+"@next/swc-linux-x64-musl@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.0.4.tgz#5e07982c84df77ddad537f3abca7d0f52504fc08"
+  integrity sha512-yDgqUqL4H8M3Y0hv30ZyL9UvjnK4iXmD4I6iJz+XIHSRdA/VUiyKKoL7okf9hxr0mSxBtagbZ5A3qEoW/VliUQ==
 
-"@next/swc-win32-arm64-msvc@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-12.0.5-canary.16.tgz#4b43e3d082e602117acb41fe6eca4c8b51f6bfaf"
-  integrity sha512-vsDH760x8BkrWynCb+m7hZv2ewGDBocao53D1E0+y4i2HOMj34lYKtxr8wH4SQ5AN7byIiss/ZXK1OUw9wfLzQ==
+"@next/swc-win32-arm64-msvc@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-12.0.4.tgz#17705a3d20b35fddd2f61c4d2e491bbf6909e71a"
+  integrity sha512-evDUrEYsUo+PMHsedaymfZO98VwV9wNFzuWVCyKgqg6SD1ZRpzbpqYQY7aINIuqZVdIWZElBE6EM+oxaj7PuWQ==
 
-"@next/swc-win32-ia32-msvc@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-12.0.5-canary.16.tgz#d4a1b1b33e13f2ca07e96b493fd39154151f5031"
-  integrity sha512-kE4F/81KY4cUIrEZIIvhs+kmcC753uIjYuAjFVF0izgQXIrehfRExyOYuIWv4H5MNdhLdAtr0gaAJIKsqf6cfA==
+"@next/swc-win32-ia32-msvc@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-12.0.4.tgz#a2a6d5c09a07c62d3a6b5b6dbc4443b566b8385b"
+  integrity sha512-Lbmz0xlo8vW4EDWyzCfy3nGfqt7skqwxaERwe+vDVTBZ56mvJ5dsdyjqK24sxu4FFkWR7SaU4eNlHwZR+A3kTg==
 
-"@next/swc-win32-x64-msvc@12.0.5-canary.16":
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.5-canary.16.tgz#935c7be2ec597ad4be6021893c7f8fe1a923a968"
-  integrity sha512-lW/q8SS1g4X/casr9VxOXC/k7sizB2CSrDUBCaRIo+uo8cCvCLafd44HXHsTZfo7D0Y2xACN2wAW4XkLBeJe+A==
+"@next/swc-win32-x64-msvc@12.0.4":
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.4.tgz#acb9ffb17118b797d8c76dd688dd0aec5fa65cd4"
+  integrity sha512-f+7WNIJOno5QEelrmob+3vN5EZJb3KCkOrnvUsQ0+LCCD0dIPIhCjeHAh3BGj9msGu8ijnXvD7JxVxE5V26cnQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2167,18 +2167,18 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-next@12.0.5:
-  version "12.0.5-canary.16"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/next/-/next-12.0.5-canary.16.tgz#0e4554d407b629310f599e650d6c8690f3d8150e"
-  integrity sha512-sCGR/tO3FdWv6xAtPaGsnvcels1Il+0moFQd7Btsj0d9heaSdiAjVgmajSlt43TdBBUlLCkEKx9wboYbANSYPQ==
+next@12.0.4:
+  version "12.0.4"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/next/-/next-12.0.4.tgz#096578b320f0faf0bd51798decb39aaf00052efe"
+  integrity sha512-1pvjcSZBm5OLoGmDhp4JwKwIE798WbqUNLuyU7w6a2jUkdWaxOYtkE/ROXQTi2pXHj7+6rm68AvhxROLX2NHQg==
   dependencies:
     "@babel/runtime" "7.15.4"
     "@hapi/accept" "5.0.2"
     "@napi-rs/triples" "1.0.3"
-    "@next/env" "12.0.5-canary.16"
-    "@next/polyfill-module" "12.0.5-canary.16"
-    "@next/react-dev-overlay" "12.0.5-canary.16"
-    "@next/react-refresh-utils" "12.0.5-canary.16"
+    "@next/env" "12.0.4"
+    "@next/polyfill-module" "12.0.4"
+    "@next/react-dev-overlay" "12.0.4"
+    "@next/react-refresh-utils" "12.0.4"
     acorn "8.5.0"
     assert "2.0.0"
     browserify-zlib "0.2.0"
@@ -2220,19 +2220,19 @@ next@12.0.5:
     use-subscription "1.5.1"
     util "0.12.4"
     vm-browserify "1.1.2"
-    watchpack "2.3.0"
+    watchpack "2.1.1"
   optionalDependencies:
-    "@next/swc-android-arm64" "12.0.5-canary.16"
-    "@next/swc-darwin-arm64" "12.0.5-canary.16"
-    "@next/swc-darwin-x64" "12.0.5-canary.16"
-    "@next/swc-linux-arm-gnueabihf" "12.0.5-canary.16"
-    "@next/swc-linux-arm64-gnu" "12.0.5-canary.16"
-    "@next/swc-linux-arm64-musl" "12.0.5-canary.16"
-    "@next/swc-linux-x64-gnu" "12.0.5-canary.16"
-    "@next/swc-linux-x64-musl" "12.0.5-canary.16"
-    "@next/swc-win32-arm64-msvc" "12.0.5-canary.16"
-    "@next/swc-win32-ia32-msvc" "12.0.5-canary.16"
-    "@next/swc-win32-x64-msvc" "12.0.5-canary.16"
+    "@next/swc-android-arm64" "12.0.4"
+    "@next/swc-darwin-arm64" "12.0.4"
+    "@next/swc-darwin-x64" "12.0.4"
+    "@next/swc-linux-arm-gnueabihf" "12.0.4"
+    "@next/swc-linux-arm64-gnu" "12.0.4"
+    "@next/swc-linux-arm64-musl" "12.0.4"
+    "@next/swc-linux-x64-gnu" "12.0.4"
+    "@next/swc-linux-x64-musl" "12.0.4"
+    "@next/swc-win32-arm64-msvc" "12.0.4"
+    "@next/swc-win32-ia32-msvc" "12.0.4"
+    "@next/swc-win32-x64-msvc" "12.0.4"
 
 node-abi@^3.3.0:
   version "3.5.0"
@@ -3307,10 +3307,10 @@ vm-browserify@1.1.2:
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-watchpack@2.3.0:
-  version "2.3.0"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/watchpack/-/watchpack-2.3.0.tgz#a41bca3da6afaff31e92a433f4c856a0c25ea0c4"
-  integrity sha512-MnN0Q1OsvB/GGHETrFeZPQaOelWh/7O+EiFlj8sM9GPjtQkis7k01aAxrg/18kTfoIVcLL+haEVFlXDaSRwKRw==
+watchpack@2.1.1:
+  version "2.1.1"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/watchpack/-/watchpack-2.1.1.tgz#e99630550fca07df9f90a06056987baa40a689c7"
+  integrity sha512-Oo7LXCmc1eE1AjyuSBmtC3+Wy4HcV8PxWh2kP6fOl8yTlNS7r0K9l1ao2lrrUza7V39Y3D/BbJgY8VeSlc5JKw==
   dependencies:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
