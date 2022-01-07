@@ -5,26 +5,26 @@ description: How to get started with Markdoc
 
 {% partial file="/partials/header.md" /%}
 
-To get started with Markdoc, first install the library with
+Follow these steps to get started with Markdoc.
 
-```shell
-npm install @markdoc/markdoc
-```
+1. Install the Markdoc library:
+   ```shell
+   npm install @markdoc/markdoc
+   ```
 
-or
+   or
 
-```shell
-yarn add @markdoc/markdoc
-```
+   ```shell
+   yarn add @markdoc/markdoc
+   ```
 
-and import it in your app with
+2. Import the library in your app:
+   ```js
+   const Markdoc = require('@markdoc/markdoc');
+   ```
 
-```js
-const Markdoc = require('@markdoc/markdoc');
-```
-
-or if you are using ESM
-
-```js
-import Markdoc from '@markdoc/markdoc';
-```
+   or if you are using ESM:
+   
+   ```js
+   import Markdoc from '@markdoc/markdoc';
+   ```

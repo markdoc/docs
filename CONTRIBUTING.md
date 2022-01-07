@@ -1,3 +1,5 @@
+## Set up your dev box
+
 While we prepare Markdoc for open source, there are a few steps you'll need to take to get it working locally. 
 
 1. If you haven't, clone this repo locally (`markdoc-site`).
