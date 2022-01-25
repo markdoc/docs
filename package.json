@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stripe-internal/markdoc": "^0.0.4",
+    "@stripe-internal/markdoc": "^0.0.5",
     "codemirror": "^5.65.0",
     "js-yaml": "^4.1.0",
     "next": "12.0.4",

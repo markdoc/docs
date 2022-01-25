@@ -239,10 +239,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
-"@stripe-internal/markdoc@^0.0.4":
-  version "0.0.4"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@stripe-internal/markdoc/-/markdoc-0.0.4.tgz#fba17f630e80e52713542fc91a3cc2ab248b8e05"
-  integrity sha1-+6F/Yw6A5ScTVC/JGjzCqySLjgU=
+"@stripe-internal/markdoc@^0.0.5":
+  version "0.0.5"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@stripe-internal/markdoc/-/markdoc-0.0.5.tgz#0f611aecb7aea70fd9f1928c6dc037773ffa7a13"
+  integrity sha1-D2Ea7Leupw/Z8ZKMbcA3dz/6ehM=
   dependencies:
     markdown-it "10.0.0"
 
