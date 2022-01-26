@@ -4,9 +4,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import 'codemirror/lib/codemirror.css';
-import '../styles/globals.css';
+import '../public/globals.css';
+
+const sidenav = [
+  {
+    title: 'Getting started',
+    links: [{href: '/docs/getting-started', children: 'Overview'}],
+  },
+];
 
 export default function MyApp(props) {
+  console.log(props);
   const {Component, pageProps} = props;
   const {isMarkdoc, frontmatter} = pageProps;
 
@@ -67,7 +75,33 @@ export default function MyApp(props) {
         </nav>
       </div>
       <div className="page">
-        <Component {...pageProps} />
+        <div className="side-nav">
+          {sidenav.map((item) => (
+            <div key={item.title}>
+              <h3>{item.title}</h3>
+              <ul>
+                {item.links.map(
+                  (link) =>
+                    console.log(link.href, props.router.asPath) || (
+                      <li
+                        key={link.href}
+                        className={
+                          link.href === props.router.asPath
+                            ? 'active'
+                            : undefined
+                        }
+                      >
+                        <Link {...link} />
+                      </li>
+                    )
+                )}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <main>
+          <Component {...pageProps} />
+        </main>
       </div>
       <footer>
         © {new Date().getFullYear()} Stripe
@@ -96,7 +130,10 @@ export default function MyApp(props) {
         }
 
         .page {
-          padding: 0 4rem 0 2rem;
+          display: flex;
+          flex-grow: 1;
+          padding: var(--nav-height) 4rem 0 2rem;
+          min-height: calc(100vh - var(--nav-height));
         }
 
         nav :global(a),
@@ -112,6 +149,7 @@ export default function MyApp(props) {
         .nav-bar {
           top: 0;
           position: fixed;
+          z-index: 999;
           display: flex;
           width: 100%;
           background: var(--theme);
@@ -124,6 +162,29 @@ export default function MyApp(props) {
           padding: 0 4rem 0 2rem;
           align-items: center;
           justify-content: space-between;
+        }
+
+        .side-nav {
+          position: sticky;
+          top: var(--nav-height);
+          flex: 0 0 240px;
+          overflow-y: auto;
+          height: calc(100vh - var(--nav-height));
+        }
+
+        .side-nav :global(li) {
+          color: var(--gray-1);
+        }
+
+        .side-nav :global(li:hover),
+        .side-nav :global(li.active) {
+          color: var(--theme);
+        }
+
+        main {
+          flex: 1 auto;
+          max-width: 100%;
+          min-width: 0;
         }
 
         footer {
