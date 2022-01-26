@@ -118,6 +118,7 @@ export default function Sandbox() {
       <style jsx>
         {`
           main {
+            padding-top: var(--nav-height);
             height: 100%;
             display: flex;
             flex-flow: column;

@@ -68,12 +68,16 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      <div className="page">
-        {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      {props.router.asPath.startsWith('/sandbox') ? (
+        <Component {...pageProps} />
+      ) : (
+        <div className="page">
+          {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </div>
+      )}
       <footer>
         © {new Date().getFullYear()} Stripe
         <div className="footer-links">
@@ -132,14 +136,13 @@ export default function MyApp(props) {
           flex: 1 auto;
           max-width: 100%;
           min-width: 0;
-          padding: 1rem 0 0 2rem;
+          padding: 1rem 0 4rem 2rem;
         }
 
         footer {
           display: flex;
           color: hsla(0, 0%, 100%, 0.8);
           width: 100%;
-          margin-top: 4rem;
           padding: 1rem 2rem;
           background: var(--theme);
         }
@@ -159,6 +162,23 @@ export default function MyApp(props) {
           margin-left: 1.5rem;
           font-size: 16px;
           font-weight: 400;
+        }
+
+        main :global(h1) {
+          font-size: 48px;
+          max-width: 66%;
+        }
+
+        main :global(pre) {
+          border-radius: 3px;
+        }
+
+        main :global(ol) {
+          padding-left: 1em;
+        }
+
+        main :global(blockquote) {
+          margin: 2rem 0;
         }
       `}</style>
     </>
