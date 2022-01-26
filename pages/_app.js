@@ -8,15 +8,7 @@ import SideNav from '../components/SideNav';
 import 'codemirror/lib/codemirror.css';
 import '../public/globals.css';
 
-const sidenav = [
-  {
-    title: 'Getting started',
-    links: [{href: '/docs/getting-started', children: 'Overview'}],
-  },
-];
-
 export default function MyApp(props) {
-  console.log(props);
   const {Component, pageProps} = props;
   const {isMarkdoc, frontmatter} = pageProps;
 
