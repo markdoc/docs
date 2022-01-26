@@ -11,6 +11,12 @@ Install the Markdoc library:
 npm install @markdoc/markdoc
 ```
 
+or
+
+```
+yarn add @markdoc/markdoc
+```
+
 ## Import Markdoc 
 
 After you've installed Markdoc, the next step is to import the Markdoc library in your app. 
@@ -25,21 +31,21 @@ or if you are using ESM:
 import Markdoc from '@markdoc/markdoc';
 ```
 
-3. Use Markdoc in your project:
+## Use Markdoc 
 
-   ```js
-   const ast = Markdoc.parse(source);
+```js
+const ast = Markdoc.parse(source);
 
-   const config = {
-     // tags: {},
-     // nodes: {},
-     // functions: {},
-     // variables: {},
-     // ...
-   };
+const config = {
+   // tags: {},
+   // nodes: {},
+   // functions: {},
+   // variables: {},
+   // ...
+};
 
-   const processed = Markdoc.process(ast, config);
-   const content = Markdoc.expand(processed, config);
+const processed = Markdoc.process(ast, config);
+const content = Markdoc.expand(processed, config);
 
-   return Markdoc.renderers.html(content);
-   ```
+return Markdoc.renderers.html(content);
+```
