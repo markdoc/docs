@@ -93,13 +93,6 @@ export default function MyApp(props) {
         </div>
       </footer>
       <style jsx>{`
-        .page :global(pre) {
-          border-radius: 3px;
-        }
-        .page :global(ol) {
-          padding-left: 1em;
-        }
-
         .page {
           display: flex;
           flex-grow: 1;

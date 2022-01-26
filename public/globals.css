@@ -26,3 +26,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+main pre {
+  border-radius: 3px;
+}
+
+main ol {
+  padding-left: 1em;
+}
