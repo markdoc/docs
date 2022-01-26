@@ -30,3 +30,22 @@ Follow these steps to get started with Markdoc.
    ```js
    import Markdoc from '@markdoc/markdoc';
    ```
+
+3. Use Markdoc in your project
+
+   ```js
+   const ast = Markdoc.parse(source);
+
+   const config = {
+     // tags: {},
+     // nodes: {},
+     // functions: {},
+     // variables: {},
+     // ...
+   };
+
+   const processed = Markdoc.process(ast, config);
+   const content = Markdoc.expand(processed, config);
+
+   return Markdoc.renderers.html(content);
+   ```
