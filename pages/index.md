@@ -1,3 +1,1 @@
-# Markdoc
-
-- [Sandbox](/sandbox)
+# Markdoc is a powerful, flexible Markdown-based authoring system

@@ -75,7 +75,6 @@ export default function Sandbox() {
 
   return (
     <main>
-      <h1>Markdoc Sandbox</h1>
       <nav>
         <button onClick={() => setCode('')}>Clear</button>
         <div className="btn-group">
@@ -96,10 +95,10 @@ export default function Sandbox() {
         <section>
           {mode === 'preview' && (
             <div className="preview">
-              {Markdoc.renderers.react(
-                content,
-                React
-              )({components: {}, variables: {}})}
+              {Markdoc.renderers.react(content, React, {
+                components: {},
+                variables: {},
+              })}
             </div>
           )}
           {mode === 'html' && (
@@ -128,14 +127,6 @@ export default function Sandbox() {
           main :global(.react-codemirror2) {
             height: 100%;
             cursor: text;
-          }
-
-          h1 {
-            display: block;
-            background: #222;
-            color: white;
-            padding: 1rem;
-            margin: 0;
           }
 
           nav {
