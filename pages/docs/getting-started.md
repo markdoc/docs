@@ -1,11 +1,12 @@
 ---
-title: Getting started
+title: Get started with Markdoc
 description: How to get started with Markdoc
 ---
+# Get started with Markdoc
 
 ## Install Markdoc
 
-Install the Markdoc library:
+Run this command to install the Markdoc library:
 
 ```bash
 npm install @markdoc/markdoc
@@ -19,33 +20,31 @@ yarn add @markdoc/markdoc
 
 ## Import Markdoc 
 
-After you've installed Markdoc, the next step is to import the Markdoc library in your app. 
+The next step is to import the library in your app: 
 
 ```js
 const Markdoc = require('@markdoc/markdoc');
 ```
 
-or if you are using ESM:
+If you are using ESM:
 
 ```js
 import Markdoc from '@markdoc/markdoc';
 ```
 
-## Use Markdoc 
+## Use Markdoc
+
+This sample shows how to implement Markdoc and render content as HTML. Markdoc also exposes renderers for React, React Static, and Markdoc text.
 
 ```js
 const ast = Markdoc.parse(source);
-
-const config = {
-   // tags: {},
-   // nodes: {},
-   // functions: {},
-   // variables: {},
-   // ...
-};
-
-const processed = Markdoc.process(ast, config);
-const content = Markdoc.expand(processed, config);
+const processed = Markdoc.process(ast);
+const content = Markdoc.expand(processed);
 
 return Markdoc.renderers.html(content);
 ```
+## Next steps
+
+* Learn Markdoc syntax
+* View rendering options
+* Next.js extenstion

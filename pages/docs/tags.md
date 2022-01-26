@@ -1,13 +1,14 @@
 ---
 title: Tags
-description: Tags are used to extend Markdown syntax. With tags you can leverage built-in components, or custom built React components.
+description: Tags are used to extend Markdown. With tags you can use native Markdoc components or custom-built React components.
 ---
 
-Tags are used to extend Markdown syntax. With tags you can leverage built-in components, like tables, conditionals, or partials, as well as custom built React components. Tags come in a variety of flavors, however, it's common for a tag to have opening and closing tags.
+# Tags
+Tags are an extension of standard Markdown. With tags you can use native Markdoc components, like list tables, conditionals, and partials, or custom-built React components. 
 
 ## Conditionals
 
-Dynamically render content when specific conditions are met using `{% if %}` and `{% else %}`. In Markdoc, conditionals are used with [variables]() and [functions]().
+Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables]() and [functions]().
 
 ### if
 
@@ -110,6 +111,10 @@ This is shown only if $a and either $b or $c is true.
 
 ## Tables
 
+While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
+
+### Basic table
+
 ```
 {% table %}
 * Heading 1
@@ -122,6 +127,20 @@ This is shown only if $a and either $b or $c is true.
 * Row 2 cell 2
 {% /table %}
 ```
+
+### Table with rich content
+
+### Table without headings
+
+### Set column and row span 
+
+### Set column width
+
+### Highlight a column
+
+### Text wrapping (fixed layout)
+
+### Text alignment
 
 ## See also
 
