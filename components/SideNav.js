@@ -14,7 +14,7 @@ const items = [
     title: 'Syntax',
     links: [
       {href: '/docs/syntax', children: 'Overview'},
-      {href: '/sandbox', children: 'Sandbox'},
+      {href: '/sandbox', children: 'Try it out'},
     ],
   },
   {
@@ -29,7 +29,21 @@ const items = [
   {
     title: 'Rendering',
     links: [
-      {href: '/docs/rendering/phases', children: 'Phases of rendering'},
+      {
+        href: '/docs/rendering/overview',
+        children: 'Phases of rendering',
+        links: [
+          'parse',
+          'process',
+          // TODO delete
+          'expand',
+          'render',
+          'validate',
+        ].map((key) => ({
+          href: '/docs/rendering/phases#' + key,
+          children: <code>{key}</code>,
+        })),
+      },
       {href: '/docs/rendering/html', children: 'HTML'},
       {href: '/docs/rendering/react', children: 'React'},
       {href: '/docs/rendering/static-react', children: 'Static React'},
@@ -58,14 +72,27 @@ export default function SideNav() {
         <div key={item.title}>
           <h3>{item.title}</h3>
           <ul>
-            {item.links.map((link) => (
-              <li
-                key={link.href}
-                className={link.href === router.asPath ? 'active' : undefined}
-              >
-                <Link {...link} />
-              </li>
-            ))}
+            {item.links.map((link) => {
+              const active = router.asPath === link.href;
+              return (
+                <li key={link.href} className={active ? 'active' : undefined}>
+                  <Link {...link}>
+                    <a href={link.href}>{link.children}</a>
+                  </Link>
+                  {active && link.links && (
+                    <ul>
+                      {link.links.map((link) => (
+                        <li key={link.href}>
+                          <Link {...link}>
+                            <a href={link.href}>{link.children}</a>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
@@ -83,14 +110,14 @@ export default function SideNav() {
         h3 {
           color: #333333;
           font-weight: 500;
-          margin: 1rem 0 0.75rem;
+          margin: 1rem 0 0.5rem;
         }
 
         ul {
           display: flex;
           flex-direction: column;
           margin: 0;
-          padding: 0;
+          padding: 4px 0 0;
         }
 
         li {

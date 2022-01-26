@@ -139,7 +139,7 @@ export default function MyApp(props) {
           flex: 1 auto;
           max-width: 100%;
           min-width: 0;
-          padding-top: 1rem;
+          padding: 1rem 0 0 2rem;
         }
 
         footer {
