@@ -99,13 +99,6 @@ export default function MyApp(props) {
           padding: 0 4rem 0 2rem;
         }
 
-        .nav-bar {
-          display: flex;
-          width: 100%;
-          background: var(--theme);
-          padding: 1rem 0rem;
-        }
-
         nav :global(a),
         footer :global(a) {
           color: hsla(0, 0%, 100%, 0.8);
@@ -114,6 +107,15 @@ export default function MyApp(props) {
         nav :global(a:hover),
         footer :global(a:hover) {
           color: white;
+        }
+
+        .nav-bar {
+          top: 0;
+          position: fixed;
+          display: flex;
+          width: 100%;
+          background: var(--theme);
+          padding: 0.5rem 0rem;
         }
 
         nav {
