@@ -43,7 +43,7 @@ export default function MyApp(props) {
           </Link>
           <ul className="links">
             <li>
-              <Link href="/getting-started">Docs</Link>
+              <Link href="/docs/getting-started">Docs</Link>
             </li>
             <li>
               <Link href="/sandbox">Try</Link>
@@ -58,6 +58,11 @@ export default function MyApp(props) {
                 GitHub
               </Link>
             </li>
+            <li>
+              <Link href="https://twitter.com/StripeDev" target="_blank">
+                Twitter
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -67,9 +72,19 @@ export default function MyApp(props) {
       <footer>
         © {new Date().getFullYear()} Stripe
         <div className="footer-links">
-          <Link href="/getting-started">Getting started</Link> ·{'  '}
-          <Link href="/sandbox">Try</Link> · <Link href="/todo">Community</Link>{' '}
-          · <Link href="https://twitter.com/StripeDev">Twitter</Link>
+          <Link href="/docs/getting-started">Docs</Link> ·{'  '}
+          <Link href="/sandbox">Try</Link> ·{' '}
+          <Link href="" target="_blank">
+            Community
+          </Link>{' '}
+          ·{'  '}
+          <Link href="https://github.com/markdoc/markdoc" target="_blank">
+            GitHub
+          </Link>{' '}
+          ·{' '}
+          <Link href="https://twitter.com/StripeDev" target="_blank">
+            Twitter
+          </Link>
         </div>
       </footer>
       <style jsx>{`
