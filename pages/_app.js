@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import SideNav from '../components/SideNav';
+
 import 'codemirror/lib/codemirror.css';
 import '../public/globals.css';
 
@@ -75,30 +77,7 @@ export default function MyApp(props) {
         </nav>
       </div>
       <div className="page">
-        <div className="side-nav">
-          {sidenav.map((item) => (
-            <div key={item.title}>
-              <h3>{item.title}</h3>
-              <ul>
-                {item.links.map(
-                  (link) =>
-                    console.log(link.href, props.router.asPath) || (
-                      <li
-                        key={link.href}
-                        className={
-                          link.href === props.router.asPath
-                            ? 'active'
-                            : undefined
-                        }
-                      >
-                        <Link {...link} />
-                      </li>
-                    )
-                )}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <SideNav />
         <main>
           <Component {...pageProps} />
         </main>
@@ -164,27 +143,11 @@ export default function MyApp(props) {
           justify-content: space-between;
         }
 
-        .side-nav {
-          position: sticky;
-          top: var(--nav-height);
-          flex: 0 0 240px;
-          overflow-y: auto;
-          height: calc(100vh - var(--nav-height));
-        }
-
-        .side-nav :global(li) {
-          color: var(--gray-1);
-        }
-
-        .side-nav :global(li:hover),
-        .side-nav :global(li.active) {
-          color: var(--theme);
-        }
-
         main {
           flex: 1 auto;
           max-width: 100%;
           min-width: 0;
+          padding-top: 1rem;
         }
 
         footer {
@@ -202,7 +165,6 @@ export default function MyApp(props) {
 
         ul {
           display: flex;
-          flex-flow: row nowrap;
           margin: 0;
           padding: 0;
         }
