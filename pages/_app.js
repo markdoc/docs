@@ -60,9 +60,15 @@ export default function MyApp(props) {
         <Component {...pageProps} />
       </div>
       <style jsx>{`
-        .page,
-        nav {
-          margin: 0 auto;
+        .page :global(pre) {
+          border-radius: 3px;
+        }
+        .page :global(ol) {
+          padding-left: 1em;
+        }
+
+        .page {
+          padding: 0 2rem;
         }
 
         .nav-bar {

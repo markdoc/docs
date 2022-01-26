@@ -3,6 +3,8 @@ title: Getting started
 description: How to get started with Markdoc
 ---
 
+# Getting started
+
 Follow these steps to get started with Markdoc.
 
 1. Install the Markdoc library:
