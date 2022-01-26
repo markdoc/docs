@@ -69,7 +69,7 @@ export default function MyApp(props) {
         </nav>
       </div>
       <div className="page">
-        <SideNav />
+        {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
         <main>
           <Component {...pageProps} />
         </main>

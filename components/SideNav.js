@@ -103,7 +103,7 @@ export default function SideNav() {
           height: calc(100vh - var(--nav-height));
           flex: 0 0 240px;
           overflow-y: auto;
-          padding-top: 28px;
+          padding-top: 3rem;
           padding-bottom: 3rem;
         }
 

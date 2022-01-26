@@ -34,3 +34,12 @@ main pre {
 main ol {
   padding-left: 1em;
 }
+
+main h1 {
+  font-size: 48px;
+  max-width: 66%;
+}
+
+main blockquote {
+  margin: 2rem 0;
+}
