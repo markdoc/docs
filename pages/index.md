@@ -1,4 +1,8 @@
-# Markdoc is a powerful, flexible Markdown-based authoring system
+---
+title: Markdoc is a powerful, flexible Markdown-based authoring system
+---
+
+# {% $frontmatter.title %}
 
 > Built with ☕ at Stripe
 

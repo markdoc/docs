@@ -2,7 +2,11 @@ import React from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2';
 import Markdoc from '@stripe-internal/markdoc';
 
-const INITIAL_CODE = `# Dashboard Overview {% #dashboard-overview %}
+const INITIAL_CODE = `---
+title: Sandbox
+---
+
+# Dashboard Overview {% #dashboard-overview %}
 
 Learn about using the [Dashboard](http://dashboard.stripe.com) to operate your Stripe account.
 
@@ -80,6 +84,7 @@ export default function Sandbox() {
         <div className="btn-group">
           <button onClick={() => setMode('preview')}>Preview</button>
           <button onClick={() => setMode('html')}>HTML</button>
+          <button onClick={() => setMode('process')}>Render tree</button>
           <button onClick={() => setMode('ast')}>AST</button>
         </div>
       </nav>
@@ -105,6 +110,12 @@ export default function Sandbox() {
             <CodeMirror
               value={Markdoc.renderers.html(content)}
               options={{mode: 'xml', lineWrapping: true}}
+            />
+          )}
+          {mode === 'process' && (
+            <CodeMirror
+              value={JSON.stringify(content, null, 2)}
+              options={{mode: 'application/json', lineWrapping: true}}
             />
           )}
           {mode === 'ast' && (
