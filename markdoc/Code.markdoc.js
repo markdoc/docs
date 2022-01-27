@@ -1,7 +1,5 @@
 // @flow
 
-import {Ast} from '@stripe-internal/markdoc';
-
 import {Code} from '../components/Code';
 
 export const fence = {

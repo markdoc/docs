@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import {Icon} from './Icon';
+
 const PROP_MAP = {
   note: {icon: 'information-circle', color: '#f7fafc', iconColor: '#8792a2'},
   caution: {icon: 'warning', color: '#fcf9e9', iconColor: '#d97917'},
@@ -14,7 +16,7 @@ export function Callout({title, children, type}) {
     <div className="wrapper">
       <div className="content">
         <div className="icon">
-          <ion-icon name={typeProps.icon}></ion-icon>
+          <Icon icon={typeProps.icon} color={typeProps.iconColor}></Icon>
         </div>
         <div className="copy">
           <span className="title">{title}</span>
@@ -43,10 +45,6 @@ export function Callout({title, children, type}) {
             color: var(--dark);
           }
           .icon {
-            position: relative;
-            top: +2px;
-            color: ${typeProps.iconColor};
-            font-size: 16px;
             padding-right: 8px;
           }
           .wrapper {
