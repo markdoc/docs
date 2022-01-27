@@ -3,7 +3,7 @@ title: Getting started
 description: How to get started with Markdoc
 ---
 
-# {% $frontmatter.title %}
+# {% $markdoc.frontmatter.title %}
 
 Follow these steps to get started with Markdoc.
 

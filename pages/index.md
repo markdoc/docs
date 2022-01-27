@@ -2,7 +2,7 @@
 title: Markdoc is a powerful, flexible Markdown-based authoring system
 ---
 
-# {% $frontmatter.title %}
+# {% $markdoc.frontmatter.title %}
 
 > Built with ☕ at Stripe
 

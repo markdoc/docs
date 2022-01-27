@@ -11,16 +11,16 @@ import '../public/globals.css';
 
 export default function MyApp(props) {
   const {Component, pageProps} = props;
-  const {isMarkdoc, frontmatter} = pageProps;
+  const {markdoc} = pageProps;
 
   let description = 'A Markdown-based authoring system';
   let title = `Markdoc | ${description}`;
-  if (isMarkdoc && frontmatter) {
-    if (frontmatter.title) {
-      title = `Markdoc | ${frontmatter.title}`;
+  if (markdoc) {
+    if (markdoc.frontmatter.title) {
+      title = `Markdoc | ${markdoc.frontmatter.title}`;
     }
-    if (frontmatter.description) {
-      description = frontmatter.description;
+    if (markdoc.frontmatter.description) {
+      description = markdoc.frontmatter.description;
     }
   }
 
