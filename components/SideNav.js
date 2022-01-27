@@ -126,7 +126,6 @@ export default function SideNav() {
           font-size: 14px;
           font-weight: 400;
           padding-bottom: 0.75rem;
-          color: var(--gray-1);
         }
 
         li:hover,
