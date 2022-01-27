@@ -26,6 +26,7 @@ export function Button(props) {
             font-size: 18px;
             font-weight: 500;
             padding: 0.75rem 1.5rem;
+            margin-right: 0.5rem;
             border-radius: 8px;
             border: 2px solid #2a9877;
             color: #333333;
