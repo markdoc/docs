@@ -102,9 +102,8 @@ export default function MyApp(props) {
         .page {
           display: flex;
           flex-grow: 1;
-          margin-top: var(--nav-height);
-          padding: 0 4rem 0 2rem;
-          min-height: calc(100vh - var(--nav-height));
+          padding: var(--nav-height) 4rem 0 2rem;
+          min-height: 100vh;
         }
 
         nav :global(a),
