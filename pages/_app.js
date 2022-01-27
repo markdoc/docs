@@ -6,7 +6,6 @@ import Script from 'next/script';
 
 import SideNav from '../components/SideNav';
 
-import 'codemirror/lib/codemirror.css';
 import '../public/globals.css';
 
 export default function MyApp(props) {
