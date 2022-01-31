@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const items = [
   {
-    title: 'Getting started',
+    title: 'Get started',
     links: [
       {href: '/docs/getting-started', children: 'Installation'},
       {href: '/docs/basic-usage', children: 'Basic usage'},
@@ -14,16 +14,16 @@ const items = [
     title: 'Syntax',
     links: [
       {href: '/docs/syntax', children: 'Overview'},
-      {href: '/sandbox', children: 'Try it out'},
+      {href: '/sandbox', children: 'Try it out (Demo)'},
     ],
   },
   {
-    title: 'Schema definitions',
+    title: 'Schema',
     links: [
-      {href: '/docs/schema/tags', children: 'Tags'},
-      {href: '/docs/schema/nodes', children: 'Nodes'},
-      {href: '/docs/schema/functions', children: 'Functions'},
-      {href: '/docs/schema/variables', children: 'Variables'},
+      {href: '/docs/nodes', children: 'Nodes'},
+      {href: '/docs/tags', children: 'Tags'},
+      {href: '/docs/functions', children: 'Functions'},
+      {href: '/docs/variables', children: 'Variables'},
     ],
   },
   {
