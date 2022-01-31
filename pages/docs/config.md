@@ -2,4 +2,4 @@
 title: Configuration options
 ---
 
-# Configuraiton options
+# Configuration options
