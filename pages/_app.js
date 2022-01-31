@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import Script from 'next/script';
 
+import Link from '../components/AppLink';
 import SideNav from '../components/SideNav';
 
 import '../public/globals.css';
@@ -52,22 +52,15 @@ export default function MyApp(props) {
               <Link href="/sandbox">Try</Link>
             </li>
             <li>
-              <Link
-                href="https://github.com/stripe-oss/markdoc/discussions"
-                target="_blank"
-              >
+              <Link href="https://github.com/stripe-oss/markdoc/discussions">
                 Community
               </Link>
             </li>
             <li>
-              <Link href="https://github.com/markdoc/markdoc" target="_blank">
-                GitHub
-              </Link>
+              <Link href="https://github.com/stripe-oss/markdoc">GitHub</Link>
             </li>
             <li>
-              <Link href="https://twitter.com/StripeDev" target="_blank">
-                Twitter
-              </Link>
+              <Link href="https://twitter.com/StripeDev">Twitter</Link>
             </li>
           </ul>
         </nav>
@@ -87,20 +80,13 @@ export default function MyApp(props) {
         <div className="footer-links">
           <Link href="/docs/getting-started">Docs</Link> ·{'  '}
           <Link href="/sandbox">Try</Link> ·{' '}
-          <Link
-            href="https://github.com/stripe-oss/markdoc/discussions"
-            target="_blank"
-          >
+          <Link href="https://github.com/stripe-oss/markdoc/discussions">
             Community
           </Link>{' '}
           ·{'  '}
-          <Link href="https://github.com/markdoc/markdoc" target="_blank">
+          <Link href="https://github.com/stripe-oss/markdoc">
             GitHub
-          </Link>{' '}
-          ·{' '}
-          <Link href="https://twitter.com/StripeDev" target="_blank">
-            Twitter
-          </Link>
+          </Link> · <Link href="https://twitter.com/StripeDev">Twitter</Link>
         </div>
       </footer>
       <style jsx>{`
