@@ -3,7 +3,7 @@ title: Nodes
 description: 
 ---
 
-# Nodes 
+# {% $markdoc.frontmatter.title %}
 
 Nodes are elements that Markdoc inherits from the Markdown, specifically the CommonMark specification. 
 

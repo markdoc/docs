@@ -2,24 +2,24 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import SideNav from '../components/SideNav';
 
-import 'codemirror/lib/codemirror.css';
 import '../public/globals.css';
 
 export default function MyApp(props) {
   const {Component, pageProps} = props;
-  const {isMarkdoc, frontmatter} = pageProps;
+  const {markdoc} = pageProps;
 
   let description = 'A Markdown-based authoring system';
   let title = `Markdoc | ${description}`;
-  if (isMarkdoc && frontmatter) {
-    if (frontmatter.title) {
-      title = `Markdoc | ${frontmatter.title}`;
+  if (markdoc) {
+    if (markdoc.frontmatter.title) {
+      title = `Markdoc | ${markdoc.frontmatter.title}`;
     }
-    if (frontmatter.description) {
-      description = frontmatter.description;
+    if (markdoc.frontmatter.description) {
+      description = markdoc.frontmatter.description;
     }
   }
 
@@ -31,6 +31,7 @@ export default function MyApp(props) {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
       <div className="nav-bar">
         <nav>
           <Link href="/">
@@ -101,7 +102,7 @@ export default function MyApp(props) {
           display: flex;
           flex-grow: 1;
           padding: var(--nav-height) 4rem 0 2rem;
-          min-height: calc(100vh - var(--nav-height));
+          min-height: 100vh;
         }
 
         nav :global(a),
@@ -136,7 +137,7 @@ export default function MyApp(props) {
           flex: 1 auto;
           max-width: 100%;
           min-width: 0;
-          padding: 1rem 0 4rem 2rem;
+          padding: 0 0 4rem 2rem;
         }
 
         footer {

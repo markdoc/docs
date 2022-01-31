@@ -1,12 +1,64 @@
 import React from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2';
+import yaml from 'js-yaml';
 import Markdoc from '@stripe-internal/markdoc';
 
-const INITIAL_CODE = `# Dashboard Overview {% #dashboard-overview %}
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/neat.css';
 
-Learn about using the [Dashboard](http://dashboard.stripe.com) to operate your Stripe account.
+import * as schema from '../markdoc';
 
+// TODO import this from @stripe-internal/next-markdoc
+function transformSchema(schema) {
+  const tags = {};
+  const nodes = {};
+
+  Object.entries(schema).forEach(([autoTagName, registration]) => {
+    const {node, component, Component, ...schema} = registration;
+    const tag = registration.tag || autoTagName;
+    const componentName =
+      component || Component?.displayName || Component?.name;
+    const value = {
+      ...schema,
+      tag: componentName,
+    };
+    if (typeof node === 'string') {
+      if (nodes[node]) {
+        throw new Error(`Node already declared: ${node}`);
+      }
+      nodes[node] = value;
+    } else {
+      if (tags[tag]) {
+        throw new Error(`Tag already declared: ${tag}`);
+      }
+      tags[tag] = value;
+    }
+  });
+
+  return {
+    nodes,
+    tags,
+  };
+}
+
+const components = {};
+Object.values(schema).forEach(({component, Component}) => {
+  if (Component) {
+    const componentName =
+      component || Component?.displayName || Component?.name;
+    components[componentName] = Component;
+  }
+});
+
+const INITIAL_CODE = `---
+title: Sandbox
 ---
+
+# {% $markdoc.frontmatter.title %} {% #overview %}
+
+{% callout type="check" %}
+Learn about using the [Dashboard](http://dashboard.stripe.com) to operate your Stripe account.
+{% /callout %}
 
 The Stripe Dashboard is a feature-rich user interface for you to operate and configure your Stripe account. You can use it to manage payments and refunds, respond to disputes, monitor your integration, and more.
 
@@ -31,20 +83,23 @@ The Dashboard officially supports the following web browsers and mobile environm
 * The last two versions of mobile Safari on iOS
 * Internet Explorer 11
 
+---
+
 ## Next steps {% #next-steps %}
 
 Read on to learn more about the Dashboard:
 
-* [Teams and user roles](#TODO)
-* [Dashboard reporting](#TODO)
-* [Performing searches in the Dashboard](#TODO)
-* [Managing your account](#TODO)
+* [Teams and user roles]()
+* [Dashboard reporting]()
+* [Performing searches in the Dashboard]()
+* [Managing your account]()
 `;
 
 const options = {
   mode: 'markdown',
   lineWrapping: true,
   lineNumbers: true,
+  theme: 'neat',
 };
 
 export default function Sandbox() {
@@ -64,8 +119,20 @@ export default function Sandbox() {
   }, [code]);
 
   const content = React.useMemo(() => {
-    const processed = Markdoc.process(ast, {});
-    return Markdoc.expand(processed, {});
+    const {nodes, tags} = transformSchema(schema);
+    const config = {
+      nodes,
+      tags,
+      variables: {
+        markdoc: {
+          frontmatter: ast.attributes.frontmatter
+            ? yaml.load(ast.attributes.frontmatter)
+            : {},
+        },
+      },
+    };
+    const processed = Markdoc.process(ast, config);
+    return Markdoc.expand(processed, config);
   }, [ast]);
 
   const onBeforeChange = React.useCallback(
@@ -73,14 +140,37 @@ export default function Sandbox() {
     []
   );
 
+  const activeBtn = {background: '#e1e1e1'};
+
   return (
     <main>
       <nav>
         <button onClick={() => setCode('')}>Clear</button>
         <div className="btn-group">
-          <button onClick={() => setMode('preview')}>Preview</button>
-          <button onClick={() => setMode('html')}>HTML</button>
-          <button onClick={() => setMode('ast')}>AST</button>
+          <button
+            style={mode === 'preview' ? activeBtn : undefined}
+            onClick={() => setMode('preview')}
+          >
+            Preview
+          </button>
+          <button
+            style={mode === 'html' ? activeBtn : undefined}
+            onClick={() => setMode('html')}
+          >
+            HTML
+          </button>
+          <button
+            style={mode === 'process' ? activeBtn : undefined}
+            onClick={() => setMode('process')}
+          >
+            Render tree
+          </button>
+          <button
+            style={mode === 'ast' ? activeBtn : undefined}
+            onClick={() => setMode('ast')}
+          >
+            AST
+          </button>
         </div>
       </nav>
       <div className="flex container">
@@ -95,16 +185,19 @@ export default function Sandbox() {
         <section>
           {mode === 'preview' && (
             <div className="preview">
-              {Markdoc.renderers.react(content, React, {
-                components: {},
-                variables: {},
-              })}
+              {Markdoc.renderers.react(content, React, {components})}
             </div>
           )}
           {mode === 'html' && (
             <CodeMirror
               value={Markdoc.renderers.html(content)}
               options={{mode: 'xml', lineWrapping: true}}
+            />
+          )}
+          {mode === 'process' && (
+            <CodeMirror
+              value={JSON.stringify(content, null, 2)}
+              options={{mode: 'application/json', lineWrapping: true}}
             />
           )}
           {mode === 'ast' && (
@@ -142,6 +235,7 @@ export default function Sandbox() {
           }
 
           nav button {
+            cursor: pointer;
             border: 1px solid #dedede;
             padding: 0.25rem 0.5rem;
           }
@@ -186,6 +280,9 @@ export default function Sandbox() {
             line-height: 26px;
           }
 
+          .preview :global(h1) {
+            font-size: 2em;
+          }
           .preview :global(a) {
             color: #556cd6;
           }

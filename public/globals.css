@@ -3,6 +3,8 @@
 
   --theme: #09825d;
   --gray-1: #717171;
+  --gray-2: #e3e8ee;
+  --dark: #1a1f36;
 }
 
 * {
@@ -10,7 +12,8 @@
 }
 
 html,
-body {
+body,
+#__next {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -18,11 +21,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-#__next {
-  height: 100%;
-}
-
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p,
+li {
+  color: #3c4257;
 }

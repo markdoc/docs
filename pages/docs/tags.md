@@ -3,7 +3,8 @@ title: Tags
 description: Tags are used to extend Markdown. With tags you can use native Markdoc components or custom-built React components.
 ---
 
-# Tags
+# {% $markdoc.frontmatter.title %}
+
 Tags are an extension of standard Markdown. With tags you can use native Markdoc components, like list tables, conditionals, and partials, or custom-built React components. 
 
 ## Conditionals

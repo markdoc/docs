@@ -103,7 +103,7 @@ export default function SideNav() {
           height: calc(100vh - var(--nav-height));
           flex: 0 0 240px;
           overflow-y: auto;
-          padding-top: 3rem;
+          padding-top: 2rem;
           padding-bottom: 3rem;
         }
 
@@ -126,7 +126,6 @@ export default function SideNav() {
           font-size: 14px;
           font-weight: 400;
           padding-bottom: 0.75rem;
-          color: var(--gray-1);
         }
 
         li:hover,

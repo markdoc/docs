@@ -2,9 +2,7 @@
 title: Get started with Markdoc
 description: How to get started with Markdoc
 ---
-# Get started with Markdoc
-
-## Install Markdoc
+# {% $markdoc.frontmatter.title %}
 
 Run this command to install the Markdoc library:
 
