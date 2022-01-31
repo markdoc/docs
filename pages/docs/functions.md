@@ -13,15 +13,6 @@ Functions let you extend Markdoc to run custom code.
 * Function
 * Description
 ---
-* `join`
-* Joins strings
----
-* `includes`
-* Checks if an array includes a specific value
----
-* `uppercase`
-* Make text uppercase
----
 * `equals`, `and`, `or`, `not`
 * Performs common operations in [conditionals]()
 {% /table %}
