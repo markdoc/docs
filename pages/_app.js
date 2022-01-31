@@ -52,7 +52,10 @@ export default function MyApp(props) {
               <Link href="/sandbox">Try</Link>
             </li>
             <li>
-              <Link href="" target="_blank">
+              <Link
+                href="https://github.com/stripe-oss/markdoc/discussions"
+                target="_blank"
+              >
                 Community
               </Link>
             </li>
@@ -84,7 +87,10 @@ export default function MyApp(props) {
         <div className="footer-links">
           <Link href="/docs/getting-started">Docs</Link> ·{'  '}
           <Link href="/sandbox">Try</Link> ·{' '}
-          <Link href="" target="_blank">
+          <Link
+            href="https://github.com/stripe-oss/markdoc/discussions"
+            target="_blank"
+          >
             Community
           </Link>{' '}
           ·{'  '}
