@@ -145,6 +145,6 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 
 ## See also
 
-* [Front matter]()
+* [Frontmatter]()
 * [Functions]()
 * [Variables]()
