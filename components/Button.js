@@ -21,7 +21,6 @@ export function Button(props) {
           button,
           a {
             display: inline-block;
-            cursor: pointer;
             appearance: none;
             font-size: 18px;
             font-weight: 500;

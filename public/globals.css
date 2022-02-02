@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 p,
 li {
   color: #3c4257;

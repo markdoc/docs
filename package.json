@@ -10,6 +10,7 @@
   "dependencies": {
     "@stripe-internal/markdoc": "^0.0.5",
     "codemirror": "^5.65.0",
+    "copy-to-clipboard": "^3.3.1",
     "js-yaml": "^4.1.0",
     "next": "12.0.4",
     "prismjs": "^1.25.0",
