@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Script from 'next/script';
 
 import Link from '../components/AppLink';
@@ -36,12 +35,8 @@ export default function MyApp(props) {
         <nav>
           <Link href="/">
             <a>
-              <Image
-                src="/logo.svg"
-                alt="Markdoc logo"
-                width={100}
-                height={45}
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Markdoc logo" width={100} height={45} />
             </a>
           </Link>
           <ul className="links">
