@@ -88,7 +88,7 @@ export default function MyApp(props) {
         .page {
           display: flex;
           flex-grow: 1;
-          padding: var(--nav-height) 4rem 0 2rem;
+          padding: var(--nav-height) 4rem 0 0rem;
           min-height: 100vh;
         }
 
