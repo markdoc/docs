@@ -2,6 +2,7 @@
 title: Get started with Markdoc
 description: How to get started with Markdoc
 ---
+
 # {% $markdoc.frontmatter.title %}
 
 Run this command to install the Markdoc library:
@@ -16,9 +17,9 @@ or
 yarn add @markdoc/markdoc
 ```
 
-## Import Markdoc 
+## Import Markdoc
 
-The next step is to import the library in your app: 
+The next step is to import the library in your app:
 
 ```js
 const Markdoc = require('@markdoc/markdoc');
@@ -41,8 +42,9 @@ const content = Markdoc.expand(processed);
 
 return Markdoc.renderers.html(content);
 ```
+
 ## Next steps
 
-* Learn Markdoc syntax
-* View rendering options
-* Next.js extenstion
+- Learn Markdoc syntax
+- View rendering options
+- Next.js extenstion
