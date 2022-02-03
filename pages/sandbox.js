@@ -2,53 +2,17 @@ import React from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2';
 import yaml from 'js-yaml';
 import Markdoc from '@stripe-internal/markdoc';
+import {
+  transformSchema,
+  transformComponents,
+} from '@stripe-internal/next-markdoc/runtime';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/neat.css';
 
 import * as schema from '../markdoc';
 
-// TODO import this from @stripe-internal/next-markdoc
-function transformSchema(schema) {
-  const tags = {};
-  const nodes = {};
-
-  Object.entries(schema).forEach(([autoTagName, registration]) => {
-    const {node, component, Component, ...schema} = registration;
-    const tag = registration.tag || autoTagName;
-    const componentName =
-      component || Component?.displayName || Component?.name;
-    const value = {
-      ...schema,
-      tag: componentName,
-    };
-    if (typeof node === 'string') {
-      if (nodes[node]) {
-        throw new Error(`Node already declared: ${node}`);
-      }
-      nodes[node] = value;
-    } else {
-      if (tags[tag]) {
-        throw new Error(`Tag already declared: ${tag}`);
-      }
-      tags[tag] = value;
-    }
-  });
-
-  return {
-    nodes,
-    tags,
-  };
-}
-
-const components = {};
-Object.values(schema).forEach(({component, Component}) => {
-  if (Component) {
-    const componentName =
-      component || Component?.displayName || Component?.name;
-    components[componentName] = Component;
-  }
-});
+const components = transformComponents(schema);
 
 const INITIAL_CODE = `---
 title: Sandbox
