@@ -4,8 +4,31 @@ import Script from 'next/script';
 
 import Link from '../components/AppLink';
 import SideNav from '../components/SideNav';
+import TableOfContents from '../components/TableOfContents';
 
 import '../public/globals.css';
+
+function collectHeadings(node, sections = []) {
+  if (node.name === 'Heading') {
+    const title = node.children[0];
+    const attributes = Object.fromEntries(
+      node.attributes.map((a) => [a.name, a.value])
+    );
+
+    if (typeof title === 'string') {
+      sections.push({
+        ...attributes,
+        title,
+      });
+    }
+  }
+
+  if (node.children) {
+    node.children.forEach((child) => collectHeadings(child, sections));
+  }
+
+  return sections;
+}
 
 export default function MyApp(props) {
   const {Component, pageProps} = props;
@@ -21,6 +44,10 @@ export default function MyApp(props) {
       description = markdoc.frontmatter.description;
     }
   }
+
+  const toc = pageProps.markdoc?.content
+    ? collectHeadings(pageProps.markdoc.content)
+    : [];
 
   return (
     <>
@@ -68,6 +95,7 @@ export default function MyApp(props) {
           <main>
             <Component {...pageProps} />
           </main>
+          {toc ? <TableOfContents toc={toc} /> : null}
         </div>
       )}
       <footer>
@@ -88,7 +116,7 @@ export default function MyApp(props) {
         .page {
           display: flex;
           flex-grow: 1;
-          padding: var(--nav-height) 4rem 0 0rem;
+          padding-top: var(--nav-height);
           min-height: 100vh;
         }
 
