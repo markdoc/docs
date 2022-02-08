@@ -1,13 +1,13 @@
 import {link, markdocExample} from '@stripe-internal/next-markdoc/tags';
+
 import {AppLink} from '../components/AppLink';
-import {Code} from '../components/Code';
+import {MarkdocExample} from '../components/MarkdocExample';
 
 export {comment} from '@stripe-internal/next-markdoc/tags';
+
 export const example = {
   ...markdocExample,
-  Component({exampleCode}) {
-    return <Code language="md">{exampleCode}</Code>;
-  },
+  Component: MarkdocExample,
 };
 
 export const linkNode = {

@@ -7,7 +7,9 @@ export function AppLink(props) {
 
   return (
     <Link {...props} passHref>
-      <a target={target}>{props.children}</a>
+      <a target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
+        {props.children}
+      </a>
     </Link>
   );
 }
