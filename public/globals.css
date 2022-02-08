@@ -1,7 +1,17 @@
 :root {
   --nav-height: 64px;
 
+  --font-size-0: 8px;
+  --font-size-1: 12px;
+  --font-size-2: 13px;
+  --font-size-3: 16px;
+  --font-size-4: 18px;
+  --font-size-5: 24px;
+  --font-size-6: 32px;
+  --font-size-7: 48px;
+
   --theme: #09825d;
+  --blurple: #5469d4;
   --gray-1: #717171;
   --gray-2: #e3e8ee;
   --dark: #1a1f36;
@@ -30,7 +40,74 @@ button {
   cursor: pointer;
 }
 
+blockquote {
+  margin: 2rem 0;
+}
+
 p,
-li {
+li,
+code {
   color: #3c4257;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  padding-left: 1em;
+}
+
+li {
+  list-style-type: none;
+  margin-left: 1.5rem;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p {
+  font-size: var(--font-size-3);
+}
+
+h1 {
+  font-size: var(--font-size-7);
+  max-width: 66%;
+}
+
+h2 {
+  font-size: var(--font-size-5);
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: var(--font-size-4);
+  margin-top: 2rem;
+}
+
+h5 {
+  font-size: var(--font-size-3);
+  font-weight: normal;
+}
+
+pre {
+  border-radius: 4px;
+}
+
+code {
+  font-size: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 1px 2px;
+  background: #f7fafc;
+  border: 1px solid #e3e8ee;
+  border-radius: 4px;
+}
+
+p a {
+  color: var(--blurple);
+}
+p a:hover {
+  color: var(--dark);
 }

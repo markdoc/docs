@@ -166,36 +166,6 @@ export default function MyApp(props) {
         .footer-links {
           margin-left: 2rem;
         }
-
-        ul {
-          display: flex;
-          margin: 0;
-          padding: 0;
-        }
-
-        li {
-          list-style-type: none;
-          margin-left: 1.5rem;
-          font-size: 16px;
-          font-weight: 400;
-        }
-
-        main :global(h1) {
-          font-size: 48px;
-          max-width: 66%;
-        }
-
-        main :global(pre) {
-          border-radius: 3px;
-        }
-
-        main :global(ol) {
-          padding-left: 1em;
-        }
-
-        main :global(blockquote) {
-          margin: 2rem 0;
-        }
       `}</style>
     </>
   );
