@@ -117,7 +117,7 @@ export const link = {
 
 ## Frontmatter
 
-Although Markdoc itself follows the idea of "Bring your own Frontmatter", the Next.js Markdoc plugin enforces YAML to make it easier to get started without parsing the frontmatter yourself.
+Although Markdoc itself follows the idea of "Bring your own Frontmatter", the Next.js Markdoc plugin uses YAML as its frontmatter langauge of choice, making it easier to get started without parsing the frontmatter yourself.
 
 You can then access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or within your content via the `$markdoc.frontmatter` variable.
 
