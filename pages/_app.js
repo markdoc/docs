@@ -155,6 +155,19 @@ export default function MyApp(props) {
           padding: 0 0 4rem 2rem;
         }
 
+        ul {
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+
+        li {
+          list-style-type: none;
+          margin-left: 1.5rem;
+          font-size: 16px;
+          font-weight: 400;
+        }
+
         footer {
           display: flex;
           color: hsla(0, 0%, 100%, 0.8);
