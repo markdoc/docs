@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 
-import Link from '../components/AppLink';
+import {AppLink as Link} from '../components/AppLink';
 import SideNav from '../components/SideNav';
 import TableOfContents from '../components/TableOfContents';
 
