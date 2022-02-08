@@ -10,6 +10,8 @@
   --font-size-6: 32px;
   --font-size-7: 48px;
 
+  --line-height-3: 26px;
+
   --theme: #09825d;
   --blurple: #5469d4;
   --gray-1: #717171;
@@ -56,6 +58,7 @@ ol {
 
 p {
   font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
 }
 
 h1 {

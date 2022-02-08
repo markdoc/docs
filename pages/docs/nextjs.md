@@ -154,4 +154,113 @@ export default function App({Component, pageProps}) {
 }
 ```
 
-## Common nodes & tags
+## Next.js tags
+
+Next.js provides a bunch of custom components out of the box. For each of these, `@stripe-internal/next-markdoc` exports a corresponding tag that you can add to your schema.
+
+To add these components to your schema, simply export from from a file in `/markdoc/`, like:
+
+```js
+// markdoc/Next.markdoc.js
+
+export {
+  comment,
+  head,
+  image,
+  link,
+  script,
+  markdocExample,
+} from '@stripe-internal/next-markdoc/tags';
+```
+
+and use the corresponding tags in your Markdoc files.
+
+#### `comment`
+
+Renders nothing. Use this to document the content within a Markdoc file.
+
+{% markdoc-example %}
+
+```md
+{% comment %}
+Your comment goes here
+{% /comment %}
+```
+
+{% /markdoc-example %}
+
+#### `head`
+
+Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/head). You can use this to add stuff to the `<head>` of your page.
+
+{% markdoc-example %}
+
+```md
+{% head %}
+<add custom title and meta components here>
+{% /head %}
+```
+
+{% /markdoc-example %}
+
+#### `image`
+
+Renders a [Next.js `Image` component](https://nextjs.org/docs/api-reference/next/image). Requires passing `src`, `alt`, `width` and `height` attributes.
+
+{% markdoc-example %}
+
+```md
+{% image
+   src="/logo.svg"
+   alt="My logo"
+   width=50
+   height=50 /%}
+```
+
+{% /markdoc-example %}
+
+#### `link`
+
+Renders a [Next.js `Link` component](https://nextjs.org/docs/api-reference/next/link). Requires passing an `href` attribute.
+
+{% markdoc-example %}
+
+```md
+{% link href="/docs/getting-started" %}
+Getting started
+{% /link %}
+```
+
+{% /markdoc-example %}
+
+#### `script`
+
+Renders a [Next.js `Script` component](https://nextjs.org/docs/api-reference/next/script). Requires passing a `src` attribute.
+
+{% markdoc-example %}
+
+```md
+{% script src="https://js.stripe.com/v3" /%}
+```
+
+{% /markdoc-example %}
+
+#### `markdoc-example`
+
+Use the `markdoc-example` tag to document Markdoc components themselves.
+
+{% markdoc-example %}
+
+````md
+{% markdoc-example %}
+
+```md
+{% comment %}
+<Markdoc stuff goes here>
+{% /comment%}
+```
+
+{% /markdoc-example %}
+````
+
+{% /markdoc-example %}

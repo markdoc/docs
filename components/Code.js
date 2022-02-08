@@ -40,7 +40,7 @@ export function Code({children, language}) {
           button {
             appearance: none;
             border: none;
-            background: none;
+            background: #f5f2f0;
             font-size: 20px;
             position: absolute;
             top: 15px;
