@@ -63,8 +63,12 @@ export default function TableOfContents({toc}) {
           padding-bottom: 0.75rem;
         }
 
-        li:hover,
-        li.active {
+        li a {
+          color: var(--text);
+        }
+
+        li:hover a,
+        li.active a {
           color: var(--theme);
         }
       `}</style>

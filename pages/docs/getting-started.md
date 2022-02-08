@@ -47,4 +47,4 @@ return Markdoc.renderers.html(content);
 
 - Learn Markdoc syntax
 - View rendering options
-- Next.js extenstion
+- [Next.js plugin](/docs/nextjs)

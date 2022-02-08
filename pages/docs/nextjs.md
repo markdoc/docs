@@ -50,13 +50,43 @@ description: How to get started with Markdoc
 # Get started with Markdoc
 ```
 
+## Options
+
+You can pass a few options to `withMarkdoc` to customize how the plugin behaves:
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- `schemaPath`
+- `string`
+- Path to your Markdoc schema folder. See [customization](#customization) below.
+
+---
+
+- `mode`
+- `'static' | 'server'`
+- Determines whether the generated Markdoc pages use [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) or [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
+
+---
+
+- `config`
+- `Node => Promise<Object>`
+- An asynchronous function that is called at build time. Values returned from this function will be merged with your `Config` object.
+
+{% /table %}
+
 ## Customization
 
 You can customize your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where you will define your custom [nodes](/docs/nodes) and [tags](/docs/tags) and specify how they render.
 
 All the the files under `/markdoc/` will be automatically imported and combined into your Markdoc schema. If you want to control which files get included in your schema, simply create a `/markdoc/index.js` file and define the schema exports yourself.
 
-You can customize where this folder is imported from by passing a custom `schemaPath` to your the plugin:
+You can customize where this folder is imported from by passing a custom `schemaPath` to `withMarkdoc`:
 
 ```js
 module.exports = withMarkdoc({schemaPath: './path/to/your/markdoc/schema'})({
@@ -66,7 +96,7 @@ module.exports = withMarkdoc({schemaPath: './path/to/your/markdoc/schema'})({
 
 ### Tags
 
-Custom tags are created by exporting a registration object from a file within `/markdoc/`, for example:
+Custom tags are registered by exporting a registration object from a file within `/markdoc/`, for example:
 
 ```js
 // markdoc/Button.markdoc.js

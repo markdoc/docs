@@ -29,7 +29,7 @@ export function Callout({title, children, type}) {
             display: flex;
             line-height: 20px;
             padding: 12px 20px;
-            border-radius: 4px;
+            border-radius: var(--radii-1);
             box-shadow: 0 0 0 1px var(--gray-2);
             background: ${typeProps.color};
           }
