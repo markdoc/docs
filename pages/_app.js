@@ -122,7 +122,7 @@ export default function MyApp(props) {
 
         nav :global(a),
         footer :global(a) {
-          color: hsla(0, 0%, 100%, 0.9);
+          color: var(--transparent);
         }
 
         nav :global(a:hover),
@@ -137,6 +137,7 @@ export default function MyApp(props) {
           display: flex;
           width: 100%;
           padding: 0.5rem 0rem;
+          box-shadow: 0 4px 3px -3px var(--gray-2);
           /* https://www.joshwcomeau.com/gradient-generator?colors=fbfbfb|fbfbfb|fbfbfb|2dbe59|1a1f36&angle=150&colorMode=hcl&precision=19&easingCurve=1.25|-0.25|-0.1|-0.1 */
           background-image: linear-gradient(
             calc(180deg - 12deg),
@@ -197,10 +198,11 @@ export default function MyApp(props) {
 
         footer {
           display: flex;
-          color: hsla(0, 0%, 100%, 0.8);
+          color: var(--transparent);
           width: 100%;
           padding: 1rem 2rem;
-          background: var(--theme);
+          background: hsl(229deg 34% 12%);
+          box-shadow: inset 0px 4px 3px -3px var(--gray-2);
         }
 
         .footer-links {

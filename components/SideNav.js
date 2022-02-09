@@ -107,20 +107,6 @@ export default function SideNav() {
           padding-top: 2rem;
           padding-bottom: 3rem;
           padding-left: 2rem;
-
-          /* https://stackoverflow.com/questions/44793453/how-do-i-add-a-top-and-bottom-shadow-while-scrolling-but-only-when-needed */
-          background: linear-gradient(white 30%, rgba(255, 255, 255, 0)),
-            linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
-            radial-gradient(
-                farthest-side at 50% 100%,
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0)
-              )
-              0 100%;
-          background-repeat: no-repeat;
-          background-color: white;
-          background-size: 100% 40px, 100% 40px, 100% var(--shadow-height);
-          background-attachment: local, local, scroll, scroll;
         }
 
         h3 {
