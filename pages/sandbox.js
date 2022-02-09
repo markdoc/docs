@@ -8,7 +8,6 @@ import {
 } from '@stripe-internal/next-markdoc/runtime';
 
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/neat.css';
 
 import * as schema from '../markdoc';
 
@@ -63,7 +62,7 @@ const options = {
   mode: 'markdown',
   lineWrapping: true,
   lineNumbers: true,
-  theme: 'neat',
+  theme: 'none',
 };
 
 export default function Sandbox() {
@@ -187,9 +186,28 @@ export default function Sandbox() {
             cursor: text;
           }
 
+          main :global(.CodeMirror-gutters) {
+            background-color: #fafafa;
+          }
+
+          main :global(span.cm-string) {
+            color: var(--blue);
+          }
+          main :global(span.cm-link) {
+            color: var(--green);
+          }
+          main :global(span.cm-atom),
+          main :global(span.cm-attribute) {
+            color: var(--orange);
+          }
+          main :global(span.cm-strong),
+          main :global(span.cm-header) {
+            font-weight: bold;
+          }
+
           nav {
             padding: 0.5rem 2rem 0.5rem 30px;
-            background: #f8f8f8;
+            background: #fafafa;
           }
 
           h1,
@@ -202,6 +220,7 @@ export default function Sandbox() {
             cursor: pointer;
             border: 1px solid #dedede;
             padding: 0.25rem 0.5rem;
+            border-radius: 4px;
           }
 
           .btn-group {
@@ -216,6 +235,16 @@ export default function Sandbox() {
 
           .btn-group button:not(:last-child) {
             border-right: none;
+          }
+
+          .btn-group button {
+            border-radius: 0;
+          }
+          .btn-group button:first-child {
+            border-radius: 4px 0 0 4px;
+          }
+          .btn-group button:last-child {
+            border-radius: 0 4px 4px 0;
           }
 
           .container {
@@ -248,11 +277,11 @@ export default function Sandbox() {
             font-size: 2em;
           }
           .preview :global(a) {
-            color: #556cd6;
+            color: var(--blurple);
           }
 
           .preview :global(a) {
-            color: #556cd6;
+            color: var(--blurple);
             text-decoration: none;
             font-weight: 500;
           }

@@ -15,7 +15,10 @@
   --line-height-3: 26px;
 
   --theme: #2dbe62;
+  --green: #2dbe62;
+  --orange: #c78100;
   --blurple: #5469d4;
+  --blue: #00738a;
   --text: #3c4257;
   --dark: #1a1f36;
   --gray-1: #697386;
@@ -79,7 +82,7 @@ p {
 
 h1 {
   font-size: var(--font-size-7);
-  max-width: 66%;
+  max-width: 800px;
 }
 
 h2 {
@@ -155,4 +158,29 @@ table tbody tr:last-child > td:first-child {
 }
 table tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 4px;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #f2f2f2 !important;
+}
+
+.token.function,
+.token.class-name {
+  color: var(--orange) !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--green) !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--blue);
 }
