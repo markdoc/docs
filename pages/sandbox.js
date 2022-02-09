@@ -7,8 +7,6 @@ import {
   transformComponents,
 } from '@stripe-internal/next-markdoc/runtime';
 
-import 'codemirror/lib/codemirror.css';
-
 import * as schema from '../markdoc';
 
 const components = transformComponents(schema);
@@ -106,7 +104,7 @@ export default function Sandbox() {
   const activeBtn = {background: '#e1e1e1'};
 
   return (
-    <main>
+    <main className="sandbox">
       <nav>
         <button onClick={() => setCode('')}>Clear</button>
         <div className="btn-group">
@@ -171,122 +169,6 @@ export default function Sandbox() {
           )}
         </section>
       </div>
-      <style jsx>
-        {`
-          main {
-            padding-top: var(--nav-height);
-            height: 100%;
-            display: flex;
-            flex-flow: column;
-          }
-
-          main :global(.CodeMirror),
-          main :global(.react-codemirror2) {
-            height: 100%;
-            cursor: text;
-          }
-
-          main :global(.CodeMirror-gutters) {
-            background-color: #fafafa;
-          }
-
-          main :global(span.cm-string) {
-            color: var(--blue);
-          }
-          main :global(span.cm-link) {
-            color: var(--green);
-          }
-          main :global(span.cm-atom),
-          main :global(span.cm-attribute) {
-            color: var(--orange);
-          }
-          main :global(span.cm-strong),
-          main :global(span.cm-header) {
-            font-weight: bold;
-          }
-
-          nav {
-            padding: 0.5rem 2rem 0.5rem 30px;
-            background: #fafafa;
-          }
-
-          h1,
-          nav {
-            display: flex;
-            flex: 0 1 auto;
-          }
-
-          nav button {
-            cursor: pointer;
-            border: 1px solid var(--gray-2);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-          }
-
-          .btn-group {
-            margin-left: auto;
-          }
-
-          .btn-group:after {
-            content: '';
-            clear: both;
-            display: table;
-          }
-
-          .btn-group button:not(:last-child) {
-            border-right: none;
-          }
-
-          .btn-group button {
-            border-radius: 0;
-          }
-          .btn-group button:first-child {
-            border-radius: 4px 0 0 4px;
-          }
-          .btn-group button:last-child {
-            border-radius: 0 4px 4px 0;
-          }
-
-          .container {
-            display: flex;
-            flex: 1;
-            min-height: 0;
-            border-top: 1px solid var(--gray-2);
-          }
-
-          section {
-            overflow: scroll;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-          }
-
-          section:nth-child(2) {
-            border-left: 1px solid var(--gray-2);
-          }
-
-          .preview {
-            padding: 0 2rem;
-            text-rendering: optimizeLegibility;
-            font-size: 15px;
-            line-height: 26px;
-          }
-
-          .preview :global(h1) {
-            font-size: 2em;
-          }
-          .preview :global(a) {
-            color: var(--blurple);
-          }
-
-          .preview :global(a) {
-            color: var(--blurple);
-            text-decoration: none;
-            font-weight: 500;
-          }
-        `}
-      </style>
     </main>
   );
 }

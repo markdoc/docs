@@ -1,0 +1,17 @@
+.nav {
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - var(--nav-height));
+  flex: 0 0 240px;
+  align-self: flex-start;
+  margin: 2rem 0 0 3rem;
+  padding: 0.25rem 0 0;
+  border-left: 1px solid var(--gray-2);
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}

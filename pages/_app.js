@@ -1,12 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import config from 'next/config';
 
 import {AppLink as Link} from '../components/AppLink';
 import SideNav from '../components/SideNav';
 import TableOfContents from '../components/TableOfContents';
 
+import 'codemirror/lib/codemirror.css';
+import 'prismjs';
+import 'prismjs/themes/prism.css';
+
 import '../public/globals.css';
+import '../public/sandbox.css';
 
 function collectHeadings(node, sections = []) {
   if (node.name === 'Heading') {
@@ -49,10 +55,13 @@ export default function MyApp(props) {
     ? collectHeadings(pageProps.markdoc.content)
     : [];
 
+  const {basePath} = config().publicRuntimeConfig;
+
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
@@ -63,7 +72,12 @@ export default function MyApp(props) {
           <Link href="/">
             <a>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Markdoc logo" width={100} height={45} />
+              <img
+                src={basePath + '/logo.svg'}
+                alt="Markdoc logo"
+                width={100}
+                height={45}
+              />
             </a>
           </Link>
           <ul className="links">
@@ -92,7 +106,7 @@ export default function MyApp(props) {
       ) : (
         <div className="page">
           {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
-          <main>
+          <main className="main">
             <Component {...pageProps} />
           </main>
           {toc ? <TableOfContents toc={toc} /> : null}
@@ -112,109 +126,6 @@ export default function MyApp(props) {
           </Link> · <Link href="https://twitter.com/StripeDev">Twitter</Link>
         </div>
       </footer>
-      <style jsx>{`
-        .page {
-          display: flex;
-          flex-grow: 1;
-          padding-top: var(--nav-height);
-          min-height: 100vh;
-        }
-
-        nav :global(a) {
-          color: hsla(0, 0%, 100%, 0.85);
-        }
-
-        nav :global(a:hover) {
-          color: white;
-        }
-
-        .nav-bar {
-          top: 0;
-          position: fixed;
-          z-index: 999;
-          display: flex;
-          width: 100%;
-          padding: 0.5rem 0rem;
-          box-shadow: 0 4px 3px -3px var(--gray-2);
-          /* https://www.joshwcomeau.com/gradient-generator?colors=fbfbfb|fbfbfb|fbfbfb|2dbe59|1a1f36&angle=150&colorMode=hcl&precision=19&easingCurve=1.25|-0.25|-0.1|-0.1 */
-          background-image: linear-gradient(
-            calc(180deg - 12deg),
-            hsl(0deg 0% 98%) 0%,
-            hsl(344deg 0% 98%) 4%,
-            hsl(344deg 0% 98%) 8%,
-            hsl(344deg 0% 98%) 13%,
-            hsl(344deg 0% 98%) 17%,
-            hsl(344deg 0% 98%) 20%,
-            hsl(344deg 0% 98%) 24%,
-            hsl(344deg 0% 98%) 28%,
-            hsl(344deg 0% 98%) 31%,
-            hsl(344deg 0% 98%) 35%,
-            hsl(344deg 0% 98%) 38%,
-            hsl(344deg 0% 98%) 41%,
-            hsl(123deg 37% 95%) 44%,
-            hsl(124deg 45% 87%) 46%,
-            hsl(126deg 47% 78%) 49%,
-            hsl(128deg 48% 70%) 51%,
-            hsl(131deg 49% 61%) 53%,
-            hsl(136deg 52% 50%) 54%,
-            hsl(160deg 100% 34%) 56%,
-            hsl(176deg 100% 28%) 57%,
-            hsl(190deg 100% 27%) 57%,
-            hsl(198deg 100% 24%) 58%,
-            hsl(203deg 100% 18%) 57%,
-            hsl(229deg 35% 16%) 56%
-          );
-        }
-
-        nav {
-          display: flex;
-          width: 100%;
-          padding: 0 4rem 0 2rem;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        main {
-          flex: 1 auto;
-          max-width: 100%;
-          min-width: 0;
-          padding: 0 0 4rem 2rem;
-        }
-
-        ul {
-          display: flex;
-          margin: 0;
-          padding: 0;
-        }
-
-        li {
-          list-style-type: none;
-          margin-left: 1.5rem;
-          font-size: 16px;
-          font-weight: 400;
-        }
-
-        footer {
-          display: flex;
-          color: var(--dark);
-          width: 100%;
-          padding: 1rem 2rem;
-          background: #fafafa;
-          box-shadow: 0px -4px 3px -3px var(--gray-2);
-        }
-
-        footer :global(a) {
-          color: var(--dark);
-        }
-
-        footer :global(a:hover) {
-          color: var(--theme);
-        }
-
-        .footer-links {
-          margin-left: 2rem;
-        }
-      `}</style>
     </>
   );
 }

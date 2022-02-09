@@ -4,9 +4,6 @@ import copy from 'copy-to-clipboard';
 
 import {Icon} from './Icon';
 
-import 'prismjs';
-import 'prismjs/themes/prism.css';
-
 export function Code({children, language}) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
@@ -20,7 +17,7 @@ export function Code({children, language}) {
   }, [copied]);
 
   return (
-    <div>
+    <div className="code">
       <PrismCode
         ref={ref}
         key={language}
@@ -29,25 +26,11 @@ export function Code({children, language}) {
       >
         {children}
       </PrismCode>
-      <button onClick={() => setCopied(true)}>
+      <button className="btn" onClick={() => setCopied(true)}>
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
-      <style jsx>
-        {`
-          div {
-            position: relative;
-          }
-          button {
-            appearance: none;
-            border: none;
-            background: #f5f2f0;
-            font-size: 20px;
-            position: absolute;
-            top: 15px;
-            right: 8px;
-          }
-        `}
-      </style>
     </div>
   );
 }
+
+Code.displayName = 'Code';

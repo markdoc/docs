@@ -67,7 +67,7 @@ export default function SideNav() {
   const router = useRouter();
 
   return (
-    <nav className="side-nav">
+    <nav className="sidenav">
       {items.map((item) => (
         <div key={item.title}>
           <h3>{item.title}</h3>
@@ -75,7 +75,7 @@ export default function SideNav() {
             {item.links.map((link) => {
               const active = router.asPath === link.href;
               return (
-                <li key={link.href} className={active ? 'active' : undefined}>
+                <li key={link.href} className={active ? 'active' : ''}>
                   <Link {...link}>
                     <a href={link.href}>{link.children}</a>
                   </Link>
@@ -96,49 +96,6 @@ export default function SideNav() {
           </ul>
         </div>
       ))}
-      <style jsx>{`
-        nav {
-          --shadow-height: 14px;
-          position: sticky;
-          top: var(--nav-height);
-          height: calc(100vh - var(--nav-height));
-          flex: 0 0 240px;
-          overflow-y: auto;
-          padding-top: 2rem;
-          padding-bottom: 3rem;
-          padding-left: 2rem;
-        }
-
-        h3 {
-          color: #333333;
-          font-weight: 500;
-          margin: 1rem 0 0.5rem;
-        }
-
-        ul {
-          display: flex;
-          flex-direction: column;
-          margin: 0;
-          padding: 4px 0 0;
-        }
-
-        li {
-          list-style-type: none;
-          margin-left: 1.5rem;
-          font-size: 14px;
-          font-weight: 400;
-          padding-bottom: 0.75rem;
-        }
-
-        li a {
-          color: var(--text);
-        }
-
-        li:hover a,
-        li.active a {
-          color: var(--theme);
-        }
-      `}</style>
     </nav>
   );
 }
