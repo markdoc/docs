@@ -27,14 +27,14 @@ export function Button(props) {
             padding: 0.75rem 1.5rem;
             margin-right: 0.5rem;
             border-radius: 8px;
-            border: 2px solid #2a9877;
-            color: #333333;
+            border: 2px solid var(--theme);
+            color: var(--text);
             background: transparent;
             transition: all 200ms ease;
           }
           button:hover,
           a:hover {
-            background: #2a9877;
+            background: var(--theme);
             color: white;
           }
         `}

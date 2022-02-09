@@ -42,12 +42,6 @@ export default function TableOfContents({toc}) {
           border-left: 1px solid #e0e0e0;
         }
 
-        h3 {
-          color: #333333;
-          font-weight: 500;
-          margin: 1rem 0 0.5rem;
-        }
-
         ul {
           display: flex;
           flex-direction: column;
