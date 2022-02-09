@@ -122,7 +122,7 @@ export default function MyApp(props) {
 
         nav :global(a),
         footer :global(a) {
-          color: hsla(0, 0%, 100%, 0.8);
+          color: hsla(0, 0%, 100%, 0.9);
         }
 
         nav :global(a:hover),
@@ -136,8 +136,35 @@ export default function MyApp(props) {
           z-index: 999;
           display: flex;
           width: 100%;
-          background: var(--theme);
           padding: 0.5rem 0rem;
+          /* https://www.joshwcomeau.com/gradient-generator?colors=fbfbfb|fbfbfb|fbfbfb|2dbe59|1a1f36&angle=150&colorMode=hcl&precision=19&easingCurve=1.25|-0.25|-0.1|-0.1 */
+          background-image: linear-gradient(
+            calc(180deg - 12deg),
+            hsl(0deg 0% 98%) 0%,
+            hsl(344deg 0% 98%) 4%,
+            hsl(344deg 0% 98%) 8%,
+            hsl(344deg 0% 98%) 13%,
+            hsl(344deg 0% 98%) 17%,
+            hsl(344deg 0% 98%) 20%,
+            hsl(344deg 0% 98%) 24%,
+            hsl(344deg 0% 98%) 28%,
+            hsl(344deg 0% 98%) 31%,
+            hsl(344deg 0% 98%) 35%,
+            hsl(344deg 0% 98%) 38%,
+            hsl(344deg 0% 98%) 41%,
+            hsl(123deg 37% 95%) 44%,
+            hsl(124deg 45% 87%) 46%,
+            hsl(126deg 47% 78%) 49%,
+            hsl(128deg 48% 70%) 51%,
+            hsl(131deg 49% 61%) 53%,
+            hsl(136deg 52% 50%) 54%,
+            hsl(160deg 100% 34%) 56%,
+            hsl(176deg 100% 28%) 57%,
+            hsl(190deg 100% 27%) 57%,
+            hsl(198deg 100% 24%) 58%,
+            hsl(203deg 100% 18%) 57%,
+            hsl(229deg 35% 16%) 56%
+          );
         }
 
         nav {
