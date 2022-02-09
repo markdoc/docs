@@ -39,7 +39,7 @@ export default function TableOfContents({toc}) {
           align-self: flex-start;
           margin: 2rem 0 0 3rem;
           padding: 0.25rem 0 0;
-          border-left: 1px solid #e0e0e0;
+          border-left: 1px solid var(--gray-2);
         }
 
         ul {
