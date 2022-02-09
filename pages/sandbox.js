@@ -218,7 +218,7 @@ export default function Sandbox() {
 
           nav button {
             cursor: pointer;
-            border: 1px solid #dedede;
+            border: 1px solid var(--gray-2);
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
           }
@@ -251,7 +251,7 @@ export default function Sandbox() {
             display: flex;
             flex: 1;
             min-height: 0;
-            border-top: 1px solid #dedede;
+            border-top: 1px solid var(--gray-2);
           }
 
           section {
@@ -263,7 +263,7 @@ export default function Sandbox() {
           }
 
           section:nth-child(2) {
-            border-left: 1px solid #dedede;
+            border-left: 1px solid var(--gray-2);
           }
 
           .preview {
