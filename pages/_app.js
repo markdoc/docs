@@ -120,13 +120,11 @@ export default function MyApp(props) {
           min-height: 100vh;
         }
 
-        nav :global(a),
-        footer :global(a) {
-          color: var(--transparent);
+        nav :global(a) {
+          color: hsla(0, 0%, 100%, 0.85);
         }
 
-        nav :global(a:hover),
-        footer :global(a:hover) {
+        nav :global(a:hover) {
           color: white;
         }
 
@@ -198,11 +196,19 @@ export default function MyApp(props) {
 
         footer {
           display: flex;
-          color: var(--transparent);
+          color: var(--dark);
           width: 100%;
           padding: 1rem 2rem;
-          background: hsl(229deg 34% 12%);
-          box-shadow: inset 0px 4px 3px -3px var(--gray-2);
+          background: #fafafa;
+          box-shadow: 0px -4px 3px -3px var(--gray-2);
+        }
+
+        footer :global(a) {
+          color: var(--dark);
+        }
+
+        footer :global(a:hover) {
+          color: var(--theme);
         }
 
         .footer-links {
