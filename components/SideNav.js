@@ -8,18 +8,13 @@ const items = [
     links: [
       {href: '/docs/getting-started', children: 'Installation'},
       {href: '/docs/basic-usage', children: 'Basic usage'},
-    ],
-  },
-  {
-    title: 'Syntax',
-    links: [
-      {href: '/docs/syntax', children: 'Overview'},
       {href: '/sandbox', children: 'Try it out (Demo)'},
     ],
   },
   {
-    title: 'Schema',
+    title: 'Syntax and schema',
     links: [
+      {href: '/docs/syntax', children: 'Overview'},
       {href: '/docs/nodes', children: 'Nodes'},
       {href: '/docs/tags', children: 'Tags'},
       {href: '/docs/functions', children: 'Functions'},
