@@ -1,20 +1,35 @@
-import * as React from 'react';
-import PrismCode from 'react-prism';
-import copy from 'copy-to-clipboard';
+import * as React from 'react'
+import PrismCode from 'react-prism'
+import copy from 'copy-to-clipboard'
 
-import {Icon} from './Icon';
+import { Icon } from './Icon'
 
-export function Code({children, language}) {
-  const [copied, setCopied] = React.useState(false);
-  const ref = React.useRef(null);
+Prism.languages.markdoc = {
+  tag: {
+    pattern: /{%(.|\n)*?%}/i,
+    inside: {
+      tagType: {
+        pattern: /^({%\s*\/?)(\w*|-)* /i,
+        lookbehind: true,
+      },
+      id: /#(\w|-)*\b/,
+      string: /".*?"/,
+      equals: /=/,
+    },
+  },
+}
+
+export function Code({ children, language }) {
+  const [copied, setCopied] = React.useState(false)
+  const ref = React.useRef(null)
 
   React.useEffect(() => {
     if (copied) {
-      copy(ref.current._domNode.innerText);
-      const to = setTimeout(setCopied, 1000, false);
-      return () => clearTimeout(to);
+      copy(ref.current._domNode.innerText)
+      const to = setTimeout(setCopied, 1000, false)
+      return () => clearTimeout(to)
     }
-  }, [copied]);
+  }, [copied])
 
   return (
     <div className="code" aria-live="polite">
@@ -31,7 +46,7 @@ export function Code({children, language}) {
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
     </div>
-  );
+  )
 }
 
-Code.displayName = 'Code';
+Code.displayName = 'Code'
