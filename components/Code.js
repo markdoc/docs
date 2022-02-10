@@ -4,21 +4,6 @@ import copy from 'copy-to-clipboard';
 
 import {Icon} from './Icon';
 
-Prism.languages.markdoc = {
-  tag: {
-    pattern: /{%(.|\n)*?%}/i,
-    inside: {
-      tagType: {
-        pattern: /^({%\s*\/?)(\w*|-)* /i,
-        lookbehind: true,
-      },
-      id: /#(\w|-)*\b/,
-      string: /".*?"/,
-      equals: /=/,
-    },
-  },
-};
-
 export function Code({children, language}) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
