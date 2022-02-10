@@ -15,21 +15,6 @@
   background-color: #fafafa;
 }
 
-.sandbox span.cm-string {
-  color: var(--blue);
-}
-.sandbox span.cm-link {
-  color: var(--green);
-}
-.sandbox span.cm-atom,
-.sandbox span.cm-attribute {
-  color: var(--orange);
-}
-.sandbox span.cm-strong,
-.sandbox span.cm-header {
-  font-weight: bold;
-}
-
 .sandbox nav {
   padding: 0.5rem 2rem 0.5rem 30px;
   background: #fafafa;
