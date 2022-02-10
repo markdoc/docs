@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
 import config from 'next/config';
 
 import {AppLink as Link} from '../components/AppLink';
@@ -66,6 +65,10 @@ export default function MyApp(props) {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* https://webaim.org/techniques/skipnav/ */}
+      <a href="#skip-nav" className="skip-nav">
+        Skip to content
+      </a>
       <div className="nav-bar">
         <nav>
           <Link href="/">
@@ -105,6 +108,7 @@ export default function MyApp(props) {
       ) : (
         <div className="page">
           {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
+          <div id="skip-nav" />
           <main className="main">
             <Component {...pageProps} />
           </main>
