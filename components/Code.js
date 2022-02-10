@@ -17,7 +17,7 @@ export function Code({children, language}) {
   }, [copied]);
 
   return (
-    <div className="code">
+    <div className="code" aria-live="polite">
       <PrismCode
         ref={ref}
         key={language}
@@ -27,6 +27,7 @@ export function Code({children, language}) {
         {children}
       </PrismCode>
       <button className="btn" onClick={() => setCopied(true)}>
+        <title>{copied ? 'Copied' : 'Copy'}</title>
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
     </div>
