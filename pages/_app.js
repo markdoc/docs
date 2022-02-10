@@ -66,7 +66,6 @@ export default function MyApp(props) {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
       <div className="nav-bar">
         <nav>
           <Link href="/">

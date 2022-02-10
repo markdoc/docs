@@ -353,6 +353,7 @@ footer a:hover {
 }
 
 .callout .icon {
+  top: 2.5px;
   padding-right: 8px;
 }
 
@@ -376,7 +377,18 @@ footer a:hover {
   position: relative;
   top: +2px;
   font-size: inherit;
+  width: 1em;
+  height: 1em;
   min-width: 16px;
+  box-sizing: content-box !important;
+}
+
+.icon svg {
+  display: block;
+  fill: currentcolor;
+  stroke: currentcolor;
+  width: 100%;
+  height: 100%;
 }
 
 .icon.note {
