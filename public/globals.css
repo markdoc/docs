@@ -180,14 +180,15 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted,
-.sandbox span.cm-link {
+.sandbox span.cm-link,
+.sandbox span.cm-string {
   color: var(--green) !important;
 }
 
 .token.tag,
 .sandbox span.cm-tag {
   /* TODO update color */
-  color: #905;
+  color: var(--blue);
 }
 
 .token.atrule,
