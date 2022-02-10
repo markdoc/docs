@@ -13,21 +13,6 @@ import 'prismjs/themes/prism.css';
 import '../public/globals.css';
 import '../public/sandbox.css';
 
-Prism.languages.markdoc = {
-  tag: {
-    pattern: /{%(.|\n)*?%}/i,
-    inside: {
-      tagType: {
-        pattern: /^({%\s*\/?)(\w*|-)* /i,
-        lookbehind: true,
-      },
-      id: /#(\w|-)*\b/,
-      string: /".*?"/,
-      equals: /=/,
-    },
-  },
-};
-
 function collectHeadings(node, sections = []) {
   if (node.name === 'Heading') {
     const title = node.children[0];
