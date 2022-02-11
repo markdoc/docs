@@ -15,13 +15,12 @@ While we prepare Markdoc for open source, there are a few steps you'll need to t
    yarn
    yarn link
    ```
-4. Copy the output. It should look like this: `@stripe-internal/next-markdoc`.
-5. Change directories to `markdoc-site` and run these commands: 
+4. Change directories to `markdoc-site` and run these commands: 
    ```
    yarn link @stripe-internal/next-markdoc
    yarn
    ```
-6. Assuming you didn't get any errors, you can run your dev server and test with the demo site:
+5. Assuming you didn't get any errors, you can run your dev server and test with the demo site:
    ```
    yarn dev
    ```
