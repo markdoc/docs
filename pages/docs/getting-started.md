@@ -8,13 +8,13 @@ description: How to get started with Markdoc
 Run this command to install the Markdoc library:
 
 ```bash
-npm install @markdoc/markdoc
+npm install @stripe-internal/markdoc
 ```
 
 or
 
 ```
-yarn add @markdoc/markdoc
+yarn add @stripe-internal/markdoc
 ```
 
 ## Import Markdoc
@@ -22,13 +22,13 @@ yarn add @markdoc/markdoc
 The next step is to import the library in your app:
 
 ```js
-const Markdoc = require('@markdoc/markdoc');
+const Markdoc = require('@stripe-internal/markdoc');
 ```
 
 If you are using ESM:
 
 ```js
-import Markdoc from '@markdoc/markdoc';
+import Markdoc from '@stripe-internal/markdoc';
 ```
 
 ## Use Markdoc
