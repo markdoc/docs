@@ -83,6 +83,15 @@ p {
   line-height: var(--line-height-3);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark);
+}
+
 h1 {
   font-size: var(--font-size-7);
   max-width: 800px;
@@ -467,7 +476,6 @@ footer a:hover {
 }
 
 .sidenav h3 {
-  color: #333333;
   font-weight: 500;
   margin: 1rem 0 0.5rem;
 }
