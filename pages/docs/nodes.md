@@ -1,58 +1,77 @@
 ---
 title: Nodes
-description: 
+description:
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Nodes are elements that Markdoc inherits from the Markdown, specifically the CommonMark specification. 
+Nodes are elements that Markdoc inherits from the Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
 ## Supported nodes
 
 {% table %}
-* Node type
-* Description
-* Markdown example
+
+- Node type
+- Description
+- Markdown example
+
 ---
-* document
+
+- document
+
 ---
-* heading
-* The heading for a section
-* ```
+
+- heading
+- The heading for a section
+- ```
   # This is an H1
 
   ## This is an H2
   ```
+
 ---
-* paragraph
-* Consecutive lines of text that form a paragraph.
-* ```
+
+- paragraph
+- Consecutive lines of text that form a paragraph.
+- ```
   This is an example of a paragraph.
 
   This is another paragraph.
   ```
+
 ---
-* blockquote
-* A section quoted from another source.
-* ```
+
+- blockquote
+- A section quoted from another source.
+- ```
   >
   ```
+
 ---
-* hr
-* Horizontal rules. 
-* ```
+
+- hr
+- Horizontal rules.
+- ```
   ---
   ```
+
 ---
-* image
+
+- image
+
 ---
-* fence
+
+- fence
+
 ---
-* tag
+
+- tag
+
 ---
-* list
-* Ordered and unordered lists. 
-* ```
+
+- list
+- Ordered and unordered lists.
+- ```
   1. Apple
   2. Pear
   3. Mango
@@ -60,35 +79,63 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the Com
   * Dog
     * Corgi
   * Cat
-    * Minx 
-  * Bird  
+    * Minx
+  * Bird
     * Parrot
   ```
+
 ---
-* item
+
+- item
+
 ---
-* table
+
+- table
+
 ---
-* thead
+
+- thead
+
 ---
-* body
+
+- body
+
 ---
-* tr
+
+- tr
+
 ---
-* td
+
+- td
+
 ---
-* th
+
+- th
+
 ---
-* inline
+
+- inline
+
 ---
-* strong
+
+- strong
+
 ---
-* em
+
+- em
+
 ---
-* link
+
+- link
+
 ---
-* code
+
+- code
+
 ---
-* text
+
+- text
+
 ---
+
 {% /table %}
