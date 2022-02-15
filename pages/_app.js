@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import config from 'next/config';
 
-import {AppLink as Link} from '../components/AppLink';
+import { AppLink as Link } from '../components/AppLink';
 import SideNav from '../components/SideNav';
 import TableOfContents from '../components/TableOfContents';
 
@@ -14,30 +14,32 @@ import '../public/globals.css';
 import '../public/sandbox.css';
 
 function collectHeadings(node, sections = []) {
-  if (node.name === 'Heading') {
-    const title = node.children[0];
-    const attributes = Object.fromEntries(
-      node.attributes.map((a) => [a.name, a.value])
-    );
+  if (node) {
+    if (node.name === 'Heading') {
+      const title = node.children[0];
+      const attributes = Object.fromEntries(
+        node.attributes.map((a) => [a.name, a.value])
+      );
 
-    if (typeof title === 'string') {
-      sections.push({
-        ...attributes,
-        title,
-      });
+      if (typeof title === 'string') {
+        sections.push({
+          ...attributes,
+          title,
+        });
+      }
     }
-  }
 
-  if (node.children) {
-    node.children.forEach((child) => collectHeadings(child, sections));
+    if (node.children) {
+      node.children.forEach((child) => collectHeadings(child, sections));
+    }
   }
 
   return sections;
 }
 
 export default function MyApp(props) {
-  const {Component, pageProps} = props;
-  const {markdoc} = pageProps;
+  const { Component, pageProps } = props;
+  const { markdoc } = pageProps;
 
   let description = 'A Markdown-based authoring system';
   let title = `Markdoc | ${description}`;
@@ -54,7 +56,7 @@ export default function MyApp(props) {
     ? collectHeadings(pageProps.markdoc.content)
     : [];
 
-  const {basePath} = config().publicRuntimeConfig;
+  const { basePath } = config().publicRuntimeConfig;
 
   return (
     <>
