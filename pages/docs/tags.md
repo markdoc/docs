@@ -127,7 +127,7 @@ Partials are primarily used to reuse text or code examples across docs. The reus
 ```
 This is an example of including the `/docs/content/partials/libraries.md` file as a partial.
 
-{% partial file="variables.md" /%}
+{% partial file="/docs/content/partials/libraries.md" /%}
 ```
 {% /markdoc-example %}
 
@@ -137,7 +137,7 @@ This is an example of including the `/docs/content/partials/libraries.md` file a
 ```
 Here the `formComponentName` variable is passed into the partial as 'MarkdocPartialVariableTest':
 
-{% partial file="partials/react-stripe-setup.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
+{% partial file="/partials/react-stripe-setup.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
 ```
 {% /markdoc-example %}
 
@@ -166,7 +166,7 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 ### Table with rich content
 
 {% markdoc-example %}
-```
+````
 {% table %}
 * Foo
 * Bar
@@ -193,7 +193,7 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 * Test 1
 * A cell that spans two columns {% colspan=2 %}
 {% /table %}
-```
+````
 {% /markdoc-example %}
 
 
