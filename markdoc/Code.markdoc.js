@@ -1,6 +1,6 @@
 // @flow
 
-import {Code} from '../components/Code';
+import { Code } from '../components/Code';
 
 export const fence = {
   node: 'fence',

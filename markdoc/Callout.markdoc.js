@@ -1,8 +1,8 @@
 // @flow
 
-import {Ast} from '@stripe-internal/markdoc';
+import { Ast } from '@stripe-internal/markdoc';
 
-import {Callout} from '../components/Callout';
+import { Callout } from '../components/Callout';
 
 export const callout = {
   Component: Callout,

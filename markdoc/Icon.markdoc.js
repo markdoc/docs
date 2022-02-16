@@ -1,6 +1,6 @@
 // @flow
 
-import {Icon} from '../components/Icon';
+import { Icon } from '../components/Icon';
 
 export const icon = {
   Component: Icon,
