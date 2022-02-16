@@ -77,3 +77,65 @@ https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 {% /table %}
 
 ## How to customize a node
+
+First, create a custom node definition
+
+```js
+// ./schema/heading.js
+
+import { Ast } from '@stripe-internal/markdoc';
+
+const getAnchor = (children, attributes) => {
+  if (attributes.id && typeof attributes.id === 'string') {
+    return attributes.id;
+  }
+  return children
+    .filter((child) => typeof child === 'string')
+    .join(' ')
+    .replace(/[?]/g, '')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+};
+
+export const heading = {
+  tag(node) {
+    return `h${node.attributes['level']}`;
+  },
+  children: ['inline'],
+  attributes: {
+    id: { type: String },
+    level: { type: Number, required: true, default: 1 },
+  },
+  render(node, config) {
+    const attributes = node.renderAttributes(this.attributes);
+    const children = node.renderChildren(config);
+    const id = getAnchor(children, attributes);
+
+    return new Ast.Tag(this.tag, { ...attributes, id }, children);
+  },
+};
+```
+
+Then, pass your node definition to your `Config` object
+
+```js
+import { heading } from './schema/heading';
+
+const config = {
+  nodes: {
+    heading,
+  },
+};
+
+return Markdoc.render(content, config);
+```
+
+Finally, use your custom nodes in your Markdoc content.
+
+{% markdoc-example %}
+
+```md
+# My header
+```
+
+{% /markdoc-example %}
