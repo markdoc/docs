@@ -16,8 +16,8 @@ const items = [
       { href: '/docs/syntax', children: 'Overview' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
-      { href: '/docs/functions', children: 'Functions' },
       { href: '/docs/variables', children: 'Variables' },
+      { href: '/docs/functions', children: 'Functions' },
     ],
   },
   {
