@@ -13,7 +13,7 @@ This guide assumes that you already have a Next.js app. If you are starting from
 
 ## Setup
 
-Let's get started! The first thing you'll need to do is install `next-markdoc` and add it to your project's config.
+The first thing you'll need to do is install `next-markdoc` and add it to your project's config.
 
 1. From the working directory for you project, run this command to install the `next-markdoc` package:
    ```bash
