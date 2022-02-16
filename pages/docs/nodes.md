@@ -20,31 +20,32 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
 - document
 
 ---
-
-- heading
-- The heading for a section
-- ```
+* heading
+* Heading and sub-headings for a section start with `#`.
+* ```
   # This is an H1
 
   ## This is an H2
+
+  ### This is an H3
   ```
 
 ---
-
-- paragraph
-- Consecutive lines of text that form a paragraph.
-- ```
+* paragraph
+* Consecutive lines of text. Separate paragraphs with a blank line. 
+* ```
   This is an example of a paragraph.
 
   This is another paragraph.
   ```
 
 ---
-
-- blockquote
-- A section quoted from another source.
-- ```
+* blockquote
+* Indented text. 
+* ```
+  > This is a block quote.
   >
+  > This is a continuation of the block quote on a new line.
   ```
 
 ---
@@ -56,16 +57,25 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
   ```
 
 ---
-
-- image
-
+* image
+* Images are added with `!`. 
+* ```
+  ![Image description](/path/to/image.png)
+  ```
 ---
 
 - fence
 
 ---
-
-- tag
+* tag
+* 
+* 
+  {% markdoc-example %}
+  ```
+  {% tag-name %}
+  {% /tag-name %}
+  ```
+  {% /markdoc-example %}
 
 ---
 
@@ -75,7 +85,8 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
   1. Apple
   2. Pear
   3. Mango
-
+  ```
+  ```
   * Dog
     * Corgi
   * Cat
@@ -89,49 +100,70 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
 - item
 
 ---
-
-- table
-
+* table
+* Table
+* 
+  ```
+  | Heading 1 | Heading 2 |
+  |-----------|-----------|
+  | Data A    | Data B    |
+  | Data C    | Data D    |
+  ```
 ---
-
-- thead
-
+* thead
+* Table header.
 ---
 
 - body
 
 ---
-
-- tr
-
+* tr
+* Table row.
 ---
-
-- td
-
+* td
+* Table data.
 ---
-
-- th
-
+* th
+* Table header.
 ---
 
 - inline
 
 ---
-
-- strong
-
+* strong
+* Bold text with `**`.
+* 
+  ```
+  **Bold text**
+  ```
 ---
-
-- em
-
+* em
+* Italicized text with `_` or `*`.
+* 
+  ```
+  _Italic text_
+  ```
+  ```
+  *More italic text*
+  ```
 ---
-
-- link
-
+* link
+* 
+* 
+  ```
+  [Link text](/path/to/location)
+  ```
 ---
+* code
+* Code blocks.
+* ````
+  ```
+  import math
 
-- code
-
+  x = math.sqrt(64)
+  print(x)
+  ```
+  ````
 ---
 
 - text
