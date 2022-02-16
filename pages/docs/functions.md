@@ -76,7 +76,7 @@ const config = {
   },
 };
 
-const content = Markdoc.render(content, config);
+return Markdoc.render(content, config);
 ```
 
 Finally, call the function within your Markdoc content
