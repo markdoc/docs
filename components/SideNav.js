@@ -7,8 +7,7 @@ const items = [
     title: 'Get started',
     links: [
       {href: '/docs/getting-started', children: 'Installation'},
-      {href: '/docs/basic-usage', children: 'Basic usage'},
-      {href: '/sandbox', children: 'Try it out (Demo)'},
+      {href: '/sandbox', children: 'Try it out'},
     ],
   },
   {
