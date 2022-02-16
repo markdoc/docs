@@ -24,7 +24,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
    const withMarkdoc = require('@stripe-internal/next-markdoc');
 
    module.exports = withMarkdoc(/* options */)({
-   pageExtensions: ['js', 'md'],
+     pageExtensions: ['js', 'md'],
    });
    ```
 3. Create a new directory in `pages` named `docs`. 
