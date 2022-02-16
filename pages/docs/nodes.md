@@ -109,6 +109,7 @@ export const heading = {
   render(node, config) {
     const attributes = node.renderAttributes(this.attributes);
     const children = node.renderChildren(config);
+
     const id = getAnchor(children, attributes);
 
     return new Ast.Tag(this.tag, { ...attributes, id }, children);

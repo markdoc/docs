@@ -1,7 +1,7 @@
 // @flow
 
-import {Ast} from '@stripe-internal/markdoc';
-import {Heading} from '../components/Heading';
+import { Ast } from '@stripe-internal/markdoc';
+import { Heading } from '../components/Heading';
 
 const getAnchor = (children, attributes) => {
   if (attributes.id && typeof attributes.id === 'string') {
@@ -20,14 +20,14 @@ export const heading = {
   Component: Heading,
   children: ['inline'],
   attributes: {
-    id: {type: String},
-    level: {type: Number, required: true, default: 1},
+    id: { type: String },
+    level: { type: Number, required: true, default: 1 },
   },
   render(node, config) {
     const attributes = node.renderAttributes(this.attributes);
     const children = node.renderChildren(config);
     const id = getAnchor(children, attributes);
 
-    return new Ast.Tag(this.tag, {...attributes, id}, children);
+    return new Ast.Tag(this.tag, { ...attributes, id }, children);
   },
 };
