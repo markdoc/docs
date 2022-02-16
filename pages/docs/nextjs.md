@@ -1,25 +1,26 @@
 ---
-title: How to use Markdoc with Next.js
+title: Using Markdoc with Next.js
 description: Learn how to integrate Markdoc into a Next.js project.
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Using the `next-markdoc` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with `markdoc`. In this guide, we'll show you how to install the plugin, add it to your app, and create pages.
+Using the `next-markdoc` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with `markdoc`.
 
 ## Before you get started
 
-This guide assumes that you already have a Next.js app. If you are starting from scatch, follow the steps in [Getting Started](https://nextjs.org/docs) before installing the `next-markdoc` plugin.
+This guide assumes that you already have a Next.js app. If you are starting from scatch, follow the steps in [Getting Started](https://nextjs.org/docs).
 
 ## Setup
 
 The first thing you'll need to do is install `next-markdoc` and add it to your project's config.
 
-1. From the working directory for you project, run this command to install the `next-markdoc` package:
+1. From your project, run this command to install `next-markdoc`:
    ```bash
    npm install @stripe-internal/next-markdoc
-   ``` 
-2. With your favorite IDE, open `next.config.js` and add the following code snippet:
+   ```
+2. With your favorite IDE, open `next.config.js` and add the following code:
+
    ```js
    const withMarkdoc = require('@stripe-internal/next-markdoc');
 
@@ -27,15 +28,19 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
      pageExtensions: ['js', 'md'],
    });
    ```
-3. Create a new directory in `pages` named `docs`. 
-4. Create a new markdown file in `pages/docs` named `getting-started.md`:
+
+3. Create a new markdown file in `pages/docs` named `getting-started.md`.
+
    ```
    pages
    ├── _app.js
    ├── docs
    │   └── getting-started.md
+   ├── index.js
    ```
-5. Open `getting-started.md`, then add the following Markdown: 
+
+4. Add the following to `getting-started.md`:
+
    ```
    ---
    title: Get started with Markdoc
@@ -44,12 +49,10 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
 
    # Get started with Markdoc
    ```
-6. Start your server `next`, then navigate to your new page. For example: `https://localhost:3000/docs/getting-started`.
-
 
 ## Options
 
-You can pass options to Markdoc to adjust how the plugin behaves. 
+You can pass options to Markdoc to adjust how the plugin behaves.
 
 {% table %}
 
@@ -61,7 +64,7 @@ You can pass options to Markdoc to adjust how the plugin behaves.
 
 - `schemaPath`
 - `string`
-- Path to your Markdoc schema folder. See [customization](#customization) below.
+- Path to your Markdoc schema folder. See [schema customization](#schema-customization).
 
 ---
 
@@ -73,37 +76,38 @@ You can pass options to Markdoc to adjust how the plugin behaves.
 
 - `config`
 - `Node => Promise<Object>`
-- An asynchronous function that is called at build time. Values returned from this function will be merged with your `Config` object.
+- An asynchronous function called at build time. Values returned from this function are merged with your `Config` object.
 
 {% /table %}
 
-For example, this is how you explicitly set the mode to `static` to pre-render the page at build time using the props returned by `getStaticProps`:
+For example, this is how you set the `mode` to `static` to pre-render the page at build time using the props returned by `getStaticProps`:
 
 ```js
-module.exports = withMarkdoc({mode: 'static'})({
+module.exports = withMarkdoc({ mode: 'static' })({
   pageExtensions: ['js', 'md'],
 });
 ```
 
 ## Schema customization
 
-You can customize your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where you define custom [nodes](/docs/nodes) and [tags](/docs/tags), and specify how they're rendered.
+You can customize the Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes) and [tags](/docs/tags) are defined.
 
-Any files under `/markdoc/` are automatically imported, and combined into your Markdoc schema. If you want to control which files are included, create a `/markdoc/index.js` file and define the schema exports.
+Files under `/markdoc/` are automatically imported and combined into your Markdoc schema. If you want to specify which files are included, create a `/markdoc/index.js` file and define the schema exports.
 
-You can customize where this folder is imported from by passing a custom `schemaPath` to `withMarkdoc`:
+You can choose the import location for your schema by passing the `schemaPath` option to `withMarkdoc`:
 
 ```js
-module.exports = withMarkdoc({schemaPath: './path/to/your/markdoc/schema'})({
+module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
   pageExtensions: ['js', 'md'],
 });
 ```
+
 ### Nodes
 
 Custom nodes are registed by exporting a registration obect from a file within the `/markdoc` directory. In this example, we're using [`next/link`](https://nextjs.org/docs/api-reference/next/link) instead of the standard `Link` component:
 
 ```js
-import {Link} from 'next/link';
+import { Link } from 'next/link';
 
 export const link = {
   node: 'link',
@@ -123,7 +127,7 @@ Custom tags are registed by exporting a registration obect from a file within th
 ```js
 // markdoc/Button.markdoc.js
 
-import {Button} from '../components/Button';
+import { Button } from '../components/Button';
 
 export const button = {
   Component: Button,
@@ -149,9 +153,7 @@ export const button = {
 
 ## Frontmatter
 
-Although Markdoc itself follows the idea of "Bring your own Frontmatter", the Next.js Markdoc plugin uses YAML as its frontmatter langauge of choice, making it easier to get started without parsing the frontmatter yourself.
-
-You can then access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or within your content via the `$markdoc.frontmatter` variable.
+Markdoc is frontmatter agnostic, however, `next-markdoc` uses YAML as its default frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content with the `$markdoc.frontmatter` variable.
 
 For example:
 
@@ -177,7 +179,7 @@ To create a custom layout for each of your Markdown/Markdoc files, simply wrap y
 
 import Layout from '../components/Layout';
 
-export default function App({Component, pageProps}) {
+export default function App({ Component, pageProps }) {
   return (
     <Layout frontmatter={pageProps.markdoc.frontmatter}>
       <Component {...pageProps} />
