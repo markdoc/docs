@@ -334,9 +334,9 @@ footer a {
 }
 
 .sidenav li a:hover,
-.sidenav li.active a,
+.sidenav li.active > a,
 .toc li a:hover,
-.toc li.active a,
+.toc li.active > a,
 footer a:hover {
   color: var(--theme);
 }
@@ -485,6 +485,11 @@ footer a:hover {
   flex-direction: column;
   margin: 0;
   padding: 4px 0 0;
+}
+
+.sidenav ul ul li {
+  font-size: 12px;
+  padding: 0.25rem 0;
 }
 
 .sidenav li,

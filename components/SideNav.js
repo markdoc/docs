@@ -1,59 +1,43 @@
 import React from 'react';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const items = [
   {
     title: 'Get started',
     links: [
-      {href: '/docs/getting-started', children: 'Installation'},
-      {href: '/sandbox', children: 'Try it out'},
+      { href: '/docs/getting-started', children: 'Installation' },
+      { href: '/sandbox', children: 'Try it out' },
     ],
   },
   {
     title: 'Syntax and schema',
     links: [
-      {href: '/docs/syntax', children: 'Overview'},
-      {href: '/docs/nodes', children: 'Nodes'},
-      {href: '/docs/tags', children: 'Tags'},
-      {href: '/docs/functions', children: 'Functions'},
-      {href: '/docs/variables', children: 'Variables'},
+      { href: '/docs/syntax', children: 'Overview' },
+      { href: '/docs/nodes', children: 'Nodes' },
+      { href: '/docs/tags', children: 'Tags' },
+      { href: '/docs/functions', children: 'Functions' },
+      { href: '/docs/variables', children: 'Variables' },
     ],
   },
   {
     title: 'Rendering',
     links: [
       {
-        href: '/docs/rendering/overview',
+        href: '/docs/render/overview',
         children: 'Phases of rendering',
-        links: [
-          'parse',
-          'process',
-          // TODO delete
-          'expand',
-          'render',
-          'validate',
-        ].map((key) => ({
-          href: '/docs/rendering/phases#' + key,
-          children: <code>{key}</code>,
-        })),
       },
-      {href: '/docs/rendering/html', children: 'HTML'},
-      {href: '/docs/rendering/react', children: 'React'},
-      {href: '/docs/rendering/static-react', children: 'Static React'},
-      {href: '/docs/rendering/markdoc', children: 'Markdoc text'},
-    ],
-  },
-  {
-    title: 'React',
-    links: [
-      {href: '/docs/react/components', children: 'Creating a component'},
-      {href: '/docs/react/examples', children: 'Examples'},
+      { href: '/docs/render/html', children: 'HTML' },
+      { href: '/docs/render/react', children: 'React' },
+      { href: '/docs/render/static-react', children: 'Static React' },
     ],
   },
   {
     title: 'Integration guides',
-    links: [{href: '/docs/nextjs', children: 'Using Next.js'}],
+    links: [
+      { href: '/docs/examples', children: 'Common examples' },
+      { href: '/docs/nextjs', children: 'Using Next.js' },
+    ],
   },
 ];
 
