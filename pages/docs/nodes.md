@@ -47,8 +47,8 @@ https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 ---
 
 - `tag`
-- `string`
-- Name of the HTML tag to render when used in HTML rendering.
+- `string | Node => string`
+- Name of the HTML tag or React component to render.
 
 ---
 

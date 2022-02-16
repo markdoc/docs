@@ -18,8 +18,8 @@ Tags are an extension of standard Markdown. With tags you can use native Markdoc
 ---
 
 - `tag`
-- `string`
-- Name of the tag.
+- `string | Node => string`
+- Name of the HTML tag or React component to render.
 
 ---
 
