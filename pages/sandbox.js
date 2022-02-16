@@ -1,5 +1,5 @@
 import React from 'react';
-import {Controlled as CodeMirror} from 'react-codemirror2';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import Markdoc from '@stripe-internal/markdoc';
 import {
@@ -75,13 +75,11 @@ export default function Sandbox() {
     setK((k) => k + 1);
   }, []);
 
-  const ast = React.useMemo(() => {
-    return Markdoc.parse(code);
-  }, [code]);
+  const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
-  const content = React.useMemo(() => {
-    const {nodes, tags} = transformSchema(schema);
-    const config = {
+  const config = React.useMemo(() => {
+    const { nodes, tags } = transformSchema(schema);
+    return {
       nodes,
       tags,
       variables: {
@@ -92,16 +90,19 @@ export default function Sandbox() {
         },
       },
     };
+  }, [ast]);
+
+  const content = React.useMemo(() => {
     const processed = Markdoc.process(ast, config);
     return Markdoc.expand(processed, config);
-  }, [ast]);
+  }, [ast, config]);
 
   const onBeforeChange = React.useCallback(
     (editor, meta, code) => setCode(code),
     []
   );
 
-  const activeBtn = {background: '#e1e1e1'};
+  const activeBtn = { background: '#e1e1e1' };
 
   return (
     <main className="sandbox">
@@ -146,25 +147,29 @@ export default function Sandbox() {
         <section>
           {mode === 'preview' && (
             <div className="preview">
-              {Markdoc.renderers.react(content, React, {components})}
+              {Markdoc.render(code, config, 'react', React, { components })}
             </div>
           )}
           {mode === 'html' && (
             <CodeMirror
-              value={Markdoc.renderers.html(content)}
-              options={{mode: 'xml', lineWrapping: true}}
+              value={Markdoc.render(
+                code,
+                { variables: config.variables },
+                'html'
+              )}
+              options={{ mode: 'xml', lineWrapping: true }}
             />
           )}
           {mode === 'process' && (
             <CodeMirror
               value={JSON.stringify(content, null, 2)}
-              options={{mode: 'application/json', lineWrapping: true}}
+              options={{ mode: 'application/json', lineWrapping: true }}
             />
           )}
           {mode === 'ast' && (
             <CodeMirror
               value={JSON.stringify(ast, null, 2)}
-              options={{mode: 'application/json', lineWrapping: true}}
+              options={{ mode: 'application/json', lineWrapping: true }}
             />
           )}
         </section>
