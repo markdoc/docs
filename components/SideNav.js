@@ -25,7 +25,7 @@ const items = [
     links: [
       {
         href: '/docs/render/overview',
-        children: 'Phases of rendering',
+        children: 'Overview',
       },
       { href: '/docs/render/html', children: 'HTML' },
       { href: '/docs/render/react', children: 'React' },
