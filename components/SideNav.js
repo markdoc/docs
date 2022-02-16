@@ -54,7 +54,7 @@ const items = [
   },
   {
     title: 'Integration guides',
-    links: [{href: '/docs/nextjs', children: 'Next.js'}],
+    links: [{href: '/docs/nextjs', children: 'Markdoc for Next.js'}],
   },
 ];
 

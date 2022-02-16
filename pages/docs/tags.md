@@ -39,7 +39,7 @@ Only appear if myFunVar is **not** true
 
 ### if equals 
 
-Use the `equals` function to compare a variable against a given value. This function uses JavaScript's strict equality semantics, and should only be used for primitive types.
+Use the `equals` function to compare a variable against a given value. This function uses JavaScript's strict equality semantics, and is only used for primitive types.
 
 {% markdoc-example %}
 ```
@@ -127,26 +127,37 @@ Partials are primarily used to reuse text or code examples across docs. The reus
 ```
 This is an example of including the `/docs/content/partials/libraries.md` file as a partial.
 
-{% partial file="/docs/content/partials/libraries.md" /%}
+{% partial file="partials/libraries.md" /%}
 ```
 {% /markdoc-example %}
 
 ### Variables 
 
+Pass a variable to a partial.
+
 {% markdoc-example %}
 ```
 Here the `formComponentName` variable is passed into the partial as 'MarkdocPartialVariableTest':
 
-{% partial file="/partials/react-stripe-setup.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
+{% partial file="partials/react-setup.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
 ```
 {% /markdoc-example %}
 
+To access the variable: 
+
+{% markdoc-example %}
+```
+{% $variableName %}
+```
+{% /markdoc-example %}
 
 ## Tables
 
 While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
 ### Basic table
+
+A basic Markdoc table uses list syntax with each row separated by three dashes `---`.
 
 {% markdoc-example %}
 ```
@@ -164,6 +175,8 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 {% /markdoc-example %}
 
 ### Table with rich content
+
+Markdoc tables support rich text, including code samples and lists. 
 
 {% markdoc-example %}
 ````
@@ -196,7 +209,6 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 ````
 {% /markdoc-example %}
 
-
 ### Table without headings
 
 {% markdoc-example %}
@@ -214,6 +226,8 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 
 ### Set column and row span 
 
+Explicitly set column and row span.
+
 {% markdoc-example %}
 ```
 {% table %}
@@ -222,55 +236,6 @@ While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list b
 * bar
 ---
 * foo {% colspan=2 %}
-{% /table %}
-```
-{% /markdoc-example %}
-
-### Set column width
-
-{% markdoc-example %}
-```
-{% table %}
-* Column 1 {% width=60 %}
-* Column 2
----
-* foo
-* bar
-{% /table %}
-```
-{% /markdoc-example %}
-### Highlight a column
-
-{% markdoc-example %}
-```
-{% table highlightCol=2 type="solid" %}
-* Heading 1
-* Heading 2 {% badge color="blue" label="Recommended" /%}
-* Heading 3
----
-* Row 1 Cell 1
-* Row 1 Cell 2
-* Row 1 Cell 3
----
-* Row 2 Cell 1
-* Row 2 cell 2
-* Row 2 Cell 3
-{% /table %}
-```
-{% /markdoc-example %}
-
-### Text wrapping (fixed layout)
-
-{% markdoc-example %}
-```
-{% table fixed=true %}
-* Column 1
-* Column 2
-* Column 3
----
-* foo
-* bar
-* `charge.payment_method_details.card.three_d_secure.succeeded`
 {% /table %}
 ```
 {% /markdoc-example %}

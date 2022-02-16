@@ -63,9 +63,9 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
   ![Image description](/path/to/image.png)
   ```
 ---
-
-- fence
-
+* fence
+* 
+* 
 ---
 * tag
 * 
@@ -96,9 +96,9 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
   ```
 
 ---
-
-- item
-
+* item
+* 
+* 
 ---
 * table
 * Table
@@ -112,23 +112,27 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
 ---
 * thead
 * Table header.
+* 
 ---
-
-- body
-
+* body
+* 
+* 
 ---
 * tr
 * Table row.
+* 
 ---
 * td
 * Table data.
+* 
 ---
 * th
 * Table header.
+* 
 ---
-
-- inline
-
+* inline
+* 
+* 
 ---
 * strong
 * Bold text with `**`.
@@ -165,9 +169,9 @@ Nodes are elements that Markdoc inherits from the Markdown, specifically the [Co
   ```
   ````
 ---
-
-- text
-
+* text
+* 
+* 
 ---
 
 {% /table %}
