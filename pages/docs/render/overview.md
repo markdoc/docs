@@ -13,7 +13,7 @@ Markdoc has 4 phases of rendering: `parse`, `process`, `expand`, and `render`. E
 ## Parse
 
 ```js
-parse(string): AstNode
+parse(string) => AstNode
 ```
 
 Parse transforms a raw string into an abstract syntax tree (AST) representing your Markdoc document. The AST contains information about your content, including where each piece of content exists in the document.
@@ -53,7 +53,7 @@ Check this out for yourself in the [developer playground](/sandbox).
 ## Process
 
 ```js
-process(string | Node | Node[], ?Config): RenderTag | RenderTag[]
+process(string | Node | Node[], ?Config) => RenderTag | RenderTag[]
 ```
 
 Process takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of your what will eventually be rendered. This object is useful fro computing things like a [table-of-contents](/docs/examples#table-of-contents) or TK.
@@ -80,7 +80,7 @@ An example render tree might look like this:
 ## Expand
 
 ```js
-expand(string | Node | Node[], ?Config): RenderTreeNode | RenderTreeNode[]
+expand(string | Node | Node[], ?Config) => RenderTreeNode | RenderTreeNode[]
 ```
 
 Expand takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of your what will eventually be rendered. This object is useful fro computing things like a [table-of-contents](/docs/examples#table-of-contents) or TK.
@@ -104,7 +104,7 @@ render(
   string | Node | RenderTreeNode | RenderTreeNode[],
   ?Config,
   'html' | 'react' | 'reactStatic' = 'html'
-): mixed
+) => mixed
 ```
 
 Render takes in a render-tree and transforms it into a renderable form. For `html`, that means creating an HTMl document as a string. For `react`, this means creating a [React element object](https://reactjs.org/docs/rendering-elements.html).
@@ -124,7 +124,7 @@ And example HTML output might look like this:
 This in an optional step that you can use to validate your AST before rendering. This is useful during testing, continuous integration, or in dev-tools like editor extensions.
 
 ```js
-validate(string | Node, ?Options): ValidateError[]
+validate(string | Node, ?Options) => ValidateError[]
 ```
 
 If your document contains a syntax error, the output of `validate` might look like this:

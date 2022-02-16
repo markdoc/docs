@@ -36,4 +36,44 @@ https://mdxjs.com/table-of-components/
 https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 {% /comment %}
 
+## Options
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- `tag`
+- `string`
+- Name of the HTML tag to render when used in HTML rendering.
+
+---
+
+- `children`
+- `string[]`
+- Determines which tag or node types are allowed to be rendered as children of this node. Used in schema validation.
+
+---
+
+- `attributes`
+- `{ [string]: SchemaAttribute }`
+- Determines which values (and their types) are allowed to be passed to this node.
+
+---
+
+- `render`
+- `(Node, ?Options) => RenderTag | RenderTag[] | null`
+- Customize the Markdoc render function for this node, returning the custom output you want to render. This is called during the [`process` step](/docs/render/overview#process).
+
+---
+
+- `validate`
+- `(Node, ?Options) => ValidationError[];`
+- Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render/overview#validate)
+
+{% /table %}
+
 ## How to customize a node
