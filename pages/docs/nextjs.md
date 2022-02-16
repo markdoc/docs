@@ -203,7 +203,7 @@ export {
 } from '@stripe-internal/next-markdoc/tags';
 ```
 
-After you've exported the components, you can use them with the corresponding tags in your Markdoc files. In the next few sections, we'll show you how each of these Next.js components are used.
+After you've exported the components, you can use them with the corresponding tags in your Markdoc files. Here is how each of these Next.js components are used.
 
 ### Comment
 
