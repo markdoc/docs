@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc comes out-of-the-box with an HTML renderer. You can try it out yourself in our [developer playground](/sandbox).
+Markdoc comes out-of-the-box with an HTML renderer. You can try it out yourself in the [developer playground](/sandbox).
 
 {% comment %}
 TODO: this will be `process` in the future
