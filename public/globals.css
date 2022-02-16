@@ -177,6 +177,10 @@ pre[class*='language-'] {
   background: #f2f2f2 !important;
 }
 
+.token {
+  background: transparent !important;
+}
+
 .token.function,
 .token.class-name,
 .sandbox span.cm-atom,
