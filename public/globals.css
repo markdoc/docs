@@ -90,6 +90,7 @@ h4,
 h5,
 h6 {
   color: var(--dark);
+  position: relative;
 }
 
 h1 {
@@ -110,6 +111,11 @@ h3 {
 h5 {
   font-size: var(--font-size-3);
   font-weight: normal;
+}
+
+.heading .anchor {
+  position: absolute;
+  top: calc(-1 * (var(--nav-height) + 44px));
 }
 
 pre {
