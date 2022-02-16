@@ -9,7 +9,7 @@ Using the `next-markdoc` package/plugin allows you to create custom `.md` and `.
 
 ## Before you get started
 
-This guide assumes that you already have a Next.js app. If you are starting from scatch, follow the steps in [Getting Started](https://nextjs.org/docs).
+This guide assumes that you already have a Next.js app. If you are starting from scratch, follow the steps in [getting started with Next.js](https://nextjs.org/docs).
 
 ## Setup
 
@@ -102,27 +102,9 @@ module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
 });
 ```
 
-### Nodes
-
-Custom nodes are registed by exporting a registration obect from a file within the `/markdoc` directory. In this example, we're using [`next/link`](https://nextjs.org/docs/api-reference/next/link) instead of the standard `Link` component:
-
-```js
-import { Link } from 'next/link';
-
-export const link = {
-  node: 'link',
-  Component: Link,
-  attributes: {
-    href: {
-      type: String,
-    },
-  },
-};
-```
-
 ### Tags
 
-Custom tags are registed by exporting a registration obect from a file within the `/markdoc` directory. In this example, the tag name is `button`, which matches the name of the exported object. The `Component` mapping tells Markdoc to render a `Button` React component whenever the `{% button %}` tag is used.
+Custom tags are registered by exporting a schema object from within the `/markdoc` directory. In this example, the tag name is `button`, the name of the exported object. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% button %}` tag is used.
 
 ```js
 // markdoc/Button.markdoc.js
@@ -148,6 +130,24 @@ export const button = {
   tag: 'special-button'
   Component: SpecialButton,
   attributes: {},
+};
+```
+
+### Nodes
+
+Custom node registrations are almost identical to [tags](#tags), but instead of setting the `tag` key, you set `node`, for example:
+
+```js
+import { Link } from 'next/link';
+
+export const link = {
+  node: 'link',
+  Component: Link,
+  attributes: {
+    href: {
+      type: String,
+    },
+  },
 };
 ```
 
