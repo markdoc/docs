@@ -8,12 +8,12 @@ description:
 {% comment %}
 TODO: `expand` will be removed
 {% /comment%}
-Markdoc has 4 phases of rendering: `parse`, `process`, `expand`, and `render`. Each phase operates on the output of the previous phase.
+Markdoc has 4 phases of rendering: `parse`, `process`, `expand`, and `render`. Each phase operates on the output of the previous phases.
 
 ## Parse
 
 ```js
-parse(string | Token[]): Node
+parse(string): Node
 ```
 
 ## Process
@@ -25,7 +25,7 @@ process(string | Node | Node[], ?Config): RenderTag | RenderTag[]
 ## Expand
 
 ```js
-expand(string | Node | Node[], ?Config): RenderTag | RenderTag[]
+expand(string | Node | Node[], ?Config): RenderTreeNode | RenderTreeNode[]
 ```
 
 ## Render
@@ -35,7 +35,7 @@ render(
   string | Node | RenderTreeNode | RenderTreeNode[],
   ?Config,
   'html' | 'react' | 'reactStatic' = 'html'
-): RenderTag | RenderTag[]
+): mixed
 ```
 
 ## Validate
