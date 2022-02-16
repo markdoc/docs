@@ -39,7 +39,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
    ├── index.js
    ```
 
-4. Add the following to `getting-started.md`:
+4. Add some Markdoc to `getting-started.md`:
 
    ```
    ---
@@ -209,7 +209,7 @@ After you've exported the components, you can use them with the corresponding ta
 
 ### Comment
 
-Renders nothing. Use this to document the content within a Markdoc file.
+Renders nothing, similar to code comments. Use this to document the content within a Markdoc file.
 
 {% markdoc-example %}
 
