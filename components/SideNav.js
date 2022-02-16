@@ -7,8 +7,7 @@ const items = [
     title: 'Get started',
     links: [
       {href: '/docs/getting-started', children: 'Installation'},
-      {href: '/docs/basic-usage', children: 'Basic usage'},
-      {href: '/sandbox', children: 'Try it out (Demo)'},
+      {href: '/sandbox', children: 'Try it out'},
     ],
   },
   {
@@ -54,7 +53,7 @@ const items = [
   },
   {
     title: 'Integration guides',
-    links: [{href: '/docs/nextjs', children: 'Next.js'}],
+    links: [{href: '/docs/nextjs', children: 'Using Next.js'}],
   },
 ];
 

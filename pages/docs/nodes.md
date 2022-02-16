@@ -1,59 +1,39 @@
 ---
 title: Nodes
-description: 
+description:
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Nodes are elements that Markdoc inherits from the Markdown, specifically the CommonMark specification. 
+Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/). The following is a list of elements that can be overwritten or customized.
 
-## Supported nodes
+- `header` (`h1`, `h2`, and so on)
+- `paragraph`
+- `hr`
+- `image`
+- `fence`
+- `blockquote`
+- `list` (`li`, `ul`, `ol`)
+- `item`
+- `table`
+- `thead`
+- `tbody`
+- `tr`
+- `td`
+- `th`
+- `inline`
+- `strong`
+- `em`
+- `link`
+- `code`
+- `text`
+- `hardbreak`
+- `error`
 
-{% table %}
-* Node type
----
-* document
----
-* heading
----
-* paragraph
----
-* blockquote
----
-* hr
----
-* image
----
-* fence
----
-* tag
----
-* list
----
-* item
----
-* table
----
-* thead
----
-* body
----
-* tr
----
-* td
----
-* th
----
-* inline
----
-* strong
----
-* em
----
-* link
----
-* code
----
-* text
----
-{% /table %}
+{% comment %}
+These pages do this well:
+https://mdxjs.com/table-of-components/
+https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
+{% /comment %}
+
+## How to customize a node
