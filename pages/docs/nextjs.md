@@ -44,7 +44,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
 
    # Get started with Markdoc
    ```
-6. Start your server `npm run dev`/`yarn dev`, then navigate to your new page. For example: `https://localhost:3001/docs/getting-started`.
+6. Start your server `next`, then navigate to your new page. For example: `https://localhost:3000/docs/getting-started`.
 
 
 ## Options
