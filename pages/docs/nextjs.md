@@ -190,7 +190,7 @@ export default function App({ Component, pageProps }) {
 
 ## Built-in Next.js tags
 
-Earlier in this guide, we discussed customizing nodes and tags. It's also important to call out that the Next.js plugin provides custom components out of the box, and each of these components accessible via tags that you can add to your schema. **TODO: Mike we need to clean this up.**
+Next.js provides custom components out of the box, and each of these components is accessible via tags that you can add to your schema. To add components, export from a file in the `/markdoc/` directory. For example:
 
 ```js
 // markdoc/Next.markdoc.js
@@ -205,7 +205,7 @@ export {
 } from '@stripe-internal/next-markdoc/tags';
 ```
 
-After you've exported the components, you can use them with the corresponding tags in your Markdoc files. Here is how each of these Next.js components are used.
+After you've exported the components, you can use them with the corresponding tags in your Markdoc files.
 
 ### Comment
 
