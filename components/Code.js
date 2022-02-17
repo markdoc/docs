@@ -15,7 +15,17 @@ Prism.languages.markdoc = {
       id: /#(\w|-)*\b/,
       string: /".*?"/,
       equals: /=/,
+      number: /\b\d+\b/i,
+      variable: /\$\w+/i,
+      function: /\b\w+(?=\()/,
+      punctuation: /({%|%})/i,
     },
+  },
+  variable: {
+    pattern: /\$\w+/i,
+  },
+  function: {
+    pattern: /\b\w+(?=\()/i,
   },
 };
 

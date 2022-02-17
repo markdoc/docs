@@ -63,7 +63,7 @@ Use the `not` function with the `if` tag to render content when a condition is n
 
 ```
 {% if not($myFunVar) %}
-Only appear if myFunVar is **not** true
+Only appear if $myFunVar is **not** true
 {% /if %}
 ```
 
