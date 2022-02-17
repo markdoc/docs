@@ -2,7 +2,7 @@ import * as React from 'react';
 import PrismCode from 'react-prism';
 import copy from 'copy-to-clipboard';
 
-import {Icon} from './Icon';
+import { Icon } from './Icon';
 
 Prism.languages.markdoc = {
   tag: {
@@ -19,7 +19,7 @@ Prism.languages.markdoc = {
   },
 };
 
-export function Code({children, language}) {
+export function Code({ children, language }) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
 
@@ -31,13 +31,15 @@ export function Code({children, language}) {
     }
   }, [copied]);
 
+  const lang = language === 'md' ? 'markdoc' : language || 'markdoc';
+
   return (
     <div className="code" aria-live="polite">
       <PrismCode
         ref={ref}
-        key={language}
+        key={lang}
         component="pre"
-        className={`language-${language}`}
+        className={`language-${lang}`}
       >
         {children}
       </PrismCode>
