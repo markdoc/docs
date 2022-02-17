@@ -5,30 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/). The following is a list of elements that can be overwritten or customized.
-
-- `header` (`h1`, `h2`, and so on)
-- `paragraph`
-- `hr`
-- `image`
-- `fence`
-- `blockquote`
-- `list` (`li`, `ul`, `ol`)
-- `item`
-- `table`
-- `thead`
-- `tbody`
-- `tr`
-- `td`
-- `th`
-- `inline`
-- `strong`
-- `em`
-- `link`
-- `code`
-- `text`
-- `hardbreak`
-- `error`
+Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
 {% comment %}
 These pages do this well:
@@ -76,7 +53,35 @@ https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 
 {% /table %}
 
-## How to customize a node
+## Built-in nodes
+
+Markdoc comes out of the box with built-in nodes for each of the [CommonMark](https://commonmark.org/) types:
+
+- `document`
+- `heading`
+- `paragraph`
+- `hr`
+- `image`
+- `fence`
+- `blockquote`
+- `list`
+- `item`
+- `table`
+- `thead`
+- `tbody`
+- `tr`
+- `td`
+- `th`
+- `inline`
+- `strong`
+- `em`
+- `link`
+- `code`
+- `text`
+- `hardbreak`
+- `error`
+
+## Customizing a node
 
 First, create a custom node definition
 
@@ -139,11 +144,11 @@ Finally, use your custom nodes in your Markdoc content.
 {% markdoc-example %}
 
 ```md
-## My header
+#### My header
 ```
 
 {% /markdoc-example %}
 
-## My header
+#### My header
 
 {% /side-by-side %}

@@ -7,8 +7,6 @@ description: Functions let you extend Markdoc to run custom code.
 
 Functions let you extend Markdoc to run custom code.
 
-## Built-in functions
-
 {% table %}
 
 - Function
@@ -53,7 +51,9 @@ Functions let you extend Markdoc to run custom code.
 
 {% /table %}
 
-## Examples
+## Built-in functions
+
+Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `not`, and `debug`.
 
 ### Not
 
@@ -96,9 +96,9 @@ The variable `$myFunVar` is equal to the string `"test"`.
 
 {% /markdoc-example %}
 
-## How to use functions
+## Creating a custom function
 
-First, create a function definition:
+First, create custom function definitions:
 
 ```js
 const includes = {
@@ -108,31 +108,40 @@ const includes = {
     return Array.isArray(array) ? array.includes(value) : false;
   },
 };
+
+const uppercase = {
+  render(parameters, config) {
+    const string = parameters['0'];
+
+    return typeof string === 'string' ? string.toUpperCase() : string;
+  },
+};
 ```
 
-Then, pass the function to your `Config` object
+Then, pass the functions to your `Config` object
 
 ```js
 const config = {
   functions: {
     includes,
+    uppercase,
   },
 };
 
 return Markdoc.render(content, config);
 ```
 
-Finally, call the function within your Markdoc content
+Finally, call the functions within your Markdoc content
 
 {% markdoc-example %}
 
 ```md
-{% if includes($countries, "AR") %}🇦🇷{% /if %}
-{% if includes($countries, "AU") %}🇦🇺{% /if %}
-{% if includes($countries, "ES") %}🇪🇸{% /if %}
-{% if includes($countries, "JP") %}🇯🇵{% /if %}
-{% if includes($countries, "NG") %}🇳🇬{% /if %}
-{% if includes($countries, "US") %}🇺🇸{% /if %}
+{% if includes($countries, "AR") %} 🇦🇷 {% /if %}
+{% if includes($countries, "AU") %} 🇦🇺 {% /if %}
+{% if includes($countries, "ES") %} 🇪🇸 {% /if %}
+{% if includes($countries, "JP") %} 🇯🇵 {% /if %}
+{% if includes($countries, "NG") %} 🇳🇬 {% /if %}
+{% if includes($countries, "US") %} 🇺🇸 {% /if %}
 ```
 
 {% /markdoc-example %}

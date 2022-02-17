@@ -53,7 +53,11 @@ Tags are an extension of standard Markdown. With tags you can use native Markdoc
 
 {% /table %}
 
-## Conditionals
+## Built-in tags
+
+Markdoc comes out-of-the-box with 4 built-in functions: `if`, `else`, `table`, and `partial`.
+
+### Conditionals (if/else)
 
 Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables](./variables) and [functions](./functions).
 
@@ -93,47 +97,11 @@ This appears if not $myFunVar and not $otherFunVar
 
 {% /markdoc-example %}
 
-## Partials
-
-Partials are primarily used to reuse text or code examples across docs. The reusable information (text or code) is stored in a separate markdown file, and referenced from within the partial tag. A common convention is to store partials in a directory called `partial`.
-
-{% markdoc-example %}
-
-```
-This is an example of including the `/docs/header.md` file as a partial.
-
-{% partial file="/partials/header.md" /%}
-```
-
-{% /markdoc-example %}
-
-### Passing variables
-
-Partials are just like other tags, so you can pass variables to them like:
-
-{% markdoc-example %}
-
-```
-{% partial file="/partials/header.md" variables={name: "My header name"} /%}
-```
-
-{% /markdoc-example %}
-
-And access the variables just like in a regular Markdoc document:
-
-{% markdoc-example %}
-
-```
-{% $variableName %}
-```
-
-{% /markdoc-example %}
-
-## Tables
+### Tables
 
 While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
-### Basic table
+#### Basic table
 
 A basic Markdoc table uses list syntax with each row separated by three dashes `---`.
 
@@ -154,7 +122,7 @@ A basic Markdoc table uses list syntax with each row separated by three dashes `
 
 {% /markdoc-example %}
 
-### Table with rich content
+#### Table with rich content
 
 Markdoc tables support rich text, including code samples and lists.
 
@@ -191,7 +159,7 @@ Markdoc tables support rich text, including code samples and lists.
 
 {% /markdoc-example %}
 
-### Table without headings
+#### Table without headings
 
 {% markdoc-example %}
 
@@ -208,7 +176,7 @@ Markdoc tables support rich text, including code samples and lists.
 
 {% /markdoc-example %}
 
-### Set column and row span
+#### Set column and row span
 
 Explicitly set column and row span.
 
@@ -226,7 +194,7 @@ Explicitly set column and row span.
 
 {% /markdoc-example %}
 
-### Text alignment
+#### Text alignment
 
 {% markdoc-example %}
 
@@ -252,7 +220,43 @@ Explicitly set column and row span.
 
 {% /markdoc-example %}
 
-## How to create a custom tag
+### Partials
+
+Partials are primarily used to reuse text or code examples across docs. The reusable information (text or code) is stored in a separate markdown file, and referenced from within the partial tag. A common convention is to store partials in a directory called `partial`.
+
+{% markdoc-example %}
+
+```
+This is an example of including the `/docs/header.md` file as a partial.
+
+{% partial file="/partials/header.md" /%}
+```
+
+{% /markdoc-example %}
+
+#### Passing variables
+
+Partials are just like other tags, so you can pass variables to them like:
+
+{% markdoc-example %}
+
+```
+{% partial file="/partials/header.md" variables={name: "My header name"} /%}
+```
+
+{% /markdoc-example %}
+
+And access the variables just like in a regular Markdoc document:
+
+{% markdoc-example %}
+
+```
+{% $variableName %}
+```
+
+{% /markdoc-example %}
+
+## Creating a custom tag
 
 First, create a custom tag definition:
 
