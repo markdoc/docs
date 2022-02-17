@@ -186,9 +186,9 @@ Partials are primarily used to reuse text or code examples across docs. The reus
 {% markdoc-example %}
 
 ```
-This is an example of including the `/docs/content/partials/libraries.md` file as a partial.
+This is an example of including the `/docs/header.md` file as a partial.
 
-{% partial file="partials/libraries.md" /%}
+{% partial file="/partials/header.md" /%}
 ```
 
 {% /markdoc-example %}
@@ -202,7 +202,7 @@ Pass a variable to a partial.
 ```
 Here the `formComponentName` variable is passed into the partial as 'MarkdocPartialVariableTest':
 
-{% partial file="partials/react-setup.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
+{% partial file="/partials/header.md" variables={formComponentName: "MarkdocPartialVariableTest"} /%}
 ```
 
 {% /markdoc-example %}
