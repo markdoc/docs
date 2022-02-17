@@ -53,6 +53,49 @@ Functions let you extend Markdoc to run custom code.
 
 {% /table %}
 
+## Examples
+
+### Not
+
+Use the `not` function with the `if` tag to render content when a condition is not met (or evaluates to `false`).
+
+{% markdoc-example %}
+
+```
+{% if not($myFunVar) %}
+Only appear if myFunVar is **not** true
+{% /if %}
+```
+
+{% /markdoc-example %}
+
+### And/or
+
+{% markdoc-example %}
+
+```
+This is always shown
+{% if and($a, or($b, $c)) %}
+This is shown only if $a and either $b or $c is true.
+{% /if %}
+```
+
+{% /markdoc-example %}
+
+### Equals
+
+Use the `equals` function to compare a variable against a given value. This function uses JavaScript's strict equality semantics, and is only used for primitive types.
+
+{% markdoc-example %}
+
+```
+{% if equals($myFunVar, "test") %}
+The variable `$myFunVar` is equal to the string `"test"`.
+{% /if %}
+```
+
+{% /markdoc-example %}
+
 ## How to use functions
 
 First, create a function definition:
