@@ -50,5 +50,3 @@ export function Code({ children, language }) {
     </div>
   );
 }
-
-Code.displayName = 'Code';

@@ -59,8 +59,6 @@ const svgs = {
   ),
 };
 
-export function Icon({icon, type}) {
+export function Icon({ icon, type }) {
   return <span className={['icon', type].join(' ')}>{svgs[icon] || null}</span>;
 }
-
-Icon.displayName = 'Icon';

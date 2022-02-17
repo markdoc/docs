@@ -13,5 +13,3 @@ export function AppLink(props) {
     </Link>
   );
 }
-
-AppLink.displayName = 'AppLink';

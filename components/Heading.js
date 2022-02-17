@@ -6,5 +6,3 @@ export function Heading({ id = '', level = 1, children }) {
     children,
   ]);
 }
-
-Heading.displayName = 'Heading';

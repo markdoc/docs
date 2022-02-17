@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Icon} from './Icon';
+import { Icon } from './Icon';
 
 const ICON_MAP = {
   note: 'information-circle',
@@ -9,7 +9,7 @@ const ICON_MAP = {
   warning: 'warning',
 };
 
-export function Callout({title, children, type}) {
+export function Callout({ title, children, type }) {
   const icon = ICON_MAP[type];
 
   return (
@@ -26,5 +26,3 @@ export function Callout({title, children, type}) {
     </div>
   );
 }
-
-Callout.displayName = 'Callout';

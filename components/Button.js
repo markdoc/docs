@@ -1,4 +1,4 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 export function Button(props) {
   const router = useRouter();
@@ -16,5 +16,3 @@ export function Button(props) {
     <button {...props} className="app-btn" />
   );
 }
-
-Button.displayName = 'Button';
