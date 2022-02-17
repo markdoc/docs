@@ -541,3 +541,22 @@ footer a:hover {
   margin: 0;
   padding: 0;
 }
+
+.side-by-side {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.side-by-side .heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.side-by-side *:first-child {
+  flex-grow: 1;
+}
+
+.side-by-side > *:not(:first-child) {
+  margin-left: 3rem;
+}

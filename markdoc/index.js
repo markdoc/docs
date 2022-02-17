@@ -4,3 +4,4 @@ export * from './Code.markdoc.js';
 export * from './Heading.markdoc.js';
 export * from './Icon.markdoc.js';
 export * from './Next.markdoc.js';
+export * from './SideBySide.markdoc.js';

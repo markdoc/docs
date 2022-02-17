@@ -81,24 +81,25 @@ https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 First, create a custom node definition
 
 ```js
-// ./schema/heading.js
+// ./schema/Heading.markdoc.js
 
 import { Ast } from '@stripe-internal/markdoc';
 
-const getAnchor = (children, attributes) => {
+function generateID(children, attributes) {
   if (attributes.id && typeof attributes.id === 'string') {
     return attributes.id;
   }
   return children
     .filter((child) => typeof child === 'string')
     .join(' ')
-    .replace(/[?]/g, '')
+    .replace(/\?/g, '')
     .replace(/\s+/g, '-')
     .toLowerCase();
-};
+}
 
 export const heading = {
   tag(node) {
+    // Determines which HTMl or React component to render
     return `h${node.attributes['level']}`;
   },
   children: ['inline'],
@@ -110,7 +111,7 @@ export const heading = {
     const attributes = node.renderAttributes(this.attributes);
     const children = node.renderChildren(config);
 
-    const id = getAnchor(children, attributes);
+    const id = generateID(children, attributes);
 
     return new Ast.Tag(this.tag, { ...attributes, id }, children);
   },
@@ -120,7 +121,7 @@ export const heading = {
 Then, pass your node definition to your `Config` object
 
 ```js
-import { heading } from './schema/heading';
+import { heading } from './schema/Heading.markdoc';
 
 const config = {
   nodes: {
@@ -133,10 +134,16 @@ return Markdoc.render(content, config);
 
 Finally, use your custom nodes in your Markdoc content.
 
+{% side-by-side %}
+
 {% markdoc-example %}
 
 ```md
-# My header
+## My header
 ```
 
 {% /markdoc-example %}
+
+## My header
+
+{% /side-by-side %}

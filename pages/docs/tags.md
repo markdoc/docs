@@ -339,3 +339,94 @@ Explicitly set column and row span.
 ```
 
 {% /markdoc-example %}
+
+## How to create a custom tag
+
+First, create a custom tag definition:
+
+```js
+// ./schema/Callout.markdoc.js
+
+export const callout = {
+  tag: 'Callout',
+  description: 'Display the enclosed content in a callout box',
+  children: ['paragraph', 'tag', 'list'],
+  attributes: {
+    type: {
+      type: String,
+      default: 'note',
+      matches: ['caution', 'check', 'note', 'warning'],
+      errorLevel: 'critical',
+      description:
+        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
+    },
+    title: {
+      type: String,
+      description: 'The title displayed at the top of the callout',
+      localizable: true,
+    },
+  },
+};
+```
+
+Then, pass your tag definition to your `Config` object:
+
+```js
+import { callout } from './schema/Callout.markdoc';
+
+const config = {
+  tags: {
+    callout,
+  },
+};
+
+return Markdoc.render(content, config);
+```
+
+If you want to render a React component, specify which component should render this type of tag (in this case, `Callout`)
+
+```js
+import * as React from 'react';
+import { Icon } from './Icon';
+
+function Callout({ title, icon, children }) {
+  return (
+    <div className="callout">
+      <div className="content">
+        <Icon icon={icon} />
+        <div className="copy">
+          <span className="title">{title}</span>
+          <span>{children}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+return Markdoc.renderers.react(content, React, {
+  components: {
+    // The key here is the same string as `tag` in the previous step
+    Callout: Callout,
+  },
+});
+```
+
+Finally, use your custom tag in your Markdoc content.
+
+{% side-by-side %}
+
+{% markdoc-example %}
+
+```md
+{% callout title="Hey you!" icon="note" %}
+I have a message for you
+{% /callout %}
+```
+
+{% /markdoc-example %}
+
+{% callout title="Hey you!" type="note" %}
+I have a message for you
+{% /callout %}
+
+{% /side-by-side %}
