@@ -2,14 +2,9 @@ import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import Markdoc from '@stripe-internal/markdoc';
-import {
-  transformSchema,
-  transformComponents,
-} from '@stripe-internal/next-markdoc/runtime';
+import { transformSchema } from '@stripe-internal/next-markdoc/runtime';
 
 import * as schema from '../markdoc';
-
-const components = transformComponents(schema);
 
 const INITIAL_CODE = `---
 title: Sandbox
@@ -78,7 +73,7 @@ export default function Sandbox() {
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
   const config = React.useMemo(() => {
-    const { nodes, tags } = transformSchema(schema);
+    const { nodes, tags, components } = transformSchema(schema);
     return {
       nodes,
       tags,
@@ -89,6 +84,7 @@ export default function Sandbox() {
             : {},
         },
       },
+      components,
     };
   }, [ast]);
 
@@ -147,7 +143,9 @@ export default function Sandbox() {
         <section>
           {mode === 'preview' && (
             <div className="preview">
-              {Markdoc.render(code, config, 'react', React, { components })}
+              {Markdoc.render(code, config, 'react', React, {
+                components: config.components,
+              })}
             </div>
           )}
           {mode === 'html' && (
