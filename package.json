@@ -9,11 +9,11 @@
     "export": "NEXT_PUBLIC_BASE_PATH=/markdoc next build && next export"
   },
   "dependencies": {
-    "@stripe-internal/markdoc": "^0.0.9",
-    "codemirror": "^5.65.0",
+    "@stripe-internal/markdoc": "0.0.10",
+    "codemirror": "^5.65.1",
     "copy-to-clipboard": "^3.3.1",
     "js-yaml": "^4.1.0",
-    "next": "12.0.9-canary.0",
+    "next": "12.0.9-canary.6",
     "prismjs": "^1.26.0",
     "react": "17.0.2",
     "react-codemirror2": "^7.2.1",
@@ -22,7 +22,7 @@
     "sharp": "^0.29.3"
   },
   "devDependencies": {
-    "eslint": "8.6.0",
-    "eslint-config-next": "12.0.9-canary.0"
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.9-canary.6"
   }
 }
