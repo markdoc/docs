@@ -27,9 +27,51 @@ export const group = {
 };
 ```
 
+## Syntax highlighting
+
+You can hook up syntax highlighting for code blocks by creating a custom `fence` [node](/docs/nodes). This example shows how to do so with [Prism](https://prismjs.com/).
+
+```js
+import 'prismjs';
+import 'prismjs/themes/prism.css';
+
+import Prism from 'react-prism';
+
+export function Fence({ children, language }) {
+  return (
+    <Prism key={language} component="pre" className={`language-${language}`}>
+      {children}
+    </Prism>
+  );
+}
+
+const fence = {
+  tag: 'Fence',
+  attributes: {
+    language: {
+      type: String,
+      description:
+        'The programming language of the code block. Place it after the backticks.',
+    },
+  },
+};
+
+const processed = Markdoc.process(content, {
+  nodes: {
+    fence,
+  },
+});
+
+Markdoc.renderers.react(processed, React, {
+  components: {
+    Fence,
+  },
+});
+```
+
 ## Table-of-contents
 
-### Step 1: Collect all headings from the page content
+#### Step 1: Collect all headings from the page content
 
 ```js
 function collectHeadings(node, sections = []) {
@@ -52,7 +94,7 @@ function collectHeadings(node, sections = []) {
   if (node.children) {
     node.children.forEach((child) => collectHeadings(child, sections));
   }
-g
+
   return sections;
 }
 
@@ -61,7 +103,7 @@ const content = Markdoc.expand(processed);
 const headings = collectHeadings(processed);
 ```
 
-### Step 2: Render the relevant headers in a list
+#### Step 2: Render the relevant headers in a list
 
 ```js
 function TableOfContents({ headings }) {
