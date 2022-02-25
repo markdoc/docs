@@ -1,3 +1,4 @@
+/* global Prism */
 import * as React from 'react';
 import PrismCode from 'react-prism';
 import copy from 'copy-to-clipboard';
