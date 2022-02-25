@@ -1,6 +1,6 @@
 {
-  "name": "markdocs-site",
   "private": true,
+  "name": "@markdoc/docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
