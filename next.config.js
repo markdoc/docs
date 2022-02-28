@@ -9,7 +9,7 @@ module.exports = withMarkdoc()({
   reactStrictMode: true,
   pageExtensions: ['js', 'md', 'mdoc'],
   i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+    locales: ['en-US'],
+    defaultLocale: 'en-US',
   },
 });
