@@ -8,8 +8,4 @@ module.exports = withMarkdoc()({
   publicRuntimeConfig: { basePath: basePath || '' },
   reactStrictMode: true,
   pageExtensions: ['js', 'md', 'mdoc'],
-  i18n: {
-    locales: ['en-US'],
-    defaultLocale: 'en-US',
-  },
 });
