@@ -6,7 +6,7 @@ export function AppLink(props) {
     props.target || (props.href.startsWith('http') ? '_blank' : undefined);
 
   return (
-    <Link {...props} passHref>
+    <Link {...props} passHref prefetch={false}>
       <a target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
         {props.children}
       </a>
