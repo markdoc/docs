@@ -74,15 +74,13 @@ export default function MyApp(props) {
       <div className="nav-bar">
         <nav>
           <Link href="/">
-            <a>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={basePath + '/logo.svg'}
-                alt="Markdoc logo"
-                width={100}
-                height={45}
-              />
-            </a>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={basePath + '/logo.svg'}
+              alt="Markdoc logo"
+              width={100}
+              height={45}
+            />
           </Link>
           <ul className="links">
             <li>
