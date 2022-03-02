@@ -21,10 +21,17 @@ const includes = {
 };
 
 const uppercase = {
-  render(parameters, config) {
+  render(parameters) {
     const string = parameters['0'];
 
     return typeof string === 'string' ? string.toUpperCase() : string;
+  },
+};
+
+const xor = {
+  render(parameters) {
+    const [a, b] = Object.values(parameters).map(Boolean);
+    return a !== b;
   },
 };
 ```
@@ -105,7 +112,7 @@ Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `
 
 {% /table %}
 
-### And, Or, and Not
+### And/Or/Not
 
 Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content content when the condition is met.
 
