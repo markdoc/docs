@@ -5,7 +5,7 @@ description: Functions let you extend Markdoc to run custom code.
 
 # {% $markdoc.frontmatter.title %}
 
-Functions let you extend Markdoc with custom utilities, which let you transform your content and variables at runtime.
+Functions let you extend Markdoc with custom utilities, which let you transform your content and [variables](/docs/syntax#variables) at runtime.
 
 ## Creating a custom function
 

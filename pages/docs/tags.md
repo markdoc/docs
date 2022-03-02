@@ -328,7 +328,7 @@ This is an example of including the `/docs/header.md` file as a partial.
 
 #### Passing variables
 
-Partials are just like other tags, so you can pass variables to them like:
+Partials are just like other tags, so you can pass [variables](/docs/syntax#variables) to them like:
 
 {% markdoc-example %}
 

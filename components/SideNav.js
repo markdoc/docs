@@ -34,7 +34,7 @@ const items = [
     title: 'Integration guides',
     links: [
       { href: '/docs/examples', children: 'Common examples' },
-      { href: '/docs/nextjs', children: 'Using Next.js' },
+      { href: '/docs/nextjs', children: 'Using with Next.js' },
     ],
   },
 ];
