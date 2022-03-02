@@ -3,7 +3,7 @@ title: Functions
 description: Functions let you extend Markdoc to run custom code.
 ---
 
-# Functions
+# {% $markdoc.frontmatter.title %}
 
 Functions let you extend Markdoc with custom utilities, which let you transform your content and variables at runtime.
 
@@ -136,7 +136,7 @@ The variable $myVar is equal to the string "test".
 
 ### Debug
 
-This function simply renders the value as serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/variables).
+This function simply renders the value as serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/syntax#variables).
 
 {% markdoc-example %}
 

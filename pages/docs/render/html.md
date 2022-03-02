@@ -7,10 +7,7 @@ description:
 
 Markdoc comes out-of-the-box with an HTML renderer. You can try it out yourself in the [developer playground](/sandbox).
 
-{% comment %}
-TODO: this will be `process` in the future
-{% /comment%}
-First create a Markdoc render tree by calling `expand`.
+First create a Markdoc render tree by calling `process`.
 
 {% markdoc-example %}
 
@@ -21,7 +18,7 @@ const content = `
 Run this command to install the Markdoc library:
 `;
 
-const renderTree = Markdoc.expand(content);
+const renderTree = Markdoc.process(content);
 ```
 
 {% /markdoc-example %}
@@ -41,6 +38,8 @@ app.get('/docs/getting-started', (req, res) => {
     <html>
       <body>
         ${Markdoc.renderers.html(renderTree)}
+        <!-- or --> 
+        ${Markdoc.render(renderTree, {}, 'html')}
       </body>
     </html>
   `);
@@ -54,7 +53,6 @@ which renders HTML that looks like this:
 <html>
   <body>
     <h1>Getting started</h1>
-
     <p>Run this command to install the Markdoc library:</p>
   </body>
 </html>

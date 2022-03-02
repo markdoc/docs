@@ -9,17 +9,14 @@ Markdoc comes out-of-the-box with a React renderer. The only requirement to rend
 
 ## On the server or client
 
-{% comment %}
-TODO: this will be `process` in the future
-{% /comment%}
-First create a Markdoc render tree by calling `expand`.
+First create a Markdoc render tree by calling `process`.
 
 {% markdoc-example %}
 
 ```js
 const tags = {
   callout: {
-    tag: 'callout',
+    tag: 'Callout',
     attributes: {},
   },
 };
@@ -30,7 +27,7 @@ Attention, over here!
 {% /callout %}
 `;
 
-const renderTree = Markdoc.expand(content, { tags });
+const renderTree = Markdoc.process(content, { tags });
 ```
 
 {% /markdoc-example %}
@@ -44,19 +41,19 @@ import Markdoc from '@stripe-internal/markdoc';
 import React from 'react'; // or 'preact'
 
 function Callout({ children }) {
-  return <div class="callout">{children}</div>;
+  return <div className="callout">{children}</div>;
 }
 
 function MyApp() {
   return Markdoc.renderers.react(renderTree, React, {
     components: {
-      callout: Callout,
+      Callout: Callout,
     },
   });
 }
 ```
 
-which render your Callout component like this:
+which will render your Callout component like this:
 
 {% callout %}
 Attention, over here!

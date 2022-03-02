@@ -98,8 +98,7 @@ function collectHeadings(node, sections = []) {
   return sections;
 }
 
-const processed = Markdoc.process(ast);
-const content = Markdoc.expand(processed);
+const content = Markdoc.process(ast);
 const headings = collectHeadings(processed);
 ```
 

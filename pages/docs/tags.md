@@ -151,7 +151,7 @@ Markdoc comes out-of-the-box with 4 built-in functions: `if`, `else`, `table`, a
 
 ### If/Else
 
-Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables](./variables) and [functions](./functions).
+Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions).
 
 Use the `if` tag to render content when a condition evaluates to `true`.
 
