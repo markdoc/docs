@@ -5,15 +5,107 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are an extension of standard Markdown. With tags you can use native Markdoc components, like list tables, conditionals, and partials, or custom-built React components.
+## Creating a custom tag
+
+Tags are an syntactic extension of standard Markdown. With tags you can use native Markdoc components, like list tables, conditionals, and partials, or custom-built React components.
+
+To extend Markdoc with your own custom tags, first create a custom tag definition:
+
+```js
+// ./schema/Callout.markdoc.js
+
+export const callout = {
+  tag: 'Callout',
+  description: 'Display the enclosed content in a callout box',
+  children: ['paragraph', 'tag', 'list'],
+  attributes: {
+    type: {
+      type: String,
+      default: 'note',
+      matches: ['caution', 'check', 'note', 'warning'],
+      errorLevel: 'critical',
+      description:
+        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
+    },
+    title: {
+      type: String,
+      description: 'The title displayed at the top of the callout',
+    },
+  },
+};
+```
+
+Then, pass your tag definition to your `Config` object:
+
+```js
+import { callout } from './schema/Callout.markdoc';
+
+const config = {
+  tags: {
+    callout,
+  },
+};
+
+return Markdoc.render(content, config);
+```
+
+Then, pass your config to `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag (in this case, `Callout`) within the `components` mapping.
+
+```js
+import * as React from 'react';
+import { Icon } from './Icon';
+
+function Callout({ title, icon, children }) {
+  return (
+    <div className="callout">
+      <div className="content">
+        <Icon icon={icon} />
+        <div className="copy">
+          <span className="title">{title}</span>
+          <span>{children}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+return Markdoc.renderers.react(content, React, {
+  components: {
+    // The key here is the same string as `tag` in the previous step
+    Callout: Callout,
+  },
+});
+```
+
+Finally, use your custom tag in your Markdoc content.
+
+{% side-by-side %}
+
+{% markdoc-example %}
+
+```md
+{% callout title="Hey you!" icon="note" %}
+I have a message for you
+{% /callout %}
+```
+
+{% /markdoc-example %}
+
+{% callout title="Hey you!" type="note" %}
+I have a message for you
+{% /callout %}
+
+{% /side-by-side %}
 
 ## Options
+
+These are the fields you can use to customize your `Tag`
 
 {% table %}
 
 - Option
 - Type
-- Description
+- Description {% width="40%" %}
 
 ---
 
@@ -57,7 +149,7 @@ Tags are an extension of standard Markdown. With tags you can use native Markdoc
 
 Markdoc comes out-of-the-box with 4 built-in functions: `if`, `else`, `table`, and `partial`.
 
-### Conditionals (if/else)
+### If/Else
 
 Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables](./variables) and [functions](./functions).
 
@@ -99,7 +191,7 @@ This appears if not $myFunVar and not $otherFunVar
 
 ### Tables
 
-While GitHub Flavored Markdown (GFM) tables are supported, Markdoc uses a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
+While GitHub Flavored Markdown (GFM) tables are supported, Markdoc also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
 #### Basic table
 
@@ -222,7 +314,7 @@ Explicitly set column and row span.
 
 ### Partials
 
-Partials are primarily used to reuse text or code examples across docs. The reusable information (text or code) is stored in a separate markdown file, and referenced from within the partial tag. A common convention is to store partials in a directory called `partial`.
+Partials are primarily used to reuse text or code examples across docs. The reusable information (text or code) is stored in a separate markdown file, and referenced from within the partial tag.
 
 {% markdoc-example %}
 
@@ -255,94 +347,3 @@ And access the variables just like in a regular Markdoc document:
 ```
 
 {% /markdoc-example %}
-
-## Creating a custom tag
-
-First, create a custom tag definition:
-
-```js
-// ./schema/Callout.markdoc.js
-
-export const callout = {
-  tag: 'Callout',
-  description: 'Display the enclosed content in a callout box',
-  children: ['paragraph', 'tag', 'list'],
-  attributes: {
-    type: {
-      type: String,
-      default: 'note',
-      matches: ['caution', 'check', 'note', 'warning'],
-      errorLevel: 'critical',
-      description:
-        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
-    },
-    title: {
-      type: String,
-      description: 'The title displayed at the top of the callout',
-      localizable: true,
-    },
-  },
-};
-```
-
-Then, pass your tag definition to your `Config` object:
-
-```js
-import { callout } from './schema/Callout.markdoc';
-
-const config = {
-  tags: {
-    callout,
-  },
-};
-
-return Markdoc.render(content, config);
-```
-
-If you want to render a React component, specify which component should render this type of tag (in this case, `Callout`)
-
-```js
-import * as React from 'react';
-import { Icon } from './Icon';
-
-function Callout({ title, icon, children }) {
-  return (
-    <div className="callout">
-      <div className="content">
-        <Icon icon={icon} />
-        <div className="copy">
-          <span className="title">{title}</span>
-          <span>{children}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-return Markdoc.renderers.react(content, React, {
-  components: {
-    // The key here is the same string as `tag` in the previous step
-    Callout: Callout,
-  },
-});
-```
-
-Finally, use your custom tag in your Markdoc content.
-
-{% side-by-side %}
-
-{% markdoc-example %}
-
-```md
-{% callout title="Hey you!" icon="note" %}
-I have a message for you
-{% /callout %}
-```
-
-{% /markdoc-example %}
-
-{% callout title="Hey you!" type="note" %}
-I have a message for you
-{% /callout %}
-
-{% /side-by-side %}

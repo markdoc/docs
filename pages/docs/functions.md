@@ -5,7 +5,61 @@ description: Functions let you extend Markdoc to run custom code.
 
 # Functions
 
-Functions let you extend Markdoc to run custom code.
+Functions let you extend Markdoc with custom utilities, which let you transform your content and variables at runtime.
+
+## Creating a custom function
+
+To extend Markdoc with your own functions, first create custom function definitions:
+
+```js
+const includes = {
+  render(parameters, config) {
+    const [array, value] = Object.values(parameters);
+
+    return Array.isArray(array) ? array.includes(value) : false;
+  },
+};
+
+const uppercase = {
+  render(parameters, config) {
+    const string = parameters['0'];
+
+    return typeof string === 'string' ? string.toUpperCase() : string;
+  },
+};
+```
+
+Then, pass the functions to your `Config` object
+
+```js
+const config = {
+  functions: {
+    includes,
+    uppercase,
+  },
+};
+
+return Markdoc.render(content, config);
+```
+
+Finally, call the functions within your Markdoc content
+
+{% markdoc-example %}
+
+```md
+{% if includes($countries, "AR") %} 🇦🇷 {% /if %}
+{% if includes($countries, "AU") %} 🇦🇺 {% /if %}
+{% if includes($countries, "ES") %} 🇪🇸 {% /if %}
+{% if includes($countries, "JP") %} 🇯🇵 {% /if %}
+{% if includes($countries, "NG") %} 🇳🇬 {% /if %}
+{% if includes($countries, "US") %} 🇺🇸 {% /if %}
+```
+
+{% /markdoc-example %}
+
+## Built-in functions
+
+Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `not`, and `debug`.
 
 {% table %}
 
@@ -51,32 +105,16 @@ Functions let you extend Markdoc to run custom code.
 
 {% /table %}
 
-## Built-in functions
+### And, Or, and Not
 
-Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `not`, and `debug`.
-
-### Not
-
-Use the `not` function with the `if` tag to render content when a condition is not met (or evaluates to `false`).
-
-{% markdoc-example %}
-
-```
-{% if not($myFunVar) %}
-Only appear if $myFunVar is **not** true
-{% /if %}
-```
-
-{% /markdoc-example %}
-
-### And/or
+Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content content when the condition is met.
 
 {% markdoc-example %}
 
 ```
 This is always shown
-{% if and($a, or($b, $c)) %}
-This is shown only if $a and either $b or $c is true.
+{% if and(not($a), or($b, $c)) %}
+This is shown only if $a is falsy and either $b or $c is true.
 {% /if %}
 ```
 
@@ -89,59 +127,21 @@ Use the `equals` function to compare a variable against a given value. This func
 {% markdoc-example %}
 
 ```
-{% if equals($myFunVar, "test") %}
-The variable `$myFunVar` is equal to the string `"test"`.
+{% if equals($myVar, "test") %}
+The variable $myVar is equal to the string "test".
 {% /if %}
 ```
 
 {% /markdoc-example %}
 
-## Creating a custom function
+### Debug
 
-First, create custom function definitions:
-
-```js
-const includes = {
-  render(parameters, config) {
-    const [array, value] = Object.values(parameters);
-
-    return Array.isArray(array) ? array.includes(value) : false;
-  },
-};
-
-const uppercase = {
-  render(parameters, config) {
-    const string = parameters['0'];
-
-    return typeof string === 'string' ? string.toUpperCase() : string;
-  },
-};
-```
-
-Then, pass the functions to your `Config` object
-
-```js
-const config = {
-  functions: {
-    includes,
-    uppercase,
-  },
-};
-
-return Markdoc.render(content, config);
-```
-
-Finally, call the functions within your Markdoc content
+This function simply renders the value as serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/variables).
 
 {% markdoc-example %}
 
-```md
-{% if includes($countries, "AR") %} 🇦🇷 {% /if %}
-{% if includes($countries, "AU") %} 🇦🇺 {% /if %}
-{% if includes($countries, "ES") %} 🇪🇸 {% /if %}
-{% if includes($countries, "JP") %} 🇯🇵 {% /if %}
-{% if includes($countries, "NG") %} 🇳🇬 {% /if %}
-{% if includes($countries, "US") %} 🇺🇸 {% /if %}
+```
+{% debug($myVar) %}
 ```
 
 {% /markdoc-example %}

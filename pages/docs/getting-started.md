@@ -19,7 +19,7 @@ yarn add @stripe-internal/markdoc
 
 ## Import Markdoc
 
-The next step is to import the library in your app:
+Next, import the library in your app:
 
 ```js
 const Markdoc = require('@stripe-internal/markdoc');
@@ -33,14 +33,13 @@ import Markdoc from '@stripe-internal/markdoc';
 
 ## Use Markdoc
 
-This sample shows how to implement Markdoc and render content as HTML. Markdoc also exposes renderers for React, React Static, and Markdoc text.
+Then call the various Markdoc functions to render your content.
 
 ```js
 const ast = Markdoc.parse(source);
-const processed = Markdoc.process(ast);
-const content = Markdoc.expand(processed);
+const content = Markdoc.process(ast, config);
 
-return Markdoc.renderers.html(content);
+return Markdoc.render(content, config, 'html');
 ```
 
 ## Next steps

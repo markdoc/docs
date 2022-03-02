@@ -5,6 +5,8 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
+## Getting started
+
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
 {% comment %}
@@ -13,13 +15,73 @@ https://mdxjs.com/table-of-components/
 https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 {% /comment %}
 
+Custom nodes are defined by passing a custom Node to your `Config`, like:
+
+```js
+import { heading } from './schema/Heading.markdoc';
+
+const config = {
+  nodes: {
+    heading,
+  },
+};
+
+return Markdoc.render(content, config);
+```
+
+where `heading` looks something like:
+
+```js
+// ./schema/Heading.markdoc.js
+
+import { Ast } from '@stripe-internal/markdoc';
+
+export const heading = {
+  tag(node) {
+    // Determines which HTMl or React component to render
+    return `h${node.attributes['level']}`;
+  },
+  children: ['inline'],
+  attributes: {
+    id: { type: String },
+    level: { type: Number, required: true, default: 1 },
+  },
+  render(node, config) {
+    const attributes = node.renderAttributes(this.attributes);
+    const children = node.renderChildren(config);
+
+    const id = generateID(children, attributes);
+
+    return new Ast.Tag(this.tag, { ...attributes, id }, children);
+  },
+};
+```
+
+After registering this custom node, you can then use it in your Markdoc, like:
+
+{% side-by-side %}
+
+{% markdoc-example %}
+
+```md
+#### My header
+```
+
+{% /markdoc-example %}
+
+#### My header
+
+{% /side-by-side %}
+
 ## Options
+
+These are the fields you can use to customize your `Node`
 
 {% table %}
 
 - Option
 - Type
-- Description
+- Description {% width="40%" %}
 
 ---
 
@@ -80,75 +142,3 @@ Markdoc comes out of the box with built-in nodes for each of the [CommonMark](ht
 - `text`
 - `hardbreak`
 - `error`
-
-## Customizing a node
-
-First, create a custom node definition
-
-```js
-// ./schema/Heading.markdoc.js
-
-import { Ast } from '@stripe-internal/markdoc';
-
-function generateID(children, attributes) {
-  if (attributes.id && typeof attributes.id === 'string') {
-    return attributes.id;
-  }
-  return children
-    .filter((child) => typeof child === 'string')
-    .join(' ')
-    .replace(/\?/g, '')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
-}
-
-export const heading = {
-  tag(node) {
-    // Determines which HTMl or React component to render
-    return `h${node.attributes['level']}`;
-  },
-  children: ['inline'],
-  attributes: {
-    id: { type: String },
-    level: { type: Number, required: true, default: 1 },
-  },
-  render(node, config) {
-    const attributes = node.renderAttributes(this.attributes);
-    const children = node.renderChildren(config);
-
-    const id = generateID(children, attributes);
-
-    return new Ast.Tag(this.tag, { ...attributes, id }, children);
-  },
-};
-```
-
-Then, pass your node definition to your `Config` object
-
-```js
-import { heading } from './schema/Heading.markdoc';
-
-const config = {
-  nodes: {
-    heading,
-  },
-};
-
-return Markdoc.render(content, config);
-```
-
-Finally, use your custom nodes in your Markdoc content.
-
-{% side-by-side %}
-
-{% markdoc-example %}
-
-```md
-#### My header
-```
-
-{% /markdoc-example %}
-
-#### My header
-
-{% /side-by-side %}
