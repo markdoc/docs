@@ -9,17 +9,17 @@ Using the `next-markdoc` package/plugin allows you to create custom `.md` and `.
 
 ## Before you get started
 
-This guide assumes that you already have a Next.js app. If you are starting from scratch, follow the steps in [getting started with Next.js](https://nextjs.org/docs).
+This guide assumes that you already have a Next.js app. If you are starting from scratch, follow these steps for [getting started with Next.js](https://nextjs.org/docs).
 
 ## Setup
 
-The first thing you'll need to do is install `next-markdoc` and add it to your project's config.
+Follow these steps to get started with `next-markdoc`.
 
-1. From your project, run this command to install `next-markdoc`:
+1. Install `next-markdoc`:
    ```bash
    npm install @stripe-internal/next-markdoc
    ```
-2. With your favorite IDE, open `next.config.js` and add the following code:
+2. Update your `next.config.js`
 
    ```js
    const withMarkdoc = require('@stripe-internal/next-markdoc');
@@ -29,7 +29,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
    });
    ```
 
-3. Create a new markdown file in `pages/docs` named `getting-started.md`.
+3. Create a new `.md` file in within `/pages/`, such as `getting-started.md`
 
    ```
    pages
@@ -39,7 +39,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
    ├── index.js
    ```
 
-4. Add some Markdoc to `getting-started.md`:
+4. Add some Markdoc to your file:
 
    ```
    ---
@@ -52,7 +52,7 @@ The first thing you'll need to do is install `next-markdoc` and add it to your p
 
 ## Options
 
-You can pass options to Markdoc to adjust how the plugin behaves.
+You can pass options to `withMarkdoc` to adjust how the plugin behaves.
 
 {% table %}
 
@@ -90,9 +90,9 @@ module.exports = withMarkdoc({ mode: 'static' })({
 
 ## Schema customization
 
-You can customize the Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes) and [tags](/docs/tags) are defined.
+You can define your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes) and [tags](/docs/tags) are defined.
 
-Files under `/markdoc/` are automatically imported and combined into your Markdoc schema. If you want to specify which files are included, create a `/markdoc/index.js` file and define the schema exports.
+All `.js` files under `/markdoc/` are automatically imported and combined to create your Markdoc schema. If you want to specify which files are included, create a `/markdoc/index.js` file and specify the schema exports.
 
 You can choose the import location for your schema by passing the `schemaPath` option to `withMarkdoc`:
 
@@ -151,9 +151,11 @@ export const link = {
 };
 ```
 
+This example overrides the default link node to use a [Next.js link](https://nextjs.org/docs/api-reference/next/link).
+
 ## Frontmatter
 
-Markdoc is frontmatter agnostic, however, `next-markdoc` uses YAML as its default frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content with the `$markdoc.frontmatter` variable.
+Markdoc is frontmatter agnostic, however, `next-markdoc` uses YAML as its frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content using the `$markdoc.frontmatter` variable.
 
 For example:
 
@@ -190,7 +192,7 @@ export default function App({ Component, pageProps }) {
 
 ## Built-in Next.js tags
 
-Next.js provides custom components out of the box, and each of these components is accessible via tags that you can add to your schema. To add components, export from a file in the `/markdoc/` directory. For example:
+Next.js Markdoc provides custom tags out-of-the-box that you can add to your schema. To include them, export them by name in your schema directory (e.g. `/markdoc/`). For example:
 
 ```js
 // markdoc/Next.markdoc.js
@@ -203,6 +205,10 @@ export {
   script,
   markdocExample,
 } from '@stripe-internal/next-markdoc/tags';
+
+// or
+
+export * from '@stripe-internal/next-markdoc/tags';
 ```
 
 After you've exported the components, you can use them with the corresponding tags in your Markdoc files.
@@ -235,6 +241,9 @@ Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/
 
 {% /markdoc-example %}
 
+{% comment %}
+TODO next/image doesn't work with Next.js export
+
 ### Image
 
 Renders a [Next.js `Image` component](https://nextjs.org/docs/api-reference/next/image). Requires passing `src`, `alt`, `width` and `height` attributes.
@@ -250,6 +259,7 @@ Renders a [Next.js `Image` component](https://nextjs.org/docs/api-reference/next
 ```
 
 {% /markdoc-example %}
+{% /comment %}
 
 ### Link
 

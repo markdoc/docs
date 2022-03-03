@@ -557,4 +557,11 @@ footer a:hover {
 
 .side-by-side > *:not(:first-child) {
   margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.side-by-side p {
+  margin: 0.5rem 0;
 }

@@ -34,7 +34,7 @@ const renderTree = Markdoc.process(content, { tags });
 
 ## On the client
 
-Then, call `Markdoc.renderers.react` with your expanded render tree.
+Then, call `Markdoc.renderers.react` with your render tree.
 
 ```js
 import Markdoc from '@stripe-internal/markdoc';

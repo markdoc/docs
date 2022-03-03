@@ -23,7 +23,7 @@ const renderTree = Markdoc.process(content);
 
 {% /markdoc-example %}
 
-Then, call `Markdoc.renderers.html` with your expanded render tree.
+Then, call `Markdoc.renderers.html` with your render tree.
 
 ```js
 const express = require('express');
