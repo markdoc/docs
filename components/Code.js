@@ -24,7 +24,7 @@ Prism.languages.markdoc = {
         },
       },
       function: /\b\w+(?=\()/,
-      punctuation: /({%|%})/i,
+      punctuation: /({%|\/?%})/i,
     },
   },
   variable: {

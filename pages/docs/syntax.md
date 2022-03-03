@@ -131,7 +131,17 @@ You can set various attributes on a node, such a `width` or `height`.
 
 ## Attributes
 
-TODO
+Attributes are passed to tags in order to customize their behavior. These values are then fed through to your tag's `render` function, which you can use to change how the tag renders.
+
+You can pass `number`s, `string`s, `boolean`s, JSON `array`s, and JSON `object`s as attributes.
+
+{% markdoc-example %}
+
+```
+{% city index=0 name="San Francisco" deleted=false coordinates=[1, 4, 9] meta={id: "id_123"} /%}
+```
+
+{% /markdoc-example %}
 
 ## Variables
 
@@ -220,6 +230,7 @@ Function parameters are comma-separated, and trailing commas are not supported i
 Show the password
 {% /if %}
 
+{% tag title=uppercase($key) /%}
 ```
 
 {% /markdoc-example %}
