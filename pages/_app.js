@@ -90,12 +90,12 @@ export default function MyApp(props) {
               <Link href="/sandbox">Try</Link>
             </li>
             <li>
-              <Link href="https://github.com/stripe-oss/markdoc/discussions">
+              <Link href="https://github.com/markdoc/markdoc/discussions">
                 Community
               </Link>
             </li>
             <li>
-              <Link href="https://github.com/stripe-oss/markdoc">GitHub</Link>
+              <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             </li>
             <li>
               <Link href="https://twitter.com/StripeDev">Twitter</Link>
@@ -120,13 +120,12 @@ export default function MyApp(props) {
         <div className="footer-links">
           <Link href="/docs/getting-started">Docs</Link> ·{'  '}
           <Link href="/sandbox">Try</Link> ·{' '}
-          <Link href="https://github.com/stripe-oss/markdoc/discussions">
+          <Link href="https://github.com/markdoc/markdoc/discussions">
             Community
           </Link>{' '}
           ·{'  '}
-          <Link href="https://github.com/stripe-oss/markdoc">
-            GitHub
-          </Link> · <Link href="https://twitter.com/StripeDev">Twitter</Link>
+          <Link href="https://github.com/markdoc/markdoc">GitHub</Link> ·{' '}
+          <Link href="https://twitter.com/StripeDev">Twitter</Link>
         </div>
       </footer>
     </>
