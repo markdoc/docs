@@ -7,6 +7,8 @@ description:
 
 Markdoc comes out-of-the-box with a React renderer. The only requirement to render React component is to tell Markdoc which components to use for each [tag](/docs/tags) and [node](/docs/nodes).
 
+You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
+
 ## On the server or client
 
 First create a Markdoc render tree by calling `process`.

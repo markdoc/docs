@@ -47,7 +47,7 @@ An example AST might look like this:
 }
 ```
 
-Check this out for yourself in the [developer playground](/sandbox).
+Check this out for yourself in the [developer playground](/sandbox?mode=ast).
 
 AST node instances also include helpful functions, like `walk`, which can be useful for traversing and mutating your AST.
 
@@ -88,7 +88,7 @@ An example render tree might look like this:
 ];
 ```
 
-You can see a more complex render tree in the [developer playground](/sandbox).
+You can see a more complex render tree in the [developer playground](/sandbox?mode=process).
 
 ## Render
 

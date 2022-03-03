@@ -1,6 +1,7 @@
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
+import { useRouter } from 'next/router';
 import Markdoc from '@stripe-internal/markdoc';
 import { transformSchema } from '@stripe-internal/next-markdoc/runtime';
 
@@ -61,7 +62,13 @@ const options = {
 export default function Sandbox() {
   const [k, setK] = React.useState(0);
   const [code, setCode] = React.useState(INITIAL_CODE);
-  const [mode, setMode] = React.useState('preview');
+  const router = useRouter();
+  const mode = router.query.mode || 'preview';
+
+  function setMode(newMode) {
+    router.query.mode = newMode;
+    router.replace(router);
+  }
 
   React.useEffect(() => {
     require('codemirror/mode/markdown/markdown');
