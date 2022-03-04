@@ -8,18 +8,18 @@ While we prepare Markdoc for open source, there are a few steps you'll need to t
    ```
 2. Next, you need to clone `next-markdoc` to an adjacent directory.
    ```
-   git clone git@github.com:markdoc/next-markdoc.git ~/stripe/next-markdoc
+   git clone git@github.com:markdoc/next.js.git ~/stripe/markdoc-next.js
    ```
 3. In the working directory for `next-markdoc`, run these commands:
    ```
-   cd ~/stripe/next-markdoc
+   cd ~/stripe/markdoc-next.js
    yarn
    yarn link
    ```
 4. Change directories to `docs` and run these commands:
    ```
    cd ~/stripe/markdoc-docs
-   yarn link @stripe-internal/next-markdoc
+   yarn link @markdoc/next.js
    yarn
    ```
 5. Assuming you didn't get any errors, you can run your dev server and test with the demo site:

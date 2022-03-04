@@ -1,4 +1,4 @@
-const withMarkdoc = require('@stripe-internal/next-markdoc');
+const withMarkdoc = require('@markdoc/next.js');
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 

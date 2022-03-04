@@ -1,9 +1,9 @@
-import { link, markdocExample } from '@stripe-internal/next-markdoc/tags';
+import { link, markdocExample } from '@markdoc/next.js/tags';
 
 import { AppLink } from '../components/AppLink';
 import { MarkdocExample } from '../components/MarkdocExample';
 
-export { comment } from '@stripe-internal/next-markdoc/tags';
+export { comment } from '@markdoc/next.js/tags';
 
 export const example = {
   ...markdocExample,

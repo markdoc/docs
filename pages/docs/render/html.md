@@ -27,7 +27,7 @@ Then, call `Markdoc.renderers.html` with your render tree.
 
 ```js
 const express = require('express');
-const Markdoc = require('@stripe-internal/markdoc');
+const Markdoc = require('@markdoc/markdoc');
 
 const app = express();
 

@@ -9,7 +9,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@stripe-internal/markdoc": "0.0.10",
+    "@markdoc/markdoc": "0.0.13",
     "codemirror": "^5.65.1",
     "copy-to-clipboard": "^3.3.1",
     "js-yaml": "^4.1.0",

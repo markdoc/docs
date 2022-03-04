@@ -17,12 +17,12 @@ Follow these steps to get started with `next-markdoc`.
 
 1. Install `next-markdoc`:
    ```bash
-   npm install @stripe-internal/next-markdoc
+   npm install @markdoc/next.js
    ```
 2. Update your `next.config.js`
 
    ```js
-   const withMarkdoc = require('@stripe-internal/next-markdoc');
+   const withMarkdoc = require('@markdoc/next.js');
 
    module.exports = withMarkdoc(/* options */)({
      pageExtensions: ['js', 'md'],
@@ -204,11 +204,11 @@ export {
   link,
   script,
   markdocExample,
-} from '@stripe-internal/next-markdoc/tags';
+} from '@markdoc/next.js/tags';
 
 // or
 
-export * from '@stripe-internal/next-markdoc/tags';
+export * from '@markdoc/next.js/tags';
 ```
 
 After you've exported the components, you can use them with the corresponding tags in your Markdoc files.

@@ -1,6 +1,6 @@
 // @flow
 
-import { Ast } from '@stripe-internal/markdoc';
+import { Ast } from '@markdoc/markdoc';
 import { Heading } from '../components/Heading';
 
 const getAnchor = (children, attributes) => {

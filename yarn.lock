@@ -46,6 +46,13 @@
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@markdoc/markdoc@0.0.13":
+  version "0.0.13"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@markdoc/markdoc/-/markdoc-0.0.13.tgz#bcf627434ec414d733077a51866140b9a9353ee7"
+  integrity sha1-vPYnQ07EFNczB3pRhmFAuak1Puc=
+  dependencies:
+    markdown-it "12.3.0"
+
 "@next/env@12.0.9-canary.6":
   version "12.0.9-canary.6"
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@next/env/-/env-12.0.9-canary.6.tgz#445835742aa7cd9d135f8fd25137ee45489ebfed"
@@ -138,13 +145,6 @@
   version "1.1.0"
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
-
-"@stripe-internal/markdoc@0.0.10":
-  version "0.0.10"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@stripe-internal/markdoc/-/markdoc-0.0.10.tgz#5599c39abdeef9496135170e4019142c4b66fd8e"
-  integrity sha1-VZnDmr3u+UlhNRcOQBkULEtm/Y4=
-  dependencies:
-    markdown-it "12.3.0"
 
 "@types/json5@^0.0.29":
   version "0.0.29"

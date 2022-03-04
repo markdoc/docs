@@ -2,8 +2,8 @@ import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import { useRouter } from 'next/router';
-import Markdoc from '@stripe-internal/markdoc';
-import { transformSchema } from '@stripe-internal/next-markdoc/runtime';
+import Markdoc from '@markdoc/markdoc';
+import { transformSchema } from '@markdoc/next-markdoc/runtime';
 
 import * as schema from '../markdoc';
 

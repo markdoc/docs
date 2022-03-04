@@ -34,7 +34,7 @@ where `heading` looks something like:
 ```js
 // ./schema/Heading.markdoc.js
 
-import { Ast } from '@stripe-internal/markdoc';
+import { Ast } from '@markdoc/markdoc';
 
 export const heading = {
   tag(node) {

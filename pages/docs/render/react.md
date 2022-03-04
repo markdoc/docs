@@ -39,7 +39,7 @@ const renderTree = Markdoc.process(content, { tags });
 Then, call `Markdoc.renderers.react` with your render tree.
 
 ```js
-import Markdoc from '@stripe-internal/markdoc';
+import Markdoc from '@markdoc/markdoc';
 import React from 'react'; // or 'preact'
 
 function Callout({ children }) {
