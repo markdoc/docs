@@ -29,7 +29,7 @@ While we prepare Markdoc for open source, there are a few steps you'll need to t
 
 ## Publishing to Pages
 
-1. Run `yarn export`
+1. Run `NEXT_PUBLIC_BASE_PATH=/markdoc yarn export`
 2. Run `cp -r ~/stripe/markdoc-docs/out/* ~/stripe/pages/sites/markdoc/public`
 3. Submit a PR
 

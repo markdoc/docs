@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "NEXT_PUBLIC_BASE_PATH=/markdoc next build && next export"
+    "export": "next build && next export"
   },
   "dependencies": {
     "@stripe-internal/markdoc": "0.0.10",
