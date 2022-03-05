@@ -8,7 +8,7 @@ The Markdoc syntax is a superset of Markdown, specifically the [CommonMark speci
 
 ## Nodes
 
-Nodes are elements that Markdoc inherits from Markdown. See our [node documentation](/docs/nodes) for more details.
+Nodes are elements that Markdoc inherits from Markdown. For more details or to learn how to customize nodes, check out our [Nodes documentation](/docs/nodes).
 
 {% side-by-side %}
 
@@ -65,7 +65,7 @@ Nodes can be customized with [annotations](#annotations), as you can see below.
 
 ## Tags
 
-Tags are the main syntactic extension that Markdoc provides on top of Markdown. Tags consist of a tag name surrounded by `{%` and `%}`, followed by the content body, followed by a similar closing brace.
+Tags are the main syntactic extension that Markdoc provides on top of Markdown. Tags consist of a tag name surrounded by `{%` and `%}`, followed by the content body, followed by a similar closing brace. To learn how to create custom tags, check out our [Tags documentation](/docs/tags).
 
 {% markdoc-example %}
 
@@ -216,6 +216,9 @@ or within node annotations:
 
 {% /markdoc-example %}
 
+\
+To learn how to pass variables, check out our [Variables documentation](/docs/variables).
+
 ## Functions
 
 Functions look similar to JavaScript functions, and can be called within the body of the document, inside an annotation, or within tag attributes.
@@ -234,3 +237,13 @@ Show the password
 ```
 
 {% /markdoc-example %}
+
+\
+To learn how to create custom functions, check out our [Variables documentation](/docs/functions).
+
+## Next steps
+
+- [Creating custom tags](/docs/tags)
+- [Customizing how nodes render](/docs/nodes)
+- [Passing variables](/docs/variables)
+- [Defining new functions](/docs/functions)

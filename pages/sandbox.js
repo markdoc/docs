@@ -3,7 +3,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
-import { transformSchema } from '@markdoc/next-markdoc/runtime';
+import { transformSchema } from '@markdoc/next.js/runtime';
 
 import * as schema from '../markdoc';
 

@@ -151,3 +151,8 @@ If your document contains a syntax error, the output of `validate` might look li
   },
 ];
 ```
+
+## Next steps
+
+- [Rendering HTML](/docs/rendering/html)
+- [Rendering React](/docs/rendering/react)

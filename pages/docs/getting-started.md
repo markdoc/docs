@@ -44,6 +44,6 @@ return Markdoc.render(content, config, 'html');
 
 ## Next steps
 
-- Learn Markdoc syntax
-- View rendering options
+- [Learn Markdoc syntax](/docs/syntax)
+- [View rendering options](/docs/rendering)
 - [Next.js plugin](/docs/nextjs)

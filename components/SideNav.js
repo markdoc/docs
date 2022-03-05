@@ -16,6 +16,7 @@ const items = [
       { href: '/docs/syntax', children: 'Overview' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
+      { href: '/docs/variables', children: 'Variables' },
       { href: '/docs/functions', children: 'Functions' },
     ],
   },
@@ -23,11 +24,11 @@ const items = [
     title: 'Rendering',
     links: [
       {
-        href: '/docs/render/overview',
+        href: '/docs/rendering',
         children: 'Overview',
       },
-      { href: '/docs/render/html', children: 'HTML' },
-      { href: '/docs/render/react', children: 'React' },
+      { href: '/docs/rendering/html', children: 'HTML' },
+      { href: '/docs/rendering/react', children: 'React' },
     ],
   },
   {
