@@ -5,7 +5,7 @@ description: Learn how to integrate Markdoc into a Next.js project.
 
 # {% $markdoc.frontmatter.title %}
 
-Using the `next-markdoc` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with `markdoc`.
+Using the `@markdoc/next.js` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with `markdoc`.
 
 ## Before you get started
 
@@ -13,9 +13,9 @@ This guide assumes that you already have a Next.js app. If you are starting from
 
 ## Setup
 
-Follow these steps to get started with `next-markdoc`.
+Follow these steps to get started with `@markdoc/next.js`.
 
-1. Install `next-markdoc`:
+1. Install `@markdoc/next.js`:
    ```bash
    npm install @markdoc/next.js
    ```
@@ -155,7 +155,7 @@ This example overrides the default link node to use a [Next.js link](https://nex
 
 ## Frontmatter
 
-Markdoc is frontmatter agnostic, however, `next-markdoc` uses YAML as its frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content using the `$markdoc.frontmatter` variable.
+Markdoc is frontmatter agnostic, however, `@markdoc/next.js` uses YAML as its frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content using the `$markdoc.frontmatter` variable.
 
 For example:
 

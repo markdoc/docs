@@ -6,11 +6,11 @@ While we prepare Markdoc for open source, there are a few steps you'll need to t
    ```
    git clone git@github.com:markdoc/docs.git ~/stripe/markdoc-docs
    ```
-2. Next, you need to clone `next-markdoc` to an adjacent directory.
+2. Next, you need to clone `@markdoc/next.js` to an adjacent directory.
    ```
    git clone git@github.com:markdoc/next.js.git ~/stripe/markdoc-next.js
    ```
-3. In the working directory for `next-markdoc`, run these commands:
+3. In the working directory for `@markdoc/next.js`, run these commands:
    ```
    cd ~/stripe/markdoc-next.js
    yarn
