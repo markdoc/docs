@@ -66,7 +66,7 @@ Finally, call the functions within your Markdoc content
 
 ## Built-in functions
 
-Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `not`, and `debug`.
+Markdoc comes out-of-the-box with 6 built-in functions: `equals`, `and`, `or`, `not`, `default`, and `debug`.
 
 {% table %}
 
@@ -105,6 +105,13 @@ Markdoc comes out-of-the-box with 5 built-in functions: `equals`, `and`, `or`, `
 
 ---
 
+- `default`
+- `mixed`
+- `default($variable, true)`
+- Returns the second parameter if the first parameter is `undefined`
+
+---
+
 - `debug`
 - `string`
 - `debug($anyVariable)`
@@ -136,6 +143,20 @@ Use the `equals` function to compare a variable against a given value. This func
 ```
 {% if equals($myVar, "test") %}
 The variable $myVar is equal to the string "test".
+{% /if %}
+```
+
+{% /markdoc-example %}
+
+### Default
+
+This function is useful to setting a value for a variable that might not exist.
+
+{% markdoc-example %}
+
+```
+{% if default($showPrompt, true) %}
+Hey there!
 {% /if %}
 ```
 
