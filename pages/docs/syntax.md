@@ -4,11 +4,11 @@ title: The Markdoc syntax
 
 # {% $markdoc.frontmatter.title %}
 
-The Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few key extensions to the syntax, which are outlined below.
+Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few key extensions to the syntax, including nodes, tags, annotations, attributes, variables, and functions.
 
 ## Nodes
 
-Nodes are elements that Markdoc inherits from Markdown. For more details or to learn how to customize nodes, check out our [Nodes documentation](/docs/nodes).
+Nodes are elements that Markdoc inherits from Markdown, which can be customized with [annotations](#annotations).
 
 {% side-by-side %}
 
@@ -61,11 +61,11 @@ Code fences
 
 {% /side-by-side %}
 
-Nodes can be customized with [annotations](#annotations), as you can see below.
+For more information about out of the box functionality and customization, check out the [Nodes docs](/docs/nodes).
 
 ## Tags
 
-Tags are the main syntactic extension that Markdoc provides on top of Markdown. Tags consist of a tag name surrounded by `{%` and `%}`, followed by the content body, followed by a similar closing brace. To learn how to create custom tags, check out our [Tags documentation](/docs/tags).
+Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each tag is enclosed with `{%` and `%}`, and includes the tag name and content body. Tags are customizable with [attributes](#attributes).
 
 {% markdoc-example %}
 
@@ -77,8 +77,7 @@ Content
 
 {% /markdoc-example %}
 
-Tags can also be self-closing (similar to HTML), which just involves removing the content body and adding a slash.
-
+Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`. 
 {% markdoc-example %}
 
 ```
@@ -87,13 +86,13 @@ Tags can also be self-closing (similar to HTML), which just involves removing th
 
 {% /markdoc-example %}
 
-Tags can be customized with [attributes](#attributes), as you can see below.
+For more information, check out the [Tags docs](/docs/tags).
 
 ## Annotations
 
-Annotations are used to customize how individuals nodes are rendered. They are useful for passing properties to your rendered output, such as for defining an `id`, `class`, or attribute on an HTML or React element.
+Customize how individual nodes get rendered with annotations. Annotations are useful when passing properties to a rendered output, such as `id`, `class`, or attribute on an HTML or React element.
 
-To add an `id` to a node, simply use Markdoc's custom ID syntax:
+To add an `id` to a node:
 
 {% markdoc-example %}
 
@@ -103,7 +102,7 @@ To add an `id` to a node, simply use Markdoc's custom ID syntax:
 
 {% /markdoc-example %}
 
-Similarly, to set a `class`, you can use the class syntax:
+To set a `class`, you can use class syntax:
 
 {% markdoc-example %}
 
@@ -113,7 +112,7 @@ Similarly, to set a `class`, you can use the class syntax:
 
 {% /markdoc-example %}
 
-You can set various attributes on a node, such a `width` or `height`.
+You can also set [attributes](#attributes) on a node, such a `width` or `height`.
 
 {% markdoc-example %}
 
@@ -131,9 +130,7 @@ You can set various attributes on a node, such a `width` or `height`.
 
 ## Attributes
 
-Attributes are passed to tags in order to customize their behavior. These values are then fed through to your tag's `render` function, which you can use to change how the tag renders.
-
-You can pass `number`s, `string`s, `boolean`s, JSON `array`s, and JSON `object`s as attributes.
+Pass attributes to tags to customize their behavior. Accepted values include: `number`s, `string`s, `boolean`s, JSON `array`s, and JSON `object`s.
 
 {% markdoc-example %}
 
@@ -145,7 +142,7 @@ You can pass `number`s, `string`s, `boolean`s, JSON `array`s, and JSON `object`s
 
 ## Variables
 
-Markdoc variables let you customize your Markdoc documents at runtime. Variables are all prefixed with a `$`.
+Markdoc variables let you customize your Markdoc documents at runtime. Variables are all prefixed with `$`.
 
 {% markdoc-example %}
 
@@ -155,8 +152,8 @@ Here I am rendering a custom {% $variable %}
 
 {% /markdoc-example %}
 
-Variables needs to contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects.\
-Nested values can be accessed using dot-notation, similar to JavaScript:
+Variables must contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects.\
+Nested values are accessible using dot-notation, similar to JavaScript:
 
 {% markdoc-example %}
 
@@ -176,53 +173,13 @@ Variables can be used throughout your document, as content itself:
 
 {% /markdoc-example %}
 
-…as attributes on a tag:
-
-{% markdoc-example %}
-
-```
-
-{% link href=$baseURL %} Home {% /link %}
-
-```
-
-{% /markdoc-example %}
-
-…as parameter to a function:
-
-{% markdoc-example %}
-
-```
-{% if includes($supportedCountries, "US") %}
-Show content
-{% /if %}
-```
-
-{% /markdoc-example %}
-
-or within node annotations:
-
-{% markdoc-example %}
-
-```
-{% table %}
-
-- Option
-- Type
-- Description {% width=$descriptionWidth %}
-
-{% /table %}
-```
-
-{% /markdoc-example %}
-
 \
-To learn how to pass variables, check out our [Variables documentation](/docs/variables).
+For more information, check out the [Variables docs](/docs/variables).
 
 ## Functions
 
-Functions look similar to JavaScript functions, and can be called within the body of the document, inside an annotation, or within tag attributes.
-Function parameters are comma-separated, and trailing commas are not supported in function calls.
+Functions look and feel similar to JavaScript functions. They are callable from body of the document, inside an annotation, or within tag attributes.
+Function parameters are comma-separated. Trailing commas aren't supported in function calls.
 
 {% markdoc-example %}
 
@@ -239,7 +196,7 @@ Show the password
 {% /markdoc-example %}
 
 \
-To learn how to create custom functions, check out our [Variables documentation](/docs/functions).
+For more information, check out the [Functions docs](/docs/functions).
 
 ## Next steps
 
