@@ -1,25 +1,19 @@
 # Markdoc Docs
 
-## Getting Started
+## Get started
 
-First, run the development server:
+1. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) to view the Markdoc site.
+3. Try editing `pages/index.md`. The page auto-updates when you edit and save.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Contribute
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.md`. The page auto-updates as you edit the file.
-
-## Contributing
-
-Contributions and feedback are welcome and encouraged. Follow these steps to set up the project:
-
-1. Run `npm install`
-1. Run `npm run dev`
+Contributions and feedback are welcomed and encouraged. 
 
 ## Code of conduct
 
