@@ -4,7 +4,7 @@ title: The Markdoc syntax
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few key extensions to the syntax, including nodes, tags, annotations, attributes, variables, and functions.
+Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few key extensions to the syntax, such as tags and annotations, which are described below.
 
 ## Nodes
 
@@ -61,7 +61,7 @@ Code fences
 
 {% /side-by-side %}
 
-For more information about out of the box functionality and customization, check out the [Nodes docs](/docs/nodes).
+For more information, check out the [Nodes docs](/docs/nodes).
 
 ## Tags
 
@@ -90,7 +90,7 @@ For more information, check out the [Tags docs](/docs/tags).
 
 ## Annotations
 
-Customize how individual nodes get rendered with annotations. Annotations are useful when passing properties to a rendered output, such as `id`, `class`, or attribute on an HTML or React element.
+Customize how individual nodes are rendered with annotations. Annotations are useful when passing properties to a rendered output, such as an `id` or `class`. You can also use annotations to apply [attributes](#attributes) to HTML and React elements.
 
 To add an `id` to a node:
 
