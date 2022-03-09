@@ -5,44 +5,72 @@ description: Variables let you transform and customize your document at runtime.
 
 # {% $markdoc.frontmatter.title %}
 
-{% comment %}
-…as attributes on a tag:
+Variables let you customize your Markdoc documents at runtime.
 
 {% markdoc-example %}
 
 ```
-
-{% link href=$baseURL %} Home {% /link %}
-
+Here I am rendering a custom {% $variable %}
 ```
 
 {% /markdoc-example %}
 
-…as parameter to a function:
+There are two ways to pass variables: 1) through the `variables` field on your `Config`, and 2) via the `variables` [attribute](/docs/syntax#attributes) on a [`partial` tag](/docs/tags#partials).
+
+## Global variables
+
+Here is an example of how you can pass variables to your config:
+
+{% markdoc-example %}
+
+```js
+const config = {
+  variables: {
+    flags: {
+      my_feature_flag: true,
+    },
+    user: {
+      name: 'Dr. Mark',
+    },
+  },
+};
+
+const content = Markdoc.process(document, config);
+```
+
+{% /markdoc-example %}
+
+which can then be accessed within your document:
 
 {% markdoc-example %}
 
 ```
-{% if includes($supportedCountries, "US") %}
-Show content
+{% if $flags.my_feature_flag %}
+Username: {% $user.name %}
 {% /if %}
 ```
 
 {% /markdoc-example %}
 
-or within node annotations:
+## With partials
+
+To pass variables to a partial, just set the `variables` attribute:
 
 {% markdoc-example %}
 
 ```
-{% table %}
-
-- Option
-- Type
-- Description {% width=$descriptionWidth %}
-
-{% /table %}
+{% partial variables={sdk: "Ruby", version: 3} file="my_partial.md" /%}
 ```
 
 {% /markdoc-example %}
-{% /comment %}
+
+and access the value within your partial file the same way you would a regular variable:
+
+{% markdoc-example %}
+
+```
+SDK: {% $sdk %}
+Version: {% $version %}
+```
+
+{% /markdoc-example %}
