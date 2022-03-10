@@ -7,7 +7,7 @@ description:
 
 Markdoc has 3 phases of rendering: `parse`, `process`, and `render`. Each phase operates on the output of the previous phases.
 
-Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid.
+Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid. See the [validation docs](/docs/validation) for more info.
 
 ## Parse
 
@@ -110,46 +110,6 @@ An example `html` output might look like this:
 <h1>Getting started</h1>
 
 <p>Run this command to install the Markdoc library:</p>
-```
-
-## Validate
-
-```js
-validate(string | AstNode, ?Config) => ValidateError[]
-```
-
-This in an optional step that you can use to validate your AST before rendering. This is useful during testing, continuous integration, or in dev-tools like editor extensions.
-
-If your document contains a syntax error, the output of `validate` might look like this:
-
-```js
-[
-  {
-    type: 'error',
-    lines: [0, 1],
-    location: {
-      start: {
-        line: 0,
-      },
-      end: {
-        line: 1,
-      },
-    },
-    error: {
-      id: 'parse-error',
-      level: 'critical',
-      message: 'Expected "\\"", "}", identifier, or whitespace but "," found.',
-      location: {
-        start: {
-          offset: 12,
-        },
-        end: {
-          offset: 13,
-        },
-      },
-    },
-  },
-];
 ```
 
 ## Next steps
