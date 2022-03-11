@@ -1,6 +1,5 @@
 // @flow
 
-import { Ast } from '@markdoc/markdoc';
 import { Heading } from '../components/Heading';
 
 const getAnchor = (children, attributes) => {
@@ -28,6 +27,10 @@ export const heading = {
     const children = node.renderChildren(config);
     const id = getAnchor(children, attributes);
 
-    return new Ast.Tag(this.tag, { ...attributes, id }, children);
+    return {
+      name: this.tag,
+      attributes: { ...attributes, id },
+      children,
+    };
   },
 };

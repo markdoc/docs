@@ -18,10 +18,10 @@ export const group = {
       /* Do something with children */
     });
 
-    return new Ast.Tag(
-      this.tag,
-      node.renderAttributes(this.attributes),
-      children
+    return {
+      name: 'Group',
+      attributes: node.renderAttributes(this.attributes),
+      children,
     );
   },
 };

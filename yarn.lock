@@ -46,10 +46,10 @@
   resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@markdoc/markdoc@0.0.13":
-  version "0.0.13"
-  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@markdoc/markdoc/-/markdoc-0.0.13.tgz#bcf627434ec414d733077a51866140b9a9353ee7"
-  integrity sha1-vPYnQ07EFNczB3pRhmFAuak1Puc=
+"@markdoc/markdoc@0.0.14":
+  version "0.0.14"
+  resolved "https://artifactory-content.stripe.build/artifactory/api/npm/npm-internal/@markdoc/markdoc/-/markdoc-0.0.14.tgz#e71c6522b940a3848a5aae0d5da6dd93ae2c50e3"
+  integrity sha1-5xxlIrlAo4SKWq4NXabdk64sUOM=
   dependencies:
     markdown-it "12.3.0"
 

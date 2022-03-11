@@ -52,7 +52,11 @@ export const heading = {
 
     const id = generateID(children, attributes);
 
-    return new Ast.Tag(this.tag, { ...attributes, id }, children);
+    return {
+      name: 'heading',
+      attributes: { ...attributes, id },
+      children,
+    };
   },
 };
 ```
