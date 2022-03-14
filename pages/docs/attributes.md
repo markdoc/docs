@@ -4,3 +4,55 @@ description:
 ---
 
 # {% $markdoc.frontmatter.title %}
+
+
+## Create a custom attribute
+
+With Markdoc you can create custom attributes, which can be used within tags. In this example, you're creating a `DateTime` attribute that makes sure a valid string is provided.
+
+```js
+// ./attribute-types/DateTime.js
+
+import type {Config} from 'docs/markdoc';
+
+export class DateTime {
+  validate(value: any, config: Config) {
+    if (typeof value !== 'string' || isNaN(Date.parse(value)))
+      return [
+        {
+          id: 'invalid-datetime-type',
+          level: 'critical',
+          message: 'Must be a string with a valid date format',
+        },
+      ];
+
+    return [];
+  }
+
+  render(value: any, config: Config) {
+    return Date.parse(value);
+  }
+}
+```
+
+Next, import the custom attribute into your element:
+
+{% comment %}
+@mfix - just a placeholder, can adjust
+{% /comment %}
+
+```js
+import {DateTime} from './attribute-types'
+
+export YourComponent: InheritedComponent = {
+    tag: 'tag-name',
+    component: 'YourComponent',
+    attributes: {
+        dateTime: {
+            type: DateTime,
+            required: true,
+            description: 'Show valid date time',
+        },
+    },
+};
+```
