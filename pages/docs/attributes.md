@@ -40,7 +40,12 @@ const config = {
   tags: {
     'tag-name':  {
       tag: 'YourComponent',
-      attributes: {...},
+      attributes: {
+        created: {
+          type: DateTime,
+          required: true,
+        },
+      },
     },
   },
 };

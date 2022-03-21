@@ -40,8 +40,3 @@ date = "2022-04-01"
 
 ## Access to frontmatter attributes
 
-{% comment %}
-TODO: Do we need to describe how to access frontmatter attributes within a doc?
-{% comment %}
-
-
