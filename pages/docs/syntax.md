@@ -4,7 +4,7 @@ title: The Markdoc syntax
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which are described below.
+Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which are described below.
 
 ## Nodes
 
