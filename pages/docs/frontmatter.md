@@ -41,7 +41,7 @@ date = "2022-04-01"
 ## Access to frontmatter attributes
 
 {% comment %}
-Something about accessing front matter attributes in your content (e.g. title, description, tags, so on.)
+TODO: Do we need to describe how to access frontmatter attributes within a doc?
 {% comment %}
 
 

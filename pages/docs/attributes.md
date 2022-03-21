@@ -38,7 +38,7 @@ export class DateTime {
 Next, import the custom attribute into your element:
 
 {% comment %}
-@mfix - just a placeholder, can adjust
+TODO: Provide a bit more information about what needs to be done.
 {% /comment %}
 
 ```js

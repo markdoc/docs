@@ -242,7 +242,7 @@ Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/
 {% /markdoc-example %}
 
 {% comment %}
-TODO next/image doesn't work with Next.js export
+TODO: next/image doesn't work with Next.js export
 
 ### Image
 
