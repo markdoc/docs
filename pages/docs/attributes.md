@@ -16,7 +16,7 @@ With Markdoc you can create custom attributes, which can be used within tags. In
 import type {Config} from 'docs/markdoc';
 
 export class DateTime {
-  validate(value: any, config: Config) {
+  validate(value, config) {
     if (typeof value !== 'string' || isNaN(Date.parse(value)))
       return [
         {
