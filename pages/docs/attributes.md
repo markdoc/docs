@@ -48,7 +48,7 @@ export YourComponent: InheritedComponent = {
     tag: 'tag-name',
     component: 'YourComponent',
     attributes: {
-        dateTime: {
+        created: {
             type: DateTime,
             required: true,
             description: 'Show valid date time',
