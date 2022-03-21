@@ -13,7 +13,6 @@ With Markdoc you can create custom attributes, which can be used within tags. In
 ```js
 // ./attribute-types/DateTime.js
 
-import type {Config} from 'docs/markdoc';
 
 export class DateTime {
   validate(value, config) {
