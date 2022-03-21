@@ -33,21 +33,19 @@ export class DateTime {
 }
 ```
 
-Next, import the custom attribute into your element:
-
-{% comment %}
-TODO: Provide a bit more information about what needs to be done.
-{% /comment %}
+Then, pass the custom attribute to your tag definition in your `Config` object:
 
 ```js
-export YourComponent = {
-    tag: 'tag-name',
-    component: 'YourComponent',
-    attributes: {
-        created: {
-            type: DateTime,
-            required: true,
-        },
+const config = {
+  tags: {
+    'tag-name':  {
+      tag: 'YourComponent',
+      attributes: {...},
     },
+  },
 };
 ```
+
+{% comment %}
+TODO: Make sure to link to docs about config with reference for things like tag-name.
+{% /comment %}
