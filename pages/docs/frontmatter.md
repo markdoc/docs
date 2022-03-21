@@ -35,7 +35,13 @@ date = "2022-04-01"
 ```
 
 ```graphql
-
+{
+    page {
+        title
+        description
+        date
+    }
+}
 ```
 
 ## Access to frontmatter attributes
