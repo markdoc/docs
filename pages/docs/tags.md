@@ -5,9 +5,10 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are an syntactic extension of standard Markdown. You can use native Markdoc components, like list tables, conditionals, and partials, or create custom React components.
+Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and partials, or create custom React components.
 
 ## Create a custom tag
+
 To extend Markdoc with a custom tag, first, create a tag definition. In this example, you're creating a `callout` tag:
 
 ```js
@@ -116,19 +117,19 @@ These are the fields you can use to customize your `Tag`
 
 - `children`
 - `string[]`
-- Determines which tag or node types are allowed to be rendered as children of this tag. Used in schema validation.
+- Specifies which tag or node types can be rendered as children of this tag. Used in schema validation.
 
 ---
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Determines which values/types are allowed to be passed to this tag.
+- Specifies which values (and their types) can be passed to this tag.
 
 ---
 
 - `selfClosing`
 - `boolean`
-- Determines whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
+- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
 
 ---
 

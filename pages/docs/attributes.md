@@ -13,7 +13,6 @@ With Markdoc you can create custom attributes, which can be used within tags. In
 ```js
 // ./attribute-types/DateTime.js
 
-
 export class DateTime {
   validate(value, config) {
     if (typeof value !== 'string' || isNaN(Date.parse(value)))
@@ -41,8 +40,6 @@ TODO: Provide a bit more information about what needs to be done.
 {% /comment %}
 
 ```js
-import {DateTime} from './attribute-types'
-
 export YourComponent = {
     tag: 'tag-name',
     component: 'YourComponent',
