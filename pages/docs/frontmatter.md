@@ -28,19 +28,19 @@ date = "2022-04-01"
 
 ```json
 {
-    "title": "Authoring in Markdown",
-    "description": "uickly author amazing content with Markdoc systax, a superset of Markdown.",
-    "date": "2022-04-01"
+  "title": "Authoring in Markdown",
+  "description": "uickly author amazing content with Markdoc systax, a superset of Markdown.",
+  "date": "2022-04-01"
 }
 ```
 
 ```graphql
 {
-    page {
-        title
-        description
-        date
-    }
+  page {
+    title
+    description
+    date
+  }
 }
 ```
 
