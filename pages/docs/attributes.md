@@ -1,10 +1,9 @@
 ---
 title: Attributes
-description:
+description: Attributes are used to pass data to tags in Markdoc. 
 ---
 
 # {% $markdoc.frontmatter.title %}
-
 
 ## Create a custom attribute
 
