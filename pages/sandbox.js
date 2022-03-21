@@ -95,10 +95,10 @@ export default function Sandbox() {
     };
   }, [ast]);
 
-  const content = React.useMemo(() => {
-    const processed = Markdoc.process(ast, config);
-    return Markdoc.expand(processed, config);
-  }, [ast, config]);
+  const content = React.useMemo(
+    () => Markdoc.process(ast, config),
+    [ast, config]
+  );
 
   const onBeforeChange = React.useCallback(
     (editor, meta, code) => setCode(code),
