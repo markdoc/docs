@@ -5,11 +5,11 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-## Creating a custom tag
+Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and partials, or create custom React components.
 
-Tags are an syntactic extension of standard Markdown. With tags you can use native Markdoc components, like list tables, conditionals, and partials, or custom-built React components.
+## Create a custom tag
 
-To extend Markdoc with your own custom tags, first create a custom tag definition:
+To extend Markdoc with a custom tag, first, create a tag definition. In this example, you're creating a `callout` tag:
 
 ```js
 // ./schema/Callout.markdoc.js
@@ -35,7 +35,7 @@ export const callout = {
 };
 ```
 
-Then, pass your tag definition to your `Config` object:
+Then, pass the tag definition to your `Config` object:
 
 ```js
 import { callout } from './schema/Callout.markdoc';
@@ -49,7 +49,7 @@ const config = {
 return Markdoc.render(content, config);
 ```
 
-Then, pass your config to `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag (in this case, `Callout`) within the `components` mapping.
+Next, pass your config to `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
 
 ```js
 import * as React from 'react';
@@ -77,7 +77,7 @@ return Markdoc.renderers.react(content, React, {
 });
 ```
 
-Finally, use your custom tag in your Markdoc content.
+Now you can use your custom tag in your Markdoc content.
 
 {% side-by-side %}
 
@@ -117,19 +117,19 @@ These are the fields you can use to customize your `Tag`
 
 - `children`
 - `string[]`
-- Determines which tag or node types are allowed to be rendered as children of this tag. Used in schema validation.
+- Specifies which tag or node types can be rendered as children of this tag. Used in schema validation.
 
 ---
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Determines which values (and their types) are allowed to be passed to this tag.
+- Specifies which values (and their types) can be passed to this tag.
 
 ---
 
 - `selfClosing`
 - `boolean`
-- Determines whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
+- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
 
 ---
 

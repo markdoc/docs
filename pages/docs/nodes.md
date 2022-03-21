@@ -10,7 +10,7 @@ description:
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
 {% comment %}
-These pages do this well:
+TODO: These pages do this well--
 https://mdxjs.com/table-of-components/
 https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 {% /comment %}
