@@ -44,7 +44,7 @@ TODO: Provide a bit more information about what needs to be done.
 ```js
 import {DateTime} from './attribute-types'
 
-export YourComponent: InheritedComponent = {
+export YourComponent = {
     tag: 'tag-name',
     component: 'YourComponent',
     attributes: {
