@@ -51,7 +51,6 @@ export YourComponent: InheritedComponent = {
         created: {
             type: DateTime,
             required: true,
-            description: 'Show valid date time',
         },
     },
 };
