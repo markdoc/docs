@@ -13,23 +13,23 @@ While we prepare Markdoc for open source, there are a few steps you'll need to t
 3. In the working directory for `@markdoc/next.js`, run these commands:
    ```
    cd ~/stripe/markdoc-next.js
-   yarn
-   yarn link
+   npm install
+   npm link
    ```
 4. Change directories to `docs` and run these commands:
    ```
    cd ~/stripe/markdoc-docs
-   yarn link @markdoc/next.js
-   yarn
+   npm link @markdoc/next.js
+   npm install
    ```
 5. Assuming you didn't get any errors, you can run your dev server and test with the demo site:
    ```
-   yarn dev
+   npm run dev
    ```
 
 ## Publishing to Pages
 
-1. Run `NEXT_PUBLIC_BASE_PATH=/markdoc yarn export`
+1. Run `NEXT_PUBLIC_BASE_PATH=/markdoc npm run export`
 2. Run `cp -r ~/stripe/markdoc-docs/out/* ~/stripe/pages/sites/markdoc/public`
 3. Submit a PR
 
