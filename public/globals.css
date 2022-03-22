@@ -205,7 +205,6 @@ pre[class*='language-'] {
 
 .token.tag,
 .sandbox span.cm-tag {
-  /* TODO update color */
   color: var(--blue);
 }
 

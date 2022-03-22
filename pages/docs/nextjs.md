@@ -241,26 +241,6 @@ Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/
 
 {% /markdoc-example %}
 
-{% comment %}
-TODO: next/image doesn't work with Next.js export
-
-### Image
-
-Renders a [Next.js `Image` component](https://nextjs.org/docs/api-reference/next/image). Requires passing `src`, `alt`, `width` and `height` attributes.
-
-{% markdoc-example %}
-
-```md
-{% image
-   src="/logo.svg"
-   alt="My logo"
-   width=50
-   height=50 /%}
-```
-
-{% /markdoc-example %}
-{% /comment %}
-
 ### Link
 
 Renders a [Next.js `Link` component](https://nextjs.org/docs/api-reference/next/link). Requires passing an `href` attribute.
