@@ -12,13 +12,13 @@ First create a Markdoc render tree by calling `process`.
 {% markdoc-example %}
 
 ```js
-const content = `
+const document = `
 # Getting started
 
 Run this command to install the Markdoc library:
 `;
 
-const renderTree = Markdoc.process(content);
+const content = Markdoc.process(document);
 ```
 
 {% /markdoc-example %}
@@ -37,9 +37,9 @@ app.get('/docs/getting-started', (req, res) => {
     <!DOCTYPE html>
     <html>
       <body>
-        ${Markdoc.renderers.html(renderTree)}
+        ${Markdoc.renderers.html(content)}
         <!-- or --> 
-        ${Markdoc.render(renderTree, {}, 'html')}
+        ${Markdoc.render(content, {}, 'html')}
       </body>
     </html>
   `);

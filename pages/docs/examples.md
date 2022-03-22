@@ -56,13 +56,13 @@ const fence = {
   },
 };
 
-const processed = Markdoc.process(content, {
+const content = Markdoc.process(content, {
   nodes: {
     fence,
   },
 });
 
-Markdoc.renderers.react(processed, React, {
+Markdoc.renderers.react(content, React, {
   components: {
     Fence,
   },

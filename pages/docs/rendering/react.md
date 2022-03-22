@@ -23,13 +23,13 @@ const tags = {
   },
 };
 
-const content = `
+const document = `
 {% callout %}
 Attention, over here!
 {% /callout %}
 `;
 
-const renderTree = Markdoc.process(content, { tags });
+const content = Markdoc.process(document, { tags });
 ```
 
 {% /markdoc-example %}
@@ -47,7 +47,7 @@ function Callout({ children }) {
 }
 
 function MyApp() {
-  return Markdoc.renderers.react(renderTree, React, {
+  return Markdoc.renderers.react(content, React, {
     components: {
       Callout: Callout,
     },
