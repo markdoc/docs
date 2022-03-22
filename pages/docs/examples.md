@@ -7,7 +7,7 @@ description:
 
 ## Loops
 
-Markdoc does not support writing loops directly into documents. If you need to loop through content, do so in a custom [Node](/docs/nodes) `render` function or in a custom [React component](/docs/render/react).
+Markdoc does not support writing loops directly in documents. If you need to loop through content, do so in a custom [Node](/docs/nodes) `render` function or in a custom [React component](/docs/render/react).
 
 ```js
 export const group = {

@@ -269,7 +269,7 @@ Renders a [Next.js `Script` component](https://nextjs.org/docs/api-reference/nex
 
 ### Markdoc example
 
-Use the `markdoc-example` tag to document Markdoc components themselves.
+Use the `markdoc-example` tag to create code examples that contain Markdoc syntax.
 
 {% markdoc-example %}
 
