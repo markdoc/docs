@@ -30,7 +30,9 @@ Lists
 - Item 1
 - Item 1
 
-> Block quotes
+> Quotes
+
+`Inline code`
 
 ```
 Code fences
@@ -55,6 +57,8 @@ Lists
 
 > Quotes
 
+`Inline code`
+
 ```
 Code fences
 ```
@@ -77,7 +81,7 @@ Content
 
 {% /markdoc-example %}
 
-Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`. 
+Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
 {% markdoc-example %}
 
 ```
