@@ -189,7 +189,7 @@ This appears if not $myFunVar and not $otherFunVar
 
 {% /markdoc-example %}
 
-### Tables
+### Table
 
 While GitHub Flavored Markdown (GFM) tables are supported, Markdoc also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
@@ -312,38 +312,17 @@ Explicitly set column and row span.
 
 {% /markdoc-example %}
 
-### Partials
+### Partial
 
-Partials are primarily used to reuse text or code examples across docs. The reusable information (text or code) is stored in a separate markdown file, and referenced from within the partial tag.
+Partials are used to reuse content across docs. The content is stored in a separate markdown file, and referenced from the `file` attribute in the `partial` tag, which includs the corresponding piece of content.
 
+Here is an example of including the `/docs/header.md` file as a partial.
 {% markdoc-example %}
 
 ```
-This is an example of including the `/docs/header.md` file as a partial.
-
 {% partial file="/partials/header.md" /%}
 ```
 
 {% /markdoc-example %}
 
-#### Passing variables
-
-Partials are just like other tags, so you can pass [variables](/docs/syntax#variables) to them like:
-
-{% markdoc-example %}
-
-```
-{% partial file="/partials/header.md" variables={name: "My header name"} /%}
-```
-
-{% /markdoc-example %}
-
-And access the variables just like in a regular Markdoc document:
-
-{% markdoc-example %}
-
-```
-{% $variableName %}
-```
-
-{% /markdoc-example %}
+For more information on partials, check out the full [partials docs](/docs/partials).

@@ -57,7 +57,7 @@ date        = "2022-04-01"
 
 ## Access frontmatter attributes
 
-To access your frontmatter content within your document, you have to pass the values as variables, just as you would otherwise.
+To access your frontmatter content within your document, you have to pass the values as [variables](/docs/variables), just as you would otherwise.
 
 First, parse your document to get access to the frontmatter content
 
