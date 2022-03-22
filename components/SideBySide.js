@@ -4,8 +4,8 @@ export function SideBySide({ children }) {
   const [first, ...rest] = React.Children.toArray(children);
   return (
     <div className="side-by-side">
-      {first}
-      <div className="column">{rest}</div>
+      <div className="left">{first}</div>
+      <div className="right column">{rest}</div>
     </div>
   );
 }
