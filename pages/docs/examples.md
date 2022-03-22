@@ -74,32 +74,30 @@ Markdoc.renderers.react(processed, React, {
 #### Step 1: Collect all headings from the page content
 
 ```js
-function collectHeadings(node, sections = []) {
-  // Match all h1, h2, h3… tags
-  if (node.name.match(/h\d/)) {
-    const title = node.children[0];
+function collectHeadings(nodes, sections = []) {
+  nodes.forEach((node) => {
+    // Match all h1, h2, h3… tags
+    if (node.name.match(/h\d/)) {
+      const title = node.children[0];
 
-    const attributes = Object.fromEntries(
-      node.attributes.map((a) => [a.name, a.value])
-    );
+      if (typeof title === 'string') {
+        sections.push({
+          ...node.attributes,
+          title,
+        });
+      }
 
-    if (typeof title === 'string') {
-      sections.push({
-        ...attributes,
-        level: Number(node.name.slice(1),
-      });
+      if (node.children) {
+        collectHeadings(node.children, sections);
+      }
     }
-  }
-
-  if (node.children) {
-    node.children.forEach((child) => collectHeadings(child, sections));
-  }
+  });
 
   return sections;
 }
 
 const content = Markdoc.process(ast);
-const headings = collectHeadings(processed);
+const headings = collectHeadings([].concat(processed));
 ```
 
 #### Step 2: Render the relevant headers in a list

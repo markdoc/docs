@@ -13,26 +13,23 @@ import 'prismjs/themes/prism.css';
 import '../public/globals.css';
 import '../public/sandbox.css';
 
-function collectHeadings(node, sections = []) {
-  if (node) {
-    if (node.name === 'Heading') {
+function collectHeadings(nodes, sections = []) {
+  nodes.forEach((node) => {
+    if (node?.name === 'Heading') {
       const title = node.children[0];
-      const attributes = Object.fromEntries(
-        node.attributes.map((a) => [a.name, a.value])
-      );
 
       if (typeof title === 'string') {
         sections.push({
-          ...attributes,
+          ...node.attributes,
           title,
         });
       }
-    }
 
-    if (node.children) {
-      node.children.forEach((child) => collectHeadings(child, sections));
+      if (node.children) {
+        collectHeadings(node.children, sections);
+      }
     }
-  }
+  });
 
   return sections;
 }
@@ -53,7 +50,7 @@ export default function MyApp(props) {
   }
 
   const toc = pageProps.markdoc?.content
-    ? collectHeadings(pageProps.markdoc.content)
+    ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
   const { basePath } = config().publicRuntimeConfig;
