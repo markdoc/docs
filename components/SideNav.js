@@ -34,6 +34,13 @@ const items = [
     ],
   },
   {
+    title: 'Advanced concepts',
+    links: [
+      { href: '/docs/frontmatter', children: 'Frontmatter' },
+      { href: '/docs/partials', children: 'Partials' },
+    ],
+  },
+  {
     title: 'Integration guides',
     links: [
       { href: '/docs/examples', children: 'Common examples' },
