@@ -5,6 +5,8 @@ import * as schema from '../markdoc';
 
 import { Editor } from '../components/Editor';
 
+const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
+
 const initialDocument = `
 {% section %}
 
@@ -119,14 +121,12 @@ export default function Index() {
         setMode((mode) => !mode);
       } else if (e.key === 'Escape') {
         setMode(false);
-      } else if (
-        (e.key === '4' && keystrokes === 0) ||
-        (e.key === '2' && keystrokes === 1) ||
-        (e.key === '4' && keystrokes === 2)
-      ) {
-        setCount((k) => k + 1);
-      } else if (e.key === '2' && keystrokes === 3) {
-        setMode((mode) => !mode);
+      } else if (e.key === PATTERN[keystrokes]) {
+        if (keystrokes === PATTERN.length - 1) {
+          setMode((mode) => !mode);
+        } else {
+          setCount((k) => k + 1);
+        }
       } else {
         setCount(0);
       }
