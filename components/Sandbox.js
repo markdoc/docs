@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
 
+import { Editor } from '../components/Editor';
+
 import * as schema from '../markdoc';
 
 const INITIAL_CODE = `---
@@ -52,15 +54,7 @@ Read on to learn more about the Dashboard:
 * [Managing your account]()
 `;
 
-const options = {
-  mode: 'markdown',
-  lineWrapping: true,
-  lineNumbers: true,
-  theme: 'none',
-};
-
 export function Sandbox() {
-  const [k, setK] = React.useState(0);
   const [code, setCode] = React.useState(INITIAL_CODE);
   const router = useRouter();
   const mode = router.query.mode || 'preview';
@@ -69,13 +63,6 @@ export function Sandbox() {
     router.query.mode = newMode;
     router.replace(router);
   }
-
-  React.useEffect(() => {
-    require('codemirror/mode/markdown/markdown');
-    require('codemirror/mode/javascript/javascript');
-    require('codemirror/mode/xml/xml');
-    setK((k) => k + 1);
-  }, []);
 
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
@@ -98,11 +85,6 @@ export function Sandbox() {
   const content = React.useMemo(
     () => Markdoc.process(ast, config),
     [ast, config]
-  );
-
-  const onBeforeChange = React.useCallback(
-    (editor, meta, code) => setCode(code),
-    []
   );
 
   const activeBtn = { background: '#e1e1e1' };
@@ -140,12 +122,7 @@ export function Sandbox() {
       </nav>
       <div className="flex container">
         <section>
-          <CodeMirror
-            key={k}
-            value={code}
-            options={options}
-            onBeforeChange={onBeforeChange}
-          />
+          <Editor code={code} onChange={setCode} />
         </section>
         <section>
           {mode === 'preview' && (

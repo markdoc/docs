@@ -100,7 +100,8 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      {props.router.asPath.startsWith('/sandbox') ? (
+      {props.router.asPath === '/' ||
+      props.router.asPath.startsWith('/sandbox') ? (
         <main>
           <div id="skip-nav" />
           <Component {...pageProps} />
