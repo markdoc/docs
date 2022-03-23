@@ -21,13 +21,14 @@
   --line-height-7: 60px;
 
   --theme: #2dbe62;
+  /* --theme: #f1ea51; */
   --green: #2dbe62;
   --orange: #c78100;
   --blurple: #5469d4;
   --blue: #00738a;
   --text: #3c4257;
   --link: var(--blurple);
-  --dark: #1a1f36;
+  --dark: #151517;
   --gray-1: #697386;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
@@ -350,14 +351,19 @@ footer {
 
 footer a {
   color: var(--dark);
+  text-decoration: underline;
+  margin-right: 24px;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 
 .sidenav li a:hover,
 .sidenav li.active > a,
 .toc li a:hover,
-.toc li.active > a,
-footer a:hover {
-  color: var(--theme);
+.toc li.active > a {
+  text-decoration: underline;
 }
 
 .footer-links {
@@ -381,7 +387,6 @@ footer a:hover {
 
 .app-btn:hover {
   background: var(--theme);
-  color: white;
 }
 
 /* Callout */
