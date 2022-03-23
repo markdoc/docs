@@ -101,7 +101,10 @@ export default function MyApp(props) {
         </nav>
       </div>
       {props.router.asPath.startsWith('/sandbox') ? (
-        <Component {...pageProps} />
+        <main>
+          <div id="skip-nav" />
+          <Component {...pageProps} />
+        </main>
       ) : (
         <div className="page">
           {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}

@@ -59,7 +59,7 @@ const options = {
   theme: 'none',
 };
 
-export default function Sandbox() {
+export function Sandbox() {
   const [k, setK] = React.useState(0);
   const [code, setCode] = React.useState(INITIAL_CODE);
   const router = useRouter();
@@ -108,7 +108,7 @@ export default function Sandbox() {
   const activeBtn = { background: '#e1e1e1' };
 
   return (
-    <main className="sandbox">
+    <div className="sandbox">
       <nav>
         <button onClick={() => setCode('')}>Clear</button>
         <div className="btn-group">
@@ -179,6 +179,6 @@ export default function Sandbox() {
           )}
         </section>
       </div>
-    </main>
+    </div>
   );
 }
