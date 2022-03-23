@@ -106,7 +106,7 @@ h1 {
 h2 {
   font-size: var(--font-size-5);
   line-height: var(--line-height-5);
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 h3 {
@@ -385,10 +385,6 @@ footer a:hover {
 }
 
 /* Callout */
-.callout {
-  padding: 20px 0 12px;
-}
-
 .callout .content {
   display: flex;
   line-height: 20px;

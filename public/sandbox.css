@@ -83,9 +83,6 @@
   line-height: 26px;
 }
 
-.sandbox .preview h1 {
-  font-size: 2em;
-}
 .sandbox .preview a {
   color: var(--blurple);
 }
