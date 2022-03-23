@@ -10,8 +10,8 @@ const initialDocument = `
 
 # Markdoc is a powerful, flexible Markdown-based authoring system
 
-{% button href="/docs/getting-started" %}Get started{% /button%}
-{% button href="/sandbox" %}Try it online{% /button%}
+{% button href="/docs/getting-started" %}Get started →{% /button%}
+{% button href="/sandbox" %}Try it now →{% /button%}
 
 {% /section %}
 
@@ -114,7 +114,6 @@ export default function Index() {
   );
 
   React.useEffect(() => {
-    // Detect 4242
     function handler(e) {
       if (e.key === 'i' && e.metaKey) {
         setMode((mode) => !mode);
