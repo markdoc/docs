@@ -99,21 +99,25 @@ h6 {
 
 h1 {
   font-size: var(--font-size-7);
+  line-height: var(--line-height-7);
   max-width: 800px;
 }
 
 h2 {
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   margin-top: 3rem;
 }
 
 h3 {
   font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
   margin-top: 2rem;
 }
 
 h5 {
   font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
   font-weight: normal;
 }
 
