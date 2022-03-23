@@ -1,3 +1,4 @@
+/* TODO move styles to style-jsx */
 :root {
   --nav-height: 64px;
 
@@ -185,6 +186,10 @@ table tbody tr:last-child > td:first-child {
 }
 table tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 4px;
+}
+
+.full-width {
+  width: 100%;
 }
 
 :not(pre) > code[class*='language-'],
@@ -548,6 +553,22 @@ footer a:hover {
   flex-direction: column;
   margin: 0;
   padding: 0;
+}
+
+/* Section */
+.section {
+  width: 100%;
+  padding: 1rem 0 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-background--theme {
+  background: var(--theme);
+}
+
+.section .contents {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 /* SideBySide */

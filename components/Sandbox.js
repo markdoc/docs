@@ -61,7 +61,7 @@ export function Sandbox() {
 
   function setMode(newMode) {
     router.query.mode = newMode;
-    router.replace(router);
+    router.replace(router, undefined, { scroll: false });
   }
 
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);

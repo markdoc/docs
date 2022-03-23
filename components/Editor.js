@@ -9,7 +9,7 @@ const options = {
 };
 
 export function Editor({ code, onChange }) {
-  const [k, setK] = React.useState(0);
+  const [key, setKey] = React.useState(0);
 
   const onBeforeChange = React.useCallback(
     (editor, meta, code) => onChange(code),
@@ -20,12 +20,12 @@ export function Editor({ code, onChange }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
-    setK((k) => k + 1);
+    setKey((k) => k + 1);
   }, []);
 
   return (
     <CodeMirror
-      key={k}
+      key={key}
       value={code}
       options={options}
       onBeforeChange={onBeforeChange}
