@@ -40,19 +40,17 @@ export default function Index() {
 
   if (mode) {
     return (
-      <section className="page edit-mode">
+      <section className="edit-mode">
         <Editor code={doc} onChange={setDoc} />
       </section>
     );
   }
 
   return (
-    <div className="page">
-      <div className="main">
-        {Markdoc.renderers.react(content, React, {
-          components: config.components,
-        })}
-      </div>
+    <div className="main">
+      {Markdoc.renderers.react(content, React, {
+        components: config.components,
+      })}
     </div>
   );
 }

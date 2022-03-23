@@ -1,8 +1,8 @@
 .sandbox {
-  padding-top: var(--nav-height);
-  height: 100%;
   display: flex;
+  flex-direction: column;
   flex-flow: column;
+  border: 1px solid var(--gray-2);
 }
 
 .sandbox .CodeMirror,

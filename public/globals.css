@@ -12,7 +12,7 @@
   --font-size-6: 32px;
   --font-size-7: 48px;
 
-  --line-height-3: 26px;
+  --line-height-3: 24px;
 
   --theme: #2dbe62;
   --green: #2dbe62;
@@ -324,7 +324,7 @@ pre[class*='language-'] {
   flex: 1 auto;
   max-width: 100%;
   min-width: 0;
-  padding: 0 0 4rem 2rem;
+  padding: 0 2rem 4rem 2rem;
 }
 
 footer {
@@ -527,7 +527,7 @@ footer a:hover {
   max-height: calc(100vh - var(--nav-height));
   flex: 0 0 240px;
   align-self: flex-start;
-  margin: 2rem 0 0 3rem;
+  margin: 2rem 0 0 1rem;
   padding: 0.25rem 0 0;
   border-left: 1px solid var(--gray-2);
 }
@@ -539,6 +539,7 @@ footer a:hover {
   padding: 0;
 }
 
+/* SideBySide */
 .side-by-side {
   display: flex;
   align-items: center;

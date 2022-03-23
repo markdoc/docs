@@ -103,14 +103,14 @@ export default function MyApp(props) {
       {props.router.asPath.startsWith('/docs') ? (
         <div className="page">
           <SideNav />
-          <div id="skip-nav" />
           <main className="main">
+            <div id="skip-nav" />
             <Component {...pageProps} />
           </main>
           {toc ? <TableOfContents toc={toc} /> : null}
         </div>
       ) : (
-        <main>
+        <main className="page">
           <div id="skip-nav" />
           <Component {...pageProps} />
         </main>
