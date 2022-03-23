@@ -12,7 +12,13 @@
   --font-size-6: 32px;
   --font-size-7: 48px;
 
+  --line-height-1: 16px;
+  --line-height-2: 20px;
   --line-height-3: 24px;
+  --line-height-4: 27px;
+  --line-height-5: 32px;
+  --line-height-6: 40px;
+  --line-height-7: 60px;
 
   --theme: #2dbe62;
   --green: #2dbe62;
