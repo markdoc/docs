@@ -1,5 +1,6 @@
 /* TODO move styles to style-jsx */
 :root {
+  --default-vertical-spacing: 0.75rem;
   --nav-height: 64px;
 
   --radii-1: 4px;
@@ -87,6 +88,8 @@ li {
 p {
   font-size: var(--font-size-3);
   line-height: var(--line-height-3);
+  margin: 0;
+  padding-top: var(--default-vertical-spacing);
 }
 
 h1,
@@ -336,7 +339,7 @@ pre[class*='language-'] {
   clip: auto;
 }
 
-.main {
+.document {
   flex: 1 auto;
   max-width: 100%;
   min-width: 0;
@@ -405,6 +408,7 @@ footer a:hover {
 
 .callout .content p {
   margin: 0;
+  padding: 0;
 }
 
 .callout .note {
@@ -574,7 +578,6 @@ footer a:hover {
 /* SideBySide */
 .side-by-side {
   display: flex;
-  align-items: center;
   width: 100%;
   padding: 0;
   margin-top: 1.5rem;
@@ -587,21 +590,16 @@ footer a:hover {
   margin-bottom: 0;
 }
 
-.side-by-side > * {
+.side-by-side > .left {
   flex: 1 1 0px;
   padding: 1rem 2rem;
-}
-
-.side-by-side > .left {
   border-right: 1px solid var(--gray-2);
 }
 
 .side-by-side > .right {
+  flex: 1 1 0px;
+  padding: 1.75rem 2rem;
   display: flex;
   flex-direction: column;
   min-width: 200px;
-}
-
-.side-by-side p {
-  margin: 0.5rem 0;
 }

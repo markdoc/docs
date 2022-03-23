@@ -68,12 +68,12 @@ After registering this custom node, you can then use it in your Markdoc, like:
 {% markdoc-example %}
 
 ```md
-#### My header
+### My header
 ```
 
 {% /markdoc-example %}
 
-#### My header
+### My header
 
 {% /side-by-side %}
 
