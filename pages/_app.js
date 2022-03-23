@@ -100,21 +100,20 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      {props.router.asPath === '/' ||
-      props.router.asPath.startsWith('/sandbox') ? (
-        <main>
-          <div id="skip-nav" />
-          <Component {...pageProps} />
-        </main>
-      ) : (
+      {props.router.asPath.startsWith('/docs') ? (
         <div className="page">
-          {props.router.asPath.startsWith('/docs') ? <SideNav /> : null}
+          <SideNav />
           <div id="skip-nav" />
           <main className="main">
             <Component {...pageProps} />
           </main>
           {toc ? <TableOfContents toc={toc} /> : null}
         </div>
+      ) : (
+        <main>
+          <div id="skip-nav" />
+          <Component {...pageProps} />
+        </main>
       )}
       <footer>
         © {new Date().getFullYear()} Stripe
