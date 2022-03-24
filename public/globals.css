@@ -418,97 +418,18 @@ footer a:hover {
 }
 
 /* Callout */
-.callout .content {
-  display: flex;
-  line-height: 20px;
-  padding: 12px 20px;
-  border-radius: var(--radii-1);
-  box-shadow: 0 0 0 1px var(--gray-2);
-}
-
-.callout .content p {
+.callout p {
   margin: 0;
   padding: 0;
 }
 
-.callout .note {
-  background: #f7fafc;
-}
-
-.callout .caution {
-  background: #fcf9e9;
-}
-
-.callout .check {
-  background: #efffed;
-}
-
-.callout .warning {
-  background: #fff8f5;
-}
-
-.callout .copy {
-  display: flex;
-  flex-direction: column;
-}
-
-.callout .title {
-  color: var(--dark);
-}
-
-.callout .icon {
-  top: 2.5px;
-  padding-right: 8px;
-}
-
-/* Code */
-.code {
-  position: relative;
-}
-.code .btn {
-  appearance: none;
-  border: none;
-  background: #f5f2f0;
-  font-size: 20px;
-  position: absolute;
-  top: 15px;
-  right: 8px;
-}
-
 /* Icon */
-.icon {
-  display: inline-block;
-  position: relative;
-  top: +2px;
-  font-size: inherit;
-  width: 1em;
-  height: 1em;
-  min-width: 16px;
-  box-sizing: content-box !important;
-}
-
 .icon svg {
   display: block;
   fill: currentcolor;
   stroke: currentcolor;
   width: 100%;
   height: 100%;
-}
-
-.icon.note {
-  color: #8792a2;
-}
-
-.icon.caution {
-  color: #d97917;
-}
-
-.icon.check {
-  color: #1ea672;
-}
-
-.icon.warning {
-  color: #ed5f74;
 }
 
 /* SideNav */

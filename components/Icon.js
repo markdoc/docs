@@ -59,6 +59,23 @@ const svgs = {
   )
 };
 
-export function Icon({ icon, type }) {
-  return <span className={['icon', type].join(' ')}>{svgs[icon] || null}</span>;
+export function Icon({ icon, color }) {
+  return (
+    <span
+      className="icon"
+      style={{
+        display: 'inline-block',
+        position: 'relative',
+        top: '+2px',
+        fontSize: 'inherit',
+        width: '1em',
+        height: '1em',
+        minWidth: '16px',
+        boxSizing: 'content-box',
+        color
+      }}
+    >
+      {svgs[icon] || null}
+    </span>
+  );
 }

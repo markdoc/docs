@@ -50,7 +50,7 @@ export function Code({ children, language }) {
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc';
 
   return (
-    <div className="code" aria-live="polite">
+    <div className="code" aria-live="polite" style={{ position: 'relative' }}>
       <PrismCode
         ref={ref}
         key={lang}
@@ -59,7 +59,19 @@ export function Code({ children, language }) {
       >
         {children}
       </PrismCode>
-      <button className="btn" onClick={() => setCopied(true)}>
+      <button
+        style={{
+          appearance: 'none',
+          padding: 0,
+          position: 'absolute',
+          top: '12px',
+          right: '12px',
+          border: 'none',
+          background: '#f5f2f0',
+          fontSize: '20px'
+        }}
+        onClick={() => setCopied(true)}
+      >
         <title>{copied ? 'Copied' : 'Copy'}</title>
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
