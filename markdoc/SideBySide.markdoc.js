@@ -6,6 +6,6 @@ export const sideBySide = {
   tag: 'side-by-side',
   Component: SideBySide,
   attributes: {
-    border: { type: String }
+    appearance: { type: String, matches: ['none', 'box'], default: 'box' }
   }
 };

@@ -37,7 +37,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 {% section %}
 
-{% side-by-side border="none" %}
+{% side-by-side appearance="none" %}
 
 ## Get started quickly {% .h1 %}
 
@@ -76,7 +76,7 @@ return Markdoc.renderers.react(content, React, {components});
 
 {% section background="var(--theme)" %}
 
-{% side-by-side border="none" %}
+{% side-by-side appearance="none" %}
 
 ## Built by Stripe {% .h1 %}
 

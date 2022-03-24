@@ -199,6 +199,18 @@ table tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 4px;
 }
 
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
 .full-width {
   width: 100%;
 }
@@ -580,30 +592,7 @@ footer a:hover {
 }
 
 /* SideBySide */
-.side-by-side {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  margin-top: 1.5rem;
-  border: 1px solid var(--gray-2);
-  border-radius: var(--radii-1);
-}
-
 .side-by-side .heading {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.side-by-side > .left {
-  flex: 1 1 0px;
-  padding: 1rem 2rem;
-  border-right: 1px solid var(--gray-2);
-}
-
-.side-by-side > .right {
-  flex: 1 1 0px;
-  padding: 1.75rem 2rem;
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
 }
