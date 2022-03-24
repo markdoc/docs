@@ -115,7 +115,7 @@ export default function Index() {
       } else if (e.key === 'Escape') {
         setMode(false);
       } else if (e.key === PATTERN[keystrokes]) {
-        if (keystrokes === PATTERN.length - 1) {
+        if (keystrokes + 1 === PATTERN.length) {
           setMode((mode) => !mode);
         } else {
           setCount((k) => k + 1);
