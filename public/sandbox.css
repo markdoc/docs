@@ -93,9 +93,3 @@
   text-decoration: none;
   font-weight: 500;
 }
-
-.edit-mode,
-.edit-mode .react-codemirror2,
-.edit-mode .CodeMirror {
-  height: calc(100vh - var(--nav-height));
-}

@@ -116,7 +116,7 @@ export default function Index() {
         setMode(false);
       } else if (e.key === PATTERN[keystrokes]) {
         if (keystrokes + 1 === PATTERN.length) {
-          setMode((mode) => !mode);
+          setMode(true);
         } else {
           setCount((k) => k + 1);
         }
@@ -136,7 +136,7 @@ export default function Index() {
 
   if (mode) {
     return (
-      <section className="edit-mode">
+      <section className="sandbox">
         <Editor code={doc} onChange={setDoc} />
       </section>
     );
