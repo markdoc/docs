@@ -3,6 +3,7 @@
   --default-vertical-spacing: 0.75rem;
   --nav-height: 64px;
   --shadow-height: 14px;
+  --landing-page-max-width: 1200px;
 
   --radii-1: 4px;
 
@@ -284,7 +285,7 @@ pre[class*='language-'] {
   z-index: 100;
   display: flex;
   width: 100%;
-  padding: 0.5rem 0rem;
+  padding: 0.5rem 2rem;
   box-shadow: 0 4px 3px -3px var(--gray-2);
   /* https://www.joshwcomeau.com/gradient-generator?colors=fbfbfb|fbfbfb|fbfbfb|2dbe59|1a1f36&angle=150&colorMode=hcl&precision=19&easingCurve=1.25|-0.25|-0.1|-0.1 */
   background-image: linear-gradient(
@@ -319,7 +320,7 @@ pre[class*='language-'] {
 .nav-bar nav {
   display: flex;
   width: 100%;
-  padding: 0 4rem 0 2rem;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
 }

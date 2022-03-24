@@ -16,7 +16,7 @@ export function SideBySide({ children, appearance }) {
         className="flex column"
         style={{
           flex: '1 1 0px',
-          padding: '1rem 2rem',
+          padding: appearance === 'box' ? '1rem 2rem' : undefined,
           borderRight:
             appearance === 'box' ? '1px solid var(--gray-2)' : undefined
         }}

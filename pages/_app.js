@@ -55,6 +55,8 @@ export default function MyApp(props) {
 
   const { basePath } = config().publicRuntimeConfig;
 
+  const isLandingPage = props.router.pathname === '/';
+
   return (
     <>
       <Head>
@@ -69,7 +71,13 @@ export default function MyApp(props) {
         Skip to content
       </a>
       <div className="nav-bar">
-        <nav>
+        <nav
+          style={{
+            maxWidth: isLandingPage
+              ? 'var(--landing-page-max-width)'
+              : undefined
+          }}
+        >
           <Link href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
