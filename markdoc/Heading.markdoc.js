@@ -20,7 +20,8 @@ export const heading = {
   children: ['inline'],
   attributes: {
     id: { type: String },
-    level: { type: Number, required: true, default: 1 }
+    level: { type: Number, required: true, default: 1 },
+    className: { type: String }
   },
   render(node, config) {
     const attributes = node.renderAttributes(this.attributes);
