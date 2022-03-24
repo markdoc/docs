@@ -53,11 +53,28 @@ export default function SideNav() {
   const router = useRouter();
 
   return (
-    <nav className="sidenav">
+    <nav
+      className="sidenav"
+      style={{
+        position: 'sticky',
+        top: 'var(--nav-height)',
+        height: 'calc(100vh - var(--nav-height))',
+        flex: '0 0 240px',
+        overflowY: 'auto',
+        padding: '2rem 0 3rem 2rem'
+      }}
+    >
       {items.map((item) => (
         <div key={item.title}>
-          <h3>{item.title}</h3>
-          <ul>
+          <h3
+            style={{
+              fontWeight: 500,
+              margin: '1rem 0 0.5rem'
+            }}
+          >
+            {item.title}
+          </h3>
+          <ul className="flex column" style={{ margin: 0, padding: '4px 0 0' }}>
             {item.links.map((link) => {
               const active = router.asPath === link.href;
               return (
@@ -65,17 +82,6 @@ export default function SideNav() {
                   <Link {...link}>
                     <a href={link.href}>{link.children}</a>
                   </Link>
-                  {active && link.links && (
-                    <ul>
-                      {link.links.map((link) => (
-                        <li key={link.href}>
-                          <Link {...link}>
-                            <a href={link.href}>{link.children}</a>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </li>
               );
             })}

@@ -117,7 +117,7 @@ export default function MyApp(props) {
       )}
       <footer>
         © {new Date().getFullYear()} Stripe
-        <div className="footer-links">
+        <div style={{ marginLeft: '2rem' }}>
           <Link href="/docs/getting-started">Docs</Link>
           <Link href="https://github.com/markdoc/markdoc/discussions">
             Community

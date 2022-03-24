@@ -9,9 +9,27 @@ export default function TableOfContents({ toc }) {
       item.title !== 'Next steps'
   );
   return (
-    <nav className="toc">
+    <nav
+      className="toc"
+      style={{
+        position: 'sticky',
+        top: '96px',
+        maxHeight: 'calc(100vh - var(--nav-height))',
+        flex: '0 0 240px',
+        alignSelf: 'flex-start',
+        margin: '2rem 0 0 1rem',
+        padding: '0.25rem 0 0',
+        borderLeft: '1px solid var(--gray-2)'
+      }}
+    >
       {items.length > 1 ? (
-        <ul>
+        <ul
+          className="flex column"
+          style={{
+            margin: 0,
+            padding: 0
+          }}
+        >
           {items.map((item) => {
             const href = `#${item.id}`;
             const active =
