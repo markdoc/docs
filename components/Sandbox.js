@@ -5,8 +5,6 @@ import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
 
-import { Editor } from '../components/Editor';
-
 import * as schema from '../markdoc';
 
 const INITIAL_CODE = `---
@@ -54,16 +52,7 @@ Read on to learn more about the Dashboard:
 * [Managing your account]()
 `;
 
-export function Sandbox() {
-  const [code, setCode] = React.useState(INITIAL_CODE);
-  const router = useRouter();
-  const mode = router.query.mode || 'preview';
-
-  function setMode(newMode) {
-    router.query.mode = newMode;
-    router.replace(router, undefined, { scroll: false });
-  }
-
+export function useMarkdocCode(code) {
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
   const config = React.useMemo(() => {
@@ -86,6 +75,53 @@ export function Sandbox() {
     () => Markdoc.process(ast, config),
     [ast, config]
   );
+
+  return { ast, content, config };
+}
+
+const options = {
+  mode: 'markdown',
+  lineWrapping: true,
+  lineNumbers: true,
+  theme: 'none'
+};
+
+export function Editor({ code, onChange }) {
+  const [key, setKey] = React.useState(0);
+
+  const onBeforeChange = React.useCallback(
+    (editor, meta, code) => onChange(code),
+    [onChange]
+  );
+
+  React.useEffect(() => {
+    require('codemirror/mode/markdown/markdown');
+    require('codemirror/mode/javascript/javascript');
+    require('codemirror/mode/xml/xml');
+    setKey((k) => k + 1);
+  }, []);
+
+  return (
+    <CodeMirror
+      key={key}
+      value={code}
+      options={options}
+      onBeforeChange={onBeforeChange}
+    />
+  );
+}
+
+export function Sandbox() {
+  const [code, setCode] = React.useState(INITIAL_CODE);
+  const router = useRouter();
+  const mode = router.query.mode || 'preview';
+
+  function setMode(newMode) {
+    router.query.mode = newMode;
+    router.replace(router, undefined, { scroll: false });
+  }
+
+  const { ast, content, config } = useMarkdocCode(code);
 
   const activeBtn = { background: '#e1e1e1' };
 

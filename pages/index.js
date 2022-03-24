@@ -1,16 +1,16 @@
 import React from 'react';
 import Markdoc from '@markdoc/markdoc';
-import { transformSchema } from '@markdoc/next.js/runtime';
-import * as schema from '../markdoc';
 
-import { Editor } from '../components/Editor';
+import { Editor, useMarkdocCode } from '../components/Sandbox';
 
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 
-const initialDocument = `
+const initialDocument = `---
+title: Markdoc is a powerful, flexible Markdown-based authoring system
+---
 {% section %}
 
-# Markdoc is a powerful, flexible Markdown-based authoring system
+# {% $markdoc.frontmatter.title %}
 
 {% button href="/docs/getting-started" %}Get started →{% /button%}
 {% button href="/sandbox" %}Try it now →{% /button%}
@@ -102,18 +102,11 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 `;
 
 export default function Index() {
+  const [doc, setDoc] = React.useState(initialDocument);
   const [mode, setMode] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
-  const [doc, setDoc] = React.useState(initialDocument);
 
-  const ast = React.useMemo(() => Markdoc.parse(doc), [doc]);
-
-  const config = React.useMemo(() => transformSchema(schema), []);
-
-  const content = React.useMemo(
-    () => Markdoc.process(ast, config),
-    [ast, config]
-  );
+  const { config, content } = useMarkdocCode(doc);
 
   React.useEffect(() => {
     function handler(e) {
