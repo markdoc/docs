@@ -92,9 +92,6 @@ export default function MyApp(props) {
               <Link href="/docs/getting-started">Docs</Link>
             </li>
             <li>
-              <Link href="/sandbox">Try</Link>
-            </li>
-            <li>
               <Link href="https://github.com/markdoc/markdoc/discussions">
                 Community
               </Link>
@@ -104,6 +101,9 @@ export default function MyApp(props) {
             </li>
             <li>
               <Link href="https://twitter.com/StripeDev">Twitter</Link>
+            </li>
+            <li>
+              <Link href="/sandbox">Try →</Link>
             </li>
           </ul>
         </nav>
@@ -123,18 +123,29 @@ export default function MyApp(props) {
           <Component {...pageProps} />
         </main>
       )}
-      <footer>
-        © {new Date().getFullYear()} Stripe
-        <div style={{ marginLeft: '2rem' }}>
-          <Link href="/docs/getting-started">Docs</Link>
-          <Link href="https://github.com/markdoc/markdoc/discussions">
-            Community
-          </Link>{' '}
-          <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
-          <Link href="https://twitter.com/StripeDev">Twitter</Link>
-          <Link href="/sandbox">Try →</Link>
-        </div>
-      </footer>
+      <div
+        style={{
+          maxWidth: isLandingPage ? 'var(--landing-page-max-width)' : undefined,
+          margin: '0 auto'
+        }}
+      >
+        <footer
+          style={{
+            padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem',
+            marginTop: isLandingPage ? '10rem' : 0
+          }}
+        >
+          © {new Date().getFullYear()} Stripe
+          <div style={{ marginLeft: '2rem' }}>
+            <Link href="/docs/getting-started">Docs</Link>
+            <Link href="https://github.com/markdoc/markdoc/discussions">
+              Community
+            </Link>{' '}
+            <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
+            <Link href="https://twitter.com/StripeDev">Twitter</Link>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }

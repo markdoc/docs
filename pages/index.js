@@ -10,10 +10,9 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 ---
 {% section %}
 
-# {% $markdoc.frontmatter.title %}
+# {% $markdoc.frontmatter.title %} {% .jumbo %}
 
-{% button href="/docs/getting-started" %}Get started →{% /button%}
-{% button href="/sandbox" %}Try it now →{% /button%}
+[Get started →](/docs/getting-started)
 
 {% /section %}
 
@@ -34,14 +33,18 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 {% /table %}
 
 {% /section %}
-
-{% section %}
+ 
+{% section background="var(--theme)" %}
 
 {% side-by-side appearance="none" %}
 
-## Get started quickly {% .h1 %}
+{% item %}
+
+## Get started quickly {% .jumbo %}
 
 [Markdoc core](https://github.com/markdoc/markdoc) is a lightweight package containing everything you need to get started. If you want get going even faster, check out our [Next.js plugin](https://github.com/markdoc/next.js) and deploy a Markdoc documentation site with zero boilerplate.
+
+{% /item %}
 
 \`\`\`bash
 npm install @markdoc/markdoc
@@ -74,11 +77,11 @@ return Markdoc.renderers.react(content, React, {components});
 {% /section %}
 {% /comment %}
 
-{% section background="var(--theme)" %}
+{% section %}
 
 {% side-by-side appearance="none" %}
 
-## Built by Stripe {% .h1 %}
+### Built by Stripe {% .jumbo %}
 
 Stripe created Markdoc to power its largest and most complex content site, stripe.com/docs. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of complex, custom documentation.
 
