@@ -7,12 +7,12 @@ export { comment } from '@markdoc/next.js/tags';
 
 export const example = {
   ...markdocExample,
-  Component: Code,
+  Component: Code
 };
 
 export const linkNode = {
   ...link,
   tag: undefined,
   Component: AppLink,
-  node: 'link',
+  node: 'link'
 };

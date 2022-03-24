@@ -7,5 +7,5 @@ module.exports = withMarkdoc()({
   assetPrefix: basePath,
   publicRuntimeConfig: { basePath: basePath || '' },
   reactStrictMode: true,
-  pageExtensions: ['js', 'md', 'mdoc'],
+  pageExtensions: ['js', 'md', 'mdoc']
 });

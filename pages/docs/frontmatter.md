@@ -88,8 +88,8 @@ const frontmatter = ast.attributes.frontmatter
 
 const config = {
   variables: {
-    frontmatter,
-  },
+    frontmatter
+  }
 };
 ```
 

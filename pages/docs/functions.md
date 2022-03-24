@@ -17,7 +17,7 @@ const includes = {
     const [array, value] = Object.values(parameters);
 
     return Array.isArray(array) ? array.includes(value) : false;
-  },
+  }
 };
 
 const uppercase = {
@@ -25,14 +25,14 @@ const uppercase = {
     const string = parameters['0'];
 
     return typeof string === 'string' ? string.toUpperCase() : string;
-  },
+  }
 };
 
 const xor = {
   render(parameters) {
     const [a, b] = Object.values(parameters).map(Boolean);
     return a !== b;
-  },
+  }
 };
 ```
 
@@ -42,8 +42,8 @@ Then, pass the functions to your [`Config` object](/docs/config)
 const config = {
   functions: {
     includes,
-    uppercase,
-  },
+    uppercase
+  }
 };
 
 return Markdoc.render(content, config);

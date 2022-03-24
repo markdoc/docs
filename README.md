@@ -13,7 +13,7 @@
 
 ## Contribute
 
-Contributions and feedback are welcomed and encouraged. 
+Contributions and feedback are welcomed and encouraged.
 
 ## Code of conduct
 

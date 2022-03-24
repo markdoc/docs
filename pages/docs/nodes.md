@@ -22,8 +22,8 @@ import { heading } from './schema/Heading.markdoc';
 
 const config = {
   nodes: {
-    heading,
-  },
+    heading
+  }
 };
 
 return Markdoc.render(content, config);
@@ -44,7 +44,7 @@ export const heading = {
   children: ['inline'],
   attributes: {
     id: { type: String },
-    level: { type: Number, required: true, default: 1 },
+    level: { type: Number, required: true, default: 1 }
   },
   render(node, config) {
     const attributes = node.renderAttributes(this.attributes);
@@ -55,9 +55,9 @@ export const heading = {
     return {
       name: 'heading',
       attributes: { ...attributes, id },
-      children,
+      children
     };
-  },
+  }
 };
 ```
 

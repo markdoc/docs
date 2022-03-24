@@ -11,7 +11,7 @@ Prism.languages.markdoc = {
     inside: {
       tagType: {
         pattern: /^({%\s*\/?)(\w*|-)* /i,
-        lookbehind: true,
+        lookbehind: true
       },
       id: /#(\w|-)*\b/,
       string: /".*?"/,
@@ -20,19 +20,19 @@ Prism.languages.markdoc = {
       variable: {
         pattern: /\$[\w.]+/i,
         inside: {
-          punctuation: /\./i,
-        },
+          punctuation: /\./i
+        }
       },
       function: /\b\w+(?=\()/,
-      punctuation: /({%|\/?%})/i,
-    },
+      punctuation: /({%|\/?%})/i
+    }
   },
   variable: {
-    pattern: /\$\w+/i,
+    pattern: /\$\w+/i
   },
   function: {
-    pattern: /\b\w+(?=\()/i,
-  },
+    pattern: /\b\w+(?=\()/i
+  }
 };
 
 export function Code({ children, language }) {

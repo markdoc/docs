@@ -7,8 +7,8 @@ const items = [
     title: 'Get started',
     links: [
       { href: '/docs/getting-started', children: 'Installation' },
-      { href: '/sandbox', children: 'Try it out' },
-    ],
+      { href: '/sandbox', children: 'Try it out' }
+    ]
   },
   {
     title: 'Syntax and schema',
@@ -18,35 +18,35 @@ const items = [
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },
       { href: '/docs/variables', children: 'Variables' },
-      { href: '/docs/functions', children: 'Functions' },
-    ],
+      { href: '/docs/functions', children: 'Functions' }
+    ]
   },
   {
     title: 'Rendering',
     links: [
       {
         href: '/docs/rendering',
-        children: 'Overview',
+        children: 'Overview'
       },
       { href: '/docs/validation', children: 'Validation' },
       { href: '/docs/rendering/html', children: 'HTML' },
-      { href: '/docs/rendering/react', children: 'React' },
-    ],
+      { href: '/docs/rendering/react', children: 'React' }
+    ]
   },
   {
     title: 'Advanced concepts',
     links: [
       { href: '/docs/frontmatter', children: 'Frontmatter' },
-      { href: '/docs/partials', children: 'Partials' },
-    ],
+      { href: '/docs/partials', children: 'Partials' }
+    ]
   },
   {
     title: 'Integration guides',
     links: [
       { href: '/docs/examples', children: 'Common examples' },
-      { href: '/docs/nextjs', children: 'Using with Next.js' },
-    ],
-  },
+      { href: '/docs/nextjs', children: 'Using with Next.js' }
+    ]
+  }
 ];
 
 export default function SideNav() {

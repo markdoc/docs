@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function TableOfContents({toc}) {
+export default function TableOfContents({ toc }) {
   const items = toc.filter(
     (item) =>
       item.id &&
@@ -21,7 +21,7 @@ export default function TableOfContents({toc}) {
                 key={item.title}
                 className={[
                   active ? 'active' : undefined,
-                  item.level === 3 ? 'padded' : undefined,
+                  item.level === 3 ? 'padded' : undefined
                 ]
                   .filter(Boolean)
                   .join(' ')}

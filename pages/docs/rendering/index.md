@@ -77,14 +77,14 @@ An example render tree might look like this:
     name: 'h1',
     attributes: { id: 'Header' },
     children: ['Header'],
-    inline: false,
+    inline: false
   },
   {
     name: 'p',
     attributes: {},
     children: ['This is a paragraph'],
-    inline: false,
-  },
+    inline: false
+  }
 ];
 ```
 

@@ -5,7 +5,7 @@ const options = {
   mode: 'markdown',
   lineWrapping: true,
   lineNumbers: true,
-  theme: 'none',
+  theme: 'none'
 };
 
 export function Editor({ code, onChange }) {

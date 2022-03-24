@@ -51,21 +51,21 @@ const fence = {
     language: {
       type: String,
       description:
-        'The programming language of the code block. Place it after the backticks.',
-    },
-  },
+        'The programming language of the code block. Place it after the backticks.'
+    }
+  }
 };
 
 const content = Markdoc.process(content, {
   nodes: {
-    fence,
-  },
+    fence
+  }
 });
 
 Markdoc.renderers.react(content, React, {
   components: {
-    Fence,
-  },
+    Fence
+  }
 });
 ```
 
@@ -83,7 +83,7 @@ function collectHeadings(nodes, sections = []) {
       if (typeof title === 'string') {
         sections.push({
           ...node.attributes,
-          title,
+          title
         });
       }
 

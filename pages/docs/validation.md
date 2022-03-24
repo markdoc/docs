@@ -39,11 +39,11 @@ If your document contains a syntax error, the output of `validate` might look li
     lines: [0, 1],
     location: {
       start: {
-        line: 0,
+        line: 0
       },
       end: {
-        line: 1,
-      },
+        line: 1
+      }
     },
     error: {
       id: 'parse-error',
@@ -51,14 +51,14 @@ If your document contains a syntax error, the output of `validate` might look li
       message: 'Expected "\\"", "}", identifier, or whitespace but "," found.',
       location: {
         start: {
-          offset: 12,
+          offset: 12
         },
         end: {
-          offset: 13,
-        },
-      },
-    },
-  },
+          offset: 13
+        }
+      }
+    }
+  }
 ];
 ```
 
@@ -84,14 +84,14 @@ const config = {
             {
               id: 'provider-children',
               level: 'critical',
-              message: 'Providers must only have one child.',
-            },
+              message: 'Providers must only have one child.'
+            }
           ];
         }
         return [];
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -111,8 +111,8 @@ export class ImageSrc {
         {
           id: 'image-src',
           level: 'error',
-          message: 'All image srcs should contain fully qualified URLs.',
-        },
+          message: 'All image srcs should contain fully qualified URLs.'
+        }
       ];
     }
     return [];
@@ -125,12 +125,12 @@ const config = {
     attributes: {
       src: {
         type: ImageSrc,
-        required: true,
+        required: true
         // ...
-      },
+      }
       // ...
-    },
-  },
+    }
+  }
 };
 ```
 

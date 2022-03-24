@@ -75,10 +75,10 @@ export function Sandbox() {
         markdoc: {
           frontmatter: ast.attributes.frontmatter
             ? yaml.load(ast.attributes.frontmatter)
-            : {},
-        },
+            : {}
+        }
       },
-      components,
+      components
     };
   }, [ast]);
 
@@ -128,7 +128,7 @@ export function Sandbox() {
           {mode === 'preview' && (
             <div className="preview">
               {Markdoc.render(code, config, 'react', React, {
-                components: config.components,
+                components: config.components
               })}
             </div>
           )}

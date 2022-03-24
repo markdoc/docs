@@ -25,13 +25,13 @@ export const callout = {
       matches: ['caution', 'check', 'note', 'warning'],
       errorLevel: 'critical',
       description:
-        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
+        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"'
     },
     title: {
       type: String,
-      description: 'The title displayed at the top of the callout',
-    },
-  },
+      description: 'The title displayed at the top of the callout'
+    }
+  }
 };
 ```
 
@@ -42,8 +42,8 @@ import { callout } from './schema/Callout.markdoc';
 
 const config = {
   tags: {
-    callout,
-  },
+    callout
+  }
 };
 
 return Markdoc.render(content, config);
@@ -72,8 +72,8 @@ function Callout({ title, icon, children }) {
 return Markdoc.renderers.react(content, React, {
   components: {
     // The key here is the same string as `tag` in the previous step
-    Callout: Callout,
-  },
+    Callout: Callout
+  }
 });
 ```
 

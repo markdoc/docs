@@ -4,7 +4,7 @@ export const button = {
   Component: Button,
   attributes: {
     href: {
-      type: String,
-    },
-  },
+      type: String
+    }
+  }
 };

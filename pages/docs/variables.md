@@ -27,12 +27,12 @@ Here is an example of how you can pass variables to your config:
 const config = {
   variables: {
     flags: {
-      my_feature_flag: true,
+      my_feature_flag: true
     },
     user: {
-      name: 'Dr. Mark',
-    },
-  },
+      name: 'Dr. Mark'
+    }
+  }
 };
 
 const content = Markdoc.process(document, config);

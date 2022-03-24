@@ -53,9 +53,9 @@ const config = {
       tag: 'Heading',
       attributes: {
         id: { type: String },
-        level: { type: Number },
-      },
-    },
+        level: { type: Number }
+      }
+    }
   },
   tags: {
     callout: {
@@ -63,16 +63,16 @@ const config = {
       attributes: {
         title: {
           type: String,
-          description: 'The title displayed at the top of the callout',
-        },
-      },
-    },
+          description: 'The title displayed at the top of the callout'
+        }
+      }
+    }
   },
   variables: {
     name: 'Dr. Mark',
     frontmatter: {
-      title: 'Configuration options',
-    },
+      title: 'Configuration options'
+    }
   },
   functions: {
     includes: {
@@ -80,12 +80,12 @@ const config = {
         const [array, value] = Object.values(parameters);
 
         return Array.isArray(array) ? array.includes(value) : false;
-      },
-    },
+      }
+    }
   },
   partials: {
-    '/partials/header.md': Markdoc.parse(`# My header`),
-  },
+    '/partials/header.md': Markdoc.parse(`# My header`)
+  }
 };
 
 const content = Markdoc.process(ast, config);

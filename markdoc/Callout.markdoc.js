@@ -13,12 +13,12 @@ export const callout = {
       matches: ['caution', 'check', 'note', 'warning'],
       errorLevel: 'critical',
       description:
-        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
+        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"'
     },
     title: {
       type: String,
       description: 'The title displayed at the top of the callout',
-      localizable: true,
-    },
-  },
+      localizable: true
+    }
+  }
 };

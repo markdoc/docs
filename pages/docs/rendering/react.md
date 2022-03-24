@@ -19,8 +19,8 @@ First create a Markdoc render tree by calling `process`.
 const tags = {
   callout: {
     tag: 'Callout',
-    attributes: {},
-  },
+    attributes: {}
+  }
 };
 
 const document = `
@@ -49,8 +49,8 @@ function Callout({ children }) {
 function MyApp() {
   return Markdoc.renderers.react(content, React, {
     components: {
-      Callout: Callout,
-    },
+      Callout: Callout
+    }
   });
 }
 ```

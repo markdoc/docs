@@ -6,7 +6,7 @@ const ICON_MAP = {
   note: 'information-circle',
   caution: 'warning',
   check: 'checkmark-circle',
-  warning: 'warning',
+  warning: 'warning'
 };
 
 export function Callout({ title, children, type }) {

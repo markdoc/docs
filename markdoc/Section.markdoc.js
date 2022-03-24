@@ -6,6 +6,6 @@ export const section = {
   tag: 'section',
   Component: Section,
   attributes: {
-    background: { type: String },
-  },
+    background: { type: String }
+  }
 };

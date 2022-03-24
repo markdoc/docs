@@ -19,8 +19,8 @@ export class DateTime {
         {
           id: 'invalid-datetime-type',
           level: 'critical',
-          message: 'Must be a string with a valid date format',
-        },
+          message: 'Must be a string with a valid date format'
+        }
       ];
 
     return [];
@@ -42,11 +42,11 @@ const config = {
       attributes: {
         created: {
           type: DateTime,
-          required: true,
-        },
-      },
-    },
-  },
+          required: true
+        }
+      }
+    }
+  }
 };
 ```
 

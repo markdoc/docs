@@ -20,7 +20,7 @@ export const heading = {
   children: ['inline'],
   attributes: {
     id: { type: String },
-    level: { type: Number, required: true, default: 1 },
+    level: { type: Number, required: true, default: 1 }
   },
   render(node, config) {
     const attributes = node.renderAttributes(this.attributes);
@@ -30,7 +30,7 @@ export const heading = {
     return {
       name: this.tag,
       attributes: { ...attributes, id },
-      children,
+      children
     };
-  },
+  }
 };

@@ -25,8 +25,8 @@ Partials are defined by created a mapping from file name to an AST node in your 
 ```js
 const config = {
   partials: {
-    '/partials/header.md': Markdoc.parse(`# My header`),
-  },
+    '/partials/header.md': Markdoc.parse(`# My header`)
+  }
 };
 
 const document = `

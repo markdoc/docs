@@ -152,7 +152,7 @@ export default function Index() {
   return (
     <div className="full-width">
       {Markdoc.renderers.react(content, React, {
-        components: config.components,
+        components: config.components
       })}
     </div>
   );
