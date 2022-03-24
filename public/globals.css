@@ -570,10 +570,6 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
-.section-background--theme {
-  background: var(--theme);
-}
-
 .section .contents {
   margin: 0 auto;
   max-width: 1200px;

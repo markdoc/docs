@@ -71,7 +71,7 @@ return Markdoc.renderers.react(content, React, {components});
 {% /section %}
 {% /comment %}
 
-{% section background="theme" %}
+{% section background="var(--theme)" %}
 
 ## Built by Stripe
 
