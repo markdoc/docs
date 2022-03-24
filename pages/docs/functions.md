@@ -36,7 +36,7 @@ const xor = {
 };
 ```
 
-Then, pass the functions to your `Config` object
+Then, pass the functions to your [`Config` object](/docs/config)
 
 ```js
 const config = {

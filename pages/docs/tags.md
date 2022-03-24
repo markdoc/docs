@@ -35,7 +35,7 @@ export const callout = {
 };
 ```
 
-Then, pass the tag definition to your `Config` object:
+Then, pass the tag definition to your [`Config` object](/docs/config):
 
 ```js
 import { callout } from './schema/Callout.markdoc';

@@ -76,7 +76,7 @@ You can pass options to `withMarkdoc` to adjust how the plugin behaves.
 
 - `config`
 - `Node => Promise<Object>`
-- An asynchronous function called at build time. Values returned from this function are merged with your `Config` object.
+- An asynchronous function called at build time. Values returned from this function are merged with your [`Config` object](/docs/config).
 
 {% /table %}
 

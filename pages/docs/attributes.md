@@ -1,6 +1,6 @@
 ---
 title: Attributes
-description: Attributes are used to pass data to tags in Markdoc. 
+description: Attributes are used to pass data to tags in Markdoc.
 ---
 
 # {% $markdoc.frontmatter.title %}
@@ -32,12 +32,12 @@ export class DateTime {
 }
 ```
 
-Then, pass the custom attribute to your tag definition in your `Config` object:
+Then, pass the custom attribute to your tag definition in your [`Config` object](/docs/config)
 
 ```js
 const config = {
   tags: {
-    'tag-name':  {
+    'tag-name': {
       tag: 'YourComponent',
       attributes: {
         created: {

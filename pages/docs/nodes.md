@@ -15,7 +15,7 @@ https://mdxjs.com/table-of-components/
 https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
 {% /comment %}
 
-Custom nodes are defined by passing a custom Node to your `Config`, like:
+Custom nodes are defined by passing a custom Node to your [`Config`](/docs/config), like:
 
 ```js
 import { heading } from './schema/Heading.markdoc';
