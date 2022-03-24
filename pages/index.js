@@ -20,14 +20,16 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 {% section %}
 
 {% table %}
-
-- Incrementally adoptable
-- Writer friendly; Developer friendly
-- Polymorphic
 ---
-- A content authoring framework that grows with you. 
-- Markdoc provides all the power and flexibility to developers, with none of the added complexity for writers.  
-- Use Markdoc to create engaging documentation experiences, static content sites, developer-tooling, and more.
+- **Incrementally adoptable**
+
+  A content authoring framework that grows with you.
+- **Writer friendly; Developer friendly**
+
+  Markdoc provides all the power and flexibility to developers, with none of the added complexity for writers.
+- **Polymorphic**
+
+  Use Markdoc to create engaging documentation experiences, static content sites, developer-tooling, and more.
 
 {% /table %}
 
@@ -82,18 +84,20 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 {% section %}
 
 {% table %}
-
-- Familiar syntax
-- Easily extensible
-- Built-in validation
 ---
-- Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the Markdown features and tooling you are used to.
+- **Familiar syntax**
+
+  Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the Markdown features and tooling you are used to.
 
   [Learn the syntax →](/docs/syntax)
-- Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/rendering).
+- **Easily extensible**
+  
+  Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/rendering).
 
   [Learn about rendering Markdoc →](/docs/rendering)
-- You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
+- **Built-in validation**
+  
+  You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
 
   [Learn about custom validation →](/docs/validation)
 {% /table %}

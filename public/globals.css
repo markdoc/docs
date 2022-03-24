@@ -167,6 +167,10 @@ th {
   padding: 0 16px 8px 16px;
 }
 
+tr {
+  vertical-align: top;
+}
+
 td {
   padding: 16px 16px;
 }
