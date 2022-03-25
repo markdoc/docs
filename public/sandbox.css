@@ -2,22 +2,39 @@
   display: flex;
   flex-direction: column;
   flex-flow: column;
-  border: 1px solid var(--gray-2);
+  border: 1px solid var(--dark);
+}
+
+.sandbox p {
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-2);
 }
 
 .sandbox .CodeMirror,
 .sandbox .react-codemirror2 {
   height: 100%;
   cursor: text;
+  background: var(--dark);
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .sandbox .CodeMirror-gutters {
-  background-color: #fafafa;
+  background-color: var(--dark);
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.sandbox .CodeMirror-linenumber {
+  color: var(--dark);
+}
+
+.sandbox .CodeMirror-cursor {
+  border-left: 1px solid var(--theme);
 }
 
 .sandbox nav {
   padding: 0.5rem 2rem 0.5rem 30px;
-  background: #fafafa;
+  background: var(--dark);
 }
 
 .sandbox h1,
@@ -28,7 +45,8 @@
 
 .sandbox nav button {
   cursor: pointer;
-  border: 1px solid var(--gray-2);
+  background: var(--light);
+  border: 1px solid var(--dark);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
 }
@@ -61,7 +79,6 @@
   display: flex;
   flex: 1;
   min-height: 0;
-  border-top: 1px solid var(--gray-2);
 }
 
 .sandbox section {
@@ -70,10 +87,6 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-}
-
-.sandbox section:nth-child(2) {
-  border-left: 1px solid var(--gray-2);
 }
 
 .sandbox .preview {

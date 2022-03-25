@@ -16,7 +16,8 @@ const TYPE_MAP = {
   check: {
     icon: 'checkmark-circle',
     iconColor: '#1ea672',
-    background: '#efffed'
+    background:
+      'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, #FFFFFF, #FFFFFF)'
   },
   warning: {
     icon: 'warning',

@@ -130,7 +130,10 @@ export default function MyApp(props) {
         }}
       >
         <footer
-          style={{ padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem' }}
+          style={{
+            padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem',
+            marginTop: isLandingPage ? '4rem' : undefined
+          }}
         >
           © {new Date().getFullYear()} Stripe
           <div style={{ marginLeft: '2rem' }}>

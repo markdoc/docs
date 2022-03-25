@@ -18,6 +18,12 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 {% section %}
 
+{% sandbox /%}
+
+{% /section %}
+
+{% section %}
+
 {% features features=[
   {title: "Incrementally adoptable", description: "A content authoring framework that grows with you."},
   {title: "Writer & Dev friendly", description: "We provides all the power and flexibility to developers, with none of the added complexity for tech writers."},
@@ -61,14 +67,6 @@ return Markdoc.render(content);
 {% /side-by-side %}
 
 {% /section %}
-
-{% comment %}
-{% section %}
-
-{% sandbox /%}
-
-{% /section %}
-{% /comment %}
 
 {% section %}
 

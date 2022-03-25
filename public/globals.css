@@ -387,7 +387,6 @@ footer {
   z-index: 100;
   width: 100%;
   color: var(--dark);
-  margin-top: 3rem;
   border-top: 1px solid var(--dark);
 }
 
@@ -454,6 +453,11 @@ footer a {
 .page--landing .code button {
   color: var(--light);
   background: var(--dark);
+}
+
+.page--landing .sandbox span.cm-link,
+.page--landing .sandbox span.cm-string {
+  color: inherit !important;
 }
 
 .page--landing table {
