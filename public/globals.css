@@ -47,6 +47,12 @@
   --gray-3: #f7fafc;
 }
 
+@media screen and (max-width: 1200px) {
+  :root {
+    --landing-page-max-width: 90vw;
+  }
+}
+
 /* TODO move styles to style-jsx */
 body.dark {
   --light: #18181b;
