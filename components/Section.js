@@ -5,7 +5,7 @@ export function Section({ children, background }) {
     <section className="section full-width" style={{ background }}>
       <div
         style={{
-          padding: '5rem 0 7.5rem',
+          padding: '5rem 0',
           margin: '0 auto',
           maxWidth: 'var(--landing-page-max-width)'
         }}

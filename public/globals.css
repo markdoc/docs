@@ -383,22 +383,16 @@ pre[class*='language-'] {
 
 footer {
   position: relative;
-  z-index: 100;
   display: flex;
-  color: var(--dark);
+  z-index: 100;
   width: 100%;
-  padding: 1rem 2rem;
+  color: var(--dark);
+  margin-top: 3rem;
   border-top: 1px solid var(--dark);
 }
 
 footer a {
-  color: var(--dark);
-  text-decoration: underline;
   margin-right: 24px;
-}
-
-footer a:hover {
-  text-decoration: none;
 }
 
 /* Button */
