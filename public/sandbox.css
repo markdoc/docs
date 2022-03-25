@@ -83,13 +83,3 @@
   font-size: 15px;
   line-height: 26px;
 }
-
-.sandbox .preview a {
-  color: var(--blurple);
-}
-
-.sandbox .preview a {
-  color: var(--blurple);
-  text-decoration: none;
-  font-weight: 500;
-}

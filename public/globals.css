@@ -30,13 +30,12 @@
   --surface: var(--light);
   --light: #ffffff;
   --dark: #18181b;
+  --text: var(--dark);
+  --link: var(--dark);
   --theme: #f1ea51;
   --green: #2dbe62;
   --orange: #c78100;
-  --blurple: #5469d4;
   --blue: #00738a;
-  --link: var(--blurple);
-  --text: var(--dark);
   --gray-1: #697386;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
@@ -58,11 +57,12 @@ body,
 
 a {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  /* text-decoration: none; */
 }
 
 a:hover {
-  color: var(--dark);
+  text-decoration: none;
 }
 
 button {
@@ -310,48 +310,6 @@ pre[class*='language-'] {
   min-height: 100vh;
 }
 
-.nav-bar nav a {
-  color: var(--dark);
-  text-decoration: underline;
-}
-
-.nav-bar nav a:hover {
-  text-decoration: none;
-}
-
-.nav-bar {
-  top: 0;
-  position: fixed;
-  z-index: 100;
-  display: flex;
-  width: 100%;
-  padding: 0 2rem;
-}
-
-.nav-bar nav {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  background: var(--surface);
-  border-bottom: 1px solid var(--dark);
-}
-
-.nav-bar nav ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar nav ul li {
-  list-style-type: none;
-  margin-left: 1.5rem;
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .skip-nav {
   border: 0;
   clip: rect(0 0 0 0);
@@ -373,6 +331,47 @@ pre[class*='language-'] {
   width: auto;
   height: auto;
   clip: auto;
+}
+
+.nav-bar {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  padding: 0 2rem;
+  background: var(--surface);
+}
+
+.nav-bar nav {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--dark);
+}
+
+.nav-bar nav a[href='/sandbox'] {
+  text-decoration: none;
+}
+
+.nav-bar nav a[href='/sandbox']:hover {
+  text-decoration: underline;
+}
+
+.nav-bar nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar nav ul li {
+  list-style-type: none;
+  margin-left: 1.5rem;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .document {
@@ -473,7 +472,7 @@ footer a:hover {
   color: white !important;
 }
 
-.page--landing pre > .token.string {
+.page--landing pre .token.string {
   color: var(--theme) !important;
 }
 
@@ -534,4 +533,12 @@ footer a:hover {
   height: 10px;
   bottom: -5px;
   right: -5px;
+}
+
+.page--landing table td *:last-child a {
+  text-decoration: none;
+}
+
+.page--landing table td *:last-child a:hover {
+  text-decoration: underline;
 }
