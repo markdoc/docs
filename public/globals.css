@@ -27,8 +27,8 @@
   --line-height-6: 40px;
   --line-height-7: 60px;
 
-  --white: #ffffff;
-  --surface: var(--white);
+  --surface: var(--light);
+  --light: #ffffff;
   --dark: #18181b;
   --theme: #f1ea51;
   --green: #2dbe62;
@@ -481,7 +481,7 @@ footer a:hover {
 }
 
 .page--landing .code button {
-  color: var(--white);
+  color: var(--light);
   background: var(--dark);
 }
 
