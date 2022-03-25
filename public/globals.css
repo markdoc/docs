@@ -57,8 +57,12 @@ body,
 }
 
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark);
 }
 
 button {
@@ -67,13 +71,6 @@ button {
 
 blockquote {
   margin: 1rem 0;
-}
-
-a {
-  color: var(--link);
-}
-a:hover {
-  color: var(--dark);
 }
 
 p,

@@ -137,7 +137,7 @@ export default function MyApp(props) {
             <Link href="/docs/getting-started">Docs</Link>
             <Link href="https://github.com/markdoc/markdoc/discussions">
               Community
-            </Link>{' '}
+            </Link>
             <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             <Link href="https://twitter.com/StripeDev">Twitter</Link>
           </div>
