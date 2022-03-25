@@ -144,13 +144,13 @@ export function Sandbox() {
         </div>
       </nav>
       <div className="flex container">
-        <section>
+        <section className="editor-pane">
           {/* Codemirror doesn't work w/ SSR */}
           {mounted ? (
             <Editor innerRef={ref} code={code} onChange={setCode} />
           ) : null}
         </section>
-        <section>
+        <section className="preview-pane">
           {mode === 'preview' && (
             <div className="preview">
               {Markdoc.render(code, config, 'react', React, {
@@ -165,19 +165,27 @@ export function Sandbox() {
                 { variables: config.variables },
                 'html'
               )}
-              options={{ mode: 'xml', lineWrapping: true }}
+              options={{ mode: 'xml', lineWrapping: true, readOnly: true }}
             />
           )}
           {mode === 'process' && (
             <CodeMirror
               value={JSON.stringify(content, null, 2)}
-              options={{ mode: 'application/json', lineWrapping: true }}
+              options={{
+                mode: 'application/json',
+                lineWrapping: true,
+                readOnly: true
+              }}
             />
           )}
           {mode === 'ast' && (
             <CodeMirror
               value={JSON.stringify(ast, null, 2)}
-              options={{ mode: 'application/json', lineWrapping: true }}
+              options={{
+                mode: 'application/json',
+                lineWrapping: true,
+                readOnly: true
+              }}
             />
           )}
         </section>
