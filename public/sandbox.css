@@ -108,3 +108,7 @@
   font-size: 14px;
   line-height: var(--line-height-3);
 }
+
+.sandbox .preview .callout p {
+  line-height: 20px;
+}
