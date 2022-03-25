@@ -60,7 +60,7 @@ const options = {
   theme: 'none'
 };
 
-export function Editor({ code, onChange }) {
+export function Editor({ innerRef, code, onChange }) {
   const [key, setKey] = React.useState(0);
 
   const onBeforeChange = React.useCallback(
@@ -77,6 +77,7 @@ export function Editor({ code, onChange }) {
 
   return (
     <CodeMirror
+      ref={innerRef}
       key={key}
       value={code}
       options={options}
@@ -87,6 +88,7 @@ export function Editor({ code, onChange }) {
 
 export function Sandbox() {
   const [code, setCode] = React.useState(INITIAL_CODE);
+  const ref = React.useRef();
   const router = useRouter();
   const mode = router.query.mode || 'preview';
 
@@ -102,7 +104,14 @@ export function Sandbox() {
   return (
     <div className="sandbox">
       <nav>
-        <button onClick={() => setCode('')}>Clear</button>
+        <button
+          onClick={() => {
+            setCode('');
+            ref.current.editor.focus();
+          }}
+        >
+          Clear
+        </button>
         <div className="btn-group">
           <button
             style={mode === 'preview' ? activeBtn : undefined}
@@ -132,7 +141,7 @@ export function Sandbox() {
       </nav>
       <div className="flex container">
         <section>
-          <Editor code={code} onChange={setCode} />
+          <Editor innerRef={ref} code={code} onChange={setCode} />
         </section>
         <section>
           {mode === 'preview' && (
