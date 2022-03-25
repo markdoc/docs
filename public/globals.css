@@ -321,6 +321,11 @@ pre[class*='language-'] {
   color: var(--blue);
 }
 
+.sandbox span.cm-link,
+.sandbox span.cm-string {
+  color: var(--theme) !important;
+}
+
 .sandbox span.cm-strong,
 .sandbox span.cm-header {
   font-weight: bold;
