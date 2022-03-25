@@ -55,6 +55,21 @@ export default function MyApp(props) {
 
   const isLandingPage = props.router.pathname === '/';
 
+  React.useEffect(() => {
+    console.log(`
+
+
+    ███    ███  █████  ██████  ██   ██ ██████   ██████   ██████
+    ████  ████ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
+    ██ ████ ██ ███████ ██████  █████   ██   ██ ██    ██ ██
+    ██  ██  ██ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
+    ██      ██ ██   ██ ██   ██ ██   ██ ██████   ██████   ██████
+
+
+
+`);
+  }, []);
+
   return (
     <>
       <Head>

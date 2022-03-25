@@ -32,7 +32,6 @@ export function ThemeToggle() {
   }, []);
 
   React.useEffect(() => {
-    console.log(theme);
     if (theme) {
       document.body.className = theme;
     }
