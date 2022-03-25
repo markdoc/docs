@@ -53,7 +53,6 @@
   }
 }
 
-/* TODO move styles to style-jsx */
 body.dark {
   --light: #18181b;
   --dark: #ffffff;
@@ -118,6 +117,7 @@ li {
 }
 
 p {
+  /* TODO color: inherit */
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
   margin: 0;

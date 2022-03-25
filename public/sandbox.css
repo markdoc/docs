@@ -18,6 +18,10 @@
   border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+.sandbox section:nth-child(2) {
+  background: var(--white);
+}
+
 .sandbox section:nth-child(2) .CodeMirror-selected,
 .sandbox section:nth-child(2) ::selection {
   color: var(--black);
@@ -84,14 +88,23 @@
 }
 
 .sandbox .preview {
-  background: var(--white);
+  height: 100%;
   padding: 0 2rem 2rem;
-  text-rendering: optimizeLegibility;
-  font-size: 15px;
-  line-height: 26px;
+}
+
+.sandbox .preview p,
+.sandbox .preview a,
+.sandbox .preview h1,
+.sandbox .preview h2,
+.sandbox .preview h3,
+.sandbox .preview h4,
+.sandbox .preview h5,
+.sandbox .preview h6 {
+  color: var(--black);
 }
 
 .sandbox .preview p {
-  font-size: var(--font-size-2);
-  line-height: var(--line-height-2);
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  line-height: var(--line-height-3);
 }
