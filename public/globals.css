@@ -7,6 +7,9 @@
 
   --radii-1: 4px;
 
+  --mono: 'GT America Mono Trial', monospace;
+  --serif: Nib Trial, serif;
+
   --font-size-0: 8px;
   --font-size-1: 12px;
   --font-size-2: 13px;
@@ -26,14 +29,14 @@
 
   --white: #ffffff;
   --surface: var(--white);
+  --dark: #18181b;
   --theme: #f1ea51;
   --green: #2dbe62;
   --orange: #c78100;
   --blurple: #5469d4;
   --blue: #00738a;
-  --text: #3c4257;
   --link: var(--blurple);
-  --dark: #18181b;
+  --text: var(--dark);
   --gray-1: #697386;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
@@ -76,7 +79,8 @@ a:hover {
 p,
 li,
 code,
-td {
+td,
+span {
   color: var(--text);
 }
 
@@ -106,7 +110,7 @@ h6 {
 }
 
 h1.jumbo {
-  font-family: Nib Trial serif;
+  font-family: var(--serif);
   font-size: 79px;
   font-style: normal;
   font-weight: 400;
@@ -116,7 +120,7 @@ h1.jumbo {
 }
 
 h2.jumbo {
-  font-family: Nib Trial serif;
+  font-family: var(--serif);
   font-size: 73px;
   font-style: normal;
   font-weight: 400;
@@ -127,7 +131,7 @@ h2.jumbo {
 }
 
 h3.jumbo {
-  font-family: Nib Trial serif;
+  font-family: var(--serif);
   font-size: 43px;
   font-style: normal;
   font-weight: 400;
@@ -243,6 +247,12 @@ table tbody tr:last-child > td:last-child {
 
 .column {
   flex-direction: column;
+}
+
+.equal-width {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
 .full-width {
