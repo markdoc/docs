@@ -24,10 +24,18 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 {% section %}
 
-{% features features=[
-  {title: "Incrementally adoptable", description: "A content authoring framework that grows with you."},
-  {title: "Writer & Dev friendly", description: "We provides all the power and flexibility to developers, with none of the added complexity for tech writers."},
-  {title: "Polymorphic", description: "Markdoc can be used to create complex documentation experience, static content sites, developer-tooling."}] /%}
+{% table %}
+---
+- **Incrementally adoptable**
+
+  A content authoring framework that grows with you.
+- **Writer & Dev friendly**
+
+  We provides all the power and flexibility to developers, with none of the added complexity for tech writers.
+- **Polymorphic**
+
+  Markdoc can be used to create complex documentation experience, static content sites, developer-tooling.
+{% /table %}
 
 {% /section %}
  

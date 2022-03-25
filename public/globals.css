@@ -512,7 +512,7 @@ footer a {
   border: 1px solid var(--dark);
   background: var(--light);
   border-radius: 0;
-  padding: 1rem 1.5rem 2rem;
+  padding: 0.74rem 1.5rem 2rem;
 }
 
 .page--landing table td strong {
