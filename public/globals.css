@@ -34,7 +34,6 @@
 
   --text: var(--dark);
   --link: var(--dark);
-  --surface: var(--light);
   --contrast-light: var(--theme);
   --contrast-dark: var(--dark);
 
@@ -56,7 +55,6 @@
 body.dark {
   --light: #18181b;
   --dark: #ffffff;
-  --surface: var(--light);
   --text: var(--dark);
   --link: var(--dark);
   --contrast-light: #2c2c30;
@@ -371,7 +369,7 @@ pre[class*='language-'] {
   display: flex;
   width: 100%;
   padding: 0 2rem;
-  background: var(--surface);
+  background: var(--light);
 }
 
 .nav-bar nav {
@@ -533,7 +531,7 @@ footer a {
 .page--landing table td::after {
   position: absolute;
   content: '';
-  background: var(--surface);
+  background: var(--light);
   width: 10px;
   height: 10px;
   top: -5px;
@@ -543,7 +541,7 @@ footer a {
 .page--landing table td::before {
   position: absolute;
   content: '';
-  background: var(--surface);
+  background: var(--light);
   width: 10px;
   height: 10px;
   bottom: -5px;
