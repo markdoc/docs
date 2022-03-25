@@ -53,7 +53,11 @@ const ast = Markdoc.parse(document);
 
 const content = Markdoc.process(ast, config);
 
-return Markdoc.renderers.react(content, React, {components});
+return Markdoc.renderers.react
+  content,
+  React,
+  {components}
+);
 \`\`\`
 
 {% /side-by-side %}

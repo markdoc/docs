@@ -93,8 +93,8 @@ li {
 }
 
 p {
-  font-size: var(--font-size-3);
-  line-height: var(--line-height-3);
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
   margin: 0;
   padding-top: var(--default-vertical-spacing);
 }
@@ -251,7 +251,7 @@ table tbody tr:last-child > td:last-child {
 
 .equal-width {
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   flex-basis: 0;
 }
 
