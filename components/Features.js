@@ -17,7 +17,8 @@ export function Features({ features }) {
               fontWeight: 400,
               lineHeight: '27px',
               letterSpacing: '0.05em',
-              paddingBottom: '0.5rem'
+              paddingBottom: '0.5rem',
+              textTransform: 'uppercase'
             }}
           >
             {feature.title}

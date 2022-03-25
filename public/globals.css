@@ -511,6 +511,7 @@ footer a:hover {
   font-weight: 400;
   line-height: 27px;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .page--landing table td p {
