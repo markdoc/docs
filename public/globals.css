@@ -482,6 +482,11 @@ footer a {
   background: var(--black);
 }
 
+.page--landing .sandbox {
+  /* Keep panel fixed while exploring */
+  height: 600px;
+}
+
 .page--landing .sandbox span.cm-link,
 .page--landing .sandbox span.cm-string {
   color: inherit !important;

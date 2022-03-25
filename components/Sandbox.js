@@ -144,13 +144,13 @@ export function Sandbox() {
         </div>
       </nav>
       <div className="flex container">
-        <section className="editor-pane">
+        <section>
           {/* Codemirror doesn't work w/ SSR */}
           {mounted ? (
             <Editor innerRef={ref} code={code} onChange={setCode} />
           ) : null}
         </section>
-        <section className="preview-pane">
+        <section>
           {mode === 'preview' && (
             <div className="preview">
               {Markdoc.render(code, config, 'react', React, {

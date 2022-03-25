@@ -5,18 +5,23 @@
   border: 1px solid var(--dark);
 }
 
-.sandbox .editor-pane .CodeMirror,
-.sandbox .editor-pane .react-codemirror2 {
-  height: 100%;
+.sandbox .CodeMirror,
+.sandbox .react-codemirror2 {
   cursor: text;
+  height: 100%;
+}
+
+.sandbox section:nth-child(1) .CodeMirror,
+.sandbox section:nth-child(1) .react-codemirror2 {
   color: white;
   background: var(--contrast-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-.sandbox .preview-pane .CodeMirror,
-.sandbox .preview-pane .react-codemirror2 {
-  height: 100%;
+.sandbox section:nth-child(2) .CodeMirror-selected,
+.sandbox section:nth-child(2) ::selection {
+  color: var(--black);
+  background: var(--theme);
 }
 
 .sandbox .CodeMirror-gutters {
@@ -89,10 +94,4 @@
 .sandbox .preview p {
   font-size: var(--font-size-2);
   line-height: var(--line-height-2);
-}
-
-.sandbox .preview-pane .CodeMirror-selected,
-.sandbox .preview-pane ::selection {
-  color: var(--black);
-  background: var(--theme);
 }
