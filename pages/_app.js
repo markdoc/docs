@@ -91,7 +91,7 @@ export default function MyApp(props) {
               : undefined
           }}
         >
-          <Link href="/">
+          <Link href="/" style={{ display: 'flex' }}>
             <svg
               width="112"
               height="37"

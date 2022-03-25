@@ -7,7 +7,11 @@ export function AppLink(props) {
 
   return (
     <Link {...props} passHref prefetch={false}>
-      <a target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
+      <a
+        target={target}
+        rel={target === '_blank' ? 'noreferrer' : undefined}
+        style={props.style}
+      >
         {props.children}
       </a>
     </Link>

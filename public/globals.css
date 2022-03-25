@@ -1,7 +1,7 @@
 /* TODO move styles to style-jsx */
 :root {
   --default-vertical-spacing: 0.75rem;
-  --nav-height: 64px;
+  --nav-height: 53px;
   --shadow-height: 14px;
   --landing-page-max-width: 1200px;
 
@@ -83,7 +83,6 @@ body,
 a {
   color: var(--link);
   text-decoration: underline;
-  /* text-decoration: none; */
 }
 
 a:hover {
@@ -377,7 +376,7 @@ pre[class*='language-'] {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--dark);
+  box-shadow: 0 1px 0 0 var(--dark);
 }
 
 .nav-bar nav a[href='/sandbox'] {
