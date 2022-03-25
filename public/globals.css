@@ -543,6 +543,7 @@ footer a {
 
 .page--landing table td *:last-child a {
   text-decoration: none;
+  font-weight: 500;
 }
 
 .page--landing table td *:last-child a:hover {
