@@ -87,7 +87,7 @@ const svgs = {
   )
 };
 
-export function Icon({ icon, color }) {
+export function Icon({ icon, color = 'inherit' }) {
   return (
     <span
       className="icon"

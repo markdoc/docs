@@ -79,9 +79,12 @@ a:hover {
 p,
 li,
 code,
-td,
-span {
+td {
   color: var(--text);
+}
+
+span {
+  color: inherit;
 }
 
 ol {
@@ -116,7 +119,6 @@ h1.jumbo {
   font-weight: 400;
   line-height: 91px;
   letter-spacing: -0.02em;
-  text-align: left;
 }
 
 h2.jumbo {
@@ -126,7 +128,6 @@ h2.jumbo {
   font-weight: 400;
   line-height: 84px;
   letter-spacing: -0.02em;
-  text-align: left;
   max-width: calc(var(--landing-page-max-width) / 3);
 }
 
@@ -137,7 +138,6 @@ h3.jumbo {
   font-weight: 400;
   line-height: 49px;
   letter-spacing: -0.02em;
-  text-align: left;
 }
 
 h1,
@@ -460,4 +460,80 @@ footer a:hover {
 
 .toc li.padded {
   padding-left: 1rem;
+}
+
+/* ---------------------------- */
+
+/* Landing page overrides */
+.page--landing :not(pre) > code[class*='language-'],
+.page--landing pre[class*='language-'] {
+  color: white;
+  background: var(--dark) !important;
+  text-shadow: var(--dark);
+}
+
+.page--landing .token {
+  color: white !important;
+}
+
+.page--landing pre > .token.string {
+  color: var(--theme) !important;
+}
+
+.page--landing .code button {
+  color: var(--white);
+  background: var(--dark);
+}
+
+.page--landing table {
+  margin: 0;
+}
+
+.page--landing tbody {
+  /* border: 1px solid #151517; */
+  border-radius: 0;
+  border-style: initial;
+  box-shadow: none;
+}
+
+.page--landing table td {
+  position: relative;
+  border: 1px solid #151517;
+  background: var(--light);
+  border-radius: 0;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.page--landing table td strong {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+}
+
+.page--landing table td p {
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
+}
+
+.page--landing table td::after {
+  position: absolute;
+  content: '';
+  background: var(--surface);
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  left: -5px;
+}
+
+.page--landing table td::before {
+  position: absolute;
+  content: '';
+  background: var(--surface);
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  right: -5px;
 }

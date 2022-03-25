@@ -118,7 +118,7 @@ export default function MyApp(props) {
           {toc ? <TableOfContents toc={toc} /> : null}
         </div>
       ) : (
-        <main className="page">
+        <main className={`page ${isLandingPage ? 'page--landing' : ''}`}>
           <div id="skip-nav" />
           <Component {...pageProps} />
         </main>
@@ -130,10 +130,7 @@ export default function MyApp(props) {
         }}
       >
         <footer
-          style={{
-            padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem',
-            marginTop: isLandingPage ? '10rem' : 0
-          }}
+          style={{ padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem' }}
         >
           © {new Date().getFullYear()} Stripe
           <div style={{ marginLeft: '2rem' }}>

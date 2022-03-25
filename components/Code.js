@@ -62,12 +62,12 @@ export function Code({ children, language }) {
       <button
         style={{
           appearance: 'none',
-          padding: 0,
           position: 'absolute',
+          background: 'transparent',
+          padding: 0,
           top: '12px',
           right: '12px',
           border: 'none',
-          background: '#f5f2f0',
           fontSize: '20px'
         }}
         onClick={() => setCopied(true)}
