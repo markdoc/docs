@@ -86,20 +86,24 @@ export function Editor({ innerRef, code, onChange }) {
   );
 }
 
+const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
+
 export function Sandbox() {
-  const [code, setCode] = React.useState(INITIAL_CODE);
-  const ref = React.useRef();
   const router = useRouter();
+  const ref = React.useRef();
+  const [code, setCode] = React.useState(INITIAL_CODE);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => setMounted(true), []);
+
+  const { ast, content, config } = useMarkdocCode(code);
+
   const mode = router.query.mode || 'preview';
 
   function setMode(newMode) {
     router.query.mode = newMode;
     router.replace(router, undefined, { scroll: false });
   }
-
-  const { ast, content, config } = useMarkdocCode(code);
-
-  const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
 
   return (
     <div className="sandbox">
@@ -141,7 +145,10 @@ export function Sandbox() {
       </nav>
       <div className="flex container">
         <section>
-          <Editor innerRef={ref} code={code} onChange={setCode} />
+          {/* Codemirror doesn't work w/ SSR */}
+          {mounted ? (
+            <Editor innerRef={ref} code={code} onChange={setCode} />
+          ) : null}
         </section>
         <section>
           {mode === 'preview' && (
