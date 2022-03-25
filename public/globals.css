@@ -27,11 +27,17 @@
   --line-height-6: 40px;
   --line-height-7: 60px;
 
-  --surface: var(--light);
+  --white: #ffffff;
+  --black: #18181b;
   --light: #ffffff;
   --dark: #18181b;
+
   --text: var(--dark);
   --link: var(--dark);
+  --surface: var(--light);
+  --contrast-light: var(--theme);
+  --contrast-dark: var(--dark);
+
   --theme: #f1ea51;
   --green: #2dbe62;
   --orange: #c78100;
@@ -39,6 +45,19 @@
   --gray-1: #697386;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
+}
+
+/* TODO move styles to style-jsx */
+body.dark {
+  --light: #18181b;
+  --dark: #ffffff;
+  --surface: var(--light);
+  --text: var(--dark);
+  --link: var(--dark);
+  --contrast-light: #2c2c30;
+  --contrast-dark: var(--contrast-light);
+
+  background: var(--light);
 }
 
 * {
@@ -67,6 +86,7 @@ a:hover {
 
 button {
   cursor: pointer;
+  appearance: none;
 }
 
 blockquote {
@@ -105,6 +125,7 @@ h3,
 h4,
 h5,
 h6 {
+  /* TODO color: inherit */
   color: var(--dark);
   position: relative;
 }
@@ -438,8 +459,8 @@ footer a {
 .page--landing :not(pre) > code[class*='language-'],
 .page--landing pre[class*='language-'] {
   color: white;
-  background: var(--dark) !important;
-  text-shadow: var(--dark);
+  background: var(--black) !important;
+  text-shadow: var(--black);
 }
 
 .page--landing .token {
@@ -451,8 +472,8 @@ footer a {
 }
 
 .page--landing .code button {
-  color: var(--light);
-  background: var(--dark);
+  color: var(--white);
+  background: var(--black);
 }
 
 .page--landing .sandbox span.cm-link,
@@ -473,7 +494,7 @@ footer a {
 
 .page--landing table td {
   position: relative;
-  border: 1px solid #151517;
+  border: 1px solid var(--dark);
   background: var(--light);
   border-radius: 0;
   padding: 1rem 1.5rem 2rem;

@@ -4,7 +4,7 @@ export function Features({ features }) {
   return (
     <div className="flex row">
       {features.map((feature) => (
-        <div
+        <p
           key={feature.title}
           className="flex column equal-width"
           style={{ paddingRight: '2rem' }}
@@ -24,7 +24,7 @@ export function Features({ features }) {
             {feature.title}
           </span>
           <span style={{ fontSize: 18 }}>{feature.description}</span>
-        </div>
+        </p>
       ))}
     </div>
   );

@@ -31,7 +31,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 {% /section %}
  
-{% section background="var(--theme)" %}
+{% section background="var(--contrast-light)" %}
 
 {% side-by-side appearance="none" %}
 
