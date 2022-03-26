@@ -12,7 +12,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 # {% $markdoc.frontmatter.title %} {% .jumbo %}
 
-[Get started →](/docs/getting-started)
+[Get started&nbsp;→](/docs/getting-started)
 
 {% /section %}
 
@@ -49,7 +49,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 [Markdoc core](https://github.com/markdoc/markdoc) is a lightweight package containing everything you need to get started. If you want get going even faster, check out our [Next.js plugin](https://github.com/markdoc/next.js) and deploy a Markdoc documentation site with zero boilerplate.
 
-[Explore documentation →](/docs/getting-started)
+[Explore documentation&nbsp;→](/docs/getting-started)
 
 {% /item %}
 
@@ -96,17 +96,17 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 
   Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the Markdown features and tooling you are used to.
 
-  [Learn the syntax →](/docs/syntax)
+  [Learn the syntax&nbsp;→](/docs/syntax)
 - **Easily extensible**
   
   Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/rendering).
 
-  [Learn about rendering Markdoc →](/docs/rendering)
+  [Learn about rendering Markdoc&nbsp;→](/docs/rendering)
 - **Built-in validation**
   
   You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
 
-  [Learn about custom validation →](/docs/validation)
+  [Learn about custom validation&nbsp;→](/docs/validation)
 {% /table %}
 
 {% /section %}
