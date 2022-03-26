@@ -258,6 +258,10 @@ table tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 4px;
 }
 
+.relative {
+  position: relative;
+}
+
 .flex {
   display: flex;
 }
