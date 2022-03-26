@@ -12,9 +12,14 @@
 }
 
 .sandbox section:nth-child(1) .CodeMirror,
-.sandbox section:nth-child(1) .react-codemirror2 {
+.sandbox section:nth-child(1) .react-codemirror2,
+.sandbox.in-page .CodeMirror,
+.sandbox.in-page .react-codemirror2 {
   color: white;
   background: var(--contrast-dark);
+}
+
+.sandbox section:nth-child(1) .CodeMirror {
   border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 

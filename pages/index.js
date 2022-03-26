@@ -147,7 +147,7 @@ export default function Index() {
 
   if (mode) {
     return (
-      <section className="sandbox">
+      <section className="sandbox in-page">
         <Editor code={doc} onChange={setDoc} />
       </section>
     );
