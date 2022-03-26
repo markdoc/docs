@@ -17,7 +17,7 @@ export function ThemeToggle() {
     }
   }
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     let preferredTheme;
     try {
       preferredTheme = localStorage.getItem('theme');
@@ -31,7 +31,7 @@ export function ThemeToggle() {
     setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
   }, []);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (theme) {
       document.body.className = theme;
     }
