@@ -7,6 +7,7 @@
 
 .sandbox .CodeMirror,
 .sandbox .react-codemirror2 {
+  width: 100%;
   cursor: text;
   height: 100%;
 }
@@ -40,6 +41,10 @@
 
 .sandbox .CodeMirror-linenumber {
   color: var(--contrast-dark);
+}
+
+.sandbox.in-page .CodeMirror-linenumber {
+  color: var(--white);
 }
 
 .sandbox .CodeMirror-cursor {

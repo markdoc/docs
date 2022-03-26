@@ -9,12 +9,6 @@ description:
 
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
-{% comment %}
-TODO: These pages do this well--
-https://mdxjs.com/table-of-components/
-https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
-{% /comment %}
-
 Custom nodes are defined by passing a custom Node to your [`Config`](/docs/config), like:
 
 ```js

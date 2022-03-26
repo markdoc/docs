@@ -145,9 +145,10 @@ export default function Index() {
     };
   }, [keystrokes]);
 
+  // TODO consider moving this to _app by exposing document content in pageProps
   if (mode) {
     return (
-      <section className="sandbox in-page">
+      <section className="sandbox in-page" style={{ width: '100%' }}>
         <Editor code={doc} onChange={setDoc} />
       </section>
     );
