@@ -88,7 +88,7 @@ export function Editor({ innerRef, code, onChange }) {
 
 const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
 
-export function Sandbox() {
+export function Sandbox({ height }) {
   const router = useRouter();
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
@@ -106,7 +106,7 @@ export function Sandbox() {
   }
 
   return (
-    <div className="sandbox">
+    <div className="sandbox" style={{ height }}>
       <nav>
         <button
           onClick={() => {

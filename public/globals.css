@@ -488,12 +488,6 @@ footer a {
   background: var(--black);
 }
 
-/* TODO set .in-page sandbox height to be full vh */
-.page--landing .sandbox {
-  /* Keep panel fixed while exploring */
-  height: 600px;
-}
-
 .page--landing .sandbox span.cm-link,
 .page--landing .sandbox span.cm-string {
   color: inherit !important;

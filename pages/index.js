@@ -18,7 +18,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring system
 
 {% section %}
 
-{% sandbox /%}
+{% sandbox height="600px" /%}
 
 {% /section %}
 
