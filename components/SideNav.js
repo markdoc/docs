@@ -18,7 +18,8 @@ const items = [
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },
       { href: '/docs/variables', children: 'Variables' },
-      { href: '/docs/functions', children: 'Functions' }
+      { href: '/docs/functions', children: 'Functions' },
+      { href: '/docs/validation', children: 'Validation' }
     ]
   },
   {
@@ -28,7 +29,6 @@ const items = [
         href: '/docs/rendering',
         children: 'Overview'
       },
-      { href: '/docs/validation', children: 'Validation' },
       { href: '/docs/rendering/html', children: 'HTML' },
       { href: '/docs/rendering/react', children: 'React' }
     ]

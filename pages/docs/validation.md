@@ -32,35 +32,35 @@ const errors = Markdoc.validate(ast, config);
 
 If your document contains a syntax error, the output of `validate` might look like this:
 
+{% side-by-side %}
+
+```js
+const document = `{% $invalid_code %}`;
+
+const ast = Markdoc.parse(document);
+
+const errors = Markdoc.validate(ast, config);
+```
+
 ```js
 [
   {
-    type: 'error',
-    lines: [0, 1],
+    type: 'tag:callout',
+    lines: [1, 2],
     location: {
-      start: {
-        line: 0
-      },
-      end: {
-        line: 1
-      }
+      start: { line: 1 },
+      end: { line: 2 }
     },
     error: {
-      id: 'parse-error',
+      id: 'missing-closing',
       level: 'critical',
-      message: 'Expected "\\"", "}", identifier, or whitespace but "," found.',
-      location: {
-        start: {
-          offset: 12
-        },
-        end: {
-          offset: 13
-        }
-      }
+      message: "Node 'callout' is missing closing"
     }
   }
 ];
 ```
+
+{% /side-by-side %}
 
 ## Custom validation
 

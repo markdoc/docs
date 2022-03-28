@@ -330,7 +330,7 @@ table tbody tr:last-child > td:last-child {
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: #f2f2f2 !important;
-  margin-top: 0px;
+  margin: 0 0 var(--default-vertical-spacing);
 }
 
 .token {
@@ -454,7 +454,8 @@ pre[class*='language-'] {
   flex: 1 auto;
   max-width: 100%;
   min-width: 0;
-  padding: 0 2rem 4rem 2rem;
+  padding: 2rem 4rem;
+  overflow-x: auto;
 }
 
 .footer-bar {
