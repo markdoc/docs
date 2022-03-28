@@ -13,6 +13,19 @@ import 'prismjs/themes/prism.css';
 import '../public/globals.css';
 import '../public/sandbox.css';
 
+const MARKDOC = `
+
+
+  ███    ███  █████  ██████  ██   ██ ██████   ██████   ██████
+  ████  ████ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
+  ██ ████ ██ ███████ ██████  █████   ██   ██ ██    ██ ██
+  ██  ██  ██ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
+  ██      ██ ██   ██ ██   ██ ██   ██ ██████   ██████   ██████
+
+
+
+`;
+
 function collectHeadings(nodes, sections = []) {
   nodes.forEach((node) => {
     if (node?.name === 'Heading') {
@@ -53,20 +66,7 @@ export default function MyApp(props) {
     ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
-  React.useEffect(() => {
-    console.log(`
-
-
-    ███    ███  █████  ██████  ██   ██ ██████   ██████   ██████
-    ████  ████ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
-    ██ ████ ██ ███████ ██████  █████   ██   ██ ██    ██ ██
-    ██  ██  ██ ██   ██ ██   ██ ██  ██  ██   ██ ██    ██ ██
-    ██      ██ ██   ██ ██   ██ ██   ██ ██████   ██████   ██████
-
-
-
-`);
-  }, []);
+  React.useEffect(() => console.log(MARKDOC), []);
 
   return (
     <div className={`${props.router.pathname === '/' ? 'page--landing' : ''}`}>
