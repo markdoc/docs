@@ -114,7 +114,7 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 
 export default function Index() {
   const [doc, setDoc] = React.useState(initialDocument);
-  const [mode, setMode] = React.useState(false);
+  const [showEditor, setShowEditor] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
 
   const { config, content } = useMarkdocCode(doc);
@@ -122,12 +122,12 @@ export default function Index() {
   React.useEffect(() => {
     function handler(e) {
       if (e.key === 'i' && e.metaKey) {
-        setMode((mode) => !mode);
+        setShowEditor((mode) => !mode);
       } else if (e.key === 'Escape') {
-        setMode(false);
+        setShowEditor(false);
       } else if (e.key === PATTERN[keystrokes]) {
         if (keystrokes + 1 === PATTERN.length) {
-          setMode(true);
+          setShowEditor(true);
         } else {
           setCount((k) => k + 1);
         }
@@ -145,23 +145,25 @@ export default function Index() {
     };
   }, [keystrokes]);
 
-  // TODO consider moving this to _app by exposing document content in pageProps
-  if (mode) {
-    return (
-      <section
-        className="sandbox in-page"
-        style={{ width: '100%', height: 'calc(100vh - var(--nav-height))' }}
-      >
-        <Editor code={doc} onChange={setDoc} />
-      </section>
-    );
-  }
-
   return (
     <div className="full-width">
       {Markdoc.renderers.react(content, React, {
         components: config.components
       })}
+      {/* TODO consider moving this to _app by exposing document content in pageProps */}
+      <section
+        className="sandbox in-page"
+        style={{
+          top: 'var(--nav-height)',
+          position: 'fixed',
+          transition: 'transform 300ms ease',
+          width: '100%',
+          height: 'calc(100vh - var(--nav-height))',
+          transform: showEditor ? '' : 'translateY(100%)'
+        }}
+      >
+        <Editor code={doc} onChange={setDoc} />
+      </section>
     </div>
   );
 }
