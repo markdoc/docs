@@ -30,7 +30,7 @@ export function Callout({ title, children, type }) {
   const { icon, iconColor, background } = TYPE_MAP[type];
 
   return (
-    <p className="callout">
+    <div className="callout">
       <div
         className="flex"
         style={{
@@ -48,6 +48,6 @@ export function Callout({ title, children, type }) {
           <span>{children}</span>
         </div>
       </div>
-    </p>
+    </div>
   );
 }

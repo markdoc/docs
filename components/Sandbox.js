@@ -60,7 +60,7 @@ const options = {
   theme: 'none'
 };
 
-export function Editor({ innerRef, code, onChange }) {
+function EditorInternal({ innerRef, code, onChange }) {
   const [key, setKey] = React.useState(0);
 
   const onBeforeChange = React.useCallback(
@@ -74,7 +74,6 @@ export function Editor({ innerRef, code, onChange }) {
     require('codemirror/mode/xml/xml');
     setKey((k) => k + 1);
   }, []);
-
   return (
     <CodeMirror
       ref={innerRef}
@@ -86,15 +85,20 @@ export function Editor({ innerRef, code, onChange }) {
   );
 }
 
+export function Editor(props) {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
+  // Codemirror doesn't work w/ SSR
+  return mounted ? <EditorInternal {...props} /> : null;
+}
+
 const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
 
 export function Sandbox({ height }) {
   const router = useRouter();
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => setMounted(true), []);
 
   const { ast, content, config } = useMarkdocCode(code);
 
@@ -145,10 +149,7 @@ export function Sandbox({ height }) {
       </nav>
       <div className="flex container">
         <section>
-          {/* Codemirror doesn't work w/ SSR */}
-          {mounted ? (
-            <Editor innerRef={ref} code={code} onChange={setCode} />
-          ) : null}
+          <Editor innerRef={ref} code={code} onChange={setCode} />
         </section>
         <section>
           {mode === 'preview' && (

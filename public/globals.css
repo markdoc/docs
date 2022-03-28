@@ -177,7 +177,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.callout {
   -webkit-font-smoothing: antialiased;
   position: relative;
   padding-bottom: var(--default-vertical-spacing);
