@@ -38,7 +38,7 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
   const { markdoc } = pageProps;
 
-  let description = 'A Markdown-based authoring system';
+  let description = 'A Markdown-based authoring framework';
   let title = `Markdoc | ${description}`;
   if (markdoc) {
     if (markdoc.frontmatter.title) {

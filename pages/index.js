@@ -6,7 +6,7 @@ import { Editor, useMarkdocCode } from '../components/Sandbox';
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 
 const initialDocument = `---
-title: Markdoc is a powerful, flexible Markdown-based authoring system
+title: Markdoc is a powerful, flexible Markdown-based authoring framework
 ---
 {% section %}
 
