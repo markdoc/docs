@@ -94,7 +94,7 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 ---
 - **Familiar syntax**
 
-  Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the Markdown features and tooling you are used to.
+  Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the features and tooling you are used to.
 
   [Learn the syntax&nbsp;→](/docs/syntax)
 - **Easily extensible**

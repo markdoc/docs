@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 /* TODO move styles to style-jsx */
 :root {
   --default-vertical-spacing: 0.75rem;
@@ -10,7 +12,10 @@
   --sans: Sohne, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --serif: Nib Trial, serif;
-  --mono: GT America Mono Trial, monospace;
+  --decoration: GT America Mono Trial, Consolas, Monaco, 'Andale Mono',
+    'Ubuntu Mono', monospace;
+  --mono: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
 
   --font-size-0: 8px;
   --font-size-1: 12px;
@@ -43,9 +48,30 @@
   --green: #2dbe62;
   --orange: #c78100;
   --blue: #00738a;
-  --gray-1: #697386;
+  --gray-1: #050505;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
+}
+
+@font-face {
+  /* TODO use non-trial version */
+  font-family: 'Sohne';
+  font-style: normal;
+  src: url('/fonts/Sohne-Buch.otf');
+}
+
+@font-face {
+  /* TODO use non-trial version */
+  font-family: 'GT America Mono Trial';
+  font-style: normal;
+  src: url('/fonts/GT-America-Mono-Trial-Regular.otf');
+}
+
+@font-face {
+  /* TODO use non-trial version */
+  font-family: 'Nib Trial';
+  font-style: normal;
+  src: url('/fonts/nib-regular-trial.otf');
 }
 
 @media screen and (max-width: 1200px) {
@@ -201,7 +227,7 @@ h1,
 .h1 {
   font-size: var(--font-size-7);
   line-height: var(--line-height-7);
-  max-width: calc(var(--landing-page-max-width) * 2 / 3);
+  max-width: calc(var(--landing-page-max-width) * 3 / 4);
 }
 
 h2,
@@ -331,6 +357,7 @@ table tbody tr:last-child > td:last-child {
 pre[class*='language-'] {
   background: #f2f2f2 !important;
   margin: 0 0 var(--default-vertical-spacing);
+  font-family: var(--mono);
 }
 
 .token {
@@ -556,11 +583,11 @@ footer a {
   border: 1px solid var(--dark);
   background: var(--light);
   border-radius: 0;
-  padding: 0.74rem 1.5rem 2rem;
+  padding: 0.75rem 1.5rem 1.5rem;
 }
 
 .page--landing table td strong {
-  font-family: var(--mono);
+  font-family: var(--decoration);
   font-size: 15px;
   font-weight: 400;
   line-height: 27px;
