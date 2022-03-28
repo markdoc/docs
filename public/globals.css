@@ -415,6 +415,10 @@ pre[class*='language-'] {
   padding: 0 2rem 4rem 2rem;
 }
 
+.footer-bar {
+  margin: 0 auto;
+}
+
 footer {
   position: relative;
   display: flex;
@@ -422,6 +426,7 @@ footer {
   width: 100%;
   color: var(--dark);
   border-top: 1px solid var(--dark);
+  padding: 1rem 2rem;
 }
 
 footer a {
@@ -469,6 +474,10 @@ footer a {
 /* ---------------------------- */
 
 /* Landing page overrides */
+.page--landing .nav-bar nav {
+  max-width: var(--landing-page-max-width);
+}
+
 .page--landing :not(pre) > code[class*='language-'],
 .page--landing pre[class*='language-'] {
   color: white;
@@ -557,4 +566,13 @@ footer a {
 
 .page--landing table td *:last-child a:hover {
   text-decoration: underline;
+}
+
+.page--landing .footer-bar {
+  max-width: var(--landing-page-max-width);
+}
+
+.page--landing footer {
+  padding: 1rem 0 2rem;
+  margin-top: 4rem;
 }

@@ -53,8 +53,6 @@ export default function MyApp(props) {
     ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
-  const isLandingPage = props.router.pathname === '/';
-
   React.useEffect(() => {
     console.log(`
 
@@ -71,7 +69,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <>
+    <div className={`${props.router.pathname === '/' ? 'page--landing' : ''}`}>
       <Head>
         <title>{title}</title>
         <meta name="referrer" content="strict-origin" />
@@ -84,13 +82,7 @@ export default function MyApp(props) {
         Skip to content
       </a>
       <div className="nav-bar">
-        <nav
-          style={{
-            maxWidth: isLandingPage
-              ? 'var(--landing-page-max-width)'
-              : undefined
-          }}
-        >
+        <nav>
           <Link href="/" style={{ display: 'flex' }}>
             <svg
               width="112"
@@ -148,23 +140,13 @@ export default function MyApp(props) {
           {toc ? <TableOfContents toc={toc} /> : null}
         </div>
       ) : (
-        <main className={`page ${isLandingPage ? 'page--landing' : ''}`}>
+        <main className="page">
           <div id="skip-nav" />
           <Component {...pageProps} />
         </main>
       )}
-      <div
-        style={{
-          maxWidth: isLandingPage ? 'var(--landing-page-max-width)' : undefined,
-          margin: '0 auto'
-        }}
-      >
-        <footer
-          style={{
-            padding: isLandingPage ? '1rem 0 2rem' : '1rem 2rem',
-            marginTop: isLandingPage ? '4rem' : undefined
-          }}
-        >
+      <div className="footer-bar">
+        <footer>
           © {new Date().getFullYear()} Stripe
           <div style={{ marginLeft: '2rem' }}>
             <Link href="/docs/getting-started">Docs</Link>
@@ -177,6 +159,6 @@ export default function MyApp(props) {
           <ThemeToggle />
         </footer>
       </div>
-    </>
+    </div>
   );
 }
