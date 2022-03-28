@@ -91,6 +91,7 @@ body.dark {
   --contrast-light: #2c2c30;
   --contrast-dark: var(--contrast-light);
 
+  /* color: var(--dark); */
   background: var(--light);
 }
 
@@ -121,9 +122,16 @@ blockquote {
 }
 
 p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 li,
 code,
 td {
+  /* TODO move to body and inherit here */
   color: var(--text);
 }
 
@@ -139,13 +147,23 @@ li {
   margin: 0.25rem 0;
 }
 
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  padding-bottom: var(--default-vertical-spacing);
+}
+
+p {
   /* TODO color: inherit */
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
   letter-spacing: 0.02em;
-  padding-bottom: var(--default-vertical-spacing);
 }
 
 h1,
@@ -154,38 +172,29 @@ h3,
 h4,
 h5,
 h6 {
-  position: relative;
-  /* TODO color: inherit */
-  color: var(--dark);
-  padding-bottom: var(--default-vertical-spacing);
+  letter-spacing: -0.02em;
 }
 
 h1.jumbo {
   font-family: var(--serif);
   font-size: 79px;
-  font-style: normal;
   font-weight: 400;
   line-height: 91px;
-  letter-spacing: -0.02em;
 }
 
 h2.jumbo {
   font-family: var(--serif);
   font-size: 73px;
-  font-style: normal;
   font-weight: 400;
   line-height: 84px;
-  letter-spacing: -0.02em;
   max-width: calc(var(--landing-page-max-width) / 3);
 }
 
 h3.jumbo {
   font-family: var(--serif);
   font-size: 43px;
-  font-style: normal;
   font-weight: 400;
   line-height: 49px;
-  letter-spacing: -0.02em;
 }
 
 h1,
@@ -208,6 +217,11 @@ h3,
   line-height: var(--line-height-4);
   margin-top: 2rem;
 }
+
+/* h4,
+.h4 {
+  TODO
+} */
 
 h5,
 .h5 {
@@ -545,7 +559,6 @@ footer a {
 .page--landing table td strong {
   font-family: var(--mono);
   font-size: 15px;
-  font-style: normal;
   font-weight: 400;
   line-height: 27px;
   letter-spacing: 0.05em;
