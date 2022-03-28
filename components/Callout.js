@@ -30,14 +30,13 @@ export function Callout({ title, children, type }) {
   const { icon, iconColor, background } = TYPE_MAP[type];
 
   return (
-    <div className="callout">
+    <p className="callout">
       <div
-        className="flex content"
+        className="flex"
         style={{
           lineHeight: '20px',
           padding: '12px 20px',
           borderRadius: 'var(--radii-1)',
-          boxShadow: '0 0 0 1px var(--gray-2)',
           background
         }}
       >
@@ -49,6 +48,6 @@ export function Callout({ title, children, type }) {
           <span>{children}</span>
         </div>
       </div>
-    </div>
+    </p>
   );
 }

@@ -116,7 +116,7 @@
 
 .sandbox .preview p {
   text-rendering: optimizeLegibility;
-  font-size: 14px;
+  font-size: 13px;
   line-height: var(--line-height-3);
 }
 
