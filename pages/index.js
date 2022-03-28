@@ -148,7 +148,10 @@ export default function Index() {
   // TODO consider moving this to _app by exposing document content in pageProps
   if (mode) {
     return (
-      <section className="sandbox in-page" style={{ width: '100%' }}>
+      <section
+        className="sandbox in-page"
+        style={{ width: '100%', height: 'calc(100vh - var(--nav-height))' }}
+      >
         <Editor code={doc} onChange={setDoc} />
       </section>
     );
