@@ -54,19 +54,14 @@
   }
 }
 
-body.dark {
-  --light: #18181b;
-  --dark: #ffffff;
-  --text: var(--dark);
-  --link: var(--dark);
-  --contrast-light: #2c2c30;
-  --contrast-dark: var(--contrast-light);
-
-  background: var(--light);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+  margin: 0;
 }
 
 html,
@@ -79,8 +74,24 @@ body,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+#__next {
+  /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+  isolation: isolate;
+}
+
 body {
   font-family: var(--sans);
+}
+
+body.dark {
+  --light: #18181b;
+  --dark: #ffffff;
+  --text: var(--dark);
+  --link: var(--dark);
+  --contrast-light: #2c2c30;
+  --contrast-dark: var(--contrast-light);
+
+  background: var(--light);
 }
 
 a {
@@ -95,6 +106,14 @@ a:hover {
 button {
   cursor: pointer;
   appearance: none;
+}
+
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 blockquote {
@@ -121,12 +140,12 @@ li {
 }
 
 p {
+  -webkit-font-smoothing: antialiased;
   /* TODO color: inherit */
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
   letter-spacing: 0.02em;
-  margin: 0;
-  padding-top: var(--default-vertical-spacing);
+  padding-bottom: var(--default-vertical-spacing);
 }
 
 h1,
@@ -135,9 +154,10 @@ h3,
 h4,
 h5,
 h6 {
+  position: relative;
   /* TODO color: inherit */
   color: var(--dark);
-  position: relative;
+  padding-bottom: var(--default-vertical-spacing);
 }
 
 h1.jumbo {
@@ -404,7 +424,6 @@ pre[class*='language-'] {
 
 .nav-bar nav ul {
   display: flex;
-  margin: 0;
   padding: 0;
 }
 
@@ -443,13 +462,6 @@ footer a {
 /* Callout */
 .callout p:first-of-type {
   padding: 0;
-}
-
-/* SideBySide */
-/* TODO investigate removing this */
-.side-by-side .heading {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* SideNav and TableOfContents */
@@ -511,7 +523,6 @@ footer a {
 }
 
 .page--landing table {
-  margin: 0;
   table-layout: fixed;
   width: 100%;
 }
