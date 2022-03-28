@@ -299,6 +299,7 @@ table tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 4px;
 }
 
+/* Helper classes */
 .relative {
   position: relative;
 }
@@ -325,6 +326,7 @@ table tbody tr:last-child > td:last-child {
   width: 100%;
 }
 
+/* Syntax highlighting */
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: #f2f2f2 !important;
