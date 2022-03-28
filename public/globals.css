@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap');
 
 /* TODO move styles to style-jsx */
 :root {
@@ -9,8 +9,8 @@
 
   --radii-1: 4px;
 
-  --sans: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --serif: Nib Trial, serif;
   --decoration: GT America Mono Trial, Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
