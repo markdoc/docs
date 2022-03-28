@@ -576,6 +576,10 @@ footer a {
   box-shadow: none;
 }
 
+.page--landing table {
+  position: relative;
+}
+
 .page--landing table td {
   position: relative;
   border: 1px solid var(--dark);
@@ -598,22 +602,33 @@ footer a {
   line-height: var(--line-height-3);
 }
 
-.page--landing table td::after {
-  position: absolute;
-  content: '';
-  background: var(--light);
-  width: 10px;
-  height: 10px;
-  top: -5px;
-  left: -5px;
-}
-
+.page--landing table::after,
+.page--landing table::before,
+.page--landing table td::after,
 .page--landing table td::before {
   position: absolute;
   content: '';
   background: var(--light);
   width: 10px;
   height: 10px;
+}
+
+.page--landing table::after {
+  top: -5px;
+  right: -5px;
+}
+
+.page--landing table::before {
+  bottom: -5px;
+  left: -5px;
+}
+
+.page--landing table td::after {
+  top: -5px;
+  left: -5px;
+}
+
+.page--landing table td::before {
   bottom: -5px;
   right: -5px;
 }
