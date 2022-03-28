@@ -164,6 +164,7 @@ export default function Index() {
         style={{
           zIndex: 999,
           top: 'var(--nav-height)',
+          left: 0,
           position: 'fixed',
           transition: 'transform 300ms ease',
           width: '100%',
