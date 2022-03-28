@@ -49,6 +49,9 @@ export function Code({ children, language }) {
 
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc';
 
+  const lines =
+    typeof children === 'string' ? children.split('\n').filter(Boolean) : [];
+
   return (
     <div className="code" aria-live="polite" style={{ position: 'relative' }}>
       <PrismCode
@@ -65,7 +68,7 @@ export function Code({ children, language }) {
           position: 'absolute',
           background: 'transparent',
           padding: 0,
-          top: '12px',
+          top: lines.length === 1 ? '15px' : '12px',
           right: '12px',
           border: 'none',
           fontSize: '20px'
