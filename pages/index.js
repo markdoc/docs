@@ -120,6 +120,14 @@ export default function Index() {
   const { config, content } = useMarkdocCode(doc);
 
   React.useEffect(() => {
+    if (showEditor) {
+      document.body.classList.add('modal-is-active');
+    } else {
+      document.body.classList.remove('modal-is-active');
+    }
+  }, [showEditor]);
+
+  React.useEffect(() => {
     function handler(e) {
       if (e.key === 'i' && e.metaKey) {
         setShowEditor((mode) => !mode);
@@ -154,6 +162,7 @@ export default function Index() {
       <section
         className="sandbox in-page"
         style={{
+          zIndex: 999,
           top: 'var(--nav-height)',
           position: 'fixed',
           transition: 'transform 300ms ease',

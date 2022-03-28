@@ -121,6 +121,11 @@ body.dark {
   background: var(--light);
 }
 
+body.modal-is-active {
+  /* Override the body scrolling behavior when there's a modal open in order to avoid dual scroll bars */
+  overflow: hidden;
+}
+
 a {
   color: var(--link);
   text-decoration: underline;
