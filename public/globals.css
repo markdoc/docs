@@ -360,7 +360,7 @@ pre[class*='language-'] {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: white;
+  background: var(--white);
   z-index: 1000;
   width: auto;
   height: auto;
@@ -480,13 +480,13 @@ footer a {
 
 .page--landing :not(pre) > code[class*='language-'],
 .page--landing pre[class*='language-'] {
-  color: white;
+  color: var(--white);
   background: var(--black) !important;
   text-shadow: var(--black);
 }
 
 .page--landing .token {
-  color: white !important;
+  color: var(--white) !important;
 }
 
 .page--landing pre .token.string {
@@ -498,8 +498,8 @@ footer a {
   background: var(--black);
 }
 
-.page--landing .sandbox span.cm-link,
-.page--landing .sandbox span.cm-string {
+.page--landing .sandbox section:nth-child(2) span.cm-link,
+.page--landing .sandbox section:nth-child(2) span.cm-string {
   color: inherit !important;
 }
 
