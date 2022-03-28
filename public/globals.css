@@ -7,8 +7,10 @@
 
   --radii-1: 4px;
 
-  --mono: 'GT America Mono Trial', monospace;
+  --sans: Sohne, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --serif: Nib Trial, serif;
+  --mono: GT America Mono Trial, monospace;
 
   --font-size-0: 8px;
   --font-size-1: 12px;
@@ -77,6 +79,10 @@ body,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  font-family: var(--sans);
+}
+
 a {
   color: var(--link);
   text-decoration: underline;
@@ -118,6 +124,7 @@ p {
   /* TODO color: inherit */
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
+  letter-spacing: 0.02em;
   margin: 0;
   padding-top: var(--default-vertical-spacing);
 }
