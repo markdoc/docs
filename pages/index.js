@@ -113,6 +113,7 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 `;
 
 export default function Index() {
+  const ref = React.useRef();
   const [doc, setDoc] = React.useState(initialDocument);
   const [showEditor, setShowEditor] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
@@ -122,8 +123,10 @@ export default function Index() {
   React.useEffect(() => {
     if (showEditor) {
       document.body.classList.add('modal-is-active');
+      ref.current.editor.focus();
     } else {
       document.body.classList.remove('modal-is-active');
+      document.activeElement.blur();
     }
   }, [showEditor]);
 
@@ -172,7 +175,7 @@ export default function Index() {
           transform: showEditor ? '' : 'translateY(100%)'
         }}
       >
-        <Editor code={doc} onChange={setDoc} />
+        <Editor innerRef={ref} code={doc} onChange={setDoc} />
         <div style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}>
           <kbd style={{ color: 'var(--white)' }}>⌘ + J</kbd>
         </div>
