@@ -65,6 +65,7 @@ Code fences
 
 {% /side-by-side %}
 
+\
 For more information, check out the [Nodes docs](/docs/nodes).
 
 ## Tags
@@ -90,6 +91,7 @@ Tags can be self-closing (similar to HTML). In this example, you'll see that the
 
 {% /markdoc-example %}
 
+\
 For more information, check out the [Tags docs](/docs/tags).
 
 ## Annotations
@@ -172,7 +174,7 @@ Variables can be used throughout your document, as content itself:
 {% markdoc-example %}
 
 ```
-© {% $currentYear %}  Stripe
+© {% $currentYear %} Stripe
 ```
 
 {% /markdoc-example %}
