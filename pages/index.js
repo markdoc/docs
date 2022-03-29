@@ -78,13 +78,11 @@ return Markdoc.render(content);
 
 {% section background="var(--contrast-gray)" %}
 
-{% side-by-side %}
+{% fancy-heading title="Built by Stripe" %}
 
-### Built by Stripe {% .jumbo %}
+Stripe created Markdoc to power its largest and most complex content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of complex, custom documentation.
 
-Stripe created Markdoc to power its largest and most complex content site, stripe.com/docs. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of complex, custom documentation.
-
-{% /side-by-side %}
+{% /fancy-heading %}
 
 {% /section %}
 

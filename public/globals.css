@@ -268,14 +268,6 @@ h2.jumbo {
   padding-bottom: 1.5rem;
 }
 
-h3.jumbo {
-  font-family: var(--serif);
-  font-size: 43px;
-  font-weight: 400;
-  line-height: 49px;
-  margin-top: 0;
-}
-
 pre {
   border-radius: var(--radii-1);
 }
@@ -360,6 +352,10 @@ table tbody tr:last-child > td:last-child {
 
 .column {
   flex-direction: column;
+}
+
+.center-vertical {
+  align-items: center;
 }
 
 .equal-width {
@@ -530,6 +526,7 @@ footer a {
 /* Features */
 .features ul {
   display: flex;
+  padding: 0;
 }
 
 .features li {
