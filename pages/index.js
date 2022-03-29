@@ -129,7 +129,7 @@ export default function Index() {
 
   React.useEffect(() => {
     function handler(e) {
-      if (e.key === 'i' && e.metaKey) {
+      if (e.key === 'j' && e.metaKey) {
         setShowEditor((mode) => !mode);
       } else if (e.key === 'Escape') {
         setShowEditor(false);
