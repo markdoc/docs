@@ -66,10 +66,11 @@ export function Code({ children, language }) {
         style={{
           appearance: 'none',
           position: 'absolute',
-          background: 'transparent',
-          padding: 0,
-          top: lines.length === 1 ? '17px' : '12px',
-          right: '12px',
+          color: 'var(--code-block-color)',
+          background: 'var(--code-block-background)',
+          top: 0,
+          right: 0,
+          padding: `${lines.length === 1 ? '17px' : '12px'} 12px 0 0`,
           border: 'none',
           fontSize: '20px'
         }}

@@ -12,21 +12,18 @@ export function SideBySide({ children }) {
       }}
     >
       <div
-        className="flex column"
+        className="flex column equal-width"
         style={{
-          flex: '1 1 0px',
-          paddingRight: '1rem'
+          paddingTop: '0.75rem',
+          paddingRight: '3rem',
+          borderRight: '1px solid var(--dark)'
         }}
       >
         {first}
       </div>
       <div
-        className="flex column"
-        style={{
-          flex: '1 1 0px',
-          paddingLeft: '1rem'
-          // minWidth: 200
-        }}
+        className="flex column equal-width"
+        style={{ paddingTop: '0.75rem', paddingLeft: '3rem' }}
       >
         {rest}
       </div>
