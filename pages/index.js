@@ -41,7 +41,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
  
 {% section background="var(--contrast-light)" %}
 
-{% side-by-side appearance="none" %}
+{% side-by-side %}
 
 {% item %}
 
@@ -76,9 +76,9 @@ return Markdoc.render(content);
 
 {% /section %}
 
-{% section %}
+{% section background="var(--contrast-gray)" %}
 
-{% side-by-side appearance="none" %}
+{% side-by-side %}
 
 ### Built by Stripe {% .jumbo %}
 
@@ -88,10 +88,9 @@ Stripe created Markdoc to power its largest and most complex content site, strip
 
 {% /section %}
 
-{% section %}
+{% section background="var(--contrast-gray)" %}
 
-{% table %}
----
+{% features %}
 - **Familiar syntax**
 
   Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the features and tooling you are used to.
@@ -107,7 +106,7 @@ Stripe created Markdoc to power its largest and most complex content site, strip
   You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
 
   [Learn about custom validation&nbsp;→](/docs/validation)
-{% /table %}
+{% /features %}
 
 {% /section %}
 `;
