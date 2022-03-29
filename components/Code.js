@@ -66,8 +66,7 @@ export function Code({ children, language }) {
         style={{
           appearance: 'none',
           position: 'absolute',
-          color: 'var(--code-block-color)',
-          background: 'var(--code-block-background)',
+          background: '#f2f2f2',
           top: 0,
           right: 0,
           padding: `${lines.length === 1 ? '17px' : '12px'} 12px 0 0`,

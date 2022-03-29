@@ -43,7 +43,6 @@
   --link: var(--dark);
   --contrast-light: var(--theme);
   --contrast-dark: var(--dark);
-  --code-block-background: #f2f2f2;
   --side-by-side-border: var(--dark);
 
   --theme: #f1ea51;
@@ -564,14 +563,13 @@ footer a {
   color: var(--theme) !important;
 }
 
-.page--landing .code button {
-  --code-block-color: var(--white);
-  --code-block-background: var(--black);
-}
-
 .page--landing .sandbox section:nth-child(2) span.cm-link,
 .page--landing .sandbox section:nth-child(2) span.cm-string {
   color: inherit !important;
+}
+
+.page--landing .code button {
+  display: none;
 }
 
 .page--landing table {
