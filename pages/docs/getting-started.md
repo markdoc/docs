@@ -5,7 +5,9 @@ description: How to get started with Markdoc
 
 # {% $markdoc.frontmatter.title %}
 
-Run this command to install the Markdoc library:
+## Install Markdoc
+
+First, install the Markdoc library:
 
 ```bash
 npm install @markdoc/markdoc
@@ -33,7 +35,7 @@ import Markdoc from '@markdoc/markdoc';
 
 ## Use Markdoc
 
-Then call the various Markdoc functions to render your content.
+Then, call the various Markdoc functions to render your content.
 
 ```js
 const ast = Markdoc.parse(source);

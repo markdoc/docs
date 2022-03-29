@@ -17,3 +17,8 @@ Markdoc uses a fully declarative approach to composition and flow control. MDX r
 In MDX, it’s possible to embed arbitrary JavaScript code in the content, which can quickly lead to maintainability complications.
 
 The abstract syntax trees (ASTs) also differ between MDX and Markdoc. MDX treats React components as separate blocks in the AST that need to be processed/transpiled separately. By comparison, Markdoc includes a first-class, declarative tag syntax, making it simpler to handle content transforms, static analysis, and validation in a unified manner.
+
+## Next steps
+
+- [Install Markdoc](/docs/getting-started)
+- [Try it out online](/sandbox)
