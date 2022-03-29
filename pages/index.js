@@ -61,7 +61,7 @@ npm install @markdoc/markdoc
 import Markdoc from '@markdoc/markdoc';
 
 const document = \`
-# Hello world!
+# Hello world.
 > My first Markdoc page
 \`
 

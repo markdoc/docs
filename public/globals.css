@@ -49,6 +49,8 @@
   --green: #2dbe62;
   --orange: #c78100;
   --blue: #00738a;
+  --green-dark: #86fba6;
+  --blue-dark: #80e9ff;
   --gray-1: #050505;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
@@ -501,6 +503,7 @@ pre[class*='language-'] {
 
 .footer-bar {
   margin: 0 auto;
+  background: var(--white);
 }
 
 footer {
@@ -509,7 +512,6 @@ footer {
   z-index: 100;
   width: 100%;
   color: var(--dark);
-  border-top: 1px solid var(--dark);
   padding: 1rem 2rem;
 }
 
@@ -570,6 +572,14 @@ footer a {
 }
 
 .page--landing pre .token.string {
+  color: var(--green-dark) !important;
+}
+
+.page--landing pre .token.function {
+  color: var(--blue-dark) !important;
+}
+
+.page--landing pre .token.token.keyword {
   color: var(--theme) !important;
 }
 
