@@ -173,6 +173,9 @@ export default function Index() {
         }}
       >
         <Editor code={doc} onChange={setDoc} />
+        <div style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}>
+          <kbd style={{ color: 'var(--white)' }}>⌘ + J</kbd>
+        </div>
       </section>
     </div>
   );

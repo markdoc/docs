@@ -154,7 +154,8 @@ h5,
 h6,
 li,
 code,
-td {
+td,
+kbd {
   /* TODO move to body and inherit here */
   color: var(--text);
 }
@@ -268,11 +269,16 @@ pre {
 code {
   font-size: inherit;
   font-size: 15px;
+  font-family: var(--mono);
   font-weight: 500;
   padding: 1px 2px;
   background: var(--gray-3);
   border: 1px solid #e3e8ee;
   border-radius: var(--radii-1);
+}
+
+kbd {
+  font-family: var(--mono);
 }
 
 table {
