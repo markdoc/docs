@@ -68,7 +68,7 @@ export function Code({ children, language }) {
           position: 'absolute',
           background: 'transparent',
           padding: 0,
-          top: lines.length === 1 ? '15px' : '12px',
+          top: lines.length === 1 ? '17px' : '12px',
           right: '12px',
           border: 'none',
           fontSize: '20px'

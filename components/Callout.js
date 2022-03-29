@@ -40,7 +40,7 @@ export function Callout({ title, children, type }) {
           background
         }}
       >
-        <div style={{ paddingRight: 8 }}>
+        <div className="flex" style={{ paddingRight: 8, alignItems: 'center' }}>
           <Icon icon={icon} color={iconColor} />
         </div>
         <div className="flex column">

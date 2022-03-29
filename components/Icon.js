@@ -110,7 +110,6 @@ export function Icon({ icon, color = 'inherit' }) {
       style={{
         display: 'inline-block',
         position: 'relative',
-        top: '+2px',
         fontSize: 'inherit',
         width: '1em',
         height: '1em',
