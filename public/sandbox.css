@@ -29,8 +29,7 @@
   background: var(--white);
 }
 
-.sandbox section:nth-child(2) .CodeMirror-selected,
-.sandbox section:nth-child(2) ::selection {
+.sandbox section:nth-child(2) .CodeMirror-selected {
   color: var(--black);
   background: var(--theme);
 }

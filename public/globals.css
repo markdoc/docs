@@ -103,6 +103,11 @@ body {
   font-family: var(--sans);
 }
 
+body ::selection {
+  color: var(--black);
+  background: var(--theme);
+}
+
 body.dark {
   --light: #18181b;
   --dark: #ffffff;
@@ -113,6 +118,11 @@ body.dark {
 
   /* color: var(--dark); */
   background: var(--light);
+}
+
+body.dark ::selection {
+  color: var(--black);
+  background: var(--theme);
 }
 
 body.modal-is-active {
