@@ -16,7 +16,7 @@ export function SideBySide({ children }) {
         style={{
           paddingTop: '0.75rem',
           paddingRight: '3rem',
-          borderRight: '1px solid var(--dark)'
+          borderRight: '1px solid var(--side-by-side-border)'
         }}
       >
         {first}
