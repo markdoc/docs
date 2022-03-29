@@ -6,8 +6,8 @@ const items = [
   {
     title: 'Get started',
     links: [
-      { href: '/docs/getting-started', children: 'Installation' },
-      { href: '/sandbox', children: 'Try it out' }
+      { href: '/docs/overview', children: 'Overview' },
+      { href: '/docs/getting-started', children: 'Installation' }
     ]
   },
   {
@@ -69,7 +69,8 @@ export default function SideNav() {
           <h3
             style={{
               fontWeight: 500,
-              margin: '1rem 0 0.5rem'
+              margin: '0.5rem 0 0',
+              paddingBottom: '0.5rem'
             }}
           >
             {item.title}
