@@ -5,7 +5,14 @@ export function Heading({ id = '', level = 1, children, className }) {
     `h${level}`,
     { className: ['heading', className].filter(Boolean).join(' ') },
     [
-      React.createElement('div', { id, key: 'anchor', className: 'anchor' }),
+      React.createElement('div', {
+        id,
+        key: 'anchor',
+        style: {
+          position: 'absolute',
+          top: 'calc(-1 * (var(--nav-height) + 44px))'
+        }
+      }),
       children
     ]
   );
