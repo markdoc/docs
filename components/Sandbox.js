@@ -68,12 +68,13 @@ function EditorInternal({ innerRef, code, onChange }) {
     [onChange]
   );
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
     setKey((k) => k + 1);
   }, []);
+
   return (
     <CodeMirror
       ref={innerRef}

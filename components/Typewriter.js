@@ -75,8 +75,6 @@ export function Typewriter() {
 
   const next = React.useCallback(() => setState((s) => s + 1), []);
 
-  console.log(done);
-
   return (
     <h1
       className="jumbo"
