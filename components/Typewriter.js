@@ -1,43 +1,112 @@
 import React from 'react';
 
-const DELAY = 40;
-// TODO turn on animation
-const ANIMATE = false;
+const TYPING_DELAY = 40;
+const SWAP_DURATION = 200;
 
-export function Typewriter({ children: text }) {
-  const initialText = ANIMATE ? text.split(' ')[0] : text;
+function Swapper({ before, after, onEnd }) {
+  const [running, setRunning] = React.useState(false);
+  const ref = React.useRef(false);
+  const state = running ? 'running' : 'paused';
 
-  const [state, setState] = React.useState(initialText.length);
-  const [done, setDone] = React.useState(false);
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        flexDirection: 'column',
+        height: 91,
+        overflowY: 'hidden'
+      }}
+    >
+      <div
+        style={{
+          color: 'var(--translucent)',
+          animation: `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}, fade ${SWAP_DURATION}ms linear 0ms reverse both ${state}`
+        }}
+        onAnimationEnd={() => {
+          // Call onAnimationEnd once per lifecycle
+          if (!ref.current && onEnd) {
+            onEnd(true);
+            ref.current = true;
+          }
+        }}
+      >
+        <Type text={before} onEnd={() => setRunning(true)} />
+      </div>
+      <div
+        style={{
+          animation: `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}, fade ${SWAP_DURATION}ms linear 0ms normal both ${state}`
+        }}
+      >
+        {after}
+      </div>
+    </span>
+  );
+}
+
+function Type({ text, onEnd }) {
+  const [state, setState] = React.useState(0);
 
   React.useEffect(() => {
     if (state < text.length) {
-      const timeout = setInterval(() => {
+      const timeout = setTimeout(() => {
         setState((s) => s + 1);
-      }, DELAY);
+      }, TYPING_DELAY);
 
       return () => clearTimeout(timeout);
     } else {
-      setDone(true);
+      onEnd();
     }
-  }, [text, state]);
+  }, [text, state, onEnd]);
+
+  console.log(text.substring(0, state));
+
+  return text.substring(0, state);
+}
+
+export function Typewriter() {
+  const [state, setState] = React.useState(0);
+  const [done, setDone] = React.useState(false);
+
+  const next = React.useCallback(() => setState((s) => s + 1), []);
+
+  console.log(state);
 
   return (
-    <h1 className="jumbo">
-      {text.substring(0, state)}
-      {ANIMATE ? (
-        <span
-          style={{
-            color: 'var(--theme)',
-            fontSize: '72px',
-            marginLeft: '0.5rem',
-            borderRight: '8px solid var(--theme)',
-            animation: done ? 'blink 1s step-end infinite' : undefined
-          }}
-        />
-      ) : (
-        false
+    <h1
+      className="jumbo"
+      style={{
+        // Prevent page jump
+        height: 280,
+        overflow: 'hidden'
+      }}
+    >
+      <Swapper before="# Markdoc" after="Markdoc is" onEnd={next} />
+      {state >= 1 && <Type text=" a " onEnd={next} />}
+      {state >= 2 && (
+        <Swapper before="{% adjective %}" after="powerful,   " onEnd={next} />
       )}
+      {state >= 3 && <br />}
+      {state >= 3 && <Type text=" flexible Markdown-based " onEnd={next} />}
+      {state >= 4 && <br />}
+      {state >= 4 && (
+        <Swapper
+          before="{% system %}"
+          after="authoring system."
+          onEnd={setDone}
+        />
+      )}
+      {/* <span
+        style={{
+          position: 'relative',
+          top: '+10px',
+          display: 'inline-block',
+          width: 8,
+          height: 72,
+          background: 'var(--theme)',
+          marginLeft: '0.75rem',
+          animation: done ? 'blink 1s step-end infinite' : undefined
+        }}
+      /> */}
     </h1>
   );
 }
