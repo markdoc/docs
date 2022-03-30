@@ -13,7 +13,7 @@ function Swapper({ before, after, onEnd }) {
       style={{
         display: 'inline-flex',
         flexDirection: 'column',
-        height: 91,
+        height: 'var(--font-size-jumbo)',
         overflowY: 'hidden'
       }}
     >
@@ -89,14 +89,14 @@ export function Typewriter() {
       <Swapper before="# Markdoc" after="Markdoc is" onEnd={next} />
       {state >= 1 && <Type text=" a " onEnd={next} />}
       {state >= 2 && (
-        <Swapper before="{% adjective %}" after="powerful,   " onEnd={next} />
+        <Swapper before="{% type %}" after="powerful," onEnd={next} />
       )}
       {state >= 3 && <br />}
       {state >= 3 && <Type text=" flexible Markdown-based " onEnd={next} />}
       {state >= 4 && <br />}
       {state >= 4 && (
         <Swapper
-          before="{% system %}"
+          before="{% toolchain %}"
           after="authoring system."
           onEnd={setDone}
         />
@@ -105,6 +105,7 @@ export function Typewriter() {
         style={{
           position: 'relative',
           top: '+10px',
+          background: 'var(--theme)',
           display: 'inline-block',
           width: 8,
           height: 72,

@@ -25,6 +25,7 @@
   --font-size-5: 24px;
   --font-size-6: 32px;
   --font-size-7: 48px;
+  --font-size-jumbo: 91px;
 
   --line-height-1: 16px;
   --line-height-2: 20px;
@@ -299,7 +300,7 @@ h1.jumbo {
   font-family: var(--serif);
   font-size: 79px;
   font-weight: 400;
-  line-height: 91px;
+  line-height: var(--font-size-jumbo);
   max-width: 950px; /* TODO */
 }
 
