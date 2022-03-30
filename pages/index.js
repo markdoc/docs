@@ -8,6 +8,7 @@ const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 const initialDocument = `---
 title: Markdoc is a powerful, flexible Markdown-based authoring framework
 ---
+
 {% section %}
 
 # {% $markdoc.frontmatter.title %} {% .jumbo %}
@@ -26,20 +27,25 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 {% section %}
 
 {% table %}
+
 ---
+
 - **Incrementally adoptable**
 
   From personal blogs to massive documentation sites. Markdoc is a content authoring framework that grows with you.
+
 - **Writer & Dev friendly**
 
   Markdoc provides all the power and flexibility to developers, with none of the added complexity for tech writers.
+
 - **Polymorphic**
 
   Markdoc can be used to create complex documentation experiences, static content sites, developer-tooling, and more.
+
 {% /table %}
 
 {% /section %}
- 
+
 {% section background="var(--contrast-light)" %}
 
 {% side-by-side %}
@@ -90,21 +96,25 @@ Stripe created Markdoc to power its largest and most complex content site. Since
 {% section background="var(--contrast-gray)" %}
 
 {% features %}
+
 - **Familiar syntax**
 
   Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the features and tooling you are used to.
 
   [Learn the syntax&nbsp;→](/docs/syntax)
+
 - **Easily extensible**
-  
+
   Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/rendering).
 
   [Learn about rendering Markdoc&nbsp;→](/docs/rendering)
+
 - **Built-in validation**
-  
+
   You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
 
   [Learn about custom validation&nbsp;→](/docs/validation)
+
 {% /features %}
 
 {% /section %}
