@@ -203,7 +203,8 @@ h3,
 h4,
 h5,
 h6,
-.callout {
+.callout,
+blockquote {
   -webkit-font-smoothing: antialiased;
   position: relative;
   padding-bottom: var(--default-vertical-spacing);
@@ -624,6 +625,10 @@ footer a {
 
 .page--landing pre .token.token.keyword {
   color: var(--theme) !important;
+}
+
+.page--landing blockquote {
+  max-width: 520px;
 }
 
 .page--landing .sandbox section:nth-child(2) span.cm-link,

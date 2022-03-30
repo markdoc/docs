@@ -114,12 +114,12 @@ export default function MyApp(props) {
               <Link href="/docs/getting-started">Docs</Link>
             </li>
             <li>
+              <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
+            </li>
+            <li>
               <Link href="https://github.com/markdoc/markdoc/discussions">
                 Community
               </Link>
-            </li>
-            <li>
-              <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             </li>
             <li>
               <Link href="https://twitter.com/StripeDev">Twitter</Link>
@@ -150,10 +150,10 @@ export default function MyApp(props) {
           © {new Date().getFullYear()} Stripe
           <div style={{ marginLeft: '2rem' }}>
             <Link href="/docs/getting-started">Docs</Link>
+            <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             <Link href="https://github.com/markdoc/markdoc/discussions">
               Community
             </Link>
-            <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             <Link href="https://twitter.com/StripeDev">Twitter</Link>
           </div>
           <ThemeToggle />
