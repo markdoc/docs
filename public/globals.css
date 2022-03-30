@@ -45,7 +45,6 @@
   --contrast-light: var(--theme);
   --contrast-dark: var(--dark);
   --contrast-gray: #f6f9fc;
-  --side-by-side-border: var(--dark);
   --translucent: rgba(0, 0, 0, 0.4);
 
   --theme: #f1ea51;
@@ -55,7 +54,7 @@
   --green-dark: #86fba6;
   --blue-dark: #80e9ff;
   --red-dark: #ff95ae;
-  --gray-1: #050505;
+  --gray-1: #2c2c30;
   --gray-2: #e3e8ee;
   --gray-3: #f7fafc;
 }
@@ -149,8 +148,8 @@ body.dark {
   --dark: #ffffff;
   --text: var(--dark);
   --link: var(--dark);
-  --contrast-light: #2c2c30;
-  --contrast-dark: var(--contrast-light);
+  --contrast-light: var(--gray-1);
+  --contrast-dark: var(--gray-1);
   --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
 
@@ -326,6 +325,11 @@ code {
   background: var(--gray-3);
   border: 1px solid #e3e8ee;
   border-radius: var(--radii-1);
+}
+
+body.dark code {
+  background: var(--gray-1);
+  border-color: #505056;
 }
 
 kbd {
@@ -579,6 +583,11 @@ footer a {
   text-decoration: underline;
 }
 
+/* SideBySide  */
+.side-by-side .left {
+  border-right: 1px solid var(--dark);
+}
+
 /* SideNav and TableOfContents */
 .sidenav li a:hover,
 .sidenav li.active > a,
@@ -607,10 +616,6 @@ footer a {
 /* ---------------------------- */
 
 /* Landing page overrides */
-.page--landing {
-  --side-by-side-border: transparent;
-}
-
 .page--landing .page {
   border-bottom: none;
 }
@@ -649,6 +654,10 @@ footer a {
 .page--landing .sandbox section:nth-child(2) span.cm-link,
 .page--landing .sandbox section:nth-child(2) span.cm-string {
   color: inherit !important;
+}
+
+.page--landing .side-by-side .left {
+  border-right: none;
 }
 
 .page--landing .code button {
