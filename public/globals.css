@@ -144,9 +144,20 @@ a:hover {
   text-decoration: none;
 }
 
+.primary a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary a:hover {
+  text-decoration: underline;
+}
+
 button {
   cursor: pointer;
   appearance: none;
+  border: none;
+  background: none;
 }
 
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
@@ -473,14 +484,6 @@ pre[class*='language-'] {
   box-shadow: 0 1px 0 0 var(--dark);
 }
 
-.nav-bar nav a[href='/sandbox'] {
-  text-decoration: none;
-}
-
-.nav-bar nav a[href='/sandbox']:hover {
-  text-decoration: underline;
-}
-
 .nav-bar nav ul {
   display: flex;
   padding: 0;
@@ -553,6 +556,10 @@ footer a {
   font-size: 15px;
   line-height: 27px;
   font-weight: 600;
+}
+
+.features li *:last-child a:hover {
+  text-decoration: underline;
 }
 
 /* SideNav and TableOfContents */
@@ -694,15 +701,6 @@ footer a {
 .page--landing table td::before {
   bottom: -5px;
   right: -5px;
-}
-
-.page--landing table td *:last-child a {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.page--landing table td *:last-child a:hover {
-  text-decoration: underline;
 }
 
 .page--landing .footer-bar {

@@ -34,6 +34,7 @@ export function FancyHeading({ title, children }) {
         style={{
           fontFamily: 'var(--serif)',
           fontSize: '43px',
+          fontWeight: 400,
           lineHeight: '49px',
           marginTop: 0,
           padding: '0 3rem var(--default-vertical-spacing) 0',

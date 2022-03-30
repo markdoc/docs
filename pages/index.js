@@ -12,7 +12,8 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 
 # {% $markdoc.frontmatter.title %} {% .jumbo %}
 
-[Get started&nbsp;→](/docs/getting-started)
+\\
+[Get started&nbsp;→](/docs/getting-started) {% .primary %}
 
 {% /section %}
 
@@ -49,7 +50,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 
 [Markdoc core](https://github.com/markdoc/markdoc) is a lightweight package containing everything you need to get started. If you want get going even faster, check out our [Next.js plugin](https://github.com/markdoc/next.js) and deploy a Markdoc documentation site with zero boilerplate.
 
-[Explore documentation&nbsp;→](/docs/getting-started)
+[Explore documentation&nbsp;→](/docs/getting-started) {% .primary %}
 
 {% /item %}
 
@@ -173,9 +174,12 @@ export default function Index() {
         }}
       >
         <Editor innerRef={ref} code={doc} onChange={setDoc} />
-        <div style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}>
-          <kbd style={{ color: 'var(--white)' }}>⌘ + J</kbd>
-        </div>
+        <button
+          style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}
+          onClick={() => setShowEditor(false)}
+        >
+          <kbd style={{ color: 'var(--white)' }}>Esc</kbd>
+        </button>
       </section>
     </div>
   );
