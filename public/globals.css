@@ -219,6 +219,10 @@ p {
   letter-spacing: 0.02em;
 }
 
+p:last-child {
+  padding-bottom: 0;
+}
+
 h1,
 h2,
 h3,

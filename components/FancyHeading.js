@@ -22,14 +22,17 @@ export function FancyHeading({ title, children }) {
     <div
       className="flex center-vertical"
       style={{
-        // TODO remove bottom padding of last paragraph and make the 3rem 4rem
         position: 'relative',
-        padding: '3rem 4rem 2.25rem',
+        padding: '3rem 4rem',
         borderWidth: '1px',
         borderColor: 'var(--dark)',
         borderStyle: 'solid solid dashed'
       }}
     >
+      <Cover top={-5} left={-5} />
+      <Cover bottom={-5} left={-5} />
+      <Cover top={-5} right={-5} />
+      <Cover bottom={-5} right={-5} />
       <h2
         style={{
           fontFamily: 'var(--serif)',
@@ -37,17 +40,13 @@ export function FancyHeading({ title, children }) {
           fontWeight: 400,
           lineHeight: '49px',
           marginTop: 0,
-          padding: '0 3rem var(--default-vertical-spacing) 0',
+          paddingRight: '3rem',
           whiteSpace: 'nowrap'
         }}
       >
         {title}
       </h2>
       {children}
-      <Cover top={-5} left={-5} />
-      <Cover bottom={-5} left={-5} />
-      <Cover top={-5} right={-5} />
-      <Cover bottom={-5} right={-5} />
     </div>
   );
 }
