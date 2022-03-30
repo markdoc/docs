@@ -110,7 +110,7 @@ export function Typewriter() {
           width: 8,
           height: 72,
           marginLeft: '0.75rem',
-          animation: done ? 'blink 1s step-end infinite' : undefined
+          animation: done ? 'blink 1060ms step-end infinite' : undefined
         }}
       />
     </h1>
