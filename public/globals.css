@@ -78,6 +78,17 @@
   }
 }
 
+/* The typewriter cursor effect */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: inherit;
+  }
+}
+
 *,
 *::before,
 *::after {

@@ -11,7 +11,9 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 
 {% section %}
 
-# {% $markdoc.frontmatter.title %} {% .jumbo %}
+{% typewriter %}
+Markdoc is a powerful, flexible Markdown-based authoring framework.
+{% /typewriter %}
 
 > From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.
 
@@ -33,7 +35,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 
 - **Open source**
 
-  TKTK Keep full control over your code. Markdoc is open-source and fully extensible.
+  TK Maintain full control over your code and content. Markdoc is open-source and fully extensible.
 
 - **Writer & Dev friendly**
 

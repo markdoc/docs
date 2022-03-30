@@ -9,3 +9,4 @@ export * from './Next.markdoc.js';
 export * from './Sandbox.markdoc.js';
 export * from './Section.markdoc.js';
 export * from './SideBySide.markdoc.js';
+export * from './Typewriter.markdoc.js';
