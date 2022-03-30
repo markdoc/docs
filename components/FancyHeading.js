@@ -24,8 +24,8 @@ export function FancyHeading({ title, children }) {
       style={{
         position: 'relative',
         padding: '3rem 4rem',
-        borderWidth: '1px',
         borderColor: 'var(--dark)',
+        borderWidth: '1px 1px 2px',
         borderStyle: 'solid solid dashed'
       }}
     >
