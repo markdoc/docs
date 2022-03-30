@@ -658,7 +658,9 @@ footer a {
 
 .page--landing table td {
   position: relative;
-  border: 1px solid var(--dark);
+  border-width: 1px;
+  border-color: var(--dark);
+  border-style: dashed solid;
   background: var(--light);
   border-radius: 0;
   padding: 0.75rem 1.5rem 1.5rem;
