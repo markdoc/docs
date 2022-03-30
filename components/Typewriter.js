@@ -20,7 +20,10 @@ function Swapper({ before, after, onEnd }) {
       <div
         style={{
           color: 'var(--translucent)',
-          animation: `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}, fade ${SWAP_DURATION}ms linear 0ms reverse both ${state}`
+          animation: [
+            `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}`,
+            `fade ${SWAP_DURATION}ms linear 0ms reverse both ${state}`
+          ].join(', ')
         }}
         onAnimationEnd={() => {
           // Call onAnimationEnd once per lifecycle
@@ -32,13 +35,18 @@ function Swapper({ before, after, onEnd }) {
       >
         <Type text={before} onEnd={() => setRunning(true)} />
       </div>
-      <div
-        style={{
-          animation: `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}, fade ${SWAP_DURATION}ms linear 0ms normal both ${state}`
-        }}
-      >
-        {after}
-      </div>
+      {running && (
+        <div
+          style={{
+            animation: [
+              `swap ${SWAP_DURATION}ms ease-out 0ms both running`,
+              `fade ${SWAP_DURATION}ms linear 0ms normal both running`
+            ].join(', ')
+          }}
+        >
+          {after}
+        </div>
+      )}
     </span>
   );
 }
@@ -58,8 +66,6 @@ function Type({ text, onEnd }) {
     }
   }, [text, state, onEnd]);
 
-  console.log(text.substring(0, state));
-
   return text.substring(0, state);
 }
 
@@ -69,7 +75,7 @@ export function Typewriter() {
 
   const next = React.useCallback(() => setState((s) => s + 1), []);
 
-  console.log(state);
+  console.log(done);
 
   return (
     <h1
@@ -95,18 +101,17 @@ export function Typewriter() {
           onEnd={setDone}
         />
       )}
-      {/* <span
+      <span
         style={{
           position: 'relative',
           top: '+10px',
           display: 'inline-block',
           width: 8,
           height: 72,
-          background: 'var(--theme)',
           marginLeft: '0.75rem',
           animation: done ? 'blink 1s step-end infinite' : undefined
         }}
-      /> */}
+      />
     </h1>
   );
 }

@@ -83,10 +83,10 @@
 @keyframes blink {
   from,
   to {
-    border-color: transparent;
+    background-color: transparent;
   }
   50% {
-    border-color: inherit;
+    background-color: var(--theme);
   }
 }
 
@@ -300,6 +300,7 @@ h1.jumbo {
   font-size: 79px;
   font-weight: 400;
   line-height: 91px;
+  max-width: 950px; /* TODO */
 }
 
 h2.jumbo {
