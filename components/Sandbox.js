@@ -33,7 +33,7 @@ Markdoc uses a fully declarative approach to composition and flow control, where
 `;
 
 export function useMarkdocCode(code) {
-  const ast = React.useMemo(() => Markdoc.parse(code), [code]);
+  const ast = React.useMemo(() => Markdoc.parse(code, 'sandbox.md'), [code]);
 
   const config = React.useMemo(() => {
     const { nodes, tags, components } = transformSchema(schema);
