@@ -422,9 +422,7 @@ pre[class*='language-'] {
 .token.string,
 .token.char,
 .token.builtin,
-.token.inserted,
-.sandbox span.cm-link,
-.sandbox span.cm-string {
+.token.inserted {
   color: var(--green) !important;
 }
 
@@ -441,8 +439,12 @@ pre[class*='language-'] {
 }
 
 .sandbox span.cm-link,
-.sandbox span.cm-string {
-  color: var(--theme) !important;
+.sandbox span.cm-url {
+  color: var(--theme);
+}
+
+.sandbox span.cm-property {
+  color: inherit;
 }
 
 .sandbox span.cm-strong,
@@ -644,11 +646,6 @@ footer a {
 
 .page--landing pre .token.token.keyword {
   color: var(--theme) !important;
-}
-
-.page--landing .sandbox section:nth-child(2) span.cm-link,
-.page--landing .sandbox section:nth-child(2) span.cm-string {
-  color: inherit !important;
 }
 
 .page--landing .side-by-side .left {

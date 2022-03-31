@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TYPING_DELAY = 40;
+const TYPE_DURATION = 50;
 const SWAP_DURATION = 200;
 
 function Swapper({ before, after, onEnd }) {
@@ -56,10 +56,7 @@ function Type({ text, onEnd }) {
 
   React.useEffect(() => {
     if (state < text.length) {
-      const timeout = setTimeout(() => {
-        setState((s) => s + 1);
-      }, TYPING_DELAY);
-
+      const timeout = setTimeout(() => setState((s) => s + 1), TYPE_DURATION);
       return () => clearTimeout(timeout);
     } else {
       onEnd();

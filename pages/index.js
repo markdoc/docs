@@ -36,7 +36,7 @@ Markdoc is a content authoring system that grows with you.
 
 - **Open source**
 
-  TK Maintain full control over your code and content. Markdoc is open-source and fully extensible.
+  TODO Maintain full control over your code and content. Markdoc is open-source and fully extensible.
 
 - **Writer & Dev friendly**
 
