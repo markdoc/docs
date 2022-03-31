@@ -378,6 +378,7 @@ th {
 td {
   padding: 16px 16px;
   border: 1px solid var(--dark);
+  background-clip: padding-box;
 }
 
 /* Helper classes */
@@ -692,6 +693,8 @@ footer a {
   background: var(--light);
   border-radius: 0;
   padding: 0.75rem 1.5rem 1.5rem;
+  /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
+  background-clip: padding-box;
 }
 
 .page--landing table td strong {
