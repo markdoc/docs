@@ -1,7 +1,6 @@
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
-import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
 
@@ -109,18 +108,26 @@ export function Editor(props) {
 const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
 
 export function Sandbox({ height }) {
-  const router = useRouter();
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
+  const [mode, setMode] = React.useState('preview');
 
   const { ast, content, config, errors } = useMarkdocCode(code);
 
-  const mode = router.query.mode || 'preview';
+  React.useEffect(() => {
+    const mode = new URLSearchParams(window.location.search).get('mode');
+    if (mode) {
+      setMode(mode);
+    }
+  }, []);
 
-  function setMode(newMode) {
-    router.query.mode = newMode;
-    router.replace(router, undefined, { scroll: false });
-  }
+  React.useEffect(() => {
+    if (mode && window.location.pathname === '/sandbox') {
+      const query = new URLSearchParams(window.location.search);
+      query.set('mode', mode);
+      history.replaceState(null, '', '?' + query.toString());
+    }
+  }, [mode]);
 
   React.useEffect(() => {
     if (errors.length) {
