@@ -55,8 +55,17 @@ export function Code({ children, language }) {
   return (
     <div className="code" aria-live="polite" style={{ position: 'relative' }}>
       <PrismCode
+        /**
+         * HACK: prevent "Uncaught DOMException" when typing
+         *
+         * ```
+         * {%tag%} ← no closing tag
+         * ```
+         *
+         * in the sandbox.
+         */
+        key={children}
         ref={ref}
-        key={lang}
         component="pre"
         className={`language-${lang}`}
       >
