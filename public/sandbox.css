@@ -142,7 +142,7 @@
   display: none;
   color: var(--black);
   background: var(--white);
-  top: -20px;
+  bottom: 20px;
   padding: 1px 4px;
   border-radius: 4px;
   z-index: 999;
@@ -153,7 +153,7 @@
   content: '';
   position: absolute;
   display: none;
-  top: -3px;
+  bottom: 12px;
   left: 12px;
   border-width: 4px;
   border-style: solid;
