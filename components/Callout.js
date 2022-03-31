@@ -5,29 +5,24 @@ import { Icon } from './Icon';
 const TYPE_MAP = {
   note: {
     icon: 'information-circle',
-    iconColor: '#8792a2',
-    background: '#f7fafc'
+    iconColor: '#8792a2'
   },
   caution: {
     icon: 'warning',
-    iconColor: '#d97917',
-    background: '#fcf9e9'
+    iconColor: '#d97917'
   },
   check: {
     icon: 'checkmark-circle',
-    iconColor: 'var(--theme)',
-    background:
-      'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, #FFFFFF, #FFFFFF)'
+    iconColor: 'var(--theme)'
   },
   warning: {
     icon: 'warning',
-    iconColor: '#ed5f74',
-    background: '#fff8f5'
+    iconColor: '#ed5f74'
   }
 };
 
 export function Callout({ title, children, type }) {
-  const { icon, iconColor, background } = TYPE_MAP[type];
+  const { icon, iconColor } = TYPE_MAP[type];
 
   return (
     <div className="callout">
@@ -37,7 +32,8 @@ export function Callout({ title, children, type }) {
           lineHeight: '20px',
           padding: '12px 20px',
           borderRadius: 'var(--radii-1)',
-          background
+          background:
+            'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, #FFFFFF, #FFFFFF)'
         }}
       >
         <div className="flex" style={{ paddingRight: 8, alignItems: 'center' }}>
