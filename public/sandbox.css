@@ -112,6 +112,14 @@
   color: var(--black);
 }
 
+.sandbox .preview h2 {
+  margin-top: 1rem;
+}
+
+.sandbox .preview h3 {
+  margin-top: 0.75rem;
+}
+
 .sandbox .preview p {
   text-rendering: optimizeLegibility;
   font-size: 13px;

@@ -8,22 +8,28 @@ import { transformSchema } from '@markdoc/next.js/runtime';
 import * as schema from '../markdoc';
 
 const INITIAL_CODE = `---
-title: Sandbox
+title: What is Markdoc?
 ---
 
 # {% $markdoc.frontmatter.title %} {% #overview %} {% .h2 %} 
 
+Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites.  
+Stripe created Markdoc to power [our public docs](http://stripe.com/docs), replacing [ERB](https://docs.ruby-lang.org/en/2.3.0/ERB.html).
+
 {% callout type="check" %}
-Learn more about using the [Dashboard](http://dashboard.stripe.com) to operate your Stripe account.
+Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
 {% /callout %}
 
-The Stripe Dashboard is a feature-rich user interface for you to operate and configure your Stripe account. You can use it to manage payments and refunds, respond to disputes, monitor your integration, and more.
+## Frequently asked questions
 
-The Dashboard home page provides useful at-a-glance information about the activity on your account. A wide range of analytics and real-time charts provide insight into the performance of your business. The Dashboard also shows recent activity that may require you to take action, such as unanswered disputes or identity verifications.
+### What is the difference between Markdoc and MDX?
 
-## Navigating the Dashboard {% #navigation %} {% .h3 %} 
+Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[read on&nbsp;→](/docs/overview)
 
-The Dashboard is primarily organized into separate sections. Each section represents a particular area of the API (e.g., [Payments](http://dashboard.stripe.com/payments) represents [Charge](https://stripe.com/docs/api#charge_object) objects that have been created) or functionality provided by Stripe (e.g., [Stripe Sigma](/sigma)).
+## Next steps
+
+- [Install Markdoc](/docs/getting-started)
+- [Try it out online](/sandbox)
 `;
 
 export function useMarkdocCode(code) {
