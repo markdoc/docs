@@ -23,7 +23,8 @@ function Swapper({ before, after, onEnd }) {
           animation: [
             `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}`,
             `fade ${SWAP_DURATION}ms linear 0ms reverse both ${state}`
-          ].join(', ')
+          ].join(', '),
+          userSelect: 'none'
         }}
         onAnimationEnd={() => {
           // Call onAnimationEnd once per lifecycle
@@ -66,7 +67,7 @@ function Type({ text, onEnd }) {
   return text.substring(0, state);
 }
 
-export function Typewriter() {
+export function Typewriter({ children: text }) {
   const [state, setState] = React.useState(0);
   const [done, setDone] = React.useState(false);
 
@@ -81,33 +82,37 @@ export function Typewriter() {
         overflow: 'hidden'
       }}
     >
-      <Swapper before="# Markdoc" after="Markdoc is" onEnd={next} />
-      {state >= 1 && <Type text=" a " onEnd={next} />}
-      {state >= 2 && (
-        <Swapper before="{% type %}" after="powerful," onEnd={next} />
-      )}
-      {state >= 3 && <br />}
-      {state >= 3 && <Type text=" flexible Markdown-based " onEnd={next} />}
-      {state >= 4 && <br />}
-      {state >= 4 && (
-        <Swapper
-          before="{% toolchain %}"
-          after="authoring system."
-          onEnd={setDone}
+      <title>{text}</title>
+      <span className="prefers-no-animation">{text}</span>
+      <span aria-hidden="true" className="prefers-animation">
+        <Swapper before="# Markdoc" after="Markdoc is" onEnd={next} />
+        {state >= 1 && <Type text=" a " onEnd={next} />}
+        {state >= 2 && (
+          <Swapper before="{% type %}" after="powerful," onEnd={next} />
+        )}
+        {state >= 3 && <br />}
+        {state >= 3 && <Type text=" flexible Markdown-based " onEnd={next} />}
+        {state >= 4 && <br />}
+        {state >= 4 && (
+          <Swapper
+            before="{% toolchain %}"
+            after="authoring system."
+            onEnd={setDone}
+          />
+        )}
+        <span
+          style={{
+            position: 'relative',
+            top: '+10px',
+            background: 'var(--theme)',
+            display: 'inline-block',
+            width: 8,
+            height: 72,
+            marginLeft: '0.75rem',
+            animation: done ? 'blink 1060ms step-end infinite' : undefined
+          }}
         />
-      )}
-      <span
-        style={{
-          position: 'relative',
-          top: '+10px',
-          background: 'var(--theme)',
-          display: 'inline-block',
-          width: 8,
-          height: 72,
-          marginLeft: '0.75rem',
-          animation: done ? 'blink 1060ms step-end infinite' : undefined
-        }}
-      />
+      </span>
     </h1>
   );
 }

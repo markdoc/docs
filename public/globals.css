@@ -79,6 +79,18 @@
   }
 }
 
+.prefers-no-animation {
+  display: none;
+}
+@media (prefers-reduced-motion) {
+  .prefers-animation {
+    display: none;
+  }
+  .prefers-no-animation {
+    display: initial;
+  }
+}
+
 /* The typewriter cursor effect */
 @keyframes blink {
   from,
