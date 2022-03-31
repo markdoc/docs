@@ -6,6 +6,7 @@ export const fence = {
   node: 'fence',
   Component: Code,
   attributes: {
+    content: { type: String },
     language: {
       type: String,
       description:
