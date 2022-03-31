@@ -646,10 +646,6 @@ footer a {
   color: var(--theme) !important;
 }
 
-.page--landing blockquote {
-  max-width: 520px;
-}
-
 .page--landing .sandbox section:nth-child(2) span.cm-link,
 .page--landing .sandbox section:nth-child(2) span.cm-string {
   color: inherit !important;
