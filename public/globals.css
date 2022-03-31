@@ -300,7 +300,6 @@ h1.jumbo {
   font-size: 79px;
   font-weight: 400;
   line-height: var(--font-size-jumbo);
-  max-width: 950px; /* TODO */
 }
 
 h2.jumbo {
