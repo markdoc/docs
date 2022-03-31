@@ -105,7 +105,7 @@ Use custom `Attribute` types to validate that the attributes passed to your tags
 
 ```js
 export class ImageSrc {
-  validate(value: any, config: Config) {
+  validate(value, config) {
     if (!value.startsWith('https://')) {
       return [
         {

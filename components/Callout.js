@@ -22,7 +22,7 @@ const TYPE_MAP = {
 };
 
 export function Callout({ title, children, type }) {
-  const { icon, iconColor } = TYPE_MAP[type];
+  const { icon, iconColor } = TYPE_MAP[type] || TYPE_MAP.note;
 
   return (
     <div className="callout">

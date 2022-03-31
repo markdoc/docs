@@ -535,7 +535,7 @@ pre[class*='language-'] {
   flex: 1 auto;
   max-width: 100%;
   min-width: 0;
-  padding: 2rem 4rem;
+  padding: 2rem 4rem 4rem;
   overflow-x: auto;
 }
 

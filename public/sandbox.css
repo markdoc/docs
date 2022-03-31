@@ -66,6 +66,7 @@
   background: var(--white);
   border: 1px solid var(--contrast-dark);
   padding: 0.25rem 0.5rem;
+  margin-right: 1px;
 }
 
 .sandbox .btn-group {

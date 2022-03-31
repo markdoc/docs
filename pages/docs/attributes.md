@@ -26,7 +26,7 @@ export class DateTime {
     return [];
   }
 
-  render(value: any, config: Config) {
+  render(value, config) {
     return Date.parse(value);
   }
 }

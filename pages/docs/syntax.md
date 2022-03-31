@@ -146,6 +146,9 @@ Pass attributes to tags to customize their behavior. Accepted values include: `n
 
 {% /markdoc-example %}
 
+\
+For more information, check out the [Attributes docs](/docs/attributes).
+
 ## Variables
 
 Markdoc variables let you customize your Markdoc documents at runtime. Variables are all prefixed with `$`.

@@ -18,6 +18,34 @@ In MDX, it’s possible to embed arbitrary JavaScript code in the content, which
 
 The abstract syntax trees (ASTs) also differ between MDX and Markdoc. MDX treats React components as separate blocks in the AST that need to be processed/transpiled separately. By comparison, Markdoc includes a first-class, declarative tag syntax, making it simpler to handle content transforms, static analysis, and validation in a unified manner.
 
+{% side-by-side %}
+
+```js
+import {Box, Heading} from './components'
+
+MDX using imported components!
+
+<Box>
+  <Heading>The current year is {year}</Heading>
+<Box>
+```
+
+{% markdoc-example %}
+
+```md
+No imports required.
+
+{% box %}
+
+# The current year is {% $year %}
+
+{% /box %}
+```
+
+{% /markdoc-example %}
+
+{% /side-by-side %}
+
 ## Next steps
 
 - [Install Markdoc](/docs/getting-started)

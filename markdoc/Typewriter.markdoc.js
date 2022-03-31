@@ -8,7 +8,7 @@ export const typewriter = {
     text: { type: String }
   },
   render(node, config) {
-    const [{ children }] = node.renderChildren(config);
+    const children = node.renderChildren(config)?.[0]?.children || [];
     return { name: this.tag, children };
   }
 };
