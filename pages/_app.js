@@ -37,10 +37,9 @@ function collectHeadings(nodes, sections = []) {
           title
         });
       }
-
-      if (node.children) {
-        collectHeadings(node.children, sections);
-      }
+    }
+    if (node.children) {
+      collectHeadings(node.children, sections);
     }
   });
 
