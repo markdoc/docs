@@ -129,3 +129,38 @@
 .sandbox .preview .callout p {
   line-height: 20px;
 }
+
+.sandbox .syntax-error {
+  text-decoration: red wavy underline;
+  text-decoration-skip-ink: none;
+}
+
+/* Tooltip */
+.sandbox .syntax-error::before {
+  content: attr(data-title);
+  position: absolute;
+  display: none;
+  color: var(--black);
+  background: var(--white);
+  top: -20px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  z-index: 999;
+}
+
+/* Tooltip triangle */
+.sandbox .syntax-error::after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: -3px;
+  left: 12px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: var(--white) transparent transparent transparent;
+}
+
+.sandbox .syntax-error:hover::before,
+.sandbox .syntax-error:hover::after {
+  display: inline-block;
+}

@@ -56,7 +56,12 @@ export function useMarkdocCode(code) {
     [ast, config]
   );
 
-  return { ast, content, config };
+  const errors = React.useMemo(
+    () => Markdoc.validate(ast, config),
+    [ast, config]
+  );
+
+  return { ast, content, config, errors };
 }
 
 const options = {
@@ -107,7 +112,7 @@ export function Sandbox({ height }) {
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
 
-  const { ast, content, config } = useMarkdocCode(code);
+  const { ast, content, config, errors } = useMarkdocCode(code);
 
   const mode = router.query.mode || 'preview';
 
@@ -115,6 +120,34 @@ export function Sandbox({ height }) {
     router.query.mode = newMode;
     router.replace(router, undefined, { scroll: false });
   }
+
+  React.useEffect(() => {
+    if (errors.length) {
+      const markers = [];
+
+      errors.forEach((error) => {
+        const from = {
+          line: error.location.start.line - 1,
+          ch: error.location.start.character
+        };
+        const to = {
+          line: error.location.end.line - 1,
+          ch: error.location.end.character
+        };
+
+        markers.push(
+          ref.current.editor.markText(from, to, {
+            className: 'syntax-error',
+            attributes: {
+              'data-title': error.error.message
+            }
+          })
+        );
+      });
+
+      return () => markers.forEach((mark) => mark.clear());
+    }
+  }, [errors]);
 
   return (
     <div className="sandbox" style={{ height }}>
