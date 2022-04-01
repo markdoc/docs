@@ -63,6 +63,12 @@ function EditPage({ source: initialDocument }) {
         }}
       >
         <Editor code={doc} onChange={setDoc} />
+        <button
+          style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}
+          onClick={() => setShowEditor(false)}
+        >
+          <kbd style={{ color: 'var(--white)' }}>CMD + J / Esc</kbd>
+        </button>
       </section>
     </>
   );
