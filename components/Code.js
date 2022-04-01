@@ -77,7 +77,8 @@ export function Code({ children, language }) {
         style={{
           appearance: 'none',
           position: 'absolute',
-          background: '#f2f2f2',
+          color: 'inherit',
+          background: 'var(--code-background)',
           top: 0,
           right: 0,
           padding: `${lines.length === 1 ? '17px' : '12px'} 12px 0 0`,
