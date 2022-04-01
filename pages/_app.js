@@ -110,24 +110,16 @@ export default function MyApp(props) {
               />
             </svg>
           </Link>
-          <ul className="links">
-            <li>
-              <Link href="/docs/getting-started">Docs</Link>
-            </li>
-            <li>
-              <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
-            </li>
-            <li>
-              <Link href="https://github.com/markdoc/markdoc/discussions">
-                Community
-              </Link>
-            </li>
-            <li>
-              <Link href="https://twitter.com/StripeDev">Twitter</Link>
-            </li>
-            <li className="primary">
+          <ul>
+            <Link href="/docs/getting-started">Docs</Link>
+            <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
+            <Link href="https://github.com/markdoc/markdoc/discussions">
+              Community
+            </Link>
+            <Link href="https://twitter.com/StripeDev">Twitter</Link>
+            <span className="primary">
               <Link href="/sandbox">Try →</Link>
-            </li>
+            </span>
           </ul>
         </nav>
       </div>
@@ -151,7 +143,7 @@ export default function MyApp(props) {
       >
         <footer>
           © {new Date().getFullYear()} Stripe
-          <div style={{ marginLeft: '2rem' }}>
+          <div>
             <Link href="/docs/getting-started">Docs</Link>
             <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
             <Link href="https://github.com/markdoc/markdoc/discussions">
