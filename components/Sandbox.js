@@ -45,7 +45,8 @@ export function useMarkdocCode(code) {
           frontmatter: ast.attributes.frontmatter
             ? yaml.load(ast.attributes.frontmatter)
             : {}
-        }
+        },
+        invalid_code: `\n{% callout %}\nHere!\n`
       },
       components
     };
