@@ -74,9 +74,5 @@ export function Document({ source, children }) {
    * this extra branch in order to pop up the editor that reveals
    * the source content for each document
    */
-  return (
-    <main className="document">
-      {source ? <EditPage source={source} /> : children}
-    </main>
-  );
+  return <article>{source ? <EditPage source={source} /> : children}</article>;
 }

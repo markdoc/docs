@@ -508,7 +508,7 @@ pre[class*='language-'] {
   margin-left: 1.5rem;
 }
 
-.document {
+article {
   display: flex;
   flex-grow: 1;
   flex-direction: column;

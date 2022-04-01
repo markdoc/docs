@@ -125,7 +125,7 @@ export default function MyApp(props) {
       </div>
       <div className="page">
         {isDocs ? <SideNav /> : null}
-        <div
+        <main
           className="flex column"
           style={{
             flexGrow: 1,
@@ -134,7 +134,7 @@ export default function MyApp(props) {
         >
           <div id="skip-nav" />
           <Component {...pageProps} />
-        </div>
+        </main>
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>
       <div
