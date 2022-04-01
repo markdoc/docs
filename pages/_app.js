@@ -65,6 +65,8 @@ export default function MyApp(props) {
     ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
+  const isDocs = props.router.asPath.startsWith('/docs');
+
   React.useEffect(() => console.log(MARKDOC), []);
 
   return (
@@ -129,7 +131,7 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      {props.router.asPath.startsWith('/docs') ? (
+      {isDocs ? (
         <div className="page">
           <SideNav />
           <main className="document">
@@ -144,7 +146,12 @@ export default function MyApp(props) {
           <Component {...pageProps} />
         </main>
       )}
-      <div className="footer-bar">
+      <div
+        className="footer-bar"
+        style={{
+          borderTop: isDocs ? '1px solid var(--dark)' : undefined
+        }}
+      >
         <footer>
           © {new Date().getFullYear()} Stripe
           <div style={{ marginLeft: '2rem' }}>

@@ -454,7 +454,6 @@ pre[class*='language-'] {
   flex-grow: 1;
   padding-top: var(--nav-height);
   min-height: 100vh;
-  border-bottom: 1px solid var(--dark);
 }
 
 .skip-nav {
