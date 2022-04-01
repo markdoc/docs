@@ -180,7 +180,6 @@ body.modal-is-active {
 }
 
 a {
-  color: var(--link);
   text-decoration: underline;
 }
 
@@ -212,49 +211,28 @@ select {
   font: inherit;
 }
 
-blockquote {
-  margin: 1rem 0;
-}
-
 p,
 span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+a,
 li,
 code,
 td,
-kbd {
+kbd,
+.heading {
+  -webkit-font-smoothing: antialiased;
   color: inherit;
 }
 
-ol {
-  padding-left: 1em;
-}
-
-li {
-  margin: 0.25rem 0;
-}
-
 p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+.heading,
 .callout,
 blockquote {
-  -webkit-font-smoothing: antialiased;
   position: relative;
   padding-bottom: var(--default-vertical-spacing);
 }
 
 p {
-  /* TODO color: inherit */
+  text-rendering: optimizeLegibility;
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
   letter-spacing: 0.02em;
@@ -264,12 +242,7 @@ p:last-child {
   padding-bottom: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.heading {
   letter-spacing: -0.02em;
 }
 
@@ -323,6 +296,18 @@ h2.jumbo {
   padding-bottom: 1.5rem;
 }
 
+blockquote {
+  margin: 1rem 0;
+}
+
+ol {
+  padding-left: 1em;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
 pre {
   border-radius: var(--radii-1);
 }
@@ -370,10 +355,6 @@ th {
   text-align: left;
   padding: 0 16px 8px;
 }
-
-/* tr {
-  vertical-align: top;
-} */
 
 td {
   padding: 16px 16px;
@@ -600,6 +581,10 @@ footer a {
 /* SideBySide  */
 .side-by-side .left {
   border-right: 1px solid var(--dark);
+}
+
+.side-by-side .heading {
+  margin: 0;
 }
 
 /* SideNav and TableOfContents */
