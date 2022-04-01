@@ -61,7 +61,7 @@ export function Code({ children, language }) {
          * HACK: prevent "Uncaught DOMException" when typing
          *
          * ```
-         * {%tag%} ← no closing tag
+         * {% tag %} ← no closing tag
          * ```
          *
          * in the sandbox.
