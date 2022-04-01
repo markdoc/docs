@@ -383,6 +383,10 @@ td {
   align-items: center;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .equal-width {
   flex: 1 1 0px;
   overflow: auto;
