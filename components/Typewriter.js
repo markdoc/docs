@@ -78,7 +78,7 @@ export function Typewriter({ children: text }) {
       className="jumbo"
       style={{
         // Prevent page jump
-        height: 280,
+        minHeight: 280,
         overflow: 'hidden'
       }}
     >
