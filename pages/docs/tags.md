@@ -147,7 +147,7 @@ These are the fields you can use to customize your `Tag`
 
 ## Built-in tags
 
-Markdoc comes out-of-the-box with 4 built-in functions: `if`, `else`, `table`, and `partial`.
+Markdoc comes out-of-the-box with 4 built-in tags: `if`, `else`, `table`, and `partial`.
 
 ### If/Else
 
