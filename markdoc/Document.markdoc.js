@@ -4,14 +4,16 @@
  * atypical pattern for Markdoc applications.
  */
 import { nodes } from '@markdoc/markdoc';
+import { Document } from '../components/Document';
 
 export const document = {
   ...nodes.document,
   node: 'document',
+  Component: Document,
   render(node, config) {
     return {
-      name: 'main',
-      attributes: { class: 'document', source: config.source },
+      name: this.tag,
+      attributes: { source: config.source },
       children: node.renderChildren(config)
     };
   }

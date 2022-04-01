@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 
 import { AppLink as Link } from '../components/AppLink';
-import { EditPage } from '../components/EditPage';
 import { SideNav } from '../components/SideNav';
 import { TableOfContents } from '../components/TableOfContents';
 import { ThemeToggle } from '../components/ThemeToggle';
@@ -61,23 +60,11 @@ export default function MyApp(props) {
     }
   }
 
-  const initialDocument = pageProps.markdoc?.content?.attributes?.source;
-
   const toc = pageProps.markdoc?.content
     ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
   const isDocs = props.router.asPath.startsWith('/docs');
-
-  const children = initialDocument ? (
-    <EditPage
-      key={props.router.pathname}
-      initialDocument={initialDocument}
-      Component={Component}
-    />
-  ) : (
-    <Component {...pageProps} />
-  );
 
   React.useEffect(() => console.log(MARKDOC), []);
 
@@ -153,7 +140,7 @@ export default function MyApp(props) {
           }}
         >
           <div id="skip-nav" />
-          {children}
+          <Component {...pageProps} />
         </div>
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>

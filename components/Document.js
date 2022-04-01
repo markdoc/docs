@@ -1,13 +1,14 @@
 import React from 'react';
-import { Editor, useMarkdocCode } from '../components/Sandbox';
+import Markdoc from '@markdoc/markdoc';
+import { Editor, useMarkdocCode } from './Sandbox';
 
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 
-export function EditPage({ Component, initialDocument }) {
+function EditPage({ source: initialDocument }) {
   const [doc, setDoc] = React.useState(initialDocument);
   const [showEditor, setShowEditor] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
-  const { content } = useMarkdocCode(doc);
+  const { content, config } = useMarkdocCode(doc);
 
   React.useEffect(() => {
     if (showEditor) {
@@ -45,7 +46,9 @@ export function EditPage({ Component, initialDocument }) {
 
   return (
     <>
-      <Component markdoc={{ content }} />
+      {Markdoc.renderers.react(content.children, React, {
+        components: config.components
+      })}
       <section
         className="sandbox in-page"
         style={{
@@ -62,5 +65,18 @@ export function EditPage({ Component, initialDocument }) {
         <Editor code={doc} onChange={setDoc} />
       </section>
     </>
+  );
+}
+
+export function Document({ source, children }) {
+  /**
+   * Typically you would just render children here, but we are adding
+   * this extra branch in order to pop up the editor that reveals
+   * the source content for each document
+   */
+  return (
+    <main className="document">
+      {source ? <EditPage source={source} /> : children}
+    </main>
   );
 }

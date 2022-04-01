@@ -5,9 +5,7 @@ title: Markdoc is a powerful, flexible Markdown-based authoring framework
 {% section %}
 
 {% typewriter %}
-Markdoc is a powerful,  
-flexible Markdown-based
-authoring system.
+Markdoc is a powerful, flexible Markdown-based authoring system.
 {% /typewriter %}
 
 > From personal blogs to massive documentation sites,  
