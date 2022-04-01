@@ -3,6 +3,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
+import prettify from 'diffable-html';
 
 import * as schema from '../markdoc';
 
@@ -211,10 +212,8 @@ export function Sandbox({ height }) {
           )}
           {mode === 'html' && (
             <CodeMirror
-              value={Markdoc.render(
-                code,
-                { variables: config.variables },
-                'html'
+              value={prettify(
+                Markdoc.render(code, { variables: config.variables }, 'html')
               )}
               options={{ mode: 'xml', lineWrapping: true, readOnly: true }}
             />
