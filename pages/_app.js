@@ -161,9 +161,7 @@ export default function MyApp(props) {
       )}
       <div
         className="footer-bar"
-        style={{
-          borderTop: isDocs ? '1px solid var(--dark)' : undefined
-        }}
+        style={{ borderTop: isDocs ? '1px solid var(--dark)' : undefined }}
       >
         <footer>
           © {new Date().getFullYear()} Stripe
