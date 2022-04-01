@@ -147,7 +147,10 @@ export default function MyApp(props) {
         {isDocs ? <SideNav /> : null}
         <div
           className="flex column"
-          style={{ flexGrow: 1, padding: isDocs ? '2rem 4rem 4rem' : null }}
+          style={{
+            flexGrow: 1,
+            padding: isDocs ? '2rem 4rem 4rem' : undefined
+          }}
         >
           <div id="skip-nav" />
           {children}
