@@ -90,15 +90,21 @@ export function Typewriter({ children: text }) {
         {state >= 2 && (
           <Swapper before="{% type %}" after="powerful," onEnd={next} />
         )}
-        {state >= 3 && <br />}
-        {state >= 3 && <Type text=" flexible Markdown-based " onEnd={next} />}
-        {state >= 4 && <br />}
+        {state >= 3 && (
+          <>
+            <br />
+            <Type text=" flexible Markdown-based " onEnd={next} />
+          </>
+        )}
         {state >= 4 && (
-          <Swapper
-            before="{% toolchain %}"
-            after="authoring system."
-            onEnd={setDone}
-          />
+          <>
+            <br />
+            <Swapper
+              before="{% toolchain %}"
+              after="authoring system."
+              onEnd={setDone}
+            />
+          </>
         )}
         <span style={{ position: 'relative', display: 'inline-block' }}>
           <div
