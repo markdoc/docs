@@ -143,6 +143,7 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
+      {/* Clean up this branch and inline `children` */}
       {isDocs ? (
         <div className="page">
           <SideNav />
