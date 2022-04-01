@@ -383,10 +383,6 @@ td {
   align-items: center;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .equal-width {
   flex: 1 1 0px;
   overflow: auto;
@@ -516,10 +512,11 @@ pre[class*='language-'] {
 }
 
 .document {
-  flex: 1 auto;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   max-width: 100%;
   min-width: 0;
-  padding: 2rem 4rem 4rem;
   overflow-x: auto;
 }
 

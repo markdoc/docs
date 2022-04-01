@@ -143,22 +143,17 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      {/* TODO clean up this branch and inline `children` */}
-      {isDocs ? (
-        <div className="page">
-          <SideNav />
-          <main className="document">
-            <div id="skip-nav" />
-            {children}
-          </main>
-          {toc ? <TableOfContents toc={toc} /> : null}
-        </div>
-      ) : (
-        <main className="page flex column">
+      <div className="page">
+        {isDocs ? <SideNav /> : null}
+        <div
+          className="flex column"
+          style={{ flexGrow: 1, padding: isDocs ? '2rem 4rem 4rem' : null }}
+        >
           <div id="skip-nav" />
           {children}
-        </main>
-      )}
+        </div>
+        {isDocs && toc ? <TableOfContents toc={toc} /> : null}
+      </div>
       <div
         className="footer-bar"
         style={{ borderTop: isDocs ? '1px solid var(--dark)' : undefined }}

@@ -10,9 +10,8 @@ export const document = {
   node: 'document',
   render(node, config) {
     return {
-      // TODO update this to main
-      name: 'div',
-      attributes: { class: 'flex column flex-grow', source: config.source },
+      name: 'main',
+      attributes: { class: 'document', source: config.source },
       children: node.renderChildren(config)
     };
   }
