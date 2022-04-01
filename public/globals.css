@@ -166,7 +166,6 @@ body.dark {
   --translucent: rgba(255, 255, 255, 0.4);
   --code-background: var(--gray-1);
 
-  /* color: var(--dark); */
   background: var(--light);
 }
 
@@ -639,7 +638,6 @@ footer a {
 }
 
 .page--landing pre[class*='language-'] {
-  /* color: var(--white) !important; */
   background: var(--black) !important;
 }
 
