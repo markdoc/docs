@@ -49,7 +49,7 @@ const items = [
   }
 ];
 
-export default function SideNav() {
+export function SideNav() {
   const router = useRouter();
 
   return (

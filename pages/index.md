@@ -1,11 +1,4 @@
-import React from 'react';
-import Markdoc from '@markdoc/markdoc';
-
-import { Editor, useMarkdocCode } from '../components/Sandbox';
-
-const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
-
-const initialDocument = `---
+---
 title: Markdoc is a powerful, flexible Markdown-based authoring framework
 ---
 
@@ -16,7 +9,7 @@ Markdoc is a powerful, flexible Markdown-based authoring system.
 {% /typewriter %}
 
 > From personal blogs to massive documentation sites,  
-Markdoc is a content authoring system that grows with you.
+> Markdoc is a content authoring system that grows with you.
 
 [Get started&nbsp;→](/docs/getting-started) {% .primary %}
 
@@ -64,24 +57,24 @@ Markdoc is a content authoring system that grows with you.
 
 {% /item %}
 
-\`\`\`bash
+```bash
 npm install @markdoc/markdoc
-\`\`\`
+```
 
-\`\`\`js
+```js
 import Markdoc from '@markdoc/markdoc';
 
-const document = \`
+const document = `
 # Hello world.
 > My first Markdoc page
-\`
+`;
 
 const ast = Markdoc.parse(document);
 
 const content = Markdoc.process(ast, config);
 
 return Markdoc.render(content);
-\`\`\`
+```
 
 {% /side-by-side %}
 
@@ -122,79 +115,3 @@ Stripe created Markdoc to power its largest and most complex content site. Since
 {% /features %}
 
 {% /section %}
-`;
-
-export default function Index() {
-  const ref = React.useRef();
-  const [doc, setDoc] = React.useState(initialDocument);
-  const [showEditor, setShowEditor] = React.useState(false);
-  const [keystrokes, setCount] = React.useState(0);
-
-  const { config, content } = useMarkdocCode(doc);
-
-  React.useEffect(() => {
-    if (showEditor) {
-      document.body.classList.add('modal-is-active');
-      ref.current.editor.focus();
-    } else {
-      document.body.classList.remove('modal-is-active');
-      document.activeElement.blur();
-    }
-  }, [showEditor]);
-
-  React.useEffect(() => {
-    function handler(e) {
-      if (e.key === 'j' && e.metaKey) {
-        setShowEditor((mode) => !mode);
-      } else if (e.key === 'Escape') {
-        setShowEditor(false);
-      } else if (e.key === PATTERN[keystrokes]) {
-        if (keystrokes + 1 === PATTERN.length) {
-          setShowEditor(true);
-        } else {
-          setCount((k) => k + 1);
-        }
-      } else {
-        setCount(0);
-      }
-    }
-
-    window.addEventListener('keydown', handler);
-    // Reset pattern after timeout
-    const timeout = setTimeout(() => setCount(0), 500);
-    return () => {
-      window.removeEventListener('keydown', handler);
-      clearTimeout(timeout);
-    };
-  }, [keystrokes]);
-
-  return (
-    <div className="full-width">
-      {Markdoc.renderers.react(content, React, {
-        components: config.components
-      })}
-      {/* TODO consider moving this to _app by exposing document content in pageProps */}
-      <section
-        className="sandbox in-page"
-        style={{
-          zIndex: 999,
-          top: 'var(--nav-height)',
-          left: 0,
-          position: 'fixed',
-          transition: 'transform 300ms ease',
-          width: '100%',
-          height: 'calc(100vh - var(--nav-height))',
-          transform: showEditor ? '' : 'translateY(100%)'
-        }}
-      >
-        <Editor innerRef={ref} code={doc} onChange={setDoc} />
-        <button
-          style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}
-          onClick={() => setShowEditor(false)}
-        >
-          <kbd style={{ color: 'var(--white)' }}>Esc</kbd>
-        </button>
-      </section>
-    </div>
-  );
-}

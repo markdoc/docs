@@ -2,12 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 
 import { AppLink as Link } from '../components/AppLink';
-import SideNav from '../components/SideNav';
-import TableOfContents from '../components/TableOfContents';
+import { SideNav } from '../components/SideNav';
+import { TableOfContents } from '../components/TableOfContents';
 import { ThemeToggle } from '../components/ThemeToggle';
 
 import 'codemirror/lib/codemirror.css';
-import 'prismjs';
 import 'prismjs/themes/prism.css';
 
 import '../public/globals.css';
@@ -131,26 +130,23 @@ export default function MyApp(props) {
           </ul>
         </nav>
       </div>
-      {isDocs ? (
-        <div className="page">
-          <SideNav />
-          <main className="document">
-            <div id="skip-nav" />
-            <Component {...pageProps} />
-          </main>
-          {toc ? <TableOfContents toc={toc} /> : null}
-        </div>
-      ) : (
-        <main className="page">
+      <div className="page">
+        {isDocs ? <SideNav /> : null}
+        <div
+          className="flex column"
+          style={{
+            flexGrow: 1,
+            padding: isDocs ? '2rem 4rem 4rem' : undefined
+          }}
+        >
           <div id="skip-nav" />
           <Component {...pageProps} />
-        </main>
-      )}
+        </div>
+        {isDocs && toc ? <TableOfContents toc={toc} /> : null}
+      </div>
       <div
         className="footer-bar"
-        style={{
-          borderTop: isDocs ? '1px solid var(--dark)' : undefined
-        }}
+        style={{ borderTop: isDocs ? '1px solid var(--dark)' : undefined }}
       >
         <footer>
           © {new Date().getFullYear()} Stripe

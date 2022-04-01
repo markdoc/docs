@@ -1,5 +1,6 @@
 export * from './Callout.markdoc.js';
 export * from './Code.markdoc.js';
+export * from './Document.markdoc.js';
 export * from './FancyHeading.markdoc.js';
 export * from './Features.markdoc.js';
 export * from './Heading.markdoc.js';

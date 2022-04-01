@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function TableOfContents({ toc }) {
+export function TableOfContents({ toc }) {
   const items = toc.filter(
     (item) =>
       item.id &&
