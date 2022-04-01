@@ -147,7 +147,8 @@ export function Sandbox({ height }) {
           ref.current.editor.markText(from, to, {
             className: 'syntax-error',
             attributes: {
-              'data-title': error.error.message
+              'data-title': error.error.message,
+              'aria-label': error.error.message
             }
           })
         );
