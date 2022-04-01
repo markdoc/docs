@@ -6,6 +6,7 @@ import { SideNav } from '../components/SideNav';
 import { TableOfContents } from '../components/TableOfContents';
 import { ThemeToggle } from '../components/ThemeToggle';
 
+import 'prismjs';
 import 'codemirror/lib/codemirror.css';
 import 'prismjs/themes/prism.css';
 
