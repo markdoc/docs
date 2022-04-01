@@ -100,18 +100,20 @@ export function Typewriter({ children: text }) {
             onEnd={setDone}
           />
         )}
-        <span
-          style={{
-            position: 'relative',
-            top: '+10px',
-            background: 'var(--theme)',
-            display: 'inline-block',
-            width: 8,
-            height: 72,
-            marginLeft: '0.75rem',
-            animation: done ? 'blink 1060ms step-end infinite' : undefined
-          }}
-        />
+        <span style={{ position: 'relative', display: 'inline-block' }}>
+          <div
+            style={{
+              position: 'absolute',
+              display: 'inline-block',
+              top: -64,
+              left: '0.75rem',
+              width: 8,
+              height: 72,
+              background: 'var(--theme)',
+              animation: done ? 'blink 1060ms step-end infinite' : undefined
+            }}
+          />
+        </span>
       </span>
     </h1>
   );
