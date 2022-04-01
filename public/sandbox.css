@@ -12,6 +12,7 @@
   width: 100%;
   cursor: text;
   height: 100%;
+  font-family: var(--mono);
 }
 
 .sandbox section:nth-child(1) .CodeMirror,
@@ -20,6 +21,7 @@
 .sandbox.in-page .react-codemirror2 {
   color: white;
   background: var(--contrast-dark);
+  font-size: 13px;
 }
 
 .sandbox section:nth-child(1) .CodeMirror {
