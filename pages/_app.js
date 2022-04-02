@@ -118,7 +118,7 @@ export default function MyApp(props) {
             </Link>
             <Link href="https://twitter.com/StripeDev">Twitter</Link>
             <span className="primary">
-              <Link href="/sandbox">Try →</Link>
+              <Link href="/sandbox">Try&nbsp;→</Link>
             </span>
           </ul>
         </nav>
