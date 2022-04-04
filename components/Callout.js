@@ -26,24 +26,37 @@ export function Callout({ title, children, type }) {
 
   return (
     <div className="callout">
-      <div
-        className="flex"
-        style={{
-          lineHeight: '20px',
-          padding: '12px 20px',
-          borderRadius: 'var(--radii-1)',
-          background:
-            'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, #FFFFFF, #FFFFFF)'
-        }}
-      >
-        <div className="flex" style={{ paddingRight: 8, alignItems: 'center' }}>
+      <div className="flex content">
+        <div className="flex icon">
           <Icon icon={icon} color={iconColor} />
         </div>
         <div className="flex column">
-          <span style={{ color: 'var(--dark)' }}>{title}</span>
+          <span className="title">{title}</span>
           <span>{children}</span>
         </div>
       </div>
+      <style jsx>
+        {`
+          .content {
+            line-height: 20px;
+            padding: 12px 20px;
+            border-radius: var(--radii-1);
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05)
+              ),
+              linear-gradient(0deg, #ffffff, #ffffff);
+          }
+          .icon {
+            padding-right: 8px;
+            align-items: center;
+          }
+          .title {
+            color: var(--dark);
+          }
+        `}
+      </style>
     </div>
   );
 }

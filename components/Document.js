@@ -49,27 +49,34 @@ function EditPage({ source: initialDocument }) {
       {Markdoc.renderers.react(content.children, React, {
         components: config.components
       })}
-      <section
-        className="sandbox in-page"
-        style={{
-          zIndex: 999,
-          top: 'var(--nav-height)',
-          left: 0,
-          position: 'fixed',
-          transition: 'transform 300ms ease',
-          width: '100%',
-          height: 'calc(100vh - var(--nav-height))',
-          transform: showEditor ? '' : 'translateY(100%)'
-        }}
-      >
+      <section className="sandbox in-page">
         <Editor code={doc} onChange={setDoc} />
-        <button
-          style={{ position: 'absolute', top: '1rem', right: '1.5rem' }}
-          onClick={() => setShowEditor(false)}
-        >
-          <kbd style={{ color: 'var(--white)' }}>CMD + J / Esc</kbd>
+        <button onClick={() => setShowEditor(false)}>
+          <kbd>CMD + J / Esc</kbd>
         </button>
       </section>
+      <style jsx>
+        {`
+          section {
+            position: fixed;
+            z-index: 999;
+            top: var(--nav-height);
+            left: 0;
+            transition: transform 300ms ease;
+            width: 100%;
+            height: calc(100vh - var(--nav-height));
+            transform: ${showEditor ? '' : 'translateY(100%)'};
+          }
+          button {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+          }
+          kbd {
+            color: var(--white);
+          }
+        `}
+      </style>
     </>
   );
 }

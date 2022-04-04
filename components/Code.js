@@ -55,7 +55,7 @@ export function Code({ children, language }) {
     typeof children === 'string' ? children.split('\n').filter(Boolean) : [];
 
   return (
-    <div className="code" aria-live="polite" style={{ position: 'relative' }}>
+    <div className="code" aria-live="polite">
       <PrismCode
         /**
          * HACK: prevent "Uncaught DOMException" when typing
@@ -73,23 +73,28 @@ export function Code({ children, language }) {
       >
         {children}
       </PrismCode>
-      <button
-        style={{
-          appearance: 'none',
-          position: 'absolute',
-          color: 'inherit',
-          background: 'var(--code-background)',
-          top: 0,
-          right: 0,
-          padding: `${lines.length === 1 ? '17px' : '12px'} 12px 0 0`,
-          border: 'none',
-          fontSize: '20px'
-        }}
-        onClick={() => setCopied(true)}
-      >
+      <button onClick={() => setCopied(true)}>
         <title>{copied ? 'Copied' : 'Copy'}</title>
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
+      <style jsx>
+        {`
+          .code {
+            position: relative;
+          }
+          .code button {
+            appearance: none;
+            position: absolute;
+            color: inherit;
+            background: var(--code-background);
+            top: 0;
+            right: 0;
+            padding: ${lines.length === 1 ? '17px' : '12px'} 12px 0 0;
+            border: none;
+            font-size: 20px;
+          }
+        `}
+      </style>
     </div>
   );
 }
