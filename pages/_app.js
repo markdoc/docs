@@ -66,11 +66,12 @@ export default function MyApp(props) {
     : [];
 
   const isDocs = props.router.asPath.startsWith('/docs');
+  const isLandingPage = props.router.pathname === '/';
 
   React.useEffect(() => console.log(MARKDOC), []);
 
   return (
-    <div className={`${props.router.pathname === '/' ? 'page--landing' : ''}`}>
+    <div className={`${isLandingPage ? 'page--landing' : ''}`}>
       <Head>
         <title>{title}</title>
         <meta name="referrer" content="strict-origin" />
@@ -157,6 +158,7 @@ export default function MyApp(props) {
             flex-grow: 1;
             padding-top: var(--nav-height);
             min-height: 100vh;
+            ${isLandingPage ? 'border-bottom: none;' : ''}
           }
 
           .skip-nav {
@@ -200,6 +202,7 @@ export default function MyApp(props) {
             justify-content: space-between;
             padding: 0.5rem 0;
             box-shadow: 0 1px 0 0 var(--dark);
+            ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
           }
 
           .nav-bar nav ul {
@@ -223,6 +226,7 @@ export default function MyApp(props) {
           .footer-bar {
             margin: 0 auto;
             ${isDocs ? 'border-top: 1px solid var(--dark);' : ''}
+            ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
           }
 
           footer {
@@ -231,7 +235,7 @@ export default function MyApp(props) {
             z-index: 100;
             width: 100%;
             color: var(--dark);
-            padding: 1rem 2rem;
+            padding: ${isLandingPage ? '3.5rem 0' : '1rem 2rem'};
           }
 
           footer :global(a) {
@@ -240,14 +244,6 @@ export default function MyApp(props) {
 
           /* TODO incorporate these styles above */
           /* Landing page overrides */
-          .page--landing .page {
-            border-bottom: none;
-          }
-
-          .page--landing .nav-bar nav {
-            max-width: var(--landing-page-max-width);
-          }
-
           .page--landing :global(pre[class*='language-']) {
             background: var(--black) !important;
           }
@@ -331,14 +327,6 @@ export default function MyApp(props) {
           .page--landing :global(table td::before) {
             bottom: -5px;
             right: -5px;
-          }
-
-          .page--landing :global(.footer-bar) {
-            max-width: var(--landing-page-max-width);
-          }
-
-          .page--landing :global(footer) {
-            padding: 3.5rem 0;
           }
         `}
       </style>

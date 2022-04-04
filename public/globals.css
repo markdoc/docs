@@ -140,7 +140,7 @@ body.dark {
 }
 
 /* TODO consolidate this under .dark */
-body.dark,
+.dark,
 .page--landing pre[class*='language-'],
 .sandbox {
   --text: var(--white);
