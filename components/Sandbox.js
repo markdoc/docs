@@ -134,27 +134,34 @@ export function Sandbox({ height }) {
   React.useEffect(() => {
     if (errors.length) {
       const markers = [];
+      const editor = ref.current?.editor;
 
-      errors.forEach((error) => {
-        const from = {
-          line: error.location.start.line - 1,
-          ch: error.location.start.character
-        };
-        const to = {
-          line: error.location.end.line - 1,
-          ch: error.location.end.character
-        };
+      if (editor) {
+        errors.forEach((error) => {
+          try {
+            const from = {
+              line: error.location?.start.line - 1,
+              ch: error.location?.start.character
+            };
+            const to = {
+              line: error.location?.end.line - 1,
+              ch: error.location?.end.character
+            };
 
-        markers.push(
-          ref.current.editor.markText(from, to, {
-            className: 'syntax-error',
-            attributes: {
-              'data-title': error.error.message,
-              'aria-label': error.error.message
-            }
-          })
-        );
-      });
+            markers.push(
+              editor.markText(from, to, {
+                className: 'syntax-error',
+                attributes: {
+                  'data-title': error.error.message,
+                  'aria-label': error.error.message
+                }
+              })
+            );
+          } catch (error) {
+            console.error(error);
+          }
+        });
+      }
 
       return () => markers.forEach((mark) => mark.clear());
     }
