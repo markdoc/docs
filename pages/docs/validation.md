@@ -19,9 +19,9 @@ Calling `validate` is in an optional step that you can use to validate your AST 
 {% markdoc-example %}
 
 ```js
-const document = `# Heading`;
+const doc = `# Heading`;
 
-const ast = Markdoc.parse(document);
+const ast = Markdoc.parse(doc);
 
 const errors = Markdoc.validate(ast, config);
 
@@ -35,9 +35,9 @@ If your document contains a syntax error, the output of `validate` might look li
 {% side-by-side %}
 
 ```js
-const document = `{% $invalid_code %}`;
+const doc = `{% $invalid_code %}`;
 
-const ast = Markdoc.parse(document);
+const ast = Markdoc.parse(doc);
 
 const errors = Markdoc.validate(ast, config);
 ```

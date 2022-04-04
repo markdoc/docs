@@ -64,12 +64,12 @@ npm install @markdoc/markdoc
 ```js
 import Markdoc from '@markdoc/markdoc';
 
-const document = `
+const doc = `
 # Hello world.
 > My first Markdoc page
 `;
 
-const ast = Markdoc.parse(document);
+const ast = Markdoc.parse(doc);
 
 const content = Markdoc.process(ast, config);
 

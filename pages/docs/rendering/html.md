@@ -12,13 +12,13 @@ First create a Markdoc render tree by calling `process`.
 {% markdoc-example %}
 
 ```js
-const document = `
+const doc = `
 # Getting started
 
 Run this command to install the Markdoc library:
 `;
 
-const content = Markdoc.process(document);
+const content = Markdoc.process(doc);
 ```
 
 {% /markdoc-example %}

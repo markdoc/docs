@@ -64,7 +64,7 @@ First, parse your document to get access to the frontmatter content
 {% markdoc-example %}
 
 ```js
-const document = `
+const doc = `
 ---
 title: My title
 ---
@@ -72,7 +72,7 @@ title: My title
 # {% $frontmatter.title %} 
 `;
 
-const ast = Markdoc.parse(document);
+const ast = Markdoc.parse(doc);
 ```
 
 {% /markdoc-example %}

@@ -29,11 +29,11 @@ const config = {
   }
 };
 
-const document = `
+const doc = `
 {% partial file="/partials/header.md" /%}
 `;
 
-const ast = Markdoc.parse(document);
+const ast = Markdoc.parse(doc);
 
 return Markdoc.process(ast, config);
 ```

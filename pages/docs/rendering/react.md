@@ -23,13 +23,13 @@ const tags = {
   }
 };
 
-const document = `
+const doc = `
 {% callout %}
 Attention, over here!
 {% /callout %}
 `;
 
-const content = Markdoc.process(document, { tags });
+const content = Markdoc.process(doc, { tags });
 ```
 
 {% /markdoc-example %}
