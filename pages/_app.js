@@ -27,18 +27,20 @@ const MARKDOC = `
 
 function collectHeadings(nodes, sections = []) {
   nodes.forEach((node) => {
-    if (node?.name === 'Heading') {
-      const title = node.children[0];
+    if (node) {
+      if (node.name === 'Heading') {
+        const title = node.children[0];
 
-      if (typeof title === 'string') {
-        sections.push({
-          ...node.attributes,
-          title
-        });
+        if (typeof title === 'string') {
+          sections.push({
+            ...node.attributes,
+            title
+          });
+        }
       }
-    }
-    if (node.children) {
-      collectHeadings(node.children, sections);
+      if (node.children) {
+        collectHeadings(node.children, sections);
+      }
     }
   });
 
