@@ -10,7 +10,7 @@ export function AppLink(props) {
       <a
         target={target}
         rel={target === '_blank' ? 'noreferrer' : undefined}
-        style={props.style}
+        className={props.className}
       >
         {props.children}
       </a>

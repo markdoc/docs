@@ -43,7 +43,7 @@ const svgs = {
         }}
       />
       <svg
-        style={{ ...svgStyle, position: 'relative', zIndex: 10 }}
+        style={svgStyle}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
       >

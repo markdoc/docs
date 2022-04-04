@@ -84,7 +84,7 @@ export default function MyApp(props) {
       </a>
       <div className="nav-bar">
         <nav>
-          <Link href="/" style={{ display: 'flex' }}>
+          <Link href="/" className="flex">
             <svg
               width="112"
               height="37"
