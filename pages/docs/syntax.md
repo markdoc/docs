@@ -146,6 +146,8 @@ Pass attributes to tags to customize their behavior. Accepted values include: `n
 
 {% /markdoc-example %}
 
+All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.
+
 \
 For more information, check out the [Attributes docs](/docs/attributes).
 

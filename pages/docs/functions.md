@@ -115,13 +115,14 @@ Markdoc comes out-of-the-box with 6 built-in functions: `equals`, `and`, `or`, `
 - `debug`
 - `string`
 - `debug($anyVariable)`
-- Serializes the value as JSON, for debugging.
+- Serializes the value as JSON, for debugging
 
 {% /table %}
 
 ### And/Or/Not
 
-Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content content when the condition is met.
+Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content content when the condition is met.  
+Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
 
 {% markdoc-example %}
 

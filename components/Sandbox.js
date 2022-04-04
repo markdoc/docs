@@ -49,7 +49,16 @@ export function useMarkdocCode(code) {
         },
         invalid_code: `\n{% callout %}\nHere!\n`
       },
-      components
+      components,
+      functions: {
+        upper: {
+          render(parameters) {
+            const string = parameters['0'];
+
+            return typeof string === 'string' ? string.toUpperCase() : string;
+          }
+        }
+      }
     };
   }, [ast]);
 
