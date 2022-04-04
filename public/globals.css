@@ -377,7 +377,7 @@ td {
 
 /* Syntax highlighting */
 pre[class*='language-'] {
-  text-shadow: none;
+  text-shadow: none !important;
   color: var(--text) !important;
   background: var(--code-background) !important;
   margin: 0 0 var(--default-vertical-spacing);
