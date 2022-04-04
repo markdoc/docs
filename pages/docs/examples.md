@@ -76,17 +76,18 @@ Markdoc.renderers.react(content, React, {
 ```js
 function collectHeadings(nodes, sections = []) {
   nodes.forEach((node) => {
-    // Match all h1, h2, h3… tags
-    if (node.name.match(/h\d/)) {
-      const title = node.children[0];
+    if (node) {
+      // Match all h1, h2, h3… tags
+      if (node.name.match(/h\d/)) {
+        const title = node.children[0];
 
-      if (typeof title === 'string') {
-        sections.push({
-          ...node.attributes,
-          title
-        });
+        if (typeof title === 'string') {
+          sections.push({
+            ...node.attributes,
+            title
+          });
+        }
       }
-
       if (node.children) {
         collectHeadings(node.children, sections);
       }
