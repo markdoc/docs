@@ -601,31 +601,6 @@ footer a {
   margin: 0;
 }
 
-/* SideNav and TableOfContents */
-.sidenav li a:hover,
-.sidenav li.active > a,
-.toc li a:hover,
-.toc li.active > a {
-  text-decoration: underline;
-}
-
-.sidenav li,
-.toc li {
-  list-style-type: none;
-  margin: 0 0 1rem 1.5rem;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.sidenav li a,
-.toc li a {
-  color: var(--text);
-}
-
-.toc li.padded {
-  padding-left: 1rem;
-}
-
 /* ---------------------------- */
 
 /* Landing page overrides */

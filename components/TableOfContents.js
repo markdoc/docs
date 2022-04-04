@@ -9,27 +9,9 @@ export function TableOfContents({ toc }) {
       item.title !== 'Next steps'
   );
   return (
-    <nav
-      className="toc"
-      style={{
-        position: 'sticky',
-        top: '96px',
-        maxHeight: 'calc(100vh - var(--nav-height))',
-        flex: '0 0 240px',
-        alignSelf: 'flex-start',
-        margin: '2rem 0 0 1rem',
-        padding: '0.25rem 0 0',
-        borderLeft: '1px solid var(--gray-2)'
-      }}
-    >
+    <nav className="toc">
       {items.length > 1 ? (
-        <ul
-          className="flex column"
-          style={{
-            margin: 0,
-            padding: 0
-          }}
-        >
+        <ul className="flex column">
           {items.map((item) => {
             const href = `#${item.id}`;
             const active =
@@ -52,6 +34,40 @@ export function TableOfContents({ toc }) {
           })}
         </ul>
       ) : null}
+      <style jsx>
+        {`
+          nav {
+            position: sticky;
+            top: 96px;
+            max-height: calc(100vh - var(--nav-height));
+            flex: 0 0 240px;
+            align-self: flex-start;
+            margin: 2rem 0 0 1rem;
+            padding: 0.25rem 0 0;
+            border-left: 1px solid var(--gray-2);
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+          }
+          li {
+            list-style-type: none;
+            margin: 0 0 1rem 1.5rem;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          li a {
+            text-decoration: none;
+          }
+          li a:hover,
+          li.active a {
+            text-decoration: underline;
+          }
+          li.padded {
+            padding-left: 1rem;
+          }
+        `}
+      </style>
     </nav>
   );
 }

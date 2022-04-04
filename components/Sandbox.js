@@ -116,8 +116,6 @@ export function Editor(props) {
   return mounted ? <EditorInternal {...props} /> : null;
 }
 
-const activeBtn = { background: 'rgba(255, 255, 255, 0.84)' };
-
 export function Sandbox({ height }) {
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
@@ -177,7 +175,7 @@ export function Sandbox({ height }) {
   }, [errors]);
 
   return (
-    <div className="sandbox" style={{ height }}>
+    <div className="sandbox">
       <nav>
         <button
           onClick={() => {
@@ -189,25 +187,25 @@ export function Sandbox({ height }) {
         </button>
         <div className="btn-group">
           <button
-            style={mode === 'preview' ? activeBtn : undefined}
+            className={mode === 'preview' ? 'active' : undefined}
             onClick={() => setMode('preview')}
           >
             Preview
           </button>
           <button
-            style={mode === 'html' ? activeBtn : undefined}
+            className={mode === 'html' ? 'active' : undefined}
             onClick={() => setMode('html')}
           >
             HTML
           </button>
           <button
-            style={mode === 'process' ? activeBtn : undefined}
+            className={mode === 'process' ? 'active' : undefined}
             onClick={() => setMode('process')}
           >
             Render tree
           </button>
           <button
-            style={mode === 'ast' ? activeBtn : undefined}
+            className={mode === 'ast' ? 'active' : undefined}
             onClick={() => setMode('ast')}
           >
             AST
@@ -256,6 +254,17 @@ export function Sandbox({ height }) {
           )}
         </section>
       </div>
+      <style jsx>
+        {`
+          .sandbox {
+            height: ${height};
+          }
+
+          button.active {
+            background: rgba(255, 255, 255, 0.84);
+          }
+        `}
+      </style>
     </div>
   );
 }
