@@ -141,7 +141,8 @@ body.dark {
 
 /* TODO consolidate this under .dark */
 body.dark,
-.page--landing pre[class*='language-'] {
+.page--landing pre[class*='language-'],
+.sandbox {
   --text: var(--white);
   --yellow: #f1ea51;
   --green: #86fba6;
@@ -396,8 +397,7 @@ pre .token.number {
 }
 
 pre .token.function,
-pre .token.tagType,
-.sandbox span.cm-tag {
+pre .token.tagType {
   color: var(--blue) !important;
 }
 
@@ -408,6 +408,11 @@ pre .token.keyword,
 
 pre .token.variable {
   color: var(--magenta) !important;
+}
+
+.sandbox span.cm-keyword,
+.sandbox span.cm-tag {
+  color: var(--blue);
 }
 
 .sandbox span.cm-string {
