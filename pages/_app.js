@@ -11,7 +11,6 @@ import 'codemirror/lib/codemirror.css';
 import 'prismjs/themes/prism.css';
 
 import '../public/globals.css';
-import '../public/sandbox.css';
 
 const MARKDOC = `
 

@@ -47,15 +47,18 @@
   --contrast-gray: #f6f9fc;
   --translucent: rgba(0, 0, 0, 0.4);
   --code-background: var(--gray-3);
+  --gray-1: #2c2c30;
+  --gray-2: #e3e8ee;
+  --gray-3: #f6f9fc;
+}
 
+:root,
+.light {
   --yellow: #aa7d12;
   --green: #0a993e;
   --orange: #c78100;
   --blue: #0293bf;
   --magenta: #c954c9;
-  --gray-1: #2c2c30;
-  --gray-2: #e3e8ee;
-  --gray-3: #f6f9fc;
 }
 
 @font-face {
@@ -340,6 +343,32 @@ td {
   padding: 16px 16px;
   border: 1px solid var(--dark);
   background-clip: padding-box;
+}
+
+.CodeMirror,
+.react-codemirror2 {
+  width: 100%;
+  cursor: text;
+  height: 100%;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.CodeMirror-selected {
+  background: var(--theme);
+}
+
+.CodeMirror-gutters {
+  background-color: var(--contrast-dark);
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.CodeMirror-linenumber {
+  color: var(--contrast-dark);
+}
+
+.CodeMirror-cursor {
+  border-color: var(--theme);
 }
 
 /* Helper classes */

@@ -49,7 +49,7 @@ function EditPage({ source: initialDocument }) {
       {Markdoc.renderers.react(content.children, React, {
         components: config.components
       })}
-      <section className="sandbox in-page">
+      <section className="sandbox">
         <Editor code={doc} onChange={setDoc} />
         <button onClick={() => setShowEditor(false)}>
           <kbd>CMD + J / Esc</kbd>
@@ -66,6 +66,14 @@ function EditPage({ source: initialDocument }) {
             width: 100%;
             height: calc(100vh - var(--nav-height));
             transform: ${showEditor ? '' : 'translateY(100%)'};
+          }
+          section :global(.CodeMirror),
+          section :global(.react-codemirror2) {
+            color: white;
+            background: var(--contrast-dark);
+          }
+          section :global(.CodeMirror-linenumber) {
+            color: var(--white);
           }
           button {
             position: absolute;

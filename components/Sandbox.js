@@ -213,10 +213,10 @@ export function Sandbox({ height }) {
         </div>
       </nav>
       <div className="flex container">
-        <section>
+        <section className="left">
           <Editor innerRef={ref} code={code} onChange={setCode} />
         </section>
-        <section>
+        <section className="right light">
           {mode === 'preview' && (
             <div className="preview">
               {Markdoc.render(code, config, 'react', React, {
@@ -257,11 +257,132 @@ export function Sandbox({ height }) {
       <style jsx>
         {`
           .sandbox {
+            width: 100%;
             height: ${height};
+            display: flex;
+            flex-direction: column;
+            flex-flow: column;
+            flex-grow: 1;
+            border: 1px solid var(--black);
+          }
+
+          nav {
+            display: flex;
+            flex: 0 1 auto;
+            padding: 0.5rem 2rem 0.5rem 30px;
+            background: var(--contrast-dark);
+          }
+
+          button {
+            cursor: pointer;
+            background: var(--white);
+            border: 1px solid var(--contrast-dark);
+            padding: 0.25rem 0.5rem;
+            margin-right: 1px;
           }
 
           button.active {
             background: rgba(255, 255, 255, 0.84);
+          }
+
+          .btn-group {
+            margin-left: auto;
+          }
+
+          .btn-group:after {
+            content: '';
+            clear: both;
+            display: table;
+          }
+
+          .btn-group button:not(:last-child) {
+            border-right: none;
+          }
+
+          .container {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+          }
+
+          section {
+            overflow: scroll;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+          }
+
+          .preview {
+            color: var(--black);
+            height: 100%;
+            padding: 0 2rem 2rem;
+          }
+
+          .left :global(.CodeMirror),
+          .left :global(.react-codemirror2) {
+            color: white;
+            background: var(--contrast-dark);
+          }
+
+          .left :global(.CodeMirror) {
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+          }
+
+          .right {
+            background: var(--white);
+          }
+
+          .sandbox :global(.syntax-error) {
+            text-decoration: red wavy underline;
+            text-decoration-skip-ink: none;
+          }
+
+          /* Tooltip */
+          .sandbox :global(.syntax-error::before) {
+            content: attr(data-title);
+            position: absolute;
+            display: none;
+            color: var(--black);
+            background: var(--white);
+            bottom: 20px;
+            padding: 1px 4px;
+            border-radius: 4px;
+            z-index: 999;
+          }
+
+          /* Tooltip triangle */
+          .sandbox :global(.syntax-error::after) {
+            content: '';
+            position: absolute;
+            display: none;
+            bottom: 12px;
+            left: 12px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: var(--white) transparent transparent transparent;
+          }
+
+          .sandbox :global(.syntax-error:hover::before),
+          .sandbox :global(.syntax-error:hover::after) {
+            display: inline-block;
+          }
+
+          .sandbox .preview :global(h2) {
+            margin-top: 1rem;
+          }
+
+          .sandbox .preview :global(h3) {
+            margin-top: 0.75rem;
+          }
+
+          .sandbox .preview :global(p) {
+            font-size: 13px;
+            line-height: var(--line-height-3);
+          }
+
+          .sandbox .preview :global(.callout p) {
+            line-height: 20px;
           }
         `}
       </style>
