@@ -16,10 +16,14 @@ export function SideBySide({ children }) {
           .left {
             padding-top: 0.75rem;
             padding-right: 3rem;
+            border-right: 1px solid var(--dark);
           }
           .right {
             padding-top: 0.75rem;
             padding-left: 3rem;
+          }
+          .side-by-side :global(.heading) {
+            margin: 0;
           }
         `}
       </style>

@@ -55,6 +55,9 @@ export function Callout({ title, children, type }) {
           .title {
             color: var(--dark);
           }
+          .callout :global(p:first-of-type) {
+            padding: 0;
+          }
         `}
       </style>
     </div>

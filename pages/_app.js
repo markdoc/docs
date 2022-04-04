@@ -151,8 +151,194 @@ export default function MyApp(props) {
             flex-grow: 1;
             ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
           }
+
+          .page {
+            display: flex;
+            flex-grow: 1;
+            padding-top: var(--nav-height);
+            min-height: 100vh;
+          }
+
+          .skip-nav {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            position: absolute;
+          }
+
+          .skip-nav:focus {
+            padding: 1rem;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: var(--white);
+            z-index: 1000;
+            width: auto;
+            height: auto;
+            clip: auto;
+          }
+
+          .nav-bar {
+            top: 0;
+            position: fixed;
+            z-index: 100;
+            display: flex;
+            width: 100%;
+            padding: 0 2rem;
+            background: var(--light);
+          }
+
+          .nav-bar nav {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            box-shadow: 0 1px 0 0 var(--dark);
+          }
+
+          .nav-bar nav ul {
+            display: flex;
+            padding: 0;
+          }
+
+          .nav-bar nav ul :global(a) {
+            margin-left: 1.5rem;
+          }
+
+          main :global(article) {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            max-width: 100%;
+            min-width: 0;
+            overflow-x: auto;
+          }
+
           .footer-bar {
+            margin: 0 auto;
             ${isDocs ? 'border-top: 1px solid var(--dark);' : ''}
+          }
+
+          footer {
+            position: relative;
+            display: flex;
+            z-index: 100;
+            width: 100%;
+            color: var(--dark);
+            padding: 1rem 2rem;
+          }
+
+          footer :global(a) {
+            margin-left: 1.5rem;
+          }
+
+          /* TODO incorporate these styles above */
+          /* Landing page overrides */
+          .page--landing .page {
+            border-bottom: none;
+          }
+
+          .page--landing .nav-bar nav {
+            max-width: var(--landing-page-max-width);
+          }
+
+          .page--landing :global(pre[class*='language-']) {
+            background: var(--black) !important;
+          }
+
+          .page--landing :global(.side-by-side .left) {
+            border-right: none;
+          }
+
+          .page--landing :global(.code button) {
+            display: none;
+          }
+
+          .page--landing :global(table) {
+            table-layout: fixed;
+            width: 100%;
+          }
+
+          .page--landing :global(tbody) {
+            /* border: 1px solid #151517; */
+            border-radius: 0;
+            border-style: initial;
+            box-shadow: none;
+          }
+
+          .page--landing :global(table) {
+            position: relative;
+          }
+
+          .page--landing :global(table td) {
+            position: relative;
+            border-width: 1px;
+            border-color: var(--dark);
+            border-style: dashed solid;
+            background: var(--light);
+            border-radius: 0;
+            padding: 0.75rem 1.5rem 1.5rem;
+            /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
+            background-clip: padding-box;
+          }
+
+          .page--landing :global(table td strong) {
+            font-family: var(--decoration);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+
+          .page--landing :global(table td p) {
+            font-size: var(--font-size-3);
+            line-height: var(--line-height-3);
+          }
+
+          .page--landing :global(table::after),
+          .page--landing :global(table::before),
+          .page--landing :global(table td::after),
+          .page--landing :global(table td::before) {
+            position: absolute;
+            content: '';
+            background: var(--light);
+            width: 10px;
+            height: 10px;
+          }
+
+          .page--landing :global(table::after) {
+            top: -5px;
+            right: -5px;
+          }
+
+          .page--landing :global(table::before) {
+            bottom: -5px;
+            left: -5px;
+          }
+
+          .page--landing :global(table td::after) {
+            top: -5px;
+            left: -5px;
+          }
+
+          .page--landing :global(table td::before) {
+            bottom: -5px;
+            right: -5px;
+          }
+
+          .page--landing :global(.footer-bar) {
+            max-width: var(--landing-page-max-width);
+          }
+
+          .page--landing :global(footer) {
+            padding: 3.5rem 0;
           }
         `}
       </style>
