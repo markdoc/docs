@@ -1,10 +1,5 @@
 import React from 'react';
 
-const style = {
-  fontSize: '12px',
-  lineHeight: '20px'
-};
-
 export function ThemeToggle() {
   const [theme, setTheme] = React.useState(undefined);
 
@@ -38,30 +33,35 @@ export function ThemeToggle() {
   }, [theme]);
 
   return (
-    <div style={{ marginLeft: 'auto' }}>
-      <button
-        style={{
-          ...style,
-          background: 'var(--contrast-dark)',
-          color: 'var(--white)',
-          border: '1px solid var(--white)',
-          borderRight: 'none'
-        }}
-        onClick={() => setPreferredTheme('dark')}
-      >
+    <div className="theme-toggle">
+      <button className="dark" onClick={() => setPreferredTheme('dark')}>
         Dark mode
       </button>
-      <button
-        style={{
-          ...style,
-          background: 'var(--white)',
-          color: 'var(--black)',
-          border: '1px solid var(--black)'
-        }}
-        onClick={() => setPreferredTheme('light')}
-      >
+      <button className="light" onClick={() => setPreferredTheme('light')}>
         Light mode
       </button>
+      <style jsx>
+        {`
+          .theme-toggle {
+            margin-left: auto;
+          }
+          button {
+            font-size: 12px;
+            line-height: 20px;
+          }
+          .dark {
+            background: var(--contrast-dark);
+            color: var(--white);
+            border: 1px solid var(--white);
+            border-right: none;
+          }
+          .light {
+            background: var(--white);
+            color: var(--black);
+            border: 1px solid var(--black);
+          }
+        `}
+      </style>
     </div>
   );
 }

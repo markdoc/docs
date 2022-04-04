@@ -125,22 +125,13 @@ export default function MyApp(props) {
       </div>
       <div className="page">
         {isDocs ? <SideNav /> : null}
-        <main
-          className="flex column"
-          style={{
-            flexGrow: 1,
-            padding: isDocs ? '2rem 4rem 4rem' : undefined
-          }}
-        >
+        <main className="flex column">
           <div id="skip-nav" />
           <Component {...pageProps} />
         </main>
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>
-      <div
-        className="footer-bar"
-        style={{ borderTop: isDocs ? '1px solid var(--dark)' : undefined }}
-      >
+      <div className="footer-bar">
         <footer>
           © {new Date().getFullYear()} Stripe
           <div>
@@ -154,6 +145,17 @@ export default function MyApp(props) {
           <ThemeToggle />
         </footer>
       </div>
+      <style jsx>
+        {`
+          main {
+            flex-grow: 1;
+            ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
+          }
+          .footer-bar {
+            ${isDocs ? 'border-top: 1px solid var(--dark);' : ''}
+          }
+        `}
+      </style>
     </div>
   );
 }

@@ -9,23 +9,9 @@ function Swapper({ before, after, onEnd }) {
   const state = running ? 'running' : 'paused';
 
   return (
-    <span
-      style={{
-        display: 'inline-flex',
-        flexDirection: 'column',
-        height: 'var(--font-size-jumbo)',
-        overflowY: 'hidden'
-      }}
-    >
+    <span className="swapper">
       <div
-        style={{
-          color: 'var(--translucent)',
-          animation: [
-            `swap ${SWAP_DURATION}ms ease-out 0ms both ${state}`,
-            `fade ${SWAP_DURATION}ms linear 0ms reverse both ${state}`
-          ].join(', '),
-          userSelect: 'none'
-        }}
+        className="before"
         onAnimationEnd={() => {
           // Call onAnimationEnd once per lifecycle
           if (!ref.current && onEnd) {
@@ -36,18 +22,43 @@ function Swapper({ before, after, onEnd }) {
       >
         <Type text={before} onEnd={() => setRunning(true)} />
       </div>
-      {running && (
-        <div
-          style={{
-            animation: [
-              `swap ${SWAP_DURATION}ms ease-out 0ms both running`,
-              `fade ${SWAP_DURATION}ms linear 0ms normal both running`
-            ].join(', ')
-          }}
-        >
-          {after}
-        </div>
-      )}
+      {running && <div className="after">{after}</div>}
+      <style jsx>
+        {`
+          .swapper {
+            display: inline-flex;
+            flex-direction: column;
+            height: var(--font-size-jumbo);
+            overflow-y: hidden;
+          }
+          .before {
+            color: var(--translucent);
+            animation: swap ${SWAP_DURATION}ms ease-out 0ms both ${state},
+              fade ${SWAP_DURATION}ms linear 0ms reverse both ${state};
+            user-select: none;
+          }
+          .after {
+            animation: swap ${SWAP_DURATION}ms ease-out 0ms both running,
+              fade ${SWAP_DURATION}ms linear 0ms normal both running;
+          }
+          @keyframes swap {
+            from {
+              transform: translateY(0);
+            }
+            to {
+              transform: translateY(-100%);
+            }
+          }
+          @keyframes fade {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+        `}
+      </style>
     </span>
   );
 }
@@ -74,14 +85,7 @@ export function Typewriter({ children: text }) {
   const next = React.useCallback(() => setState((s) => s + 1), []);
 
   return (
-    <h1
-      className="jumbo"
-      style={{
-        // Prevent page jump
-        height: 280, // TODO fix on smaller screens
-        overflow: 'hidden'
-      }}
-    >
+    <h1 className="jumbo">
       <title>{text}</title>
       <span className="prefers-no-animation">{text}</span>
       <span aria-hidden="true" className="prefers-animation">
@@ -106,21 +110,43 @@ export function Typewriter({ children: text }) {
             />
           </>
         )}
-        <span style={{ position: 'relative', display: 'inline-block' }}>
-          <div
-            style={{
-              position: 'absolute',
-              display: 'inline-block',
-              top: -64,
-              left: '0.75rem',
-              width: 8,
-              height: 72,
-              background: 'var(--theme)',
-              animation: done ? 'blink 1060ms step-end infinite' : undefined
-            }}
-          />
+        <span className="cursor-container">
+          <div className="cursor" />
         </span>
       </span>
+      <style jsx>
+        {`
+          h1 {
+            // Prevent page jump
+            height: 280px; // TODO fix on smaller screens
+            overflow: hidden;
+          }
+          .cursor-container {
+            position: relative;
+            display: inline-block;
+          }
+          .cursor {
+            position: absolute;
+            display: inline-block;
+            top: -64px;
+            left: 0.75rem;
+            width: 8px;
+            height: 72px;
+            background: var(--theme);
+            ${done ? 'animation: blink 1060ms step-end infinite;' : ''}
+          }
+          /* The typewriter cursor effect */
+          @keyframes blink {
+            from,
+            to {
+              background-color: transparent;
+            }
+            50% {
+              background-color: var(--theme);
+            }
+          }
+        `}
+      </style>
     </h1>
   );
 }

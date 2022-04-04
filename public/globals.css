@@ -91,35 +91,6 @@
   }
 }
 
-/* The typewriter cursor effect */
-@keyframes blink {
-  from,
-  to {
-    background-color: transparent;
-  }
-  50% {
-    background-color: var(--theme);
-  }
-}
-
-@keyframes swap {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 *,
 *::before,
 *::after {
