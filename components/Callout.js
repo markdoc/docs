@@ -31,13 +31,14 @@ export function Callout({ title, children, type }) {
           <Icon icon={icon} color={iconColor} />
         </div>
         <div className="flex column">
-          <span className="title">{title}</span>
+          <strong>{title}</strong>
           <span>{children}</span>
         </div>
       </div>
       <style jsx>
         {`
           .content {
+            color: var(--black);
             line-height: 20px;
             padding: 12px 20px;
             border-radius: 4px;
@@ -51,9 +52,6 @@ export function Callout({ title, children, type }) {
           .icon {
             padding-right: 8px;
             align-items: center;
-          }
-          .title {
-            color: var(--dark);
           }
           .callout :global(p:first-of-type) {
             padding: 0;
