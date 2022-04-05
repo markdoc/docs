@@ -24,7 +24,7 @@
   --font-size-5: 24px;
   --font-size-6: 32px;
   --font-size-7: 48px;
-  --font-size-jumbo: 91px;
+  --font-size-jumbo: 79px;
 
   --line-height-1: 16px;
   --line-height-2: 20px;
@@ -33,6 +33,7 @@
   --line-height-5: 32px;
   --line-height-6: 40px;
   --line-height-7: 60px;
+  --line-height-jumbo: 91px;
 
   --white: #ffffff;
   --black: #18181b;
@@ -78,6 +79,13 @@
 @media screen and (max-width: 1200px) {
   :root {
     --landing-page-max-width: 90vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --font-size-jumbo: 38px;
+    --line-height-jumbo: 44px;
   }
 }
 
@@ -266,9 +274,9 @@ h5,
 
 h1.jumbo {
   font-family: var(--serif);
-  font-size: 79px;
+  font-size: var(--font-size-jumbo);
   font-weight: 400;
-  line-height: var(--font-size-jumbo);
+  line-height: var(--line-height-jumbo);
 }
 
 h2.jumbo {

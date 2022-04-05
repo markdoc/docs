@@ -28,7 +28,7 @@ function Swapper({ before, after, onEnd }) {
           .swapper {
             display: inline-flex;
             flex-direction: column;
-            height: var(--font-size-jumbo);
+            height: var(--line-height-jumbo);
             overflow-y: hidden;
           }
           .before {
@@ -131,7 +131,7 @@ export function Typewriter({ children: text }) {
             top: -64px;
             left: 0.75rem;
             width: 8px;
-            height: 72px;
+            height: calc(var(--font-size-jumbo) - 3px);
             background: var(--theme);
             ${done ? 'animation: blink 1060ms step-end infinite;' : ''}
           }

@@ -83,6 +83,11 @@ function EditPage({ source: initialDocument }) {
           kbd {
             color: var(--white);
           }
+          @media screen and (max-width: 800px) {
+            section {
+              display: none;
+            }
+          }
         `}
       </style>
     </>
