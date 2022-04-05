@@ -191,7 +191,6 @@ export default function MyApp(props) {
             z-index: 100;
             display: flex;
             width: 100%;
-            padding: 0 2rem;
             background: var(--light);
           }
 
@@ -328,6 +327,16 @@ export default function MyApp(props) {
           .page--landing :global(table td::before) {
             bottom: -5px;
             right: -5px;
+          }
+
+          @media screen and (max-width: 400px) {
+            /* TODO mobile nav */
+            .nav-bar nav ul {
+              display: none;
+            }
+            .footer-bar {
+              display: none;
+            }
           }
         `}
       </style>
