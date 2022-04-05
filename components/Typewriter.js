@@ -116,6 +116,9 @@ export function Typewriter({ children: text }) {
       </span>
       <style jsx>
         {`
+          .prefers-no-animation {
+            display: none;
+          }
           h1 {
             // Prevent page jump
             height: calc(
@@ -145,6 +148,14 @@ export function Typewriter({ children: text }) {
             }
             50% {
               background-color: var(--theme);
+            }
+          }
+          @media screen and (max-width: 400px) {
+            .prefers-animation {
+              display: none;
+            }
+            .prefers-no-animation {
+              display: inline;
             }
           }
         `}

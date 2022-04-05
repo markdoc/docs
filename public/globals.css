@@ -74,33 +74,6 @@
   src: url('/fonts/nib-regular-trial.otf');
 }
 
-@media screen and (max-width: 900px) {
-  :root {
-    --landing-page-max-width: 92vw;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  :root {
-    --landing-page-max-width: 90vw;
-    --font-size-jumbo: 38px;
-    --line-height-jumbo: 44px;
-  }
-}
-
-.prefers-no-animation {
-  display: none;
-}
-
-@media (prefers-reduced-motion) {
-  .prefers-animation {
-    display: none;
-  }
-  .prefers-no-animation {
-    display: initial;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -383,6 +356,10 @@ td {
   width: 100%;
 }
 
+.prefers-no-animation {
+  display: none;
+}
+
 /* Syntax highlighting */
 pre[class*='language-'] {
   text-shadow: none !important;
@@ -473,4 +450,30 @@ main .CodeMirror-linenumber {
 
 main .CodeMirror-cursor {
   border-color: var(--theme);
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --landing-page-max-width: 92vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --landing-page-max-width: 90vw;
+    --font-size-jumbo: 38px;
+    --line-height-jumbo: 44px;
+  }
+  p {
+    font-size: var(--font-size-3);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .prefers-animation {
+    display: none;
+  }
+  .prefers-no-animation {
+    display: initial;
+  }
 }
