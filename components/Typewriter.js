@@ -150,7 +150,7 @@ export function Typewriter({ children: text }) {
               background-color: var(--theme);
             }
           }
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: 420px) {
             .prefers-animation {
               display: none;
             }

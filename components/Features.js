@@ -41,7 +41,7 @@ export function Features({ children }) {
             text-decoration: underline;
           }
 
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: 420px) {
             .features :global(ul) {
               flex-direction: column;
             }

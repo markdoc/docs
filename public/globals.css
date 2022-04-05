@@ -454,7 +454,7 @@ main .CodeMirror-cursor {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   :root {
     --landing-page-max-width: 90vw;
     --font-size-jumbo: 38px;

@@ -336,7 +336,7 @@ export default function MyApp(props) {
             right: -5px;
           }
 
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: 420px) {
             /* TODO mobile nav */
             .nav-bar nav ul {
               display: none;
