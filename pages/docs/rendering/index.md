@@ -88,7 +88,7 @@ An example render tree might look like this:
 ];
 ```
 
-You can see a more complex render tree in the [developer playground](/sandbox?mode=process).
+You can see a more advanced render tree in the [developer playground](/sandbox?mode=process).
 
 ## Render
 

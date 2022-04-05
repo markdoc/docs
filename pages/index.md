@@ -37,7 +37,7 @@ Markdoc is a powerful, flexible Markdown-based authoring system.
 
 - **Polymorphic**
 
-  Markdoc can be used to create complex documentation experiences, static content sites, developer-tooling, and more.
+  Markdoc can be used to create interactive documentation experiences, static content sites, developer-tooling, and more.
 
 {% /table %}
 
@@ -84,7 +84,7 @@ return Markdoc.render(content);
 
 {% fancy-heading title="Built by Stripe" %}
 
-Stripe created Markdoc to power its largest and most complex content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of complex, custom documentation.
+Stripe created Markdoc to power its largest and most detailed content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
 
 {% /fancy-heading %}
 
