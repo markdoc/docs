@@ -11,7 +11,7 @@ export function SideBySide({ children }) {
           .side-by-side {
             padding: 0;
             margin-top: 1.5rem;
-            border-radius: var(--radii-1);
+            border-radius: 4px;
           }
           .left {
             padding-top: 0.75rem;

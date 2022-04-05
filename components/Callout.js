@@ -40,7 +40,7 @@ export function Callout({ title, children, type }) {
           .content {
             line-height: 20px;
             padding: 12px 20px;
-            border-radius: var(--radii-1);
+            border-radius: 4px;
             background: linear-gradient(
                 0deg,
                 rgba(0, 0, 0, 0.05),

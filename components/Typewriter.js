@@ -118,7 +118,9 @@ export function Typewriter({ children: text }) {
         {`
           h1 {
             // Prevent page jump
-            height: 280px; // TODO fix on smaller screens
+            height: calc(
+              var(--line-height-jumbo) * 3
+            ); // TODO fix on smaller screens
             overflow: hidden;
           }
           .cursor-container {
