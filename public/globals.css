@@ -280,12 +280,14 @@ code {
   font-weight: 500;
   padding: 1px 2px;
   background: var(--code-background);
-  border: 1px solid #e3e8ee;
-  border-radius: 4px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
 body.dark code {
   border-color: #505056;
+  border: 1px solid #4f4f54;
 }
 
 kbd {
