@@ -200,8 +200,8 @@ export default function MyApp(props) {
             margin: 0 auto;
             align-items: center;
             justify-content: space-between;
-            padding: 0.5rem 0;
             box-shadow: 0 1px 0 0 var(--dark);
+            padding: ${isLandingPage ? '0.5rem 0rem' : '0.5rem 2rem'};
             ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
           }
 
@@ -309,6 +309,13 @@ export default function MyApp(props) {
             height: 10px;
           }
 
+          .page--landing :global(table::after),
+          .page--landing :global(table::before),
+          .page--landing :global(table td::after),
+          .page--landing :global(table td::before) {
+            z-index: 99;
+          }
+
           .page--landing :global(table::after) {
             top: -5px;
             right: -5px;
@@ -336,6 +343,13 @@ export default function MyApp(props) {
             }
             .footer-bar {
               display: none;
+            }
+            .page--landing :global(table) {
+              margin: 0;
+            }
+            .page--landing :global(table tr) {
+              display: flex;
+              flex-direction: column;
             }
           }
         `}

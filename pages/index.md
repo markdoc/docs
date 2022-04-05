@@ -15,11 +15,15 @@ Markdoc is a powerful, flexible Markdown-based authoring system.
 
 {% /section %}
 
+{% item className="no-mobile" %}
+
 {% section %}
 
 {% sandbox height="600px" /%}
 
 {% /section %}
+
+{% /item %}
 
 {% section %}
 
@@ -80,6 +84,8 @@ return Markdoc.render(content);
 
 {% /section %}
 
+{% item className="no-mobile" %}
+
 {% section background="var(--contrast-gray)" %}
 
 {% fancy-heading title="Built by Stripe" %}
@@ -89,6 +95,8 @@ Stripe created Markdoc to power its largest and most detailed content site. Sinc
 {% /fancy-heading %}
 
 {% /section %}
+
+{% /item %}
 
 {% section background="var(--contrast-gray)" %}
 

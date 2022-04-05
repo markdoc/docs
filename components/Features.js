@@ -40,6 +40,15 @@ export function Features({ children }) {
           .features :global(li *:last-child a:hover) {
             text-decoration: underline;
           }
+
+          @media screen and (max-width: 400px) {
+            .features :global(ul) {
+              flex-direction: column;
+            }
+            .features :global(li) {
+              padding-bottom: 3rem;
+            }
+          }
         `}
       </style>
     </div>

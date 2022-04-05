@@ -25,6 +25,19 @@ export function SideBySide({ children }) {
           .side-by-side :global(.heading) {
             margin: 0;
           }
+
+          @media screen and (max-width: 400px) {
+            .side-by-side {
+              flex-direction: column;
+            }
+            .left {
+              padding: 0;
+            }
+            .right {
+              padding-top: 3rem;
+              padding-left: 0rem;
+            }
+          }
         `}
       </style>
     </div>

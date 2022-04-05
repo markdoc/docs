@@ -14,6 +14,11 @@ export function Section({ children, background }) {
             margin: 0 auto;
             max-width: var(--landing-page-max-width);
           }
+          @media screen and (max-width: 400px) {
+            div {
+              padding: 4rem 0;
+            }
+          }
         `}
       </style>
     </section>

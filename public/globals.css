@@ -273,10 +273,6 @@ li {
   margin: 0.25rem 0;
 }
 
-pre {
-  border-radius: 4px;
-}
-
 code {
   font-size: inherit;
   font-size: 15px;
@@ -464,8 +460,15 @@ main .CodeMirror-cursor {
     --font-size-jumbo: 38px;
     --line-height-jumbo: 44px;
   }
+  .no-mobile {
+    display: none;
+  }
   p {
     font-size: var(--font-size-3);
+  }
+  h2.jumbo {
+    font-size: 38px;
+    line-height: 44px;
   }
 }
 
