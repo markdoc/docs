@@ -9,13 +9,13 @@ description: How to get started with Markdoc
 
 First, install the Markdoc library:
 
-```bash
+```shell
 npm install @markdoc/markdoc
 ```
 
 or
 
-```
+```shell
 yarn add @markdoc/markdoc
 ```
 

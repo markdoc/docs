@@ -3,7 +3,7 @@
 ## Get started
 
 1. Start the development server:
-   ```bash
+   ```shell
    npm run dev
    # or
    yarn dev

@@ -61,7 +61,7 @@ Markdoc is a powerful, flexible Markdown-based authoring system.
 
 {% /item %}
 
-```bash
+```shell
 npm install @markdoc/markdoc
 ```
 
