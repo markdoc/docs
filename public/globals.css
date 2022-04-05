@@ -322,6 +322,15 @@ td {
   background-clip: padding-box;
 }
 
+article {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
 /* Helper classes */
 .relative {
   position: relative;
