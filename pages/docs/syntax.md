@@ -83,10 +83,26 @@ Content
 {% /markdoc-example %}
 
 Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
+
 {% markdoc-example %}
 
 ```
 {% image width=40 /%}
+```
+
+{% /markdoc-example %}
+
+If your tag does not contain any newlines, then it is treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
+
+{% markdoc-example %}
+
+```
+{% code %}
+
+{% highlight %}Inline tag 1{% /highlight %}
+{% highlight %}Inline tag 2{% /highlight %}
+
+{% /code %}
 ```
 
 {% /markdoc-example %}
