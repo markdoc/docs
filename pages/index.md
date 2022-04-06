@@ -11,7 +11,7 @@ Markdoc is a powerful, flexible Markdown-based authoring system.
 > From personal blogs to massive documentation sites,  
 > Markdoc is a content authoring system that grows with you.
 
-[Get started&nbsp;→](/docs/getting-started) {% .primary %}
+[View docs&nbsp;→](/docs/getting-started) {% .primary %}
 
 {% /section %}
 

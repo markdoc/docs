@@ -54,11 +54,10 @@
 
 :root,
 .light {
-  --yellow: #aa7d12;
+  --yellow: #6e00f5; /* TODO update this to use different var names */
   --green: #0a993e;
-  --orange: #c78100;
-  --blue: #0293bf;
-  --magenta: #c954c9;
+  --blue: #0073e6;
+  --magenta: #dc34dc;
 }
 
 @font-face {
@@ -130,9 +129,9 @@ body.dark {
 .sandbox {
   --text: var(--white);
   --yellow: #ffd848;
-  --green: #86fba6;
+  --green: #00d924;
   --blue: #80e9ff;
-  --magenta: #ff95e1;
+  --magenta: #ff80ff;
 }
 
 body.dark ::selection {
