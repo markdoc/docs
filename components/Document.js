@@ -19,6 +19,13 @@ function EditPage({ source: initialDocument }) {
   }, [showEditor]);
 
   React.useEffect(() => {
+    window.__toggle_editor__ = () => setShowEditor((o) => !o);
+    return () => {
+      delete window.__toggle_editor__;
+    };
+  }, []);
+
+  React.useEffect(() => {
     function handler(e) {
       if (e.key === 'j' && e.metaKey) {
         setShowEditor((mode) => !mode);

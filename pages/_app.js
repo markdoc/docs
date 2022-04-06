@@ -115,6 +115,18 @@ export default function MyApp(props) {
             </Link>
             <Link href="https://twitter.com/StripeDev">Twitter</Link>
           </div>
+          <span className="disclaimer">
+            This site was entirely{' '}
+            <button
+              onClick={() => {
+                if (window.__toggle_editor__) {
+                  window.__toggle_editor__();
+                }
+              }}
+            >
+              built using Markdoc
+            </button>
+          </span>
           <ThemeToggle />
         </footer>
       </div>
@@ -177,6 +189,23 @@ export default function MyApp(props) {
 
           footer :global(a) {
             margin-left: 1.5rem;
+          }
+
+          .disclaimer {
+            color: rgba(24, 24, 27, 0.5);
+            margin-left: auto;
+            margin-right: 1.5rem;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 27px;
+          }
+
+          .disclaimer button {
+            display: inline-block;
+            padding: 0;
+            color: inherit;
+            text-decoration: underline;
+            font-weight: regular;
           }
 
           /* TODO incorporate these styles above */

@@ -116,9 +116,6 @@ export function ThemeToggle() {
       </button>
       <style jsx>
         {`
-          .theme-toggle {
-            margin-left: auto;
-          }
           button {
             display: flex;
             align-items: center;
