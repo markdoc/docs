@@ -37,7 +37,7 @@
   --black: #18181b;
   --light: #ffffff;
   --dark: #18181b;
-  --theme: #f1ea51;
+  --theme: #ffd848;
 
   --text: var(--dark);
   --link: var(--dark);
@@ -49,6 +49,7 @@
   --gray-1: #2c2c30;
   --gray-2: #e3e8ee;
   --gray-3: #f6f9fc;
+  --gray-medium: #dce6e9;
 }
 
 :root,
@@ -128,7 +129,7 @@ body.dark {
 .page--landing pre[class*='language-'],
 .sandbox {
   --text: var(--white);
-  --yellow: #f1ea51;
+  --yellow: #ffd848;
   --green: #86fba6;
   --blue: #80e9ff;
   --magenta: #ff95e1;
@@ -261,6 +262,13 @@ h2.jumbo {
   padding-bottom: 1.5rem;
 }
 
+h3.jumbo {
+  font-family: var(--serif);
+  font-size: 43px;
+  font-weight: 400;
+  line-height: 49px;
+}
+
 blockquote {
   margin: 1rem 0;
 }
@@ -322,6 +330,18 @@ td {
   padding: 16px 16px;
   border: 1px solid var(--dark);
   background-clip: padding-box;
+}
+
+hr {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-image: linear-gradient(to right, var(--dark) 50%, transparent 0%);
+  background-position: bottom;
+  background-size: 4px 2px;
+  background-repeat: repeat-x;
 }
 
 article {

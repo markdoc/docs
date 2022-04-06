@@ -281,8 +281,9 @@ export function Sandbox({ height }) {
             margin-right: 1px;
           }
 
-          button.active {
-            background: rgba(255, 255, 255, 0.84);
+          button.active,
+          button:hover {
+            background: var(--gray-medium);
           }
 
           .btn-group {

@@ -42,11 +42,8 @@ export function Callout({ title, children, type }) {
             line-height: 20px;
             padding: 12px 20px;
             border-radius: 4px;
-            background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.05),
-                rgba(0, 0, 0, 0.05)
-              ),
+            border: 1px solid var(--gray-medium);
+            background: linear-gradient(0deg, var(--gray-3), var(--gray-3)),
               linear-gradient(0deg, #ffffff, #ffffff);
           }
           .icon {

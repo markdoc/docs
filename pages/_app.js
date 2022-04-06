@@ -92,7 +92,7 @@ export default function MyApp(props) {
           Community
         </Link>
         <Link href="https://twitter.com/StripeDev">Twitter</Link>
-        <span className="primary">
+        <span className="primary no-mobile">
           <Link href="/sandbox">Try&nbsp;→</Link>
         </span>
       </TopNav>
@@ -123,6 +123,10 @@ export default function MyApp(props) {
           main {
             flex-grow: 1;
             ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
+          }
+
+          main :global(hr) {
+            margin: 6rem 0 5rem;
           }
 
           .page {
