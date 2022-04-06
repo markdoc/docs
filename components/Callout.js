@@ -13,7 +13,7 @@ const TYPE_MAP = {
   },
   check: {
     icon: 'checkmark-circle',
-    iconColor: 'var(--theme)'
+    iconColor: 'var(--black)'
   },
   warning: {
     icon: 'warning',

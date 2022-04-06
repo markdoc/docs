@@ -275,15 +275,25 @@ export function Sandbox({ height }) {
 
           button {
             cursor: pointer;
-            background: var(--white);
+            color: var(--dark);
+            background: var(--white); /* TODO use --contrast-light here */
             border: 1px solid var(--contrast-dark);
             padding: 0.25rem 0.5rem;
             margin-right: 1px;
           }
 
+          :global(.dark) button {
+            background: var(--black);
+          }
+
           button.active,
           button:hover {
             background: var(--gray-medium);
+          }
+
+          :global(.dark) button.active,
+          :global(.dark) button:hover {
+            background: #58585f; /* TODO add to variables */
           }
 
           .btn-group {

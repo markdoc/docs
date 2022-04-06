@@ -41,11 +41,12 @@
 
   --text: var(--dark);
   --link: var(--dark);
-  --contrast-light: var(--theme);
+  --contrast-theme: var(--theme);
   --contrast-dark: var(--dark);
   --contrast-gray: #f6f9fc;
   --translucent: rgba(0, 0, 0, 0.4);
   --code-background: var(--gray-3);
+  /* TODO update these to match Figma */
   --gray-1: #2c2c30;
   --gray-2: #e3e8ee;
   --gray-3: #f6f9fc;
@@ -114,7 +115,7 @@ body.dark {
   --dark: var(--white);
   --text: var(--dark);
   --link: var(--dark);
-  --contrast-light: var(--gray-1);
+  --contrast-theme: var(--gray-1);
   --contrast-dark: var(--gray-1);
   --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
@@ -266,6 +267,7 @@ h3.jumbo {
   font-size: 43px;
   font-weight: 400;
   line-height: 49px;
+  max-width: 80%; /* TODO hack line-break */
 }
 
 blockquote {
@@ -313,7 +315,7 @@ tr:nth-child(2n) td {
 }
 
 body.dark tr:nth-child(2n) td {
-  background: var(--contrast-light);
+  background: var(--contrast-theme);
 }
 
 th {

@@ -28,7 +28,7 @@ const svgs = {
             left: 2px;
             z-index: 1;
             position: absolute;
-            background: var(--black);
+            background: var(--white);
             border-radius: 50%;
             width: 12px;
             height: 12px;
