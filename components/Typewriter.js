@@ -121,9 +121,7 @@ export function Typewriter({ children: text }) {
           }
           h1 {
             // Prevent page jump
-            height: calc(
-              var(--line-height-jumbo) * 3
-            ); // TODO fix on smaller screens
+            height: calc(var(--line-height-jumbo) * 3);
             overflow: hidden;
           }
           .cursor-container {
