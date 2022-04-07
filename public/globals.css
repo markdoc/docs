@@ -459,6 +459,24 @@ main .react-codemirror2 {
   font-size: 13px;
 }
 
+/* CodeMirror styles to apply to in page editor too */
+main .CodeMirror-gutters {
+  background-color: var(--contrast-dark);
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+main .CodeMirror-selected {
+  background: var(--theme);
+}
+
+main .CodeMirror-linenumber {
+  color: var(--contrast-dark);
+}
+
+main .CodeMirror-cursor {
+  border-color: var(--theme);
+}
+
 @media screen and (max-width: 900px) {
   :root {
     --landing-page-max-width: 92vw;

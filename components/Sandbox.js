@@ -359,23 +359,6 @@ export function Sandbox({ height }) {
             border-top: 1px solid rgba(255, 255, 255, 0.22);
           }
 
-          .sandbox :global(.CodeMirror-gutters) {
-            background-color: var(--contrast-dark);
-            border-right: 1px solid rgba(255, 255, 255, 0.22);
-          }
-
-          .sandbox :global(.CodeMirror-selected) {
-            background: var(--theme);
-          }
-
-          .sandbox :global(.CodeMirror-linenumber) {
-            color: var(--contrast-dark);
-          }
-
-          .sandbox :global(.CodeMirror-cursor) {
-            border-color: var(--theme);
-          }
-
           .sandbox :global(.syntax-error) {
             text-decoration: red wavy underline;
             text-decoration-skip-ink: none;
