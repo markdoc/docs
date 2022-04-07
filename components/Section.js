@@ -2,11 +2,12 @@ import * as React from 'react';
 
 export function Section({ children, background }) {
   return (
-    <section className="section full-width">
+    <section className="section">
       <div>{children}</div>
       <style jsx>
         {`
           section {
+            width: 100%;
             background: ${background || 'var(--light)'};
           }
           div {
