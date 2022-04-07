@@ -63,10 +63,8 @@
   --white: #ffffff;
   --black: #18181b;
   --black-light: #58585f;
-  /* TODO update these to match Figma */
-  --gray-1: #2c2c30;
-  --gray-2: #e3e8ee;
-  --gray-3: #f6f9fc;
+  --black-medium: #2c2c30;
+  --gray-light: #f6f9fc;
   --gray-medium: #dce6e9;
 
   --yellow: #6e00f5; /* TODO update this to use different var names */
@@ -83,9 +81,9 @@
 
   --contrast-theme: var(--theme);
   --contrast-dark: var(--dark);
-  --contrast-gray: var(--gray-3);
+  --contrast-gray: var(--gray-light);
   --translucent: rgba(0, 0, 0, 0.4);
-  --code-background: var(--gray-3);
+  --code-background: var(--gray-light);
 }
 
 .dark,
@@ -102,11 +100,11 @@
   --dark: var(--white);
   --text: var(--dark);
 
-  --contrast-theme: var(--gray-1);
-  --contrast-dark: var(--gray-1);
+  --contrast-theme: var(--black-medium);
+  --contrast-dark: var(--black-medium);
   --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
-  --code-background: var(--gray-1);
+  --code-background: var(--black-medium);
 }
 
 html,

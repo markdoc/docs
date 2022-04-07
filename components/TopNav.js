@@ -85,7 +85,7 @@ export function TopNav({ children }) {
             justify-content: center;
             width: 48px;
             height: 32px;
-            background: var(--gray-3);
+            background: var(--gray-light);
             border-radius: 30px;
           }
           .top-row {

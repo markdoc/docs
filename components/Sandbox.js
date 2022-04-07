@@ -286,7 +286,7 @@ export function Sandbox({ height }) {
           button {
             cursor: pointer;
             color: var(--white);
-            background: var(--gray-1);
+            background: var(--black-medium);
             border: 1px solid var(--black-light);
             padding: 0.25rem 0.5rem;
           }
@@ -343,7 +343,7 @@ export function Sandbox({ height }) {
           .right :global(.CodeMirror),
           .right :global(.react-codemirror2) {
             color: white;
-            background: var(--gray-1);
+            background: var(--black-medium);
           }
 
           .right :global(.CodeMirror) {

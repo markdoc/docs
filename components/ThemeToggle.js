@@ -136,7 +136,7 @@ export function ThemeToggle() {
             color: var(--white);
           }
           .light {
-            background: var(--gray-3);
+            background: var(--gray-light);
             color: var(--black);
           }
         `}
