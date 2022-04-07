@@ -216,7 +216,7 @@ export function Sandbox({ height }) {
         <section className="left">
           <Editor innerRef={ref} code={code} onChange={setCode} />
         </section>
-        <section className="right light">
+        <section className="right dark">
           {mode === 'preview' && (
             <div className="preview">
               {Markdoc.render(code, config, 'react', React, {
@@ -332,12 +332,40 @@ export function Sandbox({ height }) {
             background: var(--contrast-dark);
           }
 
-          .left :global(.CodeMirror) {
-            border-top: 1px solid rgba(255, 255, 255, 0.22);
+          .right :global(.CodeMirror),
+          .right :global(.react-codemirror2) {
+            color: white;
+            background: var(--gray-1);
+          }
+
+          .right :global(.CodeMirror) {
+            color: white;
+            border-left: 1px solid rgba(255, 255, 255, 0.22);
           }
 
           .right {
             background: var(--white);
+          }
+
+          .sandbox :global(.CodeMirror) {
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+          }
+
+          .sandbox :global(.CodeMirror-gutters) {
+            background-color: var(--contrast-dark);
+            border-right: 1px solid rgba(255, 255, 255, 0.22);
+          }
+
+          .sandbox :global(.CodeMirror-selected) {
+            background: var(--theme);
+          }
+
+          .sandbox :global(.CodeMirror-linenumber) {
+            color: var(--contrast-dark);
+          }
+
+          .sandbox :global(.CodeMirror-cursor) {
+            border-color: var(--theme);
           }
 
           .sandbox :global(.syntax-error) {

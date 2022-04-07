@@ -127,8 +127,7 @@ body.dark {
 
 /* TODO consolidate this under .dark */
 .dark,
-.page--landing pre[class*='language-'],
-.sandbox {
+.page--landing pre[class*='language-'] {
   --text: var(--white);
   --yellow: #ffd848;
   --green: #00d924;
@@ -457,23 +456,6 @@ main .react-codemirror2 {
   height: 100%;
   font-family: var(--mono);
   font-size: 13px;
-}
-
-main .CodeMirror-selected {
-  background: var(--theme);
-}
-
-main .CodeMirror-gutters {
-  background-color: var(--contrast-dark);
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-main .CodeMirror-linenumber {
-  color: var(--contrast-dark);
-}
-
-main .CodeMirror-cursor {
-  border-color: var(--theme);
 }
 
 @media screen and (max-width: 900px) {
