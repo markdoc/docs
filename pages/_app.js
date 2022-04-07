@@ -269,6 +269,8 @@ export default function MyApp(props) {
           /* TODO incorporate these styles above */
           /* Landing page overrides */
           .page--landing :global(pre[class*='language-']) {
+            border-radius: 0px;
+            border: none;
             background: var(--black) !important;
           }
 
