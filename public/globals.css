@@ -67,12 +67,13 @@
   --gray-light: #f6f9fc;
   --gray-medium: #dce6e9;
 
-  --yellow: #6e00f5; /* TODO update this to use different var names */
+  --yellow: #ffd848;
+  --purple: #6e00f5;
   --green: #0a993e;
   --blue: #0073e6;
   --magenta: #dc34dc;
 
-  --theme: #ffd848;
+  --theme: var(--yellow);
   --stripe: #0a2540;
 
   --light: var(--white);
@@ -90,7 +91,7 @@
 .dark,
 /* Landing page uses a custom pre w/ a black background and --dark mode colors */
 .page--landing pre[class*='language-'] {
-  --yellow: #ffd848;
+  --purple: var(--yellow); /* Change purple to yellow in dark mode */
   --green: #00d924;
   --blue: #80e9ff;
   --magenta: #ff80ff;
@@ -424,7 +425,7 @@ pre .token.tagType {
 
 pre .token.keyword,
 .cm-attribute {
-  color: var(--yellow) !important;
+  color: var(--purple) !important;
 }
 
 pre .token.variable {
@@ -442,7 +443,7 @@ pre .token.variable {
 
 .sandbox span.cm-number,
 .sandbox span.cm-atom {
-  color: var(--yellow);
+  color: var(--purple);
 }
 
 .sandbox span.cm-link,
