@@ -105,7 +105,7 @@ export function Typewriter({ children: text }) {
             <br />
             <Swapper
               before="{% toolchain %}"
-              after="authoring system."
+              after="authoring framework."
               onEnd={setDone}
             />
           </>
