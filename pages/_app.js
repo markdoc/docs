@@ -184,25 +184,11 @@ export default function MyApp(props) {
       </div>
       <style jsx>
         {`
-          main {
-            flex-grow: 1;
-            ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
-          }
-
-          main :global(hr) {
-            margin: 6rem 0 5rem;
-          }
-
-          main :global(h3.jumbo) {
-            max-width: 80%; /* put "Stripe documentation" on new line */
-          }
-
           .page {
             display: flex;
             flex-grow: 1;
             padding-top: var(--nav-height);
             min-height: 100vh;
-            ${isLandingPage ? 'border-bottom: none;' : ''}
           }
 
           .skip-nav {
@@ -226,6 +212,15 @@ export default function MyApp(props) {
             width: auto;
             height: auto;
             clip: auto;
+          }
+
+          main {
+            flex-grow: 1;
+            ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
+          }
+
+          main :global(h3.jumbo) {
+            max-width: 80%; /* put "Stripe documentation" on new line */
           }
 
           .footer-bar {
@@ -270,7 +265,6 @@ export default function MyApp(props) {
             color: var(--white);
           }
 
-          /* TODO incorporate these styles above */
           /* Landing page overrides */
           .page--landing :global(pre[class*='language-']) {
             border-radius: 0px;

@@ -347,7 +347,7 @@ tr:last-child td:last-child {
 }
 
 hr {
-  margin: 0 auto;
+  margin: 6rem auto 5rem;
   display: block;
   width: 100%;
   height: 2px;
