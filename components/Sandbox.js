@@ -275,21 +275,19 @@ export function Sandbox({ height }) {
 
           button {
             cursor: pointer;
-            color: var(--dark);
-            background: var(--light);
-            border: 1px solid var(--contrast-dark);
+            color: var(--white);
+            background: var(--gray-1);
+            border: 1px solid var(--black-light);
             padding: 0.25rem 0.5rem;
-            margin-right: 1px;
           }
 
           button.active,
           button:hover {
-            background: var(--gray-medium);
+            color: var(--theme);
           }
 
-          :global(.dark) button.active,
-          :global(.dark) button:hover {
-            background: #58585f; /* TODO add to variables */
+          :global(.dark) button {
+            background: var(--black);
           }
 
           .btn-group {
