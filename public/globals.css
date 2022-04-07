@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap');
 
+@font-face {
+  /* TODO use non-trial version */
+  font-family: 'GT America Mono Trial';
+  font-style: normal;
+  src: url('/fonts/GT-America-Mono-Trial-Regular.otf');
+}
+
+@font-face {
+  /* TODO use non-trial version */
+  font-family: 'Nib Trial';
+  font-style: normal;
+  src: url('/fonts/nib-regular-trial.otf');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 :root {
   --default-vertical-spacing: 0.75rem;
   --nav-height: 53px;
@@ -32,59 +56,57 @@
   --line-height-6: 40px;
   --line-height-7: 60px;
   --line-height-jumbo: 91px;
+}
 
+:root,
+.light {
   --white: #ffffff;
   --black: #18181b;
   --black-light: #58585f;
-  --light: #ffffff;
-  --dark: #18181b;
-  --theme: #ffd848;
-  --stripe: #0a2540;
-
-  --text: var(--dark);
-  --link: var(--dark);
-  --contrast-theme: var(--theme);
-  --contrast-dark: var(--dark);
-  --contrast-gray: #f6f9fc;
-  --translucent: rgba(0, 0, 0, 0.4);
-  --code-background: var(--gray-3);
   /* TODO update these to match Figma */
   --gray-1: #2c2c30;
   --gray-2: #e3e8ee;
   --gray-3: #f6f9fc;
   --gray-medium: #dce6e9;
-}
 
-:root,
-.light {
   --yellow: #6e00f5; /* TODO update this to use different var names */
   --green: #0a993e;
   --blue: #0073e6;
   --magenta: #dc34dc;
+
+  --theme: #ffd848;
+  --stripe: #0a2540;
+
+  --light: var(--white);
+  --dark: var(--black);
+  --text: var(--dark);
+
+  --contrast-theme: var(--theme);
+  --contrast-dark: var(--dark);
+  --contrast-gray: var(--gray-3);
+  --translucent: rgba(0, 0, 0, 0.4);
+  --code-background: var(--gray-3);
 }
 
-@font-face {
-  /* TODO use non-trial version */
-  font-family: 'GT America Mono Trial';
-  font-style: normal;
-  src: url('/fonts/GT-America-Mono-Trial-Regular.otf');
-}
+.dark,
+/* Landing page uses a custom pre w/ a black background and --dark mode colors */
+.page--landing pre[class*='language-'] {
+  --yellow: #ffd848;
+  --green: #00d924;
+  --blue: #80e9ff;
+  --magenta: #ff80ff;
 
-@font-face {
-  /* TODO use non-trial version */
-  font-family: 'Nib Trial';
-  font-style: normal;
-  src: url('/fonts/nib-regular-trial.otf');
-}
+  --stripe: var(--white);
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  --light: var(--black);
+  --dark: var(--white);
+  --text: var(--dark);
 
-* {
-  margin: 0;
+  --contrast-theme: var(--gray-1);
+  --contrast-dark: var(--gray-1);
+  --contrast-gray: var(--black);
+  --translucent: rgba(255, 255, 255, 0.4);
+  --code-background: var(--gray-1);
 }
 
 html,
@@ -105,37 +127,13 @@ body,
 body {
   font-family: var(--sans);
   color: var(--text);
+  background: var(--light);
 }
 
 body ::selection,
 body.dark ::selection {
   color: var(--black);
   background: var(--theme);
-}
-
-body.dark {
-  --light: var(--black);
-  --dark: var(--white);
-  --text: var(--dark);
-  --link: var(--dark);
-  --contrast-theme: var(--gray-1);
-  --contrast-dark: var(--gray-1);
-  --contrast-gray: var(--black);
-  --translucent: rgba(255, 255, 255, 0.4);
-  --code-background: var(--gray-1);
-  --stripe: var(--white);
-
-  background: var(--light);
-}
-
-/* TODO consolidate this under .dark */
-.dark,
-.page--landing pre[class*='language-'] {
-  --text: var(--white);
-  --yellow: #ffd848;
-  --green: #00d924;
-  --blue: #80e9ff;
-  --magenta: #ff80ff;
 }
 
 body.modal-is-active {
