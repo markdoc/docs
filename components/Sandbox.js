@@ -1,6 +1,7 @@
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
+import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
 import prettify from 'diffable-html';
@@ -117,6 +118,7 @@ export function Editor(props) {
 }
 
 export function Sandbox({ height }) {
+  const router = useRouter();
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
@@ -186,30 +188,38 @@ export function Sandbox({ height }) {
           Clear
         </button>
         <div className="btn-group">
-          <button
-            className={mode === 'preview' ? 'active' : undefined}
-            onClick={() => setMode('preview')}
-          >
-            Preview
-          </button>
-          <button
-            className={mode === 'html' ? 'active' : undefined}
-            onClick={() => setMode('html')}
-          >
-            HTML
-          </button>
-          <button
-            className={mode === 'process' ? 'active' : undefined}
-            onClick={() => setMode('process')}
-          >
-            Render tree
-          </button>
-          <button
-            className={mode === 'ast' ? 'active' : undefined}
-            onClick={() => setMode('ast')}
-          >
-            AST
-          </button>
+          {router.pathname === '/' ? (
+            <button onClick={() => router.push('/sandbox')}>
+              Explore developer sandbox&nbsp;→
+            </button>
+          ) : (
+            <>
+              <button
+                className={mode === 'preview' ? 'active' : undefined}
+                onClick={() => setMode('preview')}
+              >
+                Preview
+              </button>
+              <button
+                className={mode === 'html' ? 'active' : undefined}
+                onClick={() => setMode('html')}
+              >
+                HTML
+              </button>
+              <button
+                className={mode === 'process' ? 'active' : undefined}
+                onClick={() => setMode('process')}
+              >
+                Render tree
+              </button>
+              <button
+                className={mode === 'ast' ? 'active' : undefined}
+                onClick={() => setMode('ast')}
+              >
+                AST
+              </button>
+            </>
+          )}
         </div>
       </nav>
       <div className="flex container">
