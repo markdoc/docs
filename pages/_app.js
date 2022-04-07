@@ -193,6 +193,10 @@ export default function MyApp(props) {
             margin: 6rem 0 5rem;
           }
 
+          main :global(h3.jumbo) {
+            max-width: 80%; /* put "Stripe documentation" on new line */
+          }
+
           .page {
             display: flex;
             flex-grow: 1;
@@ -301,6 +305,7 @@ export default function MyApp(props) {
 
           .page--landing :global(table) {
             position: relative;
+            border-collapse: collapse;
           }
 
           .page--landing :global(table td) {
