@@ -87,9 +87,10 @@ export function Code({ children, language }) {
             position: absolute;
             color: inherit;
             background: var(--code-background);
-            top: 0;
-            right: 0;
-            padding: ${lines.length === 1 ? '17px' : '12px'} 12px 0 0;
+            top: 1px;
+            right: 1px;
+            border-radius: 4px;
+            padding: ${lines.length === 1 ? '16px' : '12px'} 12px 0 0;
             border: none;
             font-size: 20px;
           }
