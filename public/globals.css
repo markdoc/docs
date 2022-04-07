@@ -504,7 +504,8 @@ main .CodeMirror-cursor {
   p {
     font-size: var(--font-size-3);
   }
-  h2.jumbo {
+  h2.jumbo,
+  h3.jumbo {
     font-size: 38px;
     line-height: 44px;
   }
