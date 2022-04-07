@@ -39,6 +39,7 @@
   --light: #ffffff;
   --dark: #18181b;
   --theme: #ffd848;
+  --stripe: #0a2540;
 
   --text: var(--dark);
   --link: var(--dark);
@@ -122,6 +123,7 @@ body.dark {
   --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
   --code-background: var(--gray-1);
+  --stripe: var(--white);
 
   background: var(--light);
 }
