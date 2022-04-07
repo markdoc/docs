@@ -33,9 +33,9 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 - **Open source**
 
-  TODO Maintain full control over your code and content. Markdoc is open-source and fully extensible.
+  Maintain full control over your code and content. Markdoc is open-source and fully extensible.
 
-- **Writer & Dev friendly**
+- **Developer & writer friendly**
 
   Markdoc provides all the power and flexibility to developers, with none of the added complexity for tech writers.
 
@@ -90,7 +90,7 @@ return Markdoc.render(content);
 
 - **Familiar syntax**
 
-  Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the features and tooling you are used to.
+  Markdoc is a syntactic extension of [Markdown](https://commonmark.org/), so you can keep using all the syntax and tooling you are used to.
 
   [Learn the syntax&nbsp;→](/docs/syntax)
 
@@ -102,7 +102,7 @@ return Markdoc.render(content);
 
 - **Built-in validation**
 
-  You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
+  You can add custom validation throughout your content system, ensuring nothing breaks and your documentation remains consistent.
 
   [Learn about custom validation&nbsp;→](/docs/validation)
 
