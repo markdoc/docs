@@ -121,12 +121,10 @@ export function ThemeToggle() {
             align-items: center;
             justify-content: center;
             width: 120px;
-            font-size: 12px;
-            line-height: 20px;
-            border-radius: 3px;
-            font-weight: 400;
             font-size: 15px;
             line-height: 27px;
+            font-weight: 400;
+            border-radius: 3px;
           }
           button :global(svg) {
             margin-right: 8px;
@@ -138,6 +136,11 @@ export function ThemeToggle() {
           .light {
             background: var(--gray-light);
             color: var(--black);
+          }
+          @media screen and (max-width: 900px) {
+            .theme-toggle {
+              margin-left: 1.5rem;
+            }
           }
         `}
       </style>

@@ -103,6 +103,11 @@ export function SideNav() {
           li.active > a {
             text-decoration: underline;
           }
+          @media screen and (max-width: 420px) {
+            nav {
+              display: none;
+            }
+          }
         `}
       </style>
     </nav>

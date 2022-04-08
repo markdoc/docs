@@ -69,6 +69,11 @@ export function TableOfContents({ toc }) {
           li.padded {
             padding-left: 1rem;
           }
+          @media screen and (max-width: 900px) {
+            nav {
+              display: none;
+            }
+          }
         `}
       </style>
     </nav>

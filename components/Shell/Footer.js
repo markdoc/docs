@@ -69,7 +69,7 @@ export function Footer({ isLandingPage, isDocs, children: links }) {
             margin-left: 1.5rem;
           }
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 420px) {
             .by {
               padding-top: 1.5rem;
             }
@@ -169,7 +169,7 @@ export function Footer({ isLandingPage, isDocs, children: links }) {
             margin-left: 1.5rem;
           }
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 420px) {
             footer.mobile {
               display: flex;
             }

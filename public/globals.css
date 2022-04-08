@@ -490,10 +490,6 @@ main .CodeMirror-cursor {
   :root {
     --landing-page-max-width: 92vw;
   }
-  .sidenav,
-  .toc {
-    display: none !important;
-  }
 }
 
 @media screen and (max-width: 420px) {
@@ -502,9 +498,6 @@ main .CodeMirror-cursor {
     --font-size-jumbo: 38px;
     --line-height-jumbo: 44px;
   }
-  .no-mobile {
-    display: none;
-  }
   p {
     font-size: var(--font-size-3);
   }
@@ -512,6 +505,9 @@ main .CodeMirror-cursor {
   h3.jumbo {
     font-size: 38px;
     line-height: 44px;
+  }
+  .no-mobile {
+    display: none;
   }
 }
 

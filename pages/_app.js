@@ -117,6 +117,7 @@ export default function MyApp(props) {
             flex-grow: 1;
             padding-top: var(--nav-height);
             min-height: 100vh;
+            max-width: 100vw;
           }
 
           .skip-nav {
@@ -143,8 +144,10 @@ export default function MyApp(props) {
           }
 
           main {
-            max-width: 100%;
             flex-grow: 1;
+            max-width: 100%;
+            /* https://stackoverflow.com/questions/36230944/prevent-flex-items-from-overflowing-a-container */
+            min-width: 0;
             /* TODO clean up padding logic (and below in @media) */
             ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
           }
