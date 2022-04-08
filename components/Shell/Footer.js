@@ -2,7 +2,20 @@ import React from 'react';
 
 import { ThemeToggle } from '.';
 
-export function Footer({ isLandingPage, children: links }) {
+export function Footer({ children }) {
+  const links = (
+    <div className="links">
+      {children}
+      <style jsx>
+        {`
+          .links {
+            margin-right: 1.5rem;
+          }
+        `}
+      </style>
+    </div>
+  );
+
   const copyright = (
     <div className="by">
       <svg
@@ -127,7 +140,7 @@ export function Footer({ isLandingPage, children: links }) {
   const toggle = <ThemeToggle />;
 
   return (
-    <div className="footer-bar">
+    <>
       <footer className="desktop">
         {copyright}
         {links}
@@ -142,12 +155,6 @@ export function Footer({ isLandingPage, children: links }) {
       </footer>
       <style jsx>
         {`
-          .footer-bar {
-            margin: 0 auto;
-            flex: 1;
-            ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
-          }
-
           footer {
             position: relative;
             display: flex;
@@ -155,7 +162,7 @@ export function Footer({ isLandingPage, children: links }) {
             z-index: 100;
             width: 100%;
             color: var(--dark);
-            padding: ${isLandingPage ? '3.5rem 0' : '1rem 2rem'};
+            padding: 1rem 0;
           }
 
           footer.mobile {
@@ -184,6 +191,6 @@ export function Footer({ isLandingPage, children: links }) {
           }
         `}
       </style>
-    </div>
+    </>
   );
 }

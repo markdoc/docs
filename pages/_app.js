@@ -101,15 +101,16 @@ export default function MyApp(props) {
         </main>
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>
-      {/* TODO remove isLandingPage here */}
-      <Footer isLandingPage={isLandingPage}>
-        <Link href="/docs/getting-started">Docs</Link>
-        <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
-        <Link href="https://github.com/markdoc/markdoc/discussions">
-          Community
-        </Link>
-        <Link href="https://twitter.com/StripeDev">Twitter</Link>
-      </Footer>
+      <div className="footer-bar">
+        <Footer>
+          <Link href="/docs/getting-started">Docs</Link>
+          <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
+          <Link href="https://github.com/markdoc/markdoc/discussions">
+            Community
+          </Link>
+          <Link href="https://twitter.com/StripeDev">Twitter</Link>
+        </Footer>
+      </div>
       <style jsx>
         {`
           .page {
@@ -155,6 +156,15 @@ export default function MyApp(props) {
 
           main :global(h3.jumbo) {
             max-width: 80%; /* put "Stripe documentation" on new line */
+          }
+
+          .footer-bar {
+            flex: 1;
+            margin: 0 auto;
+            padding: ${isLandingPage ? '2.5rem 0' : 'padding: 0'};
+            max-width: ${isLandingPage
+              ? 'var(--landing-page-max-width)'
+              : 'calc(100% - 4rem)'};
           }
 
           /* Landing page overrides */

@@ -137,11 +137,6 @@ export function ThemeToggle() {
             background: var(--gray-light);
             color: var(--black);
           }
-          @media screen and (max-width: 900px) {
-            .theme-toggle {
-              margin-left: 1.5rem;
-            }
-          }
         `}
       </style>
     </div>
