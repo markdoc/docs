@@ -157,7 +157,12 @@ Pass attributes to tags to customize their behavior. Accepted values include: `n
 {% markdoc-example %}
 
 ```
-{% city index=0 name="San Francisco" deleted=false coordinates=[1, 4, 9] meta={id: "id_123"} /%}
+{% city
+   index=0
+   name="San Francisco"
+   deleted=false
+   coordinates=[1, 4, 9]
+   meta={id: "id_123"} /%}
 ```
 
 {% /markdoc-example %}

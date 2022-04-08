@@ -12,7 +12,7 @@ Prism.languages.markdoc = {
     pattern: /{%(.|\n)*?%}/i,
     inside: {
       tagType: {
-        pattern: /^({%\s*\/?)(\w*|-)* /i,
+        pattern: /^({%\s*\/?)(\w*|-)*\b/i,
         lookbehind: true
       },
       id: /#(\w|-)*\b/,
