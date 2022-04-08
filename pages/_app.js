@@ -190,6 +190,7 @@ export default function MyApp(props) {
           .page--landing :global(table) {
             table-layout: fixed;
             width: 100%;
+            margin: 0 0 3rem;
           }
 
           .page--landing :global(tbody) {
@@ -211,7 +212,7 @@ export default function MyApp(props) {
             border-style: dashed solid;
             background: var(--light);
             border-radius: 0;
-            padding: 0.75rem 1.5rem 1.5rem;
+            padding: 30px 40px 40px 32px;
             /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
             background-clip: padding-box;
           }

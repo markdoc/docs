@@ -11,7 +11,7 @@ export function Section({ children, background }) {
             background: ${background || 'var(--light)'};
           }
           div {
-            padding: 5rem 0;
+            padding: 4rem 0 5rem;
             margin: 0 auto;
             max-width: var(--landing-page-max-width);
           }
