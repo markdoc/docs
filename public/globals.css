@@ -156,6 +156,7 @@ a.primary {
   padding-top: 8px;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .primary a:hover,
@@ -165,10 +166,9 @@ a.primary:hover {
 
 .primary a::after,
 a.primary::after {
-  content: '→';
+  content: '\00a0→';
   position: relative;
   display: inline-block;
-  left: +2px;
   transition: transform 300ms ease;
 }
 

@@ -172,6 +172,11 @@ export default function MyApp(props) {
           }
 
           /* Landing page overrides */
+          /* Style hero section */
+          .page--landing :global(article > .section:first-of-type section) {
+            padding: 6rem 0 3rem;
+          }
+
           .page--landing :global(pre[class*='language-']) {
             border-radius: 0px;
             border: none;
@@ -185,7 +190,7 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.nav-bar nav) {
-            padding: 0.5rem 0;
+            padding: 1.25rem 0 1.35rem;
             max-width: var(--landing-page-max-width);
           }
 
