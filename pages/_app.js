@@ -101,8 +101,8 @@ export default function MyApp(props) {
         </main>
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>
-      {/* TODO remove isDocs, isLandingPage here */}
-      <Footer isDocs={isDocs} isLandingPage={isLandingPage}>
+      {/* TODO remove isLandingPage here */}
+      <Footer isLandingPage={isLandingPage}>
         <Link href="/docs/getting-started">Docs</Link>
         <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
         <Link href="https://github.com/markdoc/markdoc/discussions">
@@ -118,6 +118,7 @@ export default function MyApp(props) {
             padding-top: var(--nav-height);
             min-height: 100vh;
             max-width: 100vw;
+            ${isDocs ? 'border-bottom: 1px solid var(--dark);' : ''}
           }
 
           .skip-nav {

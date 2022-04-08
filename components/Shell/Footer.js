@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ThemeToggle } from '.';
 
-export function Footer({ isLandingPage, isDocs, children: links }) {
+export function Footer({ isLandingPage, children: links }) {
   const copyright = (
     <div className="by">
       <svg
@@ -145,7 +145,6 @@ export function Footer({ isLandingPage, isDocs, children: links }) {
           .footer-bar {
             margin: 0 auto;
             flex: 1;
-            ${isDocs ? 'border-top: 1px solid var(--dark);' : ''}
             ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
           }
 
