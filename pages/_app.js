@@ -144,6 +144,7 @@ export default function MyApp(props) {
 
           main {
             flex-grow: 1;
+            /* TODO clean up padding logic (and below in @media) */
             ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
           }
 
@@ -253,6 +254,9 @@ export default function MyApp(props) {
           }
 
           @media screen and (max-width: 420px) {
+            main {
+              ${isDocs ? 'padding: 2rem;' : ''};
+            }
             .page--landing :global(table) {
               margin: 0;
             }
