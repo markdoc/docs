@@ -135,7 +135,7 @@ export function Footer({ isLandingPage, isDocs, children: links }) {
         {toggle}
       </footer>
       <footer className="mobile">
-        {links}
+        {<span>{links}</span>}
         {copyright}
         {toggle}
         {disclaimer}
