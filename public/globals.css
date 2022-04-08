@@ -490,6 +490,10 @@ main .CodeMirror-cursor {
   :root {
     --landing-page-max-width: 92vw;
   }
+  .sidenav,
+  .toc {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 420px) {

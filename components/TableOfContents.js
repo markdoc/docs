@@ -9,7 +9,7 @@ export function TableOfContents({ toc }) {
       item.title !== 'Next steps'
   );
   return (
-    <nav className="toc no-mobile">
+    <nav className="toc">
       {items.length > 1 ? (
         <ul className="flex column">
           {items.map((item) => {

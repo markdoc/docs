@@ -115,7 +115,7 @@ function Footer({ isLandingPage, isDocs }) {
             margin-left: 1.5rem;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 900px) {
             .by {
               padding-top: 1.5rem;
             }
@@ -137,7 +137,7 @@ function Footer({ isLandingPage, isDocs }) {
   );
 
   const disclaimer = (
-    <span className="disclaimer no-mobile">
+    <span className="disclaimer">
       This site was entirely{' '}
       <button
         onClick={() => {
@@ -169,6 +169,12 @@ function Footer({ isLandingPage, isDocs }) {
 
           :global(body.dark) .disclaimer {
             color: var(--white);
+          }
+
+          @media screen and (max-width: 900px) {
+            .disclaimer {
+              display: none;
+            }
           }
         `}
       </style>
@@ -220,7 +226,7 @@ function Footer({ isLandingPage, isDocs }) {
             margin-left: 1.5rem;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 900px) {
             footer.mobile {
               display: flex;
             }
