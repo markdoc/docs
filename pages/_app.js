@@ -90,7 +90,7 @@ export default function MyApp(props) {
         </Link>
         <Link href="https://twitter.com/StripeDev">Twitter</Link>
         <span className="primary no-mobile">
-          <Link href="/sandbox">Try&nbsp;→</Link>
+          <Link href="/sandbox">Try</Link>
         </span>
       </TopNav>
       <div className="page">
@@ -176,6 +176,12 @@ export default function MyApp(props) {
             border-radius: 0px;
             border: none;
             background: var(--black) !important;
+            padding: 25px;
+          }
+
+          /* Make "npm install" code block thinner */
+          .page--landing :global(.code:first-of-type pre[class*='language-']) {
+            padding: 20px 25px;
           }
 
           .page--landing :global(.nav-bar nav) {
@@ -216,7 +222,7 @@ export default function MyApp(props) {
             border-style: dashed solid;
             background: var(--light);
             border-radius: 0;
-            padding: 30px 40px 40px 32px;
+            padding: 20px 24px 26px 24px;
             /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
             background-clip: padding-box;
           }

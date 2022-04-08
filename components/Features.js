@@ -31,14 +31,8 @@ export function Features({ children }) {
           }
 
           .features :global(li *:last-child a) {
-            text-decoration: none;
             font-size: 15px;
             line-height: 27px;
-            font-weight: 600;
-          }
-
-          .features :global(li *:last-child a:hover) {
-            text-decoration: underline;
           }
 
           @media screen and (max-width: 420px) {

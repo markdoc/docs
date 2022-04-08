@@ -26,7 +26,7 @@ Markdoc is open-source—check out it's [source](http://github.com/markdoc/markd
 ### What is the difference between Markdoc and MDX?
 
 Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…  
-[Read more&nbsp;→](/docs/overview)
+[Read more](/docs/overview)
 
 ## Next steps
 
@@ -279,7 +279,7 @@ export function Sandbox({ height }) {
           nav {
             display: flex;
             flex: 0 1 auto;
-            padding: 0.5rem 2rem 0.5rem 30px;
+            padding: 0.5rem;
             background: var(--contrast-dark);
           }
 
@@ -289,6 +289,7 @@ export function Sandbox({ height }) {
             background: var(--black-medium);
             border: 1px solid var(--black-light);
             padding: 0.25rem 0.5rem;
+            font-size: 13px;
           }
 
           button.active,

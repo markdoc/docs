@@ -55,7 +55,7 @@
   --line-height-5: 32px;
   --line-height-6: 40px;
   --line-height-7: 60px;
-  --line-height-jumbo: 91px;
+  --line-height-jumbo: 90px;
 }
 
 :root,
@@ -144,19 +144,37 @@ body.modal-is-active {
 
 a {
   text-decoration: underline;
+  transition: all 300ms ease;
 }
 
 a:hover {
-  text-decoration: none;
+  opacity: 0.75;
 }
 
-.primary a {
+.primary a,
+a.primary {
+  padding-top: 8px;
   text-decoration: none;
   font-weight: 500;
 }
 
-.primary a:hover {
-  text-decoration: underline;
+.primary a:hover,
+a.primary:hover {
+  opacity: 1;
+}
+
+.primary a::after,
+a.primary::after {
+  content: '→';
+  position: relative;
+  display: inline-block;
+  left: +2px;
+  transition: transform 300ms ease;
+}
+
+.primary a:hover::after,
+a.primary:hover::after {
+  transform: translateX(3px);
 }
 
 button {
@@ -213,6 +231,7 @@ h1,
 .h1 {
   font-size: var(--font-size-7);
   line-height: var(--line-height-7);
+  letter-spacing: -2px;
 }
 
 h2,
