@@ -9,7 +9,7 @@ export function TableOfContents({ toc }) {
       item.title !== 'Next steps'
   );
   return (
-    <nav className="toc">
+    <nav className="toc no-mobile">
       {items.length > 1 ? (
         <ul className="flex column">
           {items.map((item) => {
@@ -38,11 +38,11 @@ export function TableOfContents({ toc }) {
         {`
           nav {
             position: sticky;
-            top: 96px;
+            top: calc(2.5rem + var(--nav-height));
             max-height: calc(100vh - var(--nav-height));
             flex: 0 0 240px;
             align-self: flex-start;
-            margin: 2rem 0 0 1rem;
+            margin: 0 0 1rem;
             padding: 0.25rem 0 0;
             border-left: 1px solid rgba(0, 0, 0, 0.14);
           }

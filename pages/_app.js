@@ -195,6 +195,7 @@ function Footer({ isLandingPage, isDocs }) {
         {`
           .footer-bar {
             margin: 0 auto;
+            flex: 1;
             ${isDocs ? 'border-top: 1px solid var(--dark);' : ''}
             ${isLandingPage ? 'max-width: var(--landing-page-max-width);' : ''}
           }

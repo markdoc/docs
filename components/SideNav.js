@@ -53,7 +53,7 @@ export function SideNav() {
   const router = useRouter();
 
   return (
-    <nav className="sidenav">
+    <nav className="sidenav no-mobile">
       {items.map((item) => (
         <div key={item.title}>
           <h3>{item.title}</h3>
