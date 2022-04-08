@@ -144,7 +144,7 @@ body.modal-is-active {
 
 a {
   text-decoration: underline;
-  transition: all 300ms ease;
+  transition: opacity 300ms ease;
 }
 
 a:hover {
