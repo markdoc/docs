@@ -2,26 +2,26 @@ import * as React from 'react';
 
 export function Section({ children, background }) {
   return (
-    <section className="section">
-      <div>{children}</div>
+    <div className="section">
+      <section>{children}</section>
       <style jsx>
         {`
-          section {
+          div {
             width: 100%;
             background: ${background || 'var(--light)'};
           }
-          div {
+          section {
             padding: 4rem 0 5rem;
             margin: 0 auto;
             max-width: var(--landing-page-max-width);
           }
           @media screen and (max-width: 420px) {
-            div {
+            section {
               padding: 4rem 0;
             }
           }
         `}
       </style>
-    </section>
+    </div>
   );
 }
