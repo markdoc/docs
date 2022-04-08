@@ -2,10 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 
 import { AppLink as Link } from '../components/AppLink';
-import { SideNav } from '../components/SideNav';
-import { TopNav } from '../components/TopNav';
-import { TableOfContents } from '../components/TableOfContents';
-import { ThemeToggle } from '../components/ThemeToggle';
+import {
+  SideNav,
+  TableOfContents,
+  ThemeToggle,
+  TopNav
+} from '../components/Shell';
 
 import 'prismjs';
 import 'codemirror/lib/codemirror.css';
