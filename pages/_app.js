@@ -143,6 +143,7 @@ export default function MyApp(props) {
           }
 
           main {
+            max-width: 100%;
             flex-grow: 1;
             /* TODO clean up padding logic (and below in @media) */
             ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
