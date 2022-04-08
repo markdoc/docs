@@ -34,17 +34,17 @@ const items = [
     ]
   },
   {
-    title: 'Advanced concepts',
-    links: [
-      { href: '/docs/frontmatter', children: 'Frontmatter' },
-      { href: '/docs/partials', children: 'Partials' }
-    ]
-  },
-  {
     title: 'Integration guides',
     links: [
       { href: '/docs/examples', children: 'Common examples' },
       { href: '/docs/nextjs', children: 'Using with Next.js' }
+    ]
+  },
+  {
+    title: 'Advanced concepts',
+    links: [
+      { href: '/docs/frontmatter', children: 'Frontmatter' },
+      { href: '/docs/partials', children: 'Partials' }
     ]
   }
 ];
