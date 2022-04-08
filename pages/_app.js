@@ -119,7 +119,11 @@ export default function MyApp(props) {
             padding-top: var(--nav-height);
             min-height: 100vh;
             max-width: 100vw;
-            ${isDocs ? 'border-bottom: 1px solid var(--dark);' : ''}
+            ${isDocs ? 'border-bottom: 1px solid var(--gray-medium);' : ''}
+          }
+
+          :global(.dark) .page {
+            border-bottom-color: var(--black-light);
           }
 
           .skip-nav {
