@@ -76,15 +76,19 @@ export function useMarkdocCode(code) {
   return { ast, content, config, errors };
 }
 
-const options = {
-  mode: 'markdown',
-  lineWrapping: true,
-  lineNumbers: true,
-  theme: 'none'
-};
-
-function EditorInternal({ innerRef, code, onChange }) {
+function EditorInternal({ innerRef, code, onChange, options }) {
   const [key, setKey] = React.useState(0);
+
+  const codeMirrorOptions = React.useMemo(
+    () => ({
+      ...options,
+      lineNumbers: true,
+      theme: 'none',
+      mode: 'markdown',
+      lineWrapping: true
+    }),
+    [options]
+  );
 
   const onBeforeChange = React.useCallback(
     (editor, meta, code) => onChange(code),
@@ -103,7 +107,7 @@ function EditorInternal({ innerRef, code, onChange }) {
       ref={innerRef}
       key={key}
       value={code}
-      options={options}
+      options={codeMirrorOptions}
       onBeforeChange={onBeforeChange}
     />
   );
@@ -117,7 +121,7 @@ export function Editor(props) {
   return mounted ? <EditorInternal {...props} /> : null;
 }
 
-export function Sandbox({ height }) {
+export function Sandbox({ height, options }) {
   const router = useRouter();
   const ref = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
@@ -224,7 +228,12 @@ export function Sandbox({ height }) {
       </nav>
       <div className="flex container">
         <section className="left">
-          <Editor innerRef={ref} code={code} onChange={setCode} />
+          <Editor
+            innerRef={ref}
+            code={code}
+            onChange={setCode}
+            options={options}
+          />
         </section>
         <section className="right dark">
           {mode === 'preview' && (

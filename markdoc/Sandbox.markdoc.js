@@ -6,6 +6,7 @@ export const sandbox = {
   tag: 'sandbox',
   Component: Sandbox,
   attributes: {
-    height: { type: String }
+    height: { type: String },
+    options: { type: Object }
   }
 };
