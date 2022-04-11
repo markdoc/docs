@@ -13,7 +13,7 @@ const items = [
   {
     title: 'Syntax and schema',
     links: [
-      { href: '/docs/syntax', children: 'Markdoc syntax' },
+      { href: '/docs/syntax', children: 'Overview' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },

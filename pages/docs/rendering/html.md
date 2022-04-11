@@ -6,7 +6,7 @@ description:
 # {% $markdoc.frontmatter.title %}
 
 
-Markdoc supports HTML rendering out-of-the-box. The process is two steps. First you create a render tree from your content, then you call the renderer to output the contents of that tree as an HTML document. 
+Markdoc supports HTML rendering out-of-the-box. The process is two steps. Create a render tree from your content, then call the renderer to output the contents of that tree as an HTML document. 
 
 Follow the steps below or try out HTML rendering in the [developer playground](/sandbox?mode=html).
 

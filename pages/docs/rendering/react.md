@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc supports React component rendering out-of-the-box. To render React components with Markdoc, you'll need to specify when to use a component with a tag and/or node. Similar to HTML rendering, the process is two steps. First, you create a render tree from your content, along with any associated tags. Then you call the renderer to output the contents of that tree as a React component.
+Markdoc supports rendering React out-of-the-box. To render React with Markdoc, specify which component to use with each tag or node. Similar to HTML, the process is two steps. Create a render tree from your content, along with any associated tags. Then call the renderer to output the contents of that tree as a React component.
 
 Follow the steps below or try out React rendering in the [developer playground](/sandbox?mode=preview).
 
@@ -36,7 +36,7 @@ const content = Markdoc.process(doc, { tags });
 
 ## Render React
 
-Call `Markdoc.renderers.react` with your render tree from the client. Along with `content` and `React`, you'll need to provide the `components` object as an argument.
+Call `Markdoc.renderers.react` with your render tree from your client application. Along with `content` and `React`, you'll need to provide the `components` object as an argument.
 
 ```js
 import Markdoc from '@markdoc/markdoc';
