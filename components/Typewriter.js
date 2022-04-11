@@ -2,6 +2,7 @@ import React from 'react';
 
 const TYPE_DURATION = 50;
 const SWAP_DURATION = 200;
+const SWAP_DELAY = 150;
 
 function Swapper({ before, after, onEnd }) {
   const [running, setRunning] = React.useState(false);
@@ -33,13 +34,16 @@ function Swapper({ before, after, onEnd }) {
           }
           .before {
             color: var(--translucent);
-            animation: swap ${SWAP_DURATION}ms ease-out 0ms both ${state},
-              fade ${SWAP_DURATION}ms linear 0ms reverse both ${state};
+            animation: swap ${SWAP_DURATION}ms ease-out ${SWAP_DELAY}ms both
+                ${state},
+              fade ${SWAP_DURATION}ms linear ${SWAP_DELAY}ms reverse both
+                ${state};
             user-select: none;
           }
           .after {
-            animation: swap ${SWAP_DURATION}ms ease-out 0ms both running,
-              fade ${SWAP_DURATION}ms linear 0ms normal both running;
+            animation: swap ${SWAP_DURATION}ms ease-out ${SWAP_DELAY}ms both
+                running,
+              fade ${SWAP_DURATION}ms linear ${SWAP_DELAY}ms normal both running;
           }
           @keyframes swap {
             from {
