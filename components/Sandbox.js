@@ -21,9 +21,7 @@ Stripe created Markdoc to power [our public docs](http://stripe.com/docs), repla
 Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
 {% /callout %}
 
-## Frequently asked questions
-
-### What is the difference between Markdoc and MDX?
+## What is the difference between Markdoc and MDX?
 
 Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…  
 [Read more](/docs/overview)

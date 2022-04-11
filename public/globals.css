@@ -50,7 +50,7 @@
 
   --line-height-1: 16px;
   --line-height-2: 20px;
-  --line-height-3: 24px;
+  --line-height-3: 25px;
   --line-height-4: 30px;
   --line-height-5: 32px;
   --line-height-6: 40px;
@@ -327,7 +327,8 @@ table {
 }
 
 th {
-  font-size: 16px;
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
   font-family: var(--sans);
   font-weight: 500;
   text-align: left;
@@ -520,6 +521,7 @@ main .CodeMirror-cursor {
   }
   p {
     font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
   }
   h2.jumbo,
   h3.jumbo {

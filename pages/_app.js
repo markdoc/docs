@@ -174,7 +174,7 @@ export default function MyApp(props) {
           /* Landing page overrides */
           /* Style hero section */
           .page--landing :global(article > .section:first-of-type section) {
-            padding: 7rem 0 3.2rem;
+            padding: 6rem 0 3.2rem;
           }
 
           .page--landing :global(.value-props section) {
@@ -238,8 +238,8 @@ export default function MyApp(props) {
 
           .page--landing :global(table td strong) {
             font-family: var(--decoration);
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 14px;
+            font-weight: 600;
             line-height: 27px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
