@@ -179,6 +179,14 @@ export default function MyApp(props) {
             padding-top: 0;
           }
 
+          .page--landing :global(.get-started) {
+            background: var(--theme);
+          }
+
+          :global(.dark) .page--landing :global(.get-started) {
+            background: var(--black-medium);
+          }
+
           .page--landing :global(.get-started section .primary) {
             padding-top: 0.5rem;
           }
