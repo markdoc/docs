@@ -34,7 +34,7 @@ const content = Markdoc.process(doc, { tags });
 
 {% /markdoc-example %}
 
-## Render a React component
+## Render React
 
 Call `Markdoc.renderers.react` with your render tree from the client. Along with `content` and `React`, you'll need to provide the `components` object as an argument.
 
