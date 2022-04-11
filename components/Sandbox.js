@@ -339,7 +339,6 @@ export function Sandbox({ height, options }) {
           .preview {
             color: var(--black);
             height: 100%;
-            padding: 0 2rem 2rem;
           }
 
           .left :global(.CodeMirror),
@@ -402,22 +401,34 @@ export function Sandbox({ height, options }) {
             display: inline-block;
           }
 
+          .sandbox .preview :global(article) {
+            padding: 1.5rem;
+          }
+
+          .sandbox .preview :global(h1) {
+            font-size: 29px;
+            line-height: 52px;
+            letter-spacing: 0em;
+            margin-top: 0rem;
+          }
+
           .sandbox .preview :global(h2) {
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 0em;
+            letter-spacing: 0em;
             margin-top: 1rem;
           }
 
-          .sandbox .preview :global(h3) {
-            margin-top: 0.75rem;
-          }
-
           .sandbox .preview :global(p) {
-            font-size: 13px;
+            font-size: var(--font-size-3);
             line-height: var(--line-height-3);
+            font-weight: 400;
           }
 
           .sandbox .preview :global(.callout p) {
+            font-size: 14px;
             line-height: 20px;
-          }
         `}
       </style>
     </div>
