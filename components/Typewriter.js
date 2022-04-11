@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TYPE_DURATION = 50;
-const SWAP_DURATION = 200;
+const TYPE_DURATION = 30;
+const SWAP_DURATION = 400;
 const SWAP_DELAY = 150;
 const SWAP_FUNCTION = 'cubic-bezier(0.75, 0, 0.25, 1)';
 
