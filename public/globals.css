@@ -436,7 +436,8 @@ pre .token.number {
 }
 
 pre .token.function,
-pre .token.tagType {
+pre .token.tagType,
+pre .token.tag {
   color: var(--blue) !important;
 }
 
