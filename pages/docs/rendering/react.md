@@ -55,7 +55,7 @@ function MyApp() {
 }
 ```
 
-When rendered, the React component will look like this:
+When rendered, the `Callout` component should look something like this:
 
 {% callout %}
 Attention, over here!
