@@ -25,7 +25,7 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 {% /item %}
 
-{% section %}
+{% section className="value-props" %}
 
 {% table %}
 
@@ -47,7 +47,7 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 {% /section %}
 
-{% section background="var(--contrast-theme)" className="dark" %}
+{% section background="var(--contrast-theme)" %}
 
 {% side-by-side %}
 

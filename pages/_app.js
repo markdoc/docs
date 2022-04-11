@@ -174,7 +174,11 @@ export default function MyApp(props) {
           /* Landing page overrides */
           /* Style hero section */
           .page--landing :global(article > .section:first-of-type section) {
-            padding: 6rem 0 3rem;
+            padding: 7rem 0 3.2rem;
+          }
+
+          .page--landing :global(.value-props section) {
+            padding-top: 0;
           }
 
           .page--landing :global(pre[class*='language-']) {

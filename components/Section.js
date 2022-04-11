@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-export function Section({ children, background }) {
+// TODO use className for background here
+export function Section({ children, className, background }) {
   return (
-    <div className="section">
+    <div className={['section', className].filter(Boolean).join(' ')}>
       <section>{children}</section>
       <style jsx>
         {`

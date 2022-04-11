@@ -26,7 +26,7 @@
 
 :root {
   --default-vertical-spacing: 0.75rem;
-  --nav-height: 53px;
+  --nav-height: 79.594px;
   --shadow-height: 14px;
   --landing-page-max-width: 1200px;
 
@@ -51,7 +51,7 @@
   --line-height-1: 16px;
   --line-height-2: 20px;
   --line-height-3: 24px;
-  --line-height-4: 27px;
+  --line-height-4: 30px;
   --line-height-5: 32px;
   --line-height-6: 40px;
   --line-height-7: 60px;
@@ -285,7 +285,7 @@ h3.jumbo {
 }
 
 blockquote {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
 }
 
 ol {
