@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-// TODO use className for background here
-export function Section({ children, className, background }) {
+export function Section({ children, className }) {
   return (
     <div className={['section', className].filter(Boolean).join(' ')}>
       <section>{children}</section>
@@ -9,7 +8,7 @@ export function Section({ children, className, background }) {
         {`
           div {
             width: 100%;
-            background: ${background || 'var(--light)'};
+            background: var(--light);
           }
           section {
             padding: 4rem 0 5rem;
