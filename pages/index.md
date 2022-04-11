@@ -37,7 +37,7 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 - **Developer & writer friendly**
 
-  Markdoc provides all the power and flexibility to developers, with none of the added complexity for tech writers.
+  Markdoc delivers a powerful, flexible developer experience (DX) with an equally capable authoring experience (AX).
 
 - **Polymorphic**
 
