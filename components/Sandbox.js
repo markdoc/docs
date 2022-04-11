@@ -181,11 +181,11 @@ export function Sandbox({ height, options }) {
       <nav>
         <button
           onClick={() => {
-            setCode('');
+            setCode(INITIAL_CODE);
             ref.current.editor.focus();
           }}
         >
-          Clear
+          Reset
         </button>
         <div className="btn-group">
           {router.pathname === '/' ? (
@@ -347,6 +347,10 @@ export function Sandbox({ height, options }) {
             background: var(--contrast-dark);
           }
 
+          .left :global(.CodeMirror-lines) {
+            padding: 1.5rem;
+          }
+
           .right :global(.CodeMirror),
           .right :global(.react-codemirror2) {
             color: white;
@@ -404,15 +408,12 @@ export function Sandbox({ height, options }) {
           .sandbox .preview :global(h1) {
             font-size: 29px;
             line-height: 52px;
-            letter-spacing: 0em;
             margin-top: 0rem;
           }
 
           .sandbox .preview :global(h2) {
             font-size: 18px;
             line-height: 26px;
-            letter-spacing: 0em;
-            letter-spacing: 0em;
             margin-top: 1rem;
           }
 

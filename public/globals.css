@@ -45,7 +45,7 @@
   --font-size-4: 18px;
   --font-size-5: 24px;
   --font-size-6: 32px;
-  --font-size-7: 48px;
+  --font-size-7: 38px;
   --font-size-jumbo: 79px;
 
   --line-height-1: 16px;
@@ -54,7 +54,7 @@
   --line-height-4: 30px;
   --line-height-5: 32px;
   --line-height-6: 40px;
-  --line-height-7: 60px;
+  --line-height-7: 48px;
   --line-height-jumbo: 90px;
 }
 
@@ -214,22 +214,16 @@ p {
   text-rendering: optimizeLegibility;
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
-  letter-spacing: 0.02em;
 }
 
 p:last-child {
   padding-bottom: 0;
 }
 
-.heading {
-  letter-spacing: -0.02em;
-}
-
 h1,
 .h1 {
   font-size: var(--font-size-7);
   line-height: var(--line-height-7);
-  letter-spacing: -2px;
 }
 
 h2,
@@ -292,7 +286,7 @@ ol {
 }
 
 li {
-  margin: 0.25rem 0;
+  margin: 10px 0;
 }
 
 code {

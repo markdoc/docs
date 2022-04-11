@@ -91,9 +91,9 @@ export function Code({ children, language }) {
             top: 1px;
             right: 1px;
             border-radius: 4px;
-            padding: ${lines.length === 1 ? '16px' : '12px'} 12px 0 0;
+            padding: ${lines.length === 1 ? '20px' : '12px'} 10px 0 0;
             border: none;
-            font-size: 20px;
+            font-size: 15px;
           }
         `}
       </style>
