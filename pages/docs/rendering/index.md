@@ -100,7 +100,7 @@ render(
 ) => mixed
 ```
 
-Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTMl document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/rendering-elements.html).
+Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTML document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/rendering-elements.html).
 
 You can create your own renderer by creating a function that takes in a render tree as parameter and returns your desired output.
 

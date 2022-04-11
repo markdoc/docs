@@ -6,14 +6,14 @@ const items = [
   {
     title: 'Get started',
     links: [
-      { href: '/docs/overview', children: 'Overview' },
+      { href: '/docs/overview', children: 'What is Markdoc?' },
       { href: '/docs/getting-started', children: 'Installation' }
     ]
   },
   {
     title: 'Syntax and schema',
     links: [
-      { href: '/docs/syntax', children: 'Overview' },
+      { href: '/docs/syntax', children: 'Markdoc syntax' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },
@@ -27,7 +27,7 @@ const items = [
     links: [
       {
         href: '/docs/rendering',
-        children: 'Overview'
+        children: 'Phases'
       },
       { href: '/docs/rendering/html', children: 'HTML' },
       { href: '/docs/rendering/react', children: 'React' }

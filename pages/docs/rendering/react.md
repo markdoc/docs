@@ -1,17 +1,17 @@
 ---
-title: Rendering a React component
+title: How to render a react component with Markdoc
 description:
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc comes out-of-the-box with a React renderer. The only requirement to render React component is to tell Markdoc which components to use for each [tag](/docs/tags) and [node](/docs/nodes).
+Markdoc supports React component rendering out-of-the-box. To render React components with Markdoc, you'll need to specify when to use a component with a tag and/or node. Similar to HTML rendering, the process is two steps. First, you create a render tree from your content, along with any associated tags. Then you call the renderer to output the contents of that tree as a React component.
 
-You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
+Follow the steps below or try out React rendering in the [developer playground](/sandbox?mode=html).
 
-## On the server or client
+## Create a render tree
 
-First create a Markdoc render tree by calling `process`.
+Create a Markdoc render tree by calling `process`. This can be done from the server or client. In the example below, the `{ tags }` object is passed as an argument to `process`.
 
 {% markdoc-example %}
 
@@ -34,9 +34,9 @@ const content = Markdoc.process(doc, { tags });
 
 {% /markdoc-example %}
 
-## On the client
+## Render a React component
 
-Then, call `Markdoc.renderers.react` with your render tree.
+Call `Markdoc.renderers.react` with your render tree from the client. Along with `content` and `React`, you'll need to provide the `components` object as an argument.
 
 ```js
 import Markdoc from '@markdoc/markdoc';
@@ -55,7 +55,7 @@ function MyApp() {
 }
 ```
 
-which will render your Callout component like this:
+When rendered, the React component will look like this:
 
 {% callout %}
 Attention, over here!
