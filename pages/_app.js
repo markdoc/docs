@@ -171,7 +171,7 @@ export default function MyApp(props) {
 
           /* Landing page overrides */
           /* Style hero section */
-          .page--landing :global(article > .section:first-of-type section) {
+          .page--landing :global(.hero section) {
             padding: 3.1rem 0 3.5rem;
           }
 

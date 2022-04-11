@@ -2,7 +2,7 @@
 title: Markdoc is a powerful, flexible Markdown-based authoring framework
 ---
 
-{% section %}
+{% section className="hero" %}
 
 {% typewriter %}
 Markdoc is a powerful, flexible Markdown-based authoring framework.
