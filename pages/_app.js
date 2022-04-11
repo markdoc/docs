@@ -156,6 +156,10 @@ export default function MyApp(props) {
             min-width: 0;
           }
 
+          main :global(article) {
+            ${isDocs ? 'padding: 2rem 0rem 3rem;' : ''}
+          }
+
           main :global(h3.jumbo) {
             max-width: 80%; /* put "Stripe documentation" on new line */
           }
@@ -188,7 +192,7 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.get-started section .primary) {
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
           }
 
           .page--landing :global(.characteristics) {

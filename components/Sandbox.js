@@ -14,8 +14,7 @@ title: What is Markdoc?
 
 # {% $markdoc.frontmatter.title %} {% #overview %} {% .h2 %} 
 
-Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites.  
-Stripe created Markdoc to power [our public docs](http://stripe.com/docs), replacing [ERB](https://docs.ruby-lang.org/en/2.3.0/ERB.html).
+Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites. Stripe created Markdoc to power [our public docs](http://stripe.com/docs), replacing [ERB](https://docs.ruby-lang.org/en/2.3.0/ERB.html).
 
 {% callout type="check" %}
 Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
@@ -23,8 +22,7 @@ Markdoc is open-source—check out it's [source](http://github.com/markdoc/markd
 
 ## What is the difference between Markdoc and MDX?
 
-Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…  
-[Read more](/docs/overview)
+Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[Read more](/docs/overview)
 
 ## Next steps
 
@@ -297,6 +295,7 @@ export function Sandbox({ height, options }) {
             border: 1px solid var(--black-light);
             padding: 0.25rem 0.5rem;
             font-size: 13px;
+            transition: color 300ms ease;
           }
 
           button.active,
@@ -339,6 +338,7 @@ export function Sandbox({ height, options }) {
           .preview {
             color: var(--black);
             height: 100%;
+            padding: 1.5rem;
           }
 
           .left :global(.CodeMirror),
@@ -401,10 +401,6 @@ export function Sandbox({ height, options }) {
             display: inline-block;
           }
 
-          .sandbox .preview :global(article) {
-            padding: 1.5rem;
-          }
-
           .sandbox .preview :global(h1) {
             font-size: 29px;
             line-height: 52px;
@@ -426,9 +422,14 @@ export function Sandbox({ height, options }) {
             font-weight: 400;
           }
 
+          .sandbox .preview :global(.callout) {
+            padding-top: 0.5rem;
+          }
+
           .sandbox .preview :global(.callout p) {
             font-size: 14px;
             line-height: 20px;
+          }
         `}
       </style>
     </div>
