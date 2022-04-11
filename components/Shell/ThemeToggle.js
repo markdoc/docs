@@ -83,7 +83,7 @@ const moon = (
 
 export function ThemeToggle() {
   const [theme, setTheme] = React.useState(undefined);
-  const [hovering, setHovering] = React.useState(false);
+  const [, setHovering] = React.useState(false);
 
   function setPreferredTheme(newTheme) {
     setTheme(newTheme);
@@ -114,7 +114,7 @@ export function ThemeToggle() {
     }
   }, [theme]);
 
-  const isDark = theme === 'dark' ? !hovering : hovering;
+  const isDark = theme === 'dark'; // ? !hovering : hovering;
 
   return (
     <div
