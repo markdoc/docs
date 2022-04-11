@@ -100,11 +100,11 @@ You can then access your frontmatter values from the `$frontmatter` variable
 {% markdoc-example %}
 
 ```md
-### {% $frontmatter.title %}
+# {% $frontmatter.title %}
 ```
 
 {% /markdoc-example %}
 
-### {% $markdoc.frontmatter.title %}
+# {% $markdoc.frontmatter.title %}
 
 {% /side-by-side %}
