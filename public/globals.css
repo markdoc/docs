@@ -144,6 +144,8 @@ body.modal-is-active {
 
 a {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
   transition: opacity 300ms ease;
 }
 
