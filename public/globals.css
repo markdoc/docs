@@ -385,6 +385,7 @@ article {
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
+  padding: 2rem 0rem 3rem;
 }
 
 /* Helper classes */

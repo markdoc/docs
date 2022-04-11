@@ -154,8 +154,6 @@ export default function MyApp(props) {
             max-width: 100%;
             /* https://stackoverflow.com/questions/36230944/prevent-flex-items-from-overflowing-a-container */
             min-width: 0;
-            /* TODO clean up padding logic (and below in @media) */
-            ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
           }
 
           main :global(h3.jumbo) {
@@ -194,8 +192,8 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.nav-bar nav) {
-            padding: 1.25rem 0 1.35rem;
             max-width: var(--landing-page-max-width);
+            padding: 1rem 0 1.1rem;
           }
 
           .page--landing :global(.side-by-side .left) {
@@ -289,9 +287,6 @@ export default function MyApp(props) {
           }
 
           @media screen and (max-width: 420px) {
-            main {
-              ${isDocs ? 'padding: 2rem;' : ''};
-            }
             .page--landing :global(table) {
               margin: 0;
             }

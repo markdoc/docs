@@ -70,7 +70,7 @@ export function TopNav({ children }) {
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--dark);
-            padding: 0.5rem 2rem;
+            padding: 1rem 2rem 1.1rem;
           }
           ul {
             display: flex;

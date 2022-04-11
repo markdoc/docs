@@ -80,6 +80,7 @@ export function SideNav() {
             flex: 0 0 240px;
             overflow-y: auto;
             padding: 2rem 0 3rem 2rem;
+            margin-right: 2rem;
           }
           h3 {
             font-weight: 500;
