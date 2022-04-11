@@ -1,5 +1,5 @@
 ---
-title: How to render a react component with Markdoc
+title: How to render React with Markdoc
 description:
 ---
 
