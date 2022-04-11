@@ -191,6 +191,14 @@ export default function MyApp(props) {
             padding-top: 0.5rem;
           }
 
+          .page--landing :global(.characteristics) {
+            background: var(--gray-light);
+          }
+
+          :global(.dark) .page--landing :global(.characteristics) {
+            background: var(--black);
+          }
+
           .page--landing :global(pre[class*='language-']) {
             border-radius: 0px;
             border: none;

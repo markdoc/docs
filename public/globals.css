@@ -81,7 +81,6 @@
   --text: var(--dark);
 
   --contrast-dark: var(--dark);
-  --contrast-gray: var(--gray-light);
   --translucent: rgba(0, 0, 0, 0.4);
   --code-background: var(--gray-light);
   --code-border: var(--gray-medium);
@@ -102,7 +101,6 @@
   --text: var(--dark);
 
   --contrast-dark: var(--black-medium);
-  --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
   --code-background: var(--black-medium);
   --code-border: var(--black-light);

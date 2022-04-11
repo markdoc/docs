@@ -84,7 +84,7 @@ return Markdoc.render(content);
 
 {% /section %}
 
-{% section background="var(--contrast-gray)" %}
+{% section className="characteristics" %}
 
 {% features %}
 
