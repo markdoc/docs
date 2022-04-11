@@ -5,10 +5,11 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-With Markdoc, you can use frontmatter to apply metadata to your documents. Markdoc isn't opinionated when it comes to frontmatter, so you can use YAML, TOML, JSON, GraphQL—pretty much any data format you want.
+Frontmatter is used to apply page-level metadata to Markdoc documents, like `title` and `description`. Markdoc doesn't have an opinion about how your frontmatter is formatted. You can use YAML, TOML, JSON, GraphQL -- pretty much any data format you want.
 
 ## Examples
 
+While not a comprehensive list, the examples below give you an idea of how you can structure frontmatter in various formats.
 ### YAML
 
 ```yaml
@@ -55,11 +56,13 @@ date        = "2022-04-01"
 ---
 ```
 
-## Access frontmatter attributes
+## Access frontmatter values
 
-To access your frontmatter content within your document, you have to pass the values as [variables](/docs/variables), just as you would otherwise.
+To access frontmatter content in your document, you have to pass the values to Markdoc as [variables](/docs/variables).
 
-First, parse your document to get access to the frontmatter content
+### Parse the document
+
+Parse your document to access the frontmatter content:
 
 {% markdoc-example %}
 
@@ -77,7 +80,9 @@ const ast = Markdoc.parse(doc);
 
 {% /markdoc-example %}
 
-Then, parse the frontmatter attribute using your preferred format and pass it to your `variables` config.
+### Parse the frontmatter
+
+Parse the frontmatter attribute using your preferred format and pass it to your `variables` config.
 
 ```js
 import yaml from 'js-yaml'; // or 'toml', etc.
@@ -93,7 +98,9 @@ const config = {
 };
 ```
 
-You can then access your frontmatter values from the `$frontmatter` variable
+### Use frontmatter values
+
+After passing the parsed frontmatter to `variables`, you can access the values using `$frontmatter`:
 
 {% side-by-side %}
 
