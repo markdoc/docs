@@ -214,16 +214,8 @@ export default function MyApp(props) {
 
           /* Landing page overrides */
           /* Style hero section */
-          .page--landing :global(p) {
-            letter-spacing: 0.02em;
-          }
-
           .page--landing :global(.heading) {
             letter-spacing: -0.02em;
-          }
-
-          .page--landing :global(h1) {
-            letter-spacing: -2px;
           }
 
           .page--landing :global(.hero section) {
