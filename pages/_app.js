@@ -213,11 +213,20 @@ export default function MyApp(props) {
           }
 
           /* Landing page overrides */
-          /* Style hero section */
+          /* Move top border to first section */
+          .page--landing :global(.nav-bar nav) {
+            border-bottom: none;
+          }
+
+          .page--landing :global(article .section:first-of-type section) {
+            border-top: 1px solid var(--dark);
+          }
+
           .page--landing :global(.heading) {
             letter-spacing: -0.02em;
           }
 
+          /* Style hero section */
           .page--landing :global(.hero section) {
             padding: 5.1rem 0 3.5rem;
           }
