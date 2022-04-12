@@ -7,7 +7,7 @@ description: How to get started with Markdoc
 
 ## Install Markdoc
 
-First, install the Markdoc library:
+Install the Markdoc library:
 
 ```shell
 npm install @markdoc/markdoc
@@ -21,7 +21,7 @@ yarn add @markdoc/markdoc
 
 ## Import Markdoc
 
-Next, import the library in your app:
+Import the Markdoc library in your app:
 
 ```js
 const Markdoc = require('@markdoc/markdoc');
@@ -35,7 +35,7 @@ import Markdoc from '@markdoc/markdoc';
 
 ## Use Markdoc
 
-Then, call the various Markdoc functions to render your content.
+Call the `parse`, `process` and `render` Markdoc functions to render your content.
 
 ```js
 const ast = Markdoc.parse(source);

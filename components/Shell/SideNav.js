@@ -6,7 +6,7 @@ const items = [
   {
     title: 'Get started',
     links: [
-      { href: '/docs/overview', children: 'Overview' },
+      { href: '/docs/overview', children: 'What is Markdoc?' },
       { href: '/docs/getting-started', children: 'Installation' }
     ]
   },

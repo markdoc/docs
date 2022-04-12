@@ -1,29 +1,36 @@
 ---
-title: Rendering HTML
+title: How to render HTML with Markdoc
 description:
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc comes out-of-the-box with an HTML renderer. You can try it out yourself in the [developer playground](/sandbox?mode=html).
 
-First create a Markdoc render tree by calling `process`.
+Markdoc supports HTML rendering out-of-the-box. The process is two steps. Create a render tree from your content, then call the renderer to output the contents of that tree as an HTML document. 
+
+Follow the steps below or try out HTML rendering in the [developer playground](/sandbox?mode=html).
+
+## Create a render tree
+
+Create a Markdoc render tree by calling `process`.
 
 {% markdoc-example %}
 
-```js
-const doc = `
-# Getting started
+  ```js
+  const doc = `
+  # Getting started
 
-Run this command to install the Markdoc library:
-`;
+  Run this command to install the Markdoc library:
+  `;
 
-const content = Markdoc.process(doc);
-```
+  const content = Markdoc.process(doc);
+  ```
 
-{% /markdoc-example %}
+  {% /markdoc-example %}
 
-Then, call `Markdoc.renderers.html` with your render tree.
+## Render HTML
+
+Call `Markdoc.renderers.html` with your render tree.
 
 ```js
 const express = require('express');
@@ -46,7 +53,7 @@ app.get('/docs/getting-started', (req, res) => {
 });
 ```
 
-which renders HTML that looks like this:
+From the sample above, the following HTML document is created: 
 
 ```html
 <!DOCTYPE html>
