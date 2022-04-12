@@ -26,11 +26,11 @@ const items = [
     title: 'Rendering',
     links: [
       {
-        href: '/docs/rendering',
+        href: '/docs/render',
         children: 'Overview'
       },
-      { href: '/docs/rendering/html', children: 'HTML' },
-      { href: '/docs/rendering/react', children: 'React' }
+      { href: '/docs/render/html', children: 'HTML' },
+      { href: '/docs/render/react', children: 'React' }
     ]
   },
   {
