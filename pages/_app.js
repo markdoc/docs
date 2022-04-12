@@ -254,6 +254,7 @@ export default function MyApp(props) {
 
           .page--landing :global(.characteristics) {
             background: var(--gray-light);
+            padding-bottom: 2rem;
           }
 
           :global(.dark) .page--landing :global(.characteristics) {
