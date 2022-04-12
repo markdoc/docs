@@ -2,7 +2,7 @@
 title: Markdoc is a powerful, flexible Markdown-based authoring framework
 ---
 
-{% section %}
+{% section className="hero" %}
 
 {% typewriter %}
 Markdoc is a powerful, flexible Markdown-based authoring framework.
@@ -15,17 +15,13 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 {% /section %}
 
-{% item className="no-mobile" %}
-
-{% section %}
+{% section className="no-mobile" %}
 
 {% sandbox height="600px" options={"scrollbarStyle": null} /%}
 
 {% /section %}
 
-{% /item %}
-
-{% section %}
+{% section className="value-props" %}
 
 {% table %}
 
@@ -37,7 +33,7 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 - **Developer & writer friendly**
 
-  Markdoc provides all the power and flexibility to developers, with none of the added complexity for tech writers.
+  Markdoc delivers a powerful, flexible developer experience (DX) with an equally capable authoring experience (AX).
 
 - **Polymorphic**
 
@@ -47,7 +43,7 @@ Markdoc is a powerful, flexible Markdown-based authoring framework.
 
 {% /section %}
 
-{% section background="var(--contrast-theme)" className="dark" %}
+{% section className="get-started" %}
 
 {% side-by-side %}
 
@@ -84,7 +80,7 @@ return Markdoc.render(content);
 
 {% /section %}
 
-{% section background="var(--contrast-gray)" %}
+{% section className="characteristics" %}
 
 {% features %}
 
@@ -96,9 +92,9 @@ return Markdoc.render(content);
 
 - **Easily extensible**
 
-  Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/rendering).
+  Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/render).
 
-  [Learn about rendering Markdoc](/docs/rendering) {% .primary %}
+  [Learn about rendering Markdoc](/docs/render) {% .primary %}
 
 - **Built-in validation**
 

@@ -19,6 +19,10 @@ The abstract syntax trees (ASTs) also differ between MDX and Markdoc. MDX treats
 
 {% side-by-side %}
 
+{% item %}
+
+#### MDX
+
 ```js
 import {Box, Heading} from './components'
 
@@ -28,6 +32,12 @@ MDX using imported components!
   <Heading>The current year is {year}</Heading>
 <Box>
 ```
+
+{% /item %}
+
+{% item %}
+
+#### Markdoc
 
 {% markdoc-example %}
 
@@ -42,6 +52,8 @@ No imports required.
 ```
 
 {% /markdoc-example %}
+
+{% /item %}
 
 {% /side-by-side %}
 

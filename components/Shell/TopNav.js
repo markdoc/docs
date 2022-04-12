@@ -70,14 +70,16 @@ export function TopNav({ children }) {
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--dark);
-            padding: 0.5rem 2rem;
+            padding: 1rem 2rem 1.1rem;
+            font-size: 14px;
+            font-family: var(--decoration);
           }
           ul {
             display: flex;
             padding: 0;
           }
           ul :global(a) {
-            margin-left: 1.5rem;
+            margin-left: 1.4rem;
           }
           button {
             display: none;

@@ -14,19 +14,15 @@ title: What is Markdoc?
 
 # {% $markdoc.frontmatter.title %} {% #overview %} {% .h2 %} 
 
-Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites.  
-Stripe created Markdoc to power [our public docs](http://stripe.com/docs), replacing [ERB](https://docs.ruby-lang.org/en/2.3.0/ERB.html).
+Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites. Stripe created Markdoc to power [our public docs](http://stripe.com/docs), replacing [ERB](https://docs.ruby-lang.org/en/2.3.0/ERB.html).
 
 {% callout type="check" %}
 Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
 {% /callout %}
 
-## Frequently asked questions
+## What is the difference between Markdoc and MDX?
 
-### What is the difference between Markdoc and MDX?
-
-Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…  
-[Read more](/docs/overview)
+Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[read more](/docs/overview)
 
 ## Next steps
 
@@ -82,6 +78,7 @@ function EditorInternal({ innerRef, code, onChange, options }) {
   const codeMirrorOptions = React.useMemo(
     () => ({
       ...options,
+      styleSelectedText: true,
       lineNumbers: true,
       theme: 'none',
       mode: 'markdown',
@@ -99,6 +96,7 @@ function EditorInternal({ innerRef, code, onChange, options }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
+    require('codemirror/addon/selection/mark-selection');
     setKey((k) => k + 1);
   }, []);
 
@@ -124,8 +122,10 @@ export function Editor(props) {
 export function Sandbox({ height, options }) {
   const router = useRouter();
   const ref = React.useRef();
+  const hoverEl = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
+  const [hasTyped, setHasTyped] = React.useState(false);
 
   const { ast, content, config, errors } = useMarkdocCode(code);
 
@@ -180,16 +180,29 @@ export function Sandbox({ height, options }) {
     }
   }, [errors]);
 
+  React.useEffect(() => {
+    function handler(event) {
+      const el = hoverEl.current;
+      if (el) {
+        el.style.top = event.clientY - 13 + 'px';
+        el.style.left = event.clientX + 16 + 'px';
+      }
+    }
+
+    document.addEventListener('mousemove', handler);
+    return () => document.removeEventListener('mousemove', handler);
+  }, []);
+
   return (
     <div className="sandbox">
       <nav>
         <button
           onClick={() => {
-            setCode('');
+            setCode(INITIAL_CODE);
             ref.current.editor.focus();
           }}
         >
-          Clear
+          Reset
         </button>
         <div className="btn-group">
           {router.pathname === '/' ? (
@@ -228,10 +241,18 @@ export function Sandbox({ height, options }) {
       </nav>
       <div className="flex container">
         <section className="left">
+          {hasTyped ? null : (
+            <div id="hover" ref={hoverEl}>
+              Try
+            </div>
+          )}
           <Editor
             innerRef={ref}
             code={code}
-            onChange={setCode}
+            onChange={(...args) => {
+              setHasTyped(true);
+              setCode(...args);
+            }}
             options={options}
           />
         </section>
@@ -285,6 +306,18 @@ export function Sandbox({ height, options }) {
             border: 1px solid var(--black);
           }
 
+          #hover {
+            display: none;
+            position: fixed;
+            color: var(--white);
+            font-family: var(--decoration);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: -0.03em;
+            z-index: 999;
+          }
+
           nav {
             display: flex;
             flex: 0 1 auto;
@@ -299,6 +332,7 @@ export function Sandbox({ height, options }) {
             border: 1px solid var(--black-light);
             padding: 0.25rem 0.5rem;
             font-size: 13px;
+            transition: color 300ms ease;
           }
 
           button.active,
@@ -341,13 +375,17 @@ export function Sandbox({ height, options }) {
           .preview {
             color: var(--black);
             height: 100%;
-            padding: 0 2rem 2rem;
+            padding: 1.5rem;
           }
 
           .left :global(.CodeMirror),
           .left :global(.react-codemirror2) {
             color: white;
             background: var(--contrast-dark);
+          }
+
+          .left :global(.CodeMirror-lines) {
+            padding: 1.5rem;
           }
 
           .right :global(.CodeMirror),
@@ -404,20 +442,30 @@ export function Sandbox({ height, options }) {
             display: inline-block;
           }
 
+          .sandbox .preview :global(h1) {
+            font-size: 29px;
+            line-height: 52px;
+            margin-top: 0rem;
+          }
+
           .sandbox .preview :global(h2) {
+            font-size: 18px;
+            line-height: 26px;
             margin-top: 1rem;
           }
 
-          .sandbox .preview :global(h3) {
-            margin-top: 0.75rem;
+          .sandbox .preview :global(p) {
+            font-size: var(--font-size-3);
+            line-height: var(--line-height-3);
+            font-weight: 400;
           }
 
-          .sandbox .preview :global(p) {
-            font-size: 13px;
-            line-height: var(--line-height-3);
+          .sandbox .preview :global(.callout) {
+            padding-top: 0.5rem;
           }
 
           .sandbox .preview :global(.callout p) {
+            font-size: 14px;
             line-height: 20px;
           }
         `}

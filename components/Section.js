@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-export function Section({ children, background }) {
+export function Section({ children, className }) {
   return (
-    <div className="section">
+    <div className={['section', className].filter(Boolean).join(' ')}>
       <section>{children}</section>
       <style jsx>
         {`
           div {
             width: 100%;
-            background: ${background || 'var(--light)'};
+            background: var(--light);
           }
           section {
             padding: 4rem 0 5rem;

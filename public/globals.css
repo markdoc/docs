@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap');
 
+/* TODO host GT America Mono  */
 @font-face {
-  /* TODO use non-trial version */
-  font-family: 'GT America Mono Trial';
+  font-family: 'GT America Mono';
   font-style: normal;
-  src: url('/fonts/GT-America-Mono-Trial-Regular.otf');
+  font-weight: normal;
+  src: url('/fonts/GT-America-Mono-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'GT America Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/GT-America-Mono-Medium.otf') format("opentype");
 }
 
 @font-face {
@@ -26,14 +34,14 @@
 
 :root {
   --default-vertical-spacing: 0.75rem;
-  --nav-height: 53px;
+  --nav-height: 71.594px;
   --shadow-height: 14px;
   --landing-page-max-width: 1200px;
 
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
+    sans-serif;
   --serif: Nib Trial, serif;
-  --decoration: GT America Mono Trial, Consolas, Monaco, 'Andale Mono',
+  --decoration: GT America Mono, Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
   --mono: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
@@ -45,16 +53,16 @@
   --font-size-4: 18px;
   --font-size-5: 24px;
   --font-size-6: 32px;
-  --font-size-7: 48px;
+  --font-size-7: 38px;
   --font-size-jumbo: 79px;
 
   --line-height-1: 16px;
   --line-height-2: 20px;
-  --line-height-3: 24px;
-  --line-height-4: 27px;
+  --line-height-3: 25px;
+  --line-height-4: 30px;
   --line-height-5: 32px;
   --line-height-6: 40px;
-  --line-height-7: 60px;
+  --line-height-7: 48px;
   --line-height-jumbo: 90px;
 }
 
@@ -80,9 +88,7 @@
   --dark: var(--black);
   --text: var(--dark);
 
-  --contrast-theme: var(--theme);
   --contrast-dark: var(--dark);
-  --contrast-gray: var(--gray-light);
   --translucent: rgba(0, 0, 0, 0.4);
   --code-background: var(--gray-light);
   --code-border: var(--gray-medium);
@@ -90,21 +96,24 @@
 
 .dark,
 /* Landing page uses a custom pre w/ a black background and --dark mode colors */
-.page--landing pre[class*='language-'] {
+.page--landing pre[class*='language-'],
+.sandbox .CodeMirror {
   --purple: var(--yellow); /* Change purple to yellow in dark mode */
   --green: #00d924;
   --blue: #80e9ff;
   --magenta: #ff80ff;
 
   --stripe: var(--white);
+}
 
+/* TODO combine with above w/ more testing */
+.dark,
+.page--landing pre[class*='language-'] {
   --light: var(--black);
   --dark: var(--white);
   --text: var(--dark);
 
-  --contrast-theme: var(--black-medium);
   --contrast-dark: var(--black-medium);
-  --contrast-gray: var(--black);
   --translucent: rgba(255, 255, 255, 0.4);
   --code-background: var(--black-medium);
   --code-border: var(--black-light);
@@ -116,8 +125,7 @@ body,
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--sans);
 }
 
 #__next {
@@ -126,9 +134,10 @@ body,
 }
 
 body {
-  font-family: var(--sans);
   color: var(--text);
   background: var(--light);
+  font-family: var(--sans);
+  transition: color 400ms ease, background 300ms ease;
 }
 
 body ::selection,
@@ -144,6 +153,8 @@ body.modal-is-active {
 
 a {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
   transition: opacity 300ms ease;
 }
 
@@ -216,22 +227,16 @@ p {
   text-rendering: optimizeLegibility;
   font-size: var(--font-size-4);
   line-height: var(--line-height-4);
-  letter-spacing: 0.02em;
 }
 
 p:last-child {
   padding-bottom: 0;
 }
 
-.heading {
-  letter-spacing: -0.02em;
-}
-
 h1,
 .h1 {
   font-size: var(--font-size-7);
   line-height: var(--line-height-7);
-  letter-spacing: -2px;
 }
 
 h2,
@@ -286,7 +291,7 @@ h3.jumbo {
 }
 
 blockquote {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
 }
 
 ol {
@@ -294,7 +299,7 @@ ol {
 }
 
 li {
-  margin: 0.25rem 0;
+  margin: 10px 0;
 }
 
 code {
@@ -326,8 +331,9 @@ table {
   overflow: hidden;
 }
 
-th {
-  font-size: 16px;
+th, td > strong {
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
   font-family: var(--sans);
   font-weight: 500;
   text-align: left;
@@ -433,11 +439,12 @@ pre[class*='language-'] {
 pre .token.string,
 pre .token.boolean,
 pre .token.number {
-  color: var(--green) !important;
+  color: var(--magenta) !important;
 }
 
 pre .token.function,
-pre .token.tagType {
+pre .token.tagType,
+pre .token.tag {
   color: var(--blue) !important;
 }
 
@@ -447,7 +454,7 @@ pre .token.keyword,
 }
 
 pre .token.variable {
-  color: var(--magenta) !important;
+  color: var(--green) !important;
 }
 
 .sandbox span.cm-keyword,
@@ -493,8 +500,9 @@ main .CodeMirror-gutters {
   border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-main .CodeMirror-selected {
-  background: var(--theme);
+main .CodeMirror-selected, main .CodeMirror-selectedtext {
+  color: var(--black) !important;
+  background: var(--theme) !important;
 }
 
 main .CodeMirror-linenumber {
@@ -519,6 +527,7 @@ main .CodeMirror-cursor {
   }
   p {
     font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
   }
   h2.jumbo,
   h3.jumbo {

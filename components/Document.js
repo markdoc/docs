@@ -7,16 +7,17 @@ const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 function EditPage({ source: initialDocument }) {
   const [doc, setDoc] = React.useState(initialDocument);
   const [showEditor, setShowEditor] = React.useState(false);
+  const [mouseOver, setMouseOver] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
   const { content, config } = useMarkdocCode(doc);
 
   React.useEffect(() => {
-    if (showEditor) {
+    if (mouseOver) {
       document.body.classList.add('modal-is-active');
     } else {
       document.body.classList.remove('modal-is-active');
     }
-  }, [showEditor]);
+  }, [mouseOver]);
 
   React.useEffect(() => {
     window.__toggle_editor__ = () => setShowEditor((o) => !o);
@@ -56,7 +57,11 @@ function EditPage({ source: initialDocument }) {
       {Markdoc.renderers.react(content.children, React, {
         components: config.components
       })}
-      <section className="sandbox">
+      <section
+        className="sandbox"
+        onMouseEnter={() => setMouseOver(true)}
+        onMouseLeave={() => setMouseOver(false)}
+      >
         <Editor code={doc} onChange={setDoc} />
         <button onClick={() => setShowEditor(false)}>
           <kbd>CMD + J / Esc</kbd>
@@ -67,15 +72,16 @@ function EditPage({ source: initialDocument }) {
           section {
             position: fixed;
             z-index: 999;
-            top: var(--nav-height);
-            left: 0;
+            top: 0;
+            right: 0;
             transition: transform 300ms ease;
-            width: 100%;
-            height: calc(100vh - var(--nav-height));
-            transform: ${showEditor ? '' : 'translateY(100%)'};
+            width: 55vw;
+            height: 100vh;
+            transform: ${showEditor ? 'translateX(0)' : 'translateX(100%)'};
           }
           section :global(.CodeMirror),
-          section :global(.react-codemirror2) {
+          section :global(.react-codemirror2),
+          kbd {
             color: white;
             background: var(--contrast-dark);
           }

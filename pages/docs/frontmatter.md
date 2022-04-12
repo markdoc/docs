@@ -107,11 +107,11 @@ After passing the parsed frontmatter to `variables`, you can access the values u
 {% markdoc-example %}
 
 ```md
-### {% $frontmatter.title %}
+# {% $frontmatter.title %}
 ```
 
 {% /markdoc-example %}
 
-### {% $markdoc.frontmatter.title %}
+# {% $markdoc.frontmatter.title %}
 
 {% /side-by-side %}

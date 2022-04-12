@@ -18,13 +18,14 @@ export function Features({ children }) {
           }
 
           .features :global(p) {
-            font-size: 16px;
+            font-size: var(--font-size-3);
+            line-height: var(--line-height-3);
           }
 
           .features :global(li strong) {
             font-family: var(--decoration);
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 14px;
+            font-weight: 500;
             line-height: 27px;
             letter-spacing: 0.05em;
             text-transform: uppercase;

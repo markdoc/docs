@@ -3,6 +3,7 @@
 import { Icon } from '../components/Icon';
 
 export const icon = {
+  tag: 'icon',
   Component: Icon,
   attributes: {
     icon: {

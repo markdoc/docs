@@ -42,12 +42,12 @@ export function TableOfContents({ toc }) {
             max-height: calc(100vh - var(--nav-height));
             flex: 0 0 240px;
             align-self: flex-start;
-            margin: 0 0 1rem;
+            margin: 0 0 1rem 1.5rem;
             padding: 0.25rem 0 0;
             border-left: 1px solid rgba(0, 0, 0, 0.14);
           }
           :global(body.dark) nav {
-            border-left-color: var(--black-light);
+            border-color: var(--black-light);
           }
           ul {
             margin: 0;

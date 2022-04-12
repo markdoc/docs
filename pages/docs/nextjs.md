@@ -104,7 +104,7 @@ module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
 
 ### Tags
 
-Custom tags are registered by exporting a schema object from within the `/markdoc` directory. In this example, the tag name is `button`, the name of the exported object. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% button %}` tag is used.
+Custom tags are registered by exporting a schema object from within the `/markdoc` directory. In this example, the tag name is `my-button`. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% my-button %}` tag is used.
 
 ```js
 // markdoc/Button.markdoc.js
@@ -112,24 +112,13 @@ Custom tags are registered by exporting a schema object from within the `/markdo
 import { Button } from '../components/Button';
 
 export const button = {
+  tag: 'my-button',
   Component: Button,
   attributes: {
     href: {
       type: String
     }
   }
-};
-```
-
-If you want to specify a tag name, set the `tag` key.
-
-```js
-// markdoc/SpecialButton.markdoc.js
-
-export const button = {
-  tag: 'special-button'
-  Component: SpecialButton,
-  attributes: {},
 };
 ```
 

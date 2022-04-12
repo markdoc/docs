@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
+import { useRouter } from 'next/router';
 
 import { AppLink as Link } from '../components/AppLink';
 import { Footer, SideNav, TableOfContents, TopNav } from '../components/Shell';
@@ -22,6 +24,22 @@ const MARKDOC = `
 
 
 `;
+
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+function useGoogleAnalytics() {
+  const router = useRouter();
+  React.useEffect(() => {
+    const handleRouteChange = (url) => {
+      window.gtag('config', GA_TRACKING_ID, {
+        page_path: url
+      });
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+}
 
 function collectHeadings(nodes, sections = []) {
   nodes.forEach((node) => {
@@ -68,11 +86,32 @@ export default function MyApp(props) {
   const isLandingPage = props.router.pathname === '/';
 
   React.useEffect(() => console.log(MARKDOC), []);
+  useGoogleAnalytics();
 
   return (
     <div className={`${isLandingPage ? 'page--landing' : ''}`}>
+      {/* https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `
+        }}
+      />
       <Head>
         <title>{title}</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
@@ -154,8 +193,10 @@ export default function MyApp(props) {
             max-width: 100%;
             /* https://stackoverflow.com/questions/36230944/prevent-flex-items-from-overflowing-a-container */
             min-width: 0;
-            /* TODO clean up padding logic (and below in @media) */
-            ${isDocs ? 'padding: 2rem 4rem 4rem;' : ''}
+          }
+
+          main :global(article) {
+            ${isDocs ? 'padding: 2rem 0rem 3rem;' : ''}
           }
 
           main :global(h3.jumbo) {
@@ -172,9 +213,60 @@ export default function MyApp(props) {
           }
 
           /* Landing page overrides */
+          /* Move top border to first section */
+          .page--landing :global(.nav-bar nav) {
+            border-bottom: none;
+          }
+
+          .page--landing :global(article .section:first-of-type section) {
+            border-top: 1px solid var(--dark);
+          }
+
+          .page--landing :global(p) {
+            letter-spacing: 0.02em;
+          }
+
+          .page--landing :global(.sandbox .preview p) {
+            letter-spacing: initial;
+          }
+
+          .page--landing :global(.heading) {
+            letter-spacing: -0.02em;
+          }
+
           /* Style hero section */
-          .page--landing :global(article > .section:first-of-type section) {
-            padding: 6rem 0 3rem;
+          .page--landing :global(.hero section) {
+            padding: 5.1rem 0 3.5rem;
+          }
+
+          .page--landing :global(.value-props section) {
+            padding-top: 0;
+          }
+
+          /* Show 'Try' text on hover on the landing page */
+          .page--landing :global(.sandbox .left:hover #hover) {
+            display: block;
+          }
+
+          .page--landing :global(.get-started) {
+            background: var(--theme);
+          }
+
+          :global(.dark) .page--landing :global(.get-started) {
+            background: var(--black-medium);
+          }
+
+          .page--landing :global(.get-started section .primary) {
+            padding-top: 0.75rem;
+          }
+
+          .page--landing :global(.characteristics) {
+            background: var(--gray-light);
+            padding-bottom: 2rem;
+          }
+
+          :global(.dark) .page--landing :global(.characteristics) {
+            background: var(--black);
           }
 
           .page--landing :global(pre[class*='language-']) {
@@ -190,8 +282,8 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.nav-bar nav) {
-            padding: 1.25rem 0 1.35rem;
             max-width: var(--landing-page-max-width);
+            padding: 1rem 0 1.1rem;
           }
 
           .page--landing :global(.side-by-side .left) {
@@ -234,8 +326,8 @@ export default function MyApp(props) {
 
           .page--landing :global(table td strong) {
             font-family: var(--decoration);
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 14px;
+            font-weight: 500;
             line-height: 27px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
@@ -285,9 +377,6 @@ export default function MyApp(props) {
           }
 
           @media screen and (max-width: 420px) {
-            main {
-              ${isDocs ? 'padding: 2rem;' : ''};
-            }
             .page--landing :global(table) {
               margin: 0;
             }

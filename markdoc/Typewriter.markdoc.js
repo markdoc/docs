@@ -3,6 +3,7 @@
 import { Typewriter } from '../components/Typewriter';
 
 export const typewriter = {
+  tag: 'typewriter',
   Component: Typewriter,
   attributes: {
     text: { type: String }

@@ -26,11 +26,11 @@ const items = [
     title: 'Rendering',
     links: [
       {
-        href: '/docs/rendering',
-        children: 'Phases'
+        href: '/docs/render',
+        children: 'Overview'
       },
-      { href: '/docs/rendering/html', children: 'HTML' },
-      { href: '/docs/rendering/react', children: 'React' }
+      { href: '/docs/render/html', children: 'HTML' },
+      { href: '/docs/render/react', children: 'React' }
     ]
   },
   {
@@ -80,6 +80,7 @@ export function SideNav() {
             flex: 0 0 240px;
             overflow-y: auto;
             padding: 2rem 0 3rem 2rem;
+            margin-right: 2rem;
           }
           h3 {
             font-weight: 500;
@@ -88,11 +89,11 @@ export function SideNav() {
           }
           ul {
             margin: 0;
-            padding: 4px 0 0;
+            padding: 0;
           }
           li {
             list-style-type: none;
-            margin: 0 0 1rem 1.5rem;
+            margin: 0 0 0.7rem 0.7rem;
             font-size: 14px;
             font-weight: 400;
           }
