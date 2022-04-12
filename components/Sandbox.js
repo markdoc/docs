@@ -378,10 +378,6 @@ export function Sandbox({ height, options }) {
             padding: 1.5rem;
           }
 
-          .preview :global(p) {
-            letter-spacing: none;
-          }
-
           .left :global(.CodeMirror),
           .left :global(.react-codemirror2) {
             color: white;

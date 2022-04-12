@@ -226,6 +226,10 @@ export default function MyApp(props) {
             letter-spacing: 0.02em;
           }
 
+          .page--landing :global(.sandbox .preview p) {
+            letter-spacing: initial;
+          }
+
           .page--landing :global(.heading) {
             letter-spacing: -0.02em;
           }
