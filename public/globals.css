@@ -318,7 +318,7 @@ table {
   overflow: hidden;
 }
 
-th {
+th, td > strong {
   font-size: var(--font-size-3);
   line-height: var(--line-height-3);
   font-family: var(--sans);
