@@ -222,6 +222,10 @@ export default function MyApp(props) {
             border-top: 1px solid var(--dark);
           }
 
+          .page--landing :global(p) {
+            letter-spacing: 0.02em;
+          }
+
           .page--landing :global(.heading) {
             letter-spacing: -0.02em;
           }
