@@ -59,7 +59,7 @@ and access the variables just like in a regular Markdoc document:
 {% markdoc-example %}
 
 ```
-{% $variableName %}
+{% $name %}
 ```
 
 {% /markdoc-example %}
