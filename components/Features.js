@@ -25,7 +25,7 @@ export function Features({ children }) {
           .features :global(li strong) {
             font-family: var(--decoration);
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             line-height: 27px;
             letter-spacing: 0.05em;
             text-transform: uppercase;

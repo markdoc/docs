@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap');
 
+/* TODO host GT America Mono  */
 @font-face {
-  /* TODO use non-trial version */
-  font-family: 'GT America Mono Trial';
+  font-family: 'GT America Mono';
   font-style: normal;
-  src: url('/fonts/GT-America-Mono-Trial-Regular.otf');
+  font-weight: normal;
+  src: url('/fonts/GT-America-Mono-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'GT America Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/GT-America-Mono-Medium.otf') format("opentype");
 }
 
 @font-face {
@@ -33,7 +41,7 @@
   --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
     sans-serif;
   --serif: Nib Trial, serif;
-  --decoration: GT America Mono Trial, Consolas, Monaco, 'Andale Mono',
+  --decoration: GT America Mono, Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
   --mono: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
