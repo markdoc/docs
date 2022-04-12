@@ -88,14 +88,19 @@
 
 .dark,
 /* Landing page uses a custom pre w/ a black background and --dark mode colors */
-.page--landing pre[class*='language-'] {
+.page--landing pre[class*='language-'],
+.sandbox .CodeMirror {
   --purple: var(--yellow); /* Change purple to yellow in dark mode */
   --green: #00d924;
   --blue: #80e9ff;
   --magenta: #ff80ff;
 
   --stripe: var(--white);
+}
 
+/* TODO combine with above w/ more testing */
+.dark,
+.page--landing pre[class*='language-'] {
   --light: var(--black);
   --dark: var(--white);
   --text: var(--dark);
