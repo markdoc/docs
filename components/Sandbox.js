@@ -22,7 +22,7 @@ Markdoc is open-source—check out it's [source](http://github.com/markdoc/markd
 
 ## What is the difference between Markdoc and MDX?
 
-Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[Read more](/docs/overview)
+Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[read more](/docs/overview)
 
 ## Next steps
 
