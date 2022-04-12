@@ -47,7 +47,7 @@ export function TableOfContents({ toc }) {
             border-left: 1px solid rgba(0, 0, 0, 0.14);
           }
           :global(body.dark) nav {
-            border-left-color: var(--black-light);
+            border-color: var(--black-light);
           }
           ul {
             margin: 0;

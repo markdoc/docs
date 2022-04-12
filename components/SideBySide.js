@@ -17,7 +17,10 @@ export function SideBySide({ children }) {
           .left {
             padding-top: 0.75rem;
             padding-right: 3rem;
-            border-right: 1px solid var(--dark);
+            border-right: 1px solid rgba(0, 0, 0, 0.14);
+          }
+          :global(body.dark) .left {
+            border-color: var(--black-light);
           }
           .right {
             padding-top: 0.75rem;
