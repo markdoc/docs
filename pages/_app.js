@@ -111,6 +111,7 @@ export default function MyApp(props) {
       />
       <Head>
         <title>{title}</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
