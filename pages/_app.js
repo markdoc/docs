@@ -188,7 +188,7 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.hero section) {
-            padding: 3.1rem 0 3.5rem;
+            padding: 5.1rem 0 3.5rem;
           }
 
           .page--landing :global(.value-props section) {
