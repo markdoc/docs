@@ -492,8 +492,9 @@ main .CodeMirror-gutters {
   border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-main .CodeMirror-selected {
-  background: var(--theme);
+main .CodeMirror-selected, main .CodeMirror-selectedtext {
+  color: var(--black) !important;
+  background: var(--theme) !important;
 }
 
 main .CodeMirror-linenumber {

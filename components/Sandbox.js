@@ -78,6 +78,7 @@ function EditorInternal({ innerRef, code, onChange, options }) {
   const codeMirrorOptions = React.useMemo(
     () => ({
       ...options,
+      styleSelectedText: true,
       lineNumbers: true,
       theme: 'none',
       mode: 'markdown',
@@ -95,6 +96,7 @@ function EditorInternal({ innerRef, code, onChange, options }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
+    require('codemirror/addon/selection/mark-selection');
     setKey((k) => k + 1);
   }, []);
 
