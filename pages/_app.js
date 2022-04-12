@@ -234,6 +234,11 @@ export default function MyApp(props) {
             padding-top: 0;
           }
 
+          /* Show 'Try' text on hover on the landing page */
+          .page--landing :global(.sandbox .left:hover #hover) {
+            display: block;
+          }
+
           .page--landing :global(.get-started) {
             background: var(--theme);
           }

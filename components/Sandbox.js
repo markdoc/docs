@@ -122,8 +122,10 @@ export function Editor(props) {
 export function Sandbox({ height, options }) {
   const router = useRouter();
   const ref = React.useRef();
+  const hoverEl = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
+  const [hasTyped, setHasTyped] = React.useState(false);
 
   const { ast, content, config, errors } = useMarkdocCode(code);
 
@@ -178,6 +180,19 @@ export function Sandbox({ height, options }) {
     }
   }, [errors]);
 
+  React.useEffect(() => {
+    function handler(event) {
+      const el = hoverEl.current;
+      if (el) {
+        el.style.top = event.clientY - 13 + 'px';
+        el.style.left = event.clientX + 16 + 'px';
+      }
+    }
+
+    document.addEventListener('mousemove', handler);
+    return () => document.removeEventListener('mousemove', handler);
+  }, []);
+
   return (
     <div className="sandbox">
       <nav>
@@ -226,10 +241,18 @@ export function Sandbox({ height, options }) {
       </nav>
       <div className="flex container">
         <section className="left">
+          {hasTyped ? null : (
+            <div id="hover" ref={hoverEl}>
+              Try
+            </div>
+          )}
           <Editor
             innerRef={ref}
             code={code}
-            onChange={setCode}
+            onChange={(...args) => {
+              setHasTyped(true);
+              setCode(...args);
+            }}
             options={options}
           />
         </section>
@@ -281,6 +304,18 @@ export function Sandbox({ height, options }) {
             flex-flow: column;
             flex-grow: 1;
             border: 1px solid var(--black);
+          }
+
+          #hover {
+            display: none;
+            position: fixed;
+            color: var(--white);
+            font-family: var(--decoration);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: -0.03em;
+            z-index: 999;
           }
 
           nav {
