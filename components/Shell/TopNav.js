@@ -65,6 +65,7 @@ export function TopNav({ children }) {
           }
           nav {
             display: flex;
+            gap: 1rem;
             width: 100%;
             margin: 0 auto;
             align-items: center;
@@ -76,10 +77,8 @@ export function TopNav({ children }) {
           }
           ul {
             display: flex;
+            gap: 1.4rem;
             padding: 0;
-          }
-          ul :global(a) {
-            margin-left: 1.4rem;
           }
           button {
             display: none;
@@ -106,8 +105,6 @@ export function TopNav({ children }) {
             }
             ul {
               display: none;
-              margin-top: 1rem;
-              margin-left: -1.5rem;
               font-size: 15px;
             }
             ul.active {
