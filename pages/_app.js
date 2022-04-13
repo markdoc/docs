@@ -196,7 +196,7 @@ export default function MyApp(props) {
           }
 
           main :global(article) {
-            ${isDocs ? 'padding: 2rem 0rem 3rem;' : ''}
+            ${isDocs ? 'padding: 2rem 1.5rem 3rem; 2rem' : ''}
           }
 
           main :global(h3.jumbo) {
