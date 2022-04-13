@@ -7,7 +7,8 @@ description:
 
 Markdoc has 3 phases of rendering: `parse`, `process`, and `render`. Each phase operates on the output of the previous phases.
 
-Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid. See the [validation docs](/docs/validation) for more info.
+Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid.  
+See the [validation docs](/docs/validation) for more info.
 
 ## Parse
 
