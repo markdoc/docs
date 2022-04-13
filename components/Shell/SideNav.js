@@ -12,9 +12,9 @@ const items = [
     ]
   },
   {
-    title: 'Syntax and schema',
+    title: 'Core concepts',
     links: [
-      { href: '/docs/syntax', children: 'Overview' },
+      { href: '/docs/syntax', children: 'Syntax' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },
@@ -28,7 +28,7 @@ const items = [
     links: [
       {
         href: '/docs/render',
-        children: 'Overview'
+        children: 'Rendering'
       },
       { href: '/docs/render/html', children: 'HTML' },
       { href: '/docs/render/react', children: 'React' }
