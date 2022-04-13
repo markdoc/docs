@@ -322,6 +322,7 @@ export default function MyApp(props) {
             padding: 20px 24px 26px;
             /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
             background-clip: padding-box;
+            vertical-align: top;
           }
 
           .page--landing :global(table td strong) {

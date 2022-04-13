@@ -30,7 +30,7 @@ export function SideBySide({ children }) {
             margin: 0;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 900px) {
             .side-by-side {
               flex-direction: column;
             }

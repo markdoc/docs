@@ -8,13 +8,13 @@ export function Features({ children }) {
         {`
           .features :global(ul) {
             display: flex;
+            gap: 3rem;
             padding: 0;
           }
 
           .features :global(li) {
             list-style: none;
-            flex: 1 1 0px;
-            margin-right: 3rem;
+            flex: 0 0 33%;
           }
 
           .features :global(p) {
@@ -36,12 +36,9 @@ export function Features({ children }) {
             line-height: 27px;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 900px) {
             .features :global(ul) {
               flex-direction: column;
-            }
-            .features :global(li) {
-              padding-bottom: 3rem;
             }
           }
         `}
