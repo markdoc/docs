@@ -63,6 +63,7 @@ npm install @markdoc/markdoc
 
 ```js
 import Markdoc from '@markdoc/markdoc';
+import config from './config';
 
 const doc = `
 # Hello world.
