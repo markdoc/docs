@@ -135,6 +135,7 @@ export function ThemeToggle() {
         {`
           button {
             display: flex;
+            gap: 8px;
             align-items: center;
             justify-content: center;
             width: 120px;
@@ -153,10 +154,6 @@ export function ThemeToggle() {
           .light {
             background: var(--gray-light);
             color: var(--black);
-          }
-
-          button span {
-            margin-left: 8px;
           }
 
           button:active :global(svg) {

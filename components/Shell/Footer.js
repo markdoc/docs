@@ -2,22 +2,9 @@ import React from 'react';
 
 import { ThemeToggle } from '.';
 
-export function Footer({ children }) {
-  const links = (
-    <div className="links">
-      {children}
-      <style jsx>
-        {`
-          .links {
-            margin-right: 1.5rem;
-          }
-        `}
-      </style>
-    </div>
-  );
-
+export function Footer({ children: links }) {
   const copyright = (
-    <div className="by">
+    <div className="gap">
       <svg
         width="99"
         height="28"
@@ -71,24 +58,6 @@ export function Footer({ children }) {
         />
       </svg>
       <span className="copyright">© {new Date().getFullYear()} Stripe</span>
-      <style jsx>
-        {`
-          .by {
-            display: flex;
-            align-items: center;
-          }
-
-          .copyright {
-            margin-left: 1.5rem;
-          }
-
-          @media screen and (max-width: 420px) {
-            .by {
-              padding-top: 1.5rem;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 
@@ -142,19 +111,27 @@ export function Footer({ children }) {
   return (
     <>
       <footer className="desktop">
-        {copyright}
-        {links}
+        <div className="gap">
+          {copyright}
+          {links}
+        </div>
         {disclaimer}
         {toggle}
       </footer>
-      <footer className="mobile">
-        {<span>{links}</span>}
+      <footer className="mobile gap">
+        {<span className="gap">{links}</span>}
         {copyright}
         {toggle}
         {disclaimer}
       </footer>
       <style jsx>
         {`
+          :global(.gap) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+          }
+
           footer {
             position: relative;
             display: flex;
@@ -171,22 +148,12 @@ export function Footer({ children }) {
             padding: 2.5rem 0 5rem;
           }
 
-          footer :global(a) {
-            margin-left: 1.5rem;
-          }
-
           @media screen and (max-width: 420px) {
             footer.mobile {
               display: flex;
             }
             footer.desktop {
               display: none;
-            }
-            footer :global(a:first-of-type) {
-              margin-left: 0;
-            }
-            footer :global(.theme-toggle) {
-              padding-top: 1.5rem;
             }
           }
         `}
