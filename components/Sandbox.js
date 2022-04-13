@@ -260,7 +260,7 @@ export function Sandbox({ height, options }) {
                 className={mode === 'preview' ? 'active' : undefined}
                 onClick={() => setMode('preview')}
               >
-                Preview
+                React
               </button>
               <button
                 className={mode === 'html' ? 'active' : undefined}
