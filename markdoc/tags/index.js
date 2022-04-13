@@ -1,6 +1,7 @@
 import markdocExample from './markdoc-example.markdoc';
 import sideBySide from './side-by-side.markdoc';
 
+// TODO use export default {}
 export { default as callout } from './callout.markdoc';
 export { default as features } from './features.markdoc';
 export { default as icon } from './icon.markdoc';
