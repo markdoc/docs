@@ -23,7 +23,7 @@ export function Features({ children }) {
           }
 
           .features :global(li strong) {
-            font-family: var(--decoration);
+            font-family: var(--mono);
             font-size: 14px;
             font-weight: 500;
             line-height: 27px;

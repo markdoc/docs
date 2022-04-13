@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 /* TODO host GT America Mono  */
 @font-face {
@@ -41,9 +41,7 @@
   --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
     sans-serif;
   --serif: Nib Trial, serif;
-  --decoration: GT America Mono, Consolas, Monaco, 'Andale Mono',
-    'Ubuntu Mono', monospace;
-  --mono: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+  --mono: GT America Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
 
   --font-size-0: 8px;

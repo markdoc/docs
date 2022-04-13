@@ -355,7 +355,7 @@ export function Sandbox({ height, options }) {
             display: none;
             position: fixed;
             color: var(--white);
-            font-family: var(--decoration);
+            font-family: var(--mono);
             font-size: 13px;
             font-weight: 400;
             line-height: 27px;

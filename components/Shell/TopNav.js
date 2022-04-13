@@ -73,7 +73,7 @@ export function TopNav({ children }) {
             border-bottom: 1px solid var(--dark);
             padding: 1rem 2rem 1.1rem;
             font-size: 14px;
-            font-family: var(--decoration);
+            font-family: var(--mono);
           }
           ul {
             display: flex;
