@@ -6,7 +6,13 @@ import Markdoc from '@markdoc/markdoc';
 import { transformSchema } from '@markdoc/next.js/runtime';
 import prettify from 'diffable-html';
 
-import * as schema from '../markdoc';
+import * as tags from '../markdoc/tags';
+import * as nodes from '../markdoc/nodes';
+
+const schema = {
+  tags: tags,
+  nodes: nodes
+};
 
 const INITIAL_CODE = `---
 title: What is Markdoc?

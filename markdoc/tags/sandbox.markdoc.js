@@ -1,9 +1,8 @@
 // @flow
 
-import { Sandbox } from '../components/Sandbox';
+import { Sandbox } from '../../components/Sandbox';
 
-export const sandbox = {
-  tag: 'sandbox',
+export default {
   Component: Sandbox,
   attributes: {
     height: { type: String },

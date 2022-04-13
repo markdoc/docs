@@ -4,11 +4,10 @@
  * atypical pattern for Markdoc applications.
  */
 import { nodes } from '@markdoc/markdoc';
-import { Document } from '../components/Document';
+import { Document } from '../../components/Document';
 
-export const document = {
+export default {
   ...nodes.document,
-  node: 'document',
   Component: Document,
   render(node, config) {
     return {

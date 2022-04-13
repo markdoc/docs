@@ -1,9 +1,8 @@
 // @flow
 
-import { Item } from '../components/Item';
+import { Item } from '../../components/Item';
 
-export const item = {
-  tag: 'item',
+export default {
   Component: Item,
   attributes: {
     className: { type: String }

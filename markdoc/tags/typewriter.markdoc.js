@@ -1,9 +1,8 @@
 // @flow
 
-import { Typewriter } from '../components/Typewriter';
+import { Typewriter } from '../../components/Typewriter';
 
-export const typewriter = {
-  tag: 'typewriter',
+export default {
   Component: Typewriter,
   attributes: {
     text: { type: String }

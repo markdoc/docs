@@ -1,9 +1,8 @@
 // @flow
 
-import { Callout } from '../components/Callout';
+import { Callout } from '../../components/Callout';
 
-export const callout = {
-  tag: 'callout',
+export default {
   Component: Callout,
   description: 'Display the enclosed content in a callout box',
   children: ['paragraph', 'tag', 'list'],
