@@ -96,7 +96,6 @@ function EditorInternal({ innerRef, code, onChange, options }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
-    require('codemirror/mode/twig/twig');
     require('./codemirror/markdoc');
     require('codemirror/addon/selection/mark-selection');
     setKey((k) => k + 1);
