@@ -112,7 +112,124 @@ An example `html` output might look like this:
 <p>Run this command to install the Markdoc library:</p>
 ```
 
-## Next steps
+### HTML
 
-- [Rendering HTML](/docs/render/html)
-- [Rendering React](/docs/render/react)
+Markdoc supports HTML rendering out-of-the-box. Try HTML rendering out yourself in the [developer playground](/sandbox?mode=html).
+
+To render HTML, first create a render tree from your content by calling `process`:
+
+{% markdoc-example %}
+
+```js
+const doc = `
+# Getting started
+
+Run this command to install the Markdoc library:
+`;
+
+const content = Markdoc.process(doc);
+```
+
+{% /markdoc-example %}
+
+\
+Then, call `Markdoc.renderers.html` with your render tree, which will create the corresponding HTML document.
+
+{% side-by-side %}
+
+```js
+const express = require('express');
+const Markdoc = require('@markdoc/markdoc');
+
+const app = express();
+
+app.get('/docs/getting-started', (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <body>
+        ${Markdoc.renderers.html(content)}
+        <!-- or --> 
+        ${Markdoc.render(content, {}, 'html')}
+      </body>
+    </html>
+  `);
+});
+```
+
+{% item %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Getting started</h1>
+    <p>Run this command to install the Markdoc library:</p>
+  </body>
+</html>
+```
+
+{% /item %}
+
+{% /side-by-side %}
+
+### React
+
+Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
+
+To render React, first create a render tree from your document calling `process`. This can be done from the server or client.
+
+{% markdoc-example %}
+
+```js
+const tags = {
+  callout: {
+    tag: 'Callout',
+    attributes: {}
+  }
+};
+
+const doc = `
+{% callout %}
+Attention, over here!
+{% /callout %}
+`;
+
+const content = Markdoc.process(doc, { tags });
+```
+
+{% /markdoc-example %}
+
+\
+Then, call `Markdoc.renderers.react` with the render tree from your client application. Along with `content` and `React`, you'll need to provide the `components` object as an argument. The `components` object specifies a mapping from your tags and nodes to the corresponding React component.
+
+{% side-by-side %}
+
+```js
+import Markdoc from '@markdoc/markdoc';
+import React from 'react'; // or 'preact'
+
+function Callout({ children }) {
+  return <div className="callout">{children}</div>;
+}
+
+function MyApp() {
+  return Markdoc.renderers.react(content, React, {
+    components: {
+      Callout: Callout
+    }
+  });
+}
+```
+
+{% item %}
+
+#### Rendered output
+
+{% callout %}
+Attention, over here!
+{% /callout %}
+{% /item %}
+
+{% /side-by-side %}

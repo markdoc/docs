@@ -20,18 +20,11 @@ const items = [
       { href: '/docs/attributes', children: 'Attributes' },
       { href: '/docs/variables', children: 'Variables' },
       { href: '/docs/functions', children: 'Functions' },
-      { href: '/docs/validation', children: 'Validation' }
-    ]
-  },
-  {
-    title: 'Rendering',
-    links: [
+      { href: '/docs/validation', children: 'Validation' },
       {
         href: '/docs/render',
         children: 'Rendering'
-      },
-      { href: '/docs/render/html', children: 'HTML' },
-      { href: '/docs/render/react', children: 'React' }
+      }
     ]
   },
   {
