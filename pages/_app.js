@@ -230,10 +230,6 @@ export default function MyApp(props) {
             letter-spacing: initial;
           }
 
-          .page--landing :global(.heading) {
-            letter-spacing: -0.02em;
-          }
-
           /* Style hero section */
           .page--landing :global(.hero section) {
             padding: 5.1rem 0 3.5rem;
