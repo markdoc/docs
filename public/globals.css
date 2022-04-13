@@ -323,7 +323,8 @@ table {
   overflow: hidden;
 }
 
-th, td > strong {
+th,
+td > strong {
   font-size: var(--font-size-3);
   line-height: var(--line-height-3);
   font-family: var(--sans);
@@ -449,6 +450,10 @@ pre .token.variable {
   color: var(--magenta) !important;
 }
 
+.sandbox span.cm-comment {
+  color: var(--gray-medium);
+}
+
 .sandbox span.cm-keyword,
 .sandbox span.cm-tag {
   color: var(--blue);
@@ -492,7 +497,8 @@ main .CodeMirror-gutters {
   border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-main .CodeMirror-selected, main .CodeMirror-selectedtext {
+main .CodeMirror-selected,
+main .CodeMirror-selectedtext {
   color: var(--black) !important;
   background: var(--theme) !important;
 }
