@@ -78,7 +78,8 @@ export function useMarkdocCode(code) {
   return { ast, content, config, errors };
 }
 
-function EditorInternal({ innerRef, code, onChange, options }) {
+function EditorInternal({ code, onChange, options, errors }) {
+  const ref = React.useRef();
   const [key, setKey] = React.useState(0);
 
   const codeMirrorOptions = React.useMemo(
@@ -97,58 +98,6 @@ function EditorInternal({ innerRef, code, onChange, options }) {
     (editor, meta, code) => onChange(code),
     [onChange]
   );
-
-  React.useLayoutEffect(() => {
-    require('codemirror/mode/markdown/markdown');
-    require('codemirror/mode/javascript/javascript');
-    require('codemirror/mode/xml/xml');
-    require('codemirror/addon/selection/mark-selection');
-    setKey((k) => k + 1);
-  }, []);
-
-  return (
-    <CodeMirror
-      ref={innerRef}
-      key={key}
-      value={code}
-      options={codeMirrorOptions}
-      onBeforeChange={onBeforeChange}
-    />
-  );
-}
-
-export function Editor(props) {
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
-
-  // Codemirror doesn't work w/ SSR
-  return mounted ? <EditorInternal {...props} /> : null;
-}
-
-export function Sandbox({ height, options }) {
-  const router = useRouter();
-  const ref = React.useRef();
-  const hoverEl = React.useRef();
-  const [code, setCode] = React.useState(INITIAL_CODE);
-  const [mode, setMode] = React.useState('preview');
-  const [hasTyped, setHasTyped] = React.useState(false);
-
-  const { ast, content, config, errors } = useMarkdocCode(code);
-
-  React.useEffect(() => {
-    const mode = new URLSearchParams(window.location.search).get('mode');
-    if (mode) {
-      setMode(mode);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    if (mode && window.location.pathname === '/sandbox') {
-      const query = new URLSearchParams(window.location.search);
-      query.set('mode', mode);
-      history.replaceState(null, '', '?' + query.toString());
-    }
-  }, [mode]);
 
   React.useEffect(() => {
     if (errors.length) {
@@ -186,6 +135,97 @@ export function Sandbox({ height, options }) {
     }
   }, [errors]);
 
+  React.useLayoutEffect(() => {
+    require('codemirror/mode/markdown/markdown');
+    require('codemirror/mode/javascript/javascript');
+    require('codemirror/mode/xml/xml');
+    require('codemirror/addon/selection/mark-selection');
+    setKey((k) => k + 1);
+  }, []);
+
+  return (
+    <>
+      <CodeMirror
+        ref={ref}
+        key={key}
+        value={code}
+        options={codeMirrorOptions}
+        onBeforeChange={onBeforeChange}
+      />
+      <style jsx>
+        {`
+          :global(.syntax-error) {
+            text-decoration: red wavy underline;
+            text-decoration-skip-ink: none;
+          }
+
+          /* Tooltip */
+          :global(.syntax-error::before) {
+            content: attr(data-title);
+            position: absolute;
+            display: none;
+            color: var(--black);
+            background: var(--white);
+            bottom: 20px;
+            padding: 1px 4px;
+            border-radius: 4px;
+            z-index: 999;
+          }
+
+          /* Tooltip triangle */
+          :global(.syntax-error::after) {
+            content: '';
+            position: absolute;
+            display: none;
+            bottom: 12px;
+            left: 12px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: var(--white) transparent transparent transparent;
+          }
+
+          :global(.syntax-error:hover::before),
+          :global(.syntax-error:hover::after) {
+            display: inline-block;
+          }
+        `}
+      </style>
+    </>
+  );
+}
+
+export function Editor(props) {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
+  // Codemirror doesn't work w/ SSR
+  return mounted ? <EditorInternal {...props} /> : null;
+}
+
+export function Sandbox({ height, options }) {
+  const router = useRouter();
+  const hoverEl = React.useRef();
+  const [code, setCode] = React.useState(INITIAL_CODE);
+  const [mode, setMode] = React.useState('preview');
+  const [hasTyped, setHasTyped] = React.useState(false);
+
+  const { ast, content, config, errors } = useMarkdocCode(code);
+
+  React.useEffect(() => {
+    const mode = new URLSearchParams(window.location.search).get('mode');
+    if (mode) {
+      setMode(mode);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (mode && window.location.pathname === '/sandbox') {
+      const query = new URLSearchParams(window.location.search);
+      query.set('mode', mode);
+      history.replaceState(null, '', '?' + query.toString());
+    }
+  }, [mode]);
+
   React.useEffect(() => {
     function handler(event) {
       const el = hoverEl.current;
@@ -205,7 +245,6 @@ export function Sandbox({ height, options }) {
         <button
           onClick={() => {
             setCode(INITIAL_CODE);
-            ref.current.editor.focus();
           }}
         >
           Reset
@@ -253,13 +292,13 @@ export function Sandbox({ height, options }) {
             </div>
           )}
           <Editor
-            innerRef={ref}
             code={code}
             onChange={(...args) => {
               setHasTyped(true);
               setCode(...args);
             }}
             options={options}
+            errors={errors}
           />
         </section>
         <section className="right dark">
@@ -411,41 +450,6 @@ export function Sandbox({ height, options }) {
 
           .sandbox :global(.CodeMirror) {
             border-top: 1px solid rgba(255, 255, 255, 0.22);
-          }
-
-          .sandbox :global(.syntax-error) {
-            text-decoration: red wavy underline;
-            text-decoration-skip-ink: none;
-          }
-
-          /* Tooltip */
-          .sandbox :global(.syntax-error::before) {
-            content: attr(data-title);
-            position: absolute;
-            display: none;
-            color: var(--black);
-            background: var(--white);
-            bottom: 20px;
-            padding: 1px 4px;
-            border-radius: 4px;
-            z-index: 999;
-          }
-
-          /* Tooltip triangle */
-          .sandbox :global(.syntax-error::after) {
-            content: '';
-            position: absolute;
-            display: none;
-            bottom: 12px;
-            left: 12px;
-            border-width: 4px;
-            border-style: solid;
-            border-color: var(--white) transparent transparent transparent;
-          }
-
-          .sandbox :global(.syntax-error:hover::before),
-          .sandbox :global(.syntax-error:hover::after) {
-            display: inline-block;
           }
 
           .sandbox .preview :global(h1) {

@@ -9,7 +9,7 @@ function EditPage({ source: initialDocument }) {
   const [showEditor, setShowEditor] = React.useState(false);
   const [mouseOver, setMouseOver] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
-  const { content, config } = useMarkdocCode(doc);
+  const { content, config, errors } = useMarkdocCode(doc);
 
   React.useEffect(() => {
     if (mouseOver) {
@@ -62,7 +62,7 @@ function EditPage({ source: initialDocument }) {
         onMouseEnter={() => setMouseOver(true)}
         onMouseLeave={() => setMouseOver(false)}
       >
-        <Editor code={doc} onChange={setDoc} />
+        <Editor code={doc} onChange={setDoc} errors={errors} />
         <button onClick={() => setShowEditor(false)}>
           <kbd>CMD + J / Esc</kbd>
         </button>
