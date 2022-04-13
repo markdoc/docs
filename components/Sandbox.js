@@ -10,8 +10,8 @@ import * as tags from '../markdoc/tags';
 import * as nodes from '../markdoc/nodes';
 
 const schema = {
-  tags: tags,
-  nodes: nodes
+  tags,
+  nodes
 };
 
 const INITIAL_CODE = `---
