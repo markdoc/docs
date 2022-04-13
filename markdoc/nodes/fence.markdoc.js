@@ -1,9 +1,8 @@
 // @flow
 
-import { Code } from '../components/Code';
+import { Code } from '../../components/Code';
 
-export const fence = {
-  node: 'fence',
+export default {
   Component: Code,
   attributes: {
     content: { type: String },

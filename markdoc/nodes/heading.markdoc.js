@@ -1,6 +1,6 @@
 // @flow
 
-import { Heading } from '../components/Heading';
+import { Heading } from '../../components/Heading';
 
 const getAnchor = (children, attributes) => {
   if (attributes.id && typeof attributes.id === 'string') {
@@ -14,8 +14,7 @@ const getAnchor = (children, attributes) => {
     .toLowerCase();
 };
 
-export const heading = {
-  node: 'heading',
+export default {
   Component: Heading,
   children: ['inline'],
   attributes: {
