@@ -71,7 +71,7 @@ Markdoc.renderers.react(content, React, {
 
 ## Table-of-contents
 
-#### Step 1: Collect all headings from the page content
+#### Collect all headings from the page content
 
 ```js
 function collectHeadings(nodes, sections = []) {
@@ -101,7 +101,7 @@ const content = Markdoc.process(ast);
 const headings = collectHeadings([].concat(processed));
 ```
 
-#### Step 2: Render the relevant headers in a list
+#### Render the headings in a list
 
 ```js
 function TableOfContents({ headings }) {
@@ -119,4 +119,10 @@ function TableOfContents({ headings }) {
     </nav>
   );
 }
+```
+
+#### Add IDs to the headings using ID [annotations](/docs/annotations)
+
+```md
+# My header {% #my-id %}
 ```
