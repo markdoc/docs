@@ -1,5 +1,3 @@
-// @flow
-
 import { Heading } from '../../components/Heading';
 
 const getAnchor = (children, attributes) => {

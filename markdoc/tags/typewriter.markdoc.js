@@ -1,5 +1,3 @@
-// @flow
-
 import { Typewriter } from '../../components/Typewriter';
 
 export default {

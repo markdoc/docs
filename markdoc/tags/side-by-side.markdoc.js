@@ -1,5 +1,3 @@
-// @flow
-
 import { SideBySide } from '../../components/SideBySide';
 
 export default {
