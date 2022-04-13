@@ -121,8 +121,12 @@ function TableOfContents({ headings }) {
 }
 ```
 
-#### Add IDs to the headings using ID [annotations](/docs/annotations)
+#### Add IDs to the headings using ID [annotations](/docs/syntax#annotations)
+
+{% markdoc-example %}
 
 ```md
 # My header {% #my-id %}
 ```
+
+{% /markdoc-example %}
