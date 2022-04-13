@@ -4,6 +4,5 @@ import { AppLink } from '../../components/AppLink';
 
 export default {
   ...link,
-  tag: undefined,
   Component: AppLink
 };
