@@ -56,15 +56,15 @@ export function useMarkdocCode(code) {
     };
   }, [ast]);
 
-  const content = React.useMemo(() => Markdoc.process(ast, config), [
-    ast,
-    config
-  ]);
+  const content = React.useMemo(
+    () => Markdoc.process(ast, config),
+    [ast, config]
+  );
 
-  const errors = React.useMemo(() => Markdoc.validate(ast, config), [
-    ast,
-    config
-  ]);
+  const errors = React.useMemo(
+    () => Markdoc.validate(ast, config),
+    [ast, config]
+  );
 
   return { ast, content, config, errors };
 }
@@ -130,7 +130,7 @@ function EditorInternal({ code, onChange, options, errors }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
-    require('./codemirror/markdoc');
+    require('./Codemirror/markdoc');
     require('codemirror/addon/selection/mark-selection');
     setKey((k) => k + 1);
   }, []);
