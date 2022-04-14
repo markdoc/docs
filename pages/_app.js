@@ -253,7 +253,7 @@ export default function MyApp(props) {
           }
 
           .page--landing :global(.get-started section .primary) {
-            padding-top: 0.75rem;
+            padding-top: 1rem;
           }
 
           .page--landing :global(.characteristics) {

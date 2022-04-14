@@ -31,9 +31,10 @@ export function Features({ children }) {
             text-transform: uppercase;
           }
 
-          .features :global(li *:last-child a) {
+          .features :global(li .primary) {
             font-size: 15px;
             line-height: 27px;
+            padding-top: 1rem;
           }
 
           @media screen and (max-width: 900px) {

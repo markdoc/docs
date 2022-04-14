@@ -162,7 +162,6 @@ a:hover {
 
 .primary a,
 a.primary {
-  padding-top: 8px;
   text-decoration: none;
   font-weight: 600;
   white-space: nowrap;

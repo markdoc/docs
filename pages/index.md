@@ -93,7 +93,7 @@ return Markdoc.render(content);
 
 - **Easily extensible**
 
-  Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) to entirely [new renderers](/docs/render).
+  Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) and [nodes](/docs/nodes) to entirely [new renderers](/docs/render).
 
   [Learn about rendering Markdoc](/docs/render) {% .primary %}
 
