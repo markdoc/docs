@@ -90,7 +90,7 @@ module.exports = withMarkdoc({ mode: 'static' })({
 
 ## Schema customization
 
-You can define your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes) and [tags](/docs/tags) are defined.
+You can define your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes), [tags](/docs/tags), and [functions](/docs/functions) are defined.
 
 ```
 .
@@ -98,6 +98,7 @@ You can define your Markdoc schema by creating a `/markdoc/` directory at the ro
 │   ├── ...
 │   └── Link.js
 ├── markdoc
+│   ├── functions.js
 │   ├── nodes
 │   │   ├── ...
 │   │   ├── link.markdoc.js
@@ -158,7 +159,7 @@ export default {
 
 ### Nodes
 
-Custom node registrations are almost identical to [tags](#tags), but instead you create a `/markdoc/nodes.js` file, for example:
+Custom node registrations are almost identical to [tags](#tags), except you create a `/markdoc/nodes.js` file instead, for example:
 
 ```js
 // markdoc/nodes.js
@@ -175,6 +176,22 @@ export const link = {
 ```
 
 This example overrides the default `link [node](/docs/nodes).
+
+### Functions
+
+Custom functions registrations are almost identical to tags and nodes, except you create a `/markdoc/functions.js` file instead, for example:
+
+```js
+// markdoc/functions.js
+
+export const upper = {
+  render(parameters) {
+    const string = parameters['0'];
+
+    return typeof string === 'string' ? string.toUpperCase() : string;
+  }
+};
+```
 
 ## Frontmatter
 
