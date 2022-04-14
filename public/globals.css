@@ -484,7 +484,7 @@ pre .token.variable {
 
 .sandbox span.cm-strong,
 .sandbox span.cm-header {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 main .CodeMirror,
@@ -494,6 +494,7 @@ main .react-codemirror2 {
   height: 100%;
   font-family: var(--mono);
   font-size: 13px;
+  line-height: 21px;
 }
 
 /* CodeMirror styles to apply to in page editor too */

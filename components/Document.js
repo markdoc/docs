@@ -77,6 +77,7 @@ function EditPage({ source: initialDocument }) {
             transition: transform 300ms ease;
             width: 55vw;
             height: 100vh;
+            border-left: 1px solid rgba(255, 255, 255, 0.22);
             transform: ${showEditor ? 'translateX(0)' : 'translateX(100%)'};
           }
           section :global(.CodeMirror),
