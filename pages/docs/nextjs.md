@@ -212,6 +212,20 @@ description: Integrate Markdoc into your Next.js app
 
 {% /markdoc-example %}
 
+## Partials
+
+Partials are automatically loaded from the `/markdoc/partials/` directory. For example:
+
+{% markdoc-example %}
+
+```
+{% partial file="header.md" /%}
+```
+
+{% /markdoc-example %}
+
+would load and render the contents of `markdoc/partials/header.md`
+
 ## Layouts
 
 To create a custom layout for each of your Markdown/Markdoc files, simply wrap your `Component` within your `_app.js`, for example:

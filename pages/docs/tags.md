@@ -314,9 +314,9 @@ Explicitly set column and row span.
 
 ### Partial
 
-Partials are used to reuse content across docs. The content is stored in a separate markdown file, and referenced from the `file` attribute in the `partial` tag, which includs the corresponding piece of content.
+Partials are used to reuse content across docs. The content is stored in a separate markdown file, and referenced from the `file` attribute in the `partial` tag, which includes the corresponding piece of content.
 
-Here is an example of including the `/docs/header.md` file as a partial.
+Here is an example of including the `header.md` file as a partial.
 {% markdoc-example %}
 
 ```

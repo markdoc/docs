@@ -84,7 +84,7 @@ const config = {
     }
   },
   partials: {
-    '/partials/header.md': Markdoc.parse(`# My header`)
+    'header.md': Markdoc.parse(`# My header`)
   }
 };
 

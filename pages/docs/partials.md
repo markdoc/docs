@@ -7,7 +7,7 @@ description:
 
 Partials are used to reuse content across documents. The content is stored in a separate Markdoc file, and referenced from within the partial tag.
 
-Here is an example of including the `/partials/header.md` file as a partial.
+Here is an example of including the `header.md` file as a partial.
 {% markdoc-example %}
 
 ```
@@ -25,7 +25,7 @@ Partials are defined by created a mapping from file name to an AST node in your 
 ```js
 const config = {
   partials: {
-    '/partials/header.md': Markdoc.parse(`# My header`)
+    'header.md': Markdoc.parse(`# My header`)
   }
 };
 
