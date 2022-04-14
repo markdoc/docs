@@ -230,6 +230,10 @@ export default function MyApp(props) {
             letter-spacing: initial;
           }
 
+          .page--landing :global(blockquote) {
+            max-width: 520px;
+          }
+
           /* Style hero section */
           .page--landing :global(.hero section) {
             padding: 5.1rem 0 3.5rem;
@@ -254,6 +258,8 @@ export default function MyApp(props) {
 
           .page--landing :global(.get-started section .primary) {
             padding-top: 1rem;
+            /* separate top and bottom on mobile */
+            padding-bottom: 2rem;
           }
 
           .page--landing :global(.characteristics) {

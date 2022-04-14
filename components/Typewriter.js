@@ -145,6 +145,10 @@ export function Typewriter({ children: text }) {
             ${done ? 'display: none;' : ''}
           }
           @media screen and (max-width: 420px) {
+            h1 {
+              height: unset;
+              overflow: initial;
+            }
             .prefers-animation {
               display: none;
             }

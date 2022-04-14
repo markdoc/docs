@@ -38,7 +38,7 @@ export function SideBySide({ children }) {
               padding: 0;
             }
             .right {
-              padding-top: 3rem;
+              padding-top: 1rem;
               padding-left: 0rem;
             }
           }

@@ -40,6 +40,10 @@ export function Features({ children }) {
           @media screen and (max-width: 900px) {
             .features :global(ul) {
               flex-direction: column;
+              gap: 40px;
+            }
+            .features :global(li .primary) {
+              padding-top: 0rem;
             }
           }
         `}
