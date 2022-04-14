@@ -35,8 +35,8 @@ Follow these steps to get started with `@markdoc/next.js`.
    pages
    ├── _app.js
    ├── docs
-   │   └── getting-started.md
-   ├── index.js
+   │   └── getting-started.md
+   └── index.md
    ```
 
 4. Add some Markdoc to your file:
@@ -92,7 +92,25 @@ module.exports = withMarkdoc({ mode: 'static' })({
 
 You can define your Markdoc schema by creating a `/markdoc/` directory at the root of your project. This is where custom [nodes](/docs/nodes) and [tags](/docs/tags) are defined.
 
-All `.js` files under `/markdoc/` are automatically imported and combined to create your Markdoc schema. If you want to specify which files are included, create a `/markdoc/index.js` file and specify the schema exports.
+```
+.
+├── components
+│   ├── ...
+│   └── Link.js
+├── markdoc
+│   ├── nodes
+│   │   ├── ...
+│   │   ├── link.markdoc.js
+│   │   └── index.js
+│   └── tags
+│       ├── ...
+│       └── index.js
+├── pages
+│   ├── _app.js
+│   └── index.md
+└── next.config.js
+
+```
 
 You can choose the import location for your schema by passing the `schemaPath` option to `withMarkdoc`:
 
@@ -104,15 +122,14 @@ module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
 
 ### Tags
 
-Custom tags are registered by exporting a schema object from within the `/markdoc` directory. In this example, the tag name is `my-button`. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% my-button %}` tag is used.
+Custom tags are registered by exporting an object from `/markdoc/tags.js` (or `/markdoc/tags/index.js`). In this example, the tag name is `my-button`. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% my-button %}` tag is used.
 
 ```js
-// markdoc/Button.markdoc.js
+// markdoc/tags.js
 
 import { Button } from '../components/Button';
 
 export const button = {
-  tag: 'my-button',
   Component: Button,
   attributes: {
     href: {
@@ -122,15 +139,32 @@ export const button = {
 };
 ```
 
-### Nodes
-
-Custom node registrations are almost identical to [tags](#tags), but instead of setting the `tag` key, you set `node`, for example:
+If you want to use kabob case for your tag names, you can export an object like:
 
 ```js
+// markdoc/tags.js
+
+export default {
+  'special-button': {
+    Component: SpecialButton,
+    attributes: {
+      href: {
+        type: String
+      }
+    }
+  }
+};
+```
+
+### Nodes
+
+Custom node registrations are almost identical to [tags](#tags), but instead you create a `/markdoc/nodes.js` file, for example:
+
+```js
+// markdoc/nodes.js
 import { Link } from 'next/link';
 
 export const link = {
-  node: 'link',
   Component: Link,
   attributes: {
     href: {
@@ -140,7 +174,7 @@ export const link = {
 };
 ```
 
-This example overrides the default link node to use a [Next.js link](https://nextjs.org/docs/api-reference/next/link).
+This example overrides the default `link [node](/docs/nodes).
 
 ## Frontmatter
 
@@ -184,7 +218,7 @@ export default function App({ Component, pageProps }) {
 Next.js Markdoc provides custom tags out-of-the-box that you can add to your schema. To include them, export them by name in your schema directory (e.g. `/markdoc/`). For example:
 
 ```js
-// markdoc/Next.markdoc.js
+// markdoc/tags/Next.markdoc.js
 
 export {
   comment,
