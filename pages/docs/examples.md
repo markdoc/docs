@@ -130,3 +130,112 @@ function TableOfContents({ headings }) {
 ```
 
 {% /markdoc-example %}
+
+## Tabs
+
+#### Create the Markdoc tags
+
+```js
+const tabs = {
+  render: 'Tabs',
+  attributes: {},
+  render(node, config) {
+    const labels = node
+      .renderChildren(config)
+      .filter((child) => child && child.name === 'Tab')
+      .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
+
+    return {
+      name: this.tag,
+      attributes: { labels },
+      children: tabs
+    };
+  }
+};
+
+const tab = {
+  render: 'Tab',
+  attributes: {
+    label: {
+      type: String
+    }
+  }
+};
+
+const config = {
+  tags: {
+    tabs,
+    tab
+  }
+};
+```
+
+#### Create React component
+
+Create a `Tab` and `Tabs` React component which map to the `tab` and `tabs` tag.
+
+{% side-by-side %}
+
+```js
+// components/Tabs.js
+
+import React from 'react';
+
+export const TabContext = React.createContext();
+
+export const Tabs = ({ labels, children }: Props) => {
+  const [currentTab, setCurrentTab] = React.useState(labels[0]);
+
+  return (
+    <TabContext.Provider value={currentTab}>
+      <ul>
+        {labels.map((label) => (
+          <li key={label}>
+            <button onClick={() => setCurrentTab(label)}>{label}</button>
+          </li>
+        ))}
+      </ul>
+      {children}
+    </TabContext.Provider>
+  );
+};
+```
+
+```js
+// components/Tab.js
+
+import React from 'react';
+import { TabContext } from './Tabs';
+
+export const Tab = ({ label, children }: Props) => {
+  const currentTab = React.useContext(TabContext);
+
+  if (label !== currentTab) {
+    return null;
+  }
+
+  return children;
+};
+```
+
+{% /side-by-side %}
+
+and use the tags in your document.
+
+{% markdoc-example %}
+
+```md
+{% tabs %}
+
+{% tab label="React" %}
+React content goes here
+{% /tab %}
+
+{% tab label="HTMl" %}
+HTML content goes here
+{% /tab %}
+
+{% /tabs %}
+```
+
+{% /markdoc-example %}
