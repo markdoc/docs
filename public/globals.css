@@ -470,7 +470,7 @@ pre .token.variable {
 }
 
 .sandbox span.cm-string {
-  color: var(--green);
+  color: var(--magenta);
 }
 
 .sandbox span.cm-number,

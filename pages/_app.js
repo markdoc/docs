@@ -262,6 +262,12 @@ export default function MyApp(props) {
             padding-bottom: 2rem;
           }
 
+          .page--landing :global(.try span.cm-keyword),
+          .page--landing :global(.try span.cm-tag),
+          .page--landing :global(.try span.cm-string) {
+            color: var(--white);
+          }
+
           .page--landing :global(.characteristics) {
             background: var(--gray-light);
             padding-bottom: 2rem;
