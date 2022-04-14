@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+// This source is updated based on https://github.com/HlidacStatu/codemirror-mode-liquid/blob/master/liquid.js
+
 (function (mod) {
   if (typeof exports == 'object' && typeof module == 'object')
     // CommonJS
@@ -170,8 +172,8 @@
         },
 
         electricInput: /^\s*{%-?\s*(when|end|endcase|els)$/,
-        blockCommentStart: '{% comment %}', // TODO: This should be /{%-?\s*comment\s*-?%}/.
-        blockCommentEnd: '{% /comment %}', // TODO: This should be /{%-?\s*endcomment\s*-?%}/.
+        blockCommentStart: '{% comment %}',
+        blockCommentEnd: '{% /comment %}',
         useInnerComments: false,
         fold: 'indent'
       };
