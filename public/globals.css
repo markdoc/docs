@@ -522,6 +522,12 @@ main .CodeMirror-cursor {
   border-color: var(--theme);
 }
 
+@media screen and (max-width: 1200px) {
+  :root {
+    --landing-page-max-width: 98vw;
+  }
+}
+
 @media screen and (max-width: 900px) {
   :root {
     --landing-page-max-width: 92vw;

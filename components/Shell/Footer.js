@@ -78,6 +78,7 @@ export function Footer({ children: links }) {
           .disclaimer {
             color: rgba(24, 24, 27, 0.5);
             margin-left: auto;
+            padding-left: 2rem;
             margin-right: 1.5rem;
             font-size: 15px;
             font-weight: 400;
