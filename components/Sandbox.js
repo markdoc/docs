@@ -8,10 +8,12 @@ import prettify from 'diffable-html';
 
 import * as tags from '../markdoc/tags';
 import * as nodes from '../markdoc/nodes';
+import * as functions from '../markdoc/functions';
 
 const schema = {
   tags,
-  nodes
+  nodes,
+  functions
 };
 
 const INITIAL_CODE = `---
@@ -40,10 +42,9 @@ export function useMarkdocCode(code) {
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
   const config = React.useMemo(() => {
-    const { nodes, tags, components } = transformSchema(schema);
+    const { components, ...rest } = transformSchema(schema);
     return {
-      nodes,
-      tags,
+      ...rest,
       variables: {
         markdoc: {
           frontmatter: ast.attributes.frontmatter
@@ -52,16 +53,7 @@ export function useMarkdocCode(code) {
         },
         invalid_code: `\n{% callout %}\nHere!\n`
       },
-      components,
-      functions: {
-        upper: {
-          render(parameters) {
-            const string = parameters['0'];
-
-            return typeof string === 'string' ? string.toUpperCase() : string;
-          }
-        }
-      }
+      components
     };
   }, [ast]);
 
