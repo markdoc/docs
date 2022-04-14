@@ -320,7 +320,7 @@ Here is an example of including the `/docs/header.md` file as a partial.
 {% markdoc-example %}
 
 ```
-{% partial file="/partials/header.md" /%}
+{% partial file="header.md" /%}
 ```
 
 {% /markdoc-example %}

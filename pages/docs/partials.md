@@ -11,7 +11,7 @@ Here is an example of including the `/partials/header.md` file as a partial.
 {% markdoc-example %}
 
 ```
-{% partial file="/partials/header.md" /%}
+{% partial file="header.md" /%}
 ```
 
 {% /markdoc-example %}
@@ -30,7 +30,7 @@ const config = {
 };
 
 const doc = `
-{% partial file="/partials/header.md" /%}
+{% partial file="header.md" /%}
 `;
 
 const ast = Markdoc.parse(doc);
@@ -49,7 +49,7 @@ Partials are just like other tags, so you can pass [variables](/docs/variables) 
 {% markdoc-example %}
 
 ```
-{% partial file="/partials/header.md" variables={name: "My header name"} /%}
+{% partial file="header.md" variables={name: "My header name"} /%}
 ```
 
 {% /markdoc-example %}

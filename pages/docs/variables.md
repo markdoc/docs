@@ -59,7 +59,7 @@ To pass variables to a partial, just set the `variables` attribute:
 {% markdoc-example %}
 
 ```
-{% partial variables={sdk: "Ruby", version: 3} file="my_partial.md" /%}
+{% partial variables={sdk: "Ruby", version: 3} file="header.md" /%}
 ```
 
 {% /markdoc-example %}
