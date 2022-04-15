@@ -1,7 +1,7 @@
 import { Section } from '../../components/Section';
 
 export default {
-  Component: Section,
+  render: Section,
   attributes: {
     className: { type: String }
   }

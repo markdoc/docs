@@ -38,7 +38,7 @@ Then, pass the custom attribute to your tag definition in your [`Config` object]
 const config = {
   tags: {
     'tag-name': {
-      tag: 'YourComponent',
+      render: 'YourComponent',
       attributes: {
         created: {
           type: DateTime,

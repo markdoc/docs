@@ -45,7 +45,7 @@ const errors = Markdoc.validate(ast, config);
 ```js
 [
   {
-    type: 'tag:callout',
+    type: 'tag',
     lines: [1, 2],
     location: {
       start: { line: 1 },
@@ -76,7 +76,7 @@ Use `Node` or `Tag` `validate` functions to verify the contents are correct, par
 const config = {
   tags: {
     provider: {
-      tag: 'provider',
+      render: 'Provider',
       // ...
       validate(node) {
         if (node.children.length !== 1) {
@@ -121,7 +121,7 @@ export class ImageSrc {
 
 const config = {
   image: {
-    tag: 'img',
+    render: 'img',
     attributes: {
       src: {
         type: ImageSrc,

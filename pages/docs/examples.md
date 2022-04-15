@@ -11,7 +11,7 @@ Markdoc does not support writing loops directly in documents. If you need to loo
 
 ```js
 export const group = {
-  tag: 'Group',
+  render: 'Group',
   attributes: {},
   render(node, config) {
     const children = node.renderChildren(config).map((item) => {
@@ -46,7 +46,7 @@ export function Fence({ children, language }) {
 }
 
 const fence = {
-  tag: 'Fence',
+  render: 'Fence',
   attributes: {
     language: {
       type: String,
@@ -146,7 +146,7 @@ const tabs = {
       .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
 
     return {
-      name: this.tag,
+      name: this.render,
       attributes: { labels },
       children: tabs
     };

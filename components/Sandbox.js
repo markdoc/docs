@@ -57,7 +57,7 @@ export function useMarkdocCode(code) {
   }, [ast]);
 
   const content = React.useMemo(
-    () => Markdoc.process(ast, config),
+    () => Markdoc.transform(ast, config),
     [ast, config]
   );
 
@@ -296,7 +296,7 @@ export function Sandbox({ height, options }) {
         <section className="right dark">
           {mode === 'preview' && (
             <div className="preview">
-              {Markdoc.render(code, config, 'react', React, {
+              {Markdoc.renderers.react(content, React, {
                 components: config.components
               })}
             </div>
@@ -304,7 +304,7 @@ export function Sandbox({ height, options }) {
           {mode === 'html' && (
             <CodeMirror
               value={prettify(
-                Markdoc.render(code, { variables: config.variables }, 'html')
+                Markdoc.renderers.html(Markdoc.transform(Markdoc.parse(code)))
               )}
               options={{ mode: 'xml', lineWrapping: true, readOnly: true }}
             />

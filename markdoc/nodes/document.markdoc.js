@@ -8,10 +8,10 @@ import { Document } from '../../components/Document';
 
 export default {
   ...nodes.document,
-  Component: Document,
-  render(node, config) {
+  render: Document,
+  transform(node, config) {
     return {
-      name: this.tag,
+      name: this.render,
       attributes: { source: config.source },
       children: node.renderChildren(config)
     };

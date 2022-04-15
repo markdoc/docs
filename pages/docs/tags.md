@@ -15,7 +15,7 @@ To extend Markdoc with a custom tag, first, create a tag definition. In this exa
 // ./schema/Callout.markdoc.js
 
 export const callout = {
-  tag: 'Callout',
+  render: 'Callout',
   description: 'Display the enclosed content in a callout box',
   children: ['paragraph', 'tag', 'list'],
   attributes: {

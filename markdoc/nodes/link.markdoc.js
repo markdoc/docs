@@ -4,5 +4,5 @@ import { AppLink } from '../../components/AppLink';
 
 export default {
   ...link,
-  Component: AppLink
+  render: AppLink
 };

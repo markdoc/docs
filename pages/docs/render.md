@@ -186,7 +186,7 @@ To render React, first create a render tree from your document calling `process`
 ```js
 const tags = {
   callout: {
-    tag: 'Callout',
+    render: 'Callout',
     attributes: {}
   }
 };

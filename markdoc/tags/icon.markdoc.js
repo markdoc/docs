@@ -1,7 +1,7 @@
 import { Icon } from '../../components/Icon';
 
 export default {
-  Component: Icon,
+  render: Icon,
   attributes: {
     icon: {
       type: String,

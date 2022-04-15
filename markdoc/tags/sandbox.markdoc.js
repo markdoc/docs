@@ -1,7 +1,7 @@
 import { Sandbox } from '../../components/Sandbox';
 
 export default {
-  Component: Sandbox,
+  render: Sandbox,
   attributes: {
     height: { type: String },
     options: { type: Object }

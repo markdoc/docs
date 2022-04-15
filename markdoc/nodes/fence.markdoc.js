@@ -1,7 +1,7 @@
 import { Code } from '../../components/Code';
 
 export default {
-  Component: Code,
+  render: Code,
   attributes: {
     content: { type: String },
     language: {

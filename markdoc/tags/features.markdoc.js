@@ -1,7 +1,7 @@
 import { Features } from '../../components/Features';
 
 export default {
-  Component: Features,
+  render: Features,
   attributes: {
     features: { type: Array }
   }

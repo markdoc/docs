@@ -50,7 +50,7 @@ This table outlines the various options you can pass to `Markdoc.process`:
 const config = {
   nodes: {
     heading: {
-      tag: 'Heading',
+      render: 'Heading',
       attributes: {
         id: { type: String },
         level: { type: Number }
@@ -59,7 +59,7 @@ const config = {
   },
   tags: {
     callout: {
-      tag: 'Callout',
+      render: 'Callout',
       attributes: {
         title: {
           type: String,

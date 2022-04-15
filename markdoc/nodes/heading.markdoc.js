@@ -13,20 +13,20 @@ const getAnchor = (children, attributes) => {
 };
 
 export default {
-  Component: Heading,
+  render: Heading,
   children: ['inline'],
   attributes: {
     id: { type: String },
     level: { type: Number, required: true, default: 1 },
     className: { type: String }
   },
-  render(node, config) {
+  transform(node, config) {
     const attributes = node.renderAttributes(this.attributes);
     const children = node.renderChildren(config);
     const id = getAnchor(children, attributes);
 
     return {
-      name: this.tag,
+      name: this.render,
       attributes: { ...attributes, id },
       children
     };

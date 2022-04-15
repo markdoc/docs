@@ -123,7 +123,7 @@ module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
 
 ### Tags
 
-Custom tags are registered by exporting an object from `/markdoc/tags.js` (or `/markdoc/tags/index.js`). In this example, the tag name is `my-button`. The `Component` field tells Markdoc to render a `Button` React component whenever the `{% my-button %}` tag is used.
+Custom tags are registered by exporting an object from `/markdoc/tags.js` (or `/markdoc/tags/index.js`). In this example, the tag name is `my-button`. The `render` field tells Markdoc to render a `Button` React component whenever the `{% my-button %}` tag is used.
 
 ```js
 // markdoc/tags.js
@@ -131,7 +131,7 @@ Custom tags are registered by exporting an object from `/markdoc/tags.js` (or `/
 import { Button } from '../components/Button';
 
 export const button = {
-  Component: Button,
+  render: Button,
   attributes: {
     href: {
       type: String
@@ -147,7 +147,7 @@ If you want to use kabob case for your tag names, you can export an object like:
 
 export default {
   'special-button': {
-    Component: SpecialButton,
+    render: SpecialButton,
     attributes: {
       href: {
         type: String
@@ -166,7 +166,7 @@ Custom node registrations are almost identical to [tags](#tags), except you crea
 import { Link } from 'next/link';
 
 export const link = {
-  Component: Link,
+  render: Link,
   attributes: {
     href: {
       type: String

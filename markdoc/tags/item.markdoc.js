@@ -1,7 +1,7 @@
 import { Item } from '../../components/Item';
 
 export default {
-  Component: Item,
+  render: Item,
   attributes: {
     className: { type: String }
   }
