@@ -63,7 +63,7 @@ for (const node of document.walk()) {
 ## Process
 
 ```js
-process(string | AstNode | AstNode[], ?Config) => RenderTreeNode | RenderTreeNode[]
+process(string | AstNode | AstNode[], ?Config) => RenderNode | RenderNode[]
 ```
 
 Process takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
@@ -93,15 +93,7 @@ You can see a more advanced render tree in the [developer playground](/sandbox?m
 
 ## Render
 
-```js
-render(
-  string | AstNode | RenderTreeNode | RenderTreeNode[],
-  ?Config,
-  'html' | 'react' | 'reactStatic' = 'html'
-) => mixed
-```
-
-Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTMl document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/render-elements.html).
+Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTML document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/render-elements.html).
 
 You can create your own renderer by creating a function that takes in a render tree as parameter and returns your desired output.
 
@@ -113,69 +105,11 @@ An example `html` output might look like this:
 <p>Run this command to install the Markdoc library:</p>
 ```
 
-### HTML
-
-Markdoc supports HTML rendering out-of-the-box. Try HTML rendering out yourself in the [developer playground](/sandbox?mode=html).
-
-To render HTML, first create a render tree from your content by calling `process`:
-
-{% markdoc-example %}
-
-```js
-const doc = `
-# Getting started
-
-Run this command to install the Markdoc library:
-`;
-
-const content = Markdoc.process(doc);
-```
-
-{% /markdoc-example %}
-
-\
-Then, call `Markdoc.renderers.html` with your render tree, which will create the corresponding HTML document.
-
-{% side-by-side %}
-
-```js
-const express = require('express');
-const Markdoc = require('@markdoc/markdoc');
-
-const app = express();
-
-app.get('/docs/getting-started', (req, res) => {
-  res.setHeader('Content-Type', 'text/html');
-  res.send(`
-    <!DOCTYPE html>
-    <html>
-      <body>
-        ${Markdoc.renderers.html(content)}
-        <!-- or --> 
-        ${Markdoc.render(content, {}, 'html')}
-      </body>
-    </html>
-  `);
-});
-```
-
-{% item %}
-
-```html
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>Getting started</h1>
-    <p>Run this command to install the Markdoc library:</p>
-  </body>
-</html>
-```
-
-{% /item %}
-
-{% /side-by-side %}
-
 ### React
+
+```js
+renderers.react(RenderNode | RenderNode[]) => React.Node
+```
 
 Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
 
@@ -231,6 +165,70 @@ function MyApp() {
 {% callout %}
 Attention, over here!
 {% /callout %}
+{% /item %}
+
+{% /side-by-side %}
+
+### HTML
+
+```js
+renderers.html(RenderNode | RenderNode[]) => mixed
+```
+
+Markdoc supports HTML rendering out-of-the-box. Try HTML rendering out yourself in the [developer playground](/sandbox?mode=html).
+
+To render HTML, first create a render tree from your content by calling `process`:
+
+{% markdoc-example %}
+
+```js
+const doc = `
+# Getting started
+
+Run this command to install the Markdoc library:
+`;
+
+const content = Markdoc.process(doc);
+```
+
+{% /markdoc-example %}
+
+\
+Then, call `Markdoc.renderers.html` with your render tree, which will create the corresponding HTML document.
+
+{% side-by-side %}
+
+```js
+const express = require('express');
+const Markdoc = require('@markdoc/markdoc');
+
+const app = express();
+
+app.get('/docs/getting-started', (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <body>
+        ${Markdoc.renderers.html(content)}
+      </body>
+    </html>
+  `);
+});
+```
+
+{% item %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Getting started</h1>
+    <p>Run this command to install the Markdoc library:</p>
+  </body>
+</html>
+```
+
 {% /item %}
 
 {% /side-by-side %}

@@ -41,7 +41,7 @@ Call the `parse`, `process` and `render` Markdoc functions to render your conten
 const ast = Markdoc.parse(source);
 const content = Markdoc.process(ast, config);
 
-return Markdoc.render(content, config, 'html');
+return Markdoc.renderers.html(content);
 ```
 
 ## Next steps

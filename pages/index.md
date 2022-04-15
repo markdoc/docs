@@ -73,7 +73,7 @@ const ast = Markdoc.parse(doc);
 
 const content = Markdoc.process(ast, config);
 
-return Markdoc.render(content);
+return Markdoc.renderers.html(content);
 ```
 
 {% /side-by-side %}

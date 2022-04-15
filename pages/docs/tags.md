@@ -46,7 +46,9 @@ const config = {
   }
 };
 
-return Markdoc.render(content, config);
+const content = Markdoc.transform(doc, config);
+
+return Markdoc.renderers.react(content, React, { components });
 ```
 
 Next, pass your config to `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.

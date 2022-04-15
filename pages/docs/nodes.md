@@ -20,7 +20,9 @@ const config = {
   }
 };
 
-return Markdoc.render(content, config);
+const content = Markdoc.transform(doc, config);
+
+return Markdoc.renderers.react(content, React, { components });
 ```
 
 where `heading` looks something like:
@@ -40,7 +42,7 @@ export const heading = {
     id: { type: String },
     level: { type: Number, required: true, default: 1 }
   },
-  render(node, config) {
+  transform(node, config) {
     const attributes = node.renderAttributes(this.attributes);
     const children = node.renderChildren(config);
 

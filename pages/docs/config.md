@@ -76,7 +76,7 @@ const config = {
   },
   functions: {
     includes: {
-      render(parameters, config) {
+      transform(parameters, config) {
         const [array, value] = Object.values(parameters);
 
         return Array.isArray(array) ? array.includes(value) : false;

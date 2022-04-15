@@ -13,7 +13,7 @@ Markdoc does not support writing loops directly in documents. If you need to loo
 export const group = {
   render: 'Group',
   attributes: {},
-  render(node, config) {
+  transform(node, config) {
     const children = node.renderChildren(config).map((item) => {
       /* Do something with children */
     });
@@ -139,7 +139,7 @@ function TableOfContents({ headings }) {
 const tabs = {
   render: 'Tabs',
   attributes: {},
-  render(node, config) {
+  transform(node, config) {
     const labels = node
       .renderChildren(config)
       .filter((child) => child && child.name === 'Tab')

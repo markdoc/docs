@@ -13,7 +13,7 @@ To extend Markdoc with your own functions, first create custom function definiti
 
 ```js
 const includes = {
-  render(parameters, config) {
+  transform(parameters, config) {
     const [array, value] = Object.values(parameters);
 
     return Array.isArray(array) ? array.includes(value) : false;
@@ -21,7 +21,7 @@ const includes = {
 };
 
 const uppercase = {
-  render(parameters) {
+  transform(parameters) {
     const string = parameters['0'];
 
     return typeof string === 'string' ? string.toUpperCase() : string;
@@ -29,7 +29,7 @@ const uppercase = {
 };
 
 const xor = {
-  render(parameters) {
+  transform(parameters) {
     const [a, b] = Object.values(parameters).map(Boolean);
     return a !== b;
   }
@@ -46,7 +46,7 @@ const config = {
   }
 };
 
-return Markdoc.render(content, config);
+return Markdoc.transform(content, config);
 ```
 
 Finally, call the functions within your Markdoc content
