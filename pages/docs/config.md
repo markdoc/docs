@@ -4,7 +4,7 @@ title: Configuration options
 
 # {% $markdoc.frontmatter.title %}
 
-This table outlines the various options you can pass to `Markdoc.process`:
+This table outlines the various options you can pass to `Markdoc.transform`:
 
 {% table %}
 
@@ -88,5 +88,5 @@ const config = {
   }
 };
 
-const content = Markdoc.process(ast, config);
+const content = Markdoc.transform(ast, config);
 ```

@@ -261,8 +261,8 @@ export function Sandbox({ height, options }) {
                 HTML
               </button>
               <button
-                className={mode === 'process' ? 'active' : undefined}
-                onClick={() => setMode('process')}
+                className={mode === 'transform' ? 'active' : undefined}
+                onClick={() => setMode('transform')}
               >
                 Render tree
               </button>
@@ -309,7 +309,7 @@ export function Sandbox({ height, options }) {
               options={{ mode: 'xml', lineWrapping: true, readOnly: true }}
             />
           )}
-          {mode === 'process' && (
+          {mode === 'transform' && (
             <CodeMirror
               value={JSON.stringify(content, null, 2)}
               options={{

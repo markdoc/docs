@@ -7,7 +7,7 @@ description:
 
 ## Loops
 
-Markdoc does not support writing loops directly in documents. If you need to loop through content, do so in a custom [Node](/docs/nodes) `render` function or in a custom [React component](/docs/render/react).
+Markdoc does not support writing loops directly in documents. If you need to loop through content, do so in a custom [Node](/docs/nodes) `render` function or in a custom [React component](/docs/render#react).
 
 ```js
 export const group = {
@@ -56,7 +56,7 @@ const fence = {
   }
 };
 
-const content = Markdoc.process(content, {
+const content = Markdoc.transform(content, {
   nodes: {
     fence
   }
@@ -97,8 +97,8 @@ function collectHeadings(nodes, sections = []) {
   return sections;
 }
 
-const content = Markdoc.process(ast);
-const headings = collectHeadings([].concat(processed));
+const content = Markdoc.transform(ast);
+const headings = collectHeadings([].concat(content));
 ```
 
 #### Render the headings in a list

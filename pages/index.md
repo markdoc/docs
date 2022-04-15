@@ -71,7 +71,7 @@ const doc = `
 
 const ast = Markdoc.parse(doc);
 
-const content = Markdoc.process(ast, config);
+const content = Markdoc.transform(ast, config);
 
 return Markdoc.renderers.html(content);
 ```

@@ -35,7 +35,7 @@ const doc = `
 
 const ast = Markdoc.parse(doc);
 
-return Markdoc.process(ast, config);
+return Markdoc.transform(ast, config);
 ```
 
 {% /markdoc-example %}

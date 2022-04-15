@@ -35,7 +35,7 @@ const config = {
   }
 };
 
-const content = Markdoc.process(document, config);
+const content = Markdoc.transform(document, config);
 ```
 
 {% /markdoc-example %}

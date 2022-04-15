@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc has 3 phases of rendering: `parse`, `process`, and `render`. Each phase operates on the output of the previous phases.
+Markdoc has 3 phases of rendering: `parse`, `transform`, and `render`. Each phase operates on the output of the previous phases.
 
 Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid.  
 See the [validation docs](/docs/validation) for more info.
@@ -60,15 +60,15 @@ for (const node of document.walk()) {
 }
 ```
 
-## Process
+## Transform
 
 ```js
-process(string | AstNode | AstNode[], ?Config) => RenderNode | RenderNode[]
+transform(string | AstNode | AstNode[], ?Config) => RenderNode | RenderNode[]
 ```
 
-Process takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
+Transform takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
 
-The process step is also responsible for resolving variables into static, scalar values (string, boolean, object, etc.).
+The transform step is also responsible for resolving variables into static, scalar values (string, boolean, object, etc.).
 
 An example render tree might look like this:
 
@@ -89,7 +89,7 @@ An example render tree might look like this:
 ];
 ```
 
-You can see a more advanced render tree in the [developer playground](/sandbox?mode=process).
+You can see a more advanced render tree in the [developer playground](/sandbox?mode=transform).
 
 ## Render
 
@@ -113,7 +113,7 @@ renderers.react(RenderNode | RenderNode[]) => React.Node
 
 Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
 
-To render React, first create a render tree from your document calling `process`. This can be done from the server or client.
+To render React, first create a render tree from your document calling `transform`. This can be done from the server or client.
 
 {% markdoc-example %}
 
@@ -131,7 +131,7 @@ Attention, over here!
 {% /callout %}
 `;
 
-const content = Markdoc.process(doc, { tags });
+const content = Markdoc.transform(doc, { tags });
 ```
 
 {% /markdoc-example %}
@@ -177,7 +177,7 @@ renderers.html(RenderNode | RenderNode[]) => mixed
 
 Markdoc supports HTML rendering out-of-the-box. Try HTML rendering out yourself in the [developer playground](/sandbox?mode=html).
 
-To render HTML, first create a render tree from your content by calling `process`:
+To render HTML, first create a render tree from your content by calling `transform`:
 
 {% markdoc-example %}
 
@@ -188,7 +188,7 @@ const doc = `
 Run this command to install the Markdoc library:
 `;
 
-const content = Markdoc.process(doc);
+const content = Markdoc.transform(doc);
 ```
 
 {% /markdoc-example %}

@@ -35,11 +35,11 @@ import Markdoc from '@markdoc/markdoc';
 
 ## Use Markdoc
 
-Call the `parse`, `process` and `render` Markdoc functions to render your content.
+Call the `parse`, `transform` and `render` Markdoc functions to render your content.
 
 ```js
 const ast = Markdoc.parse(source);
-const content = Markdoc.process(ast, config);
+const content = Markdoc.transform(ast, config);
 
 return Markdoc.renderers.html(content);
 ```
