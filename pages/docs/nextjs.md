@@ -163,6 +163,7 @@ Custom node registrations are almost identical to [tags](#tags), except you crea
 
 ```js
 // markdoc/nodes.js
+
 import { Link } from 'next/link';
 
 export const link = {
