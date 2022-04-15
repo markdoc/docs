@@ -321,23 +321,3 @@ Renders a [Next.js `Script` component](https://nextjs.org/docs/api-reference/nex
 ```
 
 {% /markdoc-example %}
-
-### Markdoc example
-
-Use the `markdoc-example` tag to create code examples that contain Markdoc syntax.
-
-{% markdoc-example %}
-
-````md
-{% markdoc-example %}
-
-```md
-{% comment %}
-<Markdoc stuff goes here>
-{% /comment%}
-```
-
-{% /markdoc-example %}
-````
-
-{% /markdoc-example %}

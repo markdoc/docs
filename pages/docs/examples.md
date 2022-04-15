@@ -239,3 +239,48 @@ HTML content goes here
 ```
 
 {% /markdoc-example %}
+
+## Markdoc syntax
+
+If you want to document examples of Markdoc syntax itself, we recommend you create a `markdoc-example` tag, like:
+
+```js
+const markdocExample = {
+  render: 'pre' // or replace this with your `Code` React component
+  attributes: {},
+  transform(node) {
+    const attributes = node.renderAttributes(this.attributes);
+    const {content: exampleCode, language} = node.children[0].attributes;
+
+    return {
+      name: this.render,
+      attributes: {...attributes, language},
+      children: [exampleCode],
+    };
+  },
+};
+
+const config = {
+  tags: {
+    'markdoc-example: markdocExample
+  }
+}
+```
+
+which can then be used in your docs:
+
+{% markdoc-example %}
+
+````md
+{% markdoc-example %}
+
+```md
+{% comment %}
+<Markdoc stuff goes here>
+{% /comment%}
+```
+
+{% /markdoc-example %}
+````
+
+{% /markdoc-example %}
