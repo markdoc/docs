@@ -3,7 +3,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import yaml from 'js-yaml';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
-import { transformSchema } from '@markdoc/next.js/runtime';
+import { getSchema } from '@markdoc/next.js/runtime';
 import prettify from 'diffable-html';
 
 import * as tags from '../markdoc/tags';
@@ -41,7 +41,7 @@ export function useMarkdocCode(code) {
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
   const config = React.useMemo(() => {
-    const { components, ...rest } = transformSchema(schema);
+    const { components, ...rest } = getSchema(schema);
     return {
       ...rest,
       variables: {
