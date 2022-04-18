@@ -141,6 +141,7 @@ export function Typewriter({ children: text }) {
             width: 8px;
             height: calc(var(--font-size-jumbo) - 3px);
             background: var(--theme);
+            ${done ? 'display: none;' : ''}
           }
           @media screen and (max-width: 600px) {
             h1 {
