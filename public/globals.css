@@ -117,9 +117,9 @@ body {
 }
 
 body ::selection,
-body.dark ::selection {
-  color: var(--black);
-  background: var(--theme);
+body.dark ::selection{
+  color: var(--black) !important;
+  background: var(--theme) !important;
 }
 
 body.modal-is-active {
