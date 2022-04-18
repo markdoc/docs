@@ -419,7 +419,7 @@ export default function MyApp(props) {
           @font-face {
             font-family: 'Tiempos';
             font-style: normal;
-            src: url('${FONTS_BASE_URL}/test-tiempos-headline-regular.woff2');
+            src: url('${FONTS_BASE_URL}/test-tiempos-headline-light.woff2');
           }
         `}
       </style>
