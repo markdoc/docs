@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-/* TODO host GT America Mono  */
-@font-face {
-  font-family: 'GT America Mono';
-  font-style: normal;
-  font-weight: normal;
-  src: url('/fonts/GT-America-Mono-Regular.otf') format("opentype");
-}
-
-@font-face {
-  font-family: 'GT America Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/fonts/GT-America-Mono-Medium.otf') format("opentype");
-}
-
 @font-face {
   /* TODO use non-trial version */
   font-family: 'Nib Trial';

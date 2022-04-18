@@ -25,6 +25,8 @@ const MARKDOC = `
 
 `;
 
+const FONTS_BASE_URL = process.env.NEXT_PUBLIC_FONTS_BASE_URL || '/fonts';
+
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 function useGoogleAnalytics() {
   const router = useRouter();
@@ -393,6 +395,25 @@ export default function MyApp(props) {
               display: flex;
               flex-direction: column;
             }
+          }
+        `}
+      </style>
+      <style jsx global>
+        {`
+          @font-face {
+            font-family: 'GT America Mono';
+            font-style: normal;
+            font-weight: normal;
+            src: url('${FONTS_BASE_URL}/GT-America-Mono-Regular.otf')
+              format('opentype');
+          }
+
+          @font-face {
+            font-family: 'GT America Mono';
+            font-style: normal;
+            font-weight: 500;
+            src: url('${FONTS_BASE_URL}/GT-America-Mono-Medium.otf')
+              format('opentype');
           }
         `}
       </style>
