@@ -8,13 +8,14 @@ export function Features({ children }) {
         {`
           .features :global(ul) {
             display: flex;
-            gap: 3rem;
+            gap: 4rem;
             padding: 0;
           }
 
           .features :global(li) {
             list-style: none;
-            flex: 0 0 33%;
+            margin: 0;
+            flex: 1 0 0;
           }
 
           .features :global(p) {
@@ -40,7 +41,7 @@ export function Features({ children }) {
           @media screen and (max-width: 900px) {
             .features :global(ul) {
               flex-direction: column;
-              gap: 40px;
+              gap: 45px;
             }
             .features :global(li .primary) {
               padding-top: 0rem;

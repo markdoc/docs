@@ -77,9 +77,7 @@ export function Footer({ children: links }) {
         {`
           .disclaimer {
             color: rgba(24, 24, 27, 0.5);
-            margin-left: auto;
             padding-left: 2rem;
-            margin-right: 1.5rem;
             font-size: 15px;
             font-weight: 400;
             line-height: 27px;
@@ -112,12 +110,14 @@ export function Footer({ children: links }) {
   return (
     <>
       <footer className="desktop">
-        <div className="gap">
+        <div className="left gap">
           {copyright}
           {links}
         </div>
-        {disclaimer}
-        {toggle}
+        <div className="right gap">
+          {disclaimer}
+          {toggle}
+        </div>
       </footer>
       <footer className="mobile gap">
         {<span className="gap">{links}</span>}
@@ -146,7 +146,11 @@ export function Footer({ children: links }) {
           footer.mobile {
             display: none;
             flex-direction: column;
-            padding: 2.5rem 0 5rem;
+            padding: 0;
+          }
+
+          .right {
+            margin-left: auto;
           }
 
           @media screen and (max-width: 420px) {

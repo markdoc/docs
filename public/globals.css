@@ -248,8 +248,8 @@ h5,
 h1.jumbo {
   font-family: var(--serif);
   letter-spacing: -0.02em;
-  font-size: var(--font-size-jumbo);
   font-weight: 400;
+  font-size: var(--font-size-jumbo);
   line-height: var(--line-height-jumbo);
 }
 
@@ -512,23 +512,35 @@ main .CodeMirror-cursor {
 @media screen and (max-width: 900px) {
   :root {
     --landing-page-max-width: 92vw;
+    --font-size-jumbo: 56.5px;
+    --line-height-jumbo: 65px;
+  }
+  h2.jumbo {
+    font-size: var(--font-size-jumbo);
+    line-height: var(--line-height-jumbo);
+  }
+  h3.jumbo {
+    font-size: 43px;
+    line-height: 49px;
   }
 }
 
 @media screen and (max-width: 420px) {
   :root {
     --landing-page-max-width: 90vw;
-    --font-size-jumbo: 38px;
-    --line-height-jumbo: 44px;
+    --font-size-jumbo: 41px;
+    --line-height-jumbo: 47px;
   }
   p {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
   }
-  h2.jumbo,
-  h3.jumbo {
+  h2.jumbo {
     font-size: 38px;
     line-height: 44px;
+  }
+  blockquote {
+    margin: 0.75rem 0;
   }
   .no-mobile {
     display: none;

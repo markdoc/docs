@@ -91,8 +91,7 @@ export function Typewriter({ children: text }) {
   const next = React.useCallback(() => setState((s) => s + 1), []);
 
   return (
-    <h1 className="jumbo">
-      <title>{text}</title>
+    <h1 className="jumbo" aria-label={text}>
       <span className="prefers-no-animation">{text}</span>
       <span aria-hidden="true" className="prefers-animation">
         <Swapper before="# Markdoc" after="Markdoc is" onEnd={next} />
@@ -137,14 +136,13 @@ export function Typewriter({ children: text }) {
           .cursor {
             position: absolute;
             display: inline-block;
-            top: -64px;
+            top: calc(14px - var(--font-size-jumbo));
             left: 0.75rem;
             width: 8px;
             height: calc(var(--font-size-jumbo) - 3px);
             background: var(--theme);
-            ${done ? 'display: none;' : ''}
           }
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 600px) {
             h1 {
               height: unset;
               overflow: initial;

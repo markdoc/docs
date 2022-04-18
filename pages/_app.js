@@ -220,10 +220,6 @@ export default function MyApp(props) {
             border-bottom: none;
           }
 
-          .page--landing :global(article .section:first-of-type section) {
-            border-top: 1px solid var(--dark);
-          }
-
           .page--landing :global(p) {
             letter-spacing: 0.02em;
           }
@@ -387,13 +383,37 @@ export default function MyApp(props) {
             right: -5px;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 900px) {
+            .page--landing :global(.hero section) {
+              padding: 3rem 0 0;
+            }
+            .page--landing :global(.try section) {
+              max-width: unset;
+            }
+            .page--landing :global(.characteristics) {
+              padding-bottom: 1rem;
+            }
             .page--landing :global(table) {
               margin: 0;
+            }
+            .page--landing :global(table td) {
+              padding: 15px 21px 24px;
+            }
+          }
+
+          @media screen and (max-width: 420px) {
+            .page--landing :global(.hero section) {
+              padding: 2rem 0 2.5rem;
             }
             .page--landing :global(table tr) {
               display: flex;
               flex-direction: column;
+            }
+            .page--landing :global(table td) {
+              padding: 14px 16px 20px;
+            }
+            .footer-bar {
+              padding: 35px 0 5rem;
             }
           }
         `}

@@ -17,7 +17,7 @@ export function Section({ children, className }) {
           }
           @media screen and (max-width: 420px) {
             section {
-              padding: 4rem 0;
+              padding: 2.8rem 0 3.75rem;
             }
           }
         `}
