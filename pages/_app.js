@@ -415,6 +415,12 @@ export default function MyApp(props) {
             src: url('${FONTS_BASE_URL}/GT-America-Mono-Medium.otf')
               format('opentype');
           }
+
+          @font-face {
+            font-family: 'Tiempos';
+            font-style: normal;
+            src: url('${FONTS_BASE_URL}/test-tiempos-headline-regular.woff2');
+          }
         `}
       </style>
     </div>

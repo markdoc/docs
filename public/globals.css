@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-@font-face {
-  /* TODO use non-trial version */
-  font-family: 'Nib Trial';
-  font-style: normal;
-  src: url('/fonts/nib-regular-trial.otf');
-}
-
 *,
 *::before,
 *::after {
@@ -25,7 +18,7 @@
 
   --sans: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue,
     sans-serif;
-  --serif: Nib Trial, serif;
+  --serif: Tiempos, serif;
   --mono: GT America Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
 
