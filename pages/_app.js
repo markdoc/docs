@@ -202,7 +202,7 @@ export default function MyApp(props) {
           }
 
           main :global(h3.jumbo) {
-            max-width: 80%; /* put "Stripe documentation" on new line */
+            max-width: 385px; /* put "Stripe documentation" on new line */
           }
 
           .footer-bar {
