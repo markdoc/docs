@@ -13,6 +13,7 @@
 :root {
   --default-vertical-spacing: 0.75rem;
   --nav-height: 71.594px;
+  --footer-height: 61px;
   --shadow-height: 14px;
   --landing-page-max-width: 1200px;
 
@@ -539,16 +540,16 @@ main .CodeMirror-scroll::-webkit-scrollbar {
 @media screen and (max-width: 420px) {
   :root {
     --landing-page-max-width: 90vw;
-    --font-size-jumbo: 41px;
-    --line-height-jumbo: 47px;
+    --font-size-jumbo: 37px;
+    --line-height-jumbo: 42px;
   }
   p {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
   }
   h2.jumbo {
-    font-size: 38px;
-    line-height: 44px;
+    font-size: 34px;
+    line-height: 41px;
   }
   blockquote {
     margin: 0.75rem 0;

@@ -70,7 +70,7 @@ export function SideNav() {
           nav {
             position: sticky;
             top: var(--nav-height);
-            height: calc(100vh - var(--nav-height));
+            height: calc(100vh - var(--nav-height) - var(--footer-height));
             flex: 0 0 240px;
             overflow-y: auto;
             padding: 2rem 0 3rem 2rem;
