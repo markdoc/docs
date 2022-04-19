@@ -514,7 +514,7 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1305px) {
   :root {
     --landing-page-max-width: 92vw;
   }
