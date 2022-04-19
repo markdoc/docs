@@ -264,7 +264,7 @@ export default function MyApp(props) {
           }
 
           /* Show 'Try' text on hover on the landing page */
-          .page--landing .sandbox .left:hover #hover {
+          .page--landing .sandbox .container:hover #hover {
             display: block;
           }
 

@@ -278,11 +278,6 @@ export function Sandbox({ height, options }) {
       </nav>
       <div className="flex container">
         <section className="left">
-          {hasTyped ? null : (
-            <div id="hover" ref={hoverEl}>
-              Try
-            </div>
-          )}
           <Editor
             code={code}
             onChange={(...args) => {
@@ -296,6 +291,11 @@ export function Sandbox({ height, options }) {
         <section className="right dark">
           {mode === 'preview' && (
             <div className="preview">
+              {hasTyped ? null : (
+                <div id="hover" ref={hoverEl}>
+                  Try Markdoc
+                </div>
+              )}
               {Markdoc.renderers.react(content, React, {
                 components: config.components
               })}
@@ -413,6 +413,21 @@ export function Sandbox({ height, options }) {
             color: var(--black);
             height: 100%;
             padding: 1.5rem;
+          }
+
+          .preview:hover #hover {
+            color: var(--black);
+          }
+
+          .left,
+          .right {
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
+          }
+
+          .left::-webkit-scrollbar,
+          .right::-webkit-scrollbar {
+            display: none; /* for Chrome, Safari, and Opera */
           }
 
           .left :global(.CodeMirror),
