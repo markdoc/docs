@@ -91,8 +91,8 @@ function EditPage({ source: initialDocument }) {
           }
           button {
             position: absolute;
-            top: 1rem;
-            right: 1.5rem;
+            top: 0.8rem;
+            right: 1rem;
           }
           kbd {
             color: var(--white);
