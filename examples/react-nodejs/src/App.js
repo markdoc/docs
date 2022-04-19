@@ -7,15 +7,20 @@ function App() {
 
   React.useEffect(() => {
     return async () => {
-      const path = window.location.pathname;
-      const response = await fetch(`${path}`, {
-        headers: {
-          Accept: 'application/json'
+      const response = await fetch(
+        `/markdoc-api?` +
+          new URLSearchParams({
+            path: window.location.pathname
+          }),
+        {
+          headers: {
+            Accept: 'application/json'
+          }
         }
-      });
+      );
 
-      const markdocRenderTree = await response.json();
-      setContent(markdocRenderTree);
+      const content = await response.json();
+      setContent(content);
     };
   }, []);
 

@@ -1,5 +1,5 @@
 ---
-route: '/docs/example'
+route: '/example'
 title: 'How to do X'
 ---
 

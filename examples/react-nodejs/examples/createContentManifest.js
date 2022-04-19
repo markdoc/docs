@@ -9,7 +9,7 @@ const parseMarkdocFrontmatter = (ast) => {
     : {};
 };
 
-const createContentManifest = () => {
+exports.createContentManifest = () => {
   const files = fs.readdirSync(path.join(__dirname, 'content'));
   const contentManifest = {};
   files.forEach((file) => {
@@ -26,5 +26,3 @@ const createContentManifest = () => {
 
   return contentManifest;
 };
-
-module.exports = { createContentManifest };

@@ -8,7 +8,7 @@ const TYPE_MAP = {
     color: '#d97917'
   },
   check: {
-    color: 'black'
+    color: '#000000'
   },
   warning: {
     color: '#ed5f74'
