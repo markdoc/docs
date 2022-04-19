@@ -224,10 +224,6 @@ export default function MyApp(props) {
             letter-spacing: 0.02em;
           }
 
-          .page--landing :global(.sandbox .preview p) {
-            letter-spacing: initial;
-          }
-
           .page--landing :global(blockquote) {
             max-width: 520px;
           }
@@ -237,13 +233,21 @@ export default function MyApp(props) {
             padding: 5.1rem 0 3.5rem;
           }
 
-          .page--landing :global(.value-props section) {
-            padding-top: 0;
+          .page--landing :global(.sandbox .preview p) {
+            letter-spacing: initial;
+          }
+
+          .page--landing :global(.sandbox) {
+            border-radius: 1px;
           }
 
           /* Show 'Try' text on hover on the landing page */
           .page--landing :global(.sandbox .left:hover #hover) {
             display: block;
+          }
+
+          .page--landing :global(.value-props section) {
+            padding-top: 0;
           }
 
           .page--landing :global(.get-started) {
