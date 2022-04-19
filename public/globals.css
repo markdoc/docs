@@ -546,7 +546,7 @@ main .CodeMirror-scroll::-webkit-scrollbar {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
   }
-  h2.jumbo {
+  h2.jumbo, h3.jumbo {
     font-size: 34px;
     line-height: 41px;
   }
