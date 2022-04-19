@@ -15,8 +15,7 @@ export default {
     },
     title: {
       type: String,
-      description: 'The title displayed at the top of the callout',
-      localizable: true
+      description: 'The title displayed at the top of the callout'
     }
   }
 };
