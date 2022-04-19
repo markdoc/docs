@@ -103,7 +103,3 @@ const config = {
   }
 };
 ```
-
-{% comment %}
-TODO: Make sure to link to docs about config with reference for things like tag-name.
-{% /comment %}
