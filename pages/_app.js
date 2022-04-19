@@ -255,12 +255,12 @@ export default function MyApp(props) {
             padding: 5.1rem 0 3.5rem;
           }
 
-          .page--landing .sandbox .preview p {
-            letter-spacing: initial;
-          }
-
           .page--landing .sandbox {
             border-radius: 1px;
+          }
+
+          .page--landing .sandbox .preview p {
+            letter-spacing: initial;
           }
 
           /* Show 'Try' text on hover on the landing page */

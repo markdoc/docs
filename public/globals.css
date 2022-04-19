@@ -503,6 +503,17 @@ main .CodeMirror-cursor {
   border-color: var(--theme);
 }
 
+/* https://discourse.webflow.com/t/hide-overflow-scroll-bar/195259/5?utm_source=google&utm_medium=search&utm_campaign=general-paid-workhorse&utm_term=keyword-targeting&utm_content=dynamic-search-ads-t1&gclid=CjwKCAjwu_mSBhAYEiwA5BBmf7fOfY_lM89BGr3aT67riZ1XrK7uHxBpH5vDwiyJg9rVeu5EwXQiCRoC7VYQAvD_BwE */
+main .CodeMirror-scroll {
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+main .CodeMirror-scroll::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
 @media screen and (max-width: 1200px) {
   :root {
     --landing-page-max-width: 92vw;
