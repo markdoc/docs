@@ -4,6 +4,8 @@ import { Editor, useMarkdocCode } from './Sandbox';
 
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 
+const WIDTH = 55;
+
 function EditPage({ source: initialDocument }) {
   const [doc, setDoc] = React.useState(initialDocument);
   const [showEditor, setShowEditor] = React.useState(false);
@@ -57,28 +59,39 @@ function EditPage({ source: initialDocument }) {
       {Markdoc.renderers.react(content.children, React, {
         components: config.components
       })}
-      <section
-        className="sandbox"
-        onMouseEnter={() => setMouseOver(true)}
-        onMouseLeave={() => setMouseOver(false)}
-      >
-        <Editor code={doc} onChange={setDoc} errors={errors} />
-        <button onClick={() => setShowEditor(false)}>
-          <kbd>CMD + J / Esc</kbd>
-        </button>
-      </section>
+      <div className="flex container">
+        <div className="click-away" onClick={() => setShowEditor(false)} />
+        <section
+          className="sandbox"
+          onMouseEnter={() => setMouseOver(true)}
+          onMouseLeave={() => setMouseOver(false)}
+        >
+          <Editor code={doc} onChange={setDoc} errors={errors} />
+          <button onClick={() => setShowEditor(false)}>
+            <kbd>CMD + J / Esc</kbd>
+          </button>
+        </section>
+      </div>
       <style jsx>
         {`
-          section {
+          .container {
             position: fixed;
-            z-index: 999;
             top: 0;
             right: 0;
-            transition: transform 300ms ease;
-            width: 55vw;
+            z-index: 999;
+            width: 100vw;
             height: 100vh;
+            transition: transform 300ms ease;
+            transform: ${showEditor ? 'translateX(0)' : 'translateX(100vw)'};
+          }
+          .click-away {
+            width: ${100 - WIDTH}%;
+            height: 100%;
+          }
+          section {
+            width: ${WIDTH}%;
+            height: 100%;
             border-left: 1px solid rgba(255, 255, 255, 0.22);
-            transform: ${showEditor ? 'translateX(0)' : 'translateX(100%)'};
           }
           section :global(.CodeMirror),
           section :global(.react-codemirror2),
