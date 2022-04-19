@@ -152,8 +152,30 @@ export default function MyApp(props) {
           <Link href="https://twitter.com/StripeDev">Twitter</Link>
         </Footer>
       </div>
-      <style jsx>
+      <style jsx global>
         {`
+          @font-face {
+            font-family: 'GT America Mono';
+            font-style: normal;
+            font-weight: normal;
+            src: url('${FONTS_BASE_URL}/GT-America-Mono-Regular.otf')
+              format('opentype');
+          }
+
+          @font-face {
+            font-family: 'GT America Mono';
+            font-style: normal;
+            font-weight: 500;
+            src: url('${FONTS_BASE_URL}/GT-America-Mono-Medium.otf')
+              format('opentype');
+          }
+
+          @font-face {
+            font-family: 'Tiempos';
+            font-style: normal;
+            src: url('${FONTS_BASE_URL}/test-tiempos-headline-light.woff2');
+          }
+
           .page {
             display: flex;
             flex-grow: 1;
@@ -163,7 +185,7 @@ export default function MyApp(props) {
             ${isDocs ? 'border-bottom: 1px solid var(--gray-medium);' : ''}
           }
 
-          :global(.dark) .page {
+          .dark .page {
             border-bottom-color: var(--black-light);
           }
 
@@ -197,11 +219,11 @@ export default function MyApp(props) {
             min-width: 0;
           }
 
-          main :global(article) {
+          main article {
             ${isDocs ? 'padding: 2rem 1.5rem 3rem; 2rem' : ''}
           }
 
-          main :global(h3.jumbo) {
+          main h3.jumbo {
             max-width: 385px; /* put "Stripe documentation" on new line */
           }
 
@@ -216,70 +238,70 @@ export default function MyApp(props) {
 
           /* Landing page overrides */
           /* Move top border to first section */
-          .page--landing :global(.nav-bar nav) {
+          .page--landing .nav-bar nav {
             border-bottom: none;
           }
 
-          .page--landing :global(p) {
+          .page--landing p {
             letter-spacing: 0.02em;
           }
 
-          .page--landing :global(blockquote) {
+          .page--landing blockquote {
             max-width: 520px;
           }
 
           /* Style hero section */
-          .page--landing :global(.hero section) {
+          .page--landing .hero section {
             padding: 5.1rem 0 3.5rem;
           }
 
-          .page--landing :global(.sandbox .preview p) {
+          .page--landing .sandbox .preview p {
             letter-spacing: initial;
           }
 
-          .page--landing :global(.sandbox) {
+          .page--landing .sandbox {
             border-radius: 1px;
           }
 
           /* Show 'Try' text on hover on the landing page */
-          .page--landing :global(.sandbox .left:hover #hover) {
+          .page--landing .sandbox .left:hover #hover {
             display: block;
           }
 
-          .page--landing :global(.value-props section) {
+          .page--landing .value-props section {
             padding-top: 0;
           }
 
-          .page--landing :global(.get-started) {
+          .page--landing .get-started {
             background: var(--theme);
           }
 
-          :global(.dark) .page--landing :global(.get-started) {
+          .dark .page--landing .get-started {
             background: var(--black-medium);
           }
 
-          .page--landing :global(.get-started section .primary) {
+          .page--landing .get-started section .primary {
             padding-top: 1rem;
             /* separate top and bottom on mobile */
             padding-bottom: 2rem;
           }
 
-          .page--landing :global(.try span.cm-keyword),
-          .page--landing :global(.try span.cm-tag),
-          .page--landing :global(.try span.cm-string) {
+          .page--landing .try span.cm-keyword,
+          .page--landing .try span.cm-tag,
+          .page--landing .try span.cm-string {
             color: var(--white);
           }
 
-          .page--landing :global(.characteristics) {
+          .page--landing .characteristics {
             background: var(--gray-light);
             padding-bottom: 2rem;
           }
 
-          :global(.dark) .page--landing :global(.characteristics) {
+          .dark .page--landing .characteristics {
             background: var(--black);
           }
 
-          .page--landing :global(pre[class*='language-']) {
+          .page--landing pre[class*='language-'] {
             border-radius: 0px;
             border: none;
             background: var(--black) !important;
@@ -287,42 +309,42 @@ export default function MyApp(props) {
           }
 
           /* Make "npm install" code block thinner */
-          .page--landing :global(.code:first-of-type pre[class*='language-']) {
+          .page--landing .code:first-of-type pre[class*='language-'] {
             padding: 20px 25px;
           }
 
-          .page--landing :global(.nav-bar nav) {
+          .page--landing .nav-bar nav {
             max-width: var(--landing-page-max-width);
             padding: 1rem 0 1.1rem;
           }
 
-          .page--landing :global(.side-by-side .left) {
+          .page--landing .side-by-side .left {
             border-right: none;
           }
 
-          .page--landing :global(.code button) {
+          .page--landing .code button {
             display: none;
           }
 
-          .page--landing :global(table) {
+          .page--landing table {
             table-layout: fixed;
             width: 100%;
             margin: 0 0 3rem;
           }
 
-          .page--landing :global(tbody) {
+          .page--landing tbody {
             /* border: 1px solid #151517; */
             border-radius: 0;
             border-style: initial;
             box-shadow: none;
           }
 
-          .page--landing :global(table) {
+          .page--landing table {
             position: relative;
             border-collapse: collapse;
           }
 
-          .page--landing :global(table td) {
+          .page--landing table td {
             position: relative;
             border-width: 1px;
             border-color: var(--dark);
@@ -335,7 +357,7 @@ export default function MyApp(props) {
             vertical-align: top;
           }
 
-          .page--landing :global(table td strong) {
+          .page--landing table td strong {
             font-family: var(--mono);
             font-size: 14px;
             font-weight: 500;
@@ -344,15 +366,15 @@ export default function MyApp(props) {
             text-transform: uppercase;
           }
 
-          .page--landing :global(table td p) {
+          .page--landing table td p {
             font-size: var(--font-size-3);
             line-height: var(--line-height-3);
           }
 
-          .page--landing :global(table::after),
-          .page--landing :global(table::before),
-          .page--landing :global(table td::after),
-          .page--landing :global(table td::before) {
+          .page--landing table::after,
+          .page--landing table::before,
+          .page--landing table td::after,
+          .page--landing table td::before {
             position: absolute;
             content: '';
             background: var(--light);
@@ -360,90 +382,65 @@ export default function MyApp(props) {
             height: 10px;
           }
 
-          .page--landing :global(table::after),
-          .page--landing :global(table::before),
-          .page--landing :global(table td::after),
-          .page--landing :global(table td::before) {
+          .page--landing table::after,
+          .page--landing table::before,
+          .page--landing table td::after,
+          .page--landing table td::before {
             z-index: 99;
           }
 
-          .page--landing :global(table::after) {
+          .page--landing table::after {
             top: -5px;
             right: -5px;
           }
 
-          .page--landing :global(table::before) {
+          .page--landing table::before {
             bottom: -5px;
             left: -5px;
           }
 
-          .page--landing :global(table td::after) {
+          .page--landing table td::after {
             top: -5px;
             left: -5px;
           }
 
-          .page--landing :global(table td::before) {
+          .page--landing table td::before {
             bottom: -5px;
             right: -5px;
           }
 
           @media screen and (max-width: 900px) {
-            .page--landing :global(.hero section) {
+            .page--landing .hero section {
               padding: 3rem 0 0;
             }
-            .page--landing :global(.try section) {
+            .page--landing .try section {
               max-width: unset;
             }
-            .page--landing :global(.characteristics) {
+            .page--landing .characteristics {
               padding-bottom: 1rem;
             }
-            .page--landing :global(table) {
+            .page--landing table {
               margin: 0;
             }
-            .page--landing :global(table td) {
+            .page--landing table td {
               padding: 15px 21px 24px;
             }
           }
 
           @media screen and (max-width: 420px) {
-            .page--landing :global(.hero section) {
+            .page--landing .hero section {
               padding: 2rem 0 2.5rem;
             }
-            .page--landing :global(table tr) {
+            .page--landing table tr {
               display: flex;
               flex-direction: column;
             }
-            .page--landing :global(table td) {
+            .page--landing table td {
               padding: 14px 16px 20px;
             }
             .footer-bar {
               padding: 35px 0 5rem;
             }
-          }
-        `}
-      </style>
-      <style jsx global>
-        {`
-          @font-face {
-            font-family: 'GT America Mono';
-            font-style: normal;
-            font-weight: normal;
-            src: url('${FONTS_BASE_URL}/GT-America-Mono-Regular.otf')
-              format('opentype');
-          }
-
-          @font-face {
-            font-family: 'GT America Mono';
-            font-style: normal;
-            font-weight: 500;
-            src: url('${FONTS_BASE_URL}/GT-America-Mono-Medium.otf')
-              format('opentype');
-          }
-
-          @font-face {
-            font-family: 'Tiempos';
-            font-style: normal;
-            src: url('${FONTS_BASE_URL}/test-tiempos-headline-light.woff2');
           }
         `}
       </style>
