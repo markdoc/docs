@@ -102,7 +102,7 @@ export function Typewriter({ children: text }) {
         {state >= 3 && (
           <>
             <br />
-            <Type text=" flexible Markdown-based " onEnd={next} />
+            <Type text=" flexible, Markdown-based " onEnd={next} />
           </>
         )}
         {state >= 4 && (
