@@ -69,20 +69,21 @@ export function useMarkdocCode(code) {
   return { ast, content, config, errors };
 }
 
-function EditorInternal({ code, onChange, options, errors }) {
+function EditorInternal({ code, onChange, options, errors, cursor }) {
   const ref = React.useRef();
   const [key, setKey] = React.useState(0);
 
   const codeMirrorOptions = React.useMemo(
     () => ({
       ...options,
+      autofocus: Boolean(cursor),
       styleSelectedText: true,
       lineNumbers: true,
       theme: 'none',
       mode: 'markdoc',
       lineWrapping: true
     }),
-    [options]
+    [options, cursor]
   );
 
   const onBeforeChange = React.useCallback(
@@ -143,6 +144,7 @@ function EditorInternal({ code, onChange, options, errors }) {
         value={code}
         options={codeMirrorOptions}
         onBeforeChange={onBeforeChange}
+        cursor={cursor}
       />
       <style jsx>
         {`
@@ -194,6 +196,7 @@ export function Editor(props) {
   return mounted ? <EditorInternal {...props} /> : null;
 }
 
+const initialCursor = { line: 0, ch: 3 };
 export function Sandbox({ height, options }) {
   const router = useRouter();
   const hoverEl = React.useRef();
@@ -286,6 +289,7 @@ export function Sandbox({ height, options }) {
             }}
             options={options}
             errors={errors}
+            cursor={initialCursor}
           />
         </section>
         <section className="right dark">
