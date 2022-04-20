@@ -1,5 +1,5 @@
 {
-  "name": "markdoc-react-nodejs-sample",
+  "name": "markdoc-react-nodejs-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "glob": "^8.0.1",
     "js-yaml": "^4.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

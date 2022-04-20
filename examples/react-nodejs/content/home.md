@@ -1,6 +1,5 @@
 ---
 route: '/'
-title: 'Home page'
 ---
 
 This is an example docs home page.

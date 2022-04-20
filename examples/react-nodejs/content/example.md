@@ -1,6 +1,5 @@
 ---
-route: '/example'
-title: 'How to do X'
+route: '/examples'
 ---
 
 This is an example doc.

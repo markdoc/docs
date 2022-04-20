@@ -1,9 +1,8 @@
 ---
 route: '/variables'
-title: 'How to use variables'
 ---
 
-Can you figure out how to get the text under this to show up?
+There a message under this line. Can you figure out how to get it to show up?
 
 {% if $flags.show_secret_feature %}
 This is special hidden text!

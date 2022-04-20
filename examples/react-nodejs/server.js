@@ -1,28 +1,32 @@
 const express = require('express');
 const app = express();
-const fs = require('fs');
 const path = require('path');
+
 const Markdoc = require('@markdoc/markdoc');
 const callout = require('./schema/Callout.markdoc');
+const { createContentManifest } = require('./createContentManifest');
 
 const PORT = 4242;
+const CONTENT_DIR = path.join(__dirname, 'content');
 
-// We can easily programatically generate this mapping instead!
-// See examples/createContentManifest.js for an example
-const routeToFilepath = {
-  '/example': 'example.md',
-  '/variables': 'variables.md',
-  '/': 'home.md'
-};
+// The content manifest maps routes to Markdoc documents.
+const contentManifest = createContentManifest(CONTENT_DIR);
 
-const getMarkdocContent = (route, variables) => {
-  const filePath = routeToFilepath[route] || '404.md';
+app.get('/markdoc-api', (req, res) => {
+  // Here we can dynamically fetch variables, like user preferences or feature flags
+  const variables = {
+    flags: {
+      show_secret_feature: false
+    }
+  };
 
-  const doc = fs.readFileSync(
-    path.join(__dirname, 'content', filePath),
-    'utf-8'
-  );
+  const document = contentManifest[req.query.path];
 
+  if (!document) {
+    return res.sendStatus(404);
+  }
+
+  const { ast } = document;
   const config = {
     // TODO: Add an example for using a custom node.
     tags: {
@@ -30,27 +34,9 @@ const getMarkdocContent = (route, variables) => {
     },
     variables: variables
   };
+  const content = Markdoc.transform(ast, config);
 
-  const ast = Markdoc.parse(doc);
-  return Markdoc.transform(ast, config);
-};
-
-app.get('/markdoc-api', (req, res) => {
-  // Here we can dynamically fetch variables, like user preferences, or
-  // feature flags:
-  const variables = {
-    flags: {
-      show_secret_feature: false
-    }
-  };
-  const content = getMarkdocContent(req.query.path, variables);
-
-  if (content) {
-    return res.json(content);
-  } else {
-    console.log('Something went wrong.');
-    res.sendStatus(500);
-  }
+  return res.json(content);
 });
 
 app.listen(PORT, () => {

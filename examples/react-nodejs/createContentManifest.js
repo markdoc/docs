@@ -1,6 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const path = require('path');
+const glob = require('glob');
 const Markdoc = require('@markdoc/markdoc');
 
 const parseMarkdocFrontmatter = (ast) => {
@@ -9,13 +9,15 @@ const parseMarkdocFrontmatter = (ast) => {
     : {};
 };
 
-exports.createContentManifest = () => {
-  const files = fs.readdirSync(path.join(__dirname, 'content'));
+// This creates a mapping between route and parsed Markdoc content.
+exports.createContentManifest = (ROOT_DIR) => {
+  const files = glob.sync(`${ROOT_DIR}/**/*.md`);
+
   const contentManifest = {};
+
   files.forEach((file) => {
     const rawText = fs.readFileSync(file, 'utf-8');
-
-    const ast = Markdoc.process(rawText);
+    const ast = Markdoc.parse(rawText);
     const frontmatter = parseMarkdocFrontmatter(ast);
 
     contentManifest[frontmatter.route] = {
