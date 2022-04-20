@@ -4,7 +4,6 @@ import { Callout } from './components/Callout';
 
 function App() {
   const [content, setContent] = React.useState(null);
-  const [show404, setShow404] = React.useState(false);
 
   React.useEffect(() => {
     (async () => {
@@ -21,7 +20,7 @@ function App() {
       );
 
       if (response.status === 404) {
-        setShow404(true);
+        setContent('404');
         return;
       }
 
@@ -30,7 +29,7 @@ function App() {
     })();
   }, []);
 
-  if (show404) {
+  if (content === '404') {
     return <p>Page not found.</p>;
   }
 
