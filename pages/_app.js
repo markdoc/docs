@@ -337,8 +337,14 @@ export default function MyApp(props) {
             padding: 1rem 0 1.1rem;
           }
 
-          .page--landing .side-by-side .left {
+          .page--landing .side-by-side {
+            margin: 0;
+          }
+
+          .page--landing .side-by-side .left,
+          .page--landing .side-by-side .right {
             border-right: none;
+            padding-top: 0px;
           }
 
           .page--landing .code button {
@@ -364,8 +370,25 @@ export default function MyApp(props) {
             .page--landing .hero {
               padding: 3rem 0 5.3rem;
             }
+
+            .page--landing .get-started {
+              background: var(--theme);
+            }
+
+            .page--landing .try {
+              padding: 0;
+            }
+
             .page--landing .try section {
               max-width: unset;
+            }
+
+            .page--landing .value-props {
+              padding-top: 4.5rem;
+            }
+
+            .page--landing .characteristics {
+              padding: 5.3125rem 0 21px;
             }
           }
 
