@@ -26,15 +26,21 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
 ---
 
-- **Open source**
+- {% ascii type="worm" /%}
+
+  #### Open source {% .jumbo %}
 
   Maintain full control over your code and content. Markdoc is open-source and fully extensible.
 
-- **Developer & writer friendly**
+- {% ascii type="pencil" /%}
+
+  #### Developer & writer friendly {% .jumbo %}
 
   Markdoc delivers a powerful, flexible, developer experience (DX) with an equally capable authoring experience (AX).
 
-- **A complete toolchain**
+- {% ascii type="puzzle" /%}
+
+  #### A complete toolchain {% .jumbo %}
 
   Markdoc can be used to create interactive documentation experiences, static content sites, developer-tooling, and more.
 
@@ -82,6 +88,18 @@ return Markdoc.renderers.html(content);
 
 {% section className="characteristics" %}
 
+{% side-by-side %}
+
+### Markdoc powers Stripe documentation {% .jumbo %}
+
+Stripe created Markdoc to power its largest and most detailed content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
+
+{% /side-by-side %}
+
+{% /section %}
+
+{% section className="characteristics" %}
+
 {% features %}
 
 - **Familiar syntax**
@@ -103,15 +121,5 @@ return Markdoc.renderers.html(content);
   [Learn about custom validation](/docs/validation) {% .primary %}
 
 {% /features %}
-
----
-
-{% side-by-side %}
-
-### Markdoc powers Stripe documentation {% .jumbo %}
-
-Stripe created Markdoc to power its largest and most detailed content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
-
-{% /side-by-side %}
 
 {% /section %}

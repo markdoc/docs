@@ -223,17 +223,21 @@ export default function MyApp(props) {
             ${isDocs ? 'padding: 2rem 1.5rem 3rem; 2rem' : ''}
           }
 
-          main h3.jumbo {
-            max-width: 385px; /* put "Stripe documentation" on new line */
-          }
-
           .footer-bar {
             flex: 1;
-            margin: 0 auto;
             padding: ${isLandingPage ? '2.5rem 0' : 'padding: 0'};
+            background: var(--gray-light);
+          }
+
+          .footer-bar footer {
+            margin: 0 auto;
             max-width: ${isLandingPage
               ? 'var(--landing-page-max-width)'
               : 'calc(100% - 4rem)'};
+          }
+
+          .dark .footer-bar {
+            background: var(--black);
           }
 
           /* Landing page overrides */
@@ -244,6 +248,15 @@ export default function MyApp(props) {
 
           .page--landing p {
             letter-spacing: 0.02em;
+          }
+
+          .page--landing .get-started p,
+          .page--landing blockquote p,
+          .page--landing table td p {
+            font-size: var(--font-size-4);
+            line-height: var(--line-height-4);
+            font-weight: 400;
+            letter-spacing: 0;
           }
 
           .page--landing blockquote {
@@ -293,12 +306,7 @@ export default function MyApp(props) {
           }
 
           .page--landing .characteristics {
-            background: var(--gray-light);
-            padding-bottom: 2rem;
-          }
-
-          .dark .page--landing .characteristics {
-            background: var(--black);
+            padding-bottom: 1rem;
           }
 
           .page--landing pre[class*='language-'] {
@@ -328,84 +336,27 @@ export default function MyApp(props) {
           .page--landing table {
             table-layout: fixed;
             width: 100%;
-            margin: 0 0 3rem;
           }
 
-          .page--landing tbody {
-            /* border: 1px solid #151517; */
-            border-radius: 0;
-            border-style: initial;
-            box-shadow: none;
-          }
-
-          .page--landing table {
-            position: relative;
-            border-collapse: collapse;
-          }
+          /* TODO try tr flex row  w/ gap */
 
           .page--landing table td {
             position: relative;
-            border-width: 1px;
-            border-color: var(--dark);
-            border-style: dashed solid;
+            border-width: 0px;
             background: var(--light);
             border-radius: 0;
-            padding: 20px 24px 26px;
+            padding: 0 30px;
             /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
             background-clip: padding-box;
             vertical-align: top;
           }
 
-          .page--landing table td strong {
-            font-family: var(--mono);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 27px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+          .page--landing table td:first-child {
+            padding-left: 0;
           }
 
-          .page--landing table td p {
-            font-size: var(--font-size-3);
-            line-height: var(--line-height-3);
-          }
-
-          .page--landing table::after,
-          .page--landing table::before,
-          .page--landing table td::after,
-          .page--landing table td::before {
-            position: absolute;
-            content: '';
-            background: var(--light);
-            width: 10px;
-            height: 10px;
-          }
-
-          .page--landing table::after,
-          .page--landing table::before,
-          .page--landing table td::after,
-          .page--landing table td::before {
-            z-index: 99;
-          }
-
-          .page--landing table::after {
-            top: -5px;
-            right: -5px;
-          }
-
-          .page--landing table::before {
-            bottom: -5px;
-            left: -5px;
-          }
-
-          .page--landing table td::after {
-            top: -5px;
-            left: -5px;
-          }
-
-          .page--landing table td::before {
-            bottom: -5px;
-            right: -5px;
+          .page--landing table td:last-child {
+            padding-right: 0;
           }
 
           @media screen and (max-width: 900px) {
@@ -417,12 +368,6 @@ export default function MyApp(props) {
             }
             .page--landing .characteristics {
               padding-bottom: 1rem;
-            }
-            .page--landing table {
-              margin: 0;
-            }
-            .page--landing table td {
-              padding: 15px 21px 24px;
             }
           }
 
