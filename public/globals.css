@@ -245,38 +245,33 @@ h5,
   font-weight: normal;
 }
 
-h1.jumbo {
+.jumbo {
   font-family: var(--serif);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   font-weight: 400;
+
+}
+
+h1.jumbo {
   font-size: var(--font-size-jumbo);
   line-height: var(--line-height-jumbo);
 }
 
 h2.jumbo {
-  font-family: var(--serif);
-  letter-spacing: -0.02em;
-  font-size: 73px;
-  font-weight: 400;
+  font-size: 72px;
   line-height: 84px;
   margin-top: 0;
   padding-bottom: 1.5rem;
 }
 
 h3.jumbo {
-  font-family: var(--serif);
-  letter-spacing: -0.02em;
   font-size: 43px;
-  font-weight: 400;
-  line-height: 49px;
+  line-height: 52px;
 }
 
 h4.jumbo {
-  font-family: var(--serif);
   font-size: 28px;
   line-height: 38px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
 }
 
 blockquote {
@@ -520,32 +515,39 @@ main .CodeMirror-scroll::-webkit-scrollbar {
 @media screen and (max-width: 900px) {
   :root {
     --landing-page-max-width: 92vw;
-    --font-size-jumbo: 56.5px;
+    --font-size-jumbo: 55px;
     --line-height-jumbo: 65px;
   }
   h2.jumbo {
-    font-size: var(--font-size-jumbo);
-    line-height: var(--line-height-jumbo);
+    font-size: 43px;
+    line-height: 55px;
   }
   h3.jumbo {
-    font-size: 43px;
-    line-height: 49px;
+    font-size: 35px;
+    line-height: 46px;
+  }
+  h4.jumbo {
+    font-size: 24px;
+    line-height: 33px;
   }
 }
 
 @media screen and (max-width: 420px) {
   :root {
     --landing-page-max-width: 90vw;
-    --font-size-jumbo: 37px;
-    --line-height-jumbo: 42px;
+    --font-size-jumbo: 38px;
+    --line-height-jumbo: 45px;
   }
   p {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
   }
-  h2.jumbo, h3.jumbo {
+  h1.jumbo {
+    letter-spacing: -0.02em;
+  }
+  h2.jumbo {
     font-size: 34px;
-    line-height: 41px;
+    line-height: 47px;
   }
   blockquote {
     margin: 0.75rem 0;

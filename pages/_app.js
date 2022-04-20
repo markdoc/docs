@@ -271,8 +271,25 @@ export default function MyApp(props) {
           }
 
           /* Style hero section */
-          .page--landing .hero section {
-            padding: 5.1rem 0 3.5rem;
+          .page--landing .hero {
+            padding: 4rem 0 6rem;
+          }
+
+          .page--landing .get-started {
+            background: var(--theme);
+          }
+
+          .page--landing .try {
+            padding-top: 0;
+            padding-bottom: 6.5rem;
+          }
+
+          .page--landing .value-props {
+            padding-top: 0px;
+          }
+
+          .page--landing .characteristics {
+            padding: 10rem 0 30px;
           }
 
           .page--landing .sandbox {
@@ -286,14 +303,6 @@ export default function MyApp(props) {
           /* Show 'Try' text on hover on the landing page */
           .page--landing .sandbox .container:hover #hover {
             display: block;
-          }
-
-          .page--landing .value-props section {
-            padding-top: 0;
-          }
-
-          .page--landing .get-started {
-            background: var(--theme);
           }
 
           .dark .page--landing .get-started {
@@ -310,10 +319,6 @@ export default function MyApp(props) {
           .page--landing .try span.cm-tag,
           .page--landing .try span.cm-string {
             color: var(--white);
-          }
-
-          .page--landing .characteristics {
-            padding-bottom: 1rem;
           }
 
           .page--landing pre[class*='language-'] {
@@ -346,8 +351,7 @@ export default function MyApp(props) {
 
           .page--landing table tr {
             display: flex;
-            row-gap: 60px;
-            column-gap: 55px;
+            gap: 60px;
           }
 
           .page--landing table td {
@@ -357,23 +361,21 @@ export default function MyApp(props) {
           }
 
           @media screen and (max-width: 900px) {
-            .page--landing .hero section {
-              padding: 3rem 0 0;
+            .page--landing .hero {
+              padding: 3rem 0 5.3rem;
             }
             .page--landing .try section {
               max-width: unset;
             }
-            .page--landing .characteristics {
-              padding-bottom: 1rem;
-            }
           }
 
           @media screen and (max-width: 420px) {
-            .page--landing .hero section {
-              padding: 2rem 0 2.5rem;
+            .page--landing .hero {
+              padding: 2rem 0 0;
             }
             .page--landing table tr {
               flex-direction: column;
+              gap: 32px;
             }
             .footer-bar {
               padding-bottom: 2;

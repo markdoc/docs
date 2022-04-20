@@ -69,6 +69,12 @@ export function Ascii({ type }) {
             min-height: 80px;
             margin-bottom: 36px;
           }
+
+          @media screen and (max-width: 900px) {
+            div {
+              margin-bottom: 0px;
+            }
+          }
         `}
       </style>
     </div>

@@ -108,7 +108,7 @@ export function Footer({ children: links, landing }) {
   const toggle = <ThemeToggle />;
 
   const fancyLinks = landing ? (
-    <div className="fancy">
+    <>
       <h3 className="jumbo">
         {React.Children.toArray(links).map((l, i, a) => (
           <span className="main-link" key={i}>
@@ -116,7 +116,7 @@ export function Footer({ children: links, landing }) {
             {i !== a.length - 1 ? ', ' : ''}
           </span>
         ))}
-        <span className="try no-mobile">
+        <span className="try-link no-mobile">
           <Link href="/sandbox">Try Markdoc</Link>
         </span>
       </h3>
@@ -129,7 +129,9 @@ export function Footer({ children: links, landing }) {
           }
 
           h3 :global(.main-link) {
-            margin-left: 8px;
+            margin-right: 8px;
+            display: inline-block;
+            min-height: 0px;
           }
 
           h3 :global(.main-link a) {
@@ -144,7 +146,7 @@ export function Footer({ children: links, landing }) {
             border-bottom: 1px solid var(--dark);
           }
 
-          .try {
+          .try-link {
             margin-left: auto;
           }
 
@@ -172,7 +174,7 @@ export function Footer({ children: links, landing }) {
           }
         `}
       </style>
-    </div>
+    </>
   ) : null;
 
   return (

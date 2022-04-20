@@ -9,15 +9,20 @@ export function Section({ children, className }) {
           div {
             width: 100%;
             background: var(--light);
+            padding: 8.125rem 0 10rem;
           }
           section {
-            padding: 4rem 0 5rem;
             margin: 0 auto;
             max-width: var(--landing-page-max-width);
           }
+          @media screen and (max-width: 900px) {
+            div {
+              padding: 4rem 0 5.3125rem;
+            }
+          }
           @media screen and (max-width: 420px) {
-            section {
-              padding: 2.8rem 0 3.75rem;
+            div {
+              padding: 3.75rem 0 3.75rem;
             }
           }
         `}
