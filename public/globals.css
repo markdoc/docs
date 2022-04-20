@@ -508,12 +508,15 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-@media screen and (max-width: 1305px) {
+@media screen and (max-width: 1305px) /* 1200px / 0.92 */ {
   :root {
     --landing-page-max-width: 92vw;
     --font-size-jumbo: 55px;
     --line-height-jumbo: 65px;
   }
+}
+
+@media screen and (max-width: 1000px) {
   h2.jumbo {
     font-size: 43px;
     line-height: 55px;
