@@ -1,4 +1,4 @@
-const Banner = ({ children, type }) => {
+export function Banner({ children, type }) {
   return (
     <section className={`banner ${type}`}>
       {children}
@@ -14,6 +14,4 @@ const Banner = ({ children, type }) => {
       `}</style>
     </section>
   );
-};
-
-export default Banner;
+}

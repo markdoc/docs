@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-const NavBar = () => {
+export function NavBar() {
   const router = useRouter();
   return (
-    <div onClick={() => router.push("/")} className="navbar">
+    <div onClick={() => router.push('/')} className="navbar">
       <svg
         width="112"
         height="37"
@@ -42,6 +42,4 @@ const NavBar = () => {
       `}</style>
     </div>
   );
-};
-
-export default NavBar;
+}

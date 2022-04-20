@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-const Resource = ({ children, link }) => {
+export function Resource({ children, link }) {
   return (
     <div className="resource-container">
       <Link href={link}>
@@ -30,6 +30,4 @@ const Resource = ({ children, link }) => {
       `}</style>
     </div>
   );
-};
-
-export default Resource;
+}

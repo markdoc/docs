@@ -1,20 +1,20 @@
-import "../public/globals.css";
-import { ToC } from "../components/ToC";
-import NavBar from "../components/NavBar";
-import "prismjs";
-import "prismjs/themes/prism.css";
+import '../public/globals.css';
+import { TableOfContent } from '../components/TableOfContent';
+import { NavBar } from '../components/NavBar';
+import 'prismjs';
+import 'prismjs/themes/prism.css';
 
 const MyApp = ({ Component, pageProps }) => {
   function collectHeadings(nodes, sections = []) {
     nodes.forEach((node) => {
       if (node) {
-        if (node.name === "Heading") {
+        if (node.name === 'Heading') {
           const title = node.children[0];
 
-          if (typeof title === "string") {
+          if (typeof title === 'string') {
             sections.push({
               ...node.attributes,
-              title,
+              title
             });
           }
         }
@@ -31,10 +31,9 @@ const MyApp = ({ Component, pageProps }) => {
     ? collectHeadings([].concat(pageProps.markdoc.content))
     : [];
 
-  // TODO: Check why syntax highlighting doesnt work
-  pageProps.markdoc.content.map((x) => {
-    if (x.name === "pre" || x.name === "code") {
-      const code = x.attributes["data-language"];
+  pageProps.markdoc?.content?.children.map((x) => {
+    if (x.name === 'pre' || x.name === 'code') {
+      const code = x.attributes['data-language'];
       x.attributes.class = `language-${code}`;
     }
   });
@@ -42,12 +41,12 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <main>
       <NavBar />
-      <ToC toc={toc} />
+      <TableOfContent toc={toc} />
       <section className="container">
         <Component {...pageProps} />
       </section>
       <footer>
-        This is a boilerplate for Markdoc by{" "}
+        This is a boilerplate for Markdoc by{' '}
         <a href="https://twitter.com/stripedev">@StripeDev</a>
       </footer>
       <style jsx>{`

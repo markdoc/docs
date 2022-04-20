@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@markdoc/markdoc": "0.0.15",
+    "@markdoc/markdoc": "0.0.17",
     "next": "12.1.4",
     "prismjs": "^1.28.0",
     "react": "18.0.0",
