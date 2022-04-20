@@ -335,28 +335,18 @@ export default function MyApp(props) {
 
           .page--landing table {
             table-layout: fixed;
-            width: 100%;
           }
 
-          /* TODO try tr flex row  w/ gap */
+          .page--landing table tr {
+            display: flex;
+            row-gap: 60px;
+            column-gap: 55px;
+          }
 
           .page--landing table td {
-            position: relative;
+            padding: 0;
+            flex: 1 0 0;
             border-width: 0px;
-            background: var(--light);
-            border-radius: 0;
-            padding: 0 30px;
-            /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
-            background-clip: padding-box;
-            vertical-align: top;
-          }
-
-          .page--landing table td:first-child {
-            padding-left: 0;
-          }
-
-          .page--landing table td:last-child {
-            padding-right: 0;
           }
 
           @media screen and (max-width: 900px) {
@@ -376,11 +366,7 @@ export default function MyApp(props) {
               padding: 2rem 0 2.5rem;
             }
             .page--landing table tr {
-              display: flex;
               flex-direction: column;
-            }
-            .page--landing table td {
-              padding: 14px 16px 20px;
             }
             .footer-bar {
               padding: 35px 0 5rem;
