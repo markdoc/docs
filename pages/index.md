@@ -16,7 +16,9 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
 {% section className="try no-mobile" %}
 
+{% expander %}
 {% sandbox height="630px" options={"scrollbarStyle": null} /%}
+{% /expander %}
 
 {% /section %}
 
