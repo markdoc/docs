@@ -405,7 +405,7 @@ export default function MyApp(props) {
           @media screen and (max-width: 420px) {
             .page--landing table td {
               flex-direction: column;
-              gap: 20px;
+              gap: 8px;
             }
 
             .page--landing .hero {
