@@ -129,7 +129,7 @@ export function Footer({ children: links, landing }) {
           }
 
           h3 :global(.main-link) {
-            margin-right: 8px;
+            margin-right: 10px;
             display: inline-block;
             min-height: 0px;
           }
