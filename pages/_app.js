@@ -143,7 +143,7 @@ export default function MyApp(props) {
         {isDocs && toc ? <TableOfContents toc={toc} /> : null}
       </div>
       <div className="footer-bar">
-        <Footer>
+        <Footer landing={isLandingPage}>
           <Link href="/docs/getting-started">Docs</Link>
           <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
           <Link href="https://github.com/markdoc/markdoc/discussions">
@@ -225,8 +225,7 @@ export default function MyApp(props) {
 
           .footer-bar {
             flex: 1;
-            padding: ${isLandingPage ? '2.5rem 0' : 'padding: 0'};
-            background: var(--gray-light);
+            padding: ${isLandingPage ? '1rem 0' : '0'};
           }
 
           .footer-bar footer {
@@ -236,8 +235,16 @@ export default function MyApp(props) {
               : 'calc(100% - 4rem)'};
           }
 
-          .dark .footer-bar {
+          .page--landing .footer-bar {
+            background: var(--gray-light);
+          }
+
+          .dark .page--landing .footer-bar {
             background: var(--black);
+          }
+
+          .page--landing .footer-bar .theme-toggle button.light {
+            background: var(--white);
           }
 
           /* Landing page overrides */
@@ -369,7 +376,7 @@ export default function MyApp(props) {
               flex-direction: column;
             }
             .footer-bar {
-              padding: 35px 0 5rem;
+              padding-bottom: 2;
             }
           }
         `}

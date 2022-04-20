@@ -143,13 +143,16 @@ export function ThemeToggle() {
             line-height: 27px;
             font-weight: 400;
             border-radius: 3px;
-            /* transition: all 300ms ease-out; */
-            color: var(--dark);
-            background: var(--light);
           }
 
-          button.dark {
+          .dark {
             background: var(--contrast-dark);
+            color: var(--white);
+          }
+
+          .light {
+            background: var(--gray-light);
+            color: var(--black);
           }
 
           button:active :global(svg) {

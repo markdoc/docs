@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { AppLink as Link } from '../AppLink';
 import { ThemeToggle } from '.';
 
-export function Footer({ children: links }) {
+export function Footer({ children: links, landing }) {
   const copyright = (
     <div className="gap">
       <svg
@@ -107,20 +108,88 @@ export function Footer({ children: links }) {
 
   const toggle = <ThemeToggle />;
 
+  const fancyLinks = landing ? (
+    <div className="fancy">
+      <h3 className="jumbo">
+        {React.Children.toArray(links).map((l, i, a) => (
+          <span className="main-link" key={i}>
+            {l}
+            {i !== a.length - 1 ? ', ' : ''}
+          </span>
+        ))}
+        <span className="try no-mobile">
+          <Link href="/sandbox">Try Markdoc</Link>
+        </span>
+      </h3>
+      <hr />
+      <style jsx>
+        {`
+          h3 {
+            margin: 0;
+            display: flex;
+          }
+
+          h3 :global(.main-link) {
+            margin-left: 8px;
+          }
+
+          h3 :global(.main-link a) {
+            text-decoration: none;
+          }
+
+          hr {
+            margin: 2rem auto;
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--dark);
+          }
+
+          .try {
+            margin-left: auto;
+          }
+
+          @media screen and (max-width: 900px) {
+            h3 {
+              font-size: 35px;
+              line-height: 46px;
+              letter-spacing: -0.02em;
+            }
+          }
+
+          @media screen and (max-width: 420px) {
+            hr {
+              margin: 1.5rem auto 0.5rem;
+            }
+            h3 {
+              font-size: 24px;
+              line-height: 33px;
+              letter-spacing: -0.01em;
+              text-align: center;
+              flex-wrap: wrap;
+              justify-content: center;
+              padding: 0 2rem;
+            }
+          }
+        `}
+      </style>
+    </div>
+  ) : null;
+
   return (
     <>
       <footer className="desktop">
-        <div className="left gap">
-          {copyright}
-          {links}
-        </div>
-        <div className="right gap">
-          {disclaimer}
-          {toggle}
+        {fancyLinks}
+        <div className="flex">
+          <div className="left gap">{copyright}</div>
+          <div className="right gap">
+            {disclaimer}
+            {toggle}
+          </div>
         </div>
       </footer>
       <footer className="mobile gap">
-        {<span className="gap">{links}</span>}
+        {fancyLinks}
         {copyright}
         {toggle}
         {disclaimer}
@@ -136,11 +205,14 @@ export function Footer({ children: links }) {
           footer {
             position: relative;
             display: flex;
-            align-items: center;
             z-index: 100;
             width: 100%;
             color: var(--dark);
             padding: 1rem 0;
+          }
+
+          footer.desktop {
+            flex-direction: column;
           }
 
           footer.mobile {

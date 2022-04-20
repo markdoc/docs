@@ -274,8 +274,8 @@ h3.jumbo {
 h4.jumbo {
   font-family: var(--serif);
   font-size: 28px;
-  font-weight: 400;
   line-height: 38px;
+  font-weight: 400;
   letter-spacing: -0.01em;
 }
 
@@ -360,18 +360,6 @@ tr:first-child td:last-child {
 }
 tr:last-child td:last-child {
   border-bottom-right-radius: 3px;
-}
-
-hr {
-  margin: 5rem auto 4rem;
-  display: block;
-  width: 100%;
-  height: 2px;
-  border: none;
-  background-image: linear-gradient(to right, var(--dark) 50%, transparent 0%);
-  background-position: bottom;
-  background-size: 4px 2px;
-  background-repeat: repeat-x;
 }
 
 article {

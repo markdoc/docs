@@ -98,7 +98,7 @@ Stripe created Markdoc to power its largest and most detailed content site. Sinc
 
 {% /section %}
 
-{% section className="characteristics" %}
+{% section %}
 
 {% features %}
 
