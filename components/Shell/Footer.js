@@ -58,7 +58,6 @@ export function Footer({ children: links, landing }) {
           fill="var(--stripe)"
         />
       </svg>
-      <span className="copyright">© {new Date().getFullYear()} Stripe</span>
     </div>
   );
 
