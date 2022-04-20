@@ -154,7 +154,6 @@ export function Footer({ children: links, landing }) {
             h3 {
               font-size: 35px;
               line-height: 46px;
-              letter-spacing: -0.02em;
             }
           }
 
@@ -165,7 +164,6 @@ export function Footer({ children: links, landing }) {
             h3 {
               font-size: 24px;
               line-height: 33px;
-              letter-spacing: -0.01em;
               text-align: center;
               flex-wrap: wrap;
               justify-content: center;

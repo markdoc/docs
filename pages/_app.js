@@ -254,7 +254,7 @@ export default function MyApp(props) {
           }
 
           .page--landing p {
-            letter-spacing: 0.02em;
+            letter-spacing: 0.2px;
           }
 
           .page--landing .get-started p,
@@ -263,7 +263,6 @@ export default function MyApp(props) {
             font-size: var(--font-size-4);
             line-height: var(--line-height-4);
             font-weight: 400;
-            letter-spacing: 0;
           }
 
           .page--landing blockquote {
@@ -277,6 +276,7 @@ export default function MyApp(props) {
 
           .page--landing .get-started {
             background: var(--theme);
+            padding: 115px 0 120px;
           }
 
           .page--landing .try {
@@ -289,7 +289,7 @@ export default function MyApp(props) {
           }
 
           .page--landing .characteristics {
-            padding: 10rem 0 30px;
+            padding: 120px 0 30px;
           }
 
           .page--landing .sandbox {

@@ -24,12 +24,11 @@ export function Features({ children }) {
           }
 
           .features :global(li strong) {
-            font-family: var(--mono);
-            font-size: 14px;
-            font-weight: 500;
+            font-family: var(--sans);
+            font-size: 18px;
+            font-weight: 590;
             line-height: 27px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            letter-spacing: 0em;
           }
 
           .features :global(li .primary) {

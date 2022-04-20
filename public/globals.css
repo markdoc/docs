@@ -273,6 +273,7 @@ h4.jumbo {
   font-size: 28px;
   line-height: 38px;
   margin: 0;
+  letter-spacing: 0;
 }
 
 blockquote {
@@ -510,12 +511,6 @@ main .CodeMirror-scroll::-webkit-scrollbar {
 @media screen and (max-width: 1305px) {
   :root {
     --landing-page-max-width: 92vw;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  :root {
-    --landing-page-max-width: 92vw;
     --font-size-jumbo: 55px;
     --line-height-jumbo: 65px;
   }
@@ -542,9 +537,6 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   p {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
-  }
-  h1.jumbo {
-    letter-spacing: -0.02em;
   }
   h2.jumbo {
     font-size: 34px;
