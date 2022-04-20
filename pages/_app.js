@@ -357,16 +357,30 @@ export default function MyApp(props) {
 
           .page--landing table tr {
             display: flex;
-            gap: 60px;
+            gap: 56px;
           }
 
           .page--landing table td {
+            display: flex;
+            flex-direction: column;
             padding: 0;
             flex: 1 0 0;
             border-width: 0px;
+            gap: 46px;
           }
 
           @media screen and (max-width: 900px) {
+            .page--landing table tr {
+              flex-direction: column;
+              gap: 52px;
+            }
+
+            .page--landing table td {
+              flex-direction: row;
+              align-items: flex-start;
+              gap: 36px;
+            }
+
             .page--landing .hero {
               padding: 3rem 0 5.3rem;
             }
@@ -389,6 +403,11 @@ export default function MyApp(props) {
           }
 
           @media screen and (max-width: 420px) {
+            .page--landing table td {
+              flex-direction: column;
+              gap: 20px;
+            }
+
             .page--landing .hero {
               padding: 2rem 0 0;
             }
@@ -401,10 +420,6 @@ export default function MyApp(props) {
               padding: 3.75rem 0 0;
             }
 
-            .page--landing table tr {
-              flex-direction: column;
-              gap: 32px;
-            }
             .footer-bar {
               padding-bottom: 2;
             }

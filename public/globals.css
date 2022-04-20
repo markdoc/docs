@@ -272,6 +272,7 @@ h3.jumbo {
 h4.jumbo {
   font-size: 28px;
   line-height: 38px;
+  margin: 0;
 }
 
 blockquote {

@@ -28,21 +28,32 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
 - {% ascii type="worm" /%}
 
+  {% item %}
+
   #### Open source {% .jumbo %}
 
   Maintain full control over your code and content. Markdoc is open-source and fully extensible.
+  {% /item %}
 
 - {% ascii type="pencil" /%}
+
+  {% item %}
 
   #### Developer & writer friendly {% .jumbo %}
 
   Markdoc delivers a powerful, flexible, developer experience (DX) with an equally capable authoring experience (AX).
 
+  {% /item %}
+
 - {% ascii type="puzzle" /%}
+
+  {% item %}
 
   #### A complete toolchain {% .jumbo %}
 
   Markdoc can be used to create interactive documentation experiences, static content sites, developer-tooling, and more.
+
+  {% /item %}
 
 {% /table %}
 

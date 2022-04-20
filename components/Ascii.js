@@ -35,9 +35,9 @@ const TYPE_MAP = {
   ),
   puzzle: (
     <svg
-      width="123"
+      width="104"
       height="78"
-      viewBox="0 0 123 78"
+      viewBox="0 0 104 78"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -64,15 +64,15 @@ export function Ascii({ type }) {
       <style jsx>
         {`
           div {
+            position: relative;
             display: flex;
             align-items: end;
             min-height: 80px;
-            margin-bottom: 36px;
           }
 
           @media screen and (max-width: 900px) {
             div {
-              margin-bottom: 0px;
+              min-height: 0px;
             }
           }
         `}
