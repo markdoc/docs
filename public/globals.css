@@ -296,7 +296,7 @@ code {
 }
 
 pre {
-  border-radius: 4px;
+  border-radius: 3px;
   border: 1px solid var(--code-border);
 }
 

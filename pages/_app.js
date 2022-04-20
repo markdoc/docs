@@ -302,7 +302,6 @@ export default function MyApp(props) {
           }
 
           .page--landing pre[class*='language-'] {
-            border-radius: 3px;
             border: none;
             background: var(--black) !important;
             padding: 25px;
