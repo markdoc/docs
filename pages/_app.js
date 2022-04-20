@@ -371,10 +371,6 @@ export default function MyApp(props) {
               padding: 3rem 0 5.3rem;
             }
 
-            .page--landing .get-started {
-              background: var(--theme);
-            }
-
             .page--landing .try {
               padding: 0;
             }
@@ -396,6 +392,15 @@ export default function MyApp(props) {
             .page--landing .hero {
               padding: 2rem 0 0;
             }
+
+            .page--landing .value-props {
+              padding-top: 0;
+            }
+
+            .page--landing .characteristics {
+              padding: 3.75rem 0 0;
+            }
+
             .page--landing table tr {
               flex-direction: column;
               gap: 32px;

@@ -160,7 +160,7 @@ export function Footer({ children: links, landing }) {
 
           @media screen and (max-width: 420px) {
             hr {
-              margin: 1.5rem auto 0.5rem;
+              margin: 0.5rem auto;
             }
             h3 {
               font-size: 24px;
