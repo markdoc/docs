@@ -288,7 +288,7 @@ export default function MyApp(props) {
             padding-top: 0px;
           }
 
-          .page--landing .characteristics {
+          .page--landing .by-stripe {
             padding: 120px 0 30px;
           }
 
@@ -397,7 +397,7 @@ export default function MyApp(props) {
               padding-top: 4.5rem;
             }
 
-            .page--landing .characteristics {
+            .page--landing .by-stripe {
               padding: 5.3125rem 0 21px;
             }
           }
@@ -416,7 +416,7 @@ export default function MyApp(props) {
               padding-top: 0;
             }
 
-            .page--landing .characteristics {
+            .page--landing .by-stripe {
               padding: 3.75rem 0 0;
             }
 

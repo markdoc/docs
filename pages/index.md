@@ -97,7 +97,7 @@ return Markdoc.renderers.html(content);
 
 {% /section %}
 
-{% section className="characteristics" %}
+{% section className="by-stripe" %}
 
 {% side-by-side %}
 
@@ -109,7 +109,7 @@ Stripe created Markdoc to power its largest and most detailed content site. Sinc
 
 {% /section %}
 
-{% section %}
+{% section className="characteristics" %}
 
 {% features %}
 
