@@ -366,7 +366,7 @@ export default function MyApp(props) {
             padding: 0;
             flex: 1 0 0;
             border-width: 0px;
-            gap: 46px;
+            gap: 4px;
           }
 
           @media screen and (max-width: 900px) {

@@ -95,7 +95,7 @@ export function Ascii({ type }) {
           }
 
           div :global(svg) {
-            width: 156px;
+            width: 105px;
           }
 
           @media screen and (max-width: 900px) {
