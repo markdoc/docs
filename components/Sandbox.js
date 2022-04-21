@@ -424,17 +424,6 @@ export function Sandbox({ height, options }) {
             padding-top: 6px;
           }
 
-          .left,
-          .right {
-            -ms-overflow-style: none; /* for Internet Explorer, Edge */
-            scrollbar-width: none; /* for Firefox */
-          }
-
-          .left::-webkit-scrollbar,
-          .right::-webkit-scrollbar {
-            display: none; /* for Chrome, Safari, and Opera */
-          }
-
           .left :global(.CodeMirror),
           .left :global(.react-codemirror2) {
             color: white;
