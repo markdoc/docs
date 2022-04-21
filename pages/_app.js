@@ -437,7 +437,7 @@ export default function MyApp(props) {
             }
 
             .footer-bar {
-              padding-bottom: 2;
+              padding: 2.5rem 0;
             }
           }
         `}
