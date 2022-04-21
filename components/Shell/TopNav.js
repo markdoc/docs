@@ -94,7 +94,7 @@ export function TopNav({ children }) {
             justify-content: space-between;
             width: 100%;
           }
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 600px) {
             .nav-bar {
               border-bottom: 1px solid var(--dark);
             }

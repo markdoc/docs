@@ -534,7 +534,7 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   :root {
     --landing-page-max-width: 90vw;
     --font-size-jumbo: 38px;

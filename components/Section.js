@@ -20,7 +20,7 @@ export function Section({ children, className }) {
               padding: 4rem 0 5.3125rem;
             }
           }
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 600px) {
             div {
               padding: 3.75rem 0 3.75rem;
             }

@@ -129,8 +129,8 @@ export function Footer({ children: links, landing }) {
             flex-wrap: wrap;
           }
 
-          h3 :global(.main-link) {
-            margin-right: 10px;
+          h3 :global(.main-link:nth-child(n + 2)) {
+            margin-left: 10px;
             display: inline-block;
             min-height: 0px;
           }
@@ -164,9 +164,9 @@ export function Footer({ children: links, landing }) {
             }
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 600px) {
             hr {
-              margin: 0.5rem auto;
+              margin: 0 auto;
             }
             h3 {
               font-size: 24px;
@@ -231,7 +231,7 @@ export function Footer({ children: links, landing }) {
             margin-left: auto;
           }
 
-          @media screen and (max-width: 420px) {
+          @media screen and (max-width: 600px) {
             footer.mobile {
               display: flex;
             }
