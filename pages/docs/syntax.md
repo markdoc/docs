@@ -232,7 +232,7 @@ For more information, check out the [Functions docs](/docs/functions).
 
 ## Next steps
 
-- [Creating custom tags](/docs/tags)
-- [Customizing how nodes render](/docs/nodes)
-- [Passing variables](/docs/variables)
-- [Defining new functions](/docs/functions)
+- [Customize how nodes render](/docs/nodes)
+- [Create custom tags](/docs/tags)
+- [Define new functions](/docs/functions)
+- [Pass variables](/docs/variables)

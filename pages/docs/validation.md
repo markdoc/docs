@@ -135,3 +135,8 @@ const config = {
 ```
 
 {% /markdoc-example %}
+
+## Next steps
+
+- [Render content as HTML or React](/docs/render)
+- [Check out common examples](/docs/examples)

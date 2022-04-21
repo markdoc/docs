@@ -174,3 +174,8 @@ This function simply renders the value as serialized JSON value in the document.
 ```
 
 {% /markdoc-example %}
+
+## Next steps
+
+- [Validate your content](/docs/validation)
+- [Render as HTML or React](/docs/render)

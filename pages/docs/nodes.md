@@ -143,3 +143,8 @@ Markdoc comes out of the box with built-in nodes for each of the [CommonMark](ht
 - `hardbreak`
 - `softbreak`
 - `error`
+
+## Next steps
+
+- [Create custom tags](/docs/tags)
+- [Customize nodes with annotations](/docs/syntax#annotations)

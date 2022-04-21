@@ -5,7 +5,7 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and partials, or create custom React components.
+Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
 
 ## Create a custom tag
 
@@ -328,3 +328,8 @@ Here is an example of including the `header.md` file as a partial.
 {% /markdoc-example %}
 
 For more information on partials, check out the full [partials docs](/docs/partials).
+
+## Next steps
+
+- [Customize tags with attributes](/docs/attributes)
+- [Create custom functions](/docs/functions)

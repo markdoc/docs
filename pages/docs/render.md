@@ -232,3 +232,9 @@ app.get('/docs/getting-started', (req, res) => {
 {% /item %}
 
 {% /side-by-side %}
+
+## Next steps
+
+- [Validate your content](/docs/validation)
+- [Check out common examples](/docs/examples)
+- [Get started with Next.js](/docs/nextjs)

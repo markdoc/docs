@@ -103,3 +103,7 @@ const config = {
   }
 };
 ```
+
+## Next steps
+
+- [Pass variables to attributes](/docs/variables)
