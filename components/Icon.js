@@ -94,7 +94,7 @@ export function Icon({ icon, color = 'inherit' }) {
           }
 
           .icon :global(svg) {
-            z-index: 10; // HACK
+            z-index: 10; // make icons in callouts show correctly
             position: relative;
             display: block;
             fill: currentcolor;
