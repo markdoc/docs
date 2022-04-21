@@ -95,7 +95,7 @@ export function Footer({ children: links, landing }) {
             color: var(--white);
           }
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1000px) {
             .disclaimer {
               display: none;
             }
@@ -151,7 +151,7 @@ export function Footer({ children: links, landing }) {
             margin-left: auto;
           }
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1000px) {
             h3 {
               font-size: 35px;
               line-height: 46px;

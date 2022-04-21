@@ -100,7 +100,7 @@ export function EditPagePanel({ children }) {
           kbd {
             color: var(--white);
           }
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1000px) {
             section {
               display: none;
             }

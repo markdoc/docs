@@ -37,7 +37,7 @@ export function Features({ children }) {
             padding-top: 1rem;
           }
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1000px) {
             .features :global(ul) {
               flex-direction: column;
               gap: 45px;
