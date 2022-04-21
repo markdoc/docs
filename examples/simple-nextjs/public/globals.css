@@ -1,18 +1,7 @@
-nav a {
-  text-decoration: none;
-}
-a {
-  color: rgba(75, 85, 99, 1);
-  font-weight: 300;
-}
-a:hover {
-  text-decoration: underline;
-}
-
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   background: white;
   color: rgba(60, 66, 87, 1);
   margin: 0;
@@ -32,6 +21,11 @@ main {
   margin-top: 0;
 }
 
+a {
+  color: rgba(75, 85, 99, 1);
+  font-weight: 300;
+}
+
 h2 {
   margin: 2em 0;
 }
@@ -39,23 +33,4 @@ h2 {
 p {
   line-height: 1.5em;
   font-weight: 300;
-}
-
-svg {
-  cursor: pointer;
-}
-
-.resource-title {
-  font-weight: bold;
-  font-size: 0.9em;
-  display: block;
-  padding: 0;
-  color: #635bff;
-  text-decoration-thickness: initial;
-}
-
-.resource-description {
-  font-size: 0.8em;
-  display: block;
-  max-width: 90%;
 }

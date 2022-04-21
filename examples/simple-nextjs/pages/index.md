@@ -5,9 +5,7 @@ description: How to get started with Markdoc
 
 # Markdoc {% .main-title %}
 
-This website is a boilerplate showcasing how to use Markdoc to spin up a documentation website.
-
-Feel free to explore the different pages to see the types of content you can render with Markdoc.
+This website is a lightweight boilerplate to spin up a documentation website with Markdoc.
 
 ## Quick start
 

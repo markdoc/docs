@@ -1,2 +1,1 @@
-export { resource } from './resource.markdoc';
-export { banner } from './banner.markdoc';
+/* Use this file to export your markdoc tags */
