@@ -40,6 +40,7 @@ function App() {
   const components = {
     Callout
   };
+
   return Markdoc.renderers.react(content, React, {
     components
   });
