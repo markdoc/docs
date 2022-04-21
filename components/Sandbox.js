@@ -1,6 +1,5 @@
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import yaml from 'js-yaml';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { getSchema } from '@markdoc/next.js/runtime';
@@ -42,6 +41,8 @@ export function useMarkdocCode(code) {
 
   const config = React.useMemo(() => {
     const { components, ...rest } = getSchema(schema);
+    // require here to prevent Webpack Promise issue
+    const yaml = require('js-yaml');
     return {
       ...rest,
       variables: {
