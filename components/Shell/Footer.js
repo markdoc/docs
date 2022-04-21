@@ -116,7 +116,7 @@ export function Footer({ children: links, landing }) {
             {i !== a.length - 1 ? ', ' : ''}
           </span>
         ))}
-        <span className="try-link no-mobile">
+        <span className="try-link">
           <Link href="/sandbox">Try Markdoc</Link>
         </span>
       </h3>
@@ -126,6 +126,7 @@ export function Footer({ children: links, landing }) {
           h3 {
             margin: 0;
             display: flex;
+            flex-wrap: wrap;
           }
 
           h3 :global(.main-link) {
@@ -154,6 +155,12 @@ export function Footer({ children: links, landing }) {
             h3 {
               font-size: 35px;
               line-height: 46px;
+            }
+          }
+
+          @media screen and (max-width: 780px) {
+            .try-link {
+              display: none;
             }
           }
 
