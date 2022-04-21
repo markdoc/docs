@@ -386,6 +386,11 @@ export default function MyApp(props) {
               padding: 3rem 0 5.3rem;
             }
 
+            .page--landing .get-started {
+              background: var(--theme);
+              padding: 65px 0 85px;
+            }
+
             .page--landing .try {
               padding: 0;
             }
@@ -411,6 +416,11 @@ export default function MyApp(props) {
 
             .page--landing .hero {
               padding: 2rem 0 0;
+            }
+
+            .page--landing .get-started {
+              background: var(--theme);
+              padding: 60px 0 60px;
             }
 
             .page--landing .value-props {
