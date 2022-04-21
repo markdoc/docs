@@ -421,6 +421,7 @@ export function Sandbox({ height, options }) {
 
           .preview:hover #hover {
             color: var(--black);
+            padding-top: 6px;
           }
 
           .left,
