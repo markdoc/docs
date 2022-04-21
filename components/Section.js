@@ -9,7 +9,7 @@ export function Section({ children, className }) {
           div {
             width: 100%;
             background: var(--light);
-            padding: 8.125rem 0 10rem;
+            padding: 130px 0 150px;
           }
           section {
             margin: 0 auto;

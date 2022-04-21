@@ -254,7 +254,7 @@ export default function MyApp(props) {
           }
 
           .page--landing p {
-            letter-spacing: 0.2px;
+            letter-spacing: 0.3px;
           }
 
           .page--landing .get-started p,
@@ -281,7 +281,7 @@ export default function MyApp(props) {
 
           .page--landing .try {
             padding-top: 0;
-            padding-bottom: 6.5rem;
+            padding-bottom: 65px;
           }
 
           .page--landing .value-props {
@@ -289,7 +289,7 @@ export default function MyApp(props) {
           }
 
           .page--landing .by-stripe {
-            padding: 120px 0 30px;
+            padding: 120px 0 20px;
           }
 
           .page--landing .sandbox {
@@ -352,6 +352,7 @@ export default function MyApp(props) {
           }
 
           .page--landing table {
+            margin: 0;
             table-layout: fixed;
           }
 
