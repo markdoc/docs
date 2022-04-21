@@ -1,6 +1,6 @@
 {
   "name": "markdoc-boilerplate",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@markdoc/markdoc": "0.0.17",
+    "@markdoc/markdoc": "*",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "@markdoc/next.js": "*"
   },
   "devDependencies": {
     "eslint": "8.12.0",
