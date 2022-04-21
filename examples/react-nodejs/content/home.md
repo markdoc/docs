@@ -2,7 +2,7 @@
 route: '/'
 ---
 
-This is an example docs home page.
+# Home
 
 {% callout type="warning" %}
 This is a warning callout!
@@ -11,3 +11,7 @@ This is a warning callout!
 {% callout type="caution" %}
 This is a caution callout!
 {% /callout %}
+
+```js
+const x = 'test';
+```

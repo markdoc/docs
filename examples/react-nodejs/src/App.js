@@ -1,6 +1,6 @@
 import React from 'react';
 import Markdoc from '@markdoc/markdoc';
-import { Callout } from './components/Callout';
+import { Callout } from './Callout';
 
 function App() {
   const [content, setContent] = React.useState(null);

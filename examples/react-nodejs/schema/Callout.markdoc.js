@@ -1,4 +1,4 @@
-const callout = {
+module.exports = {
   render: 'Callout',
   description: 'Display the enclosed content in a callout box',
   children: ['paragraph', 'tag', 'list'],
@@ -16,5 +16,3 @@ const callout = {
     }
   }
 };
-
-module.exports = callout;

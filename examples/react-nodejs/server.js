@@ -3,7 +3,8 @@ const app = express();
 const path = require('path');
 
 const Markdoc = require('@markdoc/markdoc');
-const callout = require('./schema/Callout.markdoc');
+const callout = require('./schema/callout.markdoc');
+const heading = require('./schema/heading.markdoc');
 const { createContentManifest } = require('./createContentManifest');
 
 const PORT = 4242;
@@ -28,9 +29,11 @@ app.get('/markdoc-api', (req, res) => {
 
   const { ast } = document;
   const config = {
-    // TODO: Add an example for using a custom node.
     tags: {
       callout
+    },
+    nodes: {
+      heading
     },
     variables: variables
   };
