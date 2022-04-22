@@ -28,4 +28,4 @@ You can start editing the page by modifying `index.md`. The page auto-updates as
 
 The quickest way to deploy your own version of this boilerplate is by deploying it to Vercel by clicking the button below.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/examples/boilerplate)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/docs/examples/simple-nextjs)
