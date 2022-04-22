@@ -252,6 +252,11 @@ export default function MyApp(props) {
           .page--landing .nav-bar nav {
             border-bottom: none;
           }
+          .page--landing .hero {
+            border-top: 1px solid var(--dark);
+            margin: 0 auto;
+            max-width: var(--landing-page-max-width);
+          }
 
           .page--landing p {
             letter-spacing: 0.3px;
