@@ -175,9 +175,7 @@ Attention, over here!
 renderers.html(RenderNode | RenderNode[]) => mixed
 ```
 
-Markdoc supports HTML rendering out-of-the-box. Try HTML rendering out yourself in the [developer playground](/sandbox?mode=html).
-
-To render HTML, first create a render tree from your content by calling `transform`:
+Markdoc supports HTML rendering out-of-the-box. To render HTML, first create a render tree from your content by calling `transform`:
 
 {% markdoc-example %}
 

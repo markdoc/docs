@@ -3,7 +3,6 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { getSchema } from '@markdoc/next.js/runtime';
-import prettify from 'diffable-html';
 
 import * as tags from '../markdoc/tags';
 import * as nodes from '../markdoc/nodes';
@@ -259,12 +258,6 @@ export function Sandbox({ height, options }) {
                 React
               </button>
               <button
-                className={mode === 'html' ? 'active' : undefined}
-                onClick={() => setMode('html')}
-              >
-                HTML
-              </button>
-              <button
                 className={mode === 'transform' ? 'active' : undefined}
                 onClick={() => setMode('transform')}
               >
@@ -305,14 +298,6 @@ export function Sandbox({ height, options }) {
                 components: config.components
               })}
             </div>
-          )}
-          {mode === 'html' && (
-            <CodeMirror
-              value={prettify(
-                Markdoc.renderers.html(Markdoc.transform(Markdoc.parse(code)))
-              )}
-              options={{ mode: 'xml', lineWrapping: true, readOnly: true }}
-            />
           )}
           {mode === 'transform' && (
             <CodeMirror
