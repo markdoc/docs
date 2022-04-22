@@ -27,9 +27,9 @@ Markdoc is a Markdown-based syntax and toolchain for creating custom documentati
 Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
 {% /callout %}
 
-## What is the difference between Markdoc and MDX?
+## How is Markdoc different?
 
-Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on…[read more](/docs/overview)
+Markdoc uses a fully declarative approach to composition and flow control, where other solutions…[read more](/docs/overview)
 
 ## Next steps
 - [Install Markdoc](/docs/getting-started)
