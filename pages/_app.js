@@ -426,6 +426,7 @@ export default function MyApp(props) {
 
             .page--landing .hero {
               padding: 2rem 0 0;
+              border-top: none;
             }
 
             .page--landing .get-started {
