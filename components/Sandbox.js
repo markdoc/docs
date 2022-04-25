@@ -337,6 +337,7 @@ export function Sandbox({ height, options }) {
             display: none;
             position: fixed;
             color: var(--white);
+            mix-blend-mode: difference;
             font-family: var(--mono);
             font-size: 13px;
             font-weight: 400;
@@ -406,7 +407,6 @@ export function Sandbox({ height, options }) {
           }
 
           .preview:hover #hover {
-            color: var(--black);
             padding-top: 6px;
           }
 
