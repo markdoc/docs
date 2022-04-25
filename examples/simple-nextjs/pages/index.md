@@ -3,7 +3,7 @@ title: Get started with Markdoc
 description: How to get started with Markdoc
 ---
 
-# Markdoc {% .main-title %}
+# Markdoc
 
 This website is a lightweight boilerplate to spin up a documentation website with Markdoc.
 
