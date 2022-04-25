@@ -24,8 +24,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `index.md`. The page auto-updates as you edit the file.
 
-## Deploy on Vercel
+## Deploy
 
-The quickest way to deploy your own version of this boilerplate is by deploying it to Vercel by clicking the button below.
+The quickest way to deploy your own version of this boilerplate is by deploying it with Vercel or Netlify by clicking one of the buttons below.
+
+### Deploy with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/docs/examples/simple-nextjs)
+
+### Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/docs/examples/simple-nextjs)
