@@ -510,15 +510,15 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-@media screen and (max-width: 1305px) /* 1200px / 0.92 */ {
+@media screen and (max-width: 1291px) /* 1200px / 0.9 */ {
   :root {
-    --landing-page-max-width: 92vw;
+    --landing-page-max-width: 93vw;
   }
 }
 
 @media screen and (max-width: 1000px) {
   :root {
-    --landing-page-max-width: 92vw;
+    --landing-page-max-width: calc(100vw - 60px);
     --font-size-jumbo: 55px;
     --line-height-jumbo: 65px;
   }

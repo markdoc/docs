@@ -21,6 +21,7 @@ export function Features({ children }) {
           .features :global(p) {
             font-size: var(--font-size-3);
             line-height: var(--line-height-3);
+            letter-spacing: 0em;
           }
 
           .features :global(li strong) {
@@ -38,6 +39,12 @@ export function Features({ children }) {
           }
 
           @media screen and (max-width: 1000px) {
+            .features :global(ul) {
+              gap: 24px;
+            }
+          }
+
+          @media screen and (max-width: 600px) {
             .features :global(ul) {
               flex-direction: column;
               gap: 45px;

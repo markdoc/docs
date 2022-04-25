@@ -125,13 +125,13 @@ Stripe created Markdoc to power its largest and most detailed content site. Sinc
 
   Markdoc lets you customize all aspects of the system, from [custom tags](/docs/tags) and [nodes](/docs/nodes) to entirely [new renderers](/docs/render).
 
-  [Learn about rendering Markdoc](/docs/render) {% .primary %}
+  [Learn more](/docs/render) {% .primary %}
 
 - **Built-in validation**
 
-  You can add custom validation throughout your content system, ensuring nothing breaks and your documentation remains consistent.
+  You can add custom validation throughout your content system, ensuring nothing breaks and your content remains consistent.
 
-  [Learn about custom validation](/docs/validation) {% .primary %}
+  [Learn more](/docs/validation) {% .primary %}
 
 {% /features %}
 
