@@ -7,7 +7,6 @@ body {
 }
 
 #__next {
-  height: 100vh;
   display: grid;
   grid-template-columns: 0.1fr 1fr 0.15fr;
   grid-template-rows: 1fr 0.05fr;
