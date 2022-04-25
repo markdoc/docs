@@ -261,7 +261,7 @@ export function Sandbox({ height, options }) {
                 className={mode === 'transform' ? 'active' : undefined}
                 onClick={() => setMode('transform')}
               >
-                Render tree
+                Renderable tree
               </button>
               <button
                 className={mode === 'ast' ? 'active' : undefined}

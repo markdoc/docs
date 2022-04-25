@@ -66,11 +66,11 @@ for (const node of document.walk()) {
 transform(string | AstNode | AstNode[], ?Config) => RenderableTreeNode | RenderableTreeNode[]
 ```
 
-Transform takes an abstract syntax tree and transforms it into a render tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
+Transform takes an abstract syntax tree and transforms it into a renderable tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
 
 The transform step is also responsible for resolving variables into static, scalar values (string, boolean, object, etc.).
 
-An example render tree might look like this:
+An example renderable tree might look like this:
 
 ```js
 [
@@ -89,13 +89,13 @@ An example render tree might look like this:
 ];
 ```
 
-You can see a more advanced render tree in the [developer playground](/sandbox?mode=transform).
+You can see a more advanced renderable tree in the [developer playground](/sandbox?mode=transform).
 
 ## Render
 
 Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTML document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/render-elements.html).
 
-You can create your own renderer by creating a function that takes in a render tree as parameter and returns your desired output.
+You can create your own renderer by creating a function that takes in a renderable tree as parameter and returns your desired output.
 
 An example `html` output might look like this:
 
@@ -113,7 +113,7 @@ renderers.react(RenderableTreeNode | RenderableTreeNode[]) => React.Node
 
 Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
 
-To render React, first create a render tree from your document calling `transform`. This can be done from the server or client.
+To render React, first create a renderable tree from your document calling `transform`. This can be done from the server or client.
 
 {% markdoc-example %}
 
@@ -137,7 +137,7 @@ const content = Markdoc.transform(doc, { tags });
 {% /markdoc-example %}
 
 \
-Then, call `Markdoc.renderers.react` with the render tree from your client application. Along with `content` and `React`, you'll need to provide the `components` object as an argument. The `components` object specifies a mapping from your tags and nodes to the corresponding React component.
+Then, call `Markdoc.renderers.react` with the renderable tree from your client application. Along with `content` and `React`, you'll need to provide the `components` object as an argument. The `components` object specifies a mapping from your tags and nodes to the corresponding React component.
 
 {% side-by-side %}
 
@@ -175,7 +175,7 @@ Attention, over here!
 renderers.html(RenderableTreeNode | RenderableTreeNode[]) => mixed
 ```
 
-Markdoc supports HTML rendering out-of-the-box. To render HTML, first create a render tree from your content by calling `transform`:
+Markdoc supports HTML rendering out-of-the-box. To render HTML, first create a renderable tree from your content by calling `transform`:
 
 {% markdoc-example %}
 
@@ -192,7 +192,7 @@ const content = Markdoc.transform(doc);
 {% /markdoc-example %}
 
 \
-Then, call `Markdoc.renderers.html` with your render tree, which will create the corresponding HTML document.
+Then, call `Markdoc.renderers.html` with your renderable tree, which will create the corresponding HTML document.
 
 {% side-by-side %}
 
