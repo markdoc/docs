@@ -26,7 +26,7 @@ You can start editing the page by modifying `index.md`. The page auto-updates as
 
 ## Deploy
 
-The quickest way to deploy your own version of this boilerplate is by deploying it with Vercel or Netlify by clicking one of the buttons below.
+The quickest way to deploy your own version of this boilerplate is by deploying it with [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com/) by clicking one of the buttons below.
 
 ### Deploy with Vercel
 
