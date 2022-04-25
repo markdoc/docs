@@ -103,6 +103,12 @@ export function Ascii({ type }) {
               min-height: 0px;
             }
           }
+
+          @media screen and (max-width: 600px) {
+            div :global(svg) {
+              width: 95px;
+            }
+          }
         `}
       </style>
     </div>

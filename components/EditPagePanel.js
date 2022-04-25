@@ -89,9 +89,6 @@ export function EditPagePanel({ children }) {
             color: white;
             background: var(--contrast-dark);
           }
-          section :global(.CodeMirror-linenumber) {
-            color: var(--white);
-          }
           button {
             position: absolute;
             top: 0.8rem;

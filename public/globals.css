@@ -482,6 +482,7 @@ main .react-codemirror2 {
 main .CodeMirror-gutters {
   background-color: var(--contrast-dark);
   border-right: 1px solid rgba(255, 255, 255, 0.22);
+  padding-right: 8px
 }
 
 main .CodeMirror-selected,
@@ -491,7 +492,7 @@ main .CodeMirror-selectedtext {
 }
 
 main .CodeMirror-linenumber {
-  color: var(--contrast-dark);
+  color: rgba(255, 255, 255, 0.22);
 }
 
 main .CodeMirror-cursor {
