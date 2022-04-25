@@ -455,6 +455,7 @@ pre .token.variable {
 
 .sandbox span.cm-link,
 .sandbox span.cm-url {
+  text-decoration: none;
   color: var(--theme);
 }
 

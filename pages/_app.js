@@ -320,12 +320,6 @@ export default function MyApp(props) {
             padding-bottom: 2rem;
           }
 
-          .page--landing .try span.cm-keyword,
-          .page--landing .try span.cm-tag,
-          .page--landing .try span.cm-string {
-            color: var(--white);
-          }
-
           .page--landing pre[class*='language-'] {
             border: none;
             background: var(--black) !important;
