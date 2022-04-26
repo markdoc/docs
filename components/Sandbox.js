@@ -196,10 +196,80 @@ export function Editor(props) {
   return mounted ? <EditorInternal {...props} /> : null;
 }
 
+function Cursor({ children }) {
+  const ref = React.useRef();
+  const [pos, setPos] = React.useState({});
+
+  React.useEffect(() => {
+    function handler(event) {
+      const el = ref.current;
+      if (el) {
+        setPos({
+          top: event.clientY - 13,
+          left: event.clientX + 16
+        });
+      }
+    }
+
+    document.addEventListener('mousemove', handler);
+    return () => document.removeEventListener('mousemove', handler);
+  }, []);
+
+  const letters = React.useMemo(
+    () =>
+      children.split('').map((l, i) => (
+        <span
+          key={`${l}_${i}`}
+          style={{
+            top: pos.top,
+            left: pos.left + i * 8,
+            transition: [
+              `top 50ms linear ${i * 1}ms`,
+              `left 50ms linear ${i * 1}ms`
+            ].join()
+          }}
+        >
+          {l}
+        </span>
+      )),
+    [children, pos]
+  );
+
+  return (
+    <div id="hover" ref={ref}>
+      {letters}
+      <style jsx>
+        {`
+          #hover {
+            display: none;
+            position: fixed;
+            color: var(--white);
+            mix-blend-mode: difference;
+            font-family: var(--mono);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: -0.03em;
+            z-index: 999;
+          }
+
+          #hover :global(span) {
+            position: fixed;
+            will-change: top, left;
+          }
+
+          :global(.preview:hover #hover span) {
+            padding-top: 7px;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+
 const initialCursor = { line: 0, ch: 3 };
 export function Sandbox({ height, options }) {
   const router = useRouter();
-  const hoverEl = React.useRef();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
   const [hasTyped, setHasTyped] = React.useState(false);
@@ -221,29 +291,10 @@ export function Sandbox({ height, options }) {
     }
   }, [mode]);
 
-  React.useEffect(() => {
-    function handler(event) {
-      const el = hoverEl.current;
-      if (el) {
-        el.style.top = event.clientY - 13 + 'px';
-        el.style.left = event.clientX + 16 + 'px';
-      }
-    }
-
-    document.addEventListener('mousemove', handler);
-    return () => document.removeEventListener('mousemove', handler);
-  }, []);
-
   return (
     <div className="sandbox">
       <nav>
-        <button
-          onClick={() => {
-            setCode(INITIAL_CODE);
-          }}
-        >
-          Reset
-        </button>
+        <button onClick={() => setCode(INITIAL_CODE)}>Reset</button>
         <div className="btn-group">
           {router.pathname === '/' ? (
             <button onClick={() => router.push('/sandbox')}>
@@ -289,11 +340,7 @@ export function Sandbox({ height, options }) {
         <section className="right dark">
           {mode === 'preview' && (
             <div className="preview">
-              {hasTyped ? null : (
-                <div id="hover" ref={hoverEl}>
-                  Try Markdoc
-                </div>
-              )}
+              {hasTyped ? null : <Cursor>Try Markdoc</Cursor>}
               {Markdoc.renderers.react(content, React, {
                 components: config.components
               })}
@@ -331,19 +378,6 @@ export function Sandbox({ height, options }) {
             flex-flow: column;
             flex-grow: 1;
             border: 1px solid var(--black);
-          }
-
-          #hover {
-            display: none;
-            position: fixed;
-            color: var(--white);
-            mix-blend-mode: difference;
-            font-family: var(--mono);
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 27px;
-            letter-spacing: -0.03em;
-            z-index: 999;
           }
 
           nav {
@@ -404,10 +438,6 @@ export function Sandbox({ height, options }) {
             color: var(--black);
             height: 100%;
             padding: 1.5rem;
-          }
-
-          .preview:hover #hover {
-            padding-top: 6px;
           }
 
           .left :global(.CodeMirror),
