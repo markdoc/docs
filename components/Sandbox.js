@@ -297,10 +297,6 @@ export function Sandbox({ height, options }) {
     }
   }, [mode]);
 
-  const children = Markdoc.renderers.react(content, React, {
-    components: config.components
-  });
-
   return (
     <div className="sandbox">
       <nav>
@@ -346,19 +342,15 @@ export function Sandbox({ height, options }) {
             errors={errors}
             cursor={initialCursor}
           />
-          <pre className="code-animation">{INITIAL_CODE}</pre>
         </section>
         <section className="right dark">
           {mode === 'preview' && (
-            <>
-              <div className="preview-animation">
-                <div className="preview">{children}</div>
-              </div>
-              <div className="preview">
-                {hasTyped ? null : <Cursor>Try Markdoc</Cursor>}
-                {children}
-              </div>
-            </>
+            <div className="preview">
+              {hasTyped ? null : <Cursor>Try it out</Cursor>}
+              {Markdoc.renderers.react(content, React, {
+                components: config.components
+              })}
+            </div>
           )}
           {mode === 'transform' && (
             <CodeMirror
