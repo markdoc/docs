@@ -12,6 +12,8 @@ import 'prismjs/themes/prism.css';
 
 import '../public/globals.css';
 
+const TITLE = 'Markdoc';
+const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
 const MARKDOC = `
 
 
@@ -69,11 +71,11 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
   const { markdoc } = pageProps;
 
-  let description = 'A powerful, flexible, Markdown-based authoring framework';
-  let title = `Markdoc | ${description}`;
+  let title = TITLE;
+  let description = DESCRIPTION;
   if (markdoc) {
     if (markdoc.frontmatter.title) {
-      title = `Markdoc | ${markdoc.frontmatter.title}`;
+      title = markdoc.frontmatter.title;
     }
     if (markdoc.frontmatter.description) {
       description = markdoc.frontmatter.description;
@@ -112,16 +114,15 @@ export default function MyApp(props) {
         }}
       />
       <Head>
-        <title>{title}</title>
+        <title>{`${TITLE} | ${title}`}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
-        <meta name="description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://markdoc.io" />
-        <meta property="og:title" content="Markdoc" />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
