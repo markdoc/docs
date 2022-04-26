@@ -66,6 +66,8 @@ export function useMarkdocCode(code) {
     [ast, config]
   );
 
+  console.log(errors);
+
   return { ast, content, config, errors };
 }
 
@@ -149,6 +151,7 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
       <style jsx>
         {`
           :global(.syntax-error) {
+            position: relative;
             text-decoration: red wavy underline;
             text-decoration-skip-ink: none;
           }
