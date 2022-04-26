@@ -71,7 +71,7 @@ export function TopNav({ children }) {
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--dark);
-            padding: 1.3rem 2rem;
+            padding: 1rem 2rem 1.1rem;
             font-size: 15px;
             font-family: var(--sans);
           }
@@ -80,7 +80,7 @@ export function TopNav({ children }) {
           }
           ul {
             display: flex;
-            gap: 1.4rem;
+            gap: 1.3rem;
             padding: 0;
           }
           button {
