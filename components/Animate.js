@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const WINDOW_PERCENT = 0.45;
-const DURATION = 450;
+const DURATION = 600;
 
 export function Animate({ children }) {
   const ref = React.useRef(false);
@@ -24,14 +24,14 @@ export function Animate({ children }) {
     return () => {
       window.removeEventListener('scroll', handler, { passive: true });
     };
-  }, [transition]);
+  }, []);
 
   return (
     <div ref={ref}>
       {children}
       <style jsx>
         {`
-          div :global(.CodeMirror-code),
+          div :global(.CodeMirror-line),
           div :global(.code-animation),
           div :global(.preview-animation + .preview),
           div :global(.preview-animation) {
