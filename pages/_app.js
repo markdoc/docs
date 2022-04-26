@@ -69,7 +69,7 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
   const { markdoc } = pageProps;
 
-  let description = 'A Markdown-based authoring framework';
+  let description = 'A powerful, flexible, Markdown-based authoring framework';
   let title = `Markdoc | ${description}`;
   if (markdoc) {
     if (markdoc.frontmatter.title) {
@@ -114,10 +114,24 @@ export default function MyApp(props) {
       <Head>
         <title>{title}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://markdoc.io" />
+        <meta property="og:title" content="Markdoc" />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content="https://markdoc.io/images/share.png"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:image"
+          content="https://markdoc.io/images/share.png"
+        />
       </Head>
       {/* https://webaim.org/techniques/skipnav/ */}
       <a href="#skip-nav" className="skip-nav">
