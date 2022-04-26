@@ -196,6 +196,7 @@ export function Editor(props) {
   return mounted ? <EditorInternal {...props} /> : null;
 }
 
+const DELAY = 50;
 function Cursor({ children }) {
   const ref = React.useRef();
   const [pos, setPos] = React.useState({});
@@ -224,8 +225,8 @@ function Cursor({ children }) {
             top: pos.top,
             left: pos.left + i * 8,
             transition: [
-              `top 50ms linear ${i * 1}ms`,
-              `left 50ms linear ${i * 1}ms`
+              `top ${DELAY}ms linear ${i * 1}ms`,
+              `left ${DELAY}ms linear ${i * 1}ms`
             ].join()
           }}
         >

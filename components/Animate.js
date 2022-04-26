@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const WINDOW_PERCENT = 0.45;
-const DELAY_MS = 75;
+const DELAY = 40;
 
 export function Animate({ children }) {
   const ref = React.useRef(false);
@@ -21,7 +21,7 @@ export function Animate({ children }) {
         const code = el.querySelector('.CodeMirror');
         if (code && !called.current) {
           code.querySelectorAll('.CodeMirror-line').forEach((line, i) => {
-            const delay = i * DELAY_MS;
+            const delay = i * DELAY;
             line
               .querySelectorAll("span[role='presentation'], .cm-link, .cm-url")
               .forEach((presentation) => {
