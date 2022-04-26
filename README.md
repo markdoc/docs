@@ -1,19 +1,21 @@
 # Markdoc Docs
 
-## Get started
+## Contributing
 
-1. Start the development server:
+Contributions and feedback are welcomed and encouraged.
+
+To edit the docs, follow these steps:
+
+1. Start the development server
    ```shell
    npm run dev
-   # or
+   ```
+   or
+   ```shell
    yarn dev
    ```
 2. Open [http://localhost:3000](http://localhost:3000) to view the Markdoc site.
-3. Try editing `pages/index.md`. The page auto-updates when you edit and save.
-
-## Contribute
-
-Contributions and feedback are welcomed and encouraged.
+3. Try editing `pages/index.md`
 
 ## Code of conduct
 
