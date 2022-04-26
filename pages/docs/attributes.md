@@ -11,7 +11,7 @@ Attributes let you pass data to tags, validate the inputs, and specify the error
 
 Markdoc allows you to configure custom attribute types for each [tag](/docs/tags). Attribute definitions limit which values can be passed to a tag, and which will create errors during [validation](/docs/validation). 
 
-The following example defines an attribute for the `Callout` tag. By default, the attribute is set to `note`, and the value is validated agatinst the `matches` array. 
+The following example defines an attribute for a `Callout` tag. By default, the attribute is set to `note`, and the value is validated agatinst the `matches` array. 
 
 ```js
 {
@@ -36,7 +36,12 @@ The following example defines an attribute for the `Callout` tag. By default, th
 ---
 * `type`
 * Specifies the data type of the attribute.
-* `String`, `Boolean`, `Number`, `Object`, `Array`, or [custom attribute](#create-a-custom-attribute).
+* * `String` or `"String"`
+  * `Boolean` or `"Boolean"`
+  * `Number` or `"Number"`
+  * `Object` or `"Object"`
+  * `Array` or `"Array"`
+  * [Custom attribute](#create-a-custom-attribute)
 ---
 * `default`
 * Specifies the default behavior of the attribute if no value is provided. 
@@ -44,7 +49,8 @@ The following example defines an attribute for the `Callout` tag. By default, th
 ---
 * `required`
 * Specifies that a value must be passed to the attribute. If no value is provided, an error is thrown.
-* `true` or `false` 
+* * `true`
+  * `false` 
 ---
 * `matches`
 * Specifies a string pattern for the attribute value to match.
@@ -52,7 +58,11 @@ The following example defines an attribute for the `Callout` tag. By default, th
 ---
 * `errorLevel`
 * Specifies how Markdoc will report a validation error.
-* `debug`, `info`, `warning`, `error`, `critical`
+* * `debug` 
+  * `info`
+  * `warning`
+  * `error`
+  * `critical`
 {% /table %}
 
 ## Create a custom attribute
