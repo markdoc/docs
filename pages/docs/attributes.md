@@ -9,7 +9,7 @@ Attributes let you pass data to tags, validate the inputs, and specify the error
 
 ## Defining attributes
 
-Markdoc allows you to configure custom attribute types for each [tag](/docs/tags). Attribute definitions limit which values can be passed to a tag, and which will create errors during [validation](/docs/validation). 
+Markdoc allows you to configure custom attribute types for each [tag](/docs/tags). Assigning a type to an attribute limits which values an attribute can pass to a tag, and consequently which values create errors during [validation](/docs/validation). 
 
 The following example defines an attribute for a `Callout` tag. By default, the attribute is set to `note`, and the value is validated agatinst the `matches` array. 
 
