@@ -31,8 +31,15 @@ export function Animate({ children }) {
       {children}
       <style jsx>
         {`
-          div :global(.CodeMirror-code) {
+          div :global(.CodeMirror-code),
+          div :global(.code-animation),
+          div :global(.preview-animation + .preview),
+          div :global(.preview-animation) {
             transition: opacity ${DURATION}ms ease;
+          }
+
+          div :global(.CodeMirror-line),
+          div :global(.preview-animation + .preview) {
             opacity: ${transition ? 1 : 0};
           }
 
@@ -48,35 +55,30 @@ export function Animate({ children }) {
             line-height: 21px;
             color: #4f4f53;
             white-space: break-spaces;
-            transition: opacity ${DURATION}ms ease;
             opacity: ${transition ? 0 : 1};
-          }
-
-          div :global(.preview-animation + .preview) {
-            transition: opacity ${DURATION}ms ease;
-            opacity: ${transition ? 1 : 0};
           }
 
           div :global(.preview-animation) {
             position: absolute;
             font-family: Flow;
             top: 0;
-            left: 0
+            left: 0;
             width: 100%;
             height: 100%;
-            transition: opacity ${DURATION}ms ease;
             opacity: ${transition ? 0 : 1};
           }
 
-          div :global(.preview-animation .preview p) {
+          div :global(.preview-animation .preview p),
+          div :global(.preview-animation .preview li) {
             color: var(--gray-medium);
+            list-style: none;
           }
 
           div :global(.preview-animation .preview a) {
             text-decoration: none;
           }
 
-          div :global(.preview-animation .preview  .heading) {
+          div :global(.preview-animation .preview .heading) {
             color: #bdc7ca;
           }
         `}
