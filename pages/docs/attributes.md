@@ -5,7 +5,7 @@ description: Attributes are used to pass data to tags in Markdoc.
 
 # {% $markdoc.frontmatter.title %}
 
-Attributes let you pass data to tags, validate the inputs, and specify the error level for an invalid data type or value.
+Attributes let you pass data to tags
 
 ## Defining attributes
 
