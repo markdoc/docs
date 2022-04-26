@@ -1,11 +1,9 @@
 import * as React from 'react';
 
 const WINDOW_PERCENT = 0.45;
-const DELAY = 40;
 
 export function Animate({ children }) {
   const ref = React.useRef(false);
-  const called = React.useRef(false);
   const [transition, startTransition] = React.useState(false);
 
   React.useEffect(() => {
@@ -16,18 +14,6 @@ export function Animate({ children }) {
         const dimensions = el.getBoundingClientRect();
         if (dimensions.top < fullHeight * WINDOW_PERCENT) {
           startTransition(true);
-        }
-
-        const code = el.querySelector('.CodeMirror');
-        if (code && !called.current) {
-          code.querySelectorAll('.CodeMirror-line').forEach((line, i) => {
-            const delay = i * DELAY;
-            line
-              .querySelectorAll("span[role='presentation'], .cm-link, .cm-url")
-              .forEach((presentation) => {
-                presentation.style.transition = `color 300ms ease ${delay}ms`;
-              });
-          });
         }
       }
     }
@@ -52,11 +38,28 @@ export function Animate({ children }) {
 
           div :global(span.cm-link),
           div :global(span.cm-url) {
-            color: ${transition ? 'var(--yellow)' : 'inherit'};
+            color: var(--yellow);
           }
 
-          div :global(span[role='presentation']) {
-            ${transition ? '' : `color: #4F4F53 !important;`};
+          div :global(.CodeMirror-code) {
+            transition: opacity 300ms ease;
+            opacity: ${transition ? 1 : 0};
+          }
+
+          div :global(.code-animation) {
+            border: none;
+            position: absolute;
+            width: calc(100% - 64px);
+            height: calc(100% - 24px);
+            top: 24px;
+            left: 64px;
+            font-family: Flow;
+            font-size: 20px;
+            line-height: 21px;
+            color: #4f4f53;
+            white-space: break-spaces;
+            transition: opacity 300ms ease;
+            opacity: ${transition ? 0 : 1};
           }
         `}
       </style>

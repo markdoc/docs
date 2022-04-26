@@ -342,6 +342,7 @@ export function Sandbox({ height, options }) {
             errors={errors}
             cursor={initialCursor}
           />
+          <pre className="code-animation">{INITIAL_CODE}</pre>
         </section>
         <section className="right dark">
           {mode === 'preview' && (
@@ -444,6 +445,10 @@ export function Sandbox({ height, options }) {
             color: var(--black);
             height: 100%;
             padding: 1.5rem;
+          }
+
+          .left {
+            position: relative;
           }
 
           .left :global(.CodeMirror),
