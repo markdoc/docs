@@ -5,9 +5,13 @@ description: Attributes are used to pass data to tags in Markdoc.
 
 # {% $markdoc.frontmatter.title %}
 
+Attributes let you pass data to Markdoc tags.
+
 ## Defining attributes
 
-Markdoc allows you to configure custom attribute types for each [tag](/docs/tags). These definitions constrain what types of values can be passed, and which will create errors during [validation](/docs/validation).
+Markdoc allows you to configure custom attribute types for each [tag](/docs/tags). Assigning a type to an attribute limits which values an attribute can pass to a tag, and consequently which values create errors during [validation](/docs/validation). 
+
+The following example defines an attribute for a `Callout` tag. By default, the attribute is set to `note`, and the value is validated agatinst the `matches` array. 
 
 ```js
 {
@@ -25,39 +29,41 @@ Markdoc allows you to configure custom attribute types for each [tag](/docs/tags
 };
 ```
 
-### Attribute types
-
-Passing a `type` will validate that the value passed to the specified attribute is an instance of that type. Markdoc supports the following `type` options:
-
-- `String` or `"String"`
-- `Boolean` or `"Boolean"`
-- `Number` or `"Number"`
-- `Object` or `"Object"`
-- `Array` or `"Array"`
-
-Or you can pass your own [custom attribute types](#create-a-custom-attribute).
-
-### Default values
-
-You can use the `default` field to set a default value if there is no attribute passed.
-
-### Required values
-
-Set `required: true` if a value must be passed to a specific attribute.
-
-### Matching a pattern
-
-You can use the `matches` field to define a string pattern for this attribute to match. You can either pass a JavaScript regular expression, or an array of possible strings.
-
-### Setting an error level
-
-For each attribute, you can update the `errorLevel` field to adjust how Markdoc reports the validation error (e.g. pass `warning` if it is not a critical error). Here are the possible error levels:
-
-- `debug`
-- `info`
-- `warning`
-- `error`
-- `critical`
+{% table %}
+* Type
+* Definition
+* Accepted value(s)
+---
+* `type`
+* Specifies the data type of the attribute.
+* * `String` or `"String"`
+  * `Boolean` or `"Boolean"`
+  * `Number` or `"Number"`
+  * `Object` or `"Object"`
+  * `Array` or `"Array"`
+  * [Custom attribute](#create-a-custom-attribute)
+---
+* `default`
+* Specifies the default behavior of the attribute if no value is provided. 
+* The value must be the same data type defined for the attribute, and if applicable, appear in `matches`.
+---
+* `required`
+* Specifies that a value must be passed to the attribute. If no value is provided, an error is thrown.
+* * `true`
+  * `false` 
+---
+* `matches`
+* Specifies a string pattern for the attribute value to match.
+* A regular expression, array of strings, or function that takes an option and returns strings.  
+---
+* `errorLevel`
+* Specifies how Markdoc will report a validation error. Errors are ordered according to severity. 
+* * `debug` 
+  * `info`
+  * `warning`
+  * `error`
+  * `critical`
+{% /table %}
 
 ## Create a custom attribute
 
