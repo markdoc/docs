@@ -5,7 +5,7 @@ description: Attributes are used to pass data to tags in Markdoc.
 
 # {% $markdoc.frontmatter.title %}
 
-Attributes let you pass data to tags
+Attributes let you pass data to Markdoc tags.
 
 ## Defining attributes
 
@@ -57,7 +57,7 @@ The following example defines an attribute for a `Callout` tag. By default, the 
 * A regular expression, array of strings, or function that takes an option and returns strings.  
 ---
 * `errorLevel`
-* Specifies how Markdoc will report a validation error.
+* Specifies how Markdoc will report a validation error. Errors are ordered according to severity. 
 * * `debug` 
   * `info`
   * `warning`
