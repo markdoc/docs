@@ -5,6 +5,8 @@ description: How to get started with Markdoc
 
 # {% $markdoc.frontmatter.title %}
 
+The instructions below show you the fastest way to get started with Markdoc. If you're looking for a guided walkthrough, check out [Using Next.js with Markdoc](/docs/nextjs).
+
 ## Install Markdoc
 
 Install the Markdoc library:
@@ -47,4 +49,3 @@ return Markdoc.renderers.html(content);
 ## Next steps
 
 - [Learn Markdoc syntax](/docs/syntax)
-- [Get started quickly with Next.js](/docs/nextjs)
