@@ -346,7 +346,7 @@ export function Sandbox({ height, options }) {
         <section className="right dark">
           {mode === 'preview' && (
             <div className="preview">
-              {hasTyped ? null : <Cursor>Try Markdoc</Cursor>}
+              {hasTyped ? null : <Cursor>Try it out</Cursor>}
               {Markdoc.renderers.react(content, React, {
                 components: config.components
               })}
@@ -444,6 +444,11 @@ export function Sandbox({ height, options }) {
             color: var(--black);
             height: 100%;
             padding: 1.5rem;
+          }
+
+          .left,
+          .right {
+            position: relative;
           }
 
           .left :global(.CodeMirror),

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+@font-face {
+  font-family: Flow;
+  src: url('/fonts/flow-circular.woff') format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -365,7 +370,6 @@ article {
   flex-direction: column;
   max-width: 100%;
   min-width: 0;
-  overflow-x: auto;
 }
 
 /* Helper classes */

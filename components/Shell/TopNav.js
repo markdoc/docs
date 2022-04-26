@@ -72,12 +72,15 @@ export function TopNav({ children }) {
             justify-content: space-between;
             border-bottom: 1px solid var(--dark);
             padding: 1rem 2rem 1.1rem;
-            font-size: 14px;
-            font-family: var(--mono);
+            font-size: 15px;
+            font-family: var(--sans);
+          }
+          nav :global(a) {
+            text-decoration: none;
           }
           ul {
             display: flex;
-            gap: 1.4rem;
+            gap: 1.3rem;
             padding: 0;
           }
           button {

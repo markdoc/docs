@@ -5,7 +5,6 @@ export { comment } from '@markdoc/next.js/tags';
 
 // TODO use export default {}
 export { default as ascii } from './ascii.markdoc';
-export { default as animate } from './animate.markdoc';
 export { default as callout } from './callout.markdoc';
 export { default as features } from './features.markdoc';
 export { default as icon } from './icon.markdoc';

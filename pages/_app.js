@@ -12,6 +12,8 @@ import 'prismjs/themes/prism.css';
 
 import '../public/globals.css';
 
+const TITLE = 'Markdoc';
+const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
 const MARKDOC = `
 
 
@@ -69,11 +71,11 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
   const { markdoc } = pageProps;
 
-  let description = 'A Markdown-based authoring framework';
-  let title = `Markdoc | ${description}`;
+  let title = TITLE;
+  let description = DESCRIPTION;
   if (markdoc) {
     if (markdoc.frontmatter.title) {
-      title = `Markdoc | ${markdoc.frontmatter.title}`;
+      title = markdoc.frontmatter.title;
     }
     if (markdoc.frontmatter.description) {
       description = markdoc.frontmatter.description;
@@ -112,12 +114,25 @@ export default function MyApp(props) {
         }}
       />
       <Head>
-        <title>{title}</title>
+        <title>{`${TITLE} | ${title}`}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://markdoc.io" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content="https://markdoc.io/images/share.png"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:image"
+          content="https://markdoc.io/images/share.png"
+        />
       </Head>
       {/* https://webaim.org/techniques/skipnav/ */}
       <a href="#skip-nav" className="skip-nav">
@@ -173,7 +188,7 @@ export default function MyApp(props) {
           @font-face {
             font-family: 'Tiempos';
             font-style: normal;
-            src: url('${FONTS_BASE_URL}/test-tiempos-headline-light.woff2');
+            src: url('${FONTS_BASE_URL}/tiempos-headline-light.woff2');
           }
 
           .page {
@@ -287,6 +302,17 @@ export default function MyApp(props) {
           .page--landing .try {
             padding-top: 0;
             padding-bottom: 65px;
+          }
+
+          .page--landing .try span.cm-keyword,
+          .page--landing .try span.cm-tag,
+          .page--landing .try span.cm-string {
+            color: inherit;
+          }
+
+          .page--landing .try span.cm-link,
+          .page--landing .try span.cm-url {
+            color: var(--yellow);
           }
 
           .page--landing .value-props {
