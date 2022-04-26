@@ -305,11 +305,6 @@ export default function MyApp(props) {
             letter-spacing: initial;
           }
 
-          /* Show 'Try' text on hover on the landing page */
-          .page--landing .sandbox .container:hover #hover {
-            display: block;
-          }
-
           .dark .page--landing .get-started {
             background: var(--black-medium);
           }

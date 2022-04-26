@@ -262,6 +262,11 @@ function Cursor({ children }) {
           :global(.preview:hover #hover span) {
             padding-top: 7px;
           }
+
+          /* Show 'Try' text on hover on the landing page */
+          :global(.page--landing .sandbox .container:hover) #hover {
+            display: block;
+          }
         `}
       </style>
     </div>
