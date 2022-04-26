@@ -71,9 +71,12 @@ export function TopNav({ children }) {
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--dark);
-            padding: 1rem 2rem 1.1rem;
-            font-size: 14px;
-            font-family: var(--mono);
+            padding: 1.3rem 2rem;
+            font-size: 15px;
+            font-family: var(--sans);
+          }
+          nav :global(a) {
+            text-decoration: none;
           }
           ul {
             display: flex;
