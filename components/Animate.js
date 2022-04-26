@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 const WINDOW_PERCENT = 0.45;
+const DURATION = 450;
 
 export function Animate({ children }) {
   const ref = React.useRef(false);
   const [transition, startTransition] = React.useState(false);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     function handler() {
       const el = ref.current;
       if (el) {
@@ -30,19 +31,8 @@ export function Animate({ children }) {
       {children}
       <style jsx>
         {`
-          div :global(span.cm-keyword),
-          div :global(span.cm-tag),
-          div :global(span.cm-string) {
-            color: inherit;
-          }
-
-          div :global(span.cm-link),
-          div :global(span.cm-url) {
-            color: var(--yellow);
-          }
-
           div :global(.CodeMirror-code) {
-            transition: opacity 300ms ease;
+            transition: opacity ${DURATION}ms ease;
             opacity: ${transition ? 1 : 0};
           }
 
@@ -58,8 +48,36 @@ export function Animate({ children }) {
             line-height: 21px;
             color: #4f4f53;
             white-space: break-spaces;
-            transition: opacity 300ms ease;
+            transition: opacity ${DURATION}ms ease;
             opacity: ${transition ? 0 : 1};
+          }
+
+          div :global(.preview-animation + .preview) {
+            transition: opacity ${DURATION}ms ease;
+            opacity: ${transition ? 1 : 0};
+          }
+
+          div :global(.preview-animation) {
+            position: absolute;
+            font-family: Flow;
+            top: 0;
+            left: 0
+            width: 100%;
+            height: 100%;
+            transition: opacity ${DURATION}ms ease;
+            opacity: ${transition ? 0 : 1};
+          }
+
+          div :global(.preview-animation .preview p) {
+            color: var(--gray-medium);
+          }
+
+          div :global(.preview-animation .preview a) {
+            text-decoration: none;
+          }
+
+          div :global(.preview-animation .preview  .heading) {
+            color: #bdc7ca;
           }
         `}
       </style>

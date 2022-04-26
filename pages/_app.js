@@ -304,6 +304,17 @@ export default function MyApp(props) {
             padding-bottom: 65px;
           }
 
+          .page--landing .try span.cm-keyword,
+          .page--landing .try span.cm-tag,
+          .page--landing .try span.cm-string {
+            color: inherit;
+          }
+
+          .page--landing .try span.cm-link,
+          .page--landing .try span.cm-url {
+            color: var(--yellow);
+          }
+
           .page--landing .value-props {
             padding-top: 0px;
           }
