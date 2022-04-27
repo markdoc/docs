@@ -143,7 +143,7 @@ export function Typewriter({ children: text }) {
             background: var(--theme);
             ${done ? 'display: none;' : ''}
           }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 660px) {
             h1 {
               height: unset;
               overflow: initial;
