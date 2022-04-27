@@ -235,7 +235,7 @@ export default function MyApp(props) {
           }
 
           main article {
-            ${isDocs ? 'padding: 2rem 1.5rem 3rem; 2rem' : ''}
+            ${isDocs ? 'padding: 2rem 1.5rem 3rem;' : ''}
           }
 
           .footer-bar {
