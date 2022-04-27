@@ -5,7 +5,7 @@ import { ThemeToggle } from '.';
 
 export function Footer({ children: links, landing }) {
   const copyright = (
-    <div className="gap">
+    <Link href="https://stripe.com">
       <svg
         width="99"
         height="28"
@@ -58,7 +58,7 @@ export function Footer({ children: links, landing }) {
           fill="var(--stripe)"
         />
       </svg>
-    </div>
+    </Link>
   );
 
   const disclaimer = (
