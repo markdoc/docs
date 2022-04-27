@@ -24,7 +24,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    ```js
    const withMarkdoc = require('@markdoc/next.js');
 
-   module.exports = withMarkdoc(/* options */)({
+   module.exports = withMarkdoc(/* [options](#options) */)({
      pageExtensions: ['js', 'md']
    });
    ```
