@@ -4,7 +4,7 @@ title: Config reference
 
 # {% $markdoc.frontmatter.title %}
 
-This table outlines the various options you can pass to `Markdoc.transform`. These options each adjust how your document will be [transformed](/docs/render#transform) and [rendered](/docs/render#render).
+This table outlines the various options you can pass to `Markdoc.transform`. Each option adjusts how a document is [transformed](/docs/render#transform) and [rendered](/docs/render#render).
 
 {% table %}
 
