@@ -37,7 +37,7 @@ Prism.languages.markdoc = {
   }
 };
 
-export function Code({ children, language, ...rest }) {
+export function Code({ children, language }) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
 
@@ -61,7 +61,6 @@ export function Code({ children, language, ...rest }) {
   return (
     <div className="code" aria-live="polite">
       <pre
-        {...rest}
         /**
          * HACK: prevent "Uncaught DOMException" when typing
          *
