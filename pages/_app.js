@@ -7,6 +7,7 @@ import { AppLink as Link } from '../components/AppLink';
 import { Footer, SideNav, TableOfContents, TopNav } from '../components/Shell';
 
 import 'prismjs';
+import 'prismjs/plugins/autolinker/prism-autolinker';
 import 'codemirror/lib/codemirror.css';
 import 'prismjs/themes/prism.css';
 

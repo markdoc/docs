@@ -403,6 +403,10 @@ pre[class*='language-'] {
   margin: 0 0 var(--default-vertical-spacing);
 }
 
+pre[class*='language-'] .md-link {
+  color: inherit !important;
+}
+
 .token {
   color: var(--text) !important;
   background: transparent !important;
