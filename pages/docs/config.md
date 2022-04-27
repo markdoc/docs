@@ -1,10 +1,10 @@
 ---
-title: Configuration options
+title: Config reference
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-This table outlines the various options you can pass to `Markdoc.transform`:
+This table outlines the various options you can pass to `Markdoc.transform`. Each option adjusts how a document is [transformed](/docs/render#transform) and [rendered](/docs/render#render).
 
 {% table %}
 
@@ -14,25 +14,25 @@ This table outlines the various options you can pass to `Markdoc.transform`:
 
 ---
 
-- `nodes`
+- [`nodes`](/docs/nodes)
 - `{ [string: NodeType]: Schema }`
 - Register [custom nodes](/docs/nodes) in your schema
 
 ---
 
-- `tags`
+- [`tags`](/docs/tags)
 - `{ [string: TagName]: Schema }`
 - Register [custom tags](/docs/tags) in your schema
 
 ---
 
-- `variables`
+- [`variables`](/docs/variables)
 - `{ [string: VariableName]: any }`
 - Register [variables](/docs/variables) to use in your document
 
 ---
 
-- `functions`
+- [`functions`](/docs/functions)
 - `{ [string: FunctionName]: ConfigFunction }`
 - Register [custom functions](/docs/functions) to use in your document
 
@@ -45,6 +45,8 @@ This table outlines the various options you can pass to `Markdoc.transform`:
 {% /table %}
 
 ## Example
+
+Here is an example of what a Markdoc config might look like:
 
 ```js
 const config = {

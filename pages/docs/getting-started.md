@@ -6,6 +6,7 @@ description: How to get started with Markdoc
 # {% $markdoc.frontmatter.title %}
 
 Follow the instructions below to install Markdoc. If you're looking for the fastest way to get started, check out [using Next.js with Markdoc](/docs/nextjs).
+
 ## Install Markdoc
 
 Install the Markdoc library:
@@ -40,10 +41,12 @@ Call the `parse`, `transform` and `render` Markdoc functions to render your cont
 
 ```js
 const source = '# Markdoc';
-const config = {};
 
 const ast = Markdoc.parse(source);
-const content = Markdoc.transform(ast, config);
+{% comment %}
+// prettier-ignore
+{% /comment %}
+const content = Markdoc.transform(ast, /* [config](/docs/config) */);
 
 const html = Markdoc.renderers.html(content);
 ```
