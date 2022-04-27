@@ -1,5 +1,7 @@
 import React from 'react';
 
+const BODY_TRANSITION = `color 400ms ease, background 300ms ease`;
+
 const sun = (
   <svg
     className="sun"
@@ -126,7 +128,11 @@ export function ThemeToggle() {
     >
       <button
         className={isDark ? 'dark' : 'light'}
-        onClick={() => setPreferredTheme(theme === 'dark' ? 'light' : 'dark')}
+        onClick={() => {
+          // Don't transition body styles on initial load, when toggled
+          document.body.style.transition = BODY_TRANSITION;
+          setPreferredTheme(theme === 'dark' ? 'light' : 'dark');
+        }}
       >
         {isDark ? moon : sun}
         <span>{isDark ? 'Dark mode' : 'Light mode'}</span>

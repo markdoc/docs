@@ -116,7 +116,6 @@ body {
   color: var(--text);
   background: var(--light);
   font-family: var(--sans);
-  transition: color 400ms ease, background 300ms ease;
 }
 
 body ::selection,
