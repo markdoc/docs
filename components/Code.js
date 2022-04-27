@@ -60,20 +60,7 @@ export function Code({ children, language }) {
 
   return (
     <div className="code" aria-live="polite">
-      <pre
-        /**
-         * HACK: prevent "Uncaught DOMException" when typing
-         *
-         * ```
-         * {% tag %} ← no closing tag
-         * ```
-         *
-         * in the sandbox.
-         */
-        key={children}
-        ref={ref}
-        className={`language-${lang}`}
-      >
+      <pre ref={ref} className={`language-${lang}`}>
         {children}
       </pre>
       <button onClick={() => setCopied(true)}>
