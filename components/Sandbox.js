@@ -224,7 +224,7 @@ function Cursor({ children }) {
           key={`${l}_${i}`}
           style={{
             top: pos.top,
-            left: pos.left + i * 8,
+            left: isNaN(pos.left) ? undefined : pos.left + i * 8,
             transition: [
               `top ${DELAY}ms linear ${i * 1}ms`,
               `left ${DELAY}ms linear ${i * 1}ms`
