@@ -136,13 +136,21 @@ These are the fields you can use to customize your `Tag`
 ---
 
 - `render`
-- `(Node, ?Options) => RenderTag | RenderTag[] | null`
+- ```js
+  (Node, ?Options) =>
+    | RenderableTreeNode
+    | RenderableTreeNode[]
+    | null
+  ```
 - Customize the Markdoc render function for this tag, returning the custom output you want to render. This is called during the [`transform` step](/docs/render#transform).
 
 ---
 
 - `validate`
-- `(Node, ?Options) => ValidationError[];`
+- ```js
+  (Node, ?Options) =>
+    ValidationError[];
+  ```
 - Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render#validate)
 
 {% /table %}
