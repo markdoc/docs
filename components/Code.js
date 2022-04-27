@@ -59,7 +59,7 @@ export function Code({ children, language, ...rest }) {
     typeof children === 'string' ? children.split('\n').filter(Boolean) : [];
 
   return (
-    <div className="code" aria-live="polite" data-line="3">
+    <div className="code" aria-live="polite">
       <pre
         {...rest}
         /**
