@@ -2,7 +2,6 @@
 import 'prismjs';
 
 import * as React from 'react';
-import PrismCode from 'react-prism';
 import copy from 'copy-to-clipboard';
 
 import { Icon } from './Icon';
@@ -38,13 +37,17 @@ Prism.languages.markdoc = {
   }
 };
 
-export function Code({ children, language }) {
+export function Code({ children, language, ...rest }) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
 
+  React.useLayoutEffect(() => {
+    if (ref.current) Prism.highlightElement(ref.current, false);
+  }, []);
+
   React.useEffect(() => {
     if (copied) {
-      copy(ref.current._domNode.innerText);
+      copy(ref.current.innerText);
       const to = setTimeout(setCopied, 1000, false);
       return () => clearTimeout(to);
     }
@@ -56,8 +59,9 @@ export function Code({ children, language }) {
     typeof children === 'string' ? children.split('\n').filter(Boolean) : [];
 
   return (
-    <div className="code" aria-live="polite">
-      <PrismCode
+    <div className="code" aria-live="polite" data-line="3">
+      <pre
+        {...rest}
         /**
          * HACK: prevent "Uncaught DOMException" when typing
          *
@@ -69,11 +73,10 @@ export function Code({ children, language }) {
          */
         key={children}
         ref={ref}
-        component="pre"
         className={`language-${lang}`}
       >
         {children}
-      </PrismCode>
+      </pre>
       <button onClick={() => setCopied(true)}>
         <title>{copied ? 'Copied' : 'Copy'}</title>
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
