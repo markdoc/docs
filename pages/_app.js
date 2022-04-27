@@ -45,24 +45,25 @@ function useGoogleAnalytics() {
   }, [router.events]);
 }
 
-function collectHeadings(nodes, sections = []) {
-  nodes.forEach((node) => {
-    if (node) {
-      if (node.name === 'Heading') {
-        const title = node.children[0];
+function collectHeadings(node, sections = []) {
+  if (node) {
+    if (node.name === 'Heading') {
+      const title = node.children[0];
 
-        if (typeof title === 'string') {
-          sections.push({
-            ...node.attributes,
-            title
-          });
-        }
-      }
-      if (node.children) {
-        collectHeadings(node.children, sections);
+      if (typeof title === 'string') {
+        sections.push({
+          ...node.attributes,
+          title
+        });
       }
     }
-  });
+
+    if (node.children) {
+      for (const child of node.children) {
+        collectHeadings(child, sections);
+      }
+    }
+  }
 
   return sections;
 }
@@ -83,7 +84,7 @@ export default function MyApp(props) {
   }
 
   const toc = pageProps.markdoc?.content
-    ? collectHeadings([].concat(pageProps.markdoc.content))
+    ? collectHeadings(pageProps.markdoc.content)
     : [];
 
   const isDocs = props.router.asPath.startsWith('/docs');

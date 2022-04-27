@@ -74,31 +74,32 @@ Markdoc.renderers.react(content, React, {
 #### Collect all headings from the page content
 
 ```js
-function collectHeadings(nodes, sections = []) {
-  nodes.forEach((node) => {
-    if (node) {
-      // Match all h1, h2, h3… tags
-      if (node.name.match(/h\d/)) {
-        const title = node.children[0];
+function collectHeadings(node, sections = []) {
+  if (node) {
+    // Match all h1, h2, h3… tags
+    if (node.name.match(/h\d/)) {
+      const title = node.children[0];
 
-        if (typeof title === 'string') {
-          sections.push({
-            ...node.attributes,
-            title
-          });
-        }
-      }
-      if (node.children) {
-        collectHeadings(node.children, sections);
+      if (typeof title === 'string') {
+        sections.push({
+          ...node.attributes,
+          title
+        });
       }
     }
-  });
+
+    if (node.children) {
+      for (const child of node.children) {
+        collectHeadings(child, sections);
+      }
+    }
+  }
 
   return sections;
 }
 
 const content = Markdoc.transform(ast);
-const headings = collectHeadings([].concat(content));
+const headings = collectHeadings(content);
 ```
 
 #### Render the headings in a list
