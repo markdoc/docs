@@ -66,8 +66,6 @@ export function useMarkdocCode(code) {
     [ast, config]
   );
 
-  console.log(errors);
-
   return { ast, content, config, errors };
 }
 
