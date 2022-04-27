@@ -41,6 +41,7 @@ export function TableOfContents({ toc }) {
             top: calc(2.5rem + var(--nav-height));
             max-height: calc(100vh - var(--nav-height));
             flex: 0 0 240px;
+            /* https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox */
             align-self: flex-start;
             margin-bottom: 1rem;
             padding: 0.25rem 0 0;

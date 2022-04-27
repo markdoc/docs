@@ -197,7 +197,6 @@ export default function MyApp(props) {
             padding-top: var(--nav-height);
             min-height: 100vh;
             max-width: 100vw;
-            ${isDocs ? 'border-bottom: 1px solid var(--gray-medium);' : ''}
           }
 
           .dark .page {
@@ -241,6 +240,7 @@ export default function MyApp(props) {
           .footer-bar {
             flex: 1;
             padding: ${isLandingPage ? '1rem 0' : '0'};
+            border-top: ${isDocs ? '1px solid var(--gray-medium)' : 'none'};
           }
 
           .footer-bar footer {

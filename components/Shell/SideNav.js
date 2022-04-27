@@ -68,12 +68,13 @@ export function SideNav() {
       <style jsx>
         {`
           nav {
+            /* https://stackoverflow.com/questions/66898327/how-to-keep-footer-from-pushing-up-sticky-sidebar */
             position: sticky;
             top: var(--nav-height);
             height: calc(100vh - var(--nav-height) - var(--footer-height));
             flex: 0 0 240px;
             overflow-y: auto;
-            padding: 2rem 0 3rem 2rem;
+            padding: 2rem 0 2rem 2rem;
           }
           h3 {
             font-weight: 500;
