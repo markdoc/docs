@@ -52,7 +52,7 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
   #### Adopt anywhere {% .jumbo %}
 
-  Use Markdoc to create interactive documentation experiences, static content sites, developer-tooling, and more.
+  Use Markdoc to create interactive documentation experiences, static content sites, authoring tooling, and more.
 
   {% /item %}
 
