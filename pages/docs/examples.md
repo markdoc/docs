@@ -56,7 +56,7 @@ const fence = {
   }
 };
 
-const content = Markdoc.transform(content, {
+const content = Markdoc.transform(doc, {
   nodes: {
     fence
   }
@@ -263,7 +263,7 @@ const markdocExample = {
 
 const config = {
   tags: {
-    'markdoc-example: markdocExample
+    'markdoc-example': markdocExample
   }
 }
 ```

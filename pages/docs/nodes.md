@@ -34,7 +34,7 @@ import { Ast } from '@markdoc/markdoc';
 
 export const heading = {
   tag(node) {
-    // Determines which HTMl or React component to render
+    // Determines which HTML or React component to render
     return `h${node.attributes['level']}`;
   },
   children: ['inline'],
@@ -99,7 +99,7 @@ These are the fields you can use to customize your `Node`
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Determines which values (and their types) are allowed to be passed to this node.
+- Determines which [values (and their types)](/docs/attributes) are allowed to be passed to this node.
 
 ---
 

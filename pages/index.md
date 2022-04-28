@@ -68,7 +68,7 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
 ## Get started quickly {% .jumbo %}
 
-[Markdoc core](https://github.com/markdoc/markdoc) is a lightweight package containing everything you need to get started. If you want get going even faster, check out our [Next.js plugin](https://github.com/markdoc/next.js) and deploy a Markdoc documentation site with zero boilerplate.
+[Markdoc core](https://github.com/markdoc/markdoc) is a lightweight package containing everything you need to get started. If you want to get going even faster, check out our [Next.js plugin](https://github.com/markdoc/next.js) and deploy a Markdoc documentation site with zero boilerplate.
 
 [Explore documentation](/docs/getting-started) {% .primary %}
 

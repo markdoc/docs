@@ -5,7 +5,7 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
+Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
 
 ## Create a custom tag
 
@@ -45,6 +45,10 @@ const config = {
     callout
   }
 };
+
+const doc = `
+# My first custom tag
+`;
 
 const content = Markdoc.transform(doc, config);
 
@@ -125,7 +129,7 @@ These are the fields you can use to customize your `Tag`
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Specifies which values (and their types) can be passed to this tag.
+- Specifies which [values (and their types)](/docs/attributes) can be passed to this tag.
 
 ---
 
@@ -161,7 +165,7 @@ Markdoc comes out-of-the-box with 4 built-in tags: `if`, `else`, `table`, and `p
 
 ### If/Else
 
-Dynamically render content when specific conditions are met using the `{% if %}` and `{% else %}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions). Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
+Dynamically render content when specific conditions are met using the `{% if %}` and `{% else /%}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions). Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
 
 Use the `if` tag to render content when a condition evaluates to `true`.
 
