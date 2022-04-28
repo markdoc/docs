@@ -14,7 +14,7 @@ validate(string | AstNode, ?Config) => ValidateError[]
 ```
 
 \
-Calling `validate` is in an optional step that you can use to validate your AST before rendering. This is useful during testing, continuous integration, or in dev-tools like editor extensions.
+Calling `validate` is an optional step that you can use to validate your abstract syntax tree (AST) before rendering. This is useful during testing, continuous integration, or in dev-tools like editor extensions.
 
 {% markdoc-example %}
 

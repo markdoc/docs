@@ -5,7 +5,7 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are an syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
+Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
 
 ## Create a custom tag
 
@@ -45,6 +45,10 @@ const config = {
     callout
   }
 };
+
+const doc = `
+# My first custom tag
+`;
 
 const content = Markdoc.transform(doc, config);
 
@@ -125,7 +129,7 @@ These are the fields you can use to customize your `Tag`
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Specifies which values (and their types) can be passed to this tag.
+- Specifies which [values (and their types)](/docs/attributes) can be passed to this tag.
 
 ---
 

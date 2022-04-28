@@ -134,7 +134,7 @@ To set a `class`, you can use class syntax:
 
 {% /markdoc-example %}
 
-You can also set [attributes](#attributes) on a node, such a `width` or `height`.
+You can also set [attributes](#attributes) on a node, such as `width` or `height`.
 
 {% markdoc-example %}
 
@@ -210,7 +210,7 @@ For more information, check out the [Variables docs](/docs/variables).
 
 ## Functions
 
-Functions look and feel similar to JavaScript functions. They are callable from body of the document, inside an annotation, or within tag attributes.
+Functions look and feel similar to JavaScript functions. They are callable from the body of the document, inside an annotation, or within tag attributes.
 Function parameters are comma-separated. Trailing commas aren't supported in function calls.
 
 {% markdoc-example %}
