@@ -299,6 +299,10 @@ code {
   white-space: nowrap;
 }
 
+img {
+  max-width: 100%;
+}
+
 pre {
   border-radius: 3px;
   border: 1px solid var(--code-border);
