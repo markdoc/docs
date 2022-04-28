@@ -56,7 +56,7 @@ const fence = {
   }
 };
 
-const content = Markdoc.transform(doc, {
+const content = Markdoc.transform(ast, {
   nodes: {
     fence
   }
