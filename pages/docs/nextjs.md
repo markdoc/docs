@@ -188,6 +188,25 @@ export const upper = {
 };
 ```
 
+### Advanced
+
+If you want more control over your config object, you can create a `/markdoc/config.js` file and export the full config object. This allows you to extend your config with more data, like records or utility functions.
+
+```js
+// markdoc/config.js
+
+import tags from './tags';
+import nodes from './nodes';
+import functions from './functions';
+
+export default {
+  tags,
+  nodes,
+  functions
+  // add other stuff here
+};
+```
+
 ## Frontmatter
 
 Markdoc is frontmatter agnostic, however, `@markdoc/next.js` uses YAML as its frontmatter language. You can access the frontmatter object within your `_app.js` under `pageProps.markdoc.frontmatter`, or in your content using the `$markdoc.frontmatter` variable.
