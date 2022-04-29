@@ -80,7 +80,6 @@ npm install @markdoc/markdoc
 
 ```js
 import Markdoc from '@markdoc/markdoc';
-import config from './config';
 
 const doc = `
 # Hello world.
@@ -89,7 +88,7 @@ const doc = `
 
 const ast = Markdoc.parse(doc);
 
-const content = Markdoc.transform(ast, config);
+const content = Markdoc.transform(ast);
 
 const html = Markdoc.renderers.html(content);
 ```
