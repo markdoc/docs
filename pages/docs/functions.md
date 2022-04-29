@@ -47,7 +47,7 @@ const config = {
   }
 };
 
-return Markdoc.transform(content, config);
+const content = Markdoc.transform(ast, config);
 ```
 
 Finally, call the functions within your Markdoc content

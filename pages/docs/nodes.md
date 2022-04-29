@@ -22,7 +22,7 @@ const config = {
 
 const content = Markdoc.transform(doc, config);
 
-return Markdoc.renderers.react(content, React, { components });
+const children = Markdoc.renderers.react(content, React, { components });
 ```
 
 where `heading` looks something like:
