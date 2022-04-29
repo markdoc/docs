@@ -4,7 +4,7 @@ title: The Markdoc syntax
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which are described below.
+Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which are described below. These extensions enable Markdoc's powerful extensibility model.
 
 ## Nodes
 
@@ -167,7 +167,8 @@ Pass attributes to tags to customize their behavior. You can pass values of type
 
 {% /markdoc-example %}
 
-All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.
+All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.  
+If you wish to include a double-quote in a string you can escape it with using `\"`.
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).

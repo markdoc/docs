@@ -143,7 +143,7 @@ Then, call `Markdoc.renderers.react` with the renderable tree from your client a
 
 {% side-by-side %}
 
-```js
+```jsx
 import Markdoc from '@markdoc/markdoc';
 import React from 'react'; // or 'preact'
 

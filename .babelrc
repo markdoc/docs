@@ -11,7 +11,8 @@
           "javascript",
           "json",
           "toml",
-          "yaml"
+          "yaml",
+          "jsx"
         ]
       }
     ]

@@ -57,7 +57,7 @@ const children = Markdoc.renderers.react(content, React, { components });
 
 Next, pass your config to `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
 
-```js
+```jsx
 import * as React from 'react';
 import { Icon } from './Icon';
 
