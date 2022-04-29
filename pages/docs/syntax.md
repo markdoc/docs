@@ -244,36 +244,36 @@ This table outlines the various options you can pass to `Markdoc.transform`. Eac
 ---
 
 - [`nodes`](/docs/nodes)
-- `{ [string: NodeType]: Schema }`
+- {% code %}{ [nodeType: [NodeType](/docs/nodes#built-in-nodes)]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
 - Register [custom nodes](/docs/nodes) in your schema
 
 ---
 
 - [`tags`](/docs/tags)
-- `{ [string: TagName]: Schema }`
+- {% code %}{ [tagName: string]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
 - Register [custom tags](/docs/tags) in your schema
 
 ---
 
 - [`variables`](/docs/variables)
-- `{ [string: VariableName]: any }`
+- `{ [variableName: string]: any }`
 - Register [variables](/docs/variables) to use in your document
 
 ---
 
 - [`functions`](/docs/functions)
-- `{ [string: FunctionName]: ConfigFunction }`
+- {% code %}{ [functionName: string]: [ConfigFunction](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L31-L36) }{% /code %}
 - Register [custom functions](/docs/functions) to use in your document
 
 ---
 
 - [`partials`](/docs/partials)
-- `{ [string: PartialPath]: Ast.Node }`
+- `{ [partialPath: string]: Ast.Node }`
 - Register reusable pieces of content to used by the [`partial` tag](/docs/partials)
 
 {% /table %}
 
-## Full example
+### Full example
 
 Here is an example of what a Markdoc config might look like:
 
