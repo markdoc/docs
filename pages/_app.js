@@ -214,6 +214,7 @@ export default function MyApp(props) {
             padding: 0;
             overflow: hidden;
             position: absolute;
+            text-decoration: none;
           }
 
           .skip-nav:focus {
@@ -221,7 +222,7 @@ export default function MyApp(props) {
             position: fixed;
             top: 10px;
             left: 10px;
-            background: var(--white);
+            background: var(--light);
             z-index: 1000;
             width: auto;
             height: auto;
