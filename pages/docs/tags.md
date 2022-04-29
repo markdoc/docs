@@ -117,7 +117,7 @@ These are the fields you can use to customize your `Tag`
 
 - `render`
 - `string | Node => string`
-- Name of the HTML tag or React component to render.
+- Name of the output (e.g. HTML tag, React component name) to render
 
 ---
 
