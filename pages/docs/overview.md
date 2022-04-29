@@ -15,7 +15,7 @@ Markdoc is a superset of [CommonMark Markdown](https://commonmark.org/), so all 
 
 #### What is the difference between Markdoc and MDX?
 
-MDX allows embedding JavaScript inside of Markdown (think, docs as code). Where as Markdoc has a strict separation between content and code (think, docs as data).
+MDX allows embedding JavaScript inside of Markdown (think: docs as code). Markdoc has a strict separation between content and code (think: docs as data).
 
 Markdoc uses a fully declarative approach to composition and flow control, where MDX relies on JavaScript/React. This means MDX docs can quickly become as complex as regular code which can lead to maintainability complications or a more difficult authoring environment.
 
