@@ -18,7 +18,7 @@ Here is an example of including the `header.md` file as a partial.
 
 #### Registering partials
 
-Partials are defined by created a mapping from file name to an abstract syntax tree (AST) node in your [`Config` object](/docs/config). The default `partial` [tag](/docs/tags) will look at this config in order to include the right content.
+Partials are defined by created a mapping from file name to an abstract syntax tree (AST) node in your [`Config` object](/docs/syntax#config). The default `partial` [tag](/docs/tags) will look at this config in order to include the right content.
 
 {% markdoc-example %}
 

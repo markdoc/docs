@@ -14,7 +14,7 @@ const items = [
   {
     title: 'Core concepts',
     links: [
-      { href: '/docs/syntax', children: 'Syntax' },
+      { href: '/docs/syntax', children: 'Syntax and schema' },
       { href: '/docs/nodes', children: 'Nodes' },
       { href: '/docs/tags', children: 'Tags' },
       { href: '/docs/attributes', children: 'Attributes' },
@@ -24,8 +24,7 @@ const items = [
       {
         href: '/docs/render',
         children: 'Rendering'
-      },
-      { href: '/docs/config', children: 'Config reference' }
+      }
     ]
   },
   {

@@ -36,13 +36,14 @@ const xor = {
 };
 ```
 
-Then, pass the functions to your [`Config` object](/docs/config)
+Then, pass the functions to your [`Config` object](/docs/syntax#config)
 
 ```js
 const config = {
   functions: {
     includes,
-    uppercase
+    uppercase,
+    xor
   }
 };
 

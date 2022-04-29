@@ -9,7 +9,7 @@ description:
 
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
-Custom nodes are defined by passing a custom Node to your [`Config`](/docs/config), like:
+Custom nodes are defined by passing a custom Node to your [`Config`](/docs/syntax#config), like:
 
 ```js
 import { heading } from './schema/Heading.markdoc';

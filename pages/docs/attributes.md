@@ -104,7 +104,7 @@ export class DateTime {
 }
 ```
 
-Then, pass the custom attribute to your tag definition in your [`Config` object](/docs/config)
+Then, pass the custom attribute to your tag definition in your [`Config` object](/docs/syntax#config)
 
 ```js
 const config = {
