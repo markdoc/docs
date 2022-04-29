@@ -3,7 +3,7 @@ import sideBySide from './side-by-side.markdoc';
 
 export { comment } from '@markdoc/next.js/tags';
 
-// TODO use export default {}
+// IDEA: use export default {}
 export { default as ascii } from './ascii.markdoc';
 export { default as callout } from './callout.markdoc';
 export { default as features } from './features.markdoc';
