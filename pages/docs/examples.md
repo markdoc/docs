@@ -1,9 +1,11 @@
 ---
-title: Common React examples
+title: Common examples
 description:
 ---
 
 # {% $markdoc.frontmatter.title %}
+
+For more examples, check out [our collection of example repos on GitHub](https://github.com/markdoc/docs/tree/main/examples).
 
 ## Loops
 
