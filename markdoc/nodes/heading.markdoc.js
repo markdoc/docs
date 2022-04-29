@@ -1,7 +1,7 @@
 import { Tag } from '@markdoc/markdoc';
 import { Heading } from '../../components/Heading';
 
-function getAnchor(children, attributes) {
+function generateID(children, attributes) {
   if (attributes.id && typeof attributes.id === 'string') {
     return attributes.id;
   }
@@ -24,7 +24,7 @@ export default {
   transform(node, config) {
     const attributes = node.transformAttributes(config);
     const children = node.transformChildren(config);
-    const id = getAnchor(children, attributes);
+    const id = generateID(children, attributes);
 
     return new Tag(this.render, { ...attributes, id }, children);
   }

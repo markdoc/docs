@@ -63,7 +63,7 @@ export function Footer({ children: links, landing }) {
 
   const disclaimer = (
     <span className="disclaimer">
-      This site was entirely{' '}
+      This site was{' '}
       <button
         onClick={() => {
           if (window.__toggle_editor__) {
