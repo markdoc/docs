@@ -104,7 +104,7 @@ return Markdoc.renderers.html(content);
 
 ### Markdoc powers Stripe documentation {% .jumbo %}
 
-Stripe created Markdoc to power its largest and most detailed content site. Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
+Stripe created Markdoc to power its largest and [most detailed content site](https://stripe.com/docs). Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
 
 {% /side-by-side %}
 
