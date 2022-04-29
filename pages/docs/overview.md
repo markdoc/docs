@@ -11,11 +11,11 @@ Markdoc is a Markdown-based syntax and toolchain for creating custom documentati
 
 #### What is the difference between Markdoc and MDX?
 
-Markdoc uses a fully declarative approach to composition and flow control. MDX relies on JavaScript/React for flow control, where Markdoc uses a declarative approach.
+MDX allows embedding JavaScript inside of Markdown (think, docs as code). Where as Markdoc has a strict separation between content and code (think, docs as data).
 
-In MDX, it’s possible to embed arbitrary JavaScript code in the content, which can quickly lead to maintainability complications.
+Markdoc uses a fully declarative approach to composition and flow control. Where MDX relies on JavaScript/React, Markdoc uses a fully declarative approach.
 
-The abstract syntax trees (ASTs) also differ between MDX and Markdoc. MDX treats React components as separate blocks in the AST that need to be processed/transpiled separately. By comparison, Markdoc includes a first-class, declarative tag syntax, making it simpler to handle content transforms, static analysis, and validation in a unified manner.
+Finally, MDX requires using a separate transpiler, like Babel, where Markdoc provides the complete toolchain for working with Markdoc documents.
 
 {% side-by-side %}
 
