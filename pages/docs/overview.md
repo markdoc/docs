@@ -9,6 +9,10 @@ Markdoc is a Markdown-based syntax and toolchain for creating custom documentati
 
 ## Frequently asked questions
 
+#### Why use Markdoc over Markdown?
+
+Markdoc is a superset of [CommonMark Markdown](https://commonmark.org/), so all Markdown syntax works in Markdoc. However, Markdoc has a powerful extensibility model, letting you customize how all the Markdown [nodes](/docs/nodes) render and add your own custom tags. This enables writers to create rich documentation experiences while using a familiar syntax.
+
 #### What is the difference between Markdoc and MDX?
 
 MDX allows embedding JavaScript inside of Markdown (think, docs as code). Where as Markdoc has a strict separation between content and code (think, docs as data).
