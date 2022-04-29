@@ -152,7 +152,7 @@ You can also set [attributes](#attributes) on a node, such as `width` or `height
 
 ## Attributes
 
-Pass attributes to tags to customize their behavior. Accepted values include: `number`s, `string`s, `boolean`s, JSON `array`s, and JSON `object`s.
+Pass attributes to tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`.
 
 {% markdoc-example %}
 

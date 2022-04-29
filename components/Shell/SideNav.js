@@ -8,7 +8,7 @@ const items = [
     links: [
       { href: '/docs/overview', children: 'What is Markdoc?' },
       { href: '/docs/getting-started', children: 'Installation' },
-      { href: '/docs/config', children: 'Config reference' }
+      { href: '/sandbox', children: 'Try it out' }
     ]
   },
   {
@@ -24,7 +24,8 @@ const items = [
       {
         href: '/docs/render',
         children: 'Rendering'
-      }
+      },
+      { href: '/docs/config', children: 'Config reference' }
     ]
   },
   {

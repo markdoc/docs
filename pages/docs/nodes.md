@@ -85,7 +85,7 @@ These are the fields you can use to customize your `Node`
 
 ---
 
-- `tag`
+- `render`
 - `string | Node => string`
 - Name of the HTML tag or React component to render.
 
@@ -103,14 +103,14 @@ These are the fields you can use to customize your `Node`
 
 ---
 
-- `render`
+- `transform`
 - ```js
-  (Node, ?Options) =>
+  (Ast.Node, ?Options) =>
     | RenderableTreeNode
     | RenderableTreeNode[]
     | null
   ```
-- Customize the Markdoc render function for this node, returning the custom output you want to render. This is called during the [`transform` step](/docs/render#transform).
+- Customize the Markdoc transform function for this node, returning the custom output you want to eventually render. This is called during the [`transform` step](/docs/render#transform).
 
 ---
 
