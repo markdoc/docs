@@ -5,6 +5,8 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
+Markdoc nodes enable you to customize how your document renders without using any custom syntax—it's just Markdown. This lets you extend your documentation incrementally.
+
 ## Getting started
 
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).

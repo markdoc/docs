@@ -67,6 +67,7 @@
   --contrast-dark: var(--dark);
   --code-background: var(--gray-light);
   --code-border: var(--gray-medium);
+  --toc-border: rgba(0, 0, 0, 0.14);
   --translucent: rgba(0, 0, 0, 0.4);
 }
 
@@ -80,6 +81,7 @@
   --contrast-dark: var(--black-medium);
   --code-background: var(--black-medium);
   --code-border: var(--black-light);
+  --toc-border: var(--black-light);
   --translucent: rgba(255, 255, 255, 0.4);
 }
 

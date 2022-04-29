@@ -45,10 +45,7 @@ export function TableOfContents({ toc }) {
             align-self: flex-start;
             margin-bottom: 1rem;
             padding: 0.25rem 0 0;
-            border-left: 1px solid rgba(0, 0, 0, 0.14);
-          }
-          :global(body.dark) nav {
-            border-color: var(--black-light);
+            border-left: 1px solid var(--toc-border);
           }
           ul {
             margin: 0;
