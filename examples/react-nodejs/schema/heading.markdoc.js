@@ -15,14 +15,8 @@ function getAnchor(children, attributes) {
 module.exports = {
   ...nodes.heading,
   transform(node, config) {
-    const attributes = node.renderAttributes(this.attributes);
-    const children = node.renderChildren(config);
-    const id = getAnchor(children, attributes);
-
-    return {
-      name: this.render(node),
-      attributes: { ...attributes, id },
-      children
-    };
+    const base = nodes.heading.transform(node, config);
+    base.attributes.id = getAnchor(base.children, base.attributes);
+    return base;
   }
 };

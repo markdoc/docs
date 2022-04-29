@@ -10,20 +10,18 @@ description:
 Markdoc does not support writing loops directly in documents. If you need to loop through content, do so in a custom [Node](/docs/nodes) `render` function or in a custom [React component](/docs/render#react).
 
 ```js
+import { Tag } from '@markdoc/markdoc';
+
 export const group = {
   render: 'Group',
   attributes: {},
   transform(node, config) {
-    const children = node.renderChildren(config).map((item) => {
+    const children = node.transformChildren(config).map((item) => {
       /* Do something with children */
     });
-
-    return {
-      name: 'Group',
-      attributes: node.renderAttributes(this.attributes),
-      children,
-    );
-  },
+    const attributes = node.transformAttributes(config);
+    return new Tag('Group', attributes, children);
+  }
 };
 ```
 
@@ -137,20 +135,18 @@ function TableOfContents({ headings }) {
 #### Create the Markdoc tags
 
 ```js
+import { Tag } from '@markdoc/markdoc';
+
 const tabs = {
   render: 'Tabs',
   attributes: {},
   transform(node, config) {
     const labels = node
-      .renderChildren(config)
+      .transformChildren(config)
       .filter((child) => child && child.name === 'Tab')
       .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
 
-    return {
-      name: this.render,
-      attributes: { labels },
-      children: tabs
-    };
+    return new Tag(this.render, { labels }, tabs);
   }
 };
 
@@ -246,18 +242,20 @@ HTML content goes here
 If you want to document examples of Markdoc syntax itself, we recommend you create a `markdoc-example` tag, like:
 
 ```js
+import { Tag } from '@markdoc/markdoc';
+
 const markdocExample = {
   render: 'pre' // or replace this with your `Code` React component
   attributes: {},
-  transform(node) {
-    const attributes = node.renderAttributes(this.attributes);
+  transform(node, config) {
+    const attributes = node.transformAttributes(config);
     const {content: exampleCode, language} = node.children[0].attributes;
 
-    return {
-      name: this.render,
-      attributes: {...attributes, language},
-      children: [exampleCode],
-    };
+    return new Tag(
+      this.render,
+      {...attributes, language},
+      [exampleCode],
+    );
   },
 };
 

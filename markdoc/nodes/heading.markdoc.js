@@ -1,3 +1,4 @@
+import { Tag } from '@markdoc/markdoc';
 import { Heading } from '../../components/Heading';
 
 function getAnchor(children, attributes) {
@@ -21,14 +22,10 @@ export default {
     className: { type: String }
   },
   transform(node, config) {
-    const attributes = node.renderAttributes(this.attributes);
-    const children = node.renderChildren(config);
+    const attributes = node.transformAttributes(config);
+    const children = node.transformChildren(config);
     const id = getAnchor(children, attributes);
 
-    return {
-      name: this.render,
-      attributes: { ...attributes, id },
-      children
-    };
+    return new Tag(this.render, { ...attributes, id }, children);
   }
 };

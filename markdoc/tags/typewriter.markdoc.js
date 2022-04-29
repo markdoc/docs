@@ -1,3 +1,4 @@
+import { Tag } from '@markdoc/markdoc';
 import { Typewriter } from '../../components/Typewriter';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     text: { type: String }
   },
   transform(node, config) {
-    const children = node.renderChildren(config)?.[0]?.children || [];
-    return { name: this.render, children };
+    const children = node.transformChildren(config)?.[0]?.children || [];
+    return new Tag(this.render, {}, children);
   }
 };

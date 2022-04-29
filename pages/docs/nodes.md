@@ -30,7 +30,7 @@ where `heading` looks something like:
 ```js
 // ./schema/Heading.markdoc.js
 
-import { Ast } from '@markdoc/markdoc';
+import { Tag } from '@markdoc/markdoc';
 
 export const heading = {
   tag(node) {
@@ -43,16 +43,12 @@ export const heading = {
     level: { type: Number, required: true, default: 1 }
   },
   transform(node, config) {
-    const attributes = node.renderAttributes(this.attributes);
-    const children = node.renderChildren(config);
+    const attributes = node.transformAttributes(config);
+    const children = node.transformChildren(config);
 
     const id = generateID(children, attributes);
 
-    return {
-      name: 'heading',
-      attributes: { ...attributes, id },
-      children
-    };
+    return new Tag('heading', { ...attributes, id }, children);
   }
 };
 ```
