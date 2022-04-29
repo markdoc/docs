@@ -6,6 +6,7 @@ export { comment } from '@markdoc/next.js/tags';
 // IDEA: use export default {}
 export { default as ascii } from './ascii.markdoc';
 export { default as callout } from './callout.markdoc';
+export { default as diagram } from './diagram.markdoc';
 export { default as features } from './features.markdoc';
 export { default as icon } from './icon.markdoc';
 export { default as item } from './item.markdoc';
