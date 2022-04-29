@@ -136,30 +136,132 @@ These are the fields you can use to customize your `Node`
 
 Markdoc comes out of the box with built-in nodes for each of the [CommonMark](https://commonmark.org/) types:
 
+{% table %}
+
+- Node type
+- Attributes
+
+---
+
 - `document`
+- `frontmatter`
+
+---
+
 - `heading`
+- `level`
+
+---
+
 - `paragraph`
+- —
+
+---
+
 - `hr`
+- —
+
+---
+
 - `image`
+- `src`, `alt`
+
+---
+
 - `fence`
+- `content`, `language`, `process`
+
+---
+
 - `blockquote`
+- —
+
+---
+
 - `list`
+- `ordered`
+
+---
+
 - `item`
+- —
+
+---
+
 - `table`
+- —
+
+---
+
 - `thead`
+- —
+
+---
+
 - `tbody`
+- —
+
+---
+
 - `tr`
+- —
+
+---
+
 - `td`
+- `align`, `colspan`, `rowspan`
+
+---
+
 - `th`
+- `align`, `width`
+
+---
+
 - `inline`
+- —
+
+---
+
 - `strong`
+- —
+
+---
+
 - `em`
+- —
+
+---
+
 - `link`
+- `href`, `title`
+
+---
+
 - `code`
+- `content`
+
+---
+
 - `text`
+- `content`
+
+---
+
 - `hardbreak`
+- —
+
+---
+
 - `softbreak`
+- —
+
+---
+
 - `error`
+- —
+
+{% /table %}
 
 ## Next steps
 
