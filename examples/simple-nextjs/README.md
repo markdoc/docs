@@ -1,6 +1,6 @@
-# Markdoc boilerplate for documentation websites
+# Next.js example
 
-This is a boilerplate for a documentation website using Markdoc and Next.js.
+> This is a boilerplate for a creating a documentation website using Markdoc and Next.js.
 
 ## Getting Started
 

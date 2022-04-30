@@ -5,7 +5,7 @@ description: Learn how to integrate Markdoc into a Next.js project.
 
 # {% $markdoc.frontmatter.title %}
 
-Using the `@markdoc/next.js` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with `markdoc`.
+Using the `@markdoc/next.js` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with Markdoc.
 
 ## Before you get started
 
@@ -49,6 +49,9 @@ Follow these steps to get started with `@markdoc/next.js`.
 
    # Get started with Markdoc
    ```
+
+\
+Or, clone [this starter repo](https://github.com/markdoc/docs/tree/main/examples/simple-nextjs) and follow the direction in the [README](https://github.com/markdoc/docs/blob/main/examples/simple-nextjs/README.md).
 
 ## Options
 
