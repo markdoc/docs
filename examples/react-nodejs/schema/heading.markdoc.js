@@ -1,6 +1,6 @@
 const { nodes } = require('@markdoc/markdoc');
 
-function getAnchor(children, attributes) {
+function generateID(children, attributes) {
   if (attributes.id && typeof attributes.id === 'string') {
     return attributes.id;
   }
@@ -16,7 +16,7 @@ module.exports = {
   ...nodes.heading,
   transform(node, config) {
     const base = nodes.heading.transform(node, config);
-    base.attributes.id = getAnchor(base.children, base.attributes);
+    base.attributes.id = generateID(base.children, base.attributes);
     return base;
   }
 };

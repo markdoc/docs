@@ -25,7 +25,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    const withMarkdoc = require('@markdoc/next.js');
 
    module.exports = withMarkdoc(/* [options](#options) */)({
-     pageExtensions: ['js', 'md']
+     pageExtensions: ['js', 'md', 'mdoc']
    });
    ```
 
@@ -81,7 +81,7 @@ For example, this is how you set the `mode` to `static` to pre-render the page a
 
 ```js
 module.exports = withMarkdoc({ mode: 'static' })({
-  pageExtensions: ['js', 'md']
+  pageExtensions: ['js', 'md', 'mdoc']
 });
 ```
 
