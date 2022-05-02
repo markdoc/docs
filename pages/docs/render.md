@@ -20,7 +20,7 @@ parse(string) => AstNode
 
 Parse transforms a raw string into an [abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree) representing your Markdoc document. The AST contains information about your content, including where each piece of content exists within the document.
 
-An example AST might look like this:
+An example AST will look like this:
 
 ```js
 {
@@ -65,14 +65,14 @@ for (const node of document.walk()) {
 ## Transform
 
 ```js
-transform(string | AstNode | AstNode[], ?Config) => RenderableTreeNode | RenderableTreeNode[]
+transform(AstNode | AstNode[], ?Config) => RenderableTreeNode | RenderableTreeNode[]
 ```
 
 Transform takes an abstract syntax tree and transforms it into a renderable tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
 
 The transform step is also responsible for resolving variables into static, scalar values (string, boolean, object, etc.).
 
-An example renderable tree might look like this:
+An example renderable tree will look like this:
 
 ```js
 [
@@ -99,7 +99,7 @@ Render takes in a render-tree and transforms it into rendered output. For `html`
 
 You can create your own renderer by creating a function that takes in a renderable tree as parameter and returns your desired output.
 
-An example `html` output might look like this:
+An example `html` output will look like this:
 
 ```html
 <h1>Getting started</h1>
@@ -174,7 +174,7 @@ Attention, over here!
 ### HTML
 
 ```js
-renderers.html(RenderableTreeNode | RenderableTreeNode[]) => mixed
+renderers.html(RenderableTreeNode | RenderableTreeNode[]) => string
 ```
 
 Markdoc supports HTML rendering out-of-the-box. To render HTML, first create a renderable tree from your content by calling `transform`:

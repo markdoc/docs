@@ -183,7 +183,7 @@ Custom functions registrations are almost identical to tags and nodes, except yo
 
 export const upper = {
   transform(parameters) {
-    const string = parameters['0'];
+    const string = parameters[0];
 
     return typeof string === 'string' ? string.toUpperCase() : string;
   }

@@ -48,10 +48,6 @@ function generateID(children, attributes) {
 }
 
 export const heading = {
-  tag(node) {
-    // Determines which HTML or React component to render
-    return `h${node.attributes['level']}`;
-  },
   children: ['inline'],
   attributes: {
     id: { type: String },
@@ -63,7 +59,11 @@ export const heading = {
 
     const id = generateID(children, attributes);
 
-    return new Tag('heading', { ...attributes, id }, children);
+    return new Tag(
+      `h${node.attributes['level']}`,
+      { ...attributes, id },
+      children
+    );
   }
 };
 ```
@@ -86,7 +86,7 @@ After registering this custom node, you can then use it in your Markdoc, like:
 
 ## Options
 
-These are the fields you can use to customize your `Node`
+These are the optional fields you can use to customize your `Node`:
 
 {% table %}
 
@@ -97,7 +97,7 @@ These are the fields you can use to customize your `Node`
 ---
 
 - `render`
-- `string | Node => string`
+- `string | (Node) => string`
 - Name of the output (e.g. HTML tag, React component name) to render
 
 ---

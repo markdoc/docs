@@ -105,7 +105,7 @@ I have a message for you
 
 ## Options
 
-These are the fields you can use to customize your `Tag`
+These are the optional fields you can use to customize your `Tag`:
 
 {% table %}
 
@@ -116,7 +116,7 @@ These are the fields you can use to customize your `Tag`
 ---
 
 - `render`
-- `string | Node => string`
+- `string | (Node) => string`
 - Name of the output (e.g. HTML tag, React component name) to render
 
 ---
@@ -165,7 +165,11 @@ Markdoc comes out-of-the-box with 4 built-in tags: `if`, `else`, `table`, and `p
 
 ### If/Else
 
-Dynamically render content when specific conditions are met using the `{% if %}` and `{% else /%}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions). Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
+Dynamically render content when specific conditions are met using the `{% if %}` and `{% else /%}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions).
+
+{% callout type="warning" %}
+Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
+{% /callout %}
 
 Use the `if` tag to render content when a condition evaluates to `true`.
 
@@ -205,7 +209,7 @@ This appears if not $myFunVar and not $otherFunVar
 
 ### Table
 
-While GitHub Flavored Markdown (GFM) tables are supported, Markdoc also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
+While [CommonMark](https://commonmark.org/) tables are supported, Markdoc also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
 #### Basic table
 

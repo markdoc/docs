@@ -55,8 +55,7 @@ The following example defines an attribute for a `Callout` tag. By default, the 
 ---
 
 - `required`
-- - `true`
-  - `false`
+- `boolean`
 - Specifies whether a value must be passed to the attribute. If no value is provided, the system throws an error.
 
 ---
@@ -107,6 +106,8 @@ export class DateTime {
 Then, pass the custom attribute to your tag definition in your [`Config` object](/docs/syntax#config)
 
 ```js
+import { DateTime } from './attribute-types/DateTime';
+
 const config = {
   tags: {
     'tag-name': {

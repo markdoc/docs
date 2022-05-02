@@ -5,7 +5,7 @@ description: Functions let you extend Markdoc to run custom code.
 
 # {% $markdoc.frontmatter.title %}
 
-Functions let you extend Markdoc with custom utilities, which let you transform your content and [variables](/docs/syntax#variables) at runtime.
+Functions enable you extend Markdoc with custom utilities, which let you transform your content and [variables](/docs/syntax#variables) at runtime.
 
 ## Creating a custom function
 
@@ -22,16 +22,9 @@ const includes = {
 
 const uppercase = {
   transform(parameters) {
-    const string = parameters['0'];
+    const string = parameters[0];
 
     return typeof string === 'string' ? string.toUpperCase() : string;
-  }
-};
-
-const xor = {
-  transform(parameters) {
-    const [a, b] = Object.values(parameters).map(Boolean);
-    return a !== b;
   }
 };
 ```
@@ -42,8 +35,7 @@ Then, pass the functions to your [`Config` object](/docs/syntax#config)
 const config = {
   functions: {
     includes,
-    uppercase,
-    xor
+    uppercase
   }
 };
 
@@ -122,8 +114,11 @@ Markdoc comes out-of-the-box with 6 built-in functions: `equals`, `and`, `or`, `
 
 ### And/Or/Not
 
-Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content when the condition is met.  
+Use these functions with the `if` [tag](/docs/tags) to perform boolean operations and render the content when the condition is met.
+
+{% callout type="warning" %}
 Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
+{% /callout %}
 
 {% markdoc-example %}
 

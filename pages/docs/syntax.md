@@ -275,7 +275,7 @@ This table outlines the various options you can pass to `Markdoc.transform`. Eac
 
 ### Full example
 
-Here is an example of what a Markdoc config might look like:
+Here is an example of what a Markdoc config will look like:
 
 ```js
 const config = {

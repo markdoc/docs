@@ -30,7 +30,7 @@ const errors = Markdoc.validate(ast, config);
 
 {% /markdoc-example %}
 
-If your document contains a syntax error, the output of `validate` might look like this:
+If your document contains a syntax error, the output of `validate` will look like this:
 
 {% side-by-side %}
 
@@ -64,7 +64,7 @@ const errors = Markdoc.validate(ast, config);
 
 ## Custom validation
 
-You can also extend Markdoc with custom validation rules, by adding a `validate` function to [Node](/docs/nodes) or [Tag](/docs/tags) definitions, or to your custom attribute types.
+You can also extend Markdoc with custom validation rules, by adding a `validate` function to [Node](/docs/nodes) or [Tag](/docs/tags) definitions, or to your [custom attribute types](/docs/attributes#create-a-custom-attribute).
 
 ### Validating content
 
@@ -99,7 +99,7 @@ const config = {
 
 ### Validating attributes
 
-Use custom `Attribute` types to validate that the attributes passed to your tags and nodes are correct.
+Use [custom `Attribute` types](/docs/attributes#create-a-custom-attribute) to validate that the attributes passed to your tags and nodes are correct.
 
 {% markdoc-example %}
 

@@ -7,7 +7,7 @@ const TYPE_MAP = {
     icon: 'information-circle',
     iconColor: '#8792a2'
   },
-  caution: {
+  warning: {
     icon: 'warning',
     iconColor: '#d97917'
   },
@@ -15,7 +15,7 @@ const TYPE_MAP = {
     icon: 'checkmark-circle',
     iconColor: 'var(--black)'
   },
-  warning: {
+  error: {
     icon: 'warning',
     iconColor: '#ed5f74'
   }
@@ -41,6 +41,7 @@ export function Callout({ title, children, type }) {
             color: var(--black);
             line-height: 20px;
             padding: 12px 20px;
+            margin-bottom: var(--default-vertical-spacing);
             border-radius: 4px;
             border: 1px solid var(--gray-medium);
             background: linear-gradient(
