@@ -10,8 +10,22 @@ const svgs = {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32"
-        d="M416 128L192 384l-96-96"
+        d="M96,288L192,384L416,128"
       />
+      <style jsx>
+        {`
+          path {
+            stroke-dasharray: 477;
+            stroke-dashoffset: 477;
+            animation: draw 150ms ease-out forwards;
+          }
+          @keyframes draw {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+        `}
+      </style>
     </svg>
   ),
   'checkmark-circle': (

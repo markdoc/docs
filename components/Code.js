@@ -63,8 +63,10 @@ export function Code({ children, language }) {
       <pre ref={ref} className={`language-${lang}`}>
         {children}
       </pre>
-      <button onClick={() => setCopied(true)}>
-        <title>{copied ? 'Copied' : 'Copy'}</title>
+      <button
+        title={copied ? 'Copied' : 'Copy'}
+        onClick={() => setCopied(true)}
+      >
         <Icon icon={copied ? 'checkmark' : 'copy-outline'} />
       </button>
       <style jsx>
