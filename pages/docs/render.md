@@ -22,7 +22,7 @@ Parse transforms a raw string into an [abstract syntax tree (AST)](https://en.wi
 
 An example AST will look like this:
 
-```js
+```json
 {
   "type": "document",
   "attributes": {},
@@ -74,21 +74,20 @@ The transform step is also responsible for resolving variables into static, scal
 
 An example renderable tree will look like this:
 
-```js
-[
-  {
-    name: 'h1',
-    attributes: { id: 'Header' },
-    children: ['Header'],
-    inline: false
-  },
-  {
-    name: 'p',
-    attributes: {},
-    children: ['This is a paragraph'],
-    inline: false
-  }
-];
+```json
+{
+  "name": "article",
+  "attributes": {},
+  "children": [
+    {
+      "name": "h1",
+      "attributes": {},
+      "children": ["Header"],
+      "$$mdtag": true
+    }
+  ],
+  "$$mdtag": true
+}
 ```
 
 You can see a more advanced renderable tree in the [developer playground](/sandbox?mode=transform).
@@ -133,7 +132,8 @@ Attention, over here!
 {% /callout %}
 `;
 
-const content = Markdoc.transform(doc, { tags });
+const ast = Markdoc.parse(doc);
+const content = Markdoc.transform(ast, { tags });
 ```
 
 {% /markdoc-example %}
@@ -188,7 +188,8 @@ const doc = `
 Run this command to install the Markdoc library:
 `;
 
-const content = Markdoc.transform(doc);
+const ast = Markdoc.parse(doc);
+const content = Markdoc.transform(ast);
 ```
 
 {% /markdoc-example %}

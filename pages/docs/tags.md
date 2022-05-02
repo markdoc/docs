@@ -50,7 +50,8 @@ const doc = `
 # My first custom tag
 `;
 
-const content = Markdoc.transform(doc, config);
+const ast = Markdoc.parse(doc);
+const content = Markdoc.transform(ast, config);
 
 const children = Markdoc.renderers.react(content, React, { components });
 ```

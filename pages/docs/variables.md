@@ -27,6 +27,12 @@ Here is an example of how you can pass variables to your config:
 {% markdoc-example %}
 
 ```js
+const doc = `
+{% if $flags.my_feature_flag %}
+Username: {% $user.name %}
+{% /if %}
+`;
+
 const config = {
   variables: {
     flags: {
@@ -38,7 +44,8 @@ const config = {
   }
 };
 
-const content = Markdoc.transform(document, config);
+const ast = Markdoc.parse(doc);
+const content = Markdoc.transform(ast, config);
 ```
 
 {% /markdoc-example %}
