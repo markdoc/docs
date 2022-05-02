@@ -249,7 +249,7 @@ function Cursor({ children }) {
             mix-blend-mode: difference;
             font-family: var(--mono);
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 27px;
             letter-spacing: -0.03em;
             z-index: 999;

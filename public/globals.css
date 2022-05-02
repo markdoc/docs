@@ -387,7 +387,6 @@ article {
 
 .equal-width {
   flex: 1 1 0px;
-  overflow: auto;
 }
 
 .prefers-no-animation {

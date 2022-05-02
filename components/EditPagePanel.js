@@ -3,6 +3,30 @@ import React from 'react';
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 const WIDTH = 55;
 
+export function LiveEdit({ children, className }) {
+  return (
+    <a
+      className={className}
+      onClick={() => {
+        if (window.__toggle_editor__) {
+          window.__toggle_editor__();
+        }
+      }}
+    >
+      {children}
+      <style jsx>
+        {`
+          a {
+            cursor: pointer;
+            font-size: inherit;
+            line-height: inherit;
+          }
+        `}
+      </style>
+    </a>
+  );
+}
+
 export function EditPagePanel({ children }) {
   const [showEditor, setShowEditor] = React.useState(false);
   const [mouseOver, setMouseOver] = React.useState(false);

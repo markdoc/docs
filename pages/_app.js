@@ -341,7 +341,7 @@ export default function MyApp(props) {
           .page--landing .get-started section .primary {
             padding-top: 1rem;
             /* separate top and bottom on mobile */
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
           }
 
           .page--landing pre[class*='language-'] {
