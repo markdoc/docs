@@ -267,6 +267,20 @@ export default function MyApp(props) {
 
           /* Landing page overrides */
           /* Move top border to first section */
+          .page--landing .section hr {
+            border: none;
+            margin: 6.5rem 0;
+            height: 2px;
+            background-image: linear-gradient(
+              to right,
+              var(--dark) 33%,
+              rgba(255, 255, 255, 0) 0%
+            );
+            background-position: bottom;
+            background-size: 6px 2px;
+            background-repeat: repeat-x;
+          }
+
           .page--landing .nav-bar nav {
             border-bottom: none;
           }
@@ -323,7 +337,7 @@ export default function MyApp(props) {
           }
 
           .page--landing .by-stripe {
-            padding: 120px 0 20px;
+            padding-top: 110px;
           }
 
           .page--landing .sandbox {
@@ -427,11 +441,15 @@ export default function MyApp(props) {
             }
 
             .page--landing .by-stripe {
-              padding: 5.3125rem 0 21px;
+              padding-top: 5.3125rem;
             }
           }
 
           @media screen and (max-width: 600px) {
+            .page--landing .section hr {
+              margin: 3rem 0;
+            }
+
             .page--landing table tr {
               flex-direction: column;
               gap: 30px;
@@ -457,7 +475,7 @@ export default function MyApp(props) {
             }
 
             .page--landing .by-stripe {
-              padding: 3.75rem 0 0;
+              padding-top: 3.75rem;
             }
 
             .footer-bar {
