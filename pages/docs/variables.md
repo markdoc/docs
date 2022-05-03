@@ -15,10 +15,11 @@ Here I am rendering a custom {% $variable %}
 
 {% /markdoc-example %}
 
-There are two ways to pass variables:
+There are a few ways to pass variables:
 
 1. Through the `variables` field on your [`Config`](/docs/syntax#config)
-2. Via the `variables` [attribute](/docs/syntax#attributes) on a [`partial` tag](/docs/partials).
+2. Via the [`variables` attribute](#with-partials) on a [`partial` tag](/docs/partials).
+3. Manually from within your [`Node`](/docs/nodes) or [`Tag`](/docs/tags) `transform` functions.
 
 ## Global variables
 
