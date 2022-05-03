@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 const svgs = {
-  checkmark: (
+  copied: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <title>Checkmark</title>
+      <title>Copied</title>
       <path
         fill="none"
         stroke="currentColor"
@@ -51,7 +51,7 @@ const svgs = {
       </style>
     </div>
   ),
-  'copy-outline': (
+  copy: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <title>Copy</title>
       <rect
