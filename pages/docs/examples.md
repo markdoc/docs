@@ -183,20 +183,31 @@ import React from 'react';
 export const TabContext = React.createContext();
 
 export const Tabs = ({ labels, children }: Props) => {
-  const [currentTab, setCurrentTab] = React.useState(labels[0]);
+  const [
+    currentTab,
+    setCurrentTab
+  ] = React.useState(labels[0]);
 
+  {% comment %}
+  prettier-ignore-start
+  {% /comment %}
   return (
     <TabContext.Provider value={currentTab}>
       <ul>
         {labels.map((label) => (
           <li key={label}>
-            <button onClick={() => setCurrentTab(label)}>{label}</button>
+            <button onClick={() => setCurrentTab(label)}>
+              {label}
+            </button>
           </li>
         ))}
       </ul>
       {children}
     </TabContext.Provider>
   );
+  {% comment %}
+  prettier-ignore-end
+  {% /comment %}
 };
 ```
 

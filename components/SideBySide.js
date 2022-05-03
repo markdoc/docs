@@ -14,6 +14,9 @@ export function SideBySide({ children }) {
             margin-top: 1.5rem;
             border-radius: 4px;
           }
+          .column {
+            overflow: auto;
+          }
           .left {
             padding-top: 0.75rem;
             padding-right: 3rem;
@@ -29,7 +32,6 @@ export function SideBySide({ children }) {
           .side-by-side :global(.heading) {
             margin: 0;
           }
-
           @media screen and (max-width: 1000px) {
             .side-by-side {
               flex-direction: column;

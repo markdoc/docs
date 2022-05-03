@@ -379,10 +379,10 @@ export default function MyApp(props) {
             margin: 0;
           }
 
-          .page--landing .side-by-side .left,
-          .page--landing .side-by-side .right {
+          .page--landing .side-by-side .column {
             border-right: none;
             padding-top: 0px;
+            overflow: initial;
           }
 
           .page--landing .code button {
