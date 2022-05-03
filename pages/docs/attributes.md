@@ -78,7 +78,7 @@ The following example defines an attribute for a `Callout` tag. By default, the 
 
 ## Create a custom attribute
 
-With Markdoc you can create custom attributes, which can be used within tags. In this example, you're creating a `DateTime` attribute that makes sure a valid string is provided.
+With Markdoc you can create custom attributes, and use them within tags. In this example, you're creating a `DateTime` attribute that makes sure a valid string is provided.
 
 ```js
 // ./attribute-types/DateTime.js
