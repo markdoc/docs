@@ -196,7 +196,6 @@ kbd,
 
 p,
 .heading,
-.callout,
 blockquote {
   position: relative;
   padding-bottom: var(--default-vertical-spacing);

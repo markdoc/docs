@@ -37,19 +37,16 @@ export function Callout({ title, children, type }) {
       </div>
       <style jsx>
         {`
+          .callout {
+            padding: 0.5rem 0 2rem;
+          }
           .content {
-            color: var(--black);
+            color: var(--dark);
+            background: var(--code-background);
+            border: 1px solid var(--code-border);
             line-height: 20px;
             padding: 12px 20px;
-            margin-bottom: var(--default-vertical-spacing);
             border-radius: 4px;
-            border: 1px solid var(--gray-medium);
-            background: linear-gradient(
-                0deg,
-                var(--gray-light),
-                var(--gray-light)
-              ),
-              linear-gradient(0deg, #ffffff, #ffffff);
           }
           .icon {
             padding-right: 8px;

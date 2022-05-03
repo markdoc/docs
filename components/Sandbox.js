@@ -346,7 +346,7 @@ export function Sandbox({ height, options }) {
         </section>
         <section className="right dark">
           {mode === 'preview' && (
-            <div className="preview">
+            <div className="preview light">
               {hasTyped ? null : <Cursor>Try it out</Cursor>}
               {Markdoc.renderers.react(content, React, {
                 components: config.components
@@ -502,10 +502,6 @@ export function Sandbox({ height, options }) {
             font-size: var(--font-size-3);
             line-height: var(--line-height-3);
             font-weight: 400;
-          }
-
-          .sandbox .preview :global(.callout) {
-            padding-top: 0.5rem;
           }
 
           .sandbox .preview :global(.callout p) {
