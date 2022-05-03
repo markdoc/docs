@@ -5,7 +5,29 @@ description: Tags are used to extend Markdown. With tags you can use native Mark
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like list tables, conditionals, and [partials](/docs/partials), or create custom React components.
+Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like [tables](#table), [conditionals](#if/else), and [partials](#partial), or create custom React components.
+
+Similar to React components and HTML elements, tags are composable, and they can be customized with [attributes](/docs/attributes).
+
+{% markdoc-example %}
+
+```md
+{% if true %}
+
+{% callout type="note" %}
+Tags are composable!
+{% /callout %}
+
+{% else /%}
+
+{% callout type="warning" %}
+Tags aren't composable!
+{% /callout %}
+
+{% /if %}
+```
+
+{% /markdoc-example %}
 
 ## Create a custom tag
 

@@ -165,6 +165,7 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
             padding: 1px 4px;
             border-radius: 4px;
             z-index: 999;
+            min-width: 240px;
           }
 
           /* Tooltip triangle */
