@@ -2,5 +2,11 @@ import { Diagram } from '../../components/Diagram';
 
 export default {
   render: Diagram,
-  attributes: {}
+  attributes: {
+    type: {
+      type: String,
+      required: true,
+      matches: ['flowchart']
+    }
+  }
 };

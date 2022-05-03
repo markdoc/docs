@@ -10,7 +10,7 @@ Markdoc has 3 phases of rendering: `parse`, `transform`, and `render`. Each phas
 Markdoc also includes a `validate` function, which you can run separately from the render phases to confirm the Markdoc document is valid.  
 See the [validation docs](/docs/validation) for more info.
 
-{% diagram /%}
+{% diagram type="flowchart" /%}
 
 ## Parse
 
