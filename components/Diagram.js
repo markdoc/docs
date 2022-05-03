@@ -339,7 +339,8 @@ export function Diagram() {
             overflow: auto;
           }
           svg {
-            max-width: 900px;
+            width: 100%;
+            min-width: 800px;
           }
         `}
       </style>
