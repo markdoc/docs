@@ -139,7 +139,7 @@ These are the optional fields you can use to customize your `Tag`:
 ---
 
 - `render`
-- `string | (Node) => string`
+- `string`
 - Name of the output (e.g. HTML tag, React component name) to render
 
 ---
