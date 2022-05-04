@@ -5,14 +5,14 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc nodes enable you to customize how your document renders without using any custom syntax—it's just Markdown.  
+Markdoc nodes enable you to customize how your document renders without using any custom syntax—it consists entirely of Markdown.  
 Customizing nodes lets you extend your implementation incrementally.
 
 ## Customizing Markdoc nodes
 
 Nodes are elements that Markdoc inherits from Markdown, specifically the [CommonMark specification](https://commonmark.org/).
 
-Custom nodes are defined by passing a custom Node to your [`Config`](/docs/syntax#config), like:
+You define custom nodes by passing a custom Node to your [`Config`](/docs/syntax#config), like:
 
 ```js
 import { heading } from './schema/Heading.markdoc';
@@ -100,19 +100,19 @@ These are the optional fields you can use to customize your `Node`:
 
 - `render`
 - `string`
-- Name of the output (e.g. HTML tag, React component name) to render
+- Name of the output (for example, HTML tag, React component name) to render
 
 ---
 
 - `children`
 - `string[]`
-- Determines which tag or node types are allowed to be rendered as children of this node. Used in schema validation.
+- Determines which tag or node types can be rendered as children of this node. Used in schema validation.
 
 ---
 
 - `attributes`
 - `{ [string]: SchemaAttribute }`
-- Determines which [values (and their types)](/docs/attributes) are allowed to be passed to this node.
+- Determines which [values (and their types)](/docs/attributes) can be passed to this node.
 
 ---
 
@@ -132,7 +132,7 @@ These are the optional fields you can use to customize your `Node`:
   (Node, ?Options) =>
     ValidationError[];
   ```
-- Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render#validate)
+- Extend Markdoc validation. This validates that the content meets validation requirements, and is called during the [`validate` step](/docs/render#validate)
 
 {% /table %}
 
