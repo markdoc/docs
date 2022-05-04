@@ -324,7 +324,5 @@ const content = Markdoc.transform(ast, config);
 
 ## Next steps
 
-- [Customize how nodes render](/docs/nodes)
-- [Create custom tags](/docs/tags)
-- [Define new functions](/docs/functions)
-- [Pass variables](/docs/variables)
+- [Render Markdoc](/docs/render)
+- [Validate your content](/docs/validation)
