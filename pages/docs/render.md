@@ -94,7 +94,7 @@ You can see a more advanced renderable tree in the [developer playground](/sandb
 
 ## Render
 
-Render takes in a render-tree and transforms it into rendered output. For `html`, that means creating an HTML document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/render-elements.html).
+Render takes in a renderable tree and converts it into rendered output. For `html`, that means creating an HTML document as a string. For `react`, this means creating a [React element](https://reactjs.org/docs/render-elements.html).
 
 You can create your own renderer by creating a function that takes in a renderable tree as parameter and returns your desired output.
 
@@ -240,8 +240,8 @@ app.get('/docs/getting-started', (req, res) => {
 
 ### Create your own
 
-Markdoc renderers are just pure functions that take in the output of `Markdoc.transform` and return whatever you want.
-Go ahead and create your own renderers for [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), [Spectacle](https://formidable.com/open-source/spectacle/), or whatever you need!
+Since Markdoc renderers are regular functions, you can create a custom one for whatever your use case requires.  
+Try creating your own for [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), [Spectacle](https://formidable.com/open-source/spectacle/), or anything else you can think of.
 
 ## Next steps
 
