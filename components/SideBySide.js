@@ -16,17 +16,13 @@ export function SideBySide({ children }) {
           }
           .column {
             overflow: auto;
+            padding-top: var(--default-vertical-spacing);
           }
           .left {
-            padding-top: 0.75rem;
             padding-right: 3rem;
-            border-right: 1px solid rgba(0, 0, 0, 0.14);
-          }
-          :global(body.dark) .left {
-            border-color: var(--black-light);
+            border-right: 1px solid var(--toc-border);
           }
           .right {
-            padding-top: 0.75rem;
             padding-left: 3rem;
           }
           .side-by-side :global(.heading) {
@@ -36,8 +32,12 @@ export function SideBySide({ children }) {
             .side-by-side {
               flex-direction: column;
             }
+            .column {
+              overflow: initial;
+            }
             .left {
               padding: 0;
+              border: none;
             }
             .right {
               padding-top: 1rem;
