@@ -21,7 +21,6 @@
     "sharp": "^0.30.3"
   },
   "devDependencies": {
-    "babel-plugin-prismjs": "^2.1.0",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0"
   }

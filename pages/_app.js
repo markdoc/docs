@@ -7,9 +7,18 @@ import { AppLink as Link } from '../components/AppLink';
 import { Footer, SideNav, TableOfContents, TopNav } from '../components/Shell';
 
 import 'prismjs';
+import 'prismjs/components/prism-bash.min';
+import 'prismjs/components/prism-graphql.min';
+import 'prismjs/components/prism-javascript.min';
+import 'prismjs/components/prism-json.min';
+import 'prismjs/components/prism-jsx.min';
+import 'prismjs/components/prism-markup.min';
+import 'prismjs/components/prism-toml.min';
+import 'prismjs/components/prism-typescript.min';
+import 'prismjs/components/prism-yaml.min';
 import 'prismjs/plugins/autolinker/prism-autolinker.min';
-import 'codemirror/lib/codemirror.css';
 import 'prismjs/themes/prism.css';
+import 'codemirror/lib/codemirror.css';
 
 import '../public/globals.css';
 
