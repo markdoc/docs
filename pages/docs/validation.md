@@ -63,7 +63,7 @@ const errors = Markdoc.validate(ast, config);
 
 {% /side-by-side %}
 
-## Custom validation
+## Schema validation
 
 You can also extend Markdoc with custom validation rules, by adding a `validate` function to [Node](/docs/nodes) or [Tag](/docs/tags) definitions, or to your [custom attribute types](/docs/attributes#create-a-custom-attribute).
 
