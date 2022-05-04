@@ -128,6 +128,27 @@ export default function MyApp(props) {
         <title>{`${TITLE} | ${title}`}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          as="font"
+          href={`${FONTS_BASE_URL}/GT-America-Mono-Regular.otf`}
+          crossOrigin=""
+          type="font/otf"
+        />
+        <link
+          rel="preload"
+          as="font"
+          href={`${FONTS_BASE_URL}/GT-America-Mono-Medium.otf`}
+          crossOrigin=""
+          type="font/otf"
+        />
+        <link
+          rel="preload"
+          as="font"
+          href={`${FONTS_BASE_URL}/tiempos-headline-light.woff2`}
+          crossOrigin=""
+          type="font/woff2"
+        />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
