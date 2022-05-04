@@ -238,6 +238,11 @@ app.get('/docs/getting-started', (req, res) => {
 
 {% /side-by-side %}
 
+### Create your own
+
+Markdoc renderers are just pure functions that take in the output of `Markdoc.transform` and return whatever you want.
+Go ahead and create your own renderers for [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), [Spectacle](https://formidable.com/open-source/spectacle/), or whatever you need!
+
 ## Next steps
 
 - [Validate your content](/docs/validation)
