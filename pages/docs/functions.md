@@ -59,7 +59,7 @@ Finally, call the functions within your Markdoc content
 
 ## Built-in functions
 
-Markdoc comes out-of-the-box with 6 built-in functions: `equals`, `and`, `or`, `not`, `default`, and `debug`.
+Markdoc comes out-of-the-box with six built-in functions: `equals`, `and`, `or`, `not`, `default`, and `debug`.
 
 {% table %}
 
@@ -161,7 +161,7 @@ Hey there!
 
 ### Debug
 
-This function simply renders the value as serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/syntax#variables).
+This function simply renders the value as a serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/syntax#variables).
 
 {% markdoc-example %}
 
