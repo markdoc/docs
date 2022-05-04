@@ -43,6 +43,7 @@ const errors = Markdoc.validate(ast, config);
 ```
 
 ```js
+// errors
 [
   {
     type: 'tag',
