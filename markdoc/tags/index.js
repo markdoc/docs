@@ -1,4 +1,3 @@
-import liveEdit from './live-edit.markdoc';
 import markdocExample from './markdoc-example.markdoc';
 import sideBySide from './side-by-side.markdoc';
 
@@ -12,7 +11,6 @@ export { default as diagram } from './diagram.markdoc';
 export { default as features } from './features.markdoc';
 export { default as icon } from './icon.markdoc';
 export { default as item } from './item.markdoc';
-module.exports['live-edit'] = liveEdit;
 module.exports['markdoc-example'] = markdocExample;
 export { default as example } from './markdoc-example.markdoc';
 export { default as sandbox } from './sandbox.markdoc';

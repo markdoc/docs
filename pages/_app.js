@@ -384,7 +384,10 @@ export default function MyApp(props) {
           }
 
           .page--landing .get-started section .primary {
-            padding-top: 1rem;
+            padding: 1rem 0 0;
+          }
+
+          .page--landing .get-started section .side-by-side .left {
             /* separate top and bottom on mobile */
             padding-bottom: 1rem;
           }

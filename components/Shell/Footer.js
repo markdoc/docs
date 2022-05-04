@@ -2,7 +2,6 @@ import React from 'react';
 
 import { AppLink as Link } from '../AppLink';
 import { ThemeToggle } from '.';
-import { LiveEdit } from '../EditPagePanel';
 
 export function Footer({ children: links, landing }) {
   const copyright = (
@@ -64,7 +63,10 @@ export function Footer({ children: links, landing }) {
 
   const disclaimer = (
     <span className="disclaimer">
-      This site was <LiveEdit>built using Markdoc</LiveEdit>
+      This site was{' '}
+      <a href="" className="live-edit">
+        built using Markdoc
+      </a>
       <style jsx>
         {`
           .disclaimer {

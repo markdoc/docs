@@ -72,7 +72,7 @@ Markdoc is a powerful, flexible, Markdown-based authoring framework.
 
 [Explore documentation](/docs/getting-started) {% .primary %}
 
-{% live-edit className="primary" %}Live edit{% /live-edit %}
+[Live edit](/docs/getting-started) {% .primary %} {% .live-edit %}
 
 {% /item %}
 
