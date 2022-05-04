@@ -5,7 +5,7 @@ description: How to get started with Markdoc
 
 # {% $markdoc.frontmatter.title %}
 
-Follow the instructions below to install Markdoc in your app. Or check out our [integration guide](/docs/nextjs) to quickly build a documentation site. 
+Follow the instructions below to install Markdoc in your app. Or check out our [integration guide](/docs/nextjs) to help you build a documentation site. 
 
 ## Install Markdoc
 
@@ -29,7 +29,7 @@ Import the Markdoc library in your app:
 const Markdoc = require('@markdoc/markdoc');
 ```
 
-If you are using ESM:
+If you're using ESM:
 
 ```js
 import Markdoc from '@markdoc/markdoc';
