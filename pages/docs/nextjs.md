@@ -9,7 +9,7 @@ Using the `@markdoc/next.js` package/plugin allows you to create custom `.md` an
 
 ## Setup
 
-This guide assumes that you already have Next.js installed. If you are starting from scratch, follow these steps for [getting started with Next.js](https://nextjs.org/docs).
+This guide assumes that you already have Next.js installed. If you're starting from scratch, follow these steps for [getting started with Next.js](https://nextjs.org/docs).
 
 \
 Follow these steps to get started with `@markdoc/next.js`.
@@ -50,7 +50,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    ```
 
 \
-Or, clone [this starter repo](https://github.com/markdoc/docs/tree/main/examples/simple-nextjs) and follow the direction in the [README](https://github.com/markdoc/docs/blob/main/examples/simple-nextjs/README.md).
+Or, clone [this starter repo](https://github.com/markdoc/docs/tree/main/examples/simple-nextjs) and follow the directions in the [README](https://github.com/markdoc/docs/blob/main/examples/simple-nextjs/README.md).
 
 ## Options
 
@@ -119,7 +119,7 @@ module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
 
 ### Tags
 
-Custom tags are registered by exporting an object from `/markdoc/tags.js` (or `/markdoc/tags/index.js`). In this example, the tag name is `button`. The `render` field tells Markdoc to render a `Button` React component whenever the `{% button %}` tag is used.
+You register custom tags by exporting an object from `/markdoc/tags.js` (or `/markdoc/tags/index.js`). In this example, the tag name is `button`. The `render` field tells Markdoc to render a `Button` React component whenever the `{% button %}` tag is used.
 
 ```js
 // markdoc/tags.js
@@ -230,7 +230,7 @@ description: Integrate Markdoc into your Next.js app
 
 ## Partials
 
-Partials are automatically loaded from the `/markdoc/partials/` directory. For example:
+Partials automatically load from the `/markdoc/partials/` directory. For example:
 
 {% markdoc-example %}
 
@@ -244,7 +244,7 @@ would load and render the contents of `markdoc/partials/header.md`
 
 ## Layouts
 
-To create a custom layout for each of your Markdown/Markdoc files, simply wrap your `Component` within your `_app.js`, for example:
+To create a custom layout for each of your Markdown/Markdoc files, wrap your `Component` within your `_app.js`, for example:
 
 ```js
 // pages/_app.js
@@ -262,7 +262,7 @@ export default function App({ Component, pageProps }) {
 
 ## Built-in Next.js tags
 
-Next.js Markdoc provides custom tags out-of-the-box that you can add to your schema. To include them, export them by name in your schema directory (e.g. `/markdoc/`). For example:
+Next.js Markdoc provides custom tags out-of-the-box that you can add to your schema. To include them, export them by name in your schema directory (for example, `/markdoc/`). For example:
 
 ```js
 // markdoc/tags/Next.markdoc.js
@@ -274,7 +274,7 @@ export { comment, head, image, link, script } from '@markdoc/next.js/tags';
 export * from '@markdoc/next.js/tags';
 ```
 
-After you've exported the components, you can use them with the corresponding tags in your Markdoc files.
+After you export the components, you can use them with the corresponding tags in your Markdoc files.
 
 ### Comment
 
