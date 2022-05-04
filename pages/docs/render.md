@@ -14,7 +14,7 @@ See the [validation docs](/docs/validation) for more info.
 
 ## Parse
 
-```js
+```ts
 parse(string) => AstNode
 ```
 
@@ -64,7 +64,7 @@ for (const node of document.walk()) {
 
 ## Transform
 
-```js
+```ts
 transform(AstNode | AstNode[], ?Config) => RenderableTreeNode | RenderableTreeNode[]
 ```
 
@@ -108,12 +108,13 @@ An example `html` output will look like this:
 
 ### React
 
-```js
+```ts
 renderers.react(RenderableTreeNode | RenderableTreeNode[]) => React.Node
 ```
 
 Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can see the React renderer in action in the [developer playground](/sandbox?mode=preview).
 
+\
 To render React, first create a renderable tree from your document calling `transform`. This can be done from the server or client.
 
 {% markdoc-example %}
@@ -173,11 +174,14 @@ Attention, over here!
 
 ### HTML
 
-```js
+```ts
 renderers.html(RenderableTreeNode | RenderableTreeNode[]) => string
 ```
 
-Markdoc supports HTML rendering out-of-the-box. To render HTML, first create a renderable tree from your content by calling `transform`:
+Markdoc supports rendering HTML out-of-the-box. Since the HTML renderer outputs your HTML document as a string, this means you can use [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) with no extra configuration.
+
+\
+To render HTML, first create a renderable tree from your content by calling `transform`:
 
 {% markdoc-example %}
 

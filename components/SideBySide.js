@@ -11,7 +11,7 @@ export function SideBySide({ children }) {
           .side-by-side {
             width: 100%;
             padding: 0;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             border-radius: 4px;
           }
           .column {
