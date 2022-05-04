@@ -267,14 +267,7 @@ Next.js Markdoc provides custom tags out-of-the-box that you can add to your sch
 ```js
 // markdoc/tags/Next.markdoc.js
 
-export {
-  comment,
-  head,
-  image,
-  link,
-  script,
-  markdocExample
-} from '@markdoc/next.js/tags';
+export { comment, head, image, link, script } from '@markdoc/next.js/tags';
 
 // or
 
