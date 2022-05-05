@@ -7,6 +7,11 @@ description:
 
 Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites. Stripe created Markdoc to power [our public docs](http://stripe.com/docs).
 
+{% youtube
+  src="https://www.youtube-nocookie.com/embed/uh48xeU3-KU?controls=0"
+  title="Introducing Markdoc"
+  width="50%" /%}
+
 ## Frequently asked questions
 
 #### Why use Markdoc over Markdown?
