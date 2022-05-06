@@ -15,7 +15,7 @@ Follow these steps to build a Markdoc app with [`create-react-app`](https://crea
 1. Follow the [`create-react-app` getting started steps](https://create-react-app.dev/docs/getting-started) to create your initial app
 2. Set up a Markdoc schema
 
-   ```sh
+   ```shell
    schema/
    ├── Callout.markdoc.js
    └── heading.markdoc.js
@@ -158,11 +158,11 @@ Follow these steps to build a Markdoc app with [`create-react-app`](https://crea
    ```
 
 6. Start up the client and server
-   ```sh
+   ```shell
    npm run start:client
    ```
    and
-   ```sh
+   ```shell
    npm run start:server
    ```
 
