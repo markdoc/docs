@@ -6,11 +6,11 @@ title: Using with React
 
 Markdoc support [rendering Markdoc syntax with React](/docs/render#react) out-of-the-box.
 
-To get started with React right away, check out [this example repo](https://github.com/markdoc/docs/tree/main/examples/react-nodejs) for how to use Markdoc with [`create-react-app`](https://create-react-app.dev/).
+To get started with React, check out [this example repo](https://github.com/markdoc/docs/tree/main/examples/react-nodejs) for how to use Markdoc with [`create-react-app`](https://create-react-app.dev/) and [`express`](https://expressjs.com/).
 
 ## Setup
 
-Follow these steps to set up `create-react-app` with Markdoc.
+Follow these steps to build a Markdoc app with [`create-react-app`](https://create-react-app.dev/) and [`express`](https://expressjs.com/).
 
 1. Follow the [`create-react-app` getting started steps](https://create-react-app.dev/docs/getting-started) to create your initial app
 2. Set up a Markdoc schema
