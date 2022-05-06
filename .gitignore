@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+.next
+*.log
+yarn.lock
+package-lock.json
+out/
+.vscode
+.env
+.vercel
