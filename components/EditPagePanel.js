@@ -110,6 +110,9 @@ export function EditPagePanel({ children }) {
             section {
               display: none;
             }
+            :global(.live-edit) {
+              display: none;
+            }
           }
         `}
       </style>
