@@ -5,9 +5,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
 {% section className="hero" %}
 
-{% typewriter %}
-Markdoc is a powerful, flexible, Markdown-based authoring framework.
-{% /typewriter %}
+{% typewriter /%}
 
 > From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.
 
