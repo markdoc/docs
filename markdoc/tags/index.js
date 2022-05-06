@@ -17,3 +17,5 @@ export { default as section } from './section.markdoc';
 module.exports['side-by-side'] = sideBySide;
 export { default as typewriter } from './typewriter.markdoc';
 export { default as youtube } from './youtube.markdoc';
+export { s as switch } from './switch.markdoc';
+export { c as case } from './switch.markdoc';
