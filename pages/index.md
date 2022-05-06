@@ -3,7 +3,7 @@ title: A powerful, flexible, Markdown-based authoring framework
 description: From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.
 ---
 
-{% section className="hero" %}
+{% section .hero %}
 
 {% typewriter /%}
 
@@ -13,19 +13,19 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
 {% /section %}
 
-{% section className="try no-mobile" %}
+{% section .try .no-mobile %}
 
 {% sandbox height="630px" options={"scrollbarStyle": null} /%}
 
 {% /section %}
 
-{% section className="value-props" %}
+{% section .value-props %}
 
 {% table %}
 
 ---
 
-- {% ascii type="worm" /%}
+- {% ascii "worm" /%}
 
   {% item %}
 
@@ -34,7 +34,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
   Maintain full control over your code and content. Markdoc is open-source and fully extensible.
   {% /item %}
 
-- {% ascii type="pencil" /%}
+- {% ascii "pencil" /%}
 
   {% item %}
 
@@ -44,7 +44,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
   {% /item %}
 
-- {% ascii type="puzzle" /%}
+- {% ascii "puzzle" /%}
 
   {% item %}
 
@@ -58,7 +58,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
 {% /section %}
 
-{% section className="get-started" %}
+{% section .get-started %}
 
 {% side-by-side %}
 
@@ -97,7 +97,7 @@ const html = Markdoc.renderers.html(content);
 
 {% /section %}
 
-{% section className="by-stripe" %}
+{% section .by-stripe %}
 
 {% side-by-side %}
 

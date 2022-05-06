@@ -81,10 +81,10 @@ const TYPE_MAP = {
   )
 };
 
-export function Ascii({ type }) {
+export function Ascii({ primary }) {
   return (
     <div>
-      {TYPE_MAP[type]}
+      {TYPE_MAP[primary]}
       <style jsx>
         {`
           div {
