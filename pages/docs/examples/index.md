@@ -71,6 +71,54 @@ Markdoc.renderers.react(content, React, {
 });
 ```
 
+## Switch statements
+
+You can create your own `switch`/`case` semantics with custom Markdoc tags.
+
+```js
+import { transformer } from '@markdoc/markdoc';
+
+const config = {
+  tags: {
+    switch: {
+      attributes: { primary: { render: false } },
+      transform(node, config) {
+        const attributes = node.transformAttributes(config);
+
+        const child = node.children.find(
+          (child) => child.attributes.primary === attributes.primary
+        );
+
+        return child ? transformer.node(child, config) : [];
+      }
+    },
+    case: {
+      attributes: { primary: { render: false } }
+    }
+  }
+};
+```
+
+which can then be used in your document:
+
+{% markdoc-example %}
+
+```md
+{% switch $item %}
+
+{% case 1 %}
+Case 1
+{% /case %}
+
+{% case 2 %}
+Case 2
+{% /case %}
+
+{% /switch %}
+```
+
+{% /markdoc-example %}
+
 ## Table-of-contents
 
 #### Collect all headings from the page content

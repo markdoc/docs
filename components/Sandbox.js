@@ -14,20 +14,25 @@ const schema = {
   functions
 };
 
-const INITIAL_CODE = `
+const INITIAL_CODE = `---
+title: What is Markdoc?
+---
 
-{% switch $item %}
+# {% $markdoc.frontmatter.title %} {% #overview %}
 
-{% case 1 %}
-Case 1
-{% /case %}
+Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites. Stripe created Markdoc to power [our public docs](http://stripe.com/docs).
 
-{% case 2 %}
-Case 2
-{% /case %}
+{% callout type="check" %}
+Markdoc is open-source—check out it's [source](http://github.com/markdoc/markdoc) to see how it works.
+{% /callout %}
 
-{% /switch %}
+## How is Markdoc different?
 
+Markdoc uses a fully declarative approach to composition and flow control, where other solutions…[read more](/docs/overview)
+
+## Next steps
+- [Install Markdoc](/docs/getting-started)
+- [Explore the syntax](/docs/syntax)
 `;
 
 export function useMarkdocCode(code) {
@@ -40,7 +45,6 @@ export function useMarkdocCode(code) {
     return {
       ...rest,
       variables: {
-        item: 1,
         markdoc: {
           frontmatter: ast.attributes.frontmatter
             ? yaml.load(ast.attributes.frontmatter)
