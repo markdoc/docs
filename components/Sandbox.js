@@ -32,7 +32,7 @@ Markdoc uses a fully declarative approach to composition and flow control, where
 
 ## Next steps
 - [Install Markdoc](/docs/getting-started)
-- [Try it out online](/sandbox)
+- [Explore the syntax](/docs/syntax)
 `;
 
 export function useMarkdocCode(code) {
