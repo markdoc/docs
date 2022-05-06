@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-With Markdoc, it's easy to build functionality you'd commonly associate with documentation sites. The examples below cover loops, syntax highlighting, tabs, and more.
+With Markdoc, it's easy to add functionality you'd commonly associate with documentation sites. The examples below cover loops, syntax highlighting, tabs, and more.
 
 If you're looking for other sample code, check out our collection of [example repos](https://github.com/markdoc/docs/tree/main/examples), or view the [source code for this site](https://github.com/markdoc/docs).
 

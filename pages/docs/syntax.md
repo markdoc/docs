@@ -70,7 +70,9 @@ For more information, check out the [Nodes docs](/docs/nodes).
 
 ## Tags
 
-Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each tag is enclosed with `{%` and `%}`, and includes the tag name and content body. Tags are customizable with [attributes](#attributes).
+Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each tag is enclosed with `{%` and `%}`, and includes the tag name, [attributes](#attributes), and the content body.
+
+Similar to HTML, Markdoc tags can be nested, and are customized with [attributes](#attributes).
 
 {% markdoc-example %}
 
@@ -112,7 +114,7 @@ For more information, check out the [Tags docs](/docs/tags).
 
 ## Annotations
 
-Customize how individual nodes are rendered with annotations. Annotations are useful when passing properties to a rendered output, such as an `id` or `class`. You can also use annotations to apply [attributes](#attributes) to HTML and React elements.
+Customize how individual nodes are rendered with annotations. Annotations are useful when passing properties to customize the output, such as an `id` or `class`. You can also use annotations to apply [attributes](#attributes) to HTML and React elements.
 
 To add an `id` to a node:
 
@@ -134,7 +136,22 @@ To set a `class`, you can use class syntax:
 
 {% /markdoc-example %}
 
-You can also set [attributes](#attributes) on a node, such as `width` or `height`.
+which also works within your tags.
+
+{% markdoc-example %}
+
+```md
+{% section #id .class %}
+
+My section
+
+{% /section  %}
+```
+
+{% /markdoc-example %}
+
+\
+You can also set [attributes](#attributes) on a node, such as `width` or `colspan`.
 
 {% markdoc-example %}
 
