@@ -1,4 +1,4 @@
-# Markdoc Docs
+# Markdoc docs
 
 ## Contributing
 
