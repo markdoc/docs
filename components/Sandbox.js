@@ -224,12 +224,11 @@ function Cursor({ children }) {
         <span
           key={`${l}_${i}`}
           style={{
-            top: pos.top,
-            left: isNaN(pos.left) ? undefined : pos.left + i * 8,
-            transition: [
-              `top ${DELAY}ms linear ${i * 1}ms`,
-              `left ${DELAY}ms linear ${i * 1}ms`
-            ].join()
+            transform:
+              pos.top && pos.left
+                ? `translate(${pos.left + i * 8}px, ${pos.top}px)`
+                : '',
+            transition: `transform ${DELAY}ms linear ${i * 1}ms`
           }}
         >
           {l}
@@ -244,6 +243,8 @@ function Cursor({ children }) {
       <style jsx>
         {`
           #hover {
+            top: 0;
+            left: 0;
             display: none;
             position: fixed;
             color: var(--white);
@@ -258,7 +259,7 @@ function Cursor({ children }) {
 
           #hover :global(span) {
             position: fixed;
-            will-change: top, left;
+            will-change: transform;
           }
 
           :global(.preview:hover #hover span) {
