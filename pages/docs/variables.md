@@ -51,7 +51,7 @@ const content = Markdoc.transform(ast, config);
 
 {% /markdoc-example %}
 
-which you can then be access within your document:
+which you can then access within your document:
 
 {% markdoc-example %}
 
