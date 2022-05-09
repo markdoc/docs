@@ -30,7 +30,7 @@ const errors = Markdoc.validate(ast, config);
 
 {% /markdoc-example %}
 
-If your document contains a syntax error, the output of `validate` will look like this:
+If your document contains a syntax error, the output of `validate` looks like this:
 
 {% side-by-side %}
 
