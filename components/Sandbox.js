@@ -280,7 +280,7 @@ export function Sandbox({ height, options }) {
   const router = useRouter();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
-  const [hasTyped, setHasTyped] = React.useState(false);
+  const [hasInteracted, setInteracted] = React.useState(false);
 
   const { ast, content, config, errors } = useMarkdocCode(code);
 
@@ -300,7 +300,7 @@ export function Sandbox({ height, options }) {
   }, [mode]);
 
   return (
-    <div className="sandbox">
+    <div className="sandbox" onClick={() => setInteracted(true)}>
       <nav>
         <button onClick={() => setCode(INITIAL_CODE)}>Reset</button>
         <div className="btn-group">
@@ -337,7 +337,7 @@ export function Sandbox({ height, options }) {
           <Editor
             code={code}
             onChange={(...args) => {
-              setHasTyped(true);
+              setInteracted(true);
               setCode(...args);
             }}
             options={options}
@@ -348,7 +348,7 @@ export function Sandbox({ height, options }) {
         <section className="right dark">
           {mode === 'preview' && (
             <div className="preview light">
-              {hasTyped ? null : <Cursor>Try it out</Cursor>}
+              {hasInteracted ? null : <Cursor>Try it out</Cursor>}
               {Markdoc.renderers.react(content, React, {
                 components: config.components
               })}
