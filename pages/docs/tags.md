@@ -1,13 +1,13 @@
 ---
 title: Tags
-description: Tags are used to extend Markdown. With tags you can use native Markdoc components or custom-built React components.
+description: Use tags to extend Markdown. With tags you can use native Markdoc components or custom-built React components.
 ---
 
 # {% $markdoc.frontmatter.title %}
 
 Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like [tables](#table), [conditionals](#if/else), and [partials](#partial), or create custom React components.
 
-Similar to React components and HTML elements, tags are composable, and they can be customized with [attributes](/docs/attributes).
+Similar to React components and HTML elements, tags are composable, and you can customize them with [attributes](/docs/attributes).
 
 {% markdoc-example %}
 
@@ -140,7 +140,7 @@ These are the optional fields you can use to customize your `Tag`:
 
 - `render`
 - `string`
-- Name of the output (e.g. HTML tag, React component name) to render
+- Name of the output (for example, HTML tag, React component name) to render
 
 ---
 
@@ -184,11 +184,11 @@ These are the optional fields you can use to customize your `Tag`:
 
 ## Built-in tags
 
-Markdoc comes out-of-the-box with 4 built-in tags: `if`, `else`, `table`, and `partial`.
+Markdoc comes out-of-the-box with four built-in tags: `if`, `else`, `table`, and `partial`.
 
 ### If/Else
 
-Dynamically render content when specific conditions are met using the `{% if %}` and `{% else /%}` tags. In Markdoc, conditionals are used with [variables](/docs/syntax#variables) and [functions](/docs/functions).
+Dynamically render content when specific conditions are met using the `{% if %}` and `{% else /%}` tags. Markdoc uses conditionals with [variables](/docs/syntax#variables) and [functions](/docs/functions).
 
 {% callout type="warning" %}
 Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
@@ -232,7 +232,7 @@ This appears if not $myFunVar and not $otherFunVar
 
 ### Table
 
-While [CommonMark](https://commonmark.org/) tables are supported, Markdoc also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
+While Markdoc supports [CommonMark](https://commonmark.org/) tables, it also supports a list based syntax that allows for easy injection of rich content, like bulleted lists and code samples.
 
 #### Basic table
 
@@ -355,7 +355,7 @@ Explicitly set column and row span.
 
 ### Partial
 
-Partials are used to reuse content across docs. The content is stored in a separate markdown file, and referenced from the `file` attribute in the `partial` tag, which includes the corresponding piece of content.
+Markdoc uses partials to reuse content across docs. The content is stored in a separate markdown file, and it's referenced from the `file` attribute in the `partial` tag, which includes the corresponding piece of content.
 
 Here is an example of including the `header.md` file as a partial.
 {% markdoc-example %}
