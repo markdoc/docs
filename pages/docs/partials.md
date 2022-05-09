@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc uses partials to reuse content across documents. A separate Markdoc file stores the content, and references it from within the partial tag.
+Markdoc uses partials to reuse content across documents. A separate Markdoc file stores the content, and it's referenced from within the partial tag.
 
 Here's an example of including the `header.md` file as a partial.
 {% markdoc-example %}
