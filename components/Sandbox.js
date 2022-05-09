@@ -435,7 +435,7 @@ export function Sandbox({ height, options }) {
           }
 
           section {
-            overflow: scroll;
+            overflow: auto;
             width: 50%;
             display: flex;
             flex-direction: column;
