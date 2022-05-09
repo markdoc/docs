@@ -8,3 +8,4 @@ out/
 .vscode
 .env
 .vercel
+dist/
