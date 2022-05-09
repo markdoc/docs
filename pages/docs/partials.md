@@ -5,9 +5,9 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Partials are used to reuse content across documents. The content is stored in a separate Markdoc file, and referenced from within the partial tag.
+Markdoc uses partials to reuse content across documents. A separate Markdoc file stores the content, and references it from within the partial tag.
 
-Here is an example of including the `header.md` file as a partial.
+Here's an example of including the `header.md` file as a partial.
 {% markdoc-example %}
 
 ```
@@ -18,7 +18,7 @@ Here is an example of including the `header.md` file as a partial.
 
 #### Registering partials
 
-Partials are defined by created a mapping from file name to an abstract syntax tree (AST) node in your [`Config` object](/docs/syntax#config). The default `partial` [tag](/docs/tags) will look at this config in order to include the right content.
+You define partials by creating a mapping from the file name to an abstract syntax tree (AST) node in your [`Config` object](/docs/syntax#config). The default `partial` [tag](/docs/tags) looks at this config to include the right content.
 
 {% markdoc-example %}
 
@@ -40,11 +40,11 @@ const content = Markdoc.transform(ast, config);
 
 {% /markdoc-example %}
 
-If you want the `partial` tag to behave differently, you can just override it in `Config.tags`.
+If you want the `partial` tag to behave differently, you can override it in `Config.tags`.
 
 #### Passing variables
 
-Partials are just like other tags, so you can pass [variables](/docs/variables) as [attributes](/docs/attributes) to them like:
+Partials are like any other tags, so you can pass [variables](/docs/variables) as [attributes](/docs/attributes) to them such as:
 
 {% markdoc-example %}
 
@@ -54,7 +54,7 @@ Partials are just like other tags, so you can pass [variables](/docs/variables) 
 
 {% /markdoc-example %}
 
-and access the variables just like in a regular Markdoc document:
+and access the variables as you would in a regular Markdoc document:
 
 {% markdoc-example %}
 
