@@ -15,7 +15,7 @@ Here I am rendering a custom {% $variable %}
 
 {% /markdoc-example %}
 
-There are a few ways to pass variables:
+You can pass variables in a few ways:
 
 1. Through the `variables` field on your [`Config`](/docs/syntax#config)
 2. Via the [`variables` attribute](#with-partials) on a [`partial` tag](/docs/partials).
@@ -23,7 +23,7 @@ There are a few ways to pass variables:
 
 ## Global variables
 
-Here is an example of how you can pass variables to your config:
+Here's an example of how you can pass variables to your config:
 
 {% markdoc-example %}
 
@@ -51,7 +51,7 @@ const content = Markdoc.transform(ast, config);
 
 {% /markdoc-example %}
 
-which can then be accessed within your document:
+which you can then be access within your document:
 
 {% markdoc-example %}
 
@@ -65,7 +65,7 @@ Username: {% $user.name %}
 
 ## With partials
 
-To pass variables to a partial, just set the `variables` attribute:
+To pass variables to a partial, set the `variables` attribute:
 
 {% markdoc-example %}
 
