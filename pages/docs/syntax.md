@@ -4,11 +4,11 @@ title: The Markdoc syntax
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which are described below. These extensions enable Markdoc's powerful extensibility model.
+Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which we describe below. These extensions enable Markdoc's powerful extensibility model.
 
 ## Nodes
 
-Nodes are elements that Markdoc inherits from Markdown, which can be customized with [annotations](#annotations).
+Nodes are elements that Markdoc inherits from Markdown, which you can customize with [annotations](#annotations).
 
 {% side-by-side %}
 
@@ -72,7 +72,7 @@ For more information, check out the [Nodes docs](/docs/nodes).
 
 Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each tag is enclosed with `{%` and `%}`, and includes the tag name, [attributes](#attributes), and the content body.
 
-Similar to HTML, Markdoc tags can be nested, and are customized with [attributes](#attributes).
+Similar to HTML, you can nest Markdoc tags, and customize them with [attributes](#attributes).
 
 {% markdoc-example %}
 
@@ -94,7 +94,7 @@ Tags can be self-closing (similar to HTML). In this example, you'll see that the
 
 {% /markdoc-example %}
 
-If your tag does not contain any newlines, then it is treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
+If your tag doesn't contain any new lines, then it's treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
 
 {% markdoc-example %}
 
@@ -187,14 +187,14 @@ Pass attributes to tags to customize their behavior. You can pass values of type
 {% /markdoc-example %}
 
 All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.  
-If you wish to include a double-quote in a string you can escape it with using `\"`.
+If you want to include a double-quote in a string you can escape it with using `\"`.
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).
 
 ## Variables
 
-Markdoc variables let you customize your Markdoc documents at runtime. Variables are all prefixed with `$`.
+Markdoc variables let you customize your Markdoc documents at runtime. Variables all have a `$` prefix.
 
 {% markdoc-example %}
 
@@ -205,17 +205,17 @@ Here I am rendering a custom {% $variable %}
 {% /markdoc-example %}
 
 Variables must contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects.\
-Nested values are accessible using dot-notation, similar to JavaScript:
+You can access nested values using dot-notation, similar to JavaScript:
 
 {% markdoc-example %}
 
 ```
-Here is my deeply nested variable {% $markdoc.frontmatter.title %}
+Here's a deeply nested variable {% $markdoc.frontmatter.title %}
 ```
 
 {% /markdoc-example %}
 
-Variables can be used throughout your document, as content itself:
+You can use variables throughout your document, as content itself:
 
 {% markdoc-example %}
 
@@ -230,7 +230,7 @@ For more information, check out the [Variables docs](/docs/variables).
 
 ## Functions
 
-Functions look and feel similar to JavaScript functions. They are callable from the body of the document, inside an annotation, or within tag attributes.
+Functions look and feel similar to JavaScript functions. They're callable from the body of the document, inside an annotation, or within tag attributes.
 Function parameters are comma-separated. Trailing commas aren't supported in function calls.
 
 {% markdoc-example %}
@@ -294,7 +294,7 @@ This table outlines the various options you can pass to `Markdoc.transform`. Eac
 
 ### Full example
 
-Here is an example of what a Markdoc config will look like:
+Here's an example of what a Markdoc config would look like:
 
 ```js
 const config = {
