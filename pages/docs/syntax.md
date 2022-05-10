@@ -6,6 +6,8 @@ title: The Markdoc syntax
 
 Markdoc syntax is a superset of Markdown, specifically the [CommonMark specification](https://commonmark.org/). Markdoc adds a few extensions to the syntax, such as tags and annotations, which we describe below. These extensions enable Markdoc's powerful extensibility model.
 
+For a formal grammar of the Markdoc tag syntax, refer to the [Markdoc syntax spec](/spec).
+
 ## Nodes
 
 Nodes are elements that Markdoc inherits from Markdown, which you can customize with [annotations](#annotations).
