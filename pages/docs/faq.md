@@ -10,13 +10,13 @@ Markdoc's syntax is largely a superset of the [CommonMark specification](https:/
 
 ### Setext headings
 
-The only CommonMark-specified feature that Markdoc does not support is the [setext heading](https://spec.commonmark.org/0.30/#setext-headings). This design decision is largely an internal preference of the Markdoc core team: in our view, the setext heading is redundant with the more commonly-used [ATX heading](https://spec.commonmark.org/0.30/#atx-heading) while introducing more ambiguity. If you want to use setext headings in Markdoc or you need to support the feature in order to ensure compatibility with existing content, you can still reconfigure Markdoc's tokenizer to re-enable the [markdown-it](https://github.com/markdown-it/markdown-it) `lheading` rule.
+The only CommonMark-specified feature that Markdoc doesn't support is the [setext heading](https://spec.commonmark.org/0.30/#setext-headings). This design decision is largely an internal preference of the Markdoc core team: in our view, the setext heading is redundant with the more commonly-used [ATX heading](https://spec.commonmark.org/0.30/#atx-heading), and introduces more ambiguity. If you want to use setext headings in Markdoc or you need to support the feature in order to ensure compatibility with existing content, you can still reconfigure Markdoc's tokenizer to re-enable the [markdown-it](https://github.com/markdown-it/markdown-it) `lheading` rule.
 
 ### Indentation
 
 In CommonMark-compliant Markdown, any content that is indented by four spaces is treated as a [code block](https://spec.commonmark.org/0.30/#indented-code-blocks). Unfortunately, this behavior makes it difficult to use arbitrary levels of indentation to improve the readability of documents with complex structure.
 
-When using nested tags in Markdoc, it can be helpful to indent the content inside of tags so that the level of depth is clear for any given content. In order to support this, we have to disable the indent-based code blocks and modify several other markdown-it parsing rules that account for indent-based code blocks. Markdoc's tokenizer accepts an `allowIndentation` option that applies these changes:
+When using nested tags in Markdoc, it can be helpful to indent the content inside of tags so that the level of depth is clear. To support arbitrary indentation, we have to disable the indent-based code blocks and modify several other markdown-it parsing rules that account for indent-based code blocks. Markdoc's tokenizer accepts an `allowIndentation` option that applies these changes:
 
 {% markdoc-example %}
 ```js
@@ -34,7 +34,7 @@ const ast = markdoc.parse(tokens);
 ```
 {% /markdoc-example %}
 
-At present, the `allowIndentation` option is still experimental and is not enabled by default. We may choose to enable it by default in a future version of Markdoc, however. When the option is enabled, it is not possible to use indent-based code blocks. We strongly recommend using [fenced code blocks](https://spec.commonmark.org/0.30/#fenced-code-blocks) instead of indent-based code blocks regardless of whether you intend to take advantage of the `allowIndentation` option.
+The `allowIndentation` option is experimental and is not enabled by default. When the option is enabled, it is not possible to use indent-based code blocks. We strongly recommend using [fenced code blocks](https://spec.commonmark.org/0.30/#fenced-code-blocks) instead of indent-based code blocks regardless of whether you intend to take advantage of the `allowIndentation` option.
 
 {% callout type="warning" %}
 Markdoc content that incorporates arbitrary levels of indentation via the `allowIndentation` option may not be compatible with other CommonMark-compliant Markdown processing tools.

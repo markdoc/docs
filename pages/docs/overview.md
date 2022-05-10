@@ -26,7 +26,7 @@ We chose Markdown as a starting point because it is easy to read and reason abou
 Markdoc provides an extensible system for defining custom tags that can be used seamlessly in Markdown content. Using the custom tag syntax, we're able to express more elaborate document hierarchy, insert interactive components, and support features like conditional content, content inclusion, and variable interpolation. Markdoc's extensions to the Markdown syntax are designed to be composable and minimally intrusive, providing crucial functionality without compromising the readability of prose. 
 ## Under the hood
 
-Markdoc's parser is built on top of a popular open-source Markdown library called [markdown-it](https://github.com/markdown-it/markdown-it). Markdoc uses markdown-it as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by markdown-it. Markdoc's custom tag syntax is implemented inside of a markdown-it plugin. The logic that parses the tag syntax is generated from a [peg.js](https://pegjs.org/) grammar.
+Markdoc's parser is built on top of a popular open-source Markdown library called [`markdown-it`](https://github.com/markdown-it/markdown-it). Markdoc uses `markdown-it` as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by `markdown-it`. Markdoc's custom tag syntax is implemented inside of a `markdown-it` plugin. The logic that parses the tag syntax is generated from a [peg.js](https://pegjs.org/) grammar.
 
 Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output. Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
 
