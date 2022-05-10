@@ -34,6 +34,8 @@ export const group = {
 You can hook up syntax highlighting for code blocks by creating a custom `fence` [node](/docs/nodes). This example shows how to do so with [Prism](https://prismjs.com/).
 
 ```js
+// [Source example](https://github.com/markdoc/docs/blob/main/components/Code.js)
+
 import 'prismjs';
 import 'prismjs/themes/prism.css';
 
