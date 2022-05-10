@@ -149,6 +149,7 @@ export default function MyApp(props) {
           crossOrigin=""
           type="font/woff2"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
