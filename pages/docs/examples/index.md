@@ -188,7 +188,7 @@ Finally, add IDs to the headings using ID [annotations](/docs/syntax#annotations
 
 ## Tabs
 
-#### Create the Markdoc tags
+First, create the Markdoc tags
 
 ```js
 import { Tag } from '@markdoc/markdoc';
@@ -223,9 +223,7 @@ const config = {
 };
 ```
 
-#### Create React component
-
-Create a `Tab` and `Tabs` React component which map to the `tab` and `tabs` tag.
+Then, create a `Tab` and `Tabs` React component which map to the `tab` and `tabs` tag:
 
 {% side-by-side %}
 
