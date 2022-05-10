@@ -353,6 +353,27 @@ Explicitly set column and row span.
 
 {% /markdoc-example %}
 
+#### Table caveats
+
+Markdoc uses the `table` tag to locate places to parse the Markdown list syntax as a table, but it uses the `table` [node](/docs/nodes) to render the actual table elements. To customize how the default `table` renders, you need to register a custom a table _node_.
+
+{% markdoc-example %}
+
+```js
+import { nodes } from '@markdoc/markdoc';
+
+const config = {
+  nodes: {
+    table: {
+      ...nodes.table,
+      render: 'Table' // your custom component goes here
+    }
+  }
+};
+```
+
+{% /markdoc-example %}
+
 ### Partial
 
 Markdoc uses partials to reuse content across docs. The content is stored in a separate markdown file, and it's referenced from the `file` attribute in the `partial` tag, which includes the corresponding piece of content.
