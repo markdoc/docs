@@ -2,7 +2,7 @@
 
 ## Contributing
 
-Contributions and feedback are welcomed and encouraged.
+Contributions and feedback are welcomed and encouraged. Feel free to open PRs here, or open issues in the [Markdoc core repo](https://github.com/markdoc/markdoc).
 
 To edit the docs, follow these steps:
 
