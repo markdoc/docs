@@ -134,9 +134,9 @@ Case 2
 
 {% /markdoc-example %}
 
-## Table-of-contents
+## Table of contents
 
-To create a table-of-contents, first collect all headings from the page content:
+To create a table of contents, first collect all headings from the page content:
 
 ```js
 // [Source example](https://github.com/markdoc/docs/blob/bae62d06109e3e699778fe901c8015d41b1c7c9f/pages/_app.js#L58-L79)

@@ -68,7 +68,7 @@ for (const node of document.walk()) {
 transform(AstNode | AstNode[], ?Config) => RenderableTreeNode | RenderableTreeNode[]
 ```
 
-Transform takes an abstract syntax tree and transforms it into a renderable tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table-of-contents](/docs/examples#table-of-contents), or passing over the wire to your client.
+Transform takes an abstract syntax tree and transforms it into a renderable tree, a serializable intermediate representation of what will eventually be rendered. This object is useful for computing things like a [table of contents](/docs/examples#table-of-contents), or passing over the wire to your client.
 
 The transform step is also responsible for resolving variables into static, scalar values (string, boolean, object, and so on.).
 
