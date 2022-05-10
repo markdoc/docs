@@ -129,8 +129,7 @@ These are the optional fields you can use to customize your `Node`:
 
 - `validate`
 - ```js
-  (Node, ?Options) =>
-    ValidationError[];
+  (Node, ?Options) => ValidationError[];
   ```
 - Extend Markdoc validation. This validates that the content meets validation requirements, and is called during the [`validate` step](/docs/render#validate)
 

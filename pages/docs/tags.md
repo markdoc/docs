@@ -156,12 +156,6 @@ These are the optional fields you can use to customize your `Tag`:
 
 ---
 
-- `selfClosing`
-- `boolean`
-- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
-
----
-
 - `transform`
 - ```js
   (Ast.Node, ?Options) =>
@@ -175,10 +169,15 @@ These are the optional fields you can use to customize your `Tag`:
 
 - `validate`
 - ```js
-  (Node, ?Options) =>
-    ValidationError[];
+  (Node, ?Options) => ValidationError[];
   ```
 - Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render#validate)
+
+---
+
+- `selfClosing`
+- `boolean`
+- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
 
 {% /table %}
 
