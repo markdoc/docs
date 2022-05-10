@@ -76,10 +76,9 @@ export function Code({ children, language }) {
             position: absolute;
             color: inherit;
             background: var(--code-background);
-            top: 1px;
-            right: 1px;
+            top: ${lines.length === 1 ? '17px' : '13px'};
+            right: 11px;
             border-radius: 4px;
-            padding: ${lines.length === 1 ? '16px' : '12px'} 10px 0 0;
             border: none;
             font-size: 15px;
           }
