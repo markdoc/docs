@@ -394,13 +394,14 @@ article {
 
 /* Syntax highlighting */
 pre[class*='language-'] {
+  /* Override Prism styles */
   text-shadow: none !important;
   color: var(--text) !important;
   background: var(--code-background) !important;
-  font-size: 14px;
-  line-height: 22px;
-  font-family: var(--mono);
-  margin: 0 0 var(--default-vertical-spacing);
+  font-size: 14px !important;
+  line-height: 22px !important;
+  font-family: var(--mono) !important;
+  margin: 0 0 var(--default-vertical-spacing) !important;
 }
 
 pre[class*='language-'] .md-link {
