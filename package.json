@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@markdoc/markdoc": "0.1.1",
-    "@markdoc/next.js": "0.1.1",
+    "@markdoc/next.js": "0.1.2",
     "codemirror": "^5.65.2",
     "copy-to-clipboard": "^3.3.1",
     "js-yaml": "^4.1.0",
