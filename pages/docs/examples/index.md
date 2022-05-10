@@ -121,9 +121,11 @@ Case 2
 
 ## Table-of-contents
 
-#### Collect all headings from the page content
+To create a table-of-contents, first collect all headings from the page content:
 
 ```js
+// [Source example](https://github.com/markdoc/docs/blob/bae62d06109e3e699778fe901c8015d41b1c7c9f/pages/_app.js#L58-L79)
+
 function collectHeadings(node, sections = []) {
   if (node) {
     // Match all h1, h2, h3… tags
@@ -152,9 +154,11 @@ const content = Markdoc.transform(ast);
 const headings = collectHeadings(content);
 ```
 
-#### Render the headings in a list
+Then, render the headings in a list:
 
 ```js
+// [Source example](https://github.com/markdoc/docs/blob/main/components/Shell/TableOfContents.js)
+
 function TableOfContents({ headings }) {
   const items = headings.filter((item) => [2, 3].includes(item.level));
 
@@ -172,7 +176,7 @@ function TableOfContents({ headings }) {
 }
 ```
 
-#### Add IDs to the headings using ID [annotations](/docs/syntax#annotations)
+Finally, add IDs to the headings using ID [annotations](/docs/syntax#annotations)
 
 {% markdoc-example %}
 
