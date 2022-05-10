@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "spec": "spec-md spec/index.md > public/spec.html"
   },
   "dependencies": {
     "@markdoc/markdoc": "0.1.1",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "eslint-config-next": "12.1.0",
+    "spec-md": "^3.0.2"
   }
 }
