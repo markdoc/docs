@@ -490,7 +490,8 @@ export default function MyApp(props) {
             }
 
             .page--landing table td {
-              flex-direction: column;
+              /* https://stackoverflow.com/questions/23556364/how-to-convert-columns-to-rows-using-css */
+              display: block;
               gap: 8px;
             }
 

@@ -149,6 +149,7 @@ export function ThemeToggle() {
             line-height: 27px;
             font-weight: 400;
             border-radius: 3px;
+            white-space: nowrap;
           }
 
           .dark {
@@ -211,6 +212,12 @@ export function ThemeToggle() {
             }
             to {
               transform: scale(1) rotate(0deg);
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            button {
+              width: 130px;
             }
           }
         `}
