@@ -141,8 +141,8 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
-    require('./Codemirror/markdoc');
     require('codemirror/addon/selection/mark-selection');
+    require('./codemirror/markdoc.js');
     setKey((k) => k + 1);
   }, []);
 
