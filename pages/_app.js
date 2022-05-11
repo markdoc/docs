@@ -348,6 +348,10 @@ export default function MyApp(props) {
             padding: 115px 0 120px;
           }
 
+          .page--landing .get-started .left ::selection {
+            background: #ffe279 !important;
+          }
+
           .page--landing .try {
             padding-top: 0;
             padding-bottom: 65px;
@@ -459,7 +463,6 @@ export default function MyApp(props) {
             }
 
             .page--landing .get-started {
-              background: var(--theme);
               padding: 65px 0 85px;
             }
 
@@ -502,7 +505,6 @@ export default function MyApp(props) {
             }
 
             .page--landing .get-started {
-              background: var(--theme);
               padding: 60px 0 60px;
             }
 
