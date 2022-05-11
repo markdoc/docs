@@ -174,11 +174,14 @@ export default function MyApp(props) {
       <TopNav>
         <Link href="/docs/getting-started">Docs</Link>
         <Link href="https://github.com/markdoc/markdoc">GitHub</Link>
-        <Link href="https://github.com/markdoc/markdoc/discussions">
+        <Link href="https://github.com/markdoc/markdoc/discussions" className="no-desktop">
+          🗨️
+        </Link>
+        <Link href="https://github.com/markdoc/markdoc/discussions" className="no-mobile">
           Community
         </Link>
         <Link href="https://twitter.com/StripeDev">Twitter</Link>
-        <span className="primary no-mobile">
+        <span className="primary">
           <Link href="/sandbox">Try</Link>
         </span>
       </TopNav>
