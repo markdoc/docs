@@ -286,16 +286,13 @@ function Cursor({ children }) {
 
 const initialCursor = { line: 0, ch: 3 };
 export function Sandbox({ height, options }) {
+  const [key, setKey] = React.useState(0);
   const router = useRouter();
   const [code, setCode] = React.useState(INITIAL_CODE);
   const [mode, setMode] = React.useState('preview');
   const [hasInteracted, setInteracted] = React.useState(false);
 
   const { ast, content, config, errors } = useMarkdocCode(code);
-
-  React.useEffect(() => {
-    setCode(INITIAL_CODE + ' ');
-  }, []);
 
   React.useEffect(() => {
     const mode = new URLSearchParams(window.location.search).get('mode');
@@ -311,6 +308,10 @@ export function Sandbox({ height, options }) {
       history.replaceState(null, '', '?' + query.toString());
     }
   }, [mode]);
+
+  React.useEffect(() => {
+    setKey((k) => k + 1);
+  }, []);
 
   return (
     <div className="sandbox" onClick={() => setInteracted(true)}>
@@ -348,6 +349,7 @@ export function Sandbox({ height, options }) {
       <div className="flex container">
         <section className="left">
           <Editor
+            key={key}
             code={code}
             onChange={(...args) => {
               setInteracted(true);
