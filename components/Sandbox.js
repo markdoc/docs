@@ -35,6 +35,8 @@ Markdoc uses a fully declarative approach to composition and flow control, where
 - [Explore the syntax](/docs/syntax)
 `;
 
+const BASE_FRONTMATTER = { markdoc: { title: '' } };
+
 export function useMarkdocCode(code) {
   const ast = React.useMemo(() => Markdoc.parse(code), [code]);
 
@@ -43,20 +45,20 @@ export function useMarkdocCode(code) {
     // require here to prevent Webpack Promise issue
     const yaml = require('js-yaml');
 
-    let frontmatter = {};
+    let frontmatter = BASE_FRONTMATTER;
     try {
-      frontmatter = ast.attributes.frontmatter
-        ? yaml.load(ast.attributes.frontmatter)
-        : {};
+      if (ast.attributes.frontmatter) {
+        frontmatter = yaml.load(ast.attributes.frontmatter);
+      }
     } catch (error) {
-      //
+      // pass
     }
 
     return {
       ...rest,
       variables: {
         markdoc: {
-          frontmatter
+          frontmatter: frontmatter || BASE_FRONTMATTER
         },
         invalid_code: `\n{% callout %}\nHere!\n`
       },
