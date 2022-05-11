@@ -32,8 +32,9 @@ This guide assumes that you have an `Express` app installed. If you're starting 
          type: String,
          default: 'note',
          matches: ['check', 'error', 'note', 'warning'],
-        description: 'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"'
-       },
+         description:
+           'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"'
+       }
      }
    };
    ```
@@ -65,36 +66,45 @@ This guide assumes that you have an `Express` app installed. If you're starting 
    };
    ```
 
-2. Define a component for any custom tag. Since `heading` is a core Markdown [node](/docs/nodes), Markdoc already knows how to render it using the CommonMark spec. `Callout` needs a component since it's a custom tag. We used [`lit`](https://lit.dev/docs/) in our example to define a Web Component for the `markdoc-callout` element. 
+2. Define a component for any custom tag. Since `heading` is a core Markdown [node](/docs/nodes), Markdoc already knows how to render it using the CommonMark spec. `Callout` needs a component since it's a custom tag. We used [`lit`](https://lit.dev/docs/) in our example to define a Web Component for the `markdoc-callout` element.
 
-    ```js
-    // [src/Callout.js](https://github.com/markdoc/docs/blob/main/examples/html-nodejs/src/Callout.js)
-    import {html, css, LitElement} from 'lit';
+   ```js
+   // [src/Callout.js](https://github.com/markdoc/docs/blob/main/examples/html-nodejs/src/Callout.js)
 
-    export class MarkdocCallout extends LitElement {
-    static styles = css`
-    .note { background-color: #8792a2; }
-    .caution { background-color: #d97917; }
-    .check { background-color: #000000; }
-    .warning { background-color: #ed5f74; }
-    `;
+   import { html, css, LitElement } from 'lit';
 
-    static properties = {
-        type: {type: String},
-    };
+   export class MarkdocCallout extends LitElement {
+     static styles = css`
+       .note {
+         background-color: #8792a2;
+       }
+       .caution {
+         background-color: #d97917;
+       }
+       .check {
+         background-color: #000000;
+       }
+       .warning {
+         background-color: #ed5f74;
+       }
+     `;
 
-    constructor() {
-        super();
-        this.type = 'note';
-    }
+     static properties = {
+       type: { type: String }
+     };
 
-    render() {
-        return html`<p class="${this.type}"><slot></slot></p>`;
-    }
-    }
-    ```
+     constructor() {
+       super();
+       this.type = 'note';
+     }
 
-3. Parse your Markdoc documents on the server to create a map of your routes and Markdoc content. We call this a "content manifest" which is used during a request to return the right Markdoc content for the route. 
+     render() {
+       return html`<p class="${this.type}"><slot></slot></p>`;
+     }
+   }
+   ```
+
+3. Parse your Markdoc documents on the server to create a map of your routes and Markdoc content. We call this a "content manifest" which is used during a request to return the right Markdoc content for the route.
 
    ```js
    // [...](https://github.com/markdoc/docs/blob/main/examples/html-nodejs/createContentManifest.js#L19-L20)
@@ -102,7 +112,7 @@ This guide assumes that you have an `Express` app installed. If you're starting 
    const ast = Markdoc.parse(rawText);
    ```
 
-4. Call `Markdoc.transform` on the server with a config of your custom tags, nodes, and any variables you want your Markdoc content to access. Then, use the HTML Markdoc renderer (`Markdoc.renderers.html`) to render the transformed content into the HTML to display to your user. 
+4. Call `Markdoc.transform` on the server with a config of your custom tags, nodes, and any variables you want your Markdoc content to access. Then, use the HTML Markdoc renderer (`Markdoc.renderers.html`) to render the transformed content into the HTML to display to your user.
 
    ```js
    // [server.js](https://github.com/markdoc/docs/blob/main/examples/html-nodejs/server.js#L47)
@@ -140,25 +150,22 @@ This guide assumes that you have an `Express` app installed. If you're starting 
    });
    ```
 
-5. Make sure to include any bundled scripts (in this case `main.js`) with your custom components on the client. This example uses a simple HTML template to inject the Markdoc content, but you can use other templating engines (for example: Pug, Handlebars, and so on) to manage this content injection for you. 
+5. Make sure to include any bundled scripts (in this case `main.js`) with your custom components on the client. This example uses a simple HTML template to inject the Markdoc content, but you can use other templating engines (for example: Pug, Handlebars, and so on) to manage this content injection for you.
 
    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-        name="description"
-        content="Web site created using Markdoc"
-        />
-        <title>Markdoc: Create HTML Example</title>
-    </head>
-    <body>
-        {{ CONTENT }}
-        <script src="./main.js"></script>
-    </body>
-    </html>
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <meta name="description" content="Web site created using Markdoc" />
+       <title>Markdoc: Create HTML Example</title>
+     </head>
+     <body>
+       {{ CONTENT }}
+       <script src="./main.js"></script>
+     </body>
+   </html>
    ```
 
 6. Start the demo app.
