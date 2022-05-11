@@ -35,6 +35,7 @@ export function EditPagePanel({ children }) {
   React.useEffect(() => {
     function handler(e) {
       if (e.key === 'j' && e.metaKey) {
+        e.preventDefault();
         setShowEditor((mode) => !mode);
       } else if (e.key === 'Escape') {
         setShowEditor(false);
@@ -76,12 +77,12 @@ export function EditPagePanel({ children }) {
           .container {
             position: fixed;
             top: 0;
-            right: 0;
+            left: 100vw;
             z-index: 999;
             width: 100vw;
             height: 100vh;
             transition: transform 300ms ease;
-            transform: ${showEditor ? 'translateX(0)' : 'translateX(100vw)'};
+            transform: ${showEditor ? 'translateX(-100vw)' : 'translateX(0)'};
           }
           .click-away {
             width: ${100 - WIDTH}%;
