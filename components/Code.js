@@ -43,7 +43,7 @@ export function Code({ children, language }) {
 
   React.useLayoutEffect(() => {
     if (ref.current) Prism.highlightElement(ref.current, false);
-  }, []);
+  }, [children]);
 
   React.useEffect(() => {
     if (copied) {
@@ -60,7 +60,13 @@ export function Code({ children, language }) {
 
   return (
     <div className="code" aria-live="polite">
-      <pre ref={ref} className={`language-${lang}`}>
+      <pre
+        // Prevents "Failed to execute 'removeChild' on 'Node'" error
+        // https://stackoverflow.com/questions/54880669/react-domexception-failed-to-execute-removechild-on-node-the-node-to-be-re
+        key={children}
+        ref={ref}
+        className={`language-${lang}`}
+      >
         {children}
       </pre>
       <button onClick={() => setCopied(true)}>
