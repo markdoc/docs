@@ -42,13 +42,21 @@ export function useMarkdocCode(code) {
     const { components, ...rest } = getSchema(schema);
     // require here to prevent Webpack Promise issue
     const yaml = require('js-yaml');
+
+    let frontmatter = {};
+    try {
+      frontmatter = ast.attributes.frontmatter
+        ? yaml.load(ast.attributes.frontmatter)
+        : {};
+    } catch (error) {
+      //
+    }
+
     return {
       ...rest,
       variables: {
         markdoc: {
-          frontmatter: ast.attributes.frontmatter
-            ? yaml.load(ast.attributes.frontmatter)
-            : {}
+          frontmatter
         },
         invalid_code: `\n{% callout %}\nHere!\n`
       },
