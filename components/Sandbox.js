@@ -127,7 +127,7 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
     }
   }, [errors]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
@@ -284,6 +284,10 @@ export function Sandbox({ height, options }) {
   const [hasInteracted, setInteracted] = React.useState(false);
 
   const { ast, content, config, errors } = useMarkdocCode(code);
+
+  React.useEffect(() => {
+    setCode(INITIAL_CODE + ' ');
+  }, []);
 
   React.useEffect(() => {
     const mode = new URLSearchParams(window.location.search).get('mode');
