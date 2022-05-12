@@ -1,4 +1,4 @@
-const { nodes } = require('.@markdoc/markdoc')
+const { nodes } = require('@markdoc/markdoc')
 
 function generateID(children, attributes) {
   if (attributes.id && typeof attributes.id === 'string') {
