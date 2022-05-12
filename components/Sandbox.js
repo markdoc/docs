@@ -28,7 +28,7 @@ Markdoc is open-source—check out its [source](http://github.com/markdoc/markdo
 
 ## How is Markdoc different?
 
-Markdoc uses a fully declarative approach to composition and flow control, where other solutions…[read more](/docs/overview)
+Markdoc uses a fully declarative approach to composition and flow control. This reduces complexity, thus differentiating Markdoc from other solutions. [Learn More](/docs/faq#why-create-markdoc-instead-of-using-an-alternative)
 
 ## Next steps
 - [Install Markdoc](/docs/getting-started)
