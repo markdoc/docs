@@ -60,7 +60,7 @@ Markdoc's first-class, declarative tag syntax integrates seamlessly with Markdow
 
 ### Why not AsciiDoc?
 
-[AsciiDoc](https://asciidoc.org/) is a plain-text markup format that is designed specifically for techncial writing, incorporating ideas from DocBook and other publishing technologies. AsciiDoc gets a lot of things right–extensibility, support for highly-structured content, parsing to an AST, and open governance.
+[AsciiDoc](https://asciidoc.org/) is a plain-text markup format that is designed specifically for technical writing, incorporating ideas from DocBook and other publishing technologies. AsciiDoc gets a lot of things right–extensibility, support for highly-structured content, parsing to an AST, and open governance.
 
 We are big fans of AsciiDoc–it was a major source of inspiration when we began designing Markdoc. In fact, our earliest efforts to modernize our content format at Stripe back in 2017 involved a proof-of-concept built on the Ruby-based [AsciiDoctor](https://asciidoctor.org/) library. There are several reasons why we ultimately moved to Markdown instead of proceeding with AsciiDoc as our efforts progressed.
 
