@@ -16,7 +16,7 @@ While not a comprehensive list, the examples below give you an idea of how you c
 ```yaml
 ---
 title: Authoring in Markdoc
-description: Quickly author amazing content with Markdoc systax, a superset of Markdown.
+description: Quickly author amazing content with Markdoc syntax, a superset of Markdown.
 date: 2022-04-01
 ---
 ```
@@ -26,7 +26,7 @@ date: 2022-04-01
 ```toml
 ---
 title       = "Authoring in Markdoc"
-description = "Quickly author amazing content with Markdoc systax, a superset of Markdown."
+description = "Quickly author amazing content with Markdoc syntax, a superset of Markdown."
 date        = "2022-04-01"
 ---
 ```
@@ -37,7 +37,7 @@ date        = "2022-04-01"
 ---
 {
   "title": "Authoring in Markdown",
-  "description": "Quickly author amazing content with Markdoc systax, a superset of Markdown.",
+  "description": "Quickly author amazing content with Markdoc syntax, a superset of Markdown.",
   "date": "2022-04-01"
 }
 ---
