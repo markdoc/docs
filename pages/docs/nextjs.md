@@ -140,7 +140,7 @@ export const button = {
 };
 ```
 
-If you want to use kabob case for your tag names, you can export an object like:
+If you want to use kebab case for your tag names, you can export an object like:
 
 ```js
 // markdoc/tags.js
