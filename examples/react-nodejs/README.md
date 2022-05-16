@@ -7,8 +7,4 @@ This project was built with `create-react-app`.
 
 To get started, run:
 
-`npm run start:client`
-
-and:
-
-`npm run start:server`
+`npm run start`
