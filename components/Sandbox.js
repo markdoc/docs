@@ -3,6 +3,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { getSchema } from '@markdoc/next.js/runtime';
+import { ObjectDisplay } from './ObjectDisplay';
 
 import * as tags from '../markdoc/tags';
 import * as nodes from '../markdoc/nodes';
@@ -66,15 +67,15 @@ export function useMarkdocCode(code) {
     };
   }, [ast]);
 
-  const content = React.useMemo(
-    () => Markdoc.transform(ast, config),
-    [ast, config]
-  );
+  const content = React.useMemo(() => Markdoc.transform(ast, config), [
+    ast,
+    config
+  ]);
 
-  const errors = React.useMemo(
-    () => Markdoc.validate(ast, config),
-    [ast, config]
-  );
+  const errors = React.useMemo(() => Markdoc.validate(ast, config), [
+    ast,
+    config
+  ]);
 
   return { ast, content, config, errors };
 }
@@ -382,7 +383,8 @@ export function Sandbox({ height, options }) {
               }}
             />
           )}
-          {mode === 'ast' && (
+          {mode === 'ast' && <ObjectDisplay data={ast} />}
+          {/* {mode === 'ast' && (
             <CodeMirror
               value={JSON.stringify(ast, null, 2)}
               options={{
@@ -390,7 +392,7 @@ export function Sandbox({ height, options }) {
                 lineWrapping: true,
                 readOnly: true
               }}
-            />
+            /> */}
           )}
         </section>
       </div>
