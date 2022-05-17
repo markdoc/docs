@@ -8,7 +8,7 @@ const items = [
     links: [
       { href: '/docs/overview', children: 'What is Markdoc?' },
       { href: '/docs/getting-started', children: 'Installation' },
-      { href: '/docs/faq', children: 'FAQ'},
+      { href: '/docs/faq', children: 'FAQ' },
       { href: '/sandbox', children: 'Try it out' }
     ]
   },
@@ -74,7 +74,7 @@ export function SideNav() {
             /* https://stackoverflow.com/questions/66898327/how-to-keep-footer-from-pushing-up-sticky-sidebar */
             position: sticky;
             top: var(--nav-height);
-            height: calc(100vh - var(--nav-height) - var(--footer-height));
+            height: calc(100vh - var(--nav-height));
             flex: 0 0 240px;
             overflow-y: auto;
             padding: 2rem 0 2rem 2rem;
