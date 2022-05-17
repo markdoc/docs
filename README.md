@@ -11,7 +11,7 @@ Contributions and feedback are welcomed and encouraged. Feel free to open PRs he
 
 1. [Fork](https://help.github.com/articles/fork-a-repo) and [clone](https://help.github.com/articles/cloning-a-repository) this repository to your local environment.
 
-2. Create a new branch `git checkout -b <BRANCH_NAME>`
+2. Create a new branch with `git checkout -b <BRANCH_NAME>`
 
 3. Install the dependencies by running `npm install`
 
