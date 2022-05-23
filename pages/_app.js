@@ -446,6 +446,13 @@ export default function MyApp(props) {
             gap: 4px;
           }
 
+          .page--landing table h3 {
+            font-size: 28px;
+            line-height: 38px;
+            margin: 0;
+            letter-spacing: 0;
+          }
+
           @media screen and (max-width: 1000px) {
             .page--landing table tr {
               flex-direction: column;
@@ -456,6 +463,11 @@ export default function MyApp(props) {
               flex-direction: row;
               align-items: flex-start;
               gap: 36px;
+            }
+
+            .page--landing table h3 {
+              font-size: 24px;
+              line-height: 33px;
             }
 
             .page--landing .hero {

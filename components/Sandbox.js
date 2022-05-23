@@ -91,7 +91,8 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
       lineNumbers: true,
       theme: 'none',
       mode: 'markdoc',
-      lineWrapping: true
+      lineWrapping: true,
+      screenReaderLabel: 'Markdoc sandbox'
     }),
     [options, cursor]
   );
