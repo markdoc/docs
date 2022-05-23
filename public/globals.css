@@ -269,13 +269,6 @@ h3.jumbo {
   line-height: 52px;
 }
 
-h4.jumbo, .h4.jumbo {
-  font-size: 28px;
-  line-height: 38px;
-  margin: 0;
-  letter-spacing: 0;
-}
-
 blockquote {
   margin: 1.3rem 0 1.1rem;
 }
@@ -536,10 +529,6 @@ main .CodeMirror-scroll::-webkit-scrollbar {
   h3.jumbo {
     font-size: 35px;
     line-height: 46px;
-  }
-  h4.jumbo, .h4.jumbo {
-    font-size: 24px;
-    line-height: 33px;
   }
 }
 
