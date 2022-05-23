@@ -139,12 +139,11 @@ export function Typewriter() {
           .cursor {
             position: absolute;
             display: inline-block;
-            top: calc(25px - var(--line-height-jumbo));
-            left: 0.75rem;
+            top: -0.82em;
+            left: 12px;
             width: 8px;
-            height: calc(var(--line-height-jumbo) - 14px);
+            height: 0.96em;
             background: var(--theme);
-            ${done ? 'display: none;' : ''}
           }
           @media screen and (max-width: 660px) {
             h1 {
