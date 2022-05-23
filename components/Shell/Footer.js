@@ -7,6 +7,7 @@ export function Footer({ children: links, landing }) {
   const copyright = (
     <Link href="https://stripe.com">
       <svg
+        title="Built by Stripe"
         width="99"
         height="28"
         viewBox="0 0 99 28"

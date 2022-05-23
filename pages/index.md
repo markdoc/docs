@@ -29,7 +29,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
   {% item %}
 
-  #### Open source {% .jumbo %}
+  ### Open source {% .h4 .jumbo %}
 
   Maintain full control over your code and content. Markdoc is open-source and fully extensible.
   {% /item %}
@@ -38,7 +38,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
   {% item %}
 
-  #### Developer & writer friendly {% .jumbo %}
+  ### Developer & writer friendly {% .h4 .jumbo %}
 
   Markdoc delivers a powerful, flexible, developer experience (DX) with an equally capable authoring experience (AX).
 
@@ -48,7 +48,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
   {% item %}
 
-  #### Adopt anywhere {% .jumbo %}
+  ### Adopt anywhere {% .h4 .jumbo %}
 
   Use Markdoc to create interactive documentation experiences, static content sites, authoring tooling, and more.
 

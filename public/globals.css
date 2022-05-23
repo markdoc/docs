@@ -269,7 +269,7 @@ h3.jumbo {
   line-height: 52px;
 }
 
-h4.jumbo {
+h4.jumbo, .h4.jumbo {
   font-size: 28px;
   line-height: 38px;
   margin: 0;
@@ -537,7 +537,7 @@ main .CodeMirror-scroll::-webkit-scrollbar {
     font-size: 35px;
     line-height: 46px;
   }
-  h4.jumbo {
+  h4.jumbo, .h4.jumbo {
     font-size: 24px;
     line-height: 33px;
   }

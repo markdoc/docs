@@ -10,6 +10,7 @@ export function TopNav({ children }) {
         <div className="flex top-row">
           <Link href="/" className="flex">
             <svg
+              title="Markdoc"
               width="112"
               height="37"
               viewBox="0 0 112 37"
@@ -51,7 +52,7 @@ export function TopNav({ children }) {
             </svg>
           </button>
         </div>
-        <ul className={showMobileNav ? 'active' : ''}>{children}</ul>
+        <section className={showMobileNav ? 'active' : ''}>{children}</section>
       </nav>
       <style jsx>
         {`
@@ -78,7 +79,7 @@ export function TopNav({ children }) {
           nav :global(a) {
             text-decoration: none;
           }
-          ul {
+          section {
             display: flex;
             gap: 1.3rem;
             padding: 0;
@@ -106,11 +107,11 @@ export function TopNav({ children }) {
               align-items: flex-start;
               border-bottom: none;
             }
-            ul {
+            section {
               display: none;
               font-size: 15px;
             }
-            ul.active {
+            section.active {
               display: flex;
             }
             button {
