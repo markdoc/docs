@@ -144,6 +144,7 @@ export function Typewriter() {
             width: 8px;
             height: 0.96em;
             background: var(--theme);
+            ${done ? 'display: none;' : ''}
           }
           @media screen and (max-width: 660px) {
             h1 {
