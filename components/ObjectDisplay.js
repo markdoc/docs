@@ -9,56 +9,55 @@ const COLORS = {
 
 const VERTICAL_SPACING = 6;
 
-const Arrow = ({ onClick, style }) => (
-  <span
-    style={{
-      position: 'absolute',
-      border: '4px solid transparent',
-      borderTop: '6px solid #bec5ca',
-      top: '5px',
-      left: '-12px',
-      zIndex: 1,
-      transformOrigin: 'center',
-      ...style
-    }}
-    onClick={onClick}
-  />
-);
+function Arrow({ onClick, style }) {
+  return (
+    <span
+      style={{
+        position: 'absolute',
+        border: '4px solid transparent',
+        borderTop: '6px solid #bec5ca',
+        top: '5px',
+        left: '-12px',
+        zIndex: 1,
+        transformOrigin: 'center',
+        ...style
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
-const KeyValueRow = ({ children, onClick }) => (
-  <div
-    style={{
-      display: 'flex',
-      flexFlow: 'row nowrap',
-      alignItems: 'baseline',
-      justifyContent: 'flex-start',
-      margin: `${VERTICAL_SPACING}px 0`,
-      cursor: onClick ? 'pointer' : 'default',
-      position: 'relative'
-    }}
-    onClick={onClick}
-  >
-    {!!onClick && (
-      <>
-        <Arrow
-          onClick={onClick}
-          style={{ transform: 'rotate(-90deg)', top: 3 }}
-        />
-      </>
-    )}
-    {children}
-  </div>
-);
+function KeyValueRow({ children, onClick }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        alignItems: 'baseline',
+        justifyContent: 'flex-start',
+        margin: `${VERTICAL_SPACING}px 0`,
+        cursor: onClick ? 'pointer' : 'default',
+        position: 'relative'
+      }}
+      onClick={onClick}
+    >
+      {!!onClick && (
+        <>
+          <Arrow
+            onClick={onClick}
+            style={{ transform: 'rotate(-90deg)', top: 3 }}
+          />
+        </>
+      )}
+      {children}
+    </div>
+  );
+}
 
 const getSurroundingChars = (isArray) => (isArray ? ['[', ']'] : ['{', '}']);
 
-const LineStack = ({
-  rootKey,
-  children,
-  hasTrailingComma,
-  onClick,
-  isArray = false
-}) => {
+function LineStack({ data, rootKey, children, hasTrailingComma, onClick }) {
+  const isArray = Array.isArray(data);
   const [leading, trailing] = getSurroundingChars(isArray);
 
   return (
@@ -68,7 +67,7 @@ const LineStack = ({
         flexFlow: 'column nowrap',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
-        color: COLORS.default,
+        color: 'var(--white)',
         overflow: 'visible',
         gap: VERTICAL_SPACING
       }}
@@ -95,12 +94,12 @@ const LineStack = ({
       <span>{`${trailing}${hasTrailingComma ? ',' : ''}`}</span>
     </pre>
   );
-};
+}
 
 const isObject = (value) =>
   !Array.isArray(value) && typeof value === 'object' && value !== null;
 
-export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
+export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
   const childCount = Object.keys(data).length;
   const isEmpty = childCount === 0;
 
@@ -123,7 +122,7 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
             <pre>{': '}</pre>
           </>
         )}
-        <pre style={{ color: COLORS.default }}>
+        <pre>
           {isEmpty ? (
             `${leading}${trailing}`
           ) : (
@@ -182,7 +181,6 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
         rootKey={rootKey}
         hasTrailingComma={!isRoot}
         onClick={() => setCollapsed(true)}
-        isArray={Array.isArray(data)}
         canCopy={false}
         data={data}
       >
@@ -200,4 +198,4 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
       `}</style>
     </div>
   );
-};
+}
