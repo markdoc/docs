@@ -454,6 +454,10 @@ export function Sandbox({ height, options }) {
             padding: 1.5rem;
           }
 
+          .left :global(.CodeMirror) {
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+          }
+
           .left :global(.CodeMirror),
           .left :global(.react-codemirror2) {
             color: white;
@@ -476,10 +480,6 @@ export function Sandbox({ height, options }) {
                  color: white;
                  border-left: 1px solid rgba(255, 255, 255, 0.22);
                  border-top: 1px solid rgba(255, 255, 255, 0.22);`}
-          }
-
-          .sandbox :global(.CodeMirror) {
-            border-top: 1px solid rgba(255, 255, 255, 0.22);
           }
 
           .sandbox .preview :global(h1) {
