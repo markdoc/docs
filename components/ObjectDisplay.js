@@ -9,6 +9,8 @@ const COLORS = {
 
 const VERTICAL_SPACING = 6;
 
+const COMMA = <span style={{ color: COLORS.default }}>{','}</span>;
+
 function Arrow({ onClick, style }) {
   return (
     <span
@@ -132,7 +134,7 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
             </>
           )}
         </pre>
-        {hasTrailingComma && <pre>{','}</pre>}
+        {hasTrailingComma && COMMA}
       </KeyValueRow>
     );
   }
@@ -156,8 +158,8 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
         )}
         <pre style={{ color: valueColor }}>
           {typeof value === 'string' ? `"${value}"` : String(value)}
+          {COMMA}
         </pre>
-        <pre>{','}</pre>
       </KeyValueRow>
     );
   });
@@ -183,6 +185,9 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
           border-radius: 0;
           font-family: var(--mono);
           font-size: 13px;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          word-break: normal;
         }
       `}</style>
     </div>
