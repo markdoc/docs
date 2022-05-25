@@ -54,7 +54,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    ```
 
 \
-Or, clone [this starter repo](https://github.com/markdoc/docs/tree/main/examples/simple-nextjs) and follow the directions in the [README](https://github.com/markdoc/docs/blob/main/examples/simple-nextjs/README.md).
+Or, clone [this starter repo](https://github.com/markdoc/next.js-starter) and follow the directions in the [README](https://github.com/markdoc/next.js-starter/blob/main/README.md).
 
 ## Options
 
