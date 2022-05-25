@@ -3,13 +3,12 @@ import React from 'react';
 const COLORS = {
   string: 'var(--magenta)',
   number: 'var(--yellow)',
-  boolean: 'var(--yellow)',
-  default: 'white'
+  boolean: 'var(--yellow)'
 };
 
 const VERTICAL_SPACING = 6;
 
-const COMMA = <span style={{ color: COLORS.default }}>{','}</span>;
+const COMMA = <span style={{ color: 'var(--white)' }}>{','}</span>;
 
 function Arrow({ onClick, style }) {
   return (
@@ -125,10 +124,10 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
             <>
               {leading}
               <span
-                style={{ color: 'rgb(163, 172, 185)', lineHeight: 0 }}
+                style={{ color: 'rgba(255, 255, 255, 0.4)', lineHeight: 0 }}
               >{` ... `}</span>
               <span
-                style={{ lineHeight: 0, color: 'rgb(163, 172, 185)' }}
+                style={{ lineHeight: 0, color: 'rgba(255, 255, 255, 0.4)' }}
               >{`${childCount} item${childCount === 1 ? '' : 's'} `}</span>
               {trailing}
             </>
@@ -140,7 +139,7 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
   }
 
   const lines = Object.entries(data).map(([key, value]) => {
-    const valueColor = COLORS[typeof value] ?? COLORS.default;
+    const valueColor = COLORS[typeof value];
 
     if (isObject(value) || Array.isArray(value)) {
       return (
