@@ -70,7 +70,7 @@ const LineStack = ({
         justifyContent: 'flex-start',
         color: COLORS.default,
         overflow: 'visible',
-        margin: `${VERTICAL_SPACING}px 0`
+        gap: VERTICAL_SPACING
       }}
     >
       <div
@@ -84,7 +84,7 @@ const LineStack = ({
         <span>
           {!!rootKey && (
             <>
-              <span style={{ color: COLORS.string }}>"{rootKey}"</span>
+              <span>&quot;{rootKey}&quot;</span>
               {': '}
             </>
           )}
@@ -119,7 +119,7 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
       >
         {!!rootKey && (
           <>
-            <span style={{ color: COLORS.string }}>"{rootKey}"</span>
+            <span>&quot;{rootKey}&quot;</span>
             <pre>{': '}</pre>
           </>
         )}
@@ -161,12 +161,12 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
       <KeyValueRow key={key} hasTrailingComma={!isRoot}>
         {isObject(data) && (
           <>
-            <pre style={{ color: COLORS.string }}>"{key}"</pre>
+            <pre>&quot;{key}&quot;</pre>
             <pre>{': '}</pre>
           </>
         )}
         {!isObject(value) &&
-        !Array.isArray(value) && ( // Can probably remove this check...
+          !Array.isArray(value) && ( // Can probably remove this check...
             <pre style={{ color: valueColor }}>
               {typeof value === 'string' ? `"${value}"` : String(value)}
             </pre>
@@ -177,7 +177,7 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
   });
 
   return (
-    <div style={{ background: 'var(--black-medium)' }}>
+    <div className="object-display">
       <LineStack
         rootKey={rootKey}
         hasTrailingComma={!isRoot}
@@ -189,11 +189,13 @@ export const ObjectDisplay = ({ data, rootKey, isRoot, minCollapseSize }) => {
         {lines}
       </LineStack>
       <style jsx>{`
-        pre {
+        .object-display :global(pre) {
           border: none;
+          background: var(--black-medium);
         }
-        pre {
-          font-family: 'GT America Mono';
+        .object-display :global(pre) {
+          font-family: var(--mono);
+          border-radius: 0;
         }
       `}</style>
     </div>

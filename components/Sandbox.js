@@ -67,15 +67,15 @@ export function useMarkdocCode(code) {
     };
   }, [ast]);
 
-  const content = React.useMemo(() => Markdoc.transform(ast, config), [
-    ast,
-    config
-  ]);
+  const content = React.useMemo(
+    () => Markdoc.transform(ast, config),
+    [ast, config]
+  );
 
-  const errors = React.useMemo(() => Markdoc.validate(ast, config), [
-    ast,
-    config
-  ]);
+  const errors = React.useMemo(
+    () => Markdoc.validate(ast, config),
+    [ast, config]
+  );
 
   return { ast, content, config, errors };
 }
@@ -374,25 +374,10 @@ export function Sandbox({ height, options }) {
             </div>
           )}
           {mode === 'transform' && (
-            <CodeMirror
-              value={JSON.stringify(content, null, 2)}
-              options={{
-                mode: 'application/json',
-                lineWrapping: true,
-                readOnly: true
-              }}
-            />
+            <ObjectDisplay data={JSON.parse(JSON.stringify(content))} />
           )}
-          {mode === 'ast' && <ObjectDisplay data={ast} />}
-          {/* {mode === 'ast' && (
-            <CodeMirror
-              value={JSON.stringify(ast, null, 2)}
-              options={{
-                mode: 'application/json',
-                lineWrapping: true,
-                readOnly: true
-              }}
-            /> */}
+          {mode === 'ast' && (
+            <ObjectDisplay data={JSON.parse(JSON.stringify(ast))} />
           )}
         </section>
       </div>
