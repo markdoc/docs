@@ -470,13 +470,12 @@ export function Sandbox({ height, options }) {
           }
 
           .right {
-            background: ${mode === 'preview'
-              ? 'var(--white)'
-              : 'var(--black-medium)'};
-            ${mode !== 'preview' &&
-            `color: white;
-             border-left: 1px solid rgba(255, 255, 255, 0.22);
-             border-top: 1px solid rgba(255, 255, 255, 0.22);`}
+            ${mode === 'preview'
+              ? 'background: var(--white);'
+              : `background: var(--black-medium);
+                 color: white;
+                 border-left: 1px solid rgba(255, 255, 255, 0.22);
+                 border-top: 1px solid rgba(255, 255, 255, 0.22);`}
           }
 
           .sandbox :global(.CodeMirror) {
