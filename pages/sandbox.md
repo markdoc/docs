@@ -2,4 +2,4 @@
 title: Sandbox
 ---
 
-{% sandbox /%}
+{% sandbox height="calc(100vh - var(--nav-height))" /%}

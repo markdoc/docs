@@ -440,6 +440,7 @@ export function Sandbox({ height, options }) {
           }
 
           section {
+            position: relative;
             overflow: auto;
             width: 50%;
             display: flex;
@@ -451,11 +452,6 @@ export function Sandbox({ height, options }) {
             color: var(--black);
             height: 100%;
             padding: 1.5rem;
-          }
-
-          .left,
-          .right {
-            position: relative;
           }
 
           .left :global(.CodeMirror),
@@ -473,19 +469,14 @@ export function Sandbox({ height, options }) {
             padding-right: 1.5rem;
           }
 
-          .right :global(.CodeMirror),
-          .right :global(.react-codemirror2) {
-            color: white;
-            background: var(--black-medium);
-          }
-
-          .right :global(.CodeMirror) {
-            color: white;
-            border-left: 1px solid rgba(255, 255, 255, 0.22);
-          }
-
           .right {
-            background: var(--white);
+            background: ${mode === 'preview'
+              ? 'var(--white)'
+              : 'var(--black-medium)'};
+            ${mode !== 'preview' &&
+            `color: white;
+             border-left: 1px solid rgba(255, 255, 255, 0.22);
+             border-top: 1px solid rgba(255, 255, 255, 0.22);`}
           }
 
           .sandbox :global(.CodeMirror) {

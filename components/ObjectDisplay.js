@@ -177,7 +177,6 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
       <style jsx>{`
         .object-display {
           height: 100%;
-          background: var(--black-medium);
           padding-left: ${hasTrailingComma ? 0 : 8}px;
         }
         .object-display :global(pre) {
