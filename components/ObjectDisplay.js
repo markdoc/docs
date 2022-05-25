@@ -69,15 +69,12 @@ function LineStack({ data, rootKey, children, hasTrailingComma, onClick }) {
         justifyContent: 'flex-start',
         color: 'var(--white)',
         overflow: 'visible',
-        gap: VERTICAL_SPACING
+        margin: `${VERTICAL_SPACING}px 0`
       }}
     >
       <div
         onClick={onClick}
-        style={{
-          cursor: 'pointer',
-          position: 'relative'
-        }}
+        style={{ cursor: 'pointer', position: 'relative' }}
       >
         <Arrow style={{ left: '-16px' }} />
         <span>
@@ -99,13 +96,11 @@ function LineStack({ data, rootKey, children, hasTrailingComma, onClick }) {
 const isObject = (value) =>
   !Array.isArray(value) && typeof value === 'object' && value !== null;
 
-export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
+export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
   const childCount = Object.keys(data).length;
   const isEmpty = childCount === 0;
 
-  const [isCollapsed, setCollapsed] = React.useState(
-    () => !isRoot && childCount > minCollapseSize
-  );
+  const [isCollapsed, setCollapsed] = React.useState(false);
 
   if ((isObject(data) || Array.isArray(data)) && (isCollapsed || isEmpty)) {
     const [leading, trailing] = getSurroundingChars(Array.isArray(data));
@@ -113,7 +108,6 @@ export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
     return (
       <KeyValueRow
         onClick={isEmpty ? null : () => setCollapsed(false)}
-        canCopy={isRoot}
         data={data}
       >
         {!!rootKey && (
@@ -138,7 +132,7 @@ export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
             </>
           )}
         </pre>
-        {!isRoot && <pre>{','}</pre>}
+        {hasTrailingComma && <pre>{','}</pre>}
       </KeyValueRow>
     );
   }
@@ -148,28 +142,21 @@ export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
 
     if (isObject(value) || Array.isArray(value)) {
       return (
-        <ObjectDisplay
-          data={value}
-          rootKey={key}
-          minCollapseSize={minCollapseSize}
-        />
+        <ObjectDisplay data={value} rootKey={key} hasTrailingComma={true} />
       );
     }
 
     return (
-      <KeyValueRow key={key} hasTrailingComma={!isRoot}>
+      <KeyValueRow key={key} hasTrailingComma={hasTrailingComma}>
         {isObject(data) && (
           <>
             <pre>&quot;{key}&quot;</pre>
             <pre>{': '}</pre>
           </>
         )}
-        {!isObject(value) &&
-          !Array.isArray(value) && ( // Can probably remove this check...
-            <pre style={{ color: valueColor }}>
-              {typeof value === 'string' ? `"${value}"` : String(value)}
-            </pre>
-          )}
+        <pre style={{ color: valueColor }}>
+          {typeof value === 'string' ? `"${value}"` : String(value)}
+        </pre>
         <pre>{','}</pre>
       </KeyValueRow>
     );
@@ -179,21 +166,22 @@ export function ObjectDisplay({ data, rootKey, isRoot, minCollapseSize }) {
     <div className="object-display">
       <LineStack
         rootKey={rootKey}
-        hasTrailingComma={!isRoot}
+        hasTrailingComma={hasTrailingComma}
         onClick={() => setCollapsed(true)}
-        canCopy={false}
         data={data}
       >
         {lines}
       </LineStack>
       <style jsx>{`
-        .object-display :global(pre) {
-          border: none;
+        .object-display {
+          height: 100%;
           background: var(--black-medium);
         }
         .object-display :global(pre) {
-          font-family: var(--mono);
+          border: none;
           border-radius: 0;
+          font-family: var(--mono);
+          font-size: 13px;
         }
       `}</style>
     </div>
