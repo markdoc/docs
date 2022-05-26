@@ -25,7 +25,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
 ---
 
-- {% ascii "worm" /%}
+- {% ascii "key" /%}
 
   {% item %}
 
@@ -44,7 +44,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
   {% /item %}
 
-- {% ascii "puzzle" /%}
+- {% ascii "card" /%}
 
   {% item %}
 
