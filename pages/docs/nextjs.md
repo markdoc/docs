@@ -7,9 +7,9 @@ description: Learn how to integrate Markdoc into a Next.js project.
 
 Using the `@markdoc/next.js` package/plugin allows you to create custom `.md` and `.mdoc` pages in your Next.js apps, and automatically render them with Markdoc.
 
-To get started right away, check out [this starter repo](https://github.com/markdoc/next.js-starter). The quickest way to deploy your own version of the starter is by deploying it with [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) by clicking one of the buttons below.
+To get started right away, check out [this starter repo](https://github.com/markdoc/markdoc-starter). The quickest way to deploy your own version of the starter is by deploying it with [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) by clicking one of the buttons below.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/next.js-starter) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/next.js-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/markdoc-starter) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/markdoc-starter)
 
 ## Setup
 
@@ -54,7 +54,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    ```
 
 \
-Or, clone [this starter repo](https://github.com/markdoc/next.js-starter) and follow the directions in the [README](https://github.com/markdoc/next.js-starter/blob/main/README.md).
+Or, clone [this starter repo](https://github.com/markdoc/markdoc-starter) and follow the directions in the [README](https://github.com/markdoc/markdoc-starter/blob/main/README.md).
 
 ## Options
 
