@@ -3,6 +3,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { getSchema } from '@markdoc/next.js/runtime';
+import { ObjectDisplay } from './ObjectDisplay';
 
 import * as tags from '../markdoc/tags';
 import * as nodes from '../markdoc/nodes';
@@ -373,24 +374,10 @@ export function Sandbox({ height, options }) {
             </div>
           )}
           {mode === 'transform' && (
-            <CodeMirror
-              value={JSON.stringify(content, null, 2)}
-              options={{
-                mode: 'application/json',
-                lineWrapping: true,
-                readOnly: true
-              }}
-            />
+            <ObjectDisplay data={JSON.parse(JSON.stringify(content))} />
           )}
           {mode === 'ast' && (
-            <CodeMirror
-              value={JSON.stringify(ast, null, 2)}
-              options={{
-                mode: 'application/json',
-                lineWrapping: true,
-                readOnly: true
-              }}
-            />
+            <ObjectDisplay data={JSON.parse(JSON.stringify(ast))} />
           )}
         </section>
       </div>
@@ -453,6 +440,7 @@ export function Sandbox({ height, options }) {
           }
 
           section {
+            position: relative;
             overflow: auto;
             width: 50%;
             display: flex;
@@ -466,9 +454,8 @@ export function Sandbox({ height, options }) {
             padding: 1.5rem;
           }
 
-          .left,
-          .right {
-            position: relative;
+          .left :global(.CodeMirror) {
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
           }
 
           .left :global(.CodeMirror),
@@ -486,23 +473,13 @@ export function Sandbox({ height, options }) {
             padding-right: 1.5rem;
           }
 
-          .right :global(.CodeMirror),
-          .right :global(.react-codemirror2) {
-            color: white;
-            background: var(--black-medium);
-          }
-
-          .right :global(.CodeMirror) {
-            color: white;
-            border-left: 1px solid rgba(255, 255, 255, 0.22);
-          }
-
           .right {
-            background: var(--white);
-          }
-
-          .sandbox :global(.CodeMirror) {
-            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            ${mode === 'preview'
+              ? 'background: var(--white);'
+              : `background: var(--black-medium);
+                 color: white;
+                 border-left: 1px solid rgba(255, 255, 255, 0.22);
+                 border-top: 1px solid rgba(255, 255, 255, 0.22);`}
           }
 
           .sandbox .preview :global(h1) {
