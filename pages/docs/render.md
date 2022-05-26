@@ -57,7 +57,7 @@ AST node instances also include helpful functions, like `walk`, which can be use
 ```js
 const ast = Markdoc.parse(document);
 
-for (const node of document.walk()) {
+for (const node of ast.walk()) {
   // do something with each node
 }
 ```
