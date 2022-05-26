@@ -479,7 +479,13 @@ export function Ascii({ primary }) {
 
           @media screen and (max-width: 1000px) {
             div {
-              min-height: 0px;
+              padding-top: 0px;
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            div {
+              padding-top: 25px;
             }
           }
         `}
