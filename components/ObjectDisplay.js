@@ -97,11 +97,18 @@ function LineStack({ data, rootKey, children, hasTrailingComma, onClick }) {
 const isObject = (value) =>
   !Array.isArray(value) && typeof value === 'object' && value !== null;
 
-export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
+export function ObjectDisplay({
+  data,
+  rootKey,
+  hasTrailingComma,
+  minCollapseSize = 1
+}) {
   const childCount = Object.keys(data).length;
   const isEmpty = childCount === 0;
 
-  const [isCollapsed, setCollapsed] = React.useState(false);
+  const [isCollapsed, setCollapsed] = React.useState(
+    () => hasTrailingComma && childCount > minCollapseSize
+  );
 
   if ((isObject(data) || Array.isArray(data)) && (isCollapsed || isEmpty)) {
     const [leading, trailing] = getSurroundingChars(Array.isArray(data));
@@ -143,7 +150,12 @@ export function ObjectDisplay({ data, rootKey, hasTrailingComma }) {
 
     if (isObject(value) || Array.isArray(value)) {
       return (
-        <ObjectDisplay data={value} rootKey={key} hasTrailingComma={true} />
+        <ObjectDisplay
+          data={value}
+          rootKey={key}
+          hasTrailingComma={true}
+          minCollapseSize={minCollapseSize}
+        />
       );
     }
 
