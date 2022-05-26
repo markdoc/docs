@@ -470,7 +470,7 @@ export function Ascii({ primary }) {
             position: relative;
             display: flex;
             align-items: end;
-            min-height: 80px;
+            padding-top: 45px;
           }
 
           div :global(svg) {
