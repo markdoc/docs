@@ -173,7 +173,7 @@ export const TYPE_MAP = {
       <style jsx>
         {`
           .b {
-            fill: #231f20;
+            fill: var(--dark);
           }
         `}
       </style>
@@ -343,10 +343,10 @@ export const TYPE_MAP = {
       <style jsx>
         {`
           .b {
-            fill: #fff;
+            fill: var(--light);
           }
           .c {
-            fill: #231f20;
+            fill: var(--dark);
           }
         `}
       </style>
@@ -449,10 +449,10 @@ export const TYPE_MAP = {
       <style jsx>
         {`
           .b {
-            fill: #fff;
+            fill: var(--light);
           }
           .c {
-            fill: #231f20;
+            fill: var(--dark);
           }
         `}
       </style>
