@@ -206,10 +206,14 @@ Finally, add IDs to the headings using ID [annotations](/docs/syntax#annotations
 First, create the Markdoc tags
 
 ```js
+// markdoc/config.js
+
 import { Tag } from '@markdoc/markdoc';
+import { Tab } from '../components/Tab';
+import { Tabs } from '../components/Tabs';
 
 const tabs = {
-  render: 'Tabs',
+  render: Tabs,
   attributes: {},
   transform(node, config) {
     const labels = node
@@ -217,12 +221,14 @@ const tabs = {
       .filter((child) => child && child.name === 'Tab')
       .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
 
+    const tabs = labels.map((label) => new Tag('Tab', { label }));
+
     return new Tag(this.render, { labels }, tabs);
   }
 };
 
 const tab = {
-  render: 'Tab',
+  render: Tab,
   attributes: {
     label: {
       type: String
@@ -260,10 +266,14 @@ export const Tabs = ({ labels, children }: Props) => {
   {% /comment %}
   return (
     <TabContext.Provider value={currentTab}>
-      <ul>
+      <ul role="tablist">
         {labels.map((label) => (
           <li key={label}>
-            <button onClick={() => setCurrentTab(label)}>
+            <button
+              role="tab"
+              aria-selected={label === currentTab}
+              onClick={() => setCurrentTab(label)}
+            >
               {label}
             </button>
           </li>
@@ -308,7 +318,7 @@ and use the tags in your document.
 React content goes here
 {% /tab %}
 
-{% tab label="HTMl" %}
+{% tab label="HTML" %}
 HTML content goes here
 {% /tab %}
 
