@@ -206,14 +206,10 @@ Finally, add IDs to the headings using ID [annotations](/docs/syntax#annotations
 First, create the Markdoc tags
 
 ```js
-// markdoc/config.js
-
 import { Tag } from '@markdoc/markdoc';
-import { Tab } from '../components/Tab';
-import { Tabs } from '../components/Tabs';
 
 const tabs = {
-  render: Tabs,
+  render: 'Tabs',
   attributes: {},
   transform(node, config) {
     const labels = node
@@ -221,14 +217,12 @@ const tabs = {
       .filter((child) => child && child.name === 'Tab')
       .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
 
-    const tabs = labels.map((label) => new Tag('Tab', { label }));
-
     return new Tag(this.render, { labels }, tabs);
   }
 };
 
 const tab = {
-  render: Tab,
+  render: 'Tab',
   attributes: {
     label: {
       type: String
