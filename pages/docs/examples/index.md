@@ -260,10 +260,14 @@ export const Tabs = ({ labels, children }: Props) => {
   {% /comment %}
   return (
     <TabContext.Provider value={currentTab}>
-      <ul>
+      <ul role="tablist">
         {labels.map((label) => (
           <li key={label}>
-            <button onClick={() => setCurrentTab(label)}>
+            <button
+              role="tab"
+              aria-selected={label === currentTab}
+              onClick={() => setCurrentTab(label)}
+            >
               {label}
             </button>
           </li>
@@ -308,7 +312,7 @@ and use the tags in your document.
 React content goes here
 {% /tab %}
 
-{% tab label="HTMl" %}
+{% tab label="HTML" %}
 HTML content goes here
 {% /tab %}
 
