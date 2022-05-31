@@ -298,11 +298,17 @@ Your comment goes here
 
 Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/head). You can use this to add stuff to the `<head>` of your page.
 
+{% callout type="warning" %}
+You need to create and register your own tags for `meta`, `title`, and so on.
+{% /callout %}
+
 {% markdoc-example %}
 
 ```md
 {% head %}
-<add custom title and meta components here>
+
+Add custom `title` and `meta` tags here…
+
 {% /head %}
 ```
 
