@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "deploy": "vercel",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
+    "next-sitemap": "^2.5.28",
     "spec-md": "^3.0.2",
     "vercel": "^24.2.3"
   }

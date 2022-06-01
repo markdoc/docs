@@ -8,3 +8,6 @@ out/
 .env
 .vercel
 dist/
+# next-sitemap
+sitemap*.xml
+robots.txt
