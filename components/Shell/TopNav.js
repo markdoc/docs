@@ -93,10 +93,17 @@ export function TopNav({ children }) {
           nav :global(a) {
             text-decoration: none;
           }
-          nav :global(.DocSearch) {
-            --docsearch-text-color: var(--dark);
-            --docsearch-searchbox-background: var(--code-background);
-            --docsearch-searchbox-focus-background: var(--code-background);
+          nav :global(.DocSearch-Button) {
+            background: var(--code-background);
+            border-radius: 32px;
+            height: 32px;
+          }
+          nav :global(.DocSearch-Button:hover) {
+            box-shadow: inset 0 0 0 2px var(--dark);
+          }
+          nav :global(.DocSearch-Search-Icon) {
+            color: var(--dark);
+            width: 16px;
           }
           nav :global(.DocSearch-Button-Placeholder),
           nav :global(.DocSearch-Button-Keys) {
