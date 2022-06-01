@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { AppLink as Link } from '../components/AppLink';
 import { Footer, SideNav, TableOfContents, TopNav } from '../components/Shell';
 
+import '@docsearch/css';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/components/prism-graphql.min';
@@ -38,8 +39,8 @@ const MARKDOC = `
 `;
 
 const FONTS_BASE_URL = process.env.NEXT_PUBLIC_FONTS_BASE_URL || '/fonts';
-
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+
 function useGoogleAnalytics() {
   const router = useRouter();
   React.useEffect(() => {
@@ -148,6 +149,11 @@ export default function MyApp(props) {
           href={`${FONTS_BASE_URL}/tiempos-headline-light.woff2`}
           crossOrigin=""
           type="font/woff2"
+        />
+        <link
+          rel="preconnect"
+          href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`}
+          crossOrigin
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />

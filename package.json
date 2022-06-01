@@ -11,6 +11,7 @@
     "spec": "spec-md spec/index.md > public/spec.html"
   },
   "dependencies": {
+    "@docsearch/react": "^3.1.0",
     "@markdoc/markdoc": "0.1.1",
     "@markdoc/next.js": "0.1.2",
     "codemirror": "^5.65.2",
