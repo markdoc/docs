@@ -217,7 +217,7 @@ const tabs = {
       .filter((child) => child && child.name === 'Tab')
       .map((tab) => (typeof tab === 'object' ? tab.attributes.label : null));
 
-    return new Tag(this.render, { labels }, tabs);
+    return new Tag(this.render, { labels }, node.transformChildren(config));
   }
 };
 
@@ -249,7 +249,7 @@ import React from 'react';
 
 export const TabContext = React.createContext();
 
-export const Tabs = ({ labels, children }: Props) => {
+export function Tabs({ labels, children }) {
   const [
     currentTab,
     setCurrentTab
@@ -288,7 +288,7 @@ export const Tabs = ({ labels, children }: Props) => {
 import React from 'react';
 import { TabContext } from './Tabs';
 
-export const Tab = ({ label, children }: Props) => {
+export function Tab({ label, children }) {
   const currentTab = React.useContext(TabContext);
 
   if (label !== currentTab) {
@@ -296,7 +296,7 @@ export const Tab = ({ label, children }: Props) => {
   }
 
   return children;
-};
+}
 ```
 
 {% /side-by-side %}
