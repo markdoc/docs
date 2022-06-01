@@ -95,11 +95,15 @@ export function TopNav({ children }) {
           }
           nav :global(.DocSearch-Button) {
             background: var(--code-background);
-            border-radius: 32px;
             height: 32px;
+            border-radius: 32px;
           }
           nav :global(.DocSearch-Button:hover) {
-            box-shadow: inset 0 0 0 2px var(--dark);
+            box-shadow: none;
+            background: #e8eef3;
+          }
+          :global(.dark) nav :global(.DocSearch-Button:hover) {
+            background: #424248;
           }
           nav :global(.DocSearch-Search-Icon) {
             color: var(--dark);

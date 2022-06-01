@@ -70,8 +70,8 @@
   --toc-border: rgba(0, 0, 0, 0.14);
   --translucent: rgba(0, 0, 0, 0.4);
 
-  --docsearch-primary-color: var(--dark) !important;
-  --docsearch-logo-color: var(--black) !important;
+  --docsearch-primary-color: var(--black-medium) !important;
+  --docsearch-logo-color: var(--black-medium) !important;
 }
 
 .dark {
