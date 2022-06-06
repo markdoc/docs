@@ -28,7 +28,7 @@ Follow these steps to get started with `@markdoc/next.js`.
    const withMarkdoc = require('@markdoc/next.js');
 
    module.exports = withMarkdoc(/* [options](#options) */)({
-     pageExtensions: ['js', 'md']
+     pageExtensions: ['md', 'mdoc', 'js', 'jsx', 'ts', 'tsx']
    });
    ```
 
@@ -84,7 +84,7 @@ For example, this is how you set the `mode` to `static` to pre-render the page a
 
 ```js
 module.exports = withMarkdoc({ mode: 'static' })({
-  pageExtensions: ['js', 'md', 'mdoc']
+  pageExtensions: // [...](https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions)
 });
 ```
 
@@ -117,7 +117,7 @@ You can choose the import location for your schema by passing the `schemaPath` o
 
 ```js
 module.exports = withMarkdoc({ schemaPath: './path/to/your/markdoc/schema' })({
-  pageExtensions: ['js', 'md']
+  pageExtensions: // [...](https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions)
 });
 ```
 
