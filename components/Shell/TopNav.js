@@ -1,6 +1,17 @@
 import React from 'react';
+import { DocSearch } from '@docsearch/react';
 
 import { AppLink as Link } from '../AppLink';
+
+function Search() {
+  return (
+    <DocSearch
+      appId={process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}
+      apiKey={process.env.NEXT_PUBLIC_ALGOLIA_API_KEY}
+      indexName="markdoc"
+    />
+  );
+}
 
 export function TopNav({ children }) {
   const [showMobileNav, setShowMobileNav] = React.useState(false);
@@ -52,7 +63,10 @@ export function TopNav({ children }) {
             </svg>
           </button>
         </div>
-        <section className={showMobileNav ? 'active' : ''}>{children}</section>
+        <section className={showMobileNav ? 'active' : ''}>
+          {children}
+          <Search />
+        </section>
       </nav>
       <style jsx>
         {`
@@ -79,8 +93,29 @@ export function TopNav({ children }) {
           nav :global(a) {
             text-decoration: none;
           }
+          nav :global(.DocSearch-Button) {
+            background: var(--code-background);
+            height: 32px;
+            border-radius: 32px;
+          }
+          nav :global(.DocSearch-Button:hover) {
+            box-shadow: none;
+            background: #e8eef3;
+          }
+          :global(.dark) nav :global(.DocSearch-Button:hover) {
+            background: #424248;
+          }
+          nav :global(.DocSearch-Search-Icon) {
+            color: var(--dark);
+            width: 16px;
+          }
+          nav :global(.DocSearch-Button-Placeholder),
+          nav :global(.DocSearch-Button-Keys) {
+            display: none;
+          }
           section {
             display: flex;
+            align-items: center;
             gap: 1.3rem;
             padding: 0;
           }
