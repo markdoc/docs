@@ -86,6 +86,42 @@ Version: {% $version %}
 
 {% /markdoc-example %}
 
+## Caveats
+
+Markdoc does not support passing variables to certain [nodes](/docs/nodes), such as the `href` of a `link` Node. Instead, pass your variable to the `href` [attribute](/docs/attributes) of a custom `link` [Tag](/docs/tags).
+
+{% side-by-side %}
+
+{% item %}
+
+#### Incorrect
+
+{% markdoc-example %}
+
+```
+[Link]({% $variable %})
+```
+
+{% /markdoc-example %}
+
+{% /item %}
+
+{% item %}
+
+#### Correct
+
+{% markdoc-example %}
+
+```
+{% link href=$variable %}Link{% /link %}
+```
+
+{% /markdoc-example %}
+
+{% /item %}
+
+{% /side-by-side %}
+
 ## Next steps
 
 - [Validate your content](/docs/validation)
