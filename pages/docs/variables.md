@@ -88,7 +88,7 @@ Version: {% $version %}
 
 ## Caveats
 
-Markdoc does not support passing variables to certain [nodes](/docs/nodes), such as the `href` of a `link` Node. Instead, pass your variable to the `href` [attribute](/docs/attributes) of a custom `link` [Tag](/docs/tags).
+Markdoc doesn't support passing variables to certain [nodes](/docs/nodes), such as the `href` of a `link` Node. Instead, pass your variable to the `href` [attribute](/docs/attributes) of a custom `link` [Tag](/docs/tags).
 
 {% side-by-side %}
 
