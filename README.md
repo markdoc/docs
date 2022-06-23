@@ -1,6 +1,6 @@
 # Markdoc docs
 
-[Markdoc](https://markdoc.io) is a [Markdown](https://commonmark.org)-based syntax and toolchain for creating custom documentation sites and experiences.
+[Markdoc](https://markdoc.dev) is a [Markdown](https://commonmark.org)-based syntax and toolchain for creating custom documentation sites and experiences.
 We designed Markdoc to power [Stripe's public docs](http://stripe.com/docs), our largest and most complex content site.
 
 ## Contributing

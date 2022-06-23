@@ -15,4 +15,4 @@ If you want to get started right away with this boilerplate, either clone the [G
 
 ## Get started from scratch
 
-If you'd prefer to start from scratch, feel free to check out the [official repository](https://github.com/markdoc/markdoc) and [documentation site](https://markdoc.io/docs/getting-started).
+If you'd prefer to start from scratch, feel free to check out the [official repository](https://github.com/markdoc/markdoc) and [documentation site](https://markdoc.dev/docs/getting-started).
