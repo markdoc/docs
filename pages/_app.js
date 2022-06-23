@@ -160,17 +160,17 @@ export default function MyApp(props) {
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://markdoc.io" />
+        <meta property="og:url" content="https://markdoc.dev" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content="https://markdoc.io/images/share.png"
+          content="https://markdoc.dev/images/share.png"
         />
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:image"
-          content="https://markdoc.io/images/share.png"
+          content="https://markdoc.dev/images/share.png"
         />
       </Head>
       {/* https://webaim.org/techniques/skipnav/ */}
