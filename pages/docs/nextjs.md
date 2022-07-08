@@ -76,7 +76,7 @@ You can pass options to `withMarkdoc` to adjust how the plugin behaves.
 
 - `mode`
 - `'static' | 'server'`
-- Determines whether the generated Markdoc pages use [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) or [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
+- Determines whether the generated Markdoc pages use [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) or [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props).
 
 {% /table %}
 
