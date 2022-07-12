@@ -78,7 +78,7 @@ const content = Markdoc.transform(ast, config);
 const children = Markdoc.renderers.react(content, React, { components });
 ```
 
-Next, pass your config to `Markdoc.transform`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
+Next, pass your content to the Markdoc renderer. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
 
 ```jsx
 import * as React from 'react';
