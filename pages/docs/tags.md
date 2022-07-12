@@ -69,7 +69,7 @@ const config = {
 };
 ```
 
-Next, [parse](/docs/render#parse) and [transform](/docs/render#transform) your content using this config..
+Next, [parse](/docs/render#parse) and [transform](/docs/render#transform) your content using this config.
 
 ```
 const doc = `
