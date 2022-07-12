@@ -67,7 +67,11 @@ const config = {
     callout
   }
 };
+```
 
+Next, [parse](/docs/render#parse) and [transform](/docs/render#transform) your content using this config..
+
+```
 const doc = `
 # My first custom tag
 `;
@@ -78,7 +82,7 @@ const content = Markdoc.transform(ast, config);
 const children = Markdoc.renderers.react(content, React, { components });
 ```
 
-Next, pass your config to `Markdoc.transform`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
+Next, render the content using `Markdoc.render`. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
 
 ```jsx
 import * as React from 'react';
