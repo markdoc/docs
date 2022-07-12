@@ -29,6 +29,6 @@
     "eslint-config-next": "12.1.0",
     "next-sitemap": "^2.5.28",
     "spec-md": "^3.0.2",
-    "vercel": "^24.2.3"
+    "vercel": "^19.1.2"
   }
 }
