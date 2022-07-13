@@ -5,7 +5,7 @@ description: Use tags to extend Markdown. With tags you can use native Markdoc c
 
 # {% $markdoc.frontmatter.title %}
 
-Tags are a syntactic extension of standard Markdown. You can use native Markdoc tags, like [tables](#table), [conditionals](#if/else), and [partials](#partial), or create custom React components.
+Tags are a syntactic extension of standard [Markdown](https://daringfireball.net/projects/markdown/). You can use native Markdoc tags, like [tables](#table), [conditionals](#if/else), and [partials](#partial), or create custom React components.
 
 Similar to React components and HTML elements, tags are composable, and you can customize them with [attributes](/docs/attributes).
 
