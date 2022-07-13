@@ -3,41 +3,26 @@ import React from 'react';
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 const WIDTH = 55;
 
+const MARKDOC_CLIENT_ID = '3a8716adbaa6294da1ec';
 function CreatePRButton({ createPR }) {
-  const [prNumber, setPrNumber] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
-
-  if (prNumber) {
-    return (
-      <div className="modal">
-        Thank you for contributing! View your PR{' '}
-        <a href={`https://github.com/markdoc/docs/pull/${prNumber}`}>here</a>
-        <style jsx>{`
-          .modal {
-            z-index: 1000;
-            padding: 100px;
-            position: fixed;
-            /* width: 400px; */
-            /* height: 14px; */
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-          }
-        `}</style>
-      </div>
-    );
-  }
 
   return (
     <div>
       <button
         className="create-pr-btn"
         onClick={async () => {
+          // TODO: oauth is so annoying. We have to auth this and then get the code back, pass that to the server, but
+          // it makes the UX annoying
+          window.open(
+            `https://github.com/login/oauth/authorize?client_id=${MARKDOC_CLIENT_ID}&redirect_uri=${window.location.href}`
+          );
           setLoading(true);
           const prNumber = await createPR();
-          setPrNumber(prNumber);
+          window.open(
+            `https://github.com/markdoc/docs/pull/${prNumber}`,
+            '_blank'
+          );
           setLoading(false);
         }}
       >

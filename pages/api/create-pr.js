@@ -1,4 +1,5 @@
 const { Octokit } = require('@octokit/core');
+const { createAppAuth } = require('@octokit/auth-app');
 const { createPullRequest } = require('octokit-plugin-create-pull-request');
 
 const MyOctokit = Octokit.plugin(createPullRequest);
@@ -9,7 +10,7 @@ const TOKEN = process.env.GITHUB_AUTO_PR_TOKEN;
 
 const initGithubClient = (token) => {
   const octokit = new MyOctokit({
-    auth: token
+    auth: TOKEN
   });
 
   return octokit;
