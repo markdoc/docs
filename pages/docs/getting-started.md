@@ -54,3 +54,4 @@ const html = Markdoc.renderers.html(content);
 ## Next steps
 
 - [Learn Markdoc syntax](/docs/syntax)
+- [Build Markdoc site](/docs/getting-started)
