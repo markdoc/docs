@@ -83,6 +83,11 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
   const { markdoc } = pageProps;
 
+  // TODO - this is a prototype :) !
+  if (typeof window === 'object') {
+    window.CURRENT_FILENAME = markdoc.file.path;
+  }
+
   let title = TITLE;
   let description = DESCRIPTION;
   if (markdoc) {
@@ -286,9 +291,11 @@ export default function MyApp(props) {
 
           .footer-bar footer {
             margin: 0 auto;
-            max-width: ${isLandingPage
-              ? 'var(--landing-page-max-width)'
-              : 'calc(100% - 4rem)'};
+            max-width: ${
+              isLandingPage
+                ? 'var(--landing-page-max-width)'
+                : 'calc(100% - 4rem)'
+            };
           }
 
           .page--landing .footer-bar {

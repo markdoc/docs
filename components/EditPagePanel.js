@@ -3,7 +3,64 @@ import React from 'react';
 const PATTERN = Buffer.from('NDI0Mg==', 'base64').toString();
 const WIDTH = 55;
 
-export function EditPagePanel({ children }) {
+function CreatePRButton({ createPR }) {
+  const [prNumber, setPrNumber] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+
+  if (prNumber) {
+    return (
+      <div className="modal">
+        Thank you for contributing! View your PR{' '}
+        <a href={`https://github.com/markdoc/docs/pull/${prNumber}`}>here</a>
+        <style jsx>{`
+          .modal {
+            z-index: 1000;
+            padding: 100px;
+            position: fixed;
+            /* width: 400px; */
+            /* height: 14px; */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <button
+        className="create-pr-btn"
+        onClick={async () => {
+          setLoading(true);
+          const prNumber = await createPR();
+          setPrNumber(prNumber);
+          setLoading(false);
+        }}
+      >
+        {loading ? 'Creating...' : 'Create PR'}
+      </button>
+      <style jsx>
+        {`
+          .create-pr-btn {
+            position: absolute;
+            bottom: 0.8rem;
+            right: 1rem;
+            top: inherit;
+            background: #ffd849;
+            font-size: 12px;
+            padding: 5px 12px;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+
+export function EditPagePanel({ docChanged, children, createPR }) {
   const [showEditor, setShowEditor] = React.useState(false);
   const [mouseOver, setMouseOver] = React.useState(false);
   const [keystrokes, setCount] = React.useState(0);
@@ -71,6 +128,7 @@ export function EditPagePanel({ children }) {
         <button onClick={() => setShowEditor(false)}>
           <kbd>CMD + J / Esc</kbd>
         </button>
+        {docChanged && <CreatePRButton createPR={createPR} />}
       </section>
       <style jsx>
         {`
@@ -88,6 +146,7 @@ export function EditPagePanel({ children }) {
             width: ${100 - WIDTH}%;
             height: 100%;
           }
+
           section {
             width: ${WIDTH}%;
             height: 100%;
