@@ -37,7 +37,7 @@ Prism.languages.markdoc = {
   }
 };
 
-export function Code({ children, language }) {
+export function Code({ children, 'data-language': language }) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
 
