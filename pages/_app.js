@@ -1,7 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
-import { useRouter } from 'next/router';
 
 import { AppLink as Link } from '../components/AppLink';
 import { Footer, SideNav, TableOfContents, TopNav } from '../components/Shell';
@@ -39,22 +37,6 @@ const MARKDOC = `
 `;
 
 const FONTS_BASE_URL = process.env.NEXT_PUBLIC_FONTS_BASE_URL || '/fonts';
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
-
-function useGoogleAnalytics() {
-  const router = useRouter();
-  React.useEffect(() => {
-    const handleRouteChange = (url) => {
-      window.gtag('config', GA_TRACKING_ID, {
-        page_path: url
-      });
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
-}
 
 function collectHeadings(node, sections = []) {
   if (node) {
@@ -102,29 +84,9 @@ export default function MyApp(props) {
   const isLandingPage = props.router.pathname === '/';
 
   React.useEffect(() => console.log(MARKDOC), []);
-  useGoogleAnalytics();
 
   return (
     <div className={`${isLandingPage ? 'page--landing' : ''}`}>
-      {/* https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js */}
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `
-        }}
-      />
       <Head>
         <title>{`${TITLE} | ${title}`}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
