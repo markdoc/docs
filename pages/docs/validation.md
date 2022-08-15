@@ -10,7 +10,7 @@ description: Extend Markdoc to provide custom validation for your documents.
 Markdoc supports syntax validation out of the box using the `validate` function.
 
 ```ts
-validate(AstNode, ?Config) => ValidateError[]
+validate(AstNode, ?Config) => ValidationError[]
 ```
 
 \
