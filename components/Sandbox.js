@@ -336,17 +336,16 @@ export function Sandbox({ height, options }) {
   }, [mode]);
 
   React.useEffect(() => {
+    const encoded = encode(code);
     if (
       code &&
       code !== INITIAL_CODE &&
-      window.location.pathname === '/sandbox'
+      window.location.pathname === '/sandbox' &&
+      encoded
     ) {
-      const encoded = encode(code);
-      if (encoded) {
-        const query = new URLSearchParams(window.location.search);
-        query.set('c', encoded);
-        history.replaceState(null, '', '?' + query.toString());
-      }
+      const query = new URLSearchParams(window.location.search);
+      query.set('c', encoded);
+      history.replaceState(null, '', '?' + query.toString());
     }
   }, [code]);
 
