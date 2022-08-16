@@ -299,9 +299,19 @@ export function Sandbox({ height, options }) {
   const { ast, content, config, errors } = useMarkdocCode(code);
 
   React.useEffect(() => {
-    const mode = new URLSearchParams(window.location.search).get('mode');
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get('mode');
+    const code = params.get('c');
     if (mode) {
       setMode(mode);
+    }
+    if (code) {
+      try {
+        const decoded = decodeURIComponent(Buffer.from(code, 'base64'));
+        setCode(decoded);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }, []);
 
@@ -314,8 +324,23 @@ export function Sandbox({ height, options }) {
   }, [mode]);
 
   React.useEffect(() => {
-    setKey((k) => k + 1);
-  }, []);
+    if (
+      code &&
+      code !== INITIAL_CODE &&
+      window.location.pathname === '/sandbox'
+    ) {
+      const query = new URLSearchParams(window.location.search);
+      try {
+        const encoded = Buffer.from(encodeURIComponent(code));
+        query.set('c', encoded);
+        history.replaceState(null, '', '?' + query.toString());
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [code]);
+
+  React.useEffect(() => setKey((k) => k + 1), []);
 
   return (
     <div className="sandbox" onClick={() => setInteracted(true)}>
