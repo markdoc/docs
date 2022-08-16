@@ -288,6 +288,22 @@ function Cursor({ children }) {
   );
 }
 
+function encode(s) {
+  try {
+    return encodeURIComponent(Buffer.from(s).toString('base64'));
+  } catch (e) {
+    return null;
+  }
+}
+
+function decode(s) {
+  try {
+    return Buffer.from(decodeURIComponent(s), 'base64').toString();
+  } catch (error) {
+    return null;
+  }
+}
+
 const initialCursor = { line: 0, ch: 3 };
 export function Sandbox({ height, options }) {
   const [key, setKey] = React.useState(0);
@@ -306,12 +322,8 @@ export function Sandbox({ height, options }) {
       setMode(mode);
     }
     if (code) {
-      try {
-        const decoded = decodeURIComponent(Buffer.from(code, 'base64'));
-        setCode(decoded);
-      } catch (error) {
-        console.error(error);
-      }
+      const decoded = decode(code);
+      if (decoded) setCode(decoded);
     }
   }, []);
 
@@ -329,13 +341,11 @@ export function Sandbox({ height, options }) {
       code !== INITIAL_CODE &&
       window.location.pathname === '/sandbox'
     ) {
-      const query = new URLSearchParams(window.location.search);
-      try {
-        const encoded = Buffer.from(encodeURIComponent(code));
+      const encoded = encode(code);
+      if (encoded) {
+        const query = new URLSearchParams(window.location.search);
         query.set('c', encoded);
         history.replaceState(null, '', '?' + query.toString());
-      } catch (error) {
-        console.error(error);
       }
     }
   }, [code]);
