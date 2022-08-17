@@ -288,6 +288,22 @@ function Cursor({ children }) {
   );
 }
 
+function encode(s) {
+  try {
+    return encodeURIComponent(Buffer.from(s).toString('base64'));
+  } catch (e) {
+    return null;
+  }
+}
+
+function decode(s) {
+  try {
+    return Buffer.from(decodeURIComponent(s), 'base64').toString();
+  } catch (error) {
+    return null;
+  }
+}
+
 const initialCursor = { line: 0, ch: 3 };
 export function Sandbox({ height, options }) {
   const [key, setKey] = React.useState(0);
@@ -299,9 +315,15 @@ export function Sandbox({ height, options }) {
   const { ast, content, config, errors } = useMarkdocCode(code);
 
   React.useEffect(() => {
-    const mode = new URLSearchParams(window.location.search).get('mode');
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get('mode');
+    const code = params.get('c');
     if (mode) {
       setMode(mode);
+    }
+    if (code) {
+      const decoded = decode(code);
+      if (decoded) setCode(decoded);
     }
   }, []);
 
@@ -314,8 +336,20 @@ export function Sandbox({ height, options }) {
   }, [mode]);
 
   React.useEffect(() => {
-    setKey((k) => k + 1);
-  }, []);
+    const encoded = encode(code);
+    if (
+      code &&
+      code !== INITIAL_CODE &&
+      window.location.pathname === '/sandbox' &&
+      encoded
+    ) {
+      const query = new URLSearchParams(window.location.search);
+      query.set('c', encoded);
+      history.replaceState(null, '', '?' + query.toString());
+    }
+  }, [code]);
+
+  React.useEffect(() => setKey((k) => k + 1), []);
 
   return (
     <div className="sandbox" onClick={() => setInteracted(true)}>
