@@ -252,6 +252,18 @@ Show the password
 \
 For more information, check out the [Functions docs](/docs/functions).
 
+## Comments
+
+Markdoc supports [Markdown comment syntax](https://spec.commonmark.org/0.30/#example-624) adding comments to your documents without having the content show up in the renderable output.
+
+{% markdoc-example %}
+
+```
+<!-- comment goes here -->
+```
+
+{% /markdoc-example %}
+
 ## Config
 
 This table outlines the various options you can pass to `Markdoc.transform`. Each option adjusts how a document is [transformed](/docs/render#transform) and [rendered](/docs/render#render).
