@@ -254,6 +254,11 @@ For more information, check out the [Functions docs](/docs/functions).
 
 ## Comments
 
+{% callout type="warning" %}
+Note: comment support currently requires passing `allowComments: true` to `Markdoc.Tokenizer`.  
+This will be on by default in a future version of Markdoc.
+{% /callout%}
+
 Markdoc supports [Markdown comment syntax](https://spec.commonmark.org/0.30/#example-624) adding comments to your documents without having the content show up in the renderable output.
 
 {% markdoc-example %}
