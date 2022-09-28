@@ -41,7 +41,7 @@ export function Code({ children, 'data-language': language }) {
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef(null);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (ref.current) Prism.highlightElement(ref.current, false);
   }, [children]);
 

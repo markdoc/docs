@@ -115,7 +115,7 @@ export default function MyApp(props) {
         <link
           rel="preconnect"
           href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`}
-          crossOrigin
+          crossOrigin=""
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
