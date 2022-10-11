@@ -30,9 +30,7 @@ This guide assumes that you have an `Express` app installed. If you're starting 
        type: {
          type: String,
          default: 'note',
-         matches: ['check', 'error', 'note', 'warning'],
-         description:
-           'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"'
+         matches: ['check', 'error', 'note', 'warning']
        }
      }
    };

@@ -331,8 +331,7 @@ const config = {
       render: 'Callout',
       attributes: {
         title: {
-          type: String,
-          description: 'The title displayed at the top of the callout'
+          type: String
         }
       }
     }
