@@ -2,7 +2,6 @@ import { Callout } from '../../components/Callout';
 
 export default {
   render: Callout,
-  description: 'Display the enclosed content in a callout box',
   children: ['paragraph', 'tag', 'list'],
   attributes: {
     type: {

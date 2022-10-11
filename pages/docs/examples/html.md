@@ -25,7 +25,6 @@ This guide assumes that you have an `Express` app installed. If you're starting 
 
    module.exports = {
      render: 'markdoc-callout',
-     description: 'Display the enclosed content in a callout box',
      children: ['paragraph'],
      attributes: {
        type: {

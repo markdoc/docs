@@ -26,7 +26,6 @@ Follow these steps to build a Markdoc app with [`create-react-app`](https://crea
 
    module.exports = {
      render: 'Callout',
-     description: 'Display the enclosed content in a callout box',
      children: ['paragraph', 'tag', 'list'],
      attributes: {
        type: {
