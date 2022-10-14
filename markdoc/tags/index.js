@@ -1,7 +1,17 @@
+import { tags } from '@markdoc/markdoc';
+
 import markdocExample from './markdoc-example.markdoc';
 import sideBySide from './side-by-side.markdoc';
 
 export { comment } from '@markdoc/next.js/tags';
+export const partial = {
+  ...tags.partial,
+  inline: undefined
+};
+export const table = {
+  ...tags.table,
+  inline: undefined
+};
 
 // IDEA: use export default {}
 export { default as ascii } from './ascii.markdoc';
