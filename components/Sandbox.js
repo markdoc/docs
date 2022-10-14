@@ -315,6 +315,18 @@ export function Sandbox({ height, options }) {
   const { ast, content, config, errors } = useMarkdocCode(code);
 
   React.useEffect(() => {
+    function handler(e) {
+      if (e.key === ';' && e.metaKey) {
+        const newCode = Markdoc.__EXPERIMENTAL__format(ast);
+        setCode(newCode);
+      }
+    }
+
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [ast]);
+
+  React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const mode = params.get('mode');
     const code = params.get('c');
