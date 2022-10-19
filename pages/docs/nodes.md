@@ -15,6 +15,7 @@ You define custom nodes by passing a custom Node to your [`Config`](/docs/syntax
 
 ```js
 import { heading } from './schema/Heading.markdoc';
+import * as components from './components';
 
 const config = {
   nodes: {
