@@ -18,9 +18,9 @@ This guide assumes that you already have Next.js installed. If you're starting f
 \
 Follow these steps to get started with `@markdoc/next.js`.
 
-1. Install `@markdoc/next.js`:
+1. Install `@markdoc/markdoc` and `@markdoc/next.js`:
    ```shell
-   npm install @markdoc/next.js
+   npm install @markdoc/markdoc @markdoc/next.js
    ```
 2. Update your `next.config.js`
 
