@@ -21,6 +21,10 @@ module.exports = withMarkdoc()({
       {
         source: '/spec',
         destination: '/spec.html'
+      },
+      {
+        source: '/types',
+        destination: '/types/index.html'
       }
     ];
   }
