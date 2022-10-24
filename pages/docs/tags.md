@@ -143,7 +143,7 @@ These are the optional fields you can use to customize your `Tag`:
 
 - `children`
 - `string[]`
-- Specifies which tag or node types can be rendered as children of this tag. Used in schema validation.
+- Specifies which node types can be rendered as children of this tag. Used in schema validation.
 
 ---
 
