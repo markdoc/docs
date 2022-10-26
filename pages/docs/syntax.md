@@ -10,7 +10,7 @@ For a formal grammar of the Markdoc tag syntax, refer to the [Markdoc syntax spe
 
 ## Nodes
 
-Nodes are elements that Markdoc inherits from Markdown, which you can customize with [annotations](#annotations).
+Nodes are elements that Markdoc inherits from Markdown.
 
 {% side-by-side %}
 
@@ -24,8 +24,6 @@ Nodes are elements that Markdoc inherits from Markdown, which you can customize 
 _Italic_
 
 [Links](/docs/nodes)
-
-![Images](/logo.svg)
 
 Lists
 - Item 1
@@ -67,113 +65,35 @@ Code fences
 
 {% /side-by-side %}
 
-\
+You can't change Markdoc syntax. But you can create custom nodes that change how this syntax is rendered. For instance, write a custom `header` node to make `# Header` produce a different result.
+
 For more information, check out the [Nodes docs](/docs/nodes).
 
 ## Tags
 
-Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each tag is enclosed with `{%` and `%}`, and includes the tag name, [attributes](#attributes), and the content body.
-
-Similar to HTML, you can nest Markdoc tags, and customize them with [attributes](#attributes).
+Markdoc extends Markdown syntax with tags. Each tag is enclosed with `{%` and `%}`, and includes the tag name, [attributes](#attributes), and the content body. Similar to HTML, most tags can be nested, and tags with no content can be self-closing
 
 {% markdoc-example %}
 
 ```
-{% tag %}
-Content
-{% /tag %}
+{% alert %}
+{% icon src="alert.png" /%}
+An error occurred.
+{% /alert %}
 ```
 
 {% /markdoc-example %}
 
-Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
+The built-in tags are `table`, `if`, `else`, and `partial`. You can extend Markdoc by writing custom tags.
 
-{% markdoc-example %}
 
-```
-{% image width=40 /%}
-```
-
-{% /markdoc-example %}
-
-If your tag doesn't contain any new lines, then it's treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
-
-{% markdoc-example %}
-
-```
-{% code %}
-
-{% highlight %}Inline tag 1{% /highlight %}
-{% highlight %}Inline tag 2{% /highlight %}
-
-{% /code %}
-```
-
-{% /markdoc-example %}
-
-\
-For more information, check out the [Tags docs](/docs/tags).
-
-## Annotations
-
-Customize how individual nodes are rendered with annotations. Annotations are useful when passing properties to customize the output, such as an `id` or `class`. You can also use annotations to apply [attributes](#attributes) to HTML and React elements.
-
-You can access annotation values as [attributes](/docs/attributes) within your schema [`transform`](/docs/nodes#customizing-markdoc-nodes) functions.
-
-\
-To add an `id`, you can use this syntax:
-
-{% markdoc-example %}
-
-```
-# Header {% #custom-id %}
-```
-
-{% /markdoc-example %}
-
-To set a `class`, use class syntax:
-
-{% markdoc-example %}
-
-```
-# Heading {% .custom-class-name-here %}
-```
-
-{% /markdoc-example %}
-
-which also works within your tags.
-
-{% markdoc-example %}
-
-```md
-{% section #id .class %}
-
-My section
-
-{% /section  %}
-```
-
-{% /markdoc-example %}
-
-You can also set [attributes](#attributes) on a node, such as `width` or `colspan`.
-
-{% markdoc-example %}
-
-```
-{% table %}
-
-- Function {% width="25%" %}
-- Returns  {% colspan=2 %}
-- Example  {% align="right" %}
-
-{% /table %}
-```
-
-{% /markdoc-example %}
+For more information, check out the [Tags docs](/docs/tag).
 
 ## Attributes
 
-Pass attributes to tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`.
+Pass attributes to nodes and tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`, either directly or using [variables](#variables). 
+
+With tags, you can use an HTML-like syntax:
 
 {% markdoc-example %}
 
@@ -183,13 +103,26 @@ Pass attributes to tags to customize their behavior. You can pass values of type
    name="San Francisco"
    deleted=false
    coordinates=[1, 4, 9]
-   meta={id: "id_123"} /%}
+   meta={id: "id_123"} 
+   color=$color /%}
 ```
 
 {% /markdoc-example %}
 
-All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.  
-If you want to include a double-quote in a string you can escape it with using `\"`.
+Because the HTML-like syntax doesn't work with nodes, we offer another option: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`. 
+
+{% markdoc-example %}
+
+```
+{% table %}
+* Cell
+* Cell
+---
+* Cell {% colspan=2 %}
+{% /table %}
+```
+
+{% /markdoc-example %}
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).
@@ -206,8 +139,7 @@ Here I am rendering a custom {% $variable %}
 
 {% /markdoc-example %}
 
-Variables must contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects.\
-You can access nested values using dot-notation, similar to JavaScript:
+Variables must contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects. You can access nested values using dot-notation, similar to JavaScript:
 
 {% markdoc-example %}
 
@@ -217,23 +149,12 @@ Here's a deeply nested variable {% $markdoc.frontmatter.title %}
 
 {% /markdoc-example %}
 
-You can use variables throughout your document, as content itself:
-
-{% markdoc-example %}
-
-```
-© {% $currentYear %} Stripe
-```
-
-{% /markdoc-example %}
-
 \
 For more information, check out the [Variables docs](/docs/variables).
 
 ## Functions
 
-Functions look and feel similar to JavaScript functions. They're callable from the body of the document, inside an annotation, or within tag attributes.
-Function parameters are comma-separated. Trailing commas aren't supported in function calls.
+Functions look and feel similar to JavaScript functions. They're callable from the body of the document or within an [attribute](#attributes). Function parameters are comma-separated. Trailing commas aren't supported in function calls.
 
 {% markdoc-example %}
 
@@ -269,95 +190,36 @@ Markdoc supports [Markdown comment syntax](https://spec.commonmark.org/0.30/#exa
 
 {% /markdoc-example %}
 
-## Config
+## Configuration
 
-This table outlines the various options you can pass to `Markdoc.transform`. Each option adjusts how a document is [transformed](/docs/render#transform) and [rendered](/docs/render#render).
+To pass options into the rendering process, use a config object. For instance, a config object is one way to provide values for variables: 
 
-{% table %}
-
-- Key
-- Type
-- Description
-
----
-
-- [`nodes`](/docs/nodes)
-- {% code %}{ [nodeType: [NodeType](/docs/nodes#built-in-nodes)]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
-- Register [custom nodes](/docs/nodes) in your schema
-
----
-
-- [`tags`](/docs/tags)
-- {% code %}{ [tagName: string]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
-- Register [custom tags](/docs/tags) in your schema
-
----
-
-- [`variables`](/docs/variables)
-- `{ [variableName: string]: any }`
-- Register [variables](/docs/variables) to use in your document
-
----
-
-- [`functions`](/docs/functions)
-- {% code %}{ [functionName: string]: [ConfigFunction](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L31-L36) }{% /code %}
-- Register [custom functions](/docs/functions) to use in your document
-
----
-
-- [`partials`](/docs/partials)
-- `{ [partialPath: string]: Ast.Node }`
-- Register reusable pieces of content to used by the [`partial` tag](/docs/partials)
-
-{% /table %}
-
-### Full example
-
-Here's an example of what a Markdoc config would look like:
+{% side-by-side %}
+{% markdoc-example %}
 
 ```js
+const source = `
+The answer is {% $x %}.
+`;
 const config = {
-  nodes: {
-    heading: {
-      render: 'Heading',
-      attributes: {
-        id: { type: String },
-        level: { type: Number }
-      }
-    }
-  },
-  tags: {
-    callout: {
-      render: 'Callout',
-      attributes: {
-        title: {
-          type: String
-        }
-      }
-    }
-  },
   variables: {
-    name: 'Dr. Mark',
-    frontmatter: {
-      title: 'Configuration options'
-    }
-  },
-  functions: {
-    includes: {
-      transform(parameters, config) {
-        const [array, value] = Object.values(parameters);
-
-        return Array.isArray(array) ? array.includes(value) : false;
-      }
-    }
-  },
-  partials: {
-    'header.md': Markdoc.parse(`# My header`)
+    x: 10
   }
-};
-
-const content = Markdoc.transform(ast, config);
+}
+const ast = Markdoc.parse(source);
+const content = Markdoc.transform(source, config);
+return Markdoc.renderers.html(content);
 ```
+
+{% /markdoc-example %}
+
+```html
+<p>The answer is 42.</p>
+```
+{% /side-by-side %}
+
+\
+For more information, check out the [Configuration docs](/docs/configs).
 
 ## Next steps
 

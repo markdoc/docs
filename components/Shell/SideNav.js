@@ -13,7 +13,7 @@ const items = [
     ]
   },
   {
-    title: 'Core concepts',
+    title: 'Core features',
     links: [
       { href: '/docs/syntax', children: 'Syntax and schema' },
       { href: '/docs/nodes', children: 'Nodes' },
@@ -21,29 +21,27 @@ const items = [
       { href: '/docs/attributes', children: 'Attributes' },
       { href: '/docs/variables', children: 'Variables' },
       { href: '/docs/functions', children: 'Functions' },
-      {
-        href: '/docs/render',
-        children: 'Rendering'
-      },
+      { href: '/docs/configs', children: 'Configuration'},
+    ]
+  },
+  {
+    title: 'Techniques',
+    links: [
+      { href: '/docs/render',  children: 'Rendering' },
+      { href: '/docs/customization', children: 'Customization examples' },
+      { href: '/docs/frontmatter', children: 'Frontmatter' },
+      { href: '/docs/partials', children: 'Partials' },
       { href: '/docs/validation', children: 'Validation' }
     ]
   },
   {
     title: 'Integration guides',
     links: [
-      { href: '/docs/examples', children: 'Common examples' },
       { href: '/docs/examples/html', children: 'Using with HTML' },
       { href: '/docs/nextjs', children: 'Using with Next.js' },
       { href: '/docs/examples/react', children: 'Using with React' }
     ]
   },
-  {
-    title: 'Advanced concepts',
-    links: [
-      { href: '/docs/frontmatter', children: 'Frontmatter' },
-      { href: '/docs/partials', children: 'Partials' }
-    ]
-  }
 ];
 
 export function SideNav() {

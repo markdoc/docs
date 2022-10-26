@@ -1,5 +1,5 @@
 ---
-title: Common examples
+title: Customization examples
 description:
 ---
 

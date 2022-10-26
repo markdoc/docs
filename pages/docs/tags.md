@@ -385,6 +385,25 @@ Here is an example of including the `header.md` file as a partial.
 
 For more information on partials, check out the full [partials docs](/docs/partials).
 
+## Inline tags 
+
+
+If your tag doesn't contain any new lines, then it's treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
+
+{% markdoc-example %}
+
+```
+{% code %}
+
+{% highlight %}Inline tag 1{% /highlight %}
+{% highlight %}Inline tag 2{% /highlight %}
+
+{% /code %}
+```
+
+{% /markdoc-example %}
+
+
 ## Next steps
 
 - [Customize tags with attributes](/docs/attributes)
