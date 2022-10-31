@@ -29,154 +29,6 @@ Tags aren't composable!
 
 {% /markdoc-example %}
 
-## Create a custom tag
-
-To extend Markdoc with a custom tag, first, create a tag definition. In this example, you're creating a `callout` tag:
-
-```js
-// ./schema/Callout.markdoc.js
-
-export const callout = {
-  render: 'Callout',
-  children: ['paragraph', 'tag', 'list'],
-  attributes: {
-    type: {
-      type: String,
-      default: 'note',
-      matches: ['caution', 'check', 'note', 'warning'],
-      errorLevel: 'critical'
-    },
-    title: {
-      type: String
-    }
-  }
-};
-```
-
-Then, pass the tag definition to your [`Config` object](/docs/syntax#config):
-
-```js
-import { callout } from './schema/Callout.markdoc';
-import * as components from './components';
-
-const config = {
-  tags: {
-    callout
-  }
-};
-
-const doc = `
-# My first custom tag
-`;
-
-const ast = Markdoc.parse(doc);
-const content = Markdoc.transform(ast, config);
-
-const children = Markdoc.renderers.react(content, React, { components });
-```
-
-Next, pass your content to the Markdoc renderer. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
-
-```jsx
-import * as React from 'react';
-import { Icon } from './Icon';
-
-function Callout({ title, icon, children }) {
-  return (
-    <div className="callout">
-      <div className="content">
-        <Icon icon={icon} />
-        <div className="copy">
-          <span className="title">{title}</span>
-          <span>{children}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-return Markdoc.renderers.react(content, React, {
-  components: {
-    // The key here is the same string as `tag` in the previous step
-    Callout: Callout
-  }
-});
-```
-
-Now you can use your custom tag in your Markdoc content.
-
-{% side-by-side %}
-
-{% markdoc-example %}
-
-```md
-{% callout title="Hey you!" icon="note" %}
-I have a message for you
-{% /callout %}
-```
-
-{% /markdoc-example %}
-
-{% callout title="Hey you!" type="note" %}
-I have a message for you
-{% /callout %}
-
-{% /side-by-side %}
-
-## Options
-
-These are the optional fields you can use to customize your `Tag`:
-
-{% table %}
-
-- Option
-- Type
-- Description {% width="40%" %}
-
----
-
-- `render`
-- `string`
-- Name of the output (for example, HTML tag, React component name) to render
-
----
-
-- `children`
-- `string[]`
-- Specifies which node types can be rendered as children of this tag. Used in schema validation.
-
----
-
-- `attributes`
-- `{ [string]: SchemaAttribute }`
-- Specifies which [values (and their types)](/docs/attributes) can be passed to this tag.
-
----
-
-- `transform`
-- ```js
-  (Ast.Node, ?Options) =>
-    | RenderableTreeNode
-    | RenderableTreeNode[]
-    | null
-  ```
-- Customize the Markdoc transform function for this tag, returning the custom output you want to eventually render. This is called during the [`transform` step](/docs/render#transform).
-
----
-
-- `validate`
-- ```js
-  (Node, ?Options) => ValidationError[];
-  ```
-- Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render#validate)
-
----
-
-- `selfClosing`
-- `boolean`
-- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
-
-{% /table %}
 
 ## Built-in tags
 
@@ -384,6 +236,156 @@ Here is an example of including the `header.md` file as a partial.
 {% /markdoc-example %}
 
 For more information on partials, check out the full [partials docs](/docs/partials).
+
+
+## Create a custom tag
+
+To extend Markdoc with a custom tag, first, create a tag definition. In this example, you're creating a `callout` tag:
+
+```js
+// ./schema/Callout.markdoc.js
+
+export const callout = {
+  render: 'Callout',
+  children: ['paragraph', 'tag', 'list'],
+  attributes: {
+    type: {
+      type: String,
+      default: 'note',
+      matches: ['caution', 'check', 'note', 'warning'],
+      errorLevel: 'critical'
+    },
+    title: {
+      type: String
+    }
+  }
+};
+```
+
+Then, pass the tag definition to your [`Config` object](/docs/syntax#config):
+
+```js
+import { callout } from './schema/Callout.markdoc';
+import * as components from './components';
+
+const config = {
+  tags: {
+    callout
+  }
+};
+
+const doc = `
+# My first custom tag
+`;
+
+const ast = Markdoc.parse(doc);
+const content = Markdoc.transform(ast, config);
+
+const children = Markdoc.renderers.react(content, React, { components });
+```
+
+Next, pass your content to the Markdoc renderer. If you want to render a React component, specify which component should render this type of tag in the `components` mapping.
+
+```jsx
+import * as React from 'react';
+import { Icon } from './Icon';
+
+function Callout({ title, icon, children }) {
+  return (
+    <div className="callout">
+      <div className="content">
+        <Icon icon={icon} />
+        <div className="copy">
+          <span className="title">{title}</span>
+          <span>{children}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+return Markdoc.renderers.react(content, React, {
+  components: {
+    // The key here is the same string as `tag` in the previous step
+    Callout: Callout
+  }
+});
+```
+
+Now you can use your custom tag in your Markdoc content.
+
+{% side-by-side %}
+
+{% markdoc-example %}
+
+```md
+{% callout title="Hey you!" icon="note" %}
+I have a message for you
+{% /callout %}
+```
+
+{% /markdoc-example %}
+
+{% callout title="Hey you!" type="note" %}
+I have a message for you
+{% /callout %}
+
+{% /side-by-side %}
+
+## Options
+
+These are the optional fields you can use to customize your `Tag`:
+
+{% table %}
+
+- Option
+- Type
+- Description {% width="40%" %}
+
+---
+
+- `render`
+- `string`
+- Name of the output (for example, HTML tag, React component name) to render
+
+---
+
+- `children`
+- `string[]`
+- Specifies which node types can be rendered as children of this tag. Used in schema validation.
+
+---
+
+- `attributes`
+- `{ [string]: SchemaAttribute }`
+- Specifies which [values (and their types)](/docs/attributes) can be passed to this tag.
+
+---
+
+- `transform`
+- ```js
+  (Ast.Node, ?Options) =>
+    | RenderableTreeNode
+    | RenderableTreeNode[]
+    | null
+  ```
+- Customize the Markdoc transform function for this tag, returning the custom output you want to eventually render. This is called during the [`transform` step](/docs/render#transform).
+
+---
+
+- `validate`
+- ```js
+  (Node, ?Options) => ValidationError[];
+  ```
+- Extend Markdoc validation. Used to validate that the content meets validation requirements. This is called during the [`validate` step](/docs/render#validate)
+
+---
+
+- `selfClosing`
+- `boolean`
+- Specifies whether a tag can contain children (`false`) or not (`true`). Used in schema validation.
+
+{% /table %}
 
 ## Next steps
 
