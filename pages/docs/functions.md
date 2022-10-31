@@ -7,55 +7,6 @@ description: Functions let you extend Markdoc to run custom code.
 
 Functions enable you extend Markdoc with custom utilities, which let you transform your content and [variables](/docs/syntax#variables) at runtime.
 
-## Creating a custom function
-
-To extend Markdoc with your own functions, first create custom function definitions:
-
-```js
-const includes = {
-  transform(parameters) {
-    const [array, value] = Object.values(parameters);
-
-    return Array.isArray(array) ? array.includes(value) : false;
-  }
-};
-
-const uppercase = {
-  transform(parameters) {
-    const string = parameters[0];
-
-    return typeof string === 'string' ? string.toUpperCase() : string;
-  }
-};
-```
-
-Then, pass the functions to your [`Config` object](/docs/syntax#config)
-
-```js
-const config = {
-  functions: {
-    includes,
-    uppercase
-  }
-};
-
-const content = Markdoc.transform(ast, config);
-```
-
-Finally, call the functions within your Markdoc content
-
-{% markdoc-example %}
-
-```md
-{% if includes($countries, "AR") %} 🇦🇷 {% /if %}
-{% if includes($countries, "AU") %} 🇦🇺 {% /if %}
-{% if includes($countries, "ES") %} 🇪🇸 {% /if %}
-{% if includes($countries, "JP") %} 🇯🇵 {% /if %}
-{% if includes($countries, "NG") %} 🇳🇬 {% /if %}
-{% if includes($countries, "US") %} 🇺🇸 {% /if %}
-```
-
-{% /markdoc-example %}
 
 ## Built-in functions
 
@@ -167,6 +118,57 @@ This function simply renders the value as a serialized JSON value in the documen
 
 ```
 {% debug($myVar) %}
+```
+
+{% /markdoc-example %}
+
+
+## Creating a custom function
+
+To extend Markdoc with your own functions, first create custom function definitions:
+
+```js
+const includes = {
+  transform(parameters) {
+    const [array, value] = Object.values(parameters);
+
+    return Array.isArray(array) ? array.includes(value) : false;
+  }
+};
+
+const uppercase = {
+  transform(parameters) {
+    const string = parameters[0];
+
+    return typeof string === 'string' ? string.toUpperCase() : string;
+  }
+};
+```
+
+Then, pass the functions to your [`Config` object](/docs/syntax#config)
+
+```js
+const config = {
+  functions: {
+    includes,
+    uppercase
+  }
+};
+
+const content = Markdoc.transform(ast, config);
+```
+
+Finally, call the functions within your Markdoc content
+
+{% markdoc-example %}
+
+```md
+{% if includes($countries, "AR") %} 🇦🇷 {% /if %}
+{% if includes($countries, "AU") %} 🇦🇺 {% /if %}
+{% if includes($countries, "ES") %} 🇪🇸 {% /if %}
+{% if includes($countries, "JP") %} 🇯🇵 {% /if %}
+{% if includes($countries, "NG") %} 🇳🇬 {% /if %}
+{% if includes($countries, "US") %} 🇺🇸 {% /if %}
 ```
 
 {% /markdoc-example %}
