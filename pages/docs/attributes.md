@@ -5,7 +5,73 @@ description: Attributes are used to pass data to tags in Markdoc.
 
 # {% $markdoc.frontmatter.title %}
 
+
 Attributes let you pass data to Markdoc tags, similar to [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) or [React props](https://reactjs.org/docs/components-and-props.html).
+
+You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`, either directly or using [variables](/docs/variables). With a tag, you can use HTML-like syntax.
+
+{% markdoc-example %}
+
+```
+{% city
+   index=0
+   name="San Francisco"
+   deleted=false
+   coordinates=[1, 4, 9]
+   meta={id: "id_123"}
+   color=$color /%}
+```
+
+{% /markdoc-example %}
+
+To pass attributes to a node, you can't use the HTML-like syntax. Instead, use _annotation_ syntax. Put the attributes after the node, in their own set of `{%` and `%}`.
+
+{% markdoc-example %}
+
+```
+{% table %}
+
+- Function {% width="25%" %}
+- Returns  {% colspan=2 %}
+- Example  {% align=$side %}
+
+{% /table %}
+```
+
+{% /markdoc-example %}
+
+(Annotation syntax also works with tags. But it's required with nodes.)
+
+Strings within attributes must be double-quoted. If you want to include a literal double-quote in a string you can escape it with using \\".
+
+{% markdoc-example %}
+
+``` {% process=false %}
+{% data delimiter="\"" /%}
+```
+
+{% /markdoc-example %}
+
+
+## Attribute shorthand 
+
+
+In either syntax, you can use `.my-class-name` and `#my-id` as shorthand for `class=my-class-name` and `id=my-id`.
+
+{% markdoc-example %}
+
+``` {% process=false %}
+# Examples {% #examples %}
+
+{% table .striped #exampletable %}
+- One 
+- Two
+- Three
+{% /table %}
+```
+
+{% /markdoc-example %}
+
 
 ## Defining attributes
 

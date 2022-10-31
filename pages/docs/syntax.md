@@ -114,66 +114,11 @@ If your tag doesn't contain any new lines, then it's treated as an inline tag. I
 \
 For more information, check out the [Tags docs](/docs/tags).
 
-## Annotations
-
-Customize how individual nodes are rendered with annotations. Annotations are useful when passing properties to customize the output, such as an `id` or `class`. You can also use annotations to apply [attributes](#attributes) to HTML and React elements.
-
-You can access annotation values as [attributes](/docs/attributes) within your schema [`transform`](/docs/nodes#customizing-markdoc-nodes) functions.
-
-\
-To add an `id`, you can use this syntax:
-
-{% markdoc-example %}
-
-```
-# Header {% #custom-id %}
-```
-
-{% /markdoc-example %}
-
-To set a `class`, use class syntax:
-
-{% markdoc-example %}
-
-```
-# Heading {% .custom-class-name-here %}
-```
-
-{% /markdoc-example %}
-
-which also works within your tags.
-
-{% markdoc-example %}
-
-```md
-{% section #id .class %}
-
-My section
-
-{% /section  %}
-```
-
-{% /markdoc-example %}
-
-You can also set [attributes](#attributes) on a node, such as `width` or `colspan`.
-
-{% markdoc-example %}
-
-```
-{% table %}
-
-- Function {% width="25%" %}
-- Returns  {% colspan=2 %}
-- Example  {% align="right" %}
-
-{% /table %}
-```
-
-{% /markdoc-example %}
-
 ## Attributes
 
-Pass attributes to tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`.
+Pass attributes to nodes and tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`, either directly or using [variables](#variables). 
+
+With tags, you can use an HTML-like syntax:
 
 {% markdoc-example %}
 
@@ -183,17 +128,29 @@ Pass attributes to tags to customize their behavior. You can pass values of type
    name="San Francisco"
    deleted=false
    coordinates=[1, 4, 9]
-   meta={id: "id_123"} /%}
+   meta={id: "id_123"} 
+   color=$color /%}
 ```
 
 {% /markdoc-example %}
 
-All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.  
-If you want to include a double-quote in a string you can escape it with using `\"`.
+Because the HTML-like syntax doesn't work with nodes, we offer another option: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`. 
+
+{% markdoc-example %}
+
+```
+{% table %}
+* Cell
+* Cell
+---
+* Cell {% colspan=2 %}
+{% /table %}
+```
+
+{% /markdoc-example %}
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).
-
 ## Variables
 
 Markdoc variables let you customize your Markdoc documents at runtime. Variables all have a `$` prefix.
