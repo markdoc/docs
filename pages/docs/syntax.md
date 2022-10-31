@@ -173,7 +173,7 @@ You can also set [attributes](#attributes) on a node, such as `width` or `colspa
 
 ## Attributes
 
-Pass attributes to tags to customize their behavior. You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`.
+With tags, you can use an HTML-like syntax:
 
 {% markdoc-example %}
 
@@ -183,13 +183,26 @@ Pass attributes to tags to customize their behavior. You can pass values of type
    name="San Francisco"
    deleted=false
    coordinates=[1, 4, 9]
-   meta={id: "id_123"} /%}
+   meta={id: "id_123"} 
+   color=$color /%}
 ```
 
 {% /markdoc-example %}
 
-All Markdoc strings use double-quotes. This includes when passing a string as an attribute or as a [function](#functions) parameter.  
-If you want to include a double-quote in a string you can escape it with using `\"`.
+Because the HTML-like syntax doesn't work with nodes, we offer another option: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`. 
+
+{% markdoc-example %}
+
+```
+{% table %}
+* Cell
+* Cell
+---
+* Cell {% colspan=2 %}
+{% /table %}
+```
+
+{% /markdoc-example %}
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).
