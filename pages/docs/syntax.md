@@ -143,7 +143,7 @@ Because the HTML-like syntax doesn't work with nodes, we offer another option: w
 
 - Function {% width="25%" %}
 - Returns  {% colspan=2 %}
-- Example  {% align=$side %}
+- Example  {% align="right" %}
 
 {% /table %}
 ```
