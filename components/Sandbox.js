@@ -312,19 +312,23 @@ export function Sandbox({ height, options }) {
   const [mode, setMode] = React.useState('preview');
   const [hasInteracted, setInteracted] = React.useState(false);
 
+  const isInSandbox =
+    typeof window !== 'undefined' && window.location.pathname === '/sandbox';
+
   const { ast, content, config, errors } = useMarkdocCode(code);
+
+  const format = React.useCallback(() => setCode(Markdoc.format(ast)), [ast]);
 
   React.useEffect(() => {
     function handler(e) {
       if (e.key === ';' && e.metaKey) {
-        const newCode = Markdoc.__EXPERIMENTAL__format(ast);
-        setCode(newCode);
+        format();
       }
     }
 
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [ast]);
+  }, [format]);
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -340,12 +344,12 @@ export function Sandbox({ height, options }) {
   }, []);
 
   React.useEffect(() => {
-    if (mode && window.location.pathname === '/sandbox') {
+    if (mode && isInSandbox) {
       const query = new URLSearchParams(window.location.search);
       query.set('mode', mode);
       history.replaceState(null, '', '?' + query.toString());
     }
-  }, [mode]);
+  }, [mode, isInSandbox]);
 
   React.useEffect(() => {
     const encoded = encode(code);
@@ -366,7 +370,14 @@ export function Sandbox({ height, options }) {
   return (
     <div className="sandbox" onClick={() => setInteracted(true)}>
       <nav>
-        <button onClick={() => setCode(INITIAL_CODE)}>Reset</button>
+        <div className="btn-group">
+          <button onClick={() => setCode(INITIAL_CODE)}>Reset</button>
+          {isInSandbox && (
+            <button title="CMD + ;" onClick={format}>
+              Format
+            </button>
+          )}
+        </div>
         <div className="btn-group">
           {router.pathname === '/' ? (
             <button onClick={() => router.push('/sandbox')}>
@@ -441,6 +452,7 @@ export function Sandbox({ height, options }) {
 
           nav {
             display: flex;
+            justify-content: space-between;
             flex: 0 1 auto;
             padding: 0.5rem;
             background: var(--contrast-dark);
@@ -463,10 +475,6 @@ export function Sandbox({ height, options }) {
 
           :global(.dark) button {
             background: var(--black);
-          }
-
-          .btn-group {
-            margin-left: auto;
           }
 
           .btn-group:after {
