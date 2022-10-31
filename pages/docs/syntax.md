@@ -140,10 +140,11 @@ Because the HTML-like syntax doesn't work with nodes, we offer another option: w
 
 ```
 {% table %}
-* Cell
-* Cell
----
-* Cell {% colspan=2 %}
+
+- Function {% width="25%" %}
+- Returns  {% colspan=2 %}
+- Example  {% align=$side %}
+
 {% /table %}
 ```
 
