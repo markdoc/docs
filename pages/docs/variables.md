@@ -15,15 +15,14 @@ Here I am rendering a custom {% $variable %}
 
 {% /markdoc-example %}
 
-You can pass variables in a few ways:
+As server-side data changes, you can present it in real time by re-rendering the page. Each re-render uses the variable's latest value.
 
-1. Through the `variables` field on your [`Config`](/docs/syntax#config)
-2. Via the [`variables` attribute](#with-partials) on a [`partial` tag](/docs/partials).
-3. Manually from within your [`Node`](/docs/nodes) or [`Tag`](/docs/tags) `transform` functions.
+(Markdoc variables _aren't_ the best way to handle user interaction, or to write content in a loop like in a table of contents. See [Alternatives](#alternatives) for details.)
 
 ## Global variables
 
-Here's an example of how you can pass variables to your config:
+You can pass variables in several ways. The simplest is through the `variables` field on your [config](/docs/config) object.
+
 
 {% markdoc-example %}
 
@@ -51,21 +50,9 @@ const content = Markdoc.transform(ast, config);
 
 {% /markdoc-example %}
 
-which you can then access within your document:
+## Variables in partials
 
-{% markdoc-example %}
-
-```
-{% if $flags.my_feature_flag %}
-Username: {% $user.name %}
-{% /if %}
-```
-
-{% /markdoc-example %}
-
-## With partials
-
-To pass variables to a partial, set the `variables` attribute:
+You can also pass variables to a [partial](/docs/tags#partial). To do this, set the `variables` attribute:
 
 {% markdoc-example %}
 
@@ -75,7 +62,7 @@ To pass variables to a partial, set the `variables` attribute:
 
 {% /markdoc-example %}
 
-and access the value within your partial file the same way you would a regular variable:
+Access the value within your partial file the same way you would a regular variable:
 
 {% markdoc-example %}
 
@@ -85,6 +72,16 @@ Version: {% $version %}
 ```
 
 {% /markdoc-example %}
+
+## Alternatives
+
+Variables are immutable during page rendering. This keeps rendering behavior consistent and fast. But it means there are some tasks that you should use an alternative for:
+
+* To respond to user interactions, keep track of state in your front-end components. For instance, use React components with state variables.
+* To do calculations without side effects, use [custom or built-in Markdoc functions](/docs/functions).
+* To update a value during rendering, use a custom Markdoc transform function. For instance, [run a for loop](/docs/examples#loops) or [accumulate entries for a table of contents](/docs/examples#table-of-contents).
+
+
 
 ## Caveats
 
