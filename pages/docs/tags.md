@@ -288,7 +288,7 @@ export const callout = {
 };
 ```
 
-Then, pass the tag definition to your [`Config` object](/docs/syntax#config):
+Then, pass the tag definition to your [`config` object](/docs/config):
 
 ```js
 import { callout } from './schema/Callout.markdoc';

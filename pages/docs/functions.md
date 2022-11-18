@@ -145,7 +145,7 @@ const uppercase = {
 };
 ```
 
-Then, pass the functions to your [`Config` object](/docs/syntax#config)
+Then, pass the functions to your [`config` object](/docs/config).
 
 ```js
 const config = {
