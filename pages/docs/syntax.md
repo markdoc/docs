@@ -86,31 +86,6 @@ Content
 
 {% /markdoc-example %}
 
-Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
-
-{% markdoc-example %}
-
-```
-{% image width=40 /%}
-```
-
-{% /markdoc-example %}
-
-If your tag doesn't contain any new lines, then it's treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
-
-{% markdoc-example %}
-
-```
-{% code %}
-
-{% highlight %}Inline tag 1{% /highlight %}
-{% highlight %}Inline tag 2{% /highlight %}
-
-{% /code %}
-```
-
-{% /markdoc-example %}
-
 \
 For more information, check out the [Tags docs](/docs/tags).
 
@@ -226,96 +201,6 @@ Markdoc supports [Markdown comment syntax](https://spec.commonmark.org/0.30/#exa
 ```
 
 {% /markdoc-example %}
-
-## Config
-
-This table outlines the various options you can pass to `Markdoc.transform`. Each option adjusts how a document is [transformed](/docs/render#transform) and [rendered](/docs/render#render).
-
-{% table %}
-
-- Key
-- Type
-- Description
-
----
-
-- [`nodes`](/docs/nodes)
-- {% code %}{ [nodeType: [NodeType](/docs/nodes#built-in-nodes)]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
-- Register [custom nodes](/docs/nodes) in your schema
-
----
-
-- [`tags`](/docs/tags)
-- {% code %}{ [tagName: string]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
-- Register [custom tags](/docs/tags) in your schema
-
----
-
-- [`variables`](/docs/variables)
-- `{ [variableName: string]: any }`
-- Register [variables](/docs/variables) to use in your document
-
----
-
-- [`functions`](/docs/functions)
-- {% code %}{ [functionName: string]: [ConfigFunction](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L31-L36) }{% /code %}
-- Register [custom functions](/docs/functions) to use in your document
-
----
-
-- [`partials`](/docs/partials)
-- `{ [partialPath: string]: Ast.Node }`
-- Register reusable pieces of content to used by the [`partial` tag](/docs/partials)
-
-{% /table %}
-
-### Full example
-
-Here's an example of what a Markdoc config would look like:
-
-```js
-const config = {
-  nodes: {
-    heading: {
-      render: 'Heading',
-      attributes: {
-        id: { type: String },
-        level: { type: Number }
-      }
-    }
-  },
-  tags: {
-    callout: {
-      render: 'Callout',
-      attributes: {
-        title: {
-          type: String
-        }
-      }
-    }
-  },
-  variables: {
-    name: 'Dr. Mark',
-    frontmatter: {
-      title: 'Configuration options'
-    }
-  },
-  functions: {
-    includes: {
-      transform(parameters, config) {
-        const [array, value] = Object.values(parameters);
-
-        return Array.isArray(array) ? array.includes(value) : false;
-      }
-    }
-  },
-  partials: {
-    'header.md': Markdoc.parse(`# My header`)
-  }
-};
-
-const content = Markdoc.transform(ast, config);
-```
 
 ## Next steps
 

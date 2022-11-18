@@ -169,7 +169,7 @@ Markdoc comes out of the box with built-in nodes for each of the [CommonMark](ht
 
 ## Customizing Markdoc nodes
 
-You define custom nodes by passing a custom Node to your [`Config`](/docs/syntax#config), like:
+You define custom nodes by passing a custom Node to your [`config` object](/docs/config), like:
 
 ```js
 import { heading } from './schema/Heading.markdoc';

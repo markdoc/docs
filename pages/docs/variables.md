@@ -17,7 +17,7 @@ Here I am rendering a custom {% $variable %}
 
 You can pass variables in a few ways:
 
-1. Through the `variables` field on your [`Config`](/docs/syntax#config)
+1. Through the `variables` field on your [`config` object](/docs/config)
 2. Via the [`variables` attribute](#with-partials) on a [`partial` tag](/docs/partials).
 3. Manually from within your [`Node`](/docs/nodes) or [`Tag`](/docs/tags) `transform` functions.
 

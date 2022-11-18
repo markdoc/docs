@@ -46,7 +46,7 @@ const ast = Markdoc.parse(source);
 {% comment %}
 // prettier-ignore
 {% /comment %}
-const content = Markdoc.transform(ast, /* [config](/docs/syntax#config) */);
+const content = Markdoc.transform(ast, /* [config](/docs/config) */);
 
 const html = Markdoc.renderers.html(content);
 ```

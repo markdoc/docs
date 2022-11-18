@@ -169,7 +169,7 @@ export class DateTime {
 }
 ```
 
-Then, pass the custom attribute to your tag definition in your [`Config` object](/docs/syntax#config)
+Then, pass the custom attribute to your tag definition in your [`config` object](/docs/config).
 
 ```js
 import { DateTime } from './attribute-types/DateTime';

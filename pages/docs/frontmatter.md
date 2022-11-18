@@ -83,7 +83,7 @@ const ast = Markdoc.parse(doc);
 
 ### Parse the frontmatter
 
-Parse the frontmatter attribute using your preferred format and pass it to your `variables` config.
+Parse the frontmatter attribute using your preferred format and pass it in the `variables` field of your [`config` object](/docs/config).
 
 ```js
 import yaml from 'js-yaml'; // or 'toml', etc.
