@@ -25,6 +25,10 @@ const items = [
         href: '/docs/render',
         children: 'Rendering'
       },
+      {
+        href: '/docs/config',
+        children: 'Config objects'
+      },
       { href: '/docs/validation', children: 'Validation' }
     ]
   },
