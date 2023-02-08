@@ -31,13 +31,13 @@ This table outlines the various options you can pass in a config object.
 ---
 
 - [`nodes`](/docs/nodes)
-- {% code %}{ [nodeType: [NodeType](/docs/nodes#built-in-nodes)]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
+- {% code %}{ [nodeType: [NodeType](/docs/nodes#built-in-nodes)]: [Schema](https://github.com/markdoc/markdoc/blob/60a2c831bd7ac8f2f24aabfde0b36e56e5d0dbe1/src/types.ts#L101-L109) }{% /code%}
 - Register [custom nodes](/docs/nodes) in your schema
 
 ---
 
 - [`tags`](/docs/tags)
-- {% code %}{ [tagName: string]: [Schema](https://github.com/markdoc/markdoc/blob/6bcb8a0c48a181ca9df577534d841280646cea09/src/types.ts#L94-L101) }{% /code%}
+- {% code %}{ [tagName: string]: [Schema](https://github.com/markdoc/markdoc/blob/60a2c831bd7ac8f2f24aabfde0b36e56e5d0dbe1/src/types.ts#L101-L109) }{% /code%}
 - Register [custom tags](/docs/tags) in your schema
 
 ---
