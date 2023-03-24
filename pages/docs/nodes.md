@@ -45,6 +45,8 @@ Markdoc comes out of the box with built-in nodes for each of the [CommonMark](ht
 
   `alt`
 
+  `title`
+
 ---
 
 - `fence`
