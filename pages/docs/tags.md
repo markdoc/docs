@@ -236,6 +236,7 @@ Markdoc uses the `table` tag to locate places to parse the Markdown list syntax 
 ```js
 import { nodes } from '@markdoc/markdoc';
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   nodes: {
     table: {
@@ -294,6 +295,7 @@ Then, pass the tag definition to your [`config` object](/docs/config):
 import { callout } from './schema/Callout.markdoc';
 import * as components from './components';
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   tags: {
     callout

@@ -33,6 +33,7 @@ Username: {% $user.name %}
 {% /if %}
 `;
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   variables: {
     flags: {

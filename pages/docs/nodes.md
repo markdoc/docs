@@ -177,6 +177,7 @@ You define custom nodes by passing a custom Node to your [`config` object](/docs
 import { heading } from './schema/Heading.markdoc';
 import * as components from './components';
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   nodes: {
     heading

@@ -74,6 +74,7 @@ Use `Node` or `Tag` `validate` functions to verify the contents are correct, par
 {% markdoc-example %}
 
 ```js
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   tags: {
     provider: {
@@ -120,6 +121,7 @@ export class ImageSrc {
   }
 }
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   image: {
     render: 'img',
