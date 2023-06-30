@@ -39,7 +39,16 @@ Markdoc uses a fully declarative approach to composition and flow control, where
 const BASE_FRONTMATTER = { markdoc: { title: '' } };
 
 export function useMarkdocCode(code) {
-  const ast = React.useMemo(() => Markdoc.parse(code), [code]);
+  const ast = React.useMemo(() => {
+    try {
+      return Markdoc.parse(code);
+    } catch (error) {
+      console.log(error);
+      return Markdoc.parse(
+        `{% callout type="error" %}${error.message}{% /callout %}`
+      );
+    }
+  }, [code]);
 
   const config = React.useMemo(() => {
     const { components, ...rest } = getSchema(schema);
