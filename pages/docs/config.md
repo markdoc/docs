@@ -11,6 +11,7 @@ For instance, create a config object that specifies the variable `$version` has 
 
 {% markdoc-example %}
 ```js
+/** @type {import('@markdoc/markdoc').Config} */
 const config = { variables: { version: "1.0" }};
 const ast = Markdoc.parse("This is version {% $version %}");
 const content = Markdoc.transform(ast, config);
@@ -65,6 +66,7 @@ This table outlines the various options you can pass in a config object.
 Here's an example of what a Markdoc config would look like:
 
 ```js
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   nodes: {
     heading: {

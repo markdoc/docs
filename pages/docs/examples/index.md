@@ -91,6 +91,7 @@ You can create your own `switch`/`case` semantics with custom Markdoc tags.
 ```js
 import { transformer } from '@markdoc/markdoc';
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   tags: {
     switch: {
@@ -228,6 +229,7 @@ const tab = {
   }
 };
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   tags: {
     tabs,

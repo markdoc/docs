@@ -174,6 +174,7 @@ Then, pass the custom attribute to your tag definition in your [`config` object]
 ```js
 import { DateTime } from './attribute-types/DateTime';
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   tags: {
     'tag-name': {

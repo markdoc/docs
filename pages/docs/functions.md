@@ -148,6 +148,7 @@ const uppercase = {
 Then, pass the functions to your [`config` object](/docs/config).
 
 ```js
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   functions: {
     includes,

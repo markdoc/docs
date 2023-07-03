@@ -92,6 +92,7 @@ const frontmatter = ast.attributes.frontmatter
   ? yaml.load(ast.attributes.frontmatter)
   : {};
 
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   variables: {
     frontmatter

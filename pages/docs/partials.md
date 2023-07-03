@@ -23,6 +23,7 @@ You define partials by creating a mapping from the file name to an abstract synt
 {% markdoc-example %}
 
 ```js
+/** @type {import('@markdoc/markdoc').Config} */
 const config = {
   partials: {
     'header.md': Markdoc.parse(`# My header`)
