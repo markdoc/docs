@@ -264,6 +264,26 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
+## Comments
+
+You can use add comments to your Next.js content by passing `allowComments` to the Markdoc tokenizer:
+
+```js
+const withMarkdoc = require('@markdoc/next.js');
+
+withMarkdoc({ tokenizerOptions: { allowComments: true } });
+```
+
+and then using comment syntax:
+
+{% markdoc-example %}
+
+```md
+<!-- Your comment here -->
+```
+
+{% /markdoc-example %}
+
 ## Built-in Next.js tags
 
 Next.js Markdoc provides custom tags out-of-the-box that you can add to your schema. To include them, export them by name in your schema directory (for example, `/markdoc/`). For example:
@@ -277,22 +297,6 @@ export { comment, head, link, script } from '@markdoc/next.js/tags';
 
 export * from '@markdoc/next.js/tags';
 ```
-
-After you export the components, you can use them with the corresponding tags in your Markdoc files.
-
-### Comment
-
-Renders nothing, similar to code comments. Use this to document the content within a Markdoc file.
-
-{% markdoc-example %}
-
-```md
-{% comment %}
-Your comment goes here
-{% /comment %}
-```
-
-{% /markdoc-example %}
 
 ### Head
 
