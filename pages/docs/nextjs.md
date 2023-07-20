@@ -196,7 +196,7 @@ export const upper = {
 
 ### Advanced
 
-If you want more control over your config object, you can create a `/markdoc/config.js` file and export the full config object. This allows you to extend your config with more data, like records or utility functions.
+If you want more control over your config object, or you are using the [Markdoc language server for Visual Studio Code](https://github.com/markdoc/language-server), you can create a `/markdoc/config.js` file and export the full config object. This allows you to extend your config with more data, like records or utility functions.
 
 ```js
 // markdoc/config.js
