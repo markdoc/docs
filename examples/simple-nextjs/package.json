@@ -9,7 +9,7 @@
   "dependencies": {
     "@markdoc/markdoc": "latest",
     "@markdoc/next.js": "latest",
-    "next": "12.1.4",
+    "next": "13.5.0",
     "react": "latest",
     "react-dom": "latest"
   },
