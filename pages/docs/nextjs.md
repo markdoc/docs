@@ -266,7 +266,7 @@ export default function App({ Component, pageProps }) {
 
 ## Comments
 
-You can use add comments to your Next.js content by passing `allowComments` to the Markdoc tokenizer:
+You can add comments to your Next.js content by passing `allowComments` to the Markdoc tokenizer:
 
 ```js
 const withMarkdoc = require('@markdoc/next.js');
