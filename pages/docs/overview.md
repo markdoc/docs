@@ -5,7 +5,7 @@ description:
 
 # {% $markdoc.frontmatter.title %}
 
-Markdoc is a Markdown-based document format and a framework for content publishing. It was designed internally at Stripe to meet the needs of our user-facing [product documentation](http://stripe.com/docs). Markdoc extends Markdown with a [custom syntax](/docs/syntax) for tags and annotations, providing a way to tailor content to individual users and introduce interactive elements.
+Markdoc is a Markdown-based document format and a framework for content publishing. It was designed internally at Stripe to meet the needs of our user-facing [product documentation](https://docs.stripe.com). Markdoc extends Markdown with a [custom syntax](/docs/syntax) for tags and annotations, providing a way to tailor content to individual users and introduce interactive elements.
 
 {% youtube
   src="https://www.youtube-nocookie.com/embed/MAWK_VmjU1Y?controls=0"
