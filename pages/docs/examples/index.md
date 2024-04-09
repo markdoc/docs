@@ -34,13 +34,13 @@ export const group = {
 };
 ```
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% group items=[1, 2, 3] /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Syntax highlighting
 
@@ -115,7 +115,7 @@ const config = {
 
 which can then be used in your document:
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% switch $item %}
@@ -131,7 +131,7 @@ Case 2
 {% /switch %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Table of contents
 
@@ -192,13 +192,13 @@ function TableOfContents({ headings }) {
 
 Finally, add IDs to the headings using ID [annotations](/docs/syntax#annotations)
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 # My header {% #my-id %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Tabs
 
@@ -240,7 +240,7 @@ const config = {
 
 Then, create a `Tab` and `Tabs` React component which map to the `tab` and `tabs` tag:
 
-{% side-by-side %}
+{% sideBySide %}
 
 ```js
 // components/Tabs.js
@@ -299,11 +299,11 @@ export function Tab({ label, children }) {
 }
 ```
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 and use the tags in your document.
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% tabs %}
@@ -319,4 +319,4 @@ HTML content goes here
 {% /tabs %}
 ```
 
-{% /markdoc-example %}
+{% /example %}

@@ -12,9 +12,9 @@ For a formal grammar of the Markdoc tag syntax, refer to the [Markdoc syntax spe
 
 Nodes are elements that Markdoc inherits from Markdown, which you can customize with [annotations](#annotations).
 
-{% side-by-side %}
+{% sideBySide %}
 
-{% markdoc-example %}
+{% example %}
 
 ````
 # Headers
@@ -41,7 +41,7 @@ Code fences
 ```
 ````
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Headers
 
@@ -65,7 +65,7 @@ Lists
 Code fences
 ```
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 \
 For more information, check out the [Nodes docs](/docs/nodes).
@@ -76,7 +76,7 @@ Tags are the main syntactic extension that Markdoc adds on top of Markdown. Each
 
 Similar to HTML, you can nest Markdoc tags, and customize them with [attributes](#attributes).
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% tag %}
@@ -84,7 +84,7 @@ Content
 {% /tag %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 For more information, check out the [Tags docs](/docs/tags).
@@ -95,7 +95,7 @@ Pass attributes to nodes and tags to customize their behavior. You can pass valu
 
 With tags, you can use an HTML-like syntax:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% city
@@ -107,11 +107,11 @@ With tags, you can use an HTML-like syntax:
    color=$color /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 Because the HTML-like syntax doesn't work with nodes, we offer another option: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`. 
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -123,7 +123,7 @@ Because the HTML-like syntax doesn't work with nodes, we offer another option: w
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 For more information, check out the [Attributes docs](/docs/attributes).
@@ -131,34 +131,34 @@ For more information, check out the [Attributes docs](/docs/attributes).
 
 Markdoc variables let you customize your Markdoc documents at runtime. Variables all have a `$` prefix.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 Here I am rendering a custom {% $variable %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 Variables must contain JSON-serializable content, such as strings, booleans, numbers, arrays, and JSON objects.\
 You can access nested values using dot-notation, similar to JavaScript:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 Here's a deeply nested variable {% $markdoc.frontmatter.title %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 You can use variables throughout your document, as content itself:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 © {% $currentYear %} Stripe
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 For more information, check out the [Variables docs](/docs/variables).
@@ -168,7 +168,7 @@ For more information, check out the [Variables docs](/docs/variables).
 Functions look and feel similar to JavaScript functions. They're callable from the body of the document, inside an annotation, or within tag attributes.
 Function parameters are comma-separated. Trailing commas aren't supported in function calls.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 # {% titleCase($markdoc.frontmatter.title) %}
@@ -180,7 +180,7 @@ Show the password
 {% tag title=uppercase($key) /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 For more information, check out the [Functions docs](/docs/functions).
@@ -194,13 +194,13 @@ This will be on by default in a future version of Markdoc.
 
 Markdoc supports [Markdown comment syntax](https://spec.commonmark.org/0.30/#example-624) adding comments to your documents without having the content show up in the renderable output.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 <!-- comment goes here -->
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Next steps
 

@@ -60,7 +60,7 @@ description: From personal blogs to massive documentation sites, Markdoc is a co
 
 {% section .get-started %}
 
-{% side-by-side %}
+{% sideBySide %}
 
 {% item %}
 
@@ -93,19 +93,19 @@ const content = Markdoc.transform(ast);
 const html = Markdoc.renderers.html(content);
 ```
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 {% /section %}
 
 {% section .by-stripe %}
 
-{% side-by-side %}
+{% sideBySide %}
 
 ### Markdoc powers Stripe documentation {% .jumbo %}
 
 Stripe created Markdoc to power its largest and [most detailed content site](https://stripe.com/docs). Since then, we have adopted it across the company, writing hundreds of thousands of lines of Markdoc to create thousands of pages of expressive, custom documentation.
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ---
 

@@ -117,7 +117,7 @@ Markdoc supports rendering [React](https://reactjs.org/) out-of-the-box. You can
 \
 To render React, first create a renderable tree from your document calling `transform`. You can do this from the server or client.
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 const tags = {
@@ -137,12 +137,12 @@ const ast = Markdoc.parse(doc);
 const content = Markdoc.transform(ast, { tags });
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 Then, call `Markdoc.renderers.react` with the renderable tree from your client application. Along with `content` and `React`, you'll need to provide the `components` object as an argument. The `components` object specifies a mapping from your tags and nodes to the corresponding React component.
 
-{% side-by-side %}
+{% sideBySide %}
 
 ```jsx
 import Markdoc from '@markdoc/markdoc';
@@ -170,7 +170,7 @@ Attention, over here!
 {% /callout %}
 {% /item %}
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ### HTML
 
@@ -183,7 +183,7 @@ Markdoc supports rendering HTML out-of-the-box. Because the HTML renderer output
 \
 To render HTML, first create a renderable tree from your content by calling `transform`:
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 const doc = `
@@ -196,12 +196,12 @@ const ast = Markdoc.parse(doc);
 const content = Markdoc.transform(ast);
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 \
 Then, call `Markdoc.renderers.html` with your renderable tree, which will create the corresponding HTML document.
 
-{% side-by-side %}
+{% sideBySide %}
 
 ```js
 const express = require('express');
@@ -236,7 +236,7 @@ app.get('/docs/getting-started', (req, res) => {
 
 {% /item %}
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ### Create your own
 

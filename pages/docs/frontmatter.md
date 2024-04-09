@@ -65,7 +65,7 @@ To access frontmatter content in your document, you have to pass the values to M
 
 Parse your document to access the frontmatter content:
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 const doc = `
@@ -79,7 +79,7 @@ title: My title
 const ast = Markdoc.parse(doc);
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Parse the frontmatter
 
@@ -104,16 +104,16 @@ const config = {
 
 After passing the parsed frontmatter to `variables`, you can access the values using `$frontmatter`:
 
-{% side-by-side %}
+{% sideBySide %}
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 # {% $frontmatter.title %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 # {% $markdoc.frontmatter.title %}
 
-{% /side-by-side %}
+{% /sideBySide %}

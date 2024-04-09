@@ -71,7 +71,7 @@ Use these functions with the `if` [tag](/docs/tags) to perform boolean operation
 Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be falsey.
 {% /callout %}
 
-{% markdoc-example %}
+{% example %}
 
 ```
 This is always shown
@@ -80,13 +80,13 @@ This is shown only if $a is falsy and either $b or $c is true.
 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Equals
 
 Use the `equals` function to compare a variable against a given value. This function uses JavaScript's strict equality semantics, and is only used for primitive types.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% if equals($myVar, "test") %}
@@ -94,13 +94,13 @@ The variable $myVar is equal to the string "test".
 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Default
 
 This function is useful to set a value for a variable that might not exist.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% if default($showPrompt, true) %}
@@ -108,19 +108,19 @@ Hey there!
 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Debug
 
 This function simply renders the value as a serialized JSON value in the document. This can be useful for determining what value is in a [variable](/docs/syntax#variables).
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% debug($myVar) %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 
 ## Creating a custom function
@@ -161,7 +161,7 @@ const content = Markdoc.transform(ast, config);
 
 Finally, call the functions within your Markdoc content
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% if includes($countries, "AR") %} 🇦🇷 {% /if %}
@@ -172,7 +172,7 @@ Finally, call the functions within your Markdoc content
 {% if includes($countries, "US") %} 🇺🇸 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Next steps
 
