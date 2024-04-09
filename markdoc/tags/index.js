@@ -1,30 +1,42 @@
 import { tags } from '@markdoc/markdoc';
+import { comment } from '@markdoc/next.js/tags';
 
+import ascii from './ascii.markdoc';
+import callout from './callout.markdoc';
+import code from './code.markdoc';
+import diagram from './diagram.markdoc';
+import features from './features.markdoc';
+import icon from './icon.markdoc';
+import item from './item.markdoc';
 import markdocExample from './markdoc-example.markdoc';
+import sandbox from './sandbox.markdoc';
+import section from './section.markdoc';
 import sideBySide from './side-by-side.markdoc';
+import typewriter from './typewriter.markdoc';
+import youtube from './youtube.markdoc';
 
-export { comment } from '@markdoc/next.js/tags';
-export const partial = {
-  ...tags.partial,
-  inline: undefined
+export default {
+  ascii,
+  callout,
+  code,
+  comment,
+  diagram,
+  features,
+  icon,
+  item,
+  example: markdocExample,
+  'markdoc-example': markdocExample,
+  partial: {
+    ...tags.partial,
+    inline: undefined
+  },
+  sandbox,
+  section,
+  'side-by-side': sideBySide,
+  table: {
+    ...tags.table,
+    inline: undefined
+  },
+  typewriter,
+  youtube
 };
-export const table = {
-  ...tags.table,
-  inline: undefined
-};
-
-// IDEA: use export default {}
-export { default as ascii } from './ascii.markdoc';
-export { default as callout } from './callout.markdoc';
-export { default as code } from './code.markdoc';
-export { default as diagram } from './diagram.markdoc';
-export { default as features } from './features.markdoc';
-export { default as icon } from './icon.markdoc';
-export { default as item } from './item.markdoc';
-module.exports['markdoc-example'] = markdocExample;
-export { default as example } from './markdoc-example.markdoc';
-export { default as sandbox } from './sandbox.markdoc';
-export { default as section } from './section.markdoc';
-module.exports['side-by-side'] = sideBySide;
-export { default as typewriter } from './typewriter.markdoc';
-export { default as youtube } from './youtube.markdoc';
