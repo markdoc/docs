@@ -233,19 +233,19 @@ export const heading = {
 
 After registering this custom node, you can then use it in your Markdoc, like:
 
-{% side-by-side %}
+{% sideBySide %}
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 #### My header
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 #### My header
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ## Options
 

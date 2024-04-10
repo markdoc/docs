@@ -219,7 +219,7 @@ Markdoc is frontmatter agnostic, however, `@markdoc/next.js` uses YAML as its fr
 
 For example:
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 ---
@@ -230,19 +230,19 @@ description: Integrate Markdoc into your Next.js app
 # {% $markdoc.frontmatter.title %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Partials
 
 Partials automatically load from the `/markdoc/partials/` directory. For example:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% partial file="header.md" /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 would load and render the contents of `markdoc/partials/header.md`
 
@@ -276,13 +276,13 @@ withMarkdoc({ tokenizerOptions: { allowComments: true } });
 
 and then using comment syntax:
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 <!-- Your comment here -->
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Built-in Next.js tags
 
@@ -306,7 +306,7 @@ Renders a [Next.js `Head` component](https://nextjs.org/docs/api-reference/next/
 You need to create and register your own tags for `meta`, `title`, and so on.
 {% /callout %}
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% head %}
@@ -316,13 +316,13 @@ Add custom `title` and `meta` tags here…
 {% /head %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Link
 
 Renders a [Next.js `Link` component](https://nextjs.org/docs/api-reference/next/link). Requires passing an `href` attribute.
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% link href="/docs/getting-started" %}
@@ -330,16 +330,16 @@ Getting started
 {% /link %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Script
 
 Renders a [Next.js `Script` component](https://nextjs.org/docs/api-reference/next/script). Requires passing a `src` attribute.
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% script src="https://js.stripe.com/v3" /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}

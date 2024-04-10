@@ -9,7 +9,7 @@ Tags are a syntactic extension of standard Markdown. You can use native Markdoc 
 
 Similar to React components and HTML elements, tags are composable, and you can customize them with [attributes](/docs/attributes).
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% if true %}
@@ -29,17 +29,17 @@ Tags aren't composable!
 
 Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% image width=40 /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 If your tag doesn't contain any new lines, then it's treated as an inline tag. Inline tags are automatically wrapped with a single `paragraph` [Node](/docs/nodes) (which renders a `<p>` element by default), to follow the [CommonMark paragraph spec](https://spec.commonmark.org/0.30/#paragraphs).
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% code %}
@@ -50,10 +50,10 @@ If your tag doesn't contain any new lines, then it's treated as an inline tag. I
 {% /code %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 
-{% /markdoc-example %}
+{% /example %}
 
 
 ## Built-in tags
@@ -70,7 +70,7 @@ Unlike JavaScript, Markdoc only considers `undefined`, `null`, and `false` to be
 
 Use the `if` tag to render content when a condition evaluates to `true`.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 This is shown no matter what.
@@ -80,11 +80,11 @@ Only appear if $myFunVar!
 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 Use the `else` tag to render alternate content when the `if` condition isn't met. You can use multiple `else` statements, and the final `else` tag triggers when none of the other conditions are met.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% if $myFunVar %}
@@ -102,7 +102,7 @@ This appears if not $myFunVar and not $otherFunVar
 {% /if %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Table
 
@@ -112,7 +112,7 @@ While Markdoc supports [CommonMark](https://commonmark.org/) tables, it also sup
 
 A basic Markdoc table uses list syntax with each row separated by three dashes `---`.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -127,13 +127,13 @@ A basic Markdoc table uses list syntax with each row separated by three dashes `
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Table with rich content
 
 Markdoc tables support rich text, including code samples and lists.
 
-{% markdoc-example %}
+{% example %}
 
 ````
 {% table %}
@@ -164,11 +164,11 @@ Markdoc tables support rich text, including code samples and lists.
 {% /table %}
 ````
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Table without headings
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -181,13 +181,13 @@ Markdoc tables support rich text, including code samples and lists.
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Set column and row span
 
 Explicitly set column and row span.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -199,11 +199,11 @@ Explicitly set column and row span.
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Text alignment
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -225,13 +225,13 @@ Explicitly set column and row span.
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 #### Table caveats
 
 Markdoc uses the `table` tag to locate places to parse the Markdown list syntax as a table, but it uses the `table` [node](/docs/nodes) to render the actual table elements. To customize how the default `table` renders, you need to register a custom a table _node_.
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 import { nodes } from '@markdoc/markdoc';
@@ -247,20 +247,20 @@ const config = {
 };
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Partial
 
 Markdoc uses partials to reuse content across docs. The content is stored in a separate markdown file, and it's referenced from the `file` attribute in the `partial` tag, which includes the corresponding piece of content.
 
 Here is an example of including the `header.md` file as a partial.
-{% markdoc-example %}
+{% example %}
 
 ```
 {% partial file="header.md" /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 For more information on partials, check out the full [partials docs](/docs/partials).
 
@@ -342,9 +342,9 @@ return Markdoc.renderers.react(content, React, {
 
 Now you can use your custom tag in your Markdoc content.
 
-{% side-by-side %}
+{% sideBySide %}
 
-{% markdoc-example %}
+{% example %}
 
 ```md
 {% callout title="Hey you!" icon="note" %}
@@ -352,13 +352,13 @@ I have a message for you
 {% /callout %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 {% callout title="Hey you!" type="note" %}
 I have a message for you
 {% /callout %}
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ## Options
 

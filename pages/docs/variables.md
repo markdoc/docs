@@ -7,13 +7,13 @@ description: Variables let you transform and customize your document at runtime.
 
 Variables let you customize your Markdoc documents at runtime.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 Here I am rendering a custom {% $variable %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 As server-side data changes, you can present it in real time by re-rendering the page. Each re-render uses the variable's latest value.
 
@@ -24,7 +24,7 @@ As server-side data changes, you can present it in real time by re-rendering the
 You can pass variables in several ways. The simplest is through the `variables` field on your [config](/docs/config) object.
 
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 const doc = `
@@ -49,30 +49,30 @@ const ast = Markdoc.parse(doc);
 const content = Markdoc.transform(ast, config);
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Variables in partials
 
 You can also pass variables to a [partial](/docs/tags#partial). To do this, set the `variables` attribute:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% partial variables={sdk: "Ruby", version: 3} file="header.md" /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 Access the value within your partial file the same way you would a regular variable:
 
-{% markdoc-example %}
+{% example %}
 
 ```
 SDK: {% $sdk %}
 Version: {% $version %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Alternatives
 
@@ -87,19 +87,19 @@ Variables are immutable during page rendering. This keeps rendering behavior con
 
 Markdoc doesn't support passing variables to certain [nodes](/docs/nodes), such as the `href` of a `link` Node. Instead, pass your variable to the `href` [attribute](/docs/attributes) of a custom `link` [Tag](/docs/tags).
 
-{% side-by-side %}
+{% sideBySide %}
 
 {% item %}
 
 #### Incorrect
 
-{% markdoc-example %}
+{% example %}
 
 ```
 [Link]({% $variable %})
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 {% /item %}
 
@@ -107,17 +107,17 @@ Markdoc doesn't support passing variables to certain [nodes](/docs/nodes), such 
 
 #### Correct
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% link href=$variable %}Link{% /link %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 {% /item %}
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ## Next steps
 

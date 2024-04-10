@@ -18,7 +18,7 @@ In CommonMark-compliant Markdown, any content that is indented by four spaces is
 
 When using nested tags in Markdoc, it can be helpful to indent the content inside of tags so that the level of depth is clear. To support arbitrary indentation, we have to disable the indent-based code blocks and modify several other markdown-it parsing rules that account for indent-based code blocks. Markdoc's tokenizer accepts an `allowIndentation` option that applies these changes:
 
-{% markdoc-example %}
+{% example %}
 ```js
 const example = `
 {% foo %}
@@ -32,7 +32,7 @@ const tokenizer = new markdoc.Tokenizer({allowIndentation: true}));
 const tokens = tokenizer.tokenize(example);
 const ast = markdoc.parse(tokens);
 ```
-{% /markdoc-example %}
+{% /example %}
 
 The `allowIndentation` option is experimental and is not enabled by default. When the option is enabled, it is not possible to use indent-based code blocks. We strongly recommend using [fenced code blocks](https://spec.commonmark.org/0.30/#fenced-code-blocks) instead of indent-based code blocks regardless of whether you intend to take advantage of the `allowIndentation` option.
 

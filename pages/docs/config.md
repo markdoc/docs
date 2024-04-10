@@ -9,7 +9,7 @@ When you customize Markdoc, you must pass your customization into the rendering 
 
 For instance, create a config object that specifies the variable `$version` has a value of `"1.0"`. Then, pass it to the `transform` function.
 
-{% markdoc-example %}
+{% example %}
 ```js
 /** @type {import('@markdoc/markdoc').Config} */
 const config = { variables: { version: "1.0" }};
@@ -17,7 +17,7 @@ const ast = Markdoc.parse("This is version {% $version %}");
 const content = Markdoc.transform(ast, config);
 const html = Markdoc.renderers.html(content);
 ```
-{% /markdoc-example %}
+{% /example %}
 
 ## Options
 

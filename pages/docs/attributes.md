@@ -10,7 +10,7 @@ Attributes let you pass data to Markdoc tags, similar to [HTML attributes](https
 
 You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSON `object`, either directly or using [variables](/docs/variables). With a tag, you can use HTML-like syntax.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% city
@@ -22,11 +22,11 @@ You can pass values of type: `number`, `string`, `boolean`, JSON `array`, or JSO
    color=$color /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 To pass attributes to a node, you can't use the HTML-like syntax. Instead, use _annotation_ syntax. Put the attributes after the node, in their own set of `{%` and `%}`.
 
-{% markdoc-example %}
+{% example %}
 
 ```
 {% table %}
@@ -38,19 +38,19 @@ To pass attributes to a node, you can't use the HTML-like syntax. Instead, use _
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 (Annotation syntax also works with tags. But it's required with nodes.)
 
 Strings within attributes must be double-quoted. If you want to include a literal double-quote in a string you can escape it with using \\".
 
-{% markdoc-example %}
+{% example %}
 
 ``` {% process=false %}
 {% data delimiter="\"" /%}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 
 ## Attribute shorthand 
@@ -58,7 +58,7 @@ Strings within attributes must be double-quoted. If you want to include a litera
 
 In either syntax, you can use `.my-class-name` and `#my-id` as shorthand for `class=my-class-name` and `id=my-id`.
 
-{% markdoc-example %}
+{% example %}
 
 ``` {% process=false %}
 # Examples {% #examples %}
@@ -70,7 +70,7 @@ In either syntax, you can use `.my-class-name` and `#my-id` as shorthand for `cl
 {% /table %}
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 
 ## Defining attributes

@@ -16,7 +16,7 @@ validate(AstNode, ?Config) => ValidateError[]
 \
 Calling `validate` is an optional step that you can use to validate your abstract syntax tree (AST) before rendering. This is useful during testing, continuous integration, or in dev-tools like editor extensions.
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 const doc = `# Heading`;
@@ -28,11 +28,11 @@ const errors = Markdoc.validate(ast, config);
 // Do something with the errors
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 If your document contains a syntax error, the output of `validate` looks like this:
 
-{% side-by-side %}
+{% sideBySide %}
 
 ```js
 const doc = `{% $invalid_code %}`;
@@ -61,7 +61,7 @@ const errors = Markdoc.validate(ast, config);
 ];
 ```
 
-{% /side-by-side %}
+{% /sideBySide %}
 
 ## Schema validation
 
@@ -71,7 +71,7 @@ You can also extend Markdoc with custom validation rules, by adding a `validate`
 
 Use `Node` or `Tag` `validate` functions to verify the contents are correct, particularly the `children`.
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 /** @type {import('@markdoc/markdoc').Config} */
@@ -97,13 +97,13 @@ const config = {
 };
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ### Validating attributes
 
 Use [custom `Attribute` types](/docs/attributes#create-a-custom-attribute) to validate that the attributes passed to your tags and nodes are correct.
 
-{% markdoc-example %}
+{% example %}
 
 ```js
 export class ImageSrc {
@@ -137,7 +137,7 @@ const config = {
 };
 ```
 
-{% /markdoc-example %}
+{% /example %}
 
 ## Next steps
 
