@@ -109,7 +109,9 @@ With tags, you can use an HTML-like syntax:
 
 {% /example %}
 
-Because the HTML-like syntax doesn't work with nodes, we offer another option: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`. 
+## Annotations
+
+Because the HTML-like syntax doesn't work with nodes, we offer another option, called _annotations_: write the attributes after the tag or node you're passing them to, in a separate set of `{%` and `%}`.
 
 {% example %}
 
