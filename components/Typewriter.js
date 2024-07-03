@@ -124,9 +124,6 @@ export function Typewriter() {
       </span>
       <style jsx>
         {`
-          .prefers-no-animation {
-            display: none;
-          }
           h1 {
             // Prevent page jump
             height: calc(var(--line-height-jumbo) * 3);
@@ -150,12 +147,6 @@ export function Typewriter() {
             h1 {
               height: unset;
               overflow: initial;
-            }
-            .prefers-animation {
-              display: none;
-            }
-            .prefers-no-animation {
-              display: inline;
             }
           }
         `}
