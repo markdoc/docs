@@ -45,7 +45,8 @@ const items = [
     title: 'Advanced concepts',
     links: [
       { href: '/docs/frontmatter', children: 'Frontmatter' },
-      { href: '/docs/partials', children: 'Partials' }
+      { href: '/docs/partials', children: 'Partials' },
+      { href: '/docs/format', children: 'Formatting' }
     ]
   }
 ];
