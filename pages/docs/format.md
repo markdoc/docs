@@ -1,6 +1,6 @@
 ---
 title: Formatting
-description:
+description: Use Markdoc.format to prettify documents or generate source content
 ---
 
 # {% $markdoc.frontmatter.title %}
