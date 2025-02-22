@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
+// Forward requests to /markdoc-api
+// from the client React app to the Node.js server.
+// See https://vite.dev/config/server-options.html#server-proxy
 export default defineConfig({
   plugins: [react()],
   server: {
