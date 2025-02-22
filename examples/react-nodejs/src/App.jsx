@@ -1,21 +1,49 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import Markdoc from '@markdoc/markdoc';
+import { Callout } from './Callout';
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [content, setContent] = React.useState(null);
 
-  useEffect(() => {
-    fetch('/api/message') // Proxy will redirect this to localhost:5000
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => console.error('Error fetching data:', err));
+  React.useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        `/markdoc-api?` +
+          new URLSearchParams({
+            path: window.location.pathname
+          }),
+        {
+          headers: {
+            Accept: 'application/json'
+          }
+        }
+      );
+
+      if (response.status === 404) {
+        setContent('404');
+        return;
+      }
+
+      const content = await response.json();
+      setContent(content);
+    })();
   }, []);
 
-  return (
-    <div>
-      <h1>Vite + React + Node</h1>
-      <p>{message}</p>
-    </div>
-  );
+  if (content === '404') {
+    return <p>Page not found.</p>;
+  }
+
+  if (!content) {
+    return <p>Loading...</p>;
+  }
+
+  const components = {
+    Callout
+  };
+
+  return Markdoc.renderers.react(content, React, {
+    components
+  });
 }
 
 export default App;
