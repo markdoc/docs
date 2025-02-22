@@ -1,9 +1,9 @@
 import { readFileSync } from 'fs';
 import { load } from 'js-yaml';
-import glob from 'glob';
-const { sync } = glob;
-import markdoc from '@markdoc/markdoc';
-const { parse } = markdoc;
+import globPkg from 'glob';
+const { sync } = globPkg;
+
+import Markdoc from '@markdoc/markdoc';
 
 const parseMarkdocFrontmatter = (ast) => {
   return ast.attributes.frontmatter ? load(ast.attributes.frontmatter) : {};
@@ -17,7 +17,7 @@ export function createContentManifest(ROOT_DIR) {
 
   files.forEach((file) => {
     const rawText = readFileSync(file, 'utf-8');
-    const ast = parse(rawText);
+    const ast = Markdoc.parse(rawText);
     const frontmatter = parseMarkdocFrontmatter(ast);
 
     contentManifest[frontmatter.route] = {

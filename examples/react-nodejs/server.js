@@ -1,16 +1,15 @@
 import express from 'express';
-const app = express();
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-import markdoc from '@markdoc/markdoc';
-const { transform } = markdoc;
+import Markdoc from '@markdoc/markdoc';
 import callout from './schema/Callout.markdoc.js';
 import heading from './schema/heading.markdoc.js';
 import { createContentManifest } from './createContentManifest.js';
+
+const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const PORT = 5001;
 const CONTENT_DIR = join(__dirname, 'content');
@@ -42,7 +41,7 @@ app.get('/markdoc-api', (req, res) => {
     },
     variables: variables
   };
-  const content = transform(ast, config);
+  const content = Markdoc.transform(ast, config);
 
   return res.json(content);
 });
