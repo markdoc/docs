@@ -26,6 +26,7 @@ Tags aren't composable!
 
 {% /if %}
 ```
+{% /example %}
 
 Tags can be self-closing (similar to HTML). In this example, you'll see that the content body is removed, and that the tag is closed with a `/`.
 
@@ -53,7 +54,6 @@ If your tag doesn't contain any new lines, then it's treated as an inline tag. I
 {% /example %}
 
 
-{% /example %}
 
 
 ## Built-in tags
