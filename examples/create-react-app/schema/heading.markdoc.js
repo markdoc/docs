@@ -1,5 +1,4 @@
-import markdoc from '@markdoc/markdoc';
-const { nodes } = markdoc;
+const { nodes } = require('@markdoc/markdoc');
 
 function generateID(children, attributes) {
   if (attributes.id && typeof attributes.id === 'string') {
@@ -13,7 +12,7 @@ function generateID(children, attributes) {
     .toLowerCase();
 }
 
-export default {
+module.exports = {
   ...nodes.heading,
   transform(node, config) {
     const base = nodes.heading.transform(node, config);

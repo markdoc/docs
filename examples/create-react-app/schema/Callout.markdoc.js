@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   render: 'Callout',
   children: ['paragraph', 'tag', 'list'],
   attributes: {

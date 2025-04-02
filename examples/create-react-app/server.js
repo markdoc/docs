@@ -1,18 +1,14 @@
-import express from 'express';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import Markdoc from '@markdoc/markdoc';
-import callout from './schema/Callout.markdoc.js';
-import heading from './schema/heading.markdoc.js';
-import { createContentManifest } from './createContentManifest.js';
-
+const express = require('express');
 const app = express();
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const Markdoc = require('@markdoc/markdoc');
+const callout = require('./schema/callout.markdoc');
+const heading = require('./schema/heading.markdoc');
+const { createContentManifest } = require('./createContentManifest');
 
-const PORT = 5001;
-const CONTENT_DIR = join(__dirname, 'content');
+const PORT = 4242;
+const CONTENT_DIR = path.join(__dirname, 'content');
 
 // The content manifest maps routes to Markdoc documents.
 const contentManifest = createContentManifest(CONTENT_DIR);
