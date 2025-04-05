@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/markdoc-api': {
-        target: 'http://localhost:5001',
+        target: 'http://localhost:4242',
         changeOrigin: true
       }
     }
