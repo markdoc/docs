@@ -4,7 +4,8 @@
   "scripts": {
     "start:client": "vite",
     "start:server": "node server.js",
-    "start": "concurrently \"node server.js\" \"vite\""
+    "start": "concurrently \"node server.js\" \"vite\"",
+    "build": "vite build"
   },
   "dependencies": {
     "cors": "^2.8.5",

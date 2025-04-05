@@ -14,6 +14,9 @@ const __dirname = dirname(__filename);
 const PORT = 4242;
 const CONTENT_DIR = join(__dirname, 'content');
 
+// Serve static files from the Vite build directory
+app.use(express.static(join(__dirname, 'static')));
+
 // The content manifest maps routes to Markdoc documents.
 const contentManifest = createContentManifest(CONTENT_DIR);
 
@@ -44,6 +47,10 @@ app.get('/markdoc-api', (req, res) => {
   const content = Markdoc.transform(ast, config);
 
   return res.json(content);
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
