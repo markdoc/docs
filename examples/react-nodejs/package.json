@@ -2,7 +2,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"node server.js\" \"vite\""
+    "start:client": "vite",
+    "start:server": "node server.js",
+    "start": "concurrently \"node server.js\" \"vite\""
   },
   "dependencies": {
     "cors": "^2.8.5",
