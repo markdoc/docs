@@ -11,7 +11,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const PORT = 5001;
+const PORT = 4242;
 const CONTENT_DIR = join(__dirname, 'content');
 
 // The content manifest maps routes to Markdoc documents.
