@@ -1,45 +1,32 @@
 {
   "private": true,
-  "dependencies": {
-    "@markdoc/markdoc": "latest",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
-    "glob": "^8.0.1",
-    "js-yaml": "^4.1.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "type": "module",
   "scripts": {
-    "start:client": "react-scripts start",
+    "start:client": "vite",
     "start:server": "node server.js",
-    "start": "concurrently \"yarn start:client\" \"yarn start:server\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"node server.js\" \"vite\"",
+    "build": "vite build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "proxy": "http://localhost:4242",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "@markdoc/markdoc": "latest",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "glob": "^8.0.1",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "concurrently": "^7.2.0"
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "vite": "^6.1.0"
   }
 }

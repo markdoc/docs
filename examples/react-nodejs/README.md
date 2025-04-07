@@ -1,10 +1,10 @@
-# React example
+# React + Node Markdoc Example
 
-This example builds a client-side rendered React app that fetches Markdoc ASTs from an [Express.js](https://expressjs.com/) server.  
-This project was built with `create-react-app`.
+This example includes two applications:
 
-## Setup
+- A client app created with [Vite](https://vite.dev/)'s `react` template
+- A basic Node backend that provides a simple API
 
-To get started, run:
+To start both applications, run `npm run start`, then view the client app in your browser at `http://localhost:5173/`.
 
-`npm run start`
+To build the production version, run `npm run build` to bundle the static files, then start the Node server with `node server.js`.
