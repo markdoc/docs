@@ -96,7 +96,7 @@ This is content inside of a block-level tag
 
 ### Inline form
 
-When the *opening tag* and *closing tag* appear on the same line within a paragrah, the tag should be treated as an inline document elmement nested inside of the block-level paragraph element:
+When the *opening tag* and *closing tag* appear on the same line within a paragraph, the tag should be treated as an inline document element nested inside of the block-level paragraph element:
 
 ```example
 This is a paragraph {% foo %}that contains a tag{% /foo %}
