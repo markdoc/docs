@@ -565,3 +565,94 @@ main .CodeMirror-scroll::-webkit-scrollbar {
     display: initial;
   }
 }
+
+/* SideNav styles */
+.sidenav {
+  position: sticky;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  flex: 0 0 240px;
+  overflow-y: auto;
+  padding: 2rem 0 2rem 2rem;
+}
+
+.sidenav h3 {
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+  padding-bottom: 0.5rem;
+}
+
+.sidenav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav li {
+  list-style-type: none;
+  margin: 0 0 0.7rem 0.7rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sidenav li a {
+  text-decoration: none;
+}
+
+.sidenav li a:hover,
+.sidenav li.active > a {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .sidenav {
+    display: none;
+  }
+}
+
+/* TableOfContents styles */
+.toc {
+  position: sticky;
+  top: calc(2.5rem + var(--nav-height));
+  max-height: calc(100vh - var(--nav-height));
+  flex: 0 0 240px;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0 0;
+  border-left: 1px solid var(--toc-border);
+}
+
+.toc ul {
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  list-style-type: none;
+  margin: 0 0 1rem 1.5rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.toc li a {
+  text-decoration: none;
+}
+
+.toc li a:hover,
+.toc li.active a {
+  text-decoration: underline;
+}
+
+.toc li.padded {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .toc {
+    display: none;
+  }
+}
+
+/* Main article padding for docs pages */
+main article {
+  padding: 2rem 1.5rem 3rem;
+}
