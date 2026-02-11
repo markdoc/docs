@@ -88,6 +88,10 @@ export function useMarkdocCode(code) {
   return { ast, content, config, errors };
 }
 
+// NOTE: In development mode, you may see two CodeMirror editors rendered, one
+// on top of another. I don't know why this happens, but it does not occur in
+// production builds. You can verify this by running `npm run build && npm run
+// start`.
 function EditorInternal({ code, onChange, options, errors, cursor }) {
   const ref = React.useRef();
   const [key, setKey] = React.useState(0);
