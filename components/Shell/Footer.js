@@ -139,7 +139,7 @@ export function Footer({ children: links, landing }) {
             display: block;
             width: 100%;
             border: none;
-            border-bottom: 1px solid var(--dark);
+            border-bottom: 1px solid var(--page-border);
           }
 
           .try-link {

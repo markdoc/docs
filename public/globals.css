@@ -69,6 +69,7 @@
   --code-border: var(--gray-medium);
   --toc-border: rgba(0, 0, 0, 0.14);
   --translucent: rgba(0, 0, 0, 0.4);
+  --page-border: var(--dark);
 
   --docsearch-primary-color: var(--black-medium) !important;
   --docsearch-logo-color: var(--black-medium) !important;
@@ -80,6 +81,8 @@
   --light: var(--black);
   --dark: var(--white);
   --text: var(--dark);
+  --gray-medium: #3C4049;
+  --page-border: var(--gray-medium);
 
   --contrast-dark: var(--black-medium);
   --code-background: var(--black-medium);
@@ -655,4 +658,327 @@ main .CodeMirror-scroll::-webkit-scrollbar {
 /* Main article padding for docs pages */
 main article {
   padding: 2rem 1.5rem 3rem;
+}
+
+/* Page layout */
+.page {
+  display: flex;
+  flex-grow: 1;
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.dark .page {
+  border-bottom-color: var(--black-light);
+}
+
+.skip-nav {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  text-decoration: none;
+}
+
+.skip-nav:focus {
+  padding: 1rem;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: var(--light);
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 100%;
+  /* https://stackoverflow.com/questions/36230944/prevent-flex-items-from-overflowing-a-container */
+  min-width: 0;
+}
+
+/* Landing page overrides */
+.page--landing .footer-bar {
+  background: var(--gray-light);
+}
+
+.dark .page--landing .footer-bar {
+  background: var(--black);
+}
+
+.page--landing .footer-bar .theme-toggle button.light {
+  background: var(--white);
+}
+
+/* Move top border to first section */
+.page--landing .section hr {
+  border: none;
+  margin: 6.5rem 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    var(--dark) 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 6px 2px;
+  background-repeat: repeat-x;
+}
+
+.page--landing .nav-bar nav {
+  border-bottom: none;
+}
+
+.page--landing .hero {
+  border-top: 1px solid var(--page-border);
+  margin: 0 auto;
+  max-width: var(--landing-page-max-width);
+}
+
+.page--landing p {
+  letter-spacing: 0.3px;
+}
+
+.page--landing .get-started p,
+.page--landing blockquote p,
+.page--landing table td p {
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  font-weight: 400;
+}
+
+.page--landing blockquote {
+  max-width: 520px;
+}
+
+/* Style hero section */
+.page--landing .hero {
+  padding: 4rem 0 6rem;
+}
+
+.page--landing .get-started {
+  background: var(--theme);
+  padding: 115px 0 120px;
+}
+
+.page--landing .get-started .left ::selection {
+  background: #ffe279 !important;
+}
+
+.page--landing .try {
+  padding-top: 0;
+  padding-bottom: 65px;
+}
+
+.page--landing .try span.cm-keyword,
+.page--landing .try span.cm-tag,
+.page--landing .try span.cm-string {
+  color: inherit;
+}
+
+.page--landing .try span.cm-link,
+.page--landing .try span.cm-url {
+  color: var(--yellow);
+}
+
+.page--landing .value-props {
+  padding-top: 0px;
+}
+
+.page--landing .by-stripe {
+  padding-top: 110px;
+}
+
+.page--landing .sandbox {
+  border-radius: 3px;
+}
+
+.page--landing .sandbox .preview p {
+  letter-spacing: initial;
+}
+
+.dark .page--landing .get-started {
+  background: var(--black-medium);
+}
+
+.page--landing .get-started section .primary {
+  padding: 1rem 0 0;
+}
+
+.page--landing .get-started section .side-by-side .left {
+  /* separate top and bottom on mobile */
+  padding-bottom: 1rem;
+}
+
+.page--landing pre[class*='language-'] {
+  border: none;
+  background: var(--black) !important;
+  padding: 25px;
+}
+
+/* Make "npm install" code block thinner */
+.page--landing .code:first-of-type pre[class*='language-'] {
+  padding: 20px 25px;
+}
+
+.page--landing .nav-bar nav {
+  max-width: var(--landing-page-max-width);
+  padding: 1rem 0 1.1rem;
+}
+
+.page--landing .side-by-side {
+  margin: 0;
+}
+
+.page--landing .side-by-side .column {
+  border-right: none;
+  padding-top: 0px;
+  overflow: initial;
+}
+
+.page--landing .code button {
+  display: none;
+}
+
+.page--landing table {
+  margin: 0;
+  table-layout: fixed;
+}
+
+.page--landing table tr {
+  display: flex;
+  gap: 56px;
+}
+
+.page--landing table td {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  flex: 1 0 0;
+  border-width: 0px;
+  gap: 4px;
+}
+
+.page--landing table h3 {
+  font-size: 28px;
+  line-height: 38px;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .page--landing table tr {
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  .page--landing table td {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  .page--landing table h3 {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  .page--landing .hero {
+    padding: 3rem 0 5.3rem;
+  }
+
+  .page--landing .get-started {
+    padding: 65px 0 85px;
+  }
+
+  .page--landing .try {
+    padding: 0;
+  }
+
+  .page--landing .try section {
+    max-width: unset;
+  }
+
+  .page--landing .value-props {
+    padding-top: 4.5rem;
+  }
+
+  .page--landing .by-stripe {
+    padding-top: 5.3125rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page--landing .section hr {
+    margin: 3rem 0;
+  }
+
+  .page--landing table tr {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .page--landing table td {
+    /* https://stackoverflow.com/questions/23556364/how-to-convert-columns-to-rows-using-css */
+    display: block;
+    gap: 8px;
+  }
+
+  .page--landing .hero {
+    padding: 2rem 0 0;
+    border-top: none;
+  }
+
+  .page--landing .get-started {
+    padding: 60px 0 60px;
+  }
+
+  .page--landing .value-props {
+    padding-top: 0;
+  }
+
+  .page--landing .by-stripe {
+    padding-top: 3.75rem;
+  }
+}
+
+/* Footer bar styles */
+.footer-bar {
+  flex: 1;
+  padding: 0;
+  border-top: none;
+}
+
+.footer-bar footer {
+  margin: 0 auto;
+  max-width: calc(100% - 4rem);
+}
+
+.page--docs .footer-bar {
+  border-top: 1px solid var(--page-border);
+}
+
+.page--docs main article {
+  padding: 2rem 1.5rem 3rem;
+}
+
+.page--landing .footer-bar {
+  padding: 1rem 0;
+}
+
+.page--landing .footer-bar footer {
+  max-width: var(--landing-page-max-width);
+}
+
+@media screen and (max-width: 600px) {
+  .footer-bar {
+    padding: 2.5rem 0;
+  }
 }
