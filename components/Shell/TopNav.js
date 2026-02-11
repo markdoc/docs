@@ -85,7 +85,7 @@ export function TopNav({ children }) {
             margin: 0 auto;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid var(--dark);
+            border-bottom: 1px solid var(--page-border);
             padding: 1rem 2rem 1.1rem;
             font-size: 15px;
             font-family: var(--sans);

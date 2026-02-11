@@ -12,23 +12,23 @@
   },
   "dependencies": {
     "@docsearch/react": "^3.6.0",
-    "@markdoc/markdoc": "^0.4.0",
+    "@markdoc/markdoc": "^0.5.4",
     "@markdoc/next.js": "^0.3.7",
-    "codemirror": "^5.65.2",
-    "copy-to-clipboard": "^3.3.1",
-    "js-yaml": "^4.1.0",
-    "next": "14.1.4",
-    "prismjs": "^1.27.0",
+    "codemirror": "^5",
+    "copy-to-clipboard": "^3.3.3",
+    "js-yaml": "^4.1.1",
+    "next": "14.2.35",
+    "prismjs": "^1.30.0",
     "react": "18.2.0",
-    "react-codemirror2": "^7.2.1",
+    "react-codemirror2": "^9.0.1",
     "react-dom": "18.2.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
     "next-sitemap": "^2.5.28",
-    "spec-md": "^3.0.2",
-    "vercel": "^19.1.2"
+    "spec-md": "^3.1.0",
+    "vercel": "^50"
   }
 }

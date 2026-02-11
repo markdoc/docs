@@ -1,5 +1,4 @@
 import React from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
 import { useRouter } from 'next/router';
 import Markdoc from '@markdoc/markdoc';
 import { getSchema } from '@markdoc/next.js/runtime';
@@ -89,9 +88,14 @@ export function useMarkdocCode(code) {
   return { ast, content, config, errors };
 }
 
+// NOTE: In development mode, you may see two CodeMirror editors rendered, one
+// on top of another. I don't know why this happens, but it does not occur in
+// production builds. You can verify this by running `npm run build && npm run
+// start`.
 function EditorInternal({ code, onChange, options, errors, cursor }) {
   const ref = React.useRef();
   const [key, setKey] = React.useState(0);
+  const [CodeMirror, setCodeMirror] = React.useState(null);
 
   const codeMirrorOptions = React.useMemo(
     () => ({
@@ -149,13 +153,19 @@ function EditorInternal({ code, onChange, options, errors, cursor }) {
   }, [errors]);
 
   React.useEffect(() => {
+    const { Controlled } = require('react-codemirror2');
     require('codemirror/mode/markdown/markdown');
     require('codemirror/mode/javascript/javascript');
     require('codemirror/mode/xml/xml');
     require('codemirror/addon/selection/mark-selection');
     require('./codemirror/markdoc.js');
+    setCodeMirror(() => Controlled);
     setKey((k) => k + 1);
   }, []);
+
+  if (!CodeMirror) {
+    return null;
+  }
 
   return (
     <>
