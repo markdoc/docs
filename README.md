@@ -1,1 +1,1 @@
-> **Archived:** This repository is now archived. See [markdoc/markdoc](https://github.com/markdoc/markdoc) for the Markdoc documentation site.
+> The Markdoc documentation site has moved to [markdoc/markdoc](https://github.com/markdoc/markdoc/tree/main/apps/docs).
